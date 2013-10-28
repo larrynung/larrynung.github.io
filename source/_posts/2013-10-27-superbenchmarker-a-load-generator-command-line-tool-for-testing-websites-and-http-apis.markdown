@@ -51,16 +51,28 @@ Chocolatey使用者可輸入下列命令進行下載
 要發送1000個Request, 且同時間可能有10個Concurrent Request去測試google的話 可以輸入命令
     sb -u http://google.com -n 1000 -c 10
 
+要在發送命令後顯示Header的話, 可帶入參數-h    
+    sb -u http://google.com -n 1000 -c 10 -h
 
-命令運行後會看到類似下面這樣的畫面:  
-{% img /images/posts/SuperBenchmarker/6.jpg %}
+要在發送命令後顯示Cookie, 可帶入參數-q    
+    sb -u http://google.com -n 1000 -c 10 -h -q
 
-運行中有即時動態能得知目前已處理的Request數，運行完後還有簡易的測試統計，可以看出每秒可處理多少的Request、最大的處理時間、最小的處理時間、平均的處理時間、以及打了這麼多次的API，依比例分大概在哪個Range。
+要在發送命令的同時指定Http Header與Payload的話, 可以先將Http Header與Payload設定在文字檔中    
+{% img /images/posts/SuperBenchmarker/6.png %}
+
+然後帶入參數-t與檔名去發送Request
+{% img /images/posts/SuperBenchmarker/7.png %}
+
+
+命令運行的最後我們都會看到類似下面這樣的畫面:  
+{% img /images/posts/SuperBenchmarker/8.jpg %}
+
+這邊有簡易的測試統計，可以看出每秒可處理多少的Request、最大的處理時間、最小的處理時間、平均的處理時間、以及打了這麼多次的API，依比例分大概在哪個Range。
 
 
 這些數值有助我們評估網站或是API的效能與負載量。
 
-除了看這些數值外，這邊建議也可以在打的時候看一下Server上的CPU Loading，以及記憶體的使用狀況，甚至可以用效能監視器拉些數值來看。
+除了看這些數值外，這邊建議也可以在打的時候看一下Server上的CPU Loading，磁碟IO，以及記憶體的使用狀況，甚至可以用效能監視器拉些數值來看。
 
  
 Link
