@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - A blogging feamework for hackers."
 date: 2013-11-05 23:14
 comments: true
-categories: 
+categories: [Git,Octopress]
 ---
 
 Octopress是ㄧ利用Jekll部落格引擎開發的部落格系統，能簡易的架設、擴充、客製、與套版，因其最後是生成靜態網頁，因此能很輕易的在許多服務上做部署，像是Github、Heroku、與Rsync等。
@@ -110,9 +110,12 @@ Write blog
 也可呼叫命令啟動預覽服務 
 
     rake preview
- 
+
+{% img /images/posts/Octopress/5.png %} 
 
 預覽服務啟動後，可開啟瀏覽器訪問localhost:4000。沒意外的話會看到你部落格運行起來的樣子。
+
+{% img /images/posts/Octopress/6.png %}
 
 若在預覽時發現需要修改，可以不中斷預覽服務，預覽服務會偵測修改，自動產生對應的靜態網頁。
 
