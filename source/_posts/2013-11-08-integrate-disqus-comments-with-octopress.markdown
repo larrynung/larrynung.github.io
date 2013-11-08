@@ -31,6 +31,6 @@ Generate and deploy
     rake generate
     rake deploy
 
-部落格就可以支援留言功能了。 
+透過Octopress架設的部落格就可以支援留言功能了。 
 
 {% img /images/posts/Disqus/4.png %}
