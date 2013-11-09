@@ -59,6 +59,10 @@ Init and deploy to Github page
 
 因為這邊要將之Host在Github的Github page，所以要先至Github上建立Repository,Repository命名需像username/username.github.io這樣。 
 
+{% img /images/posts/Octopress/5.png %}
+
+{% img /images/posts/Octopress/6.png %}
+
 建立完後呼叫命令: 
 
     rake setup_github_pages
@@ -68,7 +72,7 @@ Init and deploy to Github page
 
 到這邊初始的動作就已經完成了。 
 
-接著嘗試將空的部落格跑起來並部署到Github看看。 
+接著嘗試將空的部落格部署到Github看看。 
 
 呼叫下列命令產生部落格所需的靜態網頁(產生出來的靜態網頁會存放在_deploy目錄下等待部署)。
 
@@ -111,11 +115,11 @@ Write blog
 
     rake preview
 
-{% img /images/posts/Octopress/5.png %} 
+{% img /images/posts/Octopress/7.png %} 
 
 預覽服務啟動後，可開啟瀏覽器訪問localhost:4000。沒意外的話會看到你部落格運行起來的樣子。
 
-{% img /images/posts/Octopress/6.png %}
+{% img /images/posts/Octopress/8.png %}
 
 若在預覽時發現需要修改，可以不中斷預覽服務，預覽服務會偵測修改，自動產生對應的靜態網頁。
 
