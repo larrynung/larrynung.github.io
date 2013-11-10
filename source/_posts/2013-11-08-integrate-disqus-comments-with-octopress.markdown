@@ -9,6 +9,8 @@ categories: Octopress
 Disqus是ㄧ提供留言功能的服務，整合了多種社群服務，能用社群帳號直接登入留言，除此之外也支援匿名留言、分享、以及完整的過濾與管理功能。
 
 透過Disqus與Octopress的整合，使用Octopress架設的部落格也能提供留言的功能。 
+
+<!--more-->
   
 Sign up Disqus
 ----------------

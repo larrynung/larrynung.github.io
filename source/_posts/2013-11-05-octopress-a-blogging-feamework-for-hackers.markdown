@@ -8,6 +8,8 @@ categories: [Git,Octopress]
 
 Octopress是ㄧ利用Jekll部落格引擎開發的部落格系統，能簡易的架設、擴充、客製、與套版，因其最後是生成靜態網頁，因此能很輕易的在許多服務上做部署，像是Github、Heroku、與Rsync等。
 
+<!--more-->
+
 由於Github服務無流量與儲存空間之類的限制，部署到上面又能享有版本控制的好處，怎麼看都是首選的平臺。所以這篇會以Github來做個介紹與示範，看要怎樣透過Octopress架設一個Blog在上面。
   
 Setup Octopress   

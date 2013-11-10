@@ -8,6 +8,8 @@ categories:
 
 SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Framework 4.5開發而成。
 
+<!--more-->
+
 可支援Get、Post、Put、Delete這些呼叫方式，叫用時能設定Concurrent user、Request數、Header template...等。
 
 
