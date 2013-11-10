@@ -49,11 +49,24 @@ bundle安裝完後，再將rake安裝上就可以了。
   
 {% img /images/posts/Octopress/3.png %}  
 
+
 Configure Octopress
 ---------------------
-Octopress安裝完後有些設定動作要做，要針對_config.yml裡面的設定做些調整。像是部落格的網址、部落格的標題、部落格的副標題、是否啟用Facebook like...等。 
+Octopress安裝完後有些設定動作要做，主要有Rakefile與_config.yaml兩個設定檔 
+
+Rakefile是跟部屬動作相關，一般不需要更動，除非是部屬到rsync，或是想要調整部屬的動作，抑或是想要調整產生新文章時自動帶出的參數...等  
+
+_config.yml是我們主要要調整的設定檔，設定檔依設定的內容區分為三大部分，Main Configs、Jekyll & Plugins、與3rd Party Settings。  
+
+Main Configs的設定有部落格的網址、部落格的標題、部落格的副標題...等，是啟用部落格主要要調整的設定。 
  
 {% img /images/posts/Octopress/4.png %}
+
+
+Jekyll & Plugins設定部分是設定部落格引擎以及外掛的部份，通常也是不需要做什麼調整  
+
+3rd Party Settings這部份則是設定一些三方服務，像是Facebook Like是否啟用、Google+ Like是否啟用、Twitter是否啟用...等
+
   
 Init and deploy to Github page
 -------------------------------
@@ -70,7 +83,12 @@ Init and deploy to Github page
     rake setup_github_pages
   
   
-該命令呼叫後會詢問Github page repository位置，帶入後Octopress會做些對應的設置動作。像是將Git的remote origin repository指向Github page repository、將branch從master切到source、設定_deploy目錄供存放要部署至master branch的內容...等。
+該命令呼叫後會詢問Github page repository位置，帶入後Octopress會做些對應的設置動作。
+
+{% img /images/posts/Octopress/7.png %}
+
+
+像是將Git的remote origin repository指向Github page repository、將branch從master切到source、設定_deploy目錄供存放要部署至master branch的內容...等。
 
 到這邊初始的動作就已經完成了。 
 
@@ -102,7 +120,8 @@ Write blog
     rake new_post["title"]
 
 
-然後開始撰寫，撰寫時需使用Markdown語法。
+Octopress會產生對應的Markdown檔，開啟該Markdown檔開始撰寫。
+
 
 撰寫完可叫用命令產生對應的靜態網頁
 
@@ -117,11 +136,11 @@ Write blog
 
     rake preview
 
-{% img /images/posts/Octopress/7.png %} 
+{% img /images/posts/Octopress/8.png %} 
 
 預覽服務啟動後，可開啟瀏覽器訪問localhost:4000。沒意外的話會看到你部落格運行起來的樣子。
 
-{% img /images/posts/Octopress/8.png %}
+{% img /images/posts/Octopress/9.png %}
 
 若在預覽時發現需要修改，可以不中斷預覽服務，預覽服務會偵測修改，自動產生對應的靜態網頁。
 
