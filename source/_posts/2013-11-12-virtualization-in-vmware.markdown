@@ -28,6 +28,7 @@ categories: [VMware]
 
 
 像是下面這樣  
+
 {% img /images/posts/VMwareVirtualization/3.png %}
 
 {% img /images/posts/VMwareVirtualization/4.png %}
