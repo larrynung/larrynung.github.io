@@ -45,6 +45,7 @@ goto :eof
 
 需要叫用時可像下面這樣呼叫 
 
+    call :AppendColorText [TextColor] [DisplayText]
     call :AppendColorTextLine [TextColor] [DisplayText]
 
 
