@@ -26,6 +26,8 @@ categories: [VMware]
     mce.enable = “TRUE”
     vhv.enable = “TRUE”
 
+
+像是下面這樣  
 {% img /images/posts/VMwareVirtualization/3.png %}
 
 {% img /images/posts/VMwareVirtualization/4.png %}
@@ -33,7 +35,7 @@ categories: [VMware]
 {% img /images/posts/VMwareVirtualization/5.png %}
 
 
-啟動虛擬機後就可以使用虛擬化的功能，像是在Windows Phone的模擬器就可以在VMware內運行良好。
+設定完後將虛擬機啟動，就可以在裡面使用虛擬化的功能了，像是Windows Phone的模擬器就可以在VMware內運行良好。
 
 {% img /images/posts/VMwareVirtualization/6.png %}
 
