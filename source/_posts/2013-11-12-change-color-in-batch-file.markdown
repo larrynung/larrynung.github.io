@@ -45,7 +45,7 @@ goto :eof
 
 需要叫用時可像下面這樣呼叫 
 
-    call :AppendColorTextLine 0C "黑底紅字"
+    call :AppendColorTextLine [TextColor] [DisplayText]
 
 
 第一個參數帶入要顯示的顏色,第二個參數帶入要顯示的字串就可以了  
@@ -71,6 +71,11 @@ goto :eof
 
 
 所以實際用起來會像下面這樣  
+
+    call :AppendColorTextLine 0C "黑底紅字"
+
+
+最後附上比較完整的使用範例
 
 {% codeblock lang:bat %}
 @ECHO off
