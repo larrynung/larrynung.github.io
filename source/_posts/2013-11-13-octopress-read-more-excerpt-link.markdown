@@ -10,6 +10,8 @@ categories: [Octopress]
 
 這樣的呈現方式很難被訪客所閱讀，通常我們會期望只顯示部分的文章內容，若有興趣在進ㄧ步的去閱讀全文，這樣文章也比較好找。 
 
+<!--More-->
+
 若您也有這樣的需求，可以開啟_config.yaml這個設定檔，在excerpt_link這邊設定進ㄧ步閱讀的按鈕所要呈現的字樣。 
 
 {% img /images/posts/OctopressReadMore/1.png %}
