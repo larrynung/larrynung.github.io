@@ -68,7 +68,7 @@ Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋�
 
 
 
-簡單的來說,Findstr使用時要帶入搜尋的字串與要搜尋的檔案，搜尋的字串可以用雙引號包住直接帶在Findstr後，如果要同時搜尋多個字串，可以用空格將多個欲搜尋的字串分開:
+簡單的來說，Findstr使用時要帶入搜尋的字串與要搜尋的檔案。搜尋的字串可以用雙引號包住直接帶在Findstr後，如果要同時搜尋多個字串，可以用空格將多個欲搜尋的字串分開:
 
     findstr "[SearchText1] [SearchText2]"  [SearchFile]
 
@@ -97,7 +97,7 @@ Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋�
 {% img /images/posts/Findstr/2.png %}
 
 
-要在搜尋結果加入字元位移量顯示，可帶入參數/n：
+要在搜尋結果加入字元位移量顯示，可帶入參數/o：
 
     findstr /o /c:"[SearchText]" [SearchFile]
 
@@ -106,7 +106,7 @@ Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋�
 
 若搜尋結果顯示的顏色不夠明顯想要變更，可帶入參數/A指定：
 
-   findstr /A:[Color] /c:"[SearchText]" [SearchFile]
+    findstr /A:[Color] /c:"[SearchText]" [SearchFile]
 
 {% img /images/posts/Findstr/4.png %}
 
