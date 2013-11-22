@@ -41,6 +41,11 @@ rdiscount:
     - footnotes
     - smart
 pygments: false # default python pygments have been replaced by pygments.rb
+navigation:
+- text: Home
+  url: /index.html
+- text: Archives
+  url: /archives/index.html
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir:       # Directory base for pagination URLs eg. /blog/page/2/
