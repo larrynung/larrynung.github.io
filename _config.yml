@@ -46,6 +46,8 @@ navigation:
   url: /index.html
 - text: Archives
   url: /archives/index.html
+- text: Categories
+  url: /Categories/index.html
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir:       # Directory base for pagination URLs eg. /blog/page/2/
