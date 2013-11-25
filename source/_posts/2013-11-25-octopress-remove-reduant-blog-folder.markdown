@@ -8,7 +8,7 @@ keywords:
 description: 
 ---
 
-Octopress blog架設好後，預設的部落格網址格式為/blog/:year/:month/:day/:title/，會在網址那邊多一層不必要的blog目錄，要將這層不必要的目錄拿掉，我們可以開啟_config.yaml進行些修改，將permalink、 category_dir、與 pagination_dir的/bloh前綴給拿掉 ([範例](/images/posts/OctopressRemoveReduantBlogFolder/1.png))。
+Octopress blog架設好後，預設的部落格網址格式為/blog/:year/:month/:day/:title/，會在網址那邊多一層不必要的blog目錄，要將這層不必要的目錄拿掉，我們可以開啟_config.yaml進行些修改，將permalink、 category_dir、與 pagination_dir的/bloh前綴給拿掉 ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/1.png))。
 
 <!--More-->
 
@@ -22,7 +22,7 @@ Octopress blog架設好後，預設的部落格網址格式為/blog/:year/:month
     pagination_dir:       # Directory base for pagination URLs eg. /page/2/
 
 
-接著將source/_includes/custom/navigation.html檔案開啟，針對上方巡覽列這邊的連結部分作些修改，一樣將/blog前綴給移掉 ([範例](/images/posts/OctopressRemoveReduantBlogFolder/2.png))。
+接著將source/_includes/custom/navigation.html檔案開啟，針對上方巡覽列這邊的連結部分作些修改，一樣將/blog前綴給移掉 ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/2.png))。
 
     <li><a href="/">Home</a></li>
     <li><a href="/archives">Archives</a></li>
@@ -33,7 +33,7 @@ Octopress blog架設好後，預設的部落格網址格式為/blog/:year/:month
     <a href="/archives">Archives</a>
 
 
-網址跟連結都做完，記得要將本來放在source/blog下的資料移到source ([範例](/images/posts/OctopressRemoveReduantBlogFolder/3.png))。
+網址跟連結都做完，記得要將本來放在source/blog下的資料移到source ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/3.png))。
 
     mv -v source/blog/archives source/
 
