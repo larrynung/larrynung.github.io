@@ -10,6 +10,8 @@ description:
 
 Octopress blog架設好後，預設的部落格網址格式為/blog/:year/:month/:day/:title/，會在網址那邊多一層不必要的blog目錄，要將這層不必要的目錄拿掉，我們可以開啟_config.yaml進行些修改，將permalink、 category_dir、與 pagination_dir的/bloh前綴給拿掉 ([範例](/images/posts/OctopressRemoveReduantBlogFolder/1.png))。
 
+<!--More-->
+
     #permalink: /blog/:year/:month/:day/:title/
     permalink: /:year/:month/:day/:title/
 
