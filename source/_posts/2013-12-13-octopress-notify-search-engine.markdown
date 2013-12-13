@@ -84,7 +84,9 @@ end
     rake notify
 
 
-若想要在發佈的同時去通知搜尋引擎，這邊也可以開啟 Rakefile 檔案進行編輯，將本來的 deploy 任務更名，再造個新的 deploy 任務，該任務叫用時會依序叫用本來的 deploy 任務以及 notify 任務。
+若想要在發佈的同時去通知搜尋引擎，這邊也可以開啟 Rakefile 檔案進行編輯，將本來的 deploy 任務更名，再造個新的 deploy 任務，該任務叫用時會依序叫用本來的 deploy 任務以及 notify 任務。  
+
+像是下面這樣：  
 
 {% codeblock lang:ruby %}
 desc "Default deploy task"
@@ -104,6 +106,10 @@ task :deploy1 do
   Rake::Task["#{deploy_default}"].execute
 end
 {% endcodeblock %}
+
+
+這樣修改後以後叫用 `rake deploy` 就會自動在部屬後通知搜尋引擎。
+
 
 Link
 ----
