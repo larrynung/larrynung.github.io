@@ -8,7 +8,10 @@ keywords: MS-Dos,Merge,Copy
 description: MS-DOS - Merge files with copy command
 ---
 
-若要在 MS-Dos 下撰寫 Script 去合併檔案，很直覺得會想到用 Type Command 將內容秀出並將之導到指定的檔案流做存放。像是要將所有的 txt 檔進行合併並儲存到 outputFile.txt 的話，就可以像下面這樣叫用：  
+若要在 MS-Dos 下撰寫 Script 去合併檔案，很直覺得會想到用 Type Command 將內容秀出並將之導到指定的檔案流做存放。
+
+<!--More-->
+像是要將所有的 txt 檔進行合併並儲存到 outputFile.txt 的話，就可以像下面這樣叫用：  
 
     type *.txt >> outputFile.txt
 
