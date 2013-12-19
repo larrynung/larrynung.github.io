@@ -48,6 +48,8 @@ navigation:
   url: /archives/index.html
 - text: Categories
   url: /categories/index.html
+- text: RSS
+  url: atom.xml
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir:       # Directory base for pagination URLs eg. /blog/page/2/
