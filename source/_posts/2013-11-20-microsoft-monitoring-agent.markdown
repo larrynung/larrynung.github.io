@@ -6,27 +6,32 @@ comments: true
 categories: 
 ---
 
-Microsoft Monitoring Agent (MMA) 是可獨立運行的 IntelliTrace，不像以前的 IntelliTrace 需綁在Visual Studio 上。可用來收集診斷資料，例如效能標準、事件記錄檔和Trace。 
+Microsoft Monitoring Agent (MMA) 是可獨立運行的 IntelliTrace，可用來收集診斷資料，例如效能標準、事件記錄檔和Trace。  
 
 <!--More-->
 
-透過 Microsoft Monitoring Agent ，我們可以Follow微軟建議的開發流程， 編寫程式=>建置=>發佈=>偵測=>診斷，不斷的進行迭代，讓程式更加的穩定。  
+不像以前的 IntelliTrace 主要是綁在 Visual Studio 上使用，它能獨立運行，且功能也做了些許的強化，能與 System Center Operations Manager 做進ㄧ步的整合，提供更完善的Solution。   
+
+透過 Microsoft Monitoring Agent ，我們可以 Follow  編寫程式 => 建置 => 發佈 => 偵測 => 診斷 這樣的流程，不斷的進行迭代，讓產品更加的穩定。  
 
 {% img /images/posts/MicrosoftMonitoringAgent/1.png %}
 
 
-程式可至 [Microsoft Monitoring Agent 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40316) 這邊下載安裝。  
+Microsoft Monitoring Agent 主程式可至 [Microsoft Monitoring Agent 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40316) 這邊下載安裝。  
 
-Microsoft Monitoring Agent 建議環境為.NET Framework 3.5+、以及PowerShell 3.0+。
+建議環境為 .NET Framework 3.5+、以及 PowerShell 3.0+。
 
-若是PowerShell 2.0可另行開啟PowerShell，並輸入下列命令去Import module，不然會無法使用後續的PowerShell Cmdlet。 
 
-    PS C:>Import-Module "C:\Program Files\Microsoft Monitoring Agent\Agent\PowerShell\Microsoft.MonitoringAgent.PowerShell\Microsoft.MonitoringAgent.PowerShell.dll"
+在使用上，我們只要開啟 PowerShell ，輸入對應的命令就可以了。  
+
+若是使用的是 PowerShell 2.0，需先輸入下列命令去 Import module，不然會無法使用後續的 PowerShell Cmdlet。
+
+    Import-Module "C:\Program Files\Microsoft Monitoring Agent\Agent\PowerShell\Microsoft.MonitoringAgent.PowerShell\Microsoft.MonitoringAgent.PowerShell.dll"
 
 {% img /images/posts/MicrosoftMonitoringAgent/2.png %}
 
 
-在使用上，我們只要開啟 PowerShell ，輸入下列命令將之啟動，讓 Microsoft Monitoring Agent 開始進行偵測。
+要開始啟用 Microsoft Montoring Agent 進行偵測，只要輸入命令：
 
     Start-WebApplicationMonitoring
 
@@ -46,15 +51,28 @@ Microsoft Monitoring Agent 建議環境為.NET Framework 3.5+、以及PowerShell
 
 若要終止偵測並將到目前為止的偵測儲存並產生 IntelliTrace 檔案，可叫用下列命令:
 
-    Stop-WebApplicationMonitoring
+    Stop-WebApplicationMonitoring [WebSite]
 
 
 {% img /images/posts/MicrosoftMonitoringAgent/5.png %}
 
 
-產生的 IntelliTrace file 可以用 Visual Studio 2013 開啟。
+產生的 IntelliTrace file 可用 Visual Studio 開啟。  
 
-若有需要 Microsoft Monitoring Agent 也可以與 System Center Operations Manager 做進ㄧ步的整合，提供更完善的Solution。
+開啟後會看到像下面這樣的畫面，會顯示所偵測到的 Exception、 System Info 、以及 Module Info。
+
+{% img /images/posts/MicrosoftMonitoringAgent/6.png %}
+
+
+這邊通常我們關注的會是 Exception 這塊，找看看有沒有不該丟出的例外，找到後選取，在下方可看到對應的呼叫堆疊。  
+
+{% img /images/posts/MicrosoftMonitoringAgent/7.png %}
+
+
+進一步要查閱的話，可滑鼠左鍵連點，或是按下 `Start Debugging` 按鈕，會進入到偵錯模式，可以看到細部的區域變數或是呼叫堆疊，若有 PDB 檔的這邊也可以將之 Attach 上去，看更細部的資訊。
+
+{% img /images/posts/MicrosoftMonitoringAgent/8.png %}
+
 
 Link
 ----
