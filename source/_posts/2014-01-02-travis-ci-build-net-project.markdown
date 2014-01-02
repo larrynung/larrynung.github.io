@@ -3,12 +3,14 @@ layout: post
 title: "Travis CI - Build .NET project"
 date: 2014-01-02 23:59
 comments: true
-categories: Travis,CI
+categories: [Travis, CI]
 keywords: Travis,CI,.NET,Mono
 description: "Travis CI - Build .NET project"
 ---
 
 Travis CI 內建支援 C、C++、Clojure、Erlang、Go、Groovy、Haskell、Java、Python、Ruby 等語言，卻沒有支援 .Net 的，這表示官方並不特別的去做 .Net 語言的支援。然而 Travis CI 具備有相當程度的彈性，經由設定能在建置前先進行套件的安裝，因此我們還是能透過安裝 Mono 套件去建置 .Net 的專案。
+
+<!-- More -->
 
 在設定檔的撰寫上，Language 這邊指定語言為 C ，因為前面提到的 Travis CI 並不支援 C# 。
 
