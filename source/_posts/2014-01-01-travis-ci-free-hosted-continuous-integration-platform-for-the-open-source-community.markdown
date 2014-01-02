@@ -3,7 +3,7 @@ layout: post
 title: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
 date: 2014-01-01 23:34
 comments: true
-categories: Travis CI
+categories: Travis,CI
 keywords: Travis,CI
 description: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
 ---
@@ -49,15 +49,23 @@ Travis CI 是免費的 CI 服務，支援 C、C++、Clojure、Erlang、Go、Groo
 {% img /images/posts/TravisCI/7.png %}
 
 
-接著在 Repository 中放置 Travis CI 的設定檔 .travis.yml。設定檔依語言的不同會有不同的設置，請參閱 [Travis CI Documentation](http://about.travis-ci.org/docs/) 下去進行設定。
+接著在 Repository 中放置 Travis CI 的設定檔 .travis.yml。設定檔依語言的不同會有不同的設置，像是 C++ 的設定就會像下面這樣：  
 
-設定檔設定完，將它 Commit 並 Push 回 Remote Repository 設定就完成了。  
+{% codeblock lang:yaml %}
+language: cpp
+compiler:
+  - gcc
+  - clang
+# Change this to your needs
+script: ./configure && make
+{% endcodeblock %}
 
-以後上 Code 到 Remote Repository ，或是有人發 Pull Request 過來，Travis CI 就會自動觸發建置的動作。
 
-如想手動觸發建置，又不想為此 Push 一些不必要的 Commit，可至 GitHub test Service Hook。
+詳細的設定請參閱 [Travis CI Documentation](http://about.travis-ci.org/docs/) 。  
 
-建置的資訊在 Travis CI 這邊都有詳細的記載...  
+設定檔設定完，將它 Commit 並 Push 回 Remote Repository 設定就完成了。以後上 Code 到 Remote Repository ，或是有人發 Pull Request 過來，Travis CI 就會自動觸發建置的動作。如想手動觸發建置，又不想為此 Push 一些不必要的 Commit，可至 GitHub test Service Hook。
+
+建置的過程與資訊在 Travis CI 這邊都有詳細的記載...  
 
 {% img /images/posts/TravisCI/8.png %}
 
