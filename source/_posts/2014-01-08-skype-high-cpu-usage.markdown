@@ -14,13 +14,18 @@ description: "Skype - High CPU usage"
 
 {% img /images/posts/SkypeCPUHigh/1.png %}
 
-這樣的問題發生時，電腦上的預設瀏覽器多半是設定為 Chrome ，而解決這問題的方法也就是將預設瀏覽器設為 IE ，或是設為其它瀏覽器。  
+
+當這樣的問題發生時，電腦上的預設瀏覽器多半是設定為 Chrome 。而解決這問題的方法也就是將預設瀏覽器設為 IE ，或是設為其它瀏覽器。  
 
 {% img /images/posts/SkypeCPUHigh/2.png %}
 
-修改完預設瀏覽器後， 將 Skype 重開，就會看到 CPU 使用率恢復正常的狀態。  
+
+修改完預設瀏覽器後， 將 Skype 重開，沒意外的話就會看到 CPU 使用率恢復正常的狀態。  
 
 {% img /images/posts/SkypeCPUHigh/3.png %}
+
+
+另外還有一種解法就是改安裝舊版的 Skype ，然後將自動更新功能關閉，避免它更新到有問題的版本。  
 
 
 Link
