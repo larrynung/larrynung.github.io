@@ -12,6 +12,9 @@ description: "Skype - High CPU usage"
 
 <!--More-->
 
+
+像這邊筆者的電腦就吃了 25% 左右，筆者的電腦是四核心，相當於一整顆 CPU 被吃掉了。  
+
 {% img /images/posts/SkypeCPUHigh/1.png %}
 
 
@@ -26,6 +29,8 @@ description: "Skype - High CPU usage"
 
 
 另外還有一種解法就是改安裝舊版的 Skype ，然後將自動更新功能關閉，避免它更新到有問題的版本。  
+
+目前造成該問題的原因還不明確，同樣的版本同樣的預設瀏覽器設定也不一定能重現，在官方尚未修正好前暫時也只能先這樣避開問題。  
 
 
 Link
