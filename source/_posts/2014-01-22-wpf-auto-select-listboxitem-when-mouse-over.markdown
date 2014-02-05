@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF - Auto select ListBoxItem when mouse over"
-date: 2014-01-20 23:11
+date: 2014-01-22 13:30
 comments: true
 categories: [WPF]
 keywords: "WPF, ListBox, ListBoxItem, Auto Select, Mouse Over"
@@ -9,6 +9,8 @@ description: "WPF - Auto select ListBoxItem when mouse over"
 ---
 
 在使用 WPF 的 ListBoxItem，若有要在滑鼠游標經過時自動選取的需求，可以為 ListBoxItem 套用像下面這樣的Style：  
+
+<!-- More -->
 
 {% codeblock lang:xml %}
 <ListBox.Resources>
