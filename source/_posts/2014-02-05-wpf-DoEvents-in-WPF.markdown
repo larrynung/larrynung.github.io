@@ -12,11 +12,23 @@ description: "WPF - DoEvents in WPF"
 
 <!-- More -->
 
-以這樣的情景來說，WinForm 中可直接叫用現成的 DoEvents ，但在 WPF 中則無現成的方法可供叫用。  
+以這樣的情景來說，WinForm 中可直接叫用現成的 DoEvents ，但在 WPF 中則無現成的方法可供叫用，所以我們必須借用 WinForm 的 DoEvents 方法。  
 
-所以我們必須借用 WinForm 的 DoEvents 方法  
+只要將 `System.Windows.Forms.dll` 組件加入參考，接著將命名空間 `System.Windows.Forms` 加入，再呼叫 `Application.DoEvents()` 方法即可。  
 
-或是自行撰寫像下面這樣的程式來處理。  
+{% codeblock lang:c# %}
+using System.Windows.Forms;
+
+...
+
+Application.DoEvents();
+
+...
+{% endcodeblock %}
+
+<br/>
+
+或者是自行撰寫像下面這樣的程式來處理也可以。  
 
 {% codeblock lang:c# %}
 void DoEvents(){
