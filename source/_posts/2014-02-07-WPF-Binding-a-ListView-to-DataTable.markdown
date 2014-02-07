@@ -10,6 +10,8 @@ description: "WPF - Binding a ListView to DataTable"
 
 要在 WPF 中將 DataTable binding 到 ListView 上，我們主要有幾種做法…  
 
+<!-- More -->
+
 像是把 DataTable 轉型成 IListSource 後，叫用 GetList 方法，並將回傳值塞進 ListView 的 ItemSource 屬性  
 
     lvTable.ItemsSource = ((IListSource)dt).GetList();
@@ -67,4 +69,4 @@ lvTable.ItemsSource = dt.DefaultView;
 
 Binding 時就直接塞 DataTable 給 ListView 就好了...  
 
-  lvTable.DataContext = dt;
+    lvTable.DataContext = dt;
