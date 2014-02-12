@@ -54,7 +54,7 @@ lvTable.ItemsSource = dt.DefaultView;
 {% endcodeblock %}
 
 
-你也可以像下面這樣稍微包裝一下...   
+你也可以像下面這樣稍微包裝一下，將 ListView 的 ItemSource 與 DefaultView 繫結...
 
 {% codeblock lang:xml %}
 <ListView x :Name="lvTable" Margin="0" ItemsSource="{Binding DefaultView}">
@@ -67,6 +67,6 @@ lvTable.ItemsSource = dt.DefaultView;
 </ListView>
 {% endcodeblock %}
 
-Binding 時就直接塞 DataTable 給 ListView 就好了...  
+這樣在 Binding 時只要直接塞 DataTable 給 ListView 就好了...  
 
     lvTable.DataContext = dt;
