@@ -40,8 +40,88 @@ CD /D "%~dp0"
 :--------------------------------------
 {% endcodeblock %}
 
+<br/>
 
-使用時只要將它附加在批次檔的開頭，運行時就會嘗試去提升至管理者的權限。
+使用時只要將它附加在批次檔的開頭，運行時就會嘗試去提升至管理者的權限。  
+
+這邊筆者稍稍將之做些修改調整...  
+
+{% codeblock lang:bat %}
+:TryToRunAsAdmin
+    set GetAdminScriptFile="%temp%\getadmin.vbs"
+
+    REM  --> Check for permissions
+    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+    REM --> If error flag set, we do not have admin.
+    if '%errorlevel%' NEQ '0' (
+        echo Requesting administrative privileges...
+        call:UACPrompt
+        set ERRORLEVEL=1
+    ) else ( 
+        if exist %GetAdminScriptFile% ( del %GetAdminScriptFile% )
+        set ERRORLEVEL=0
+    )
+    goto :eof
+
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > %GetAdminScriptFile%
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> %GetAdminScriptFile%
+
+    call %GetAdminScriptFile%
+    goto :eof
+{% endcodeblock %}
+
+<br/>
+
+使用時只要在開頭處加入呼叫與對應的判斷即可  
+
+    call:TryToRunAsAdmin
+
+    if %ERRORLEVEL%==1 exit /B
+    
+<br/>
+
+像是下面這樣...  
+
+{% codeblock lang:bat %}
+@echo off
+
+call:TryToRunAsAdmin
+
+if %ERRORLEVEL%==1 exit /B
+    
+echo got administrative privileges...
+goto :eof
+
+:TryToRunAsAdmin
+    set GetAdminScriptFile="%temp%\getadmin.vbs"
+
+    REM  --> Check for permissions
+    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+    REM --> If error flag set, we do not have admin.
+    if '%errorlevel%' NEQ '0' (
+        echo Requesting administrative privileges...
+        call:UACPrompt
+        set ERRORLEVEL=1
+    ) else ( 
+        if exist %GetAdminScriptFile% ( del %GetAdminScriptFile% )
+        set ERRORLEVEL=0
+    )
+    goto :eof
+
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > %GetAdminScriptFile%
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> %GetAdminScriptFile%
+
+    call %GetAdminScriptFile%
+    goto :eof
+{% endcodeblock %}
+
+<br/>
 
 Link
 ----
