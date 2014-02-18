@@ -77,9 +77,11 @@ CD /D "%~dp0"
 
 使用時只要在開頭處加入呼叫與對應的判斷即可  
 
+    ...
     call:TryToRunAsAdmin
 
     if %ERRORLEVEL%==1 exit /B
+    ...
     
 <br/>
 
