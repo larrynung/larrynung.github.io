@@ -12,7 +12,7 @@ SQLCop 是專門為 SQL Server 量身打造的分析工具。能針對現有的 
 
 <!-- More -->
 
-使用前先將程式下載並安裝  
+使用前請先連至 [Less Than Dot - SqlCop](http://sqlcop.lessthandot.com/) 這邊，將程式下載並安裝...  
 
 {% img /images/posts/SQLCop/1.png %}
 
@@ -37,6 +37,6 @@ SQLCop  會將偵測到的問題依型態與檢查的規則下去用階層分類
 <br/>
 
 Link
-———
+----
 * [Less Than Dot - SqlCop](http://sqlcop.lessthandot.com/)
 * [SQL Cop Review](https://www.simple-talk.com/sql/sql-tools/sql-cop-review/)
