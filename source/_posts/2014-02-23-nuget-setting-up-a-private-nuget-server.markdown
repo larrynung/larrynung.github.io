@@ -61,7 +61,7 @@ description: "NuGet - Setting up a private NuGet server"
 
 部署完成再用瀏覽器做個確定，應該會看到之前我們在 Visual Studio 試跑出來的畫面。    
 
-確定無誤我們就可以將該 NuGet Server 加進 Visual Studio 內使用。 
+確定無誤，將 NuGet Package 放至指定位置，接著就可以將該 NuGet Server 加進 Visual Studio 內使用。 
 
 {% img /images/posts/CreatePrivateNuGetServer/11.png %}
 
