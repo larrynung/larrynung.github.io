@@ -4,7 +4,7 @@ title: "Remote desktop with Microsoft Terminal Services control"
 date: 2013-12-07 09:03
 comments: true
 categories: [C#]
-keywords: "RDP, Remote Desktop, C#"
+keywords: "RDP, Remote Desktop, CSharp"
 description: "Remote desktop with Microsoft Terminal Services control"
 ---
 
