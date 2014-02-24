@@ -4,7 +4,7 @@ title: "NuGet - Package restore"
 date: 2013-12-11 22:04
 comments: true
 categories: [Nuget]
-keywords: "Nuget"
+keywords: "NuGet"
 description: "NuGet - Package restore"
 ---
 
