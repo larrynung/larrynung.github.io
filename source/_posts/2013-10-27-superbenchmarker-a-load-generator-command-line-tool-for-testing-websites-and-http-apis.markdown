@@ -60,14 +60,22 @@ Chocolatey使用者可輸入下列命令進行下載
     sb -u http://google.com -n 1000 -c 10 -h -q
 
 要在發送命令的同時指定Http Header與Payload的話, 可以先將Http Header與Payload設定在文字檔中    
+
 {% img /images/posts/SuperBenchmarker/6.png %}
 
-然後帶入參數-t與檔名去發送Request
+<br/>
+
+然後帶入參數-t與檔名去發送Request  
+
 {% img /images/posts/SuperBenchmarker/7.png %}
 
+<br/>
 
-命令運行的最後我們都會看到類似下面這樣的畫面:  
+命令運行的最後我們都會看到類似下面這樣的畫面:   
+
 {% img /images/posts/SuperBenchmarker/8.jpg %}
+
+<br/>
 
 這邊有簡易的測試統計，可以看出每秒可處理多少的Request、最大的處理時間、最小的處理時間、平均的處理時間、以及打了這麼多次的API，依比例分大概在哪個Range。
 
