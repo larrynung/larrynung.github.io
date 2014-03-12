@@ -20,15 +20,27 @@ Nuget使用者可在Visual Studio的Package Manager Console視窗中輸入下列
 
 {% img /images/posts/SuperBenchmarker/1.jpeg %}
 
+<br/>
+
 Github使用者可在download目錄內取得編譯好的程式主檔  
+
 {% img /images/posts/SuperBenchmarker/2.jpeg %}  
+
+<br/>
+
 {% img /images/posts/SuperBenchmarker/3.jpeg %}  
 
+<br/>
+
 Chocolatey使用者可輸入下列命令進行下載
+
     cinst SuperBenchmarker
 
 不過該程式作者在開發時有用一些第三方的套件，而Nuget上所放置的版本並沒有把那些參考到的組件連帶釋出，所以要手動將參考到的組件ㄧㄧ補齊，不然無法正常運行。 
+
 {% img /images/posts/SuperBenchmarker/4.jpg %}
+
+<br/>
 
 而且該程式其實是一個獨立的主控台程式，跟專案與方案應該無任何關聯，為此要開個方案進行下載是有點弔詭。且依筆者的觀察，Nuget上的更新也比較緩慢。
 
@@ -37,9 +49,13 @@ Chocolatey使用者可輸入下列命令進行下載
 至於Github上放置的版本本來也跟Nuget取得的版本一樣需要自行下載相依的組件，但後來的版本看起來跟Chocolatey一樣也做了合併處理，所以要由此取得應該也是可以的。
 
 程式的使用方式可直接在命令列下輸入sb查看，裡面會有程式的使用方式、參數、及簡易的使用範例   
+
 {% img /images/posts/SuperBenchmarker/5.jpeg %}
 
+<br/>
+
 其中比較重要的參數大概有下列幾個   
+
     -u 可用來指定要打的網站或是API位置   
     -n 可用來指定要打的Request數量   
     -c 可用來指定Concurrent Request數量   
@@ -47,17 +63,31 @@ Chocolatey使用者可輸入下列命令進行下載
     -h 可用來指定要顯示HTTP Header    
     -q 可用來指定要顯示Cookie    
 
-所以我們要發送1000個Request去測試google的話 可以輸入命令
+<br/>
+
+所以我們要發送1000個Request去測試google的話 可以輸入命令  
+
     sb -u http://google.com -n 1000
 
-要發送1000個Request, 且同時間可能有10個Concurrent Request去測試google的話 可以輸入命令
+<br/>
+
+要發送1000個Request, 且同時間可能有10個Concurrent Request去測試google的話 可以輸入命令  
+
     sb -u http://google.com -n 1000 -c 10
+    
+<br/>
 
 要在發送命令後顯示Header的話, 可帶入參數-h    
+
     sb -u http://google.com -n 1000 -c 10 -h
+    
+<br/>
 
 要在發送命令後顯示Cookie, 可帶入參數-q    
+
     sb -u http://google.com -n 1000 -c 10 -h -q
+    
+<br/>
 
 要在發送命令的同時指定Http Header與Payload的話, 可以先將Http Header與Payload設定在文字檔中    
 
