@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Refresh / Update WPF controls"
 date: 2014-03-16 22:29
 comments: true
-categories: [WPF] 
+categories: [WPF, CSharp] 
 keywords: WPF, Refresh
 description: "WPF - Refresh / Update WPF controls"
 ---
