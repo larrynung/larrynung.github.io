@@ -3,7 +3,7 @@ layout: post
 title: "Code Contracts - Contract Reference Assembly"
 date: 2014-03-23 13:26
 comments: true
-categories: Code Contracts
+categories: [Code Contracts]
 keywords: "Code Contracts"
 description: "Code Contracts - Contract Reference Assembly"
 ---
