@@ -61,7 +61,7 @@ description: "WCF - Self hosting service"
 
 <br/>
 
-使用 WCF Service 所提供的服務。 
+接著使用 WCF Service 所提供的服務。 
 
 當不再需要使用 WCF Service 服務時，叫用 ServiceHost 的 Close 方法關閉 WCF 服務。  
 
