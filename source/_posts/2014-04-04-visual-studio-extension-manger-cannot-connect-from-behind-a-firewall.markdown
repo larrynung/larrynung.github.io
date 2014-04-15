@@ -22,7 +22,7 @@ description: "Visual Studio - Extension Manger Cannot Connect From Behind a Fire
 
 <br/>
 
-檔案開啟後，在 system.net 的節點內加入 <servicePointManager expect100Continue="false">，將 100-Continue 這個 Feature 給關閉就可以了。  
+檔案開啟後，在 system.net 的節點內加入 `<servicePointManager expect100Continue="false">`，將 100-Continue 這個 Feature 給關閉就可以了。  
 
 {% img /images/posts/VSExpect100Continue/3.png %}
 
