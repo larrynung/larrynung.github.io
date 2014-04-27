@@ -29,88 +29,100 @@ description: "T4 template - Auto generate ConnectionString's wrapper class"
 然後將其程式碼替換成下面這樣。
 
 {% codeblock lang:c# %}
-<#@ template debug="false" hostspecific="True" language="C#" #>
-<#@ assembly name="EnvDTE" #>
-<#@ assembly name="System.Core.dll" #>
-<#@ assembly name="System.Configuration" #>
-<#@ assembly name="System.Xml" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Configuration" #>
-<#@ import namespace="EnvDTE" #>
-<#@ import namespace="System.Xml" #>
-<#@ output extension=".cs" #>
+<#@ template debug ="true" hostspecific="True" language= "C#" #>
+<#@ assembly name ="EnvDTE" #>
+<#@ assembly name ="System.Core.dll" #>
+<#@ assembly name ="System.Configuration" #>
+<#@ assembly name ="System.Xml" #>
+<#@ import namespace ="System.Collections.Generic" #>
+<#@ import namespace ="System.Configuration" #>
+<#@ import namespace ="EnvDTE" #>
+<#@ import namespace ="System.Xml" #>
+<#@ output extension =".cs" #>
 using System.Configuration;
 
-public class ConnectionStrings
+
+namespace <#=GetDefaultNamespace()#>
 {
+    public class ConnectionStrings
+    {
 <#
-       var configFile = new ExeConfigurationFileMap();
+        var configFile = new ExeConfigurationFileMap();
        configFile.ExeConfigFilename = GetConfigPath();
-       var config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFile, ConfigurationUserLevel.None);
-       var connectionStrings = config.ConnectionStrings.ConnectionStrings;
-       foreach (ConnectionStringSettings connectionString in connectionStrings)
+        var config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFile, ConfigurationUserLevel.None);
+        var connectionStrings = config.ConnectionStrings.ConnectionStrings;
+        foreach (ConnectionStringSettings connectionString in connectionStrings)
        {
 #>
-       public static string <#= connectionString.Name#>
-       {
+           public static string <#= connectionString.Name#>
+           {
               get
               {
-                     return ConfigurationManager.ConnectionStrings["<#= connectionString.Name#>"].ConnectionString;
+                     return ConfigurationManager.ConnectionStrings[" <#= connectionString.Name#> "].ConnectionString;
               }
-       }
+           }
 <#
   }
 #>
+    }
 }
 
+
 <#+
+private string GetDefaultNamespace()
+{
+        var project = GetCurrentProject();
+        return project.Properties.Item("DefaultNamespace").Value.ToString();
+}
 private EnvDTE.Project GetCurrentProject()
 {
-       var hostServiceProvider = (IServiceProvider)this.Host;
+        var hostServiceProvider = (IServiceProvider)this.Host;
        
-       if (hostServiceProvider == null)
+        if (hostServiceProvider == null)
            throw new Exception("Host property returned unexpected value (null)");
        
-       EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
-       if (dte == null)
+       EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof (EnvDTE.DTE));
+        if (dte == null )
            throw new Exception("Unable to retrieve EnvDTE.DTE");
        
        Array activeSolutionProjects = (Array)dte.ActiveSolutionProjects;
-       if (activeSolutionProjects == null)
+        if (activeSolutionProjects == null)
            throw new Exception("DTE.ActiveSolutionProjects returned null");
        
        EnvDTE.Project dteProject = (EnvDTE.Project)activeSolutionProjects.GetValue(0);
-       if (dteProject == null)
+        if (dteProject == null )
            throw new Exception("DTE.ActiveSolutionProjects[0] returned null");
        
-       return dteProject;
+        return dteProject;
 }
 
+
 private string GetProjectPath()
-{
+ {
        EnvDTE.Project project = GetCurrentProject();
     System.IO.FileInfo info = new System.IO.FileInfo(project.FullName);
     return info.Directory.FullName;
 }
+
 
 private string GetConfigPath()
 {
        EnvDTE.Project project = GetCurrentProject();
     foreach (EnvDTE.ProjectItem item in project.ProjectItems)
     {
-              // if it is the app.config file, then open it up
-        if (string.Compare(item.Name, "App.config", true) == 0)
+               // if it is the app.config file, then open it up
+        if (string .Compare(item.Name, "App.config", true ) == 0)
         {
             return GetProjectPath() + "\\" + item.Name;
         }
        
         // if it is the web.config file, then open it up
-        if (string.Compare(item.Name, "Web.config", true) == 0)
+        if (string .Compare(item.Name, "Web.config", true ) == 0)
         {
             return GetProjectPath() + "\\" + item.Name;
         }
     }
-    return "";
+    return "" ;
 }
 #>
 {% endcodeblock %}
