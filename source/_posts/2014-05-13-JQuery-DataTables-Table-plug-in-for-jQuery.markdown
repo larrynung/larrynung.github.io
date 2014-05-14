@@ -48,15 +48,35 @@ Table 建好後， 引用對應的 JavaScript 檔，
 <script type="text/javascript" charset="utf8" src="/DataTables-1.10.0/js/jquery.dataTables.js"></script>
 {% endcodeblock %}
 
+
 加入 JavaScript 去啟用 JQuery Table
 
-{% codeblock lang:html %} 
+{% codeblock lang:js %} 
 $(document).ready( function () {
     $('#table_id').DataTable();
 } );
 {% endcodeblock %}
 
+
 啟用的同時可視需求下去設定對應的參數
+
+{% codeblock lang:js %} 
+$(document).ready( 
+    function () 
+    {
+        $('#table_id').DataTable(
+        {
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            "bFilter": true,
+            "iDisplayLength": 1,
+            "bJQueryUI": true,
+            "sDom": '<"dt_top_toolbar"p>rt<"dt_bottom_toolbar"p><"clear-b">',
+        });
+    }
+);
+{% endcodeblock %}
+
 
 像是欄位的設定、分頁與排序的設定，或是設定是要做 Client side 的處理還是 Server side 的處理。
 
