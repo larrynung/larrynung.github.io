@@ -9,9 +9,9 @@ description: "JQuery DataTables - Table plug-in for jQuery"
 published: false
 ---
 
-jQuery 1.7 or newer 
+JQuery DataTables 是 JQuery 的 DataTable 元件，需要使用 jQuery 1.7 以後的版本。  
 
-建立 Table，設定 Header 與 Footer，如果是要用 Client side 處理的話，這邊可連帶設定欲呈現的資料。
+使用時需再 HTML 檔建立 Table，設定 Header 與 Footer，如果是要用 Client side 處理的話，這邊可連帶設定欲呈現的資料：   
 
 {% codeblock lang:html %} 
 <table id="table_id" class="display">
@@ -35,7 +35,7 @@ jQuery 1.7 or newer
 {% endcodeblock %}
 
 
-Table 建好後， 引用對應的 JavaScript 檔，
+Table 建好後，加上對應的 JavaScript 檔引用：  
 
 {% codeblock lang:html %} 
 <!-- DataTables CSS -->
@@ -49,7 +49,7 @@ Table 建好後， 引用對應的 JavaScript 檔，
 {% endcodeblock %}
 
 
-加入 JavaScript 去啟用 JQuery Table
+加入 JavaScript，用 JQuery 找到剛在 HTML 中建立的 Table，接著叫用 DataTable() 方法去啟用 JQuery Table：  
 
 {% codeblock lang:js %} 
 $(document).ready( function () {
@@ -58,7 +58,7 @@ $(document).ready( function () {
 {% endcodeblock %}
 
 
-啟用的同時可視需求下去設定對應的參數
+啟用的同時可視需求下去設定對應的參數：  
 
 {% codeblock lang:js %} 
 $(document).ready( 
@@ -78,7 +78,9 @@ $(document).ready(
 {% endcodeblock %}
 
 
-像是欄位的設定、分頁與排序的設定，或是設定是要做 Client side 的處理還是 Server side 的處理。
+像是欄位的設定、分頁與排序的設定，或是設定是要做 Client side 的處理還是 Server side 的處理。  
+
+這部分可參閱 [DataTables - Usage](http://legacy.datatables.net/usage/)。  
 
 Link
 ----
