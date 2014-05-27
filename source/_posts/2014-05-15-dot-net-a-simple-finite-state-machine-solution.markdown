@@ -1,15 +1,16 @@
 ---
 layout: post
 title: ".NET - A Simple Finite State Machine Solution"
-date: 2014-04-27 13:20
+date: 2014-05-15 13:20
 comments: true
 categories: [.NET, C#]
 keywords: "State Machine, C#, .NET"
 description: ".NET - A Simple Finite State Machine Solution"
-published: false
 ---
 
-在專案中有需要實現有限狀態機的功能，看了一下網路上的解決方案以及 State Pattern，覺得都不怎麼適用，因此簡單的實作了一個 State Machine：  
+想要用實現有限狀態機的功能，看了一下網路上的解決方案以及 State Pattern，覺得都不怎麼適用，因此利用 Tuple 與 Dictionary 去實作了一個簡易又可重複使用的 State Machine：  
+
+<!-- More -->
 
 {% codeblock lang:c# %} 
 public sealed class StateMachine<TState, TCommand>
@@ -38,7 +39,7 @@ public sealed class StateMachine<TState, TCommand>
     /// <value>
     /// The state of the current.
     /// </value>
-    public TState CurrentState { get; set; }
+    public TState CurrentState { get; private set; }
     #endregion  Properties
 
     #region  Constructors
@@ -92,7 +93,7 @@ public sealed class StateMachine<TState, TCommand>
 {% endcodeblock %}
 
 
-使用時只要宣告狀態的列舉以及用來觸發狀態轉換的命令列舉，然後帶入初始狀態去建立狀態機的物件實體。接著設定狀態機的狀態轉換，設定時需指定觸發時的狀態、用來觸發的命令、以及轉換後的狀態。最後在程式中適當的時機點插入觸發適當的命令即可，程式寫起來會像下面這樣：
+使用時只要宣告狀態的列舉以及用來觸發狀態轉換的命令列舉，然後帶入初始狀態去建立狀態機的物件實體。接著設定狀態機內所內含的狀態轉換，設定時需指定觸發時的狀態、用來觸發的命令、以及轉換後的狀態。最後在程式中適當的時機點插入觸發適當的命令即可，程式寫起來會像下面這樣：
 
 {% codeblock lang:c# %} 
 public enum Command
