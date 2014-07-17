@@ -28,7 +28,7 @@ description: "T4MVC - A T4 template for ASP.NET MVC"
 return RedirectToAction("About");
 {% endcodeblock %}
 
-可以看到這些叫用帶入的都是字串，而類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥在程式中。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 
+可以看到這些叫用帶入的都是字串，而且類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥在程式中。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 
 
 <br/>
 
