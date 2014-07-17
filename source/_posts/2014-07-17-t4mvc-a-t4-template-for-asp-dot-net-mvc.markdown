@@ -12,21 +12,19 @@ description: "T4MVC - A T4 template for ASP.NET MVC"
 
 <!-- More -->
 
-{% codeblock lang:xml %}
-@Url.Action("Home", "Index")
-{% endcodeblock %}
+    @Url.Action("Home", "Index")
+
 
 在設定連結時，會需要帶入連結名稱、 Controller Name 以及 Action Name。
 
-{% codeblock lang:xml %}
-@Html.ActionLink("Home", "Index", "Home")
-{% endcodeblock %}
+    @Html.ActionLink("Home", "Index", "Home")
+
+
 
 導到另外一個 Action 去處理時，又需要 Action Name。  
 
-{% codeblock lang:c# %}
-return RedirectToAction("About");
-{% endcodeblock %}
+    return RedirectToAction("About");
+
 
 可以看到這些叫用帶入的都是字串，而且類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥在程式中。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 
 
@@ -56,58 +54,42 @@ return RedirectToAction("About");
 
 接著我們將程式中的 Magic Sting 做些處理。像是本來在寫連結的部份，可以這樣修改：  
 
-{% codeblock lang:xml %}
-@Html.ActionLink("Home", MVC.Home.Index())
-{% endcodeblock %}
+    @Html.ActionLink("Home", MVC.Home.Index())
 
 
 在 View 中取用 Action 網址的部分...  
 
-{% codeblock lang:xml %}
-@Url.Action(MVC.Home.Index())
-{% endcodeblock %}
+    @Url.Action(MVC.Home.Index())
 
 
 在 Controller 要將 Action 導向...    
 
-{% codeblock lang:c# %}
-return RedirectToAction(MVC.Home.About());
-{% endcodeblock %}
+    return RedirectToAction(MVC.Home.About());
 
 
 在 View 中使用 Form Action...     
 
-{% codeblock lang:xml %}
-@Html.BeginForm(MVC.Home.Index(Model.Id), FormMethod.Post)
-{% endcodeblock %}
+    @Html.BeginForm(MVC.Home.Index(Model.Id), FormMethod.Post)
 
 
 在 Action 回傳指定的 View...   
 
-{% codeblock lang:c# %}
-return View(Views.About);
-{% endcodeblock %}
+    return View(Views.About);
 
 
 在 View 中顯示 Partial View...    
 
-{% codeblock lang:xml %}
-<% Html.RenderPartial(MVC.Dinners.Views.DinnerForm); %>
-{% endcodeblock %}
+    @{Html.RenderPartial(MVC.Dinners.Views.DinnerForm);}
 
 
 在 View 中引用 JavaScript...   
 
-{% codeblock lang:xml %}
-<script src = " @Links.Scripts.jquery_validate_js " type = "text/javascript" ></script>
-{% endcodeblock %}
+    <script src = " @Links.Scripts.jquery_validate_js " type = "text/javascript" ></script>
 
 
 在 View 中載入圖片...     
 
-{% codeblock lang:xml %}
-<img src = "@Links.Content.install.images.bg_gif " >
-{% endcodeblock %}
+    <img src = "@Links.Content.install.images.bg_gif " >
 
 
 更為詳細的使用介紹請參閱 [T4MVC - Home](http://t4mvc.codeplex.com/)。
