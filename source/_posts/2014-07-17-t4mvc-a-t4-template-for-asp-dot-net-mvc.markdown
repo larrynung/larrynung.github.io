@@ -38,7 +38,9 @@ return RedirectToAction("About");
 
 <br/>
 
-這篇要介紹的 T4MVC 就是一能解決這樣問題的 T4 範本套件。 T4MVC 透過 T4 去遍巡專案內的檔案，產生一些輔助的類別與方法的多載，巧妙的避開 Magic String 的問題。 
+這篇要介紹的 T4MVC 就是一能解決這樣問題的 T4 範本套件。 T4MVC 透過 T4 去遍巡專案內的檔案，產生一些輔助的類別與方法的多載，巧妙的避開 Magic String 的問題。這邊可先快速的瀏覽一下 Channel 9 的相關影片，體驗一下 T4MVC 的魅力。  
+
+<iframe src="http://channel9.msdn.com/Blogs/jongalloway/Jon-Takes-Five-with-David-Ebbo-on-T4MVC/player?h=540&w=960" style="height:540px;width:960px;" allowFullScreen frameBorder="0" scrolling="no"></iframe>  
 
 <br/>
 
