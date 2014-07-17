@@ -16,15 +16,11 @@ description: "T4MVC - A T4 template for ASP.NET MVC"
 @Url.Action("Home", "Index")
 {% endcodeblock %}
 
-<br/>
-
-在設定連結時，會需要帶入連結名稱、 Controller Name 以及 Action Name。  
+在設定連結時，會需要帶入連結名稱、 Controller Name 以及 Action Name。
 
 {% codeblock lang:xml %}
 @Html.ActionLink("Home", "Index", "Home")
 {% endcodeblock %}
-
-<br/>
 
 導到另外一個 Action 去處理時，又需要 Action Name。  
 
@@ -32,9 +28,7 @@ description: "T4MVC - A T4 template for ASP.NET MVC"
 return RedirectToAction("About");
 {% endcodeblock %}
 
-<br/>
-
-類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥的問題很嚴重。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 
+可以看到這些叫用帶入的都是字串，而類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥在程式中。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 
 
 <br/>
 
@@ -66,7 +60,6 @@ return RedirectToAction("About");
 @Html.ActionLink("Home", MVC.Home.Index())
 {% endcodeblock %}
 
-<br/>
 
 取 Action 網址的部分：  
 
@@ -74,7 +67,6 @@ return RedirectToAction("About");
 @Url.Action(MVC.Home.Index())
 {% endcodeblock %}
 
-<br/>
 
 導向到其它 Action：   
 
@@ -82,7 +74,6 @@ return RedirectToAction("About");
 return RedirectToAction(MVC.Home.About());
 {% endcodeblock %}
 
-<br/>
 
 設定 Form Action：  
 
@@ -90,7 +81,6 @@ return RedirectToAction(MVC.Home.About());
 @Html.BeginForm(MVC.Home.Index(Model.Id), FormMethod.Post)
 {% endcodeblock %}
 
-<br/>
 
 回傳顯示指定的 View：  
 
@@ -98,7 +88,6 @@ return RedirectToAction(MVC.Home.About());
 return View(Views.About);
 {% endcodeblock %}
 
-<br/>
 
 顯示 Partial View：  
 
@@ -106,7 +95,6 @@ return View(Views.About);
 <% Html.RenderPartial(MVC.Dinners.Views.DinnerForm); %>
 {% endcodeblock %}
 
-<br/>
 
 引用 JavaScript：  
 
@@ -114,7 +102,6 @@ return View(Views.About);
 <script src = " @Links.Scripts.jquery_validate_js " type = "text/javascript" ></script>
 {% endcodeblock %}
 
-<br/>
 
 載入圖片：  
 
@@ -122,7 +109,6 @@ return View(Views.About);
 <img src = "@Links.Content.install.images.bg_gif " >
 {% endcodeblock %}
 
-<br/>
 
 更為詳細的使用介紹請參閱 [T4MVC - Home](http://t4mvc.codeplex.com/)。
 
