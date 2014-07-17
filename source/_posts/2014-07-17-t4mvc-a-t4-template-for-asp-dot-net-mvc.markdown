@@ -3,7 +3,7 @@ layout: post
 title: "T4MVC - A T4 template for ASP.NET MVC"
 date: 2014-07-17 13:04
 comments: true
-categories: [T4MVC]
+categories: [T4MVC, T4]
 keywords: "T4MVC, ASP.NET, MVC"
 description: "T4MVC - A T4 template for ASP.NET MVC"
 ---
@@ -61,49 +61,49 @@ return RedirectToAction("About");
 {% endcodeblock %}
 
 
-取 Action 網址的部分：  
+在 View 中取用 Action 網址的部分...  
 
 {% codeblock lang:xml %}
 @Url.Action(MVC.Home.Index())
 {% endcodeblock %}
 
 
-導向到其它 Action：   
+在 Controller 要將 Action 導向...    
 
 {% codeblock lang:c# %}
 return RedirectToAction(MVC.Home.About());
 {% endcodeblock %}
 
 
-設定 Form Action：  
+在 View 中使用 Form Action...     
 
 {% codeblock lang:xml %}
 @Html.BeginForm(MVC.Home.Index(Model.Id), FormMethod.Post)
 {% endcodeblock %}
 
 
-回傳顯示指定的 View：  
+在 Action 回傳指定的 View...   
 
 {% codeblock lang:c# %}
 return View(Views.About);
 {% endcodeblock %}
 
 
-顯示 Partial View：  
+在 View 中顯示 Partial View...    
 
 {% codeblock lang:xml %}
 <% Html.RenderPartial(MVC.Dinners.Views.DinnerForm); %>
 {% endcodeblock %}
 
 
-引用 JavaScript：  
+在 View 中引用 JavaScript...   
 
 {% codeblock lang:xml %}
 <script src = " @Links.Scripts.jquery_validate_js " type = "text/javascript" ></script>
 {% endcodeblock %}
 
 
-載入圖片：  
+在 View 中載入圖片...     
 
 {% codeblock lang:xml %}
 <img src = "@Links.Content.install.images.bg_gif " >
