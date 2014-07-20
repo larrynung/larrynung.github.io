@@ -42,7 +42,7 @@ Auto-property initializers 能讓開發人員在宣告 Auto-property 的同時�
 
 <br/>
 
-反組譯看一下，可以看到編譯器編譯後是在變數初始器那邊幫我們做賦值的動作。
+反組譯看一下，可以看到編譯器編譯後是在變數初始器那邊幫我們做賦值的動作，而非在建構子中去賦值。
 
 {% img /images/posts/AutoPropertyInitializers/1.png %}
 
