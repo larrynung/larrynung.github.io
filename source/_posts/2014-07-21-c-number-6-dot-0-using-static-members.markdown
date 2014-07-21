@@ -23,7 +23,7 @@ Using static members 能讓開發人員更方便的對指定類別的靜態成�
 
 <br/>
 
-使用上與 Namespace 的 Using 類似，只是後面帶的不是到 Namespace 而已，而是進一步再向下帶到 Class。接著在程式中就可以直接存取該類別的靜態成員。  
+使用上與 Namespace 的 Using 類似，只是後面帶的不是到 Namespace 而已，而是進一步再向下帶到 Class。用 Using 指定要存取的類別後，在程式中就可以直接存取該類別的靜態成員，就如同自身的成員一般。  
 
 <br/>
 
