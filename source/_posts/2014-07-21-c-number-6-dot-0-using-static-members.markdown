@@ -29,8 +29,14 @@ Using static members 能讓開發人員更方便的對指定類別的靜態成�
 
 以一個較完整的例子來看，程式寫起來會像下面這樣：  
 
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/huF772" frameborder="0"></iframe>  
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/5BMb2R" frameborder="0"></iframe>  
 
 <br/>
 
 可以看到這邊程式的一開始就先使用 Using 引用 Console 類別，後續我們就可以在程式中直接存取 Console 類別的靜態成員，像是取用 Title 、或是呼叫 WriteLine 方法。  
+
+<br/>
+
+反組譯看一下，可以發現其實該語法也只是編譯器幫我們在編譯時做了些處理。  
+
+{% img /images/posts/UsingStaticMembers/1.png %}
