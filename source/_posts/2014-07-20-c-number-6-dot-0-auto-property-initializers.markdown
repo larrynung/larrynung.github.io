@@ -34,7 +34,7 @@ Auto-property initializers 能讓開發人員在宣告 Auto-property 的同時�
 
 以一個較完整的例子來看，程式寫起來會像下面這樣：
 
-<iframe width="100%" height="400" src="https://dotnetfiddle.net/Widget?Languages=CSharp&CSharp_FiddleId=dss1Zr" frameborder="0"></iframe>  
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/jg1JXQ" frameborder="0"></iframe>  
 
 <br/>
 
@@ -42,7 +42,7 @@ Auto-property initializers 能讓開發人員在宣告 Auto-property 的同時�
 
 <br/>
 
-反組譯看一下，可以看到編譯器編譯後是在變數初始器那邊幫我們做賦值的動作，而非在建構子中去賦值。
+反組譯看一下，可以看到比較接近透過變數初始器去做賦值的動作，會在基底類別初始前宣告，也會標注 beforefieldinit。
 
 {% img /images/posts/AutoPropertyInitializers/1.png %}
 
