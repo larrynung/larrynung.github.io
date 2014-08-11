@@ -12,6 +12,8 @@ Heap Allocation Viewer 是 Reshaper 的擴充套件，能將 Heap 相關的操�
 
 <!-- More -->
 
+<br/>
+
 使用前需先開啟 ReSharper 的 Extension Manager。  
 
 {% img /images/posts/HeapAllocationViewer/1.png %}
@@ -45,6 +47,8 @@ Heap Allocation Viewer 是 Reshaper 的擴充套件，能將 Heap 相關的操�
 <br/>
 
 以筆者來說，加裝該套件的主要原因是它可以幫我們 Highlight 程式中 Boxing 問題，而且在開發時當 Boxing 問題發生可以很容易的意識到。  
+
+<br/>
 
 該套件也支援掃整個專案或是方案，用 Reshaper 的 Find Code Issues 功能就能找出所有 Boxing 問題的發生點。 
 
