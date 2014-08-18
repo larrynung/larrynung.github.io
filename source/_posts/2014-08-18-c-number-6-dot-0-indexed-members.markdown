@@ -28,12 +28,12 @@ Indexed Members 是預計要在 C# 6.0 釋出的新功能，目前已可在 Visu
 
 <br/>
 
-而在 C# 6.0 後， Indexed Members 提供開發人員另一種存取 Dictionary Member 方式。只要像 `$.Key` 這樣撰寫就可直接對 Dictionary Member 進行存取。  
+在 C# 6.0 後， Indexed Members 提供開發人員另一種存取 Dictionary Member 方式。只要像 `$.Key` 這樣撰寫，就可直接對 Dictionary Member 進行存取。  
 
 <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/EUlTKH" frameborder="0"></iframe>  
 
 <br/>
 
-若有需要這邊也可以進一步結合 C# 6.0 的 Element Initializers 進行 Dictionary 的初始化。  
+這邊也可以進一步結合 C# 6.0 的 Element Initializers 進行 Dictionary 的初始化。  
 
 <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/YbqJ1t" frameborder="0"></iframe>  
