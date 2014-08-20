@@ -22,9 +22,9 @@ Null propagation 能讓開發人員快速的在程式中做 Null 值的處理。
 
 {% codeblock lang:c# %}
 ...
-var hashCode = str?.GetHashCode();
-var firstChar = str?[0];
-var length = str?.Length ?? 0 ;
+var firstChar = str?[0];          //get 1st char if str not null            
+var length = str?.Length ?? 0;    //get str's length if str not null, and if null length will be zero
+var hashCode = str?.GetHashCode(); //get hashcode if str not null
 ...
 {% endcodeblock %}
 
@@ -45,7 +45,6 @@ namespace ConsoleApplication2
             string str = null;
             PrintData(str);
 
-
             str = "Level Up, http://larrynung.github.io/index.html" ;
             PrintData(str);
         }
@@ -53,9 +52,9 @@ namespace ConsoleApplication2
 
         private static void PrintData( string str)
         {
-            var firstChar = str?[ 0];
-            var length = str?.Length ?? 0 ;
-            var hashCode = str?.GetHashCode();
+            var firstChar = str?[0];          //get 1st char if str not null
+            var length = str?.Length ?? 0;    //get str's length if str not null, and if null length will be zero
+            var hashCode = str?.GetHashCode(); //get hashcode if str not null
             Console.WriteLine( string.Format( "Str: {0}, FirstChar: {1}, Length: {2}, HashCode: {3}", str, firstChar, length, hashCode));
         }
     }
