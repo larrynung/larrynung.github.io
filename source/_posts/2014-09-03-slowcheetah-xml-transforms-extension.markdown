@@ -14,7 +14,7 @@ Web.Config Transformation 功能在我們有多個環境需要部署時很方便
 
 <br/>
 
-要對 Web.config 以外的設定檔案做轉換，或是要在建置時做轉換，可以參考 [Web.Config Transformation - Transform on build](http://larrynung.github.io/2014/07/07/web-dot-config-transformation-transform-on-build/) 這篇。開啟專案檔做些修改，使用 Microsoft.WebApplication.targets 去幫我們做設定檔的轉換，但這樣的處理方式是有點費工，轉換檔需要自行手動加上去。  
+要對 Web.config 以外的設定檔案做轉換，或是要在建置時做轉換，可以參考 [Web.Config Transformation - Transform on build](http://larrynung.github.io/2014/07/07/web-dot-config-transformation-transform-on-build/) 這篇，修改專案檔讓 Microsoft.WebApplication.targets 幫我們做設定檔的轉換。但這樣的處理方式轉換檔需要自行手動加上去，設定起來是有點費工。  
 
 </br>
 
