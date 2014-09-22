@@ -32,7 +32,7 @@ Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能
 
 <br/>
 
-不過基本上我們多半只會需要做些圖檔壓縮的動作，因此我們通常只需要熟悉 cjpeg 的使用。  
+不過基本上我們多半只會需要做些圖檔壓縮或無失真的減肥處理動作，因此我們通常只需要熟悉 cjpeg 以及 jpegtran 的使用。  
 
 <br/>
 
@@ -63,6 +63,12 @@ Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能
 -baseline 參數是用來指定產生 Baseline 的圖檔，預設產生的是 Progressive 的圖檔，若有需要變更就要特別指定。  
 
     cjpeg -baseline -quality 80 Desert.jpg -outfile Desert_Compressed.jpg
+
+
+cjpegtran 的使用上，我們主要是拿來做無失真的減肥處理，只要像下面這樣帶入 -copy none 參數即可。  
+
+    jpegtran -copy none -outfile Desert_Compressed.jpg Desert.jpg
+
 
 Link
 ----
