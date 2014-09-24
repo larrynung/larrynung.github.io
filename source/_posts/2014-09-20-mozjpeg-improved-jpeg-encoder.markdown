@@ -57,12 +57,12 @@ Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能
 
 -quality 參數是用來指定壓縮圖檔的品質的，一般是建議將其值設在 60 - 90 之間，若不設定預設是用 75。
 
-    cjpeg -quality 80 Desert.jpg -outfile Desert_Compressed.jpg
+    cjpeg -quality 80 -outfile Desert_Compressed.jpg Desert.jpg
 
 
 -baseline 參數是用來指定產生 Baseline 的圖檔，預設產生的是 Progressive 的圖檔，若有需要變更就要特別指定。  
 
-    cjpeg -baseline -quality 80 Desert.jpg -outfile Desert_Compressed.jpg
+    cjpeg -baseline -quality 80 -outfile Desert_Compressed.jpg Desert.jpg
 
 
 cjpegtran 的使用上，我們主要是拿來做無失真的減肥處理，只要像下面這樣帶入 -copy none 參數即可。  
