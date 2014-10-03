@@ -25,7 +25,7 @@ description: "Vagrant - SSH in windows"
 <br/>
 
 
-連進去後輸入 Vagrant Box 的障密即可，通常這邊的障密會是 `vagrant`。  
+連進去後輸入 Vagrant Box 的帳密即可，如果不知道帳密的話，通常這邊的帳密會是 `vagrant`，可以試試看。  
 
 {% img /images/posts/VagrantSSHInWindow/2.png %}
 
@@ -39,6 +39,6 @@ description: "Vagrant - SSH in windows"
 <br/>
 
 
-路徑的設定可以直接在系統的環境變數中設定，也可以直接在命令提示字元中加入。  
+路徑的設定可以直接在系統的環境變數中設定，叫用上會比較方便。但若有需要也可以直接在命令提示字元中加入。  
 
     set PATH=%PATH%;C:\Program Files (x86)\Git\bin
