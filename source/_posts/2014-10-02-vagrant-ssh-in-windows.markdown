@@ -42,3 +42,8 @@ description: "Vagrant - SSH in windows"
 路徑的設定可以直接在系統的環境變數中設定，叫用上會比較方便。但若有需要也可以直接在命令提示字元中加入。  
 
     set PATH=%PATH%;C:\Program Files (x86)\Git\bin
+
+
+此外也可以直接叫用 SSH 連進去，比較麻煩一點就是了。  
+
+{% img /images/posts/VagrantSSHInWindow/4.png %}
