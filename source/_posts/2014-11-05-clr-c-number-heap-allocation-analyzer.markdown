@@ -13,6 +13,13 @@ Clr C# Heap Allocation Analyzer 是 Diagnostic Analyzers 的套件，功能上�
 <br/>
 
 
+可參閱影片的介紹：  
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/Tw-wgT-cXYU" frameborder="0" allowfullscreen></iframe>
+
+<br/>
+
+
 該套件提供兩種安裝方式，一種是選擇安裝 VSIX，用 Extension Manager 搜尋安裝或是自 [NuGet Gallery | Clr C# Heap Allocation Analyzer 1.0.0.5](https://www.nuget.org/packages/ClrHeapAllocationAnalyzer/) 下載安裝，好處是可以將效果套用至所有專案。  
 {% img /images/posts/HeapAllocationAnalyzer/1.png %}
 
