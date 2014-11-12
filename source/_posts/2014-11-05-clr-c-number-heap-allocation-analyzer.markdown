@@ -8,14 +8,7 @@ keywords: "C#, Roslyn, Visual Studio, Analyzer, Heap, Boxing"
 description: "Clr C# Heap Allocation Analyzer"
 ---
 
-有用過 Visual Studio 14 的應該會注意到方案總管內多了一個 Analyzers 的節點，該節點是用來加入指定的 Analyzer 用的，有了這個功能我們可以依需求為專案加入指定的程式碼分析。  
-
-<!-- More -->
-
-<br/>
-
-
-這邊介紹的 Clr C# Heap Allocation Analyzer 就是一個 Analyzers 的套件，功能上有點類似 [ReSharper - Heap Allocation Viewer Extension](http://larrynung.github.io/2014/08/12/resharper-heap-allocation-viewer-extension/)，能對 Heap 的操作部分做些 Highlight。  
+Clr C# Heap Allocation Analyzer 是 Diagnostic Analyzers 的套件，功能上有點類似 [ReSharper - Heap Allocation Viewer Extension](http://larrynung.github.io/2014/08/12/resharper-heap-allocation-viewer-extension/)，能對 Heap 的操作部分做些 Highlight。  
 
 <br/>
 
