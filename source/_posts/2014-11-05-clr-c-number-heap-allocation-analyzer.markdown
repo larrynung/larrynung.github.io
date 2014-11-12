@@ -13,7 +13,7 @@ Clr C# Heap Allocation Analyzer 是 Diagnostic Analyzers 的套件，功能上�
 <br/>
 
 
-可參閱影片的介紹：  
+這邊可先參閱一下影片的介紹：  
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/Tw-wgT-cXYU" frameborder="0" allowfullscreen></iframe>
 
