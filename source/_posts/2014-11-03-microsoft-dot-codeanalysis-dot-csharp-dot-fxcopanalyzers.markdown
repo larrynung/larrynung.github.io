@@ -8,14 +8,7 @@ keywords: "Roslyn, Visual Studio, FxCop, Analyzer"
 description: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
 ---
 
-有用過 Visual Studio 14 的應該會注意到方案總管內多了一個 Analyzers 的節點，該節點是用來加入指定的 Analyzer 用的，有了這個功能我們可以依需求為專案加入指定的程式碼分析。   
-
-<!-- More -->
-
-<br/>
-
-
-這邊介紹的 Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers 就是一個 Analyzers 的套件，是 FxCop 部分檢查規則的 Analyzer 實作。  
+Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers 是一個 Diagnostic Analyzer 套件，是 FxCop 部分檢查規則的 Analyzer 實作。  
 
 {% img /images/posts/FxCopAnalyzers/1.png %}
 
