@@ -10,6 +10,8 @@ description: "Clr C# Heap Allocation Analyzer"
 
 Clr C# Heap Allocation Analyzer 是 Diagnostic Analyzers 的套件，功能上有點類似 [ReSharper - Heap Allocation Viewer Extension](http://larrynung.github.io/2014/08/12/resharper-heap-allocation-viewer-extension/)，能對 Heap 的操作部分做些 Highlight。  
 
+<!-- More -->
+
 <br/>
 
 
