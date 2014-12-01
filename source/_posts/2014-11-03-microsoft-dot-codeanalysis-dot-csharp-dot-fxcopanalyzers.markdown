@@ -10,6 +10,8 @@ description: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
 
 Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers 是一個 Diagnostic Analyzer 套件，是 FxCop 部分檢查規則的 Analyzer 實作。  
 
+<!-- More -->
+
 {% img /images/posts/FxCopAnalyzers/1.png %}
 
 <br/>
