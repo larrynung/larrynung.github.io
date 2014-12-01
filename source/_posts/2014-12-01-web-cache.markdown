@@ -25,7 +25,7 @@ var cache = httpContext.Cache ;
 <br/>
 
 
-Cache 物件取得後，我們可以透過 Add 或 Insert 將要快取的資料存入。  
+Cache 物件取得後，我們可以透過 Add 或 Insert 將要快取的資料存入。這邊在帶入資料的同時，我們可以透過參數決定資料的存活週期，以及快取被清除時所要運行的 Callback。  
 
 {% codeblock lang:c# %}
 cache.Add (key, value, null , DateTime.Now.AddMilliseconds(cacheInterval), TimeSpan.Zero, CacheItemPriority.Normal, null);
