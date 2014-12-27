@@ -10,7 +10,7 @@ description: "Check app pool recycle with event log"
 
 IIS Website 預設 29 小時回進行一次回收，所有 Session 連帶會被斷線。  
 
-<!-- More -->>
+<!-- More -->
 
 <br/>
 
