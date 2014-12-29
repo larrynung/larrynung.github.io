@@ -31,14 +31,21 @@ PerfTips 使用上很簡單，只要設定斷點進行除錯，看你是要 Step
 <br/>
 
 
-或者也可以點擊 PerfTips 叫出對應的選項設定，將 CPU 耗費的顯示給開啟。  
+或者也可以點擊 PerfTips 叫出對應的選項設定。  
 
 {% img /images/posts/PerfTips/3.png %}
 
 <br/>
 
 
+將 CPU 耗費的顯示給開啟，或是設定 PerfTips 要大於等於多少才顯示。  
+
 {% img /images/posts/PerfTips/4.png %}
+
+<br/>
+
+
+{% img /images/posts/PerfTips/5.png %}
 
 <br/>
 
