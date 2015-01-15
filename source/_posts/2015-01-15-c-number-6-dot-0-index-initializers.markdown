@@ -8,7 +8,7 @@ keywords: "C#, Index initializers"
 description: "C# 6.0 - Index initializers"
 ---
 
-以往在初始 Dictionary，我們可能是宣告出 Dictionary 實體後，再將其內容加入 Dictionary 內，或是像下面這樣透過 Collection Initializer 初始的同時就將內容一併放入：  
+以往在初始 Dictionary，我們可能是宣告出 Dictionary 實體後，再將其內容加入 Dictionary 內，或是像下面這樣透過 Collection Initializer 在初始的同時就將內容一併放入：  
 <!-- More -->
 >
 {% codeblock lang:c# %}
