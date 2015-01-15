@@ -13,7 +13,7 @@ description: "C# 6.0 - String interpolation"
 <!-- More -->
 {% codeblock lang:c# %}
 ...
-onsole.WriteLine((++idx).ToString("D2") + ". " + blog.Name + " (" + blog.Url + ")");
+Console.WriteLine((++idx).ToString("D2") + ". " + blog.Name + " (" + blog.Url + ")");
 
 Console.WriteLine( String.Format( "{0:D2}. {1} ({2})", ++idx, blog.Name, blog.Url));
 ...
