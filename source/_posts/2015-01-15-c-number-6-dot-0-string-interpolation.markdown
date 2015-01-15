@@ -33,50 +33,55 @@ Console.WriteLine( "\{++idx, 5 :D2 }. \{blog.Name } (\{blog.Url ?? String.Empty}
 <br/>
 
 
-有點像是本來 String.Format 的 Pattern 內直接用大括號包住帶入運算式，且支援 optional alignment 與 format specifiers 的設定。  
+有點像是本來 String.Format 的 Pattern 內直接用斜線與大括號包住帶入運算式，且支援 optional alignment 與 format specifiers 的設定。  
 
 <br/>
 
 
-最後看個完整的使用範例：  
+這邊來看個完整的使用範例：  
 
 {% codeblock lang:c# %}
 using System;
+using System.Collections.Generic;
 
 
-namespace ConsoleApplication16
+public class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main( string[] args)
+        var blog = new Blog
         {
-            var blog = new Blog
-            {
-                Name = "Level Up",
-                Url = "http://larrynung.github.io/"
-            };
+            Name = "Level Up",
+            Url = "http://larrynung.github.io/"
+        };
 
-
-            var idx = 0;
-            Console.WriteLine( String.Format( "{0:D2}. {1} ({2})", ++idx, blog.Name, blog.Url));
-            Console.WriteLine( "\{++idx, 5 :D2 }. \{blog.Name } (\{blog.Url ?? String.Empty})" );
-        }
+        var idx = 0;
+        Console.WriteLine((++idx).ToString( "D2") + ". " + blog.Name + " (" + blog.Url + ")");
+        Console.WriteLine( String.Format( "{0:D2}. {1} ({2})", ++idx, blog.Name, blog.Url));
+        Console.WriteLine( "\{++idx : D2 }. \{blog.Name } (\{blog.Url })");
     }
+}
 
-
-    class Blog
-    {
-        public string Name { get; set; }
-        public string Url { get; set; }
-    }
+class Blog
+{
+    public string Name { get; set; }
+    public string Url { get; set; }
 }
 {% endcodeblock %}
 
 <br/>
 
+
 運行結果如下：  
 
 {% img /images/posts/StringInterpolation/1.png %}
+
+<br/>
+
+
+反組譯看一下，其實背後也是將其編譯成 String.Format。  
+
+{% img /images/posts/StringInterpolation/2.png %}
 
 <br/>
 
