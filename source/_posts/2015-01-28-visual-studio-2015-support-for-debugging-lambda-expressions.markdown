@@ -21,7 +21,7 @@ Visual Studio 2015 以前，無論是透過監看視窗還是快速監看視窗�
 
 <br/>
 
-在 Visual Studio 2015 以後，這問題獲得了改善，針對 Lambda 語法的除錯進行了支援，要在除錯時拉些資料來看更為方便了。  
+在 Visual Studio 2015 以後，這問題獲得了改善，針對 Lambda 語法的除錯進行了支援。不僅解決了除錯上的困擾，要在除錯時用 Linq 拉些額外的資料來看也更為方便了。  
 {% img /images/posts/VS2015DebugLambda/3.png %}
 
 <Br/>
