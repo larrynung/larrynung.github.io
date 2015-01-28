@@ -18,5 +18,8 @@ description: "Visual Studio - Use 64 Bit IISExpress"
 
     reg add HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0\WebProjects /v Use64BitIISExpress /t REG_DWORD /d 1
 
-注意到這邊，登錄檔位置依 Visual Studio 版本不同會有所差異，請自行視個人需求下去調整。
+注意到這邊，登錄檔位置依 Visual Studio 版本不同會有所差異，可參閱 [Microsoft Visual Studio - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Microsoft_Visual_Studio) 內的 Internal version 部分下去調整。  
+
+{% img /images/posts/x64IISExpress/1.png %}
+
 
