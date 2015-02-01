@@ -17,14 +17,14 @@ description: "PostSharp - Automatically Implementing INotifyPropertyChanged"
 <br/>
 
 
-接著 PostSharp 擴充套件會帶出精靈視窗，這邊直接 Next。  
+接著 PostSharp 擴充套件會帶出精靈視窗，第一頁是 Summary 頁面，這邊只是告訴我們繼續下去會做什麼事，不外乎就是加入套件引用與加上對應的 Attribute，這邊直接 Next。  
 
 {% img /images/posts/PostSharpINotifyPropertyChangedImplement/2.png %}
 
 <br/>
 
 
-這邊進度會跑一陣子，因為 PostSharp 會將缺少的參考幫我們加入專案，並將修改套到我們的程式碼。  
+如 Summary 頁面所提，要處理的東西有點多，進度要稍微跑一下。 
 
 {% img /images/posts/PostSharpINotifyPropertyChangedImplement/3.png %}
 
@@ -91,6 +91,8 @@ namespace ConsoleApplication32
 }
 {% endcodeblock%}
 
+<br/>
+
 
 可看到該介面確實已經實作。  
 
@@ -98,7 +100,7 @@ namespace ConsoleApplication32
 
 <br/>
 
-最後一提，上述介紹的是用精靈介面下去操作，若不想使用精靈介面亦可，只要留意透過精靈介面對專案造成了什麼影響就會知道了。簡單的說只要引用 PostSharp.Patterns.Model 套件，並將類別加上 NotifyPropertyChangedAttribute 即可。  
+最後一提，上述介紹的是用精靈介面下去操作，若不想使用精靈介面亦可，只要留意透過精靈介面對專案造成了什麼影響就應該知道怎麼處理了。簡單的說只要引用 PostSharp.Patterns.Model 套件，並將類別加上 NotifyPropertyChangedAttribute 即可。  
 
 <br/>
 
