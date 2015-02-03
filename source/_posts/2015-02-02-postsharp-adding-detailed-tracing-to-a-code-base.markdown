@@ -17,7 +17,7 @@ description: "PostSharp - Adding Detailed Tracing to a Code Base"
 <br/>
 
 
-接著 PostSharp 擴充套件會帶出精靈視窗，這邊要我們選取 Log 的設定，預設只有 Default 與 Exceptions 兩種設定，依需求選取後按下 Next 按鈕即可。  
+接著 PostSharp 擴充套件會帶出精靈視窗，這邊要我們選取 Log 的 Profile，這邊選取 Default Profile 後按下 Next 按鈕即可。  
 
 {% img /images/posts/PostSharpDetailedTraching/2.png %}
 
