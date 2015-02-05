@@ -73,16 +73,16 @@ description: "PostSharp - Contracts"
 <br/>
 
 
-從這邊的精靈介面我們可以看到許多內建的 Contract 可供選取，像是檢查 URL、檢查 Email Address、檢查 Phone Number ...等。這邊筆者要檢查的是 Email Address，所以選取 `Require a valid email address`，按下 Next 按鈕繼續。    
+從這邊的精靈介面我們可以看到許多內建的 Contract 可供選取，像是檢查 URL、檢查 Email Address、檢查 Phone Number ...等。依需求選取後將精靈跑完運行即可。    
 
 {% img /images/posts/PostSharpContracts/9.png %}
 
 <br/>
 
-一樣將精靈跑完運行即可。  
+
+最後一提，除了方法的參數外，PostSharp 的 Contract 也可以套用在 Field 與 Property 上，使用方式是一樣的。  
 
 <br/>
-
 
 Link
 ----
