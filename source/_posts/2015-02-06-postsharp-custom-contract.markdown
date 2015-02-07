@@ -29,12 +29,12 @@ PostSharp 內建的 Contracts 能支援我們做些常見的檢查，若是內�
 <br/>
 
 
-並實作 ILocationValidationAspect<T> ，在 ValudateValue 方法中撰寫自己的判斷邏輯，當不符合規範時叫用繼承自 LocationContractAttribute 的方法拋出例外即可。  
+並實作 ILocationValidationAspect\<T\> ，在 ValudateValue 方法中撰寫自己的判斷邏輯，當不符合規範時叫用繼承自 LocationContractAttribute 的方法拋出例外即可。  
 
 <br/>
 
 
-筆者這邊以建立個 RegexMatch 的 Contract 為例，讓使用上可以帶上不同的正規表示式進行驗證。將類別繼承自 LocationContractAttribute ，因為這邊要檢查的參數型態為字串，故將之實作 ILocationValidationAspect<string> 介面，在 ValudateValue 方法中會去判斷值是否符合我們設定的 Pattern，若否則叫用 CreateArgumentException 丟出例外。  
+筆者這邊以建立個 RegexMatch 的 Contract 為例，讓使用上可以帶上不同的正規表示式進行驗證。建立個繼承自 LocationContractAttribute 的類別 ，因為這邊要檢查的參數型態為字串，故還要實作 ILocationValidationAspect\<string\> 介面，在 ValudateValue 方法中會去判斷值是否符合我們設定的 Pattern，若否則叫用 CreateArgumentException 丟出例外。  
 
 {% codeblock lang:c# %}
     public class RegexMatchAttribute : LocationContractAttribute , ILocationValidationAspect <string>
@@ -60,7 +60,7 @@ PostSharp 內建的 Contracts 能支援我們做些常見的檢查，若是內�
 <br/>
 
 
-實際套用到程式中去做驗證。  
+寫完後就可以實際套用到程式中去做參數的驗證。  
 
 {% codeblock lang:c# %}
 namespace ConsoleApplication32
@@ -91,7 +91,7 @@ namespace ConsoleApplication32
 <br/>
 
 
-運行結果如下：  
+運行結果如下，當代入不符合 Pattern 的參數時就會丟出例外。    
 
 {% img /images/posts/CustomPostSharpContract/3.png %}
 
