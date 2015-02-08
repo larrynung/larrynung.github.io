@@ -28,6 +28,19 @@ var hashCode = str?.GetHashCode(); //get hashcode if str not null
 ...
 {% endcodeblock %}
 
+<br/>
+
+
+也可以用於委派的觸發，不僅簡易且 Thread Safe。    
+
+{% codeblock lang:c# %} 
+protected void OnNameChanged(EventArgs e) 
+{ 
+    NameChanged?Invoke(this, e); 
+} 
+{% endcodeblock %} 
+<br/>
+
 
 最後看個完整的範例：  
 
