@@ -30,9 +30,17 @@ NuGet 就會幫你重新加入所有使用到的套件。
 
 {% img /images/posts/NuGetReinstallingPackages/1.png %}
 
-若是要指定重裝特定專案內的套件，可像下面這樣：
+若是要指定重裝特定專案內的套件，可像下面這樣加入 Project 參數，並帶上專案的名稱：
 
     Update-Package -reinstall [Package Name] -project [Project Name]
+
+
+若是要升級專案套件，用排除相依套件的方式下去重新安裝，可加入 IgnoreDependencice 參數：  
+
+    Update-Package -reinstall [Package Name] -IgnoreDependencice
+
+<br/>
+
 
 Link
 ----
