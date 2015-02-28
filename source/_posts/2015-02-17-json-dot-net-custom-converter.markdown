@@ -66,7 +66,7 @@ IDecisionNode[] Nodes { get ; }
 <br/>
 
 
-或者是像下面這段程式是用來處理 Dictionary 的序列話語解序列化的 Converter，裡面會用 JsonWriter 去處理序列化的動作、用 JsonReader 去處理解序列化的動作，寫起來比較複雜些，但可進行比較進階的處理。  
+或者是像下面這段用來處理 Dictionary 的序列話與解序列化的 Converter 程式，裡面會用 JsonWriter 去處理序列化的動作、用 JsonReader 去處理解序列化的動作，寫起來比較複雜些，但可進行比較進階的處理。  
 
 {% codeblock lang:c# %}
 using System;
