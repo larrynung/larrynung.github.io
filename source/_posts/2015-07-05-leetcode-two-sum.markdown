@@ -99,4 +99,4 @@ public class Solution {
 
 Link
 ----
-* [Two Sum | LeetCode OJ] (https://leetcode.com/problems/two-sum/)
+* [Two Sum | LeetCode OJ](https://leetcode.com/problems/two-sum/)
