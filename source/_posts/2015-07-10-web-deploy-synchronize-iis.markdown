@@ -37,6 +37,8 @@ Remote To Local。
 
     msdeploy -verb:sync -source:webServer -dest:webServer,computerName=192.168.0.2 
 
+命令執行後 Web Deploy 即會將 WebSite、Application Pool、Binding、File、以及 Setting 等在指定的電腦間進行同步，十分的方便.  
+
 <br/>
 
 Link
