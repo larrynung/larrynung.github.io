@@ -16,7 +16,7 @@ Given an array of integers and an integer k, find out whether there there are tw
 
 <br/>
 
-簡單說他要的是要一個功能，當給予一個整數陣列與一個 k 值，能找出兩個不同的索引值，這兩個索引值的差距最多為 k，且其對應到的整數陣列的值是相同的。  
+簡單說他要的是要一個功能，當給予一個整數陣列與一個整數值 k，能找出兩個不同的索引值，這兩個索引值的差距最多為 k，且其對應到的整數陣列的值是相同的。  
 
 <br/>
 
