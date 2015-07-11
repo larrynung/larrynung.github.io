@@ -15,7 +15,12 @@ description: "Visual Studio 2015 - New Exception Settings Window"
 <br/>
 
 
-但是以往的 Exception Setting 是以對話框形式呈現，開關設定十分的不便，且不具搜尋過濾的功能，要找到指定的設定很不容易。這樣的問題在 Visual Studio 2015 獲得了改善，Exception Setting 改以 Window 方式呈現能方便我們隨時進行調動，也新噌了搜尋與過濾的功能便於快速找到指定的設定。    
+但是以往的 Exception Setting 是以對話框形式呈現，開關設定十分的不便，且不具搜尋過濾的功能，要找到指定的設定很不容易。  
+
+<br/>
+
+
+這樣的問題在 Visual Studio 2015 獲得了改善，Exception Setting 改以 Window 方式呈現能方便我們隨時進行調動，也新噌了搜尋與過濾的功能便於快速找到指定的設定。    
 
 <br/>  
 
