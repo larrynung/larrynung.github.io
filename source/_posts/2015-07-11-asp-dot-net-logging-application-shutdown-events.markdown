@@ -15,7 +15,11 @@ description: "ASP.NET - Logging application shutdown events"
 <br/>
 
 
-可惜的是服務停止的原因預設是無法取得的，因為並沒有直接開放給開發人員調用。不過我們可以用反射下去取得，HttpRuntime 類別內有個 _theRuntime 靜態私有欄位用以存放唯一的物件實體，實體內的 _shutDownMessage 與 _shutDownStack 私有欄位分別存放著 Shutdown 的訊息與呼叫堆疊。  
+可惜的是服務停止的原因預設是無法取得的，因為並沒有直接開放給開發人員調用。不過好在這樣的資訊還是有的，只是未被開出而已，所以我們仍舊可以透過反射下去取得。  
+
+<br/>
+
+要擷取這樣的資訊我們要從 HttpRuntime 類別下手，類別內有個 _theRuntime 靜態私有欄位用以存放唯一的物件實體，實體內的 _shutDownMessage 與 _shutDownStack 私有欄位分別存放著 Shutdown 的訊息與呼叫堆疊。  
 
 <br/>
 
