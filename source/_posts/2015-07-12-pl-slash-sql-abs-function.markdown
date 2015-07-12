@@ -20,7 +20,7 @@ ABS function 會將帶入的值取絕對值傳出。
     ABS( number )
 
 
-number 為要轉換的數值，如果帶入的是負值，回將其變為正值傳出，將像下面這樣：  
+number 為要轉換的數值，如果帶入的是負值，會將其變為正值傳出，就像下面這樣：  
 
 {% img /images/posts/ABSFunction/1.png %}
 
