@@ -21,7 +21,7 @@ Decode function 可用於取代簡單的 If-Then-Else 陳述式。
 
 <br/>
 
-簡單來說如果 expression 的值等同 search 的話，則回傳對應的 result 值。   
+簡單來說如果 expression 的值等同 search 值的話，則回傳對應的 result 值。   
 
 <br/>
 
