@@ -34,6 +34,8 @@ MONTHS_BETWEEN function 可計算兩個日期相差多少月份。
     MONTHS_BETWEEN(sysdate, ADD_MONTHS(sysdate, 2))
 
 
+使用上會像下面這樣：  
+
 {% img /images/posts/MonthsBetweenFunction/1.png %}
 
 <br/>
