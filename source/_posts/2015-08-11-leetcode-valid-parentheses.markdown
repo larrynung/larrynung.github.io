@@ -53,19 +53,18 @@ public class Solution {
 		for (var idx = 0; idx < length; ++idx)
 		{
 			var current = s[idx];
-		
-				var top = st.Peek();
+			var top = st.Peek();
 				
-				if(validChars.ContainsKey(top))
+			if(validChars.ContainsKey(top))
+			{
+				var closeChar = validChars[top];
+				
+				if (current == closeChar)
 				{
-				    var closeChar = validChars[top];
-				
-				    if (current == closeChar)
-				    {
-					    st.Pop();
-					    continue;
-				    }
+					 st.Pop();
+					 continue;
 				}
+			}
 			
 			st.Push(current);
 		}
