@@ -42,7 +42,7 @@ namespace ConsoleApplication16
         static void Main( string[] args)
         {
             var count = 1000000;
-            var obj = 123;
+            var obj = 123 as object;
 
             Console.WriteLine( "(int)obj: {0}" , DoTest(count, () =>
             {
