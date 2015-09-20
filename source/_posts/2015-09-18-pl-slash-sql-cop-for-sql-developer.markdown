@@ -27,74 +27,81 @@ PL/SQL Cop for SQL Developer 的檢查遵照的是 [Trivadis PL/SQL &  SQL Codin
 <br/>
 
 
-這邊可以用 Update Centers 下去找尋套件， Update Center 的位置為 http://www.salvis.com/update/tvdcc。  
-
-也可以從本地檔案安裝，但要先至 [PL/SQL Cop for SQL Developer 1.0.11 | Philipp Salvisberg's Blog](https://www.salvis.com/blog/downloads/tvdcc-trivadis-plsql-sql-codechecker-for-sql-developer/) 這邊將套件下載下來。  
-
 {% img /images/posts/PLSQLCopForSQLDeveloper/2.png %}
 
 <br/>
 
+這邊可以用 Update Centers 下去找尋套件， Update Center 的位置為 http://www.salvis.com/update/tvdcc。  
 
-設好後按下 Finish 按鈕進行安裝。  
+<br/>
+
+
+也可以從本地檔案安裝，但要先至 [PL/SQL Cop for SQL Developer 1.0.11 | Philipp Salvisberg's Blog](https://www.salvis.com/blog/downloads/tvdcc-trivadis-plsql-sql-codechecker-for-sql-developer/) 這邊將套件下載下來。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/3.png %}
 
 <br/>
 
 
-重啟 SQL Developer。  
+設好後按下 Finish 按鈕進行安裝。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/4.png %}
 
 <br/>
 
 
-這時套件已經被安裝並複製至 SQL Developer 內。  
+重啟 SQL Developer。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/5.png %}
 
 <br/>
 
 
-安裝完後要分析程式碼只要在程式碼上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Check 選單選項。  
+這時套件已經被安裝並複製至 SQL Developer 內。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/6.png %}
 
 <br/>
 
 
-PL/SQL Cop for SQL Developer 會將違背規則的地方給列出。  
+安裝完後要分析程式碼只要在程式碼上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Check 選單選項。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/7.png %}
 
 <br/>
 
 
-除了違背的規則列表外，PL/SQL Cop for SQL Developer 也提共了詳細的報表。  
+PL/SQL Cop for SQL Developer 會將違背規則的地方給列出。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/8.png %}
 
 <br/>
 
 
-按下 Open 按鈕用瀏覽器來看，我們可以看到上半部這邊會列出複雜度、可維護性之類的指標。  
+除了違背的規則列表外，PL/SQL Cop for SQL Developer 也提共了詳細的報表。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/9.png %}
 
 <br/>
 
 
-下半部這邊會列出程式碼中違背的規則，以及違背的規則分布狀態。  
+按下 Open 按鈕用瀏覽器來看，我們可以看到上半部這邊會列出複雜度、可維護性之類的指標。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/10.png %}
 
 <br/>
 
 
-最後一提，PL/SQL Cop for SQL Developer 安裝完後，SQL Developer 的 Perferences 視窗會多個 Trivadis PL/SQL Cop 的頁籤，如果要自訂哪些規則要檢查或是忽略，可以透過這邊設定。  
+下半部這邊會列出程式碼中違背的規則，以及違背的規則分布狀態。  
 
 {% img /images/posts/PLSQLCopForSQLDeveloper/11.png %}
+
+<br/>
+
+
+最後一提，PL/SQL Cop for SQL Developer 安裝完後，SQL Developer 的 Perferences 視窗會多個 Trivadis PL/SQL Cop 的頁籤，如果要自訂哪些規則要檢查或是忽略，可以透過這邊設定。  
+
+{% img /images/posts/PLSQLCopForSQLDeveloper/12.png %}
 
 <br/>
 
