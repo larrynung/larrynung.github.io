@@ -3,7 +3,7 @@ layout: post
 title: "Jil - Fast .NET JSON (De)Serializer"
 date: 2015-09-30 00:05
 comments: true
-categories: 
+categories: [Jil]
 keywords: "Jil"
 description: "Jil - Fast .NET JSON (De)Serializer"
 ---
