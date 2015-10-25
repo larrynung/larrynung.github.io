@@ -37,15 +37,32 @@ description: "Vagrant - VBox Snapshot"
 <br/>
 
 
-套件支援的命令如下：  
+套件的使用方式如下：  
 
-    vagrant snapshot take [vm-name] <SNAPSHOT_NAME>   # take snapshot, labeled by NAME
-    vagrant snapshot list [vm-name]                   # list snapshots
-    vagrant snapshot back [vm-name]                   # restore last taken snapshot
-    vagrant snapshot delete [vm-name] <SNAPSHOT_NAME> # delete specified snapshot
-    vagrant snapshot go [vm-name] <SNAPSHOT_NAME>     # restore specified snapshot
+    Usage
+        vagrant snapshot <command> [<args>]
+    
+    Sub Commands
+        back
+            vagrant snapshot back [vm-name]
+        delete
+            vagrant snapshot delete [vm-name] <SNAPSHOT_NAME>
+        go
+            vagrant snapshot go [vm-name] <SNAPSHOT_NAME>
+        list
+            vagrant snapshot list
+        take
+            vagrant snapshot take [vm-name] <SNAPSHOT_NAME>
 
 
+使用上會像這樣：  
+
+    Vagrant snapshot take “init”
+    Vagrant snapshot list
+    Vagrant snapshot go “init”
+    Vagrant snapshot delete “init”
+
+  
 像是 vagrant snapshot take 後面接 Snapshot 的名稱下去調用即可進行 Snapshot 的建立。vagrant snapshot list 可查驗有哪些 Snapshot 可用。  
 
 {% img /images/posts/VagrantSnapshot/2.png %}

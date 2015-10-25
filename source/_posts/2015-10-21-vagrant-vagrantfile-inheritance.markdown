@@ -14,17 +14,21 @@ Vagrantfile 的設定跟很多軟體一樣是有繼承關係的。
 
 <br/>
 
+{% img /images/posts/VagrantfileInheritance/1.png %}
+
+<br/>
+
 
 首先他會去看 Vagrant Box 的 Vagrantfile。通常會是在 `%HOMEPATH%\.vagrant.d\boxs` 下，若有設定 VAGRANT_HOME 則是在  `%VAGRANT_HOME%\.vagrant.d\boxs` 下。   
 
-{% img /images/posts/VagrantfileInheritance/1.png %}
+{% img /images/posts/VagrantfileInheritance/2.png %}
 
 <br/>
 
 
 接著會看 `%HOMEPATH%\.vagrant.d` 或是 `%VAGRANT_HOME%\.vagrant.d\` 下的 Vagrantfile。  
 
-{% img /images/posts/VagrantfileInheritance/2.png %}
+{% img /images/posts/VagrantfileInheritance/3.png %}
 
 <br/>
 
