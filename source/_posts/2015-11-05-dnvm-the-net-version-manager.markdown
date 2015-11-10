@@ -29,6 +29,13 @@ DNVM 是一命令列工具，允許我們透過命令去管理 .NET CLR/CoreCLR 
 <br/>
 
 
+安裝完後輸入 DNVM 即可看到詳細的使用說明。  
+
+{% img /images/posts/DNVM/1.png %}
+
+<br/>
+
+
 主要會用到的命令有 list、 upgrade、 install、 use、 alias。  	
 
 <br/>
@@ -38,7 +45,7 @@ list 命令是用來列出本機有哪些 DNX 可供使用。
 
     dnvm list
 
-{% img /images/posts/DNVM/1.png %}
+{% img /images/posts/DNVM/2.png %}
 
 <br/>
 
@@ -51,7 +58,7 @@ upgrade 命令可用以更新 DNX，會自動安裝最新版的 clr DNX，將之
 
     dnvm upgrade
 
-{% img /images/posts/DNVM/2.png %}
+{% img /images/posts/DNVM/3.png %}
 
 <br/>
 
@@ -60,7 +67,7 @@ upgrade 命令可用以更新 DNX，會自動安裝最新版的 clr DNX，將之
 
     dnvm upgrade -r clr
 
-{% img /images/posts/DNVM/3.png %}
+{% img /images/posts/DNVM/4.png %}
 
 <br/>
 
@@ -70,7 +77,7 @@ upgrade 命令可用以更新 DNX，會自動安裝最新版的 clr DNX，將之
 
     dnvm upgrade -r coreclr
 
-{% img /images/posts/DNVM/4.png %}
+{% img /images/posts/DNVM/5.png %}
 
 <br/>
 
@@ -80,7 +87,7 @@ install 命令可安裝指定版本的 DNX。
     dnvm install -r [runtime] [version]
     dnvm install -r [runtime] -arch [architeure] [version]
 
-{% img /images/posts/DNVM/5.png %}
+{% img /images/posts/DNVM/6.png %}
 
 <br/>
 
@@ -90,7 +97,7 @@ use 命令可切換使用的 DNX。
     dnvm use -r [runtime] [version]
     dnvm use -r [runtime] -arch [architeure] [version]
 
-{% img /images/posts/DNVM/6.png %}
+{% img /images/posts/DNVM/7.png %}
 
 <br/>
 
