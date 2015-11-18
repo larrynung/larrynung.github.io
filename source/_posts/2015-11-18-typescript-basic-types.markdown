@@ -28,13 +28,15 @@ TypeScript 內可用的型態有 Boolean、Number、String、Array、Any、Void�
 
 所以宣告起來會像下面這樣：   
 
-    var booleanVariable: boolean;
-    var numberVariable: number;
-    var stringVariable: string;
-    var arrayVariable1: number[];
-    var arrayVariable2: Array<number>;
-    var anyVariable: any;
-    var enumVariable: enumName; 
+{% codeblock lang:js %}
+var booleanVariable: boolean;
+var numberVariable: number;
+var stringVariable: string;
+var arrayVariable1: number[];
+var arrayVariable2: Array<number>;
+var anyVariable: any;
+var enumVariable: enumName; 
+{% endcodeblock %}
 
 <br/>
 
@@ -70,6 +72,33 @@ Void 型態則是用以指定方法無回傳值時使用：
 
 <br/>
 
+
+最後附上完整的測試範例：  
+
+{% codeblock lang:js %}
+enum Color {Red, Green, Blue};
+
+var booleanVariable: boolean = true;
+var numberVariable: number = 1;
+var stringVariable: string = "test";
+var arrayVariable1: number[] = [123];
+var arrayVariable2: Array<number> = arrayVariable1;
+var anyVariable: any = 1;
+var enumVariable: Color; 
+
+var colorName:string = Color[2]; 
+var colorValue:number = Color.Green;
+
+function log(msg:any): void 
+{
+	console.log(msg);
+}
+
+log(colorName);
+log(colorValue);
+{% endcodeblock %}
+
+<br/>
 
 Link
 ----
