@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PL/SQL &amp; SQL CODING GUIDELINE 9 - Try to use subtypes for constructs used often in your application"
+title: "PL/SQL &amp; SQL CODING GUIDELINE 10 - Try to use subtypes for constructs used often in your application"
 date: 2015-11-24 05:33
 comments: true
 categories: 
@@ -8,7 +8,7 @@ keywords:
 description: "PL/SQL &amp; SQL CODING GUIDELINE 9 - Try to use subtypes for constructs used often in your application"
 ---
 
-條款九是在說如果有些常用的型態使用，建議將它設成 SubType，像是下面這邊 VARCHAR2(4000) 程式中如果常用的話，就可以將它設成 SubType。  
+條款十是在說如果有些常用的型態使用，建議將它設成 SubType，像是下面這邊 VARCHAR2(4000) 程式中如果常用的話，就可以將它設成 SubType。  
 
 <!-- More -->
 
