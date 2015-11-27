@@ -15,7 +15,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 14 - Never overload data structu
 <br/>
 
 
-像是下面這樣外層與內層不僅宣告了一樣名稱的變數，是不建議的寫法。 
+像是下面這樣外層與內層宣告了一樣名稱的變數，是不建議的寫法。 
 
 {% codeblock lang:psql %}
 <<main>> 
