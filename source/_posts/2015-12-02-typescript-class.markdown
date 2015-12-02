@@ -83,6 +83,8 @@ class ChildClass extends MyClass {
 <br/>
 
 
+最後附上完整的使用範例：  
+
 {% codeblock lang:js %}
 class Person { 
 	private _name: string; 
