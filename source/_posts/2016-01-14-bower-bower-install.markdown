@@ -8,7 +8,7 @@ keywords: "Bower"
 description: "Bower - Bower install"
 ---
 
-Bower install 可用來安裝 bower 的 package。
+Bower install 可用來安裝 bower 的 package 以及其依類的套件。
 
 <!-- More -->
 
