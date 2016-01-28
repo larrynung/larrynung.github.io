@@ -8,7 +8,7 @@ keywords: "CultureInfo"
 description: "new CultureInfo v.s CultureInfo.GetCultureInfo"
 ---
 
-要取得 CultureInfo 通常有兩種做法，一個是透見建構子構建 ，一個則是透過 CultureInfo.GetCultureInfo 去取得。  
+要取得 CultureInfo 通常有兩種做法，一個是透過建構子構建 ，一個則是透過 CultureInfo.GetCultureInfo 去取得。  
 
 <!-- More -->
 
