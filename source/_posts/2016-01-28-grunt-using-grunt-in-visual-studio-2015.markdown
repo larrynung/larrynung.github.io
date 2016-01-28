@@ -55,6 +55,13 @@ Visual Studio 2015 開始支援 Grunt，使用時需先為專案加入 NPM Confi
 <br/>
 
 
-下載完畢，設定完 gruntfile.js，我們就可以在 Task Runner Explorer 點選對應的 Task 進行運行。  
+若有需要也可以透過 Output 視窗查看細部處理資訊。  
 
 {% img /images/posts/GruntInVS2015/8.png %}
+
+<br/>
+
+
+下載完畢，設定完 gruntfile.js，我們就可以在 Task Runner Explorer 點選對應的 Task 進行運行。  
+
+{% img /images/posts/GruntInVS2015/9.png %}
