@@ -186,6 +186,11 @@ namespace ConsoleApplication5
 <br/>
 
 
+{% img /images/posts/Jil/9.png %}
+
+<br/>
+
+
 接著看一下解列化時的效能比較：  
 
 {% codeblock lang:c# %}
@@ -238,7 +243,12 @@ namespace ConsoleApplication5
 }
 {% endcodeblock %}
 
-{% img /images/posts/Jil/9.png %}
+{% img /images/posts/Jil/10.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/11.png %}
 
 <br/>
 
