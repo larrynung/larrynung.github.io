@@ -12,6 +12,33 @@ Jil 是 JSON 處理的套件，號稱比 JSON.NET 更快，甚至是當前套件
 
 <!-- More -->
 
+{% img /images/posts/Jil/1.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/2.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/3.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/4.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/5.png %}
+
+<br/>
+
+
+{% img /images/posts/Jil/6.png %}
+
 <br/>
 
 
@@ -99,7 +126,7 @@ namespace ConsoleApplication5
 }
 {% endcodeblock %}
 
-{% img /images/posts/Jil/1.png %}
+{% img /images/posts/Jil/7.png %}
 
 <br/>
 
@@ -154,7 +181,7 @@ namespace ConsoleApplication5
 }
 {% endcodeblock %}
 
-{% img /images/posts/Jil/2.png %}
+{% img /images/posts/Jil/8.png %}
 
 <br/>
 
@@ -211,7 +238,7 @@ namespace ConsoleApplication5
 }
 {% endcodeblock %}
 
-{% img /images/posts/Jil/3.png %}
+{% img /images/posts/Jil/9.png %}
 
 <br/>
 
