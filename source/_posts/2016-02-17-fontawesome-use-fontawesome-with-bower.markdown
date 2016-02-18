@@ -8,9 +8,16 @@ keywords: "FontAwesome"
 description: "FontAwesome - Use FontAwesome with bower"
 ---
 
-透過 Bower 來使用 FontAwesome，下載下來的 FontAwesome CSS 內會用相對路徑指定要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。  
+當我們透過 Bower 來使用 FontAwesome。  
 
 <!-- More -->
+
+{% img /images/posts/FontAwesomeWithBower/1.png %}
+
+<br/>
+
+
+下載下來的 FontAwesome CSS 內會用相對路徑指定所要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。  
 
 {% codeblock lang:css %}
 ...
@@ -25,12 +32,12 @@ description: "FontAwesome - Use FontAwesome with bower"
 <br/>
 
 
-{% img /images/posts/FontAwesomeWithBower/1.png %}
+{% img /images/posts/FontAwesomeWithBower/2.png %}
 
 <br/>
 
 
-當然我們可以透過 Grunt、Gupl 之類的自動化工具將路徑改掉，但這樣的做法感覺並不是很好，因此這邊的做法是使用自己的 CSS 將 Font 的位置改掉。  
+當然我們可以透過 Grunt、Gupl 之類的自動化工具將路徑改掉，但這樣的做法感覺並不是很好，因此這邊筆者是使用自己的 CSS 將 Font 的位置改掉。  
 
 {% codeblock lang:css %}
 ...
@@ -47,4 +54,9 @@ description: "FontAwesome - Use FontAwesome with bower"
 <br/>
 
 
-{% img /images/posts/FontAwesomeWithBower/2.png %}
+{% img /images/posts/FontAwesomeWithBower/3.png %}
+
+<br/>
+
+
+這樣改完後 FontAwesome 就可以正常使用。  
