@@ -17,7 +17,10 @@ log4net 在使用 RollingFileAppender 去做 Log 的紀錄時，我們需要注�
 <br/>
 
 
-該設定預設值為 -1，所以當新的備份檔案產生時，他需要將 log.n 改為 log.n+1，然後才產生出 log.1 的檔，可以想見這樣會有不必要的效能耗費。  
+該設定預設值為 -1，所以當新的備份檔案產生時，他需要將 log.n 改為 log.n+1，然後才產生出 log.1 的檔，可以想見這樣會有不必要的效能耗費。透過 Process Monitor 可以很清楚的看到背後的運作。      
+
+
+{% img /images/posts/Log4NetCountDirection/2.png %}
 
 <br/>
 
@@ -34,28 +37,28 @@ log4net 在使用 RollingFileAppender 去做 Log 的紀錄時，我們需要注�
 
 可以看到若不設定 CountDirection，連續產生 39 個檔案時它的耗時為 586 ms。  
 
-{% img /images/posts/Log4NetCountDirection/2.png %}
+{% img /images/posts/Log4NetCountDirection/3.png %}
 
 <br/>
 
 
 若設定 CountDirection 為 1，則耗時為 332 ms。  
 
-{% img /images/posts/Log4NetCountDirection/3.png %}
+{% img /images/posts/Log4NetCountDirection/4.png %}
 
 <br/>
 
 
 當連續產生 77 個檔案時，不設定 CountDirection 耗時為 3061 ms。  
 
-{% img /images/posts/Log4NetCountDirection/4.png %}
+{% img /images/posts/Log4NetCountDirection/5.png %}
 
 <br/>
 
 
 設定為 1，則耗時為 518 ms。  
 
-{% img /images/posts/Log4NetCountDirection/5.png %}
+{% img /images/posts/Log4NetCountDirection/6.png %}
 
 <br/>
 
