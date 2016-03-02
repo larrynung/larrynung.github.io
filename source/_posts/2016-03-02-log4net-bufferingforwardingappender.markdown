@@ -78,7 +78,7 @@ namespace ConsoleApplication27
 </br>
 
 
-整個性能嚴重下降。  
+整個性能反而嚴重下降。  
 
 {% img /images/posts/log4netBufferingForwardingAppender/2.png %}
 
@@ -104,21 +104,26 @@ namespace ConsoleApplication27
 <br/>
 
 
-像是可以設定為 12，讓他修正 Message 與 ThreadName。  
+像是可以設定為 12，使其修正 Message 與 ThreadName。  
 
 {% img /images/posts/log4netBufferingForwardingAppender/5.png %}
 
 <br/>
 
 
-效能問題解決了，我們還需要考慮 Buffer 的資料是否可以正確的寫入。一樣做個簡單的實驗去測試，設定 Buffer 大小為 512 筆，然後程式這邊在第 511 筆時丟出例外，可以看到這邊 Buffer 的資料並未正確的紀錄。  
+效能問題解決了，仍需考慮 Buffer 的資料是否可以正確的寫入。  
+
+<br/>
+
+
+一樣做個簡單的實驗去測試，設定 Buffer 大小為 512 筆，然後程式這邊在第 511 筆時丟出例外，可以看到這邊 Buffer 的資料並未正確的紀錄。  
 
 {% img /images/posts/log4netBufferingForwardingAppender/6.png %}
 
 <br/>
 
 
-所以這邊我們要加入全域的例外處理，當例外發生時將 Buffer 的資料寫入。  
+所以我們需要在程式中適當的時機點，像是在 Application_End 或是在全域例外處理這邊，將 Buffer Flush 讓 Log 可被寫入。  
 
 {% codeblock lang:c# %}
 ...
