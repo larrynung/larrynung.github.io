@@ -8,7 +8,7 @@ keywords: "Disruptor"
 description: "Disruptor - Ringbuffer"
 ---
 
-Ringbuffer 是 Disruptor 的核心部分，使用 Disruptor 一定會圍繞著 Ringbuffer，Producer 會往 Ringbuffer 塞資料，Consumer 會從 RingBuffer 消費資料，我必須要觀察 Ringbuffer 的使用狀況並視情況調整架構或是其大小。所以使用 Disruptor 必須要對 Ringbuffer 有一定的認知。  
+Ringbuffer 是 Disruptor 的核心部分，使用 Disruptor 一定會圍繞著 Ringbuffer，Producer 會往 Ringbuffer 塞資料，Consumer 會從 RingBuffer 消費資料，且必須要觀察 Ringbuffer 的使用狀況並視情況調整架構或是其大小。所以使用 Disruptor 必須要對 Ringbuffer 有一定的認知。  
 
 <!-- More -->
 
