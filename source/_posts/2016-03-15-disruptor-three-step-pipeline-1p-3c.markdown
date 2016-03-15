@@ -15,7 +15,7 @@ description: "Disruptor - Three Step Pipeline: 1P – 3C"
 <br/>
 
 
-這邊要介紹的是 Three Step Pipeline: 1P – 3C，一個 Producer 負責生產資料，三個 Consumer 接續消費資料。依賴關係圖會像這樣：  
+這邊要介紹的是 Three Step Pipeline: 1P – 3C，一個 Producer 負責生產資料，三個 Consumer 接續消費資料。簡單說，這就是多執行緒程式常見的流水線 Pattern。其依賴關係圖會像這樣：  
 
 {% img /images/posts/DisruptorStepPipeline1P3C/1.png %}
 
@@ -74,4 +74,7 @@ eventProcessor3.Halt();
 
 {% img /images/posts/DisruptorStepPipeline1P3C/3.png %}
 
+<br/>
 
+
+注意到這邊，這結果跟跟一般認知的多執行緒流水線 Pattern 有所出入，若是流水線 Pattern 的話，顯示的 Handler 應該不會是 123123123... 這樣有規律的循環，資料在送到 Consumer2 處理時，Consumer1 應該可以接著處理後面的資料。之所以會這樣，其實是因為筆者的測試案例太過單純所導致，如果把 Consumer 的處理時間拉長，就會回到流水線 Pattern 該有的樣子，像是 121233..。  
