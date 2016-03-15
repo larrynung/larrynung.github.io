@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Disruptor - Three Step Pipeline: 1P – 3C"
+date: 2016-03-15 05:11
+comments: true
+categories: [Disruptor]
+keywords: "Disruptor"
+description: "Disruptor - Three Step Pipeline: 1P – 3C"
+---
+
+使用 Disruptor 時我們必須決定資料要怎樣在 Consumer 間流動，這有些常用的 Pattern 可供參考，只要熟悉這些 Pattern 那 Consumer 間有多複雜的協作應該都不是問題。  
+
+<!-- More -->
+
+<br/>
+
+
+這邊要介紹的是 Three Step Pipeline: 1P – 3C，一個 Producer 負責生產資料，三個 Consumer 接續消費資料。依賴關係圖會像這樣：  
+
+{% img /images/posts/DisruptorStepPipeline1P3C/1.png %}
+
+<br/>
+
+
+這透過 DSL 的方式撰寫會像下面這樣：
+
+{% codeblock lang:c# %}
+... 
+var disruptor = new Disruptor.Dsl.Disruptor<Data>(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default); 
+
+disruptor.HandleEventsWith(new DataEventHandler("Handler1"))
+.Then(new DataEventHandler("Handler2"))
+.Then(new DataEventHandler("Handler3")); 
+
+var ringBuffer = disruptor.Start(); 
+...
+disruptor.Shutdown(); 
+…
+{% endcodeblock %}
+
+<br/>
+
+
+若是改用 Non-DSL 撰寫的話，本來的依賴關係圖形就會變成下面這樣：
+
+{% img /images/posts/DisruptorStepPipeline1P3C/2.png %}
+
+<br/>
+
+
+程式寫起來會像下面這樣：
+
+{% codeblock lang:c# %}
+... 
+var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
+var eventProcessor1 = new BatchEventProcessor<Data>(ringBuffer, ringBuffer.NewBarrier(), new DataEventHandler("Handler1")); 
+var eventProcessor2 = new BatchEventProcessor<Data>(ringBuffer, ringBuffer.NewBarrier(eventProcessor1.Sequence), new DataEventHandler("Handler2")); 
+var eventProcessor3 = new BatchEventProcessor<Data>(ringBuffer, ringBuffer.NewBarrier(eventProcessor2.Sequence), new DataEventHandler("Handler3")); 
+
+Task.Factory.StartNew(() => eventProcessor1.Run()); 
+Task.Factory.StartNew(() => eventProcessor2.Run()); 
+Task.Factory.StartNew(() => eventProcessor3.Run()); 
+... 
+eventProcessor1.Halt(); 
+eventProcessor2.Halt(); 
+eventProcessor3.Halt();
+...
+{% endcodeblock %}
+
+<br/>
+
+
+程式運行起來可以看到有三個 Handler，分別在不同的執行緒上運作，Producer 產生的每一筆資料都會循序的經過這三個 Handler 做處理。   
+
+{% img /images/posts/DisruptorStepPipeline1P3C/3.png %}
+
+
