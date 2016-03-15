@@ -22,7 +22,7 @@ description: "Disruptor - Three Step Pipeline: 1P – 3C"
 <br/>
 
 
-這透過 DSL 的方式撰寫會像下面這樣：
+透過 DSL 的方式撰寫，就是用 Then 去串接後續的 EventHandler，像是下面這樣：  
 
 {% codeblock lang:c# %}
 ... 
@@ -48,7 +48,7 @@ disruptor.Shutdown();
 <br/>
 
 
-程式寫起來會像下面這樣：
+用程式來寫，就是要建立一個 Barrier 將之帶入並建立 EventProcessor，接著將第一個 EventProcessor 的 Sequence 帶入建立出第二個 Barrier，再用第二個 Barrier 建立第二個 EventProcessor，最後用第二個 EventProcessor 的 Sequence 建立出第三個 Barrier，用第三個 Barrier 去建立第三個 EventProcessor 即可。  
 
 {% codeblock lang:c# %}
 ... 
