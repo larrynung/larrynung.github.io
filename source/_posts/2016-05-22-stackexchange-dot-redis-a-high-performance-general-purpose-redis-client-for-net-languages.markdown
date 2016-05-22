@@ -57,7 +57,71 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
 <br/>
 
 
-程式一開始會先設定 Configuration，相當於一般我們在用的 DB 連線字串，用以指定 Redis 位置等資訊。 再來會用 ConnectionMultiplexer.Connect 將 Configuration 帶入開啟連線，連線開啟後看是要取得 Server 或是指定的 DB 進行操作都可以，最後記得要將連線關閉(用 using 讓它自動處理也可以)。  
+程式一開始會先設定 Configuration，相當於一般我們在用的 DB 連線字串，用以指定 Redis 位置等資訊。 再來會用 ConnectionMultiplexer.Connect 將 Configuration 帶入開啟連線，連線開啟後可對 Server 進行操作，像是取得 Server 的資訊，或是運行 Server 的命令。  
+
+{% codeblock lang:c# %}
+using StackExchange.Redis; 
+... 
+var configuration = GetConfiguration(); 
+using (var conn = ConnectionMultiplexer.Connect(configuration)) 
+{ 
+    var endPoint = conn.GetEndPoints().First(); 
+    var server = conn.GetServer(endPoint); 
+    //var host = GetHost(); 
+    //var port = GetPort(); 
+    //var server = conn.GetServer(host, port); 
+    ...
+} 
+...
+{% endcodeblock %}
+
+<br/>
+
+
+可以對指定的 DB 進行操作。  
+
+{% codeblock lang:c# %}
+using StackExchange.Redis; 
+... 
+var configuration = GetConfiguration(); 
+using (var conn = ConnectionMultiplexer.Connect(configuration)) 
+{ 
+    var db = conn.GetDatabase(); 
+    ... 
+} 
+...
+{% endcodeblock %}
+
+<br/>
+
+
+抑或是處理訂閱都可以。  
+
+{% codeblock lang:c# %}
+using StackExchange.Redis; 
+... 
+var configuration = GetConfiguration(); 
+using (var conn = ConnectionMultiplexer.Connect(configuration)) 
+{ 
+    var sub = conn.GetSubscriber(); 
+    var channelName = GetChannelName(); 
+    var handler = GetChannelHandler(); 
+
+    //conn.PreserveAsyncOrder = false;
+    sub.Subscribe(channelName, handler); 
+    ... 
+
+    var message = GetMessage(); 
+    sub.Publish(channelName, message);
+    ...
+} 
+...
+{% endcodeblock %}
+
+<br/>
+
+
+最後記得要將當初開啟的連線關閉就可以了(用 using 讓它自動處理也可以)。  
 
 <br/>
 
