@@ -8,7 +8,7 @@ keywords: "StackExchange.Redis"
 description: "StackExchange.Redis - Configuration"
 ---
 
-欲聯線至 Redis，需先設定 Configutaion，在 StackExchange.Redis 提供兩種設定方式，一種是用 ConfigurationOptions 物件直接宣告設定：  
+欲連線至 Redis，需先設定 Configutaion，在 StackExchange.Redis 提供兩種設定方式，一種是用 ConfigurationOptions 物件直接宣告設定：  
 
 <!-- More -->
 
