@@ -12,6 +12,22 @@ description: "StackExchange.Redis - Scripting"
 
 <!-- More -->
 
+{% codeblock lang:c# %}
+using StackExchange.Redis; 
+... 
+var configuration = GetConfiguration(); 
+using (var conn = ConnectionMultiplexer.Connect(configuration)) 
+{ 
+    var db = conn.GetDatabase(); 
+    var script = GetScript(); 
+    var keys = GetKeys(); 
+    var values = GetValues(); 
+    var result = db.ScriptEvaluate(script, keys, values); 
+    ... 
+} 
+...
+{% endcodeblock %}
+
 <br/>
 
 
@@ -60,7 +76,30 @@ namespace ConsoleApplication4 {
 <br/>
 
 
-比較好的做法是先將 Lua script 預先載到 Server 上再運行，像是下面這樣：  
+比較好的做法是先將 Lua script 預先載到 Server 上再運行。  
+
+{% codeblock lang:c# %}
+using StackExchange.Redis; 
+... 
+var configuration = GetConfiguration(); 
+using (var conn = ConnectionMultiplexer.Connect(configuration)) 
+{ 
+    var db = conn.GetDatabase(); 
+    var script = GetScript(); 
+    var preparedScript = LuaScript.Prepare(script); 
+    var endPoint = conn.GetEndPoints().First(); 
+    var server = conn.GetServer(endPoint); 
+    var loadedScript = preparedScript.Load(server); 
+    var result = db.ScriptEvaluate(loadedScript, new {Param1 = "LarryNung", Param2= "http://larrynung.github.io"}); 
+    ...
+} 
+...
+{% endcodeblock %}
+
+<br/>
+
+
+像是下面這樣：  
 
 {% codeblock lang:c# %}
 using System; 
