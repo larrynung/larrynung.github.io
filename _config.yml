@@ -70,3 +70,9 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/larrynung/larrynung.github.io.git
+  
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
