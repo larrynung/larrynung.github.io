@@ -81,3 +81,6 @@ search:
   field: post
   
 google_analytics: UA-33537523-3
+
+sitemap:
+  path: sitemap.xml
