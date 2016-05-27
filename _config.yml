@@ -79,3 +79,5 @@ feed:
 search:
   path: search.xml
   field: post
+  
+google_analytics: UA-33537523-3
