@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Roman to Integer"
 date: 2015-09-11 23:16:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Roman to Integer"
 ---

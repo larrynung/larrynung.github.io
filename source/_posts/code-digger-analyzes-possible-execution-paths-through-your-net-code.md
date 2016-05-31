@@ -3,7 +3,7 @@ layout: post
 title: "Code Digger - Analyzes possible execution paths through your .NET code"
 date: 2013-12-28 12:59:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: Code Digger, Visual Studio
 description: "Code Digger - Analyzes possible execution paths through your .NET code"
 ---

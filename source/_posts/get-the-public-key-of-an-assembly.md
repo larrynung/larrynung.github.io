@@ -3,7 +3,7 @@ layout: post
 title: "Get the Public Key of an Assembly"
 date: 2015-02-12 08:02:00
 comments: true
-categories: 
+tags: 
 keywords: "Public Key"
 description: "Get the Public Key of an Assembly"
 ---

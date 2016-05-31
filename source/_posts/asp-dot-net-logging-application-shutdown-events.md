@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET - Logging application shutdown events"
 date: 2015-07-11 21:54:00
 comments: true
-categories: [ASP.NET]
+tags: [ASP.NET]
 keywords: "ASP.NET"
 description: "ASP.NET - Logging application shutdown events"
 ---

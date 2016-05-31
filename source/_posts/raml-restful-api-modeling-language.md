@@ -3,7 +3,7 @@ layout: post
 title: "RAML - RESTful API Modeling Language"
 date: 2013-11-28 22:24:00
 comments: true
-categories: [RAML]
+tags: [RAML]
 keywords: "RAML"
 description: "RAML - RESTful API Modeling Language"
 ---

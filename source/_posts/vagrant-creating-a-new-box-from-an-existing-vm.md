@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Creating a new box from an existing VM"
 date: 2015-10-17 18:06:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant"
 description: "Vagrant - Creating a new box from an existing VM"
 ---

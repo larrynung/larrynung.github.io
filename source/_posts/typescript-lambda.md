@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Lambda"
 date: 2015-11-30 23:57:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript, Lambda"
 description: "TypeScript - Lambda"
 ---

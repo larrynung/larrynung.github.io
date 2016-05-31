@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 15 Preview - Exception Helper"
 date: 2016-04-25 22:57:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 15 Preview - Exception Helper"
 ---

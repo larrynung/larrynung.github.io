@@ -3,7 +3,7 @@ layout: post
 title: "T4MVC - Generate a single file with everything"
 date: 2014-07-24 22:25:00
 comments: true
-categories: [T4MVC, T4]
+tags: [T4MVC, T4]
 keywords: "T4MVC, T4"
 description: "T4MVC - Generate a single file with everything"
 ---

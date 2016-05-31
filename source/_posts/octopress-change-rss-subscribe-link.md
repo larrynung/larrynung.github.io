@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - change rss subscribe link"
 date: 2013-11-20 22:44:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 ---
 
 要修改Octopress部落格的RSS訂閱位置。 

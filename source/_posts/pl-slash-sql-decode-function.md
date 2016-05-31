@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - Decode function"
 date: 2015-07-11 20:33:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL, Decode"
 description: "PL/SQL - Decode function"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Number of 1 Bits"
 date: 2016-02-24 00:36:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Number of 1 Bits"
 ---

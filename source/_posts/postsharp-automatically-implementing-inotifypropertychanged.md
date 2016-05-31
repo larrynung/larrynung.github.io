@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Automatically Implementing INotifyPropertyChanged"
 date: 2015-02-01 21:01:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp, INotifyPropertyChanged"
 description: "PostSharp - Automatically Implementing INotifyPropertyChanged"
 ---

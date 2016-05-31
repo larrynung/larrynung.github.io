@@ -3,7 +3,7 @@ layout: post
 title: "Auto assign assembly's build/revision number"
 date: 2014-08-12 23:34:00
 comments: true
-categories: [".NET"]
+tags: [".NET"]
 keywords: ".NET, Assembly, Version"
 description: "Auto assign assembly's build/revision number"
 ---

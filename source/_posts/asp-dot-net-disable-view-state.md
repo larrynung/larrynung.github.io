@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET - Disable View State"
 date: 2014-09-23 07:28:00
 comments: true
-categories: [ASP.NET]
+tags: [ASP.NET]
 keywords: "ASP.NET, View State"
 description: "ASP.NET - Disable View State"
 ---

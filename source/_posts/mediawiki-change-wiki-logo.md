@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - Change Wiki Logo"
 date: 2015-01-11 22:57:00
 comments: true
-categories: [MediaWiki]
+tags: [MediaWiki]
 keywords: "MediaWiki, Logo"
 description: "MediaWiki - Change Wiki Logo"
 ---

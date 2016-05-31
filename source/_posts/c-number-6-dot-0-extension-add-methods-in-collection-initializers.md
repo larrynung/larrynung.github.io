@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Extension Add methods in collection initializers"
 date: 2015-01-22 00:27:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#, Collection Initializer"
 description: "C# 6.0 - Extension Add methods in collection initializers"
 ---

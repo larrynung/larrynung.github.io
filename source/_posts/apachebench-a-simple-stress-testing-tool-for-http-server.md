@@ -3,7 +3,7 @@ layout: post
 title: "ApacheBench - A simple stress testing tool for http server"
 date: 2015-03-02 08:36:00
 comments: true
-categories: 
+tags: 
 keywords: [ApacheBench]
 description: "ApacheBench - A simple stress testing tool for http server"
 ---

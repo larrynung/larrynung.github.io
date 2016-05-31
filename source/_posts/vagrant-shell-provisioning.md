@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Shell Provisioning"
 date: 2015-10-26 00:13:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant, Provisioning"
 description: "Vagrant - Shell Provisioning"
 ---

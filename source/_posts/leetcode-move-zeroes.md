@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Move Zeroes"
 date: 2016-02-28 21:01:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Move Zeroes"
 ---

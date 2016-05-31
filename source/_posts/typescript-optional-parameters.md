@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Optional Parameters"
 date: 2015-11-19 23:49:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Optional Parameters"
 ---

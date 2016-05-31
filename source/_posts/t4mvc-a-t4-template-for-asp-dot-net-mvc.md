@@ -3,7 +3,7 @@ layout: post
 title: "T4MVC - A T4 template for ASP.NET MVC"
 date: 2014-07-17 13:04:00
 comments: true
-categories: [T4MVC, T4]
+tags: [T4MVC, T4]
 keywords: "T4MVC, ASP.NET, MVC"
 description: "T4MVC - A T4 template for ASP.NET MVC"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Valid Parentheses"
 date: 2015-08-11 23:21:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Valid Parentheses"
 ---

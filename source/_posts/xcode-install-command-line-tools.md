@@ -3,7 +3,7 @@ layout: post
 title: "Xcode - Install Command Line Tools"
 date: 2015-07-06 23:11:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "Xcode - Install Command Line Tools"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio - Extension Manger Cannot Connect From Behind a Firewall"
 date: 2014-04-04 01:02:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, Extension Manager"
 description: "Visual Studio - Extension Manger Cannot Connect From Behind a Firewall"
 ---

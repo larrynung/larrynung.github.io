@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2015 - New Exception Settings Window"
 date: 2015-07-11 11:40:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 2015 - New Exception Settings Window"
 ---

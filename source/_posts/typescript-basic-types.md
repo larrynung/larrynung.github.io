@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Basic Types"
 date: 2015-11-18 21:32:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Basic Types"
 ---

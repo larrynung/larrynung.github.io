@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - WorkerPool"
 date: 2016-03-30 23:45:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor, WorkPool"
 description: "Disruptor - WorkerPool"
 ---

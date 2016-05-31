@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Read more excerpt link"
 date: 2013-11-13 20:57:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 ---
 
 在Octopress上撰寫文章時，若不特別做些處理，在Blog分頁那邊會將所有文章的全文依序列出。  

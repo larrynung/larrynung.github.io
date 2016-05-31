@@ -3,7 +3,7 @@ layout: post
 title: "[Win8]如何關閉在Win8中開啟的Metro app"
 date: 2013-11-06 12:00:00
 comments: true
-categories: 
+tags: 
 description: "[Win8]如何關閉在Win8中開啟的Metro app"
 ---
 <p>

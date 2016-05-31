@@ -3,7 +3,7 @@ layout: post
 title: "Mozjpeg - Improved JPEG encoder"
 date: 2014-09-20 16:21:00
 comments: true
-categories: 
+tags: 
 keywords: "Mozjpeg"
 description: "Mozjpeg - Improved JPEG encoder"
 ---

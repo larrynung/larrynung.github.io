@@ -3,7 +3,7 @@ layout: post
 title: "Devart T4 Editor - VS add-in for editing T4 templates"
 date: 2014-04-15 23:44:00
 comments: true
-categories: [T4, Visual Studio]
+tags: [T4, Visual Studio]
 keywords: "T4"
 description: "Devart T4 Editor - VS add-in for editing T4 templates"
 ---

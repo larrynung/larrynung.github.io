@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Vagrantfile inheritance"
 date: 2015-10-21 05:26:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant, Vagrantfile"
 description: "Vagrant - Vagrantfile inheritance"
 ---

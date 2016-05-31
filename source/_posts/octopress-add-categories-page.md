@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Add categories page"
 date: 2014-06-09 23:22:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: "Octopress, Categories"
 description: "Octopress - Add categories page"
 ---

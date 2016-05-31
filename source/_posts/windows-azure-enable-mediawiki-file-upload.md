@@ -3,7 +3,7 @@ layout: post
 title: "Windows Azure - Enable MediaWiki File Upload"
 date: 2015-01-11 22:23:00
 comments: true
-categories: [Windows Azure, MediaWiki] 
+tags: [Windows Azure, MediaWiki] 
 keywords: "Azure, MediaWiki"
 description: "Windows Azure - Enable MediaWiki File Upload"
 ---

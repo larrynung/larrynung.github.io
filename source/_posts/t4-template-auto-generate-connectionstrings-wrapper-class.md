@@ -3,7 +3,7 @@ layout: post
 title: "T4 template - Auto generate ConnectionString's wrapper class"
 date: 2014-03-27 23:28:00
 comments: true
-categories: [T4]
+tags: [T4]
 keywords: "T4, ConnectionString, Strong Type"
 description: "T4 template - Auto generate ConnectionString's wrapper class"
 ---

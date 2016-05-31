@@ -3,7 +3,7 @@ layout: post
 title: "Bootstrap - Use Glyphicons with bower"
 date: 2016-02-18 05:46:00
 comments: true
-categories: [Bootstrap]
+tags: [Bootstrap]
 keywords: "Bootstrap, Bower, Glyphicons"
 description: "Bootstrap - Use Glyphicons with bower"
 ---

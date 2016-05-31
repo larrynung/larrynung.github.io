@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 14 CTP 2 - Light Bulb Editor Adornment"
 date: 2014-08-16 00:18:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 14 CTP 2 - Light Bulb Editor Adornment"
 ---

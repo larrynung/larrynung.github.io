@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 date: 2015-11-26 01:12:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 ---

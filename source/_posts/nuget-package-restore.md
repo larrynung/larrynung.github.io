@@ -3,7 +3,7 @@ layout: post
 title: "NuGet - Package restore"
 date: 2013-12-11 22:04:00
 comments: true
-categories: [Nuget]
+tags: [Nuget]
 keywords: "NuGet"
 description: "NuGet - Package restore"
 ---

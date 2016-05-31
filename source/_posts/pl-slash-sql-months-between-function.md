@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - MONTHS_BETWEEN Function"
 date: 2015-07-16 22:13:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - MONTHS_BETWEEN Function"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Roslyn Syntax Visualizers"
 date: 2014-10-05 23:23:00
 comments: true
-categories: [Roslyn, Visual Studio]
+tags: [Roslyn, Visual Studio]
 keywords: "Roslyn, Syntax, Visualizer"
 description: "Roslyn Syntax Visualizers"
 ---

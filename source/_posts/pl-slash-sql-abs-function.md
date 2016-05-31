@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - ABS function"
 date: 2015-07-12 18:51:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - ABS function"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "StackExchange.Redis - Pub/Sub Demo"
 date: 2016-05-24 07:51:00
 comments: true
-categories: [StackExchange.Redis]
+tags: [StackExchange.Redis]
 keywords: "StackExchange.Redis"
 description: "StackExchange.Redis - Pub/Sub Demo"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Three Step Pipeline: 1P – 3C"
 date: 2016-03-15 05:11:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - Three Step Pipeline: 1P – 3C"
 ---

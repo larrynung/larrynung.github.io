@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Await in catch/finally"
 date: 2015-03-13 07:59:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#"
 description: "C# 6.0 - Await in catch/finally"
 ---

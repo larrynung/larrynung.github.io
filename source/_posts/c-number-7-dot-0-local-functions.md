@@ -3,7 +3,7 @@ layout: post
 title: "C# 7.0 - Local functions"
 date: 2016-05-11 06:21:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "C# 7.0 - Local functions"
 ---

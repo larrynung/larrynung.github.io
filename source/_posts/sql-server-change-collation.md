@@ -3,7 +3,7 @@ layout: post
 title: "SQL Server - Change Collation"
 date: 2014-03-21 23:04:00
 comments: true
-categories: SQL 
+tags: SQL 
 keywords: "SQL, Collation"
 description: "SQL Server - Change Collation"
 ---

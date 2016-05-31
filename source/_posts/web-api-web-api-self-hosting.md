@@ -3,7 +3,7 @@ layout: post
 title: "Web API - Web API Self Hosting"
 date: 2014-04-14 23:24:00
 comments: true
-categories: [Web API] 
+tags: [Web API] 
 keywords: "Web API, Self Hosting"
 description: "Web API - Web API Self Hosting"
 ---

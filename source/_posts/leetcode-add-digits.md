@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Add Digits"
 date: 2016-02-10 09:04:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Add Digits"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Web.Config Transformation - Add Config Transform File"
 date: 2014-07-07 23:01:00
 comments: true
-categories: [Web.Config Transformation]
+tags: [Web.Config Transformation]
 keywords: "Web.Config, Transformation"
 description: "Web.Config Transformation - Add Config Transform File"
 ---

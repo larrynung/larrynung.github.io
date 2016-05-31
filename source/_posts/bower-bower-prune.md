@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Bower prune"
 date: 2016-01-20 05:34:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Bower prune"
 ---

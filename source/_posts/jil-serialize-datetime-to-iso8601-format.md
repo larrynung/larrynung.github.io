@@ -3,7 +3,7 @@ layout: post
 title: "Jil - Serialize DateTime to ISO8601 Format"
 date: 2015-09-30 23:54:00
 comments: true
-categories: [Jil]
+tags: [Jil]
 keywords: "Jil"
 description: "Jil - Serialize DateTime to ISO8601 Format"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Remote desktop with Microsoft Terminal Services control"
 date: 2013-12-07 09:03:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "RDP, Remote Desktop, CSharp"
 description: "Remote desktop with Microsoft Terminal Services control"
 ---

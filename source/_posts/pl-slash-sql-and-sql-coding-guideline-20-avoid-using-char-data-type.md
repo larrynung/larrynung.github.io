@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
 date: 2015-12-05 19:35:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
 ---

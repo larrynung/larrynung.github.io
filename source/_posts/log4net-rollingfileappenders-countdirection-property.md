@@ -3,7 +3,7 @@ layout: post
 title: "log4net - RollingFileAppender's CountDirection Property"
 date: 2016-02-20 19:00:00
 comments: true
-categories: [log4net]
+tags: [log4net]
 keywords: "log4net"
 description: "log4net - RollingFileAppender's CountDirection Property"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "SuperBenchmarker - A load generator command-line tool for testing websites and HTTP APIs"
 date: 2013-10-27 20:25:00
 comments: true
-categories: 
+tags: 
 ---
 
 SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Framework 4.5開發而成。

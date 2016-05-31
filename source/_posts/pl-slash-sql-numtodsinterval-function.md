@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - NUMTODSINTERVAL function"
 date: 2015-07-12 13:55:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - NUMTODSINTERVAL function"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2015 - New Breakpoint Configuration Experience"
 date: 2015-02-05 08:32:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, Breakpoint"
 description: "Visual Studio 2015 - New Breakpoint Configuration Experience"
 ---

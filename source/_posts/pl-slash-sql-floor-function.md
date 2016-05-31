@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - FLOOR function"
 date: 2015-07-13 22:36:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - FLOOR function"
 ---

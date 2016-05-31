@@ -3,7 +3,7 @@ layout: post
 title: "MEF - Handle ReflectionTypeLoadException during MEF composition"
 date: 2014-02-17 11:08:00
 comments: true
-categories: [MEF]
+tags: [MEF]
 keywords: "MEF, DirectoryCatalog, ReflectionTypeLoadException"
 description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
 ---

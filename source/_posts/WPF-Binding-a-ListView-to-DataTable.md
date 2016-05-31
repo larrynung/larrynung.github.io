@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Binding a ListView to DataTable"
 date: 2014-02-07 10:23:00
 comments: true
-categories: [WPF]
+tags: [WPF]
 keywords: "WPF, ListView, DataTable, Binding"
 description: "WPF - Binding a ListView to DataTable"
 ---

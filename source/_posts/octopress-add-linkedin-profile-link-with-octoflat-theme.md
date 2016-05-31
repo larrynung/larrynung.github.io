@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Add Linkedin profile link with Octoflat theme"
 date: 2013-12-21 21:59:00
 comments: true
-categories: Octopress
+tags: Octopress
 keywords: Octopress, Linkedin, Octoflat
 description: "Octopress - Add Linkedin profile link with Octoflat theme"
 ---

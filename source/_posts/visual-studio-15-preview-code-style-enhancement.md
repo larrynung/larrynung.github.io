@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 15 Preview - Code style enhancement"
 date: 2016-04-18 22:24:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 15 Preview - Code style enhancement"
 ---

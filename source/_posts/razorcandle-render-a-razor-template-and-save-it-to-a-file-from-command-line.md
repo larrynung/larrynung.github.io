@@ -3,7 +3,7 @@ layout: post
 title: "RazorCandle - Render a razor template and save it to a file from command line"
 date: 2015-11-17 05:45:00
 comments: true
-categories: 
+tags: 
 keywords: "RazorCandle"
 description: "RazorCandle - Render a razor template and save it to a file from command line"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: ".NET Core - Getting started"
 date: 2016-01-16 18:05:00
 comments: true
-categories: [.NET Core]
+tags: [.NET Core]
 keywords: ".NET Core"
 description: ".NET Core - Getting started"
 ---

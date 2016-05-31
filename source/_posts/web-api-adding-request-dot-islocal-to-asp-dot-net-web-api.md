@@ -3,7 +3,7 @@ layout: post
 title: "Web API - Adding Request.IsLocal to ASP.NET Web API"
 date: 2015-02-14 11:03:00
 comments: true
-categories: [Web API]
+tags: [Web API]
 keywords: "Web API, IsLocal"
 description: "Web API - Adding Request.IsLocal to ASP.NET Web API"
 ---

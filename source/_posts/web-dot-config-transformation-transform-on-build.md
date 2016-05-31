@@ -3,7 +3,7 @@ layout: post
 title: "Web.Config Transformation - Transform on build"
 date: 2014-07-07 23:19:00
 comments: true
-categories: [Web.Config Transformation]
+tags: [Web.Config Transformation]
 keywords: "Web.Config, Transformation"
 description: "Web.Config Transformation - Transform on build"
 ---

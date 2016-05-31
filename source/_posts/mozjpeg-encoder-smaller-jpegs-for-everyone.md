@@ -3,7 +3,7 @@ layout: post
 title: "mozjpeg encoder - smaller jpegs for everyone"
 date: 2014-09-21 16:23:00
 comments: true
-categories: 
+tags: 
 keywords: "Mozjpeg, Jpeg, Encoder, Online"
 description: "mozjpeg encoder - smaller jpegs for everyone"
 ---

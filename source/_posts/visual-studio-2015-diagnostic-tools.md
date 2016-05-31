@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2015 - Diagnostic Tools"
 date: 2015-08-17 21:54:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 2015 - Diagnostic Tools"
 ---

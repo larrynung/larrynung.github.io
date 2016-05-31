@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio - Use 64 Bit IISExpress"
 date: 2014-07-27 23:11:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, 64 bit, iisexpress"
 description: "Visual Studio - Use 64 Bit IISExpress"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "gist-it - Embed files from a github repository like a gist"
 date: 2013-12-09 23:35:00
 comments: true
-categories: [GitHub]
+tags: [GitHub]
 keywords: "GitHub, Gist"
 description: "gist-it - Embed files from a github repository like a gist"
 ---

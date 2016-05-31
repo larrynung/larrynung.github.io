@@ -3,7 +3,7 @@ layout: post
 title: "SQLCop - Auditing Database for Best Practices"
 date: 2014-02-23 21:37:00
 comments: true
-categories: 
+tags: 
 keywords: "SQLCop, SQL"
 description: "SQLCop - Auditing Database for Best Practices"
 ---

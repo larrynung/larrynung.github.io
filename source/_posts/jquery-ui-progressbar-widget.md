@@ -3,7 +3,7 @@ layout: post
 title: "JQuery UI - Progressbar Widget"
 date: 2015-12-23 00:30:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "JQuery UI - Progressbar Widget"
 ---

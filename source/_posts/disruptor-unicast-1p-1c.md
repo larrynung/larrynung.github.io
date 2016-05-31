@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Unicast: 1P - 1C"
 date: 2016-03-14 23:05:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - Unicast: 1P - 1C"
 ---

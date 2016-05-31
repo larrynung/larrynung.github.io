@@ -3,7 +3,7 @@ layout: post
 title: "EyeDisposable - IL instrumenter to help detect IDisposable leaks in .NET programs"
 date: 2013-12-26 22:34:00
 comments: true
-categories: 
+tags: 
 keywords: EyeDisposable, Leak
 description: "EyeDisposable - IL instrumenter to help detect IDisposable leaks in .NET programs"
 ---

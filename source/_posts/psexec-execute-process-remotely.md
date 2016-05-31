@@ -3,7 +3,7 @@ layout: post
 title: "PsExec - Execute process remotely"
 date: 2015-02-13 20:26:00
 comments: true
-categories: 
+tags: 
 keywords: "PsExec"
 description: "PsExec - Execute process remotely"
 ---

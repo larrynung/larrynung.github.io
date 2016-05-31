@@ -3,7 +3,7 @@ layout: post
 title: "JQuery DataTables - Table plug-in for jQuery"
 date: 2014-05-13 13:20:00
 comments: true
-categories: [JQuery]
+tags: [JQuery]
 keywords: "DataTables"
 description: "JQuery DataTables - Table plug-in for jQuery"
 ---

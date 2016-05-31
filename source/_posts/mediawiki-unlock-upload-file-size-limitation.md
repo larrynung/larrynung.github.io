@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - Unlock upload file size limitation"
 date: 2014-06-15 00:07:00
 comments: true
-categories: [MediaWiki] 
+tags: [MediaWiki] 
 keywords: "MediaWiki"
 description: "MediaWiki - Unlock upload file size limitation"
 ---

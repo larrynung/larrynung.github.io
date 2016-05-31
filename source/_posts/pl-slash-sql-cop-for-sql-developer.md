@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL Cop for SQL Developer"
 date: 2015-09-18 23:37:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL Cop for SQL Developer"
 ---

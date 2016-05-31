@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 14 - Never overload data structure usages"
 date: 2015-11-27 05:47:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 14 - Never overload data structure usages"
 ---

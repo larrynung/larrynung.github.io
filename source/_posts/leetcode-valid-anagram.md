@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Valid Anagram"
 date: 2015-08-15 21:44:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Valid Anagram"
 ---

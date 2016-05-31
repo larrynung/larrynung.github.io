@@ -3,7 +3,7 @@ layout: post
 title: "ODP.NET - Oracle Data Provider for .NET"
 date: 2014-04-06 23:52:00
 comments: true
-categories: [ODP.NET, CSharp]
+tags: [ODP.NET, CSharp]
 keywords: "ODP.NET, C#, Oracle"
 description: "ODP.NET - Oracle Data Provider for .NET"
 ---

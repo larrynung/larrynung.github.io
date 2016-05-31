@@ -3,7 +3,7 @@ layout: post
 title: "log4net - BufferingForwardingAppender"
 date: 2016-03-02 05:24:00
 comments: true
-categories: [log4net]
+tags: [log4net]
 keywords: "log4net"
 description: "log4net - BufferingForwardingAppender"
 ---

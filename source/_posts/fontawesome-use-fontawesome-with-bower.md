@@ -3,7 +3,7 @@ layout: post
 title: "FontAwesome - Use FontAwesome with bower"
 date: 2016-02-17 05:33:00
 comments: true
-categories: [FontAwesome]
+tags: [FontAwesome]
 keywords: "FontAwesome"
 description: "FontAwesome - Use FontAwesome with bower"
 ---

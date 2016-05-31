@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 15 Preview - Open folder"
 date: 2016-04-18 21:30:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 15 Preview - Open folder"
 ---

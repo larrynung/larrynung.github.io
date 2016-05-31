@@ -3,7 +3,7 @@ layout: post
 title: "Web Deploy - Synchronize IIS"
 date: 2015-07-10 22:18:00
 comments: true
-categories: [Web Deploy]
+tags: [Web Deploy]
 keywords: "Web Deploy"
 description: "Web Deploy - Synchronize IIS"
 ---

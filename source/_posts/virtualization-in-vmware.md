@@ -3,7 +3,7 @@ layout: post
 title: "Virtualization in VMware"
 date: 2013-11-12 23:27:00
 comments: true
-categories: [VMware]
+tags: [VMware]
 ---
 
 在VMware下若欲跑些需要虛擬化的程式，可將VMware的Virtualization功能開啟   

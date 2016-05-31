@@ -3,7 +3,7 @@ layout: post
 title: "Outlook - Archive Email"
 date: 2014-04-27 12:43:00
 comments: true
-categories: [Outlook]
+tags: [Outlook]
 keywords: "Outlook, Archive"
 description: "Outlook - Archive Email"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2013 - 64-bit Edit and Continue for .NET Framework code"
 date: 2014-06-16 00:12:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, 2013, Edit And Continue, 64 bit"
 description: "Visual Studio 2013 - 64-bit Edit and Continue for .NET Framework code"
 ---

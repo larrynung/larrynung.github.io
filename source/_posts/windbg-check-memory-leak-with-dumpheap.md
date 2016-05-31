@@ -3,7 +3,7 @@ layout: post
 title: "WinDBG - Check memory leak with dumpheap"
 date: 2016-03-19 22:51:00
 comments: true
-categories: [WinDBG]
+tags: [WinDBG]
 keywords: "WinDBG"
 description: "WinDBG - Check memory leak with dumpheap"
 ---

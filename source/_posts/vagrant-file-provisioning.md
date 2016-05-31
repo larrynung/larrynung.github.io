@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - File Provisioning"
 date: 2015-11-03 00:06:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant"
 description: "Vagrant - File Provisioning"
 ---

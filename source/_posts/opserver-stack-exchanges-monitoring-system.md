@@ -3,7 +3,7 @@ layout: post
 title: "Opserver - Stack Exchange's Monitoring System"
 date: 2016-04-11 23:24:00
 comments: true
-categories: [Opserver]
+tags: [Opserver]
 keywords: "Opserver"
 description: "Opserver - Stack Exchange's Monitoring System"
 ---

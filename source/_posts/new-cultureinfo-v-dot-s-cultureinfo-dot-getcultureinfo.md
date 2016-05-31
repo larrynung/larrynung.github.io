@@ -3,7 +3,7 @@ layout: post
 title: "new CultureInfo v.s CultureInfo.GetCultureInfo"
 date: 2016-01-22 05:31:00
 comments: true
-categories: 
+tags: 
 keywords: "CultureInfo"
 description: "new CultureInfo v.s CultureInfo.GetCultureInfo"
 ---

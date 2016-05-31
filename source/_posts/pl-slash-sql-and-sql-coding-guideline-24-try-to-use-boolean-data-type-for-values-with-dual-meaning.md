@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 24 -Try to use boolean data type for values with dual meaning"
 date: 2015-12-17 05:52:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 24 -Try to use boolean data type for values with dual meaning"
 ---

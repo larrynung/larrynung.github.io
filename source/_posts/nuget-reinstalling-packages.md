@@ -3,7 +3,7 @@ layout: post
 title: "NuGet - Reinstalling Packages"
 date: 2014-01-01 23:11:00
 comments: true
-categories: NuGet
+tags: NuGet
 keywords: NuGet,Reinstall
 description: "NuGet - Reinstalling Packages"
 ---

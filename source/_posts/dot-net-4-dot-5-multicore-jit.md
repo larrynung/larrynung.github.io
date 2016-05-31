@@ -3,7 +3,7 @@ layout: post
 title: ".NET 4.5 - Multicore JIT"
 date: 2014-03-26 23:33:00
 comments: true
-categories: [CSharp, JIT]
+tags: [CSharp, JIT]
 keywords: "Multicore, JIT"
 description: ".NET 4.5 - Multicore JIT"
 ---

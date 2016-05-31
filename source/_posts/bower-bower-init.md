@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Bower init"
 date: 2016-01-13 05:19:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Bower init"
 ---

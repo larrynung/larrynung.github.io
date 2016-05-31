@@ -3,7 +3,7 @@ layout: post
 title: "Change color in batch file"
 date: 2013-11-12 23:55:00
 comments: true
-categories: [Batch]
+tags: [Batch]
 ---
 
 要在批次檔中設定顯示的顏色,我們可以像下面這樣撰寫批次檔  

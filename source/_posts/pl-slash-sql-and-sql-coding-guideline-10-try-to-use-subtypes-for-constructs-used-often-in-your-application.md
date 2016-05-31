@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 10 - Try to use subtypes for constructs used often in your application"
 date: 2015-11-24 05:33:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 9 - Try to use subtypes for constructs used often in your application"
 ---

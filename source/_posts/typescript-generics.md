@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Generics"
 date: 2015-12-02 23:56:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Generics"
 ---

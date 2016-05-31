@@ -3,7 +3,7 @@ layout: post
 title: "MS-DOS - Merge files with copy command"
 date: 2013-12-18 23:07:00
 comments: true
-categories: MS-Dos
+tags: MS-Dos
 keywords: MS-Dos,Merge,Copy
 description: MS-DOS - Merge files with copy command
 ---

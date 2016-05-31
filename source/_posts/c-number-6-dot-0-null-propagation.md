@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Null propagation"
 date: 2014-08-21 00:03:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#"
 description: "C# 6.0 - Null propagation"
 ---

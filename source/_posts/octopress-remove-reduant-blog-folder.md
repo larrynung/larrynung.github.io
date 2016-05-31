@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Remove reduant blog folder"
 date: 2013-11-25 21:52:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: "Octopress"
 description: "Octopress - Remove reduant blog folder"
 ---

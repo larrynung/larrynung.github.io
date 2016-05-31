@@ -3,7 +3,7 @@ layout: post
 title: "Outlook - Check mailbox size"
 date: 2015-07-11 16:00:00
 comments: true
-categories: [Outlook]
+tags: [Outlook]
 keywords: "Outlook"
 description: "Outlook - Check mailbox size"
 ---

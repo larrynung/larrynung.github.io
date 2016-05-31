@@ -3,7 +3,7 @@ layout: post
 title: "FX.Configuration - Read JSON configuration"
 date: 2016-05-21 08:06:00
 comments: true
-categories: [FX.Configuration]
+tags: [FX.Configuration]
 keywords: 
 description: "FX.Configuration - Read JSON configuration"
 ---

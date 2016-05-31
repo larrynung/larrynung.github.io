@@ -3,7 +3,7 @@ layout: post
 title: "T4 Template - Debugging a T4 Text Template"
 date: 2014-04-27 13:20:00
 comments: true
-categories: [T4]
+tags: [T4]
 keywords: "T4, Debug"
 description: "T4 Template - Debugging a T4 Text Template"
 ---

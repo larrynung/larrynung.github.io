@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Using Bower in Visual Studio 2015"
 date: 2016-01-29 05:47:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Using Bower in Visual Studio 2015"
 ---

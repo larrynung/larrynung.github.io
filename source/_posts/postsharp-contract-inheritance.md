@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Contract Inheritance"
 date: 2015-02-08 16:17:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp, Contract"
 description: "PostSharp - Contract Inheritance"
 ---

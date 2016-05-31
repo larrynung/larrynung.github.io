@@ -3,7 +3,7 @@ layout: post
 title: "Json.Net - Custom Converter"
 date: 2015-02-17 07:54:00
 comments: true
-categories: [Json.NET]
+tags: [Json.NET]
 keywords: "Json.NET, Converter"
 description: "Json.NET - Custom Converter"
 ---

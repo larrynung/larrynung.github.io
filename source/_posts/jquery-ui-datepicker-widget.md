@@ -3,7 +3,7 @@ layout: post
 title: "JQuery UI - Datepicker Widget"
 date: 2015-12-20 17:22:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "JQuery UI - Datepicker Widget"
 ---

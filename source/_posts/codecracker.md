@@ -3,7 +3,7 @@ layout: post
 title: "Code Cracker"
 date: 2015-02-10 08:37:00
 comments: true
-categories: [Roslyn, Visual Studio]
+tags: [Roslyn, Visual Studio]
 keywords: "Roslyn, CodeCracker"
 description: "CodeCracker"
 ---

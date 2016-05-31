@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Add About Me section in sidebar"
 date: 2014-06-14 18:21:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: "Octopress"
 description: "Octopress - Add About Me section in sidebar"
 ---

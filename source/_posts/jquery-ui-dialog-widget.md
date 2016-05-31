@@ -3,7 +3,7 @@ layout: post
 title: "JQuery UI - Dialog Widget"
 date: 2015-12-21 23:22:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "JQuery UI - Dialog Widget"
 ---

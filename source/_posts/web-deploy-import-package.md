@@ -3,7 +3,7 @@ layout: post
 title: "Web Deploy - Import Package"
 date: 2015-07-10 21:48:00
 comments: true
-categories: [Web Deploy]
+tags: [Web Deploy]
 keywords: "Web Deploy"
 description: "Web Deploy - Import Package"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Contains Duplicate"
 date: 2015-07-05 22:58:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Contains Duplicate"
 ---

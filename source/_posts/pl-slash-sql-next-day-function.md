@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - NEXT_DAY function"
 date: 2015-07-15 21:49:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - NEXT_DAY function"
 ---

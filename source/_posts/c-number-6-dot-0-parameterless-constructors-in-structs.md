@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Parameterless constructors in structs"
 date: 2015-01-21 00:17:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#, Parameterless Constructor, Struct"
 description: "C# 6.0 - Parameterless constructors in structs"
 ---

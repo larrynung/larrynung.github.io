@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - Create wiki page"
 date: 2014-02-22 21:42:00
 comments: true
-categories: [MediaWiki] 
+tags: [MediaWiki] 
 keywords: "MediaWiki"
 description: "MediaWiki - Create wiki page"
 ---

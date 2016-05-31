@@ -3,7 +3,7 @@ layout: post
 title: "Integrate disqus comments with Octopress"
 date: 2013-11-08 23:15:00
 comments: true
-categories: Octopress 
+tags: Octopress 
 ---
 
 Disqus是ㄧ提供留言功能的服務，整合了多種社群服務，能用社群帳號直接登入留言，除此之外也支援匿名留言、分享、以及完整的過濾與管理功能。

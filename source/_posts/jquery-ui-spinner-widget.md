@@ -3,7 +3,7 @@ layout: post
 title: "JQuery UI - Spinner Widget"
 date: 2015-12-24 05:44:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "JQuery UI - Spinner Widget"
 ---

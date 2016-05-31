@@ -3,7 +3,7 @@ layout: post
 title: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 date: 2015-10-04 23:22:00
 comments: true
-categories: 
+tags: 
 keywords: "Fiddler"
 description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 ---

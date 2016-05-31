@@ -3,7 +3,7 @@ layout: post
 title: "Check if run as administrator"
 date: 2014-02-25 23:46:00
 comments: true
-categories: CSharp
+tags: CSharp
 keywords: "Administrator"
 description: "Check if run as administrator"
 ---

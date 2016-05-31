@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Length of Last Word"
 date: 2015-09-11 10:02:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Length of Last Word"
 ---

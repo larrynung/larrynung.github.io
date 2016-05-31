@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio - JSON Debugger Visualizer in Visual Studio 2013"
 date: 2014-02-08 22:08:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, 2013, JSON, Visualizer"
 description: "Visual Studio - JSON Debugger Visualizer in Visual Studio 2013"
 ---

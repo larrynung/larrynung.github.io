@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Adding Detailed Tracing to a Code Base"
 date: 2015-02-02 00:01:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp, Tracing"
 description: "PostSharp - Adding Detailed Tracing to a Code Base"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - SSH in windows"
 date: 2014-10-02 23:55:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant, SSH"
 description: "Vagrant - SSH in windows"
 ---

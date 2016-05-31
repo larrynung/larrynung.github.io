@@ -3,7 +3,7 @@ layout: post
 title: "[VB.NET]使用Make single instance application實現單一程式執行個體時所發生的怪現象"
 date: 2013-11-06 12:00:00
 comments: true
-categories: 
+tags: 
 description: "[VB.NET]使用Make single instance application實現單一程式執行個體時所發生的怪現象"
 ---
 <p>前陣子筆者在回應論壇上程式縮至常駐列，程式重複開啟時視窗無法還原</a>這篇發問，因為這篇發問還滿有趣的，所以稍稍紀錄一下。發問者主要是想要嘗試實現單一程式執行個體，但是卻沒有打算一開始就到位，因此只是很簡單的勾選VB.NET屬性頁中的Make single instance application設定。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1303/1037d6749381_AF99/image_2.png"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\66ac5fb1-13bd-4334-ba12-aaef8dfe80db\image_thumb.png" width="425" height="179" /> </p>  <p> </p>  <p>而發問者的程式也只是很簡單的當是窗縮到最小時隱藏到系統列，以及雙擊系統列圖示後將視窗恢復，像是下面這樣：</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:cc291899-eb8f-4ac8-862f-bfb69323a349" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="vb">Public Class Form1

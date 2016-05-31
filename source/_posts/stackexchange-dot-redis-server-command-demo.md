@@ -3,7 +3,7 @@ layout: post
 title: "StackExchange.Redis - Server Command Demo"
 date: 2016-05-23 23:28:00
 comments: true
-categories: [StackExchange.Redis]
+tags: [StackExchange.Redis]
 keywords: "StackExchange.Redis"
 description: "StackExchange.Redis - Server Command Demo"
 ---

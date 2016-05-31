@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Global Status"
 date: 2015-11-11 00:41:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant"
 description: "Vagrant - Global Status"
 ---

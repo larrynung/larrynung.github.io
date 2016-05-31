@@ -3,7 +3,7 @@ layout: post
 title: "StackExchange.Redis - Scripting"
 date: 2016-05-24 23:40:00
 comments: true
-categories: [StackExchange.Redis]
+tags: [StackExchange.Redis]
 keywords: "StackExchange.Redis"
 description: "StackExchange.Redis - Scripting"
 ---

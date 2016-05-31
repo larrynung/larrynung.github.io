@@ -3,7 +3,7 @@ layout: post
 title: "T4MVC - Add Timestamp To Static Links"
 date: 2014-07-24 22:55:00
 comments: true
-categories: [T4MVC, T4]
+tags: [T4MVC, T4]
 keywords: "T4MVC, T4"
 description: "T4MVC - Add Timestamp To Static Links"
 ---

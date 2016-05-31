@@ -3,7 +3,7 @@ layout: post
 title: "Web Deploy - Export package"
 date: 2015-07-08 23:13:00
 comments: true
-categories: [Web Deploy]
+tags: [Web Deploy]
 keywords: "Web Deploy, Export"
 description: "Web Deploy - Export package"
 ---

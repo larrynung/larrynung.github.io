@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET - Config session timeout"
 date: 2014-03-21 23:49:00
 comments: true
-categories: 
+tags: 
 keywords: "ASP.NET, Session, Timeout, Web.Config"
 description: "ASP.NET - Config session timeout"
 ---

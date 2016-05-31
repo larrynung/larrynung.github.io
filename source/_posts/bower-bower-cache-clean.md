@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Bower cache clean"
 date: 2016-01-18 05:24:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Bower cache clean"
 ---

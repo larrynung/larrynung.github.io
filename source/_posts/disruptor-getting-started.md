@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Getting started"
 date: 2016-03-13 17:51:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - Getting started"
 ---

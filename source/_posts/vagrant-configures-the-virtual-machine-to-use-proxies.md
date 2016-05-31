@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Configures the virtual machine to use proxies"
 date: 2015-10-20 04:26:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant, Proxy"
 description: "Vagrant - Configures the virtual machine to use proxies"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Dos - Execute multiple commands in a single line"
 date: 2014-09-03 21:35:00
 comments: true
-categories: [Dos]
+tags: [Dos]
 keywords: "Dos"
 description: "Dos - Execute multiple commands in a single line"
 ---

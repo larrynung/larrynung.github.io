@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Power of Two"
 date: 2015-08-23 23:01:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Power of Two"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "LinkedIn - Customize public profile url"
 date: 2015-01-13 22:03:00
 comments: true
-categories: [LinkedIn]
+tags: [LinkedIn]
 keywords: "LinkedIn"
 description: "LinkedIn - Customize public profile url"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Bower uninstall"
 date: 2016-01-15 04:48:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Bower uninstall"
 ---

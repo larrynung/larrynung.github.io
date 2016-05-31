@@ -3,7 +3,7 @@ layout: post
 title: "T4 Template - T4Enum 1.0"
 date: 2016-03-22 21:38:00
 comments: true
-categories: [T4, T4Enum]
+tags: [T4, T4Enum]
 keywords: "T4, T4Enum"
 description: "T4 Template - T4Enum 1.0"
 ---

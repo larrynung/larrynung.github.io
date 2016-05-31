@@ -3,7 +3,7 @@ layout: post
 title: "FX.Configuration - Read application configuration"
 date: 2016-05-17 07:49:00
 comments: true
-categories: [FX.Configuration]
+tags: [FX.Configuration]
 keywords: "FX.Configuration"
 description: "FX.Configuration - Read application configuration"
 ---

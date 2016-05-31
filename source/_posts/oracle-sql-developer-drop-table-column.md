@@ -3,7 +3,7 @@ layout: post
 title: "Oracle SQL Developer - Drop table column"
 date: 2015-07-08 13:42:00
 comments: true
-categories: [Oracle SQL Developer]
+tags: [Oracle SQL Developer]
 keywords: "Oracle"
 description: "Oracle SQL Developer - Drop table column"
 ---

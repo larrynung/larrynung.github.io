@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - Docker Provisioning"
 date: 2015-11-01 23:33:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant"
 description: "Vagrant - Docker Provisioning"
 ---

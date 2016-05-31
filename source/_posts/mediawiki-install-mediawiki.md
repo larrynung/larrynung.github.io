@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - Install MediaWiki"
 date: 2014-05-27 23:40:00
 comments: true
-categories: [MediaWiki]
+tags: [MediaWiki]
 keywords: "MediaWiki"
 description: "MediaWiki - Install MediaWiki"
 ---

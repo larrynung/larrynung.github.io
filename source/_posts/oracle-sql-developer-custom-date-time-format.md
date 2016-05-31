@@ -3,7 +3,7 @@ layout: post
 title: "Oracle SQL Developer - Custom date time format"
 date: 2016-05-13 23:37:00
 comments: true
-categories: [Oracle SQL Developer]
+tags: [Oracle SQL Developer]
 keywords: "Oracle"
 description: "Oracle SQL Developer - Custom date time format"
 ---

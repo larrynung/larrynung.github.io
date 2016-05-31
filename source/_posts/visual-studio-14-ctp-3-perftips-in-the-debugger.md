@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 14 CTP 3 - PerfTips in the Debugger"
 date: 2014-08-24 00:11:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 14 CTP 3 - PerfTips in the Debugger"
 ---

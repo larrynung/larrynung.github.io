@@ -3,7 +3,7 @@ layout: post
 title: "SpecFlow - Getting Started"
 date: 2015-09-13 16:14:00
 comments: true
-categories: 
+tags: 
 keywords: "SpecFlow"
 description: "SpecFlow - Getting Started"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Travis CI - Build Status images"
 date: 2014-01-15 23:57:00
 comments: true
-categories: [Travis, CI]
+tags: [Travis, CI]
 keywords: "Travis CI, Build Status"
 description: "Travis CI - Build Status images"
 ---

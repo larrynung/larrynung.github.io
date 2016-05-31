@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - ADD_MONTHS function"
 date: 2015-07-14 21:47:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - ADD_MONTHS function"
 ---

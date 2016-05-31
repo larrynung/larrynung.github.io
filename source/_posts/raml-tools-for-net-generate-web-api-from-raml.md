@@ -3,7 +3,7 @@ layout: post
 title: "RAML Tools for .NET - Generate Web API from RAML"
 date: 2015-03-14 23:53:00
 comments: true
-categories: [RAML]
+tags: [RAML]
 keywords: "RAML, Web API"
 description: "RAML Tools for .NET - Generate Web API from RAML"
 ---

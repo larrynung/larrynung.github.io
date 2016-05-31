@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Install Bower"
 date: 2016-01-08 05:23:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Install Bower"
 ---

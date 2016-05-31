@@ -3,7 +3,7 @@ layout: post
 title: "Web.Config Transformation - Transform Web.config When Deploying a Web Application Project"
 date: 2014-07-06 19:27:00
 comments: true
-categories: ["Web.Config Transformation"]
+tags: ["Web.Config Transformation"]
 keywords: "Web.Config, Transformation"
 description: "Web.Config Transformation - Introduction"
 ---

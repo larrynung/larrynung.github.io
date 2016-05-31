@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Self hosting service"
 date: 2014-04-03 23:43:00
 comments: true
-categories: [WCF, CSharp]
+tags: [WCF, CSharp]
 keywords: "WCF, Hosting"
 description: "WCF - Self hosting service"
 ---

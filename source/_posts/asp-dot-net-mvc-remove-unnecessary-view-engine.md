@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET MVC - Remove unnecessary view engine"
 date: 2014-04-08 00:08:00
 comments: true
-categories: [ASP.NET MVC]
+tags: [ASP.NET MVC]
 keywords: "ASP.NET MVC, View Engine"
 description: "ASP.NET MVC - Remove unnecessary view engine"
 ---

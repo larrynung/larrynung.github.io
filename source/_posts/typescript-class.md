@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Class"
 date: 2015-12-02 22:45:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Class"
 ---

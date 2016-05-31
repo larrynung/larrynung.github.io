@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - High Performance Inter-Thread Messaging Library"
 date: 2016-03-19 15:32:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - High Performance Inter-Thread Messaging Library"
 ---

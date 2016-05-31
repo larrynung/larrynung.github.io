@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Customizing Logging"
 date: 2015-02-03 08:36:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp"
 description: "PostSharp - Customizing Logging"
 ---

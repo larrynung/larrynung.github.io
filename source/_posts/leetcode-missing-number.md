@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Missing Number"
 date: 2016-02-29 22:32:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Missing Number"
 ---

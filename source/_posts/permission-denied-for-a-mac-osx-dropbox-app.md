@@ -3,7 +3,7 @@ layout: post
 title: "Permission denied for a Mac OSX Dropbox app"
 date: 2015-09-12 00:00:00
 comments: true
-categories: [Mac, Dropbox]
+tags: [Mac, Dropbox]
 keywords: "Mac, Dropbox"
 description: "Permission denied for a Mac OSX Dropbox app"
 ---

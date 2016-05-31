@@ -3,7 +3,7 @@ layout: post
 title: "Web.config Transformation Tester"
 date: 2014-08-31 14:54:00
 comments: true
-categories: [Web.Config Transformation]
+tags: [Web.Config Transformation]
 keywords: "Web.Config, Transformation"
 description: "Web.config Transformation Tester"
 ---

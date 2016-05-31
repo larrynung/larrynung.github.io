@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET MVC - Post array data to MVC controller"
 date: 2014-04-26 12:53:00
 comments: true
-categories: [ASP.NET MVC]
+tags: [ASP.NET MVC]
 keywords: "ASP.NET, MVC, Array"
 description: "ASP.NET MVC - Post array data to MVC controller"
 ---

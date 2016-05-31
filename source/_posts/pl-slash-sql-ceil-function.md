@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - CEIL function"
 date: 2015-07-13 21:59:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - CEIL function"
 ---

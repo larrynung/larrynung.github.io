@@ -3,7 +3,7 @@ layout: post
 title: "NuGet - Local cache source"
 date: 2013-12-25 22:45:00
 comments: true
-categories: NuGet
+tags: NuGet
 keywords: NuGet
 description: "NuGet - Local cache source"
 ---

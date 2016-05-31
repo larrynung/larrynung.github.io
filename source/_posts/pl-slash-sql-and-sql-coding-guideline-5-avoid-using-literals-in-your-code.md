@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 5 - Avoid using literals in your code"
 date: 2015-09-21 00:17:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 5 - Avoid using literals in your code"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
 date: 2014-11-03 23:17:00
 comments: true
-categories: [Roslyn,  Visual Studio]
+tags: [Roslyn,  Visual Studio]
 keywords: "Roslyn, Visual Studio, FxCop, Analyzer"
 description: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "NuGet - Setting up a private NuGet server"
 date: 2014-02-23 12:11:00
 comments: true
-categories: [NuGet]
+tags: [NuGet]
 keywords: "NuGet, Server"
 description: "NuGet - Setting up a private NuGet server"
 ---

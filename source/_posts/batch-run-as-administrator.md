@@ -3,7 +3,7 @@ layout: post
 title: "Batch - Run as administrator"
 date: 2014-01-01 22:36:00
 comments: true
-categories: Batch
+tags: Batch
 keywords: Batch,Admin,UAC
 description: "Batch - Run as administrator"
 ---

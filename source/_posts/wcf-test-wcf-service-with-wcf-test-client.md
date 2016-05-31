@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Test WCF service with  WCF Test Client"
 date: 2014-03-16 22:47:00
 comments: true
-categories: [WCF]
+tags: [WCF]
 keywords: WCF
 description: "WCF - Test WCF service with  WCF Test Client"
 ---

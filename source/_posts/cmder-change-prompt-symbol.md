@@ -3,7 +3,7 @@ layout: post
 title: "Cmder - Change Prompt symbol"
 date: 2015-10-17 00:56:00
 comments: true
-categories: [Cmder]
+tags: [Cmder]
 keywords: "Cmder"
 description: "Cmder - Change Prompt symbol"
 ---

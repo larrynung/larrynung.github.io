@@ -3,7 +3,7 @@ layout: post
 title: "T4MVC - VS2015 Update 1 causes an error - Identifier Expected"
 date: 2016-01-23 21:40:00
 comments: true
-categories: [T4MVC]
+tags: [T4MVC]
 keywords: "T4MVC"
 description: "T4MVC - VS2015 Update 1 causes an error - Identifier Expected"
 ---

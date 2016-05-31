@@ -3,7 +3,7 @@ layout: post
 title: "Remove #region block with Regex"
 date: 2015-10-21 23:22:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "Remove #region block with Regex"
 ---

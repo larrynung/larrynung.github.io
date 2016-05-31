@@ -3,7 +3,7 @@ layout: post
 title: "DNVM - The .NET Version Manager"
 date: 2015-11-05 23:22:00
 comments: true
-categories: 
+tags: 
 keywords: "DNVM"
 description: "DNVM - The .NET Version Manager"
 ---

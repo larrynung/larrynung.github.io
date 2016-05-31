@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Consumer's WaitStrategy"
 date: 2016-03-20 12:17:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor, WaitStrategy"
 description: "Disruptor - Consumer's WaitStrategy"
 ---

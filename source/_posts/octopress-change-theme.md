@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Change theme"
 date: 2013-12-14 22:27:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: Octopress, Theme
 description: Octopress - Change theme
 ---

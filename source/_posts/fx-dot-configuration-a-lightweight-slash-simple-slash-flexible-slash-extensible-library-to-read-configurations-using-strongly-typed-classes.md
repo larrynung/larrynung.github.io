@@ -3,7 +3,7 @@ layout: post
 title: "FX.Configuration - A lightweight/simple/flexible/extensible library to read configurations using strongly typed classes"
 date: 2016-05-21 23:03:00
 comments: true
-categories: [FX.Configuration]
+tags: [FX.Configuration]
 keywords: "FX.Configuration"
 description: "FX.Configuration - A lightweight/simple/flexible/extensible library to read configurations using strongly typed classes"
 ---

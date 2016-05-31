@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Changing the Logging Back-End"
 date: 2015-02-04 00:31:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp"
 description: "PostSharp - Changing the Logging Back-End"
 ---

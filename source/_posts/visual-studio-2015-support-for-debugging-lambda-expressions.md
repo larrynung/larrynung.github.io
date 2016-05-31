@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2015 - Support for debugging lambda expressions"
 date: 2015-01-28 23:50:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, Lambda, Debug"
 description: "Visual Studio 2015 - Support for debugging lambda expressions"
 ---

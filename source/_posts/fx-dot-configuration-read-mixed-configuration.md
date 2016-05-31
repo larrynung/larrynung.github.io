@@ -3,7 +3,7 @@ layout: post
 title: "FX.Configuration - Read mixed configuration"
 date: 2016-05-21 14:53:00
 comments: true
-categories: [FX.Configuration]
+tags: [FX.Configuration]
 keywords: "FX.Configuration"
 description: "FX.Configuration - Read mixed configuration"
 ---

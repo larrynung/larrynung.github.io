@@ -3,7 +3,7 @@ layout: post
 title: "Check app pool recycle with event log"
 date: 2014-12-27 23:25:00
 comments: true
-categories: 
+tags: 
 keywords: "Recycle, IIS, app pool, event log"
 description: "Check app pool recycle with event log"
 ---

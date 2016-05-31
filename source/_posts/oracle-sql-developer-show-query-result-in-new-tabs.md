@@ -3,7 +3,7 @@ layout: post
 title: "Oracle SQL Developer - Show query result in new tabs"
 date: 2015-11-12 00:06:00
 comments: true
-categories: [Oracle SQL Developer]
+tags: [Oracle SQL Developer]
 keywords: "Oracle SQL Developer"
 description: "Oracle SQL Developer - Show query result in new tabs"
 ---

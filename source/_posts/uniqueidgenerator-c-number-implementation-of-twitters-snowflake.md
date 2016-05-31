@@ -3,7 +3,7 @@ layout: post
 title: "UniqueIdGenerator - C# implementation of Twitter's Snowflake"
 date: 2016-04-07 05:43:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "UniqueIdGenerator - C# implementation of Twitter's Snowflake"
 ---

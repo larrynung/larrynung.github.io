@@ -3,7 +3,7 @@ layout: post
 title: "Travis CI - Build .NET project"
 date: 2014-01-02 23:59:00
 comments: true
-categories: [Travis, CI]
+tags: [Travis, CI]
 keywords: Travis,CI,.NET,Mono
 description: "Travis CI - Build .NET project"
 ---

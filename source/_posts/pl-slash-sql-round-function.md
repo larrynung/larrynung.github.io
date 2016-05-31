@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - Round function"
 date: 2015-07-12 22:12:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - Round function"
 ---

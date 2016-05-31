@@ -3,7 +3,7 @@ layout: post
 title: "FxCop - assembly reference cannot be resolved"
 date: 2013-12-27 23:31:00
 comments: true
-categories: FxCop
+tags: FxCop
 keywords: FxCop, Unresolved, GAC
 description: "FxCop - assembly reference cannot be resolved"
 ---

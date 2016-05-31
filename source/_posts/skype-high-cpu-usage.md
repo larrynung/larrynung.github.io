@@ -3,7 +3,7 @@ layout: post
 title: "Skype - High CPU usage"
 date: 2014-01-08 23:29:00
 comments: true
-categories: Skype
+tags: Skype
 keywords: Skype, CPU
 description: "Skype - High CPU usage"
 ---

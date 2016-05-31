@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - Auto-number headings"
 date: 2014-09-02 23:35:00
 comments: true
-categories: [MediaWiki]
+tags: [MediaWiki]
 keywords: "MediaWiki"
 description: "MediaWiki - Auto-number headings"
 ---

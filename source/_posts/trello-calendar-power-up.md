@@ -3,7 +3,7 @@ layout: post
 title: "Trello - Calendar power-up"
 date: 2015-02-15 23:08:00
 comments: true
-categories: [Trello]
+tags: [Trello]
 keywords: "Trello, Calendar"
 description: "Trello - Calendar power-up"
 ---

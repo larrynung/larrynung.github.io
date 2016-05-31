@@ -3,7 +3,7 @@ layout: post
 title: "Assembly Binding Redirect"
 date: 2015-03-03 07:48:00
 comments: true
-categories: 
+tags: 
 keywords: "BindingRedirect"
 description: "Assembly Binding Redirect"
 ---

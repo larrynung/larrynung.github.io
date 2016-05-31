@@ -3,7 +3,7 @@ layout: post
 title: "Mefx - MEF Composition Analysis Tool"
 date: 2014-03-16 23:20:00
 comments: true
-categories: MEF
+tags: MEF
 keywords: "MEF, Mefx, Tool"
 description: "Mefx - MEF Composition Analysis Tool"
 ---

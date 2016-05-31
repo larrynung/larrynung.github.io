@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Failed to push some refs to GitHub"
 date: 2016-05-11 22:05:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: "Octopress"
 description: "Octopress - Failed to push some refs to GitHub"
 ---

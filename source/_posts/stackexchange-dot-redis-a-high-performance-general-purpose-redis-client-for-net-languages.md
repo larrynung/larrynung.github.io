@@ -3,7 +3,7 @@ layout: post
 title: "StackExchange.Redis - A high performance general purpose redis client for .NET languages"
 date: 2016-05-22 23:18:00
 comments: true
-categories: [StackExchange.Redis]
+tags: [StackExchange.Redis]
 keywords: "StackExchange.Redis"
 description: "StackExchange.Redis - A high performance general purpose redis client for .NET languages"
 ---

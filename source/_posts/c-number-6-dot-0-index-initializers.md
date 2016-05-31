@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Index initializers"
 date: 2015-01-15 23:32:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#, Index initializers"
 description: "C# 6.0 - Index initializers"
 ---

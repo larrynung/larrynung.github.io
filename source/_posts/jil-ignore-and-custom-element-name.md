@@ -3,7 +3,7 @@ layout: post
 title: "Jil - Ignore &amp; Custom Element Name"
 date: 2015-10-02 00:11:00
 comments: true
-categories: [Jil]
+tags: [Jil]
 keywords: "Jil"
 description: "Jil - Ignore &amp; Custom Element Name"
 ---

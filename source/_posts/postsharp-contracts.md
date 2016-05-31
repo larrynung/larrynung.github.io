@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Contracts"
 date: 2015-02-04 23:56:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp, Contract"
 description: "PostSharp - Contracts"
 ---

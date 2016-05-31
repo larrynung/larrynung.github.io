@@ -3,7 +3,7 @@ layout: post
 title: "Windows Azure - MediaWiki in Azure"
 date: 2014-12-29 12:22:00
 comments: true
-categories: [Windows Azure, MediaWiki]
+tags: [Windows Azure, MediaWiki]
 keywords: "Windows Azure, MediaWiki"
 description: "MediaWiki in Azure"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "[C#]使用ShowCaret &amp; HideCaret控制元件上的插入符號"
 date: 2013-11-06 12:00:00
 comments: true
-categories: 
+tags: 
 description: "[C#]使用ShowCaret &amp; HideCaret控制元件上的插入符號"
 ---
 <p>有時候我們會有需要能精確的控制元件是否顯示插入符號，這時可以使用ShowCaret與HideCaret兩個Win32 API來達成這個目的，這兩個API的宣告方式如下：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:13ec442e-30c4-4569-a7fd-3936a18eab64" class="wlWriterSmartContent"><pre name="code" class="c#">		[DllImport("user32.dll")]

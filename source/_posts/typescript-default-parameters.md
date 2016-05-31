@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Default Parameters"
 date: 2015-11-22 23:47:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Default Parameters"
 ---

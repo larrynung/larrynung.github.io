@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Plus One"
 date: 2015-08-12 23:30:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Plus One"
 ---

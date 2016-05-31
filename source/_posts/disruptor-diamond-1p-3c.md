@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Diamond: 1P – 3C"
 date: 2016-03-18 23:14:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - Diamond: 1P – 3C"
 ---

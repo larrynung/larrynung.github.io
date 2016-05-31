@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Auto-property initializers"
 date: 2014-07-20 23:11:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#, Auto-Property"
 description: "C# 6.0 - Auto-property initializers"
 ---

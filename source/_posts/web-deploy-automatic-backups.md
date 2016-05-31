@@ -3,7 +3,7 @@ layout: post
 title: "Web Deploy - Automatic Backups"
 date: 2015-03-07 12:37:00
 comments: true
-categories: [Web Deploy]
+tags: [Web Deploy]
 keywords: "Web Deploy, Backup"
 description: "Web Deploy - Automatic Backups"
 ---

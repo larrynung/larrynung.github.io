@@ -3,7 +3,7 @@ layout: post
 title: "Vagrant - VBox Snapshot"
 date: 2015-10-19 23:45:00
 comments: true
-categories: [Vagrant]
+tags: [Vagrant]
 keywords: "Vagrant, Snapshot"
 description: "Vagrant - VBox Snapshot"
 ---

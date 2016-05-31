@@ -3,7 +3,7 @@ layout: post
 title: "Travis CI - Trigger build with service hook test"
 date: 2014-02-23 00:19:00
 comments: true
-categories: [Travis, CI]
+tags: [Travis, CI]
 keywords: "Travis CI"
 description: "Travis CI - Trigger build with service hook test"
 ---

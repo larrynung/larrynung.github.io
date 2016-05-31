@@ -3,7 +3,7 @@ layout: post
 title: "Oracle SQL Developer - PL/SQL Syntax Colors"
 date: 2015-11-12 00:36:00
 comments: true
-categories: [Oracle SQL Developer]
+tags: [Oracle SQL Developer]
 keywords: "Oracle SQL Developer"
 description: "Oracle SQL Developer - PL/SQL Syntax Colors"
 ---

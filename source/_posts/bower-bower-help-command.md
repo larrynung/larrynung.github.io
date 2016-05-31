@@ -3,7 +3,7 @@ layout: post
 title: "Bower - Bower help command"
 date: 2016-01-08 05:49:00
 comments: true
-categories: [Bower]
+tags: [Bower]
 keywords: "Bower"
 description: "Bower - Bower help command"
 ---

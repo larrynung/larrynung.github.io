@@ -3,7 +3,7 @@ layout: post
 title: "RAML Tools for .NET - Generate client from RAML"
 date: 2015-03-14 10:46:00
 comments: true
-categories: [RAML]
+tags: [RAML]
 keywords: "RAML"
 description: "RAML Tools for .NET - Generate client from RAML"
 ---

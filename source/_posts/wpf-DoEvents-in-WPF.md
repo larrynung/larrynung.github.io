@@ -3,7 +3,7 @@ layout: post
 title: "WPF - DoEvents in WPF"
 date: 2014-02-05 10:35:00
 comments: true
-categories: [WPF]
+tags: [WPF]
 keywords: "WPF, DoEvents"
 description: "WPF - DoEvents in WPF"
 ---

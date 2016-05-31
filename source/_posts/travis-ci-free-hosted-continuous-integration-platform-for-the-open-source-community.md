@@ -3,7 +3,7 @@ layout: post
 title: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
 date: 2014-01-01 23:34:00
 comments: true
-categories: [Travis, CI]
+tags: [Travis, CI]
 keywords: Travis,CI
 description: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
 ---

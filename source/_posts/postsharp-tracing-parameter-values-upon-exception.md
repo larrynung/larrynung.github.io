@@ -3,7 +3,7 @@ layout: post
 title: "PostSharp - Tracing Parameter Values Upon Exception"
 date: 2015-02-04 00:06:00
 comments: true
-categories: [PostSharp]
+tags: [PostSharp]
 keywords: "PostSharp"
 description: "PostSharp - Tracing Parameter Values Upon Exception"
 ---

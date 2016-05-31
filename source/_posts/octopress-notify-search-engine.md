@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - Notify search engine"
 date: 2013-12-13 23:00:00
 comments: true
-categories: [Octopress]
+tags: [Octopress]
 keywords: "Octopress"
 description: "Octopress - Notify search engine"
 ---

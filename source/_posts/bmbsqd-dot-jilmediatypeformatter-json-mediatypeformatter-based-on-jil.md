@@ -3,7 +3,7 @@ layout: post
 title: "Bmbsqd.JilMediaTypeFormatter - Json MediaTypeFormatter based on JIL"
 date: 2015-10-03 00:40:00
 comments: true
-categories: [Jil]
+tags: [Jil]
 keywords: "Jil"
 description: "Bmbsqd.JilMediaTypeFormatter - Json MediaTypeFormatter based on JIL"
 ---

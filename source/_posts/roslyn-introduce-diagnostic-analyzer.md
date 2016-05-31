@@ -3,7 +3,7 @@ layout: post
 title: "Roslyn - Introduce diagnostic analyzer"
 date: 2014-11-12 22:55:00
 comments: true
-categories: [Roslyn]
+tags: [Roslyn]
 keywords: "Roslyn, Analyzer"
 description: "Roslyn - Introduce diagnostic analyzer"
 ---

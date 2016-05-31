@@ -3,7 +3,7 @@ layout: post
 title: "Grunt - Using Grunt in Visual Studio 2015"
 date: 2016-01-28 01:25:00
 comments: true
-categories: [Grunt]
+tags: [Grunt]
 keywords: "Grunt"
 description: "Grunt - Using Grunt in Visual Studio 2015"
 ---

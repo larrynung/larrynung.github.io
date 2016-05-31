@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET JsonSerializer"
 date: 2015-01-13 21:11:00
 comments: true
-categories: [ASP.NET MVC]
+tags: [ASP.NET MVC]
 keywords: "ASP.NET, MVC, JSON.NET"
 description: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET JsonSerializer"
 ---

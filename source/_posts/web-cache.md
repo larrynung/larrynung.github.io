@@ -3,7 +3,7 @@ layout: post
 title: "Web cache"
 date: 2014-12-01 23:02:00
 comments: true
-categories: 
+tags: 
 keywords: "Cache"
 description: "Web cache"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Function Types"
 date: 2015-11-18 22:57:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Function Types"
 ---

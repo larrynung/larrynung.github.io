@@ -3,7 +3,7 @@ layout: post
 title: ".NET Portability Analyzer Extension"
 date: 2014-12-07 23:59:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: ".NET, Extension" 
 description: ".NET Portability Analyzer Extension"
 ---

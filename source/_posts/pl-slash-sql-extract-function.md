@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL - EXTRACT Function"
 date: 2015-07-16 22:57:00
 comments: true
-categories: [PL/SQL]
+tags: [PL/SQL]
 keywords: "PL/SQL"
 description: "PL/SQL - EXTRACT Function"
 ---

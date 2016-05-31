@@ -3,7 +3,7 @@ layout: post
 title: "Findstr - Searches for patterns of text in files"
 date: 2013-11-18 21:49:00
 comments: true
-categories: 
+tags: 
 ---
 
 Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。

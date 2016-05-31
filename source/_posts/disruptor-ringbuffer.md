@@ -3,7 +3,7 @@ layout: post
 title: "Disruptor - Ringbuffer"
 date: 2016-03-12 08:06:00
 comments: true
-categories: [Disruptor]
+tags: [Disruptor]
 keywords: "Disruptor"
 description: "Disruptor - Ringbuffer"
 ---

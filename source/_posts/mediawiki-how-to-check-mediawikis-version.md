@@ -3,7 +3,7 @@ layout: post
 title: "MediaWiki - How to check MediaWiki's version"
 date: 2014-12-27 23:47:00
 comments: true
-categories: [MediaWiki]
+tags: [MediaWiki]
 keywords: "MediaWiki"
 description: "MediaWiki - How to check MediaWiki's version"
 ---

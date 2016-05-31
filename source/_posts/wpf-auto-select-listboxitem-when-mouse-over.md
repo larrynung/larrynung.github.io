@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Auto select ListBoxItem when mouse over"
 date: 2014-01-22 13:30:00
 comments: true
-categories: [WPF]
+tags: [WPF]
 keywords: "WPF, ListBox, ListBoxItem, Auto Select, Mouse Over"
 description: "WPF - Auto select ListBoxItem when mouse over"
 ---

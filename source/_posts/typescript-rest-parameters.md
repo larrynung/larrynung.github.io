@@ -3,7 +3,7 @@ layout: post
 title: "TypeScript - Rest Parameters"
 date: 2015-11-28 16:06:00
 comments: true
-categories: [TypeScript]
+tags: [TypeScript]
 keywords: "TypeScript"
 description: "TypeScript - Rest Parameters"
 ---

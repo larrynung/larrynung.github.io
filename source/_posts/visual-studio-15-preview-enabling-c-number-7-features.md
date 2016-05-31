@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 15 Preview - Enabling C# 7 Features"
 date: 2016-04-26 21:57:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 15 Preview - Enabling C# 7 Features"
 ---

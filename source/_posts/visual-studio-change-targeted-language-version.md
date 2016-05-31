@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio - Change targeted language version"
 date: 2015-07-06 22:50:00
 comments: true
-categories: 
+tags: 
 keywords: 
 description: "Visual Studio - Change targeted language version"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - String interpolation"
 date: 2015-01-15 07:51:00
 comments: true
-categories: [C#]
+tags: [C#]
 keywords: "C#, 6.0, String Interpolation"
 description: "C# 6.0 - String interpolation"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Code Compare - File and Folder Merge Tool"
 date: 2014-02-21 13:57:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio, Code Compare"
 description: "Code Compare - File and Folder Merge Tool"
 ---

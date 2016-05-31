@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 14 CTP 2 - Save and Apply Custom IDE Layouts"
 date: 2014-08-07 23:31:00
 comments: true
-categories: [Visual Studio]
+tags: [Visual Studio]
 keywords: "Visual Studio"
 description: "Visual Studio 14 CTP 2 - Save and Apply Custom IDE Layouts"
 ---

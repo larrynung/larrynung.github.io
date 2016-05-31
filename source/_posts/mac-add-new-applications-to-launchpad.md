@@ -3,7 +3,7 @@ layout: post
 title: "MAC - Add new applications to Launchpad"
 date: 2015-07-11 19:42:00
 comments: true
-categories: [MAC]
+tags: [MAC]
 keywords: "MAC, Launchpad"
 description: "MAC - Add new applications to Launchpad"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "LeetCode - Happy Number"
 date: 2015-09-18 10:06:00
 comments: true
-categories: [LeetCode]
+tags: [LeetCode]
 keywords: "LeetCode"
 description: "LeetCode - Happy Number"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Check empty folder with IsDirectoryEmplty Win32 API"
 date: 2014-01-16 23:08:00
 comments: true
-categories: [CSharp, Win32 API]
+tags: [CSharp, Win32 API]
 keywords: "Win32,API,IsDirectoryEmplty,.NET,C#"
 description: "Check empty folder with IsDirectoryEmplty Win32 API"
 ---
