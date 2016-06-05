@@ -2,7 +2,7 @@
 
   {% if theme.disqus_shortname %}
 
-    <script type="text/javascript">
+    <script type="text/javascript" data-no-instant>
       var disqus_shortname = '{{theme.disqus_shortname}}';
       var disqus_identifier = '{{ page.path }}';
       var disqus_title = "{{ page.title|addslashes }}";

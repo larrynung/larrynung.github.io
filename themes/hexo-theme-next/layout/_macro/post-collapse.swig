@@ -5,12 +5,12 @@
 
       <h1 class="post-title">
         {% if post.link %}{# Link posts #}
-          <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url">
+          <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url" data-instant>
             {{ post.title or post.link }}
             <i class="fa fa-external-link"></i>
           </a>
         {% else %}
-            <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+            <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url" data-instant>
               {% if post.type === 'picture' %}
                 {{ post.content }}
               {% else %}

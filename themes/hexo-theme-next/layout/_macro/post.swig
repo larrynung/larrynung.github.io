@@ -25,7 +25,7 @@
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {% endif %}
-              <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url">
+              <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url" data-instant>
                 {{ post.title or post.link }}
                 <i class="fa fa-external-link"></i>
               </a>
@@ -36,7 +36,7 @@
                     <i class="fa fa-thumb-tack"></i>
                   </span>
                 {% endif %}
-                <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+                <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url" data-instant>
                   {{ post.title | default(__('post.untitled'))}}
                 </a>
               {% else %}
@@ -151,14 +151,14 @@
         {% if post.description %}
           {{ post.description }}
           <div class="post-more-link text-center">
-            <a class="btn" href="{{ url_for(post.path) }}">
+            <a class="btn" href="{{ url_for(post.path) }}" data-instant>
               {{ __('post.read_more') }} &raquo;
             </a>
           </div>
         {% elif post.excerpt  %}
           {{ post.excerpt }}
           <div class="post-more-link text-center">
-            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents" data-instant>
               {{ __('post.read_more') }} &raquo;
             </a>
           </div>
@@ -168,13 +168,13 @@
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
 
           <div class="post-more-link text-center">
-            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents" data-instant>
               {{ __('post.read_more') }} &raquo;
             </a>
           </div>
         {% else %}
           {% if post.type === 'picture' %}
-            <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
+            <a href="{{ url_for(post.path) }}" data-instant>{{ post.content }}</a>
           {% else %}
             {{ post.content }}
           {% endif %}
@@ -200,7 +200,7 @@
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag">#{{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag” data-instant>#{{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}
@@ -209,7 +209,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             {% if post.next %}
-              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
+              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}" data-instant>
                 <i class="fa fa-chevron-left"></i> {{ post.next.title }}
               </a>
             {% endif %}
@@ -217,7 +217,7 @@
 
           <div class="post-nav-prev post-nav-item">
             {% if post.prev %}
-              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
+              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}" data-instant>
                 {{post.prev.title}} <i class="fa fa-chevron-right"></i>
               </a>
             {% endif %}
