@@ -120,7 +120,8 @@ font:
 social:
   GitHub: https://github.com/larrynung
   Twitter: https://twitter.com/larrynung
-
+  LinkedIn: https://www.linkedin.com/in/larrynung
+  SlideShare: http://www.slideshare.net/larrynung
 
 # Social Links Icons
 # Icon Mapping:
@@ -134,6 +135,8 @@ social_icons:
   GitHub: github
   Twitter: twitter
   #Weibo: weibo
+  LinkedIn: linkedin
+  SlideShare: slideshare
 
 
 # Sidebar Avatar
