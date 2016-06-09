@@ -23,8 +23,10 @@ description: "FontAwesome - Use FontAwesome with bower"
 ...
 @font-face {
   font-family: 'FontAwesome';
-  src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?v=4.5.0');
-  src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype') , url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg') ;
+  src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype') , url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff') , url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype') , url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg') ;
+  font-weight: normal;
+  font-style: normal;
 }
 ...
 {% endcodeblock %}
@@ -43,10 +45,8 @@ description: "FontAwesome - Use FontAwesome with bower"
 ...
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype') , url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff') , url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype') , url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg') ;
-  font-weight: normal;
-  font-style: normal;
+  src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?v=4.5.0');
+  src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype') , url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg') ;
 }
 ...
 {% endcodeblock %}
