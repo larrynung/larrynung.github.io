@@ -20,7 +20,7 @@ tags: SonarQube
 <br/>
 
 
-這時我們可以用瀏覽器瀏覽 `http://localhost:9000` SonarQube。  
+接著用瀏覽器瀏覽 `http://localhost:9000` 即可開始體驗 SonarQube。  
 
 {% asset_img 3.png %}
 
