@@ -84,5 +84,5 @@ tags: SonarQube
 
 
 Link
-____
+---
 * [From the Command Line - Scanners - SonarQube](http://docs.sonarqube.org/display/SCAN/From+the+Command+Line)
