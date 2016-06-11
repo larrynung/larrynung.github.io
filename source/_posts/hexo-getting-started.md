@@ -31,7 +31,7 @@ tags: Hexo
 <br/>
 
 
-並下載需要的檔案。
+並下載需要的檔案。_config.yml 是 Hexo 站台的設定檔，package.json 是 Node.js 的套件設定檔，scaffoids 目錄內存放的是部落格會用到的樣板，source 目錄內存放的是部落格文章等未經加工建立的來源擋，themes 目錄內放置的是部落格的主題。  
 
 {% asset_img 4.png %}
 
