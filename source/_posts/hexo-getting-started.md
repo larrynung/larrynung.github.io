@@ -4,9 +4,14 @@ date: 2016-06-10 18:39:27
 tags: Hexo
 ---
 
-要使用 Hexo，我們需先安裝 Hexo 的命令列程式。  
+要使用 Hexo，我們需先確定已有安裝 Git & Node.js。  
 
 <!-- More -->
+
+<br/>
+
+
+接著安裝 Hexo 的命令列程式。  
 
     npm install hexo-cli -g
 
@@ -15,7 +20,7 @@ tags: Hexo
 <br/>
 
 
-接著初始化部落格。  
+與初始化部落格。  
 
     hexo init [Folder]
 
