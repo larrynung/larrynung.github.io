@@ -36,7 +36,7 @@ Hexo 架設完畢後，我們除了要將 blog deploy 上去外，source 的部�
 <br/>
 
 
-如果需要，放置 .gitignore 檔在部落格目錄，用以告知 git 要忽略版控的檔案與目錄。檔案內容如下：    
+如果需要，這邊可以放置 .gitignore 檔在部落格目錄，用以告知 git 要忽略版控的檔案與目錄。檔案內容如下：    
 
     .DS_Store
     Thumbs.db
@@ -69,3 +69,11 @@ commit 這次修改。
 
 {% asset_img 3.png %}
 
+<br/>
+
+
+後續每次加文章時，記得也都要將 source 上到遠端 repository。  
+
+    git add .
+    git commit -a -m "[comments]"
+    git push origin [branch]
