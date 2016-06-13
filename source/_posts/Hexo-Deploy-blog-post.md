@@ -46,6 +46,15 @@ Deployer 套件安裝完後，要開啟部落格的設定檔設定 Deploy 的參
 
 <br/>
 
+
+如果發佈後網站無正常更新，可以嘗試清除快取後再次產生靜態檔案發佈。  
+
+    hexo clean
+    hexo g
+    hexo deploy
+
+<br/>
+
 Link
 ---
 * [Deployment | Hexo](https://hexo.io/docs/deployment.html)
