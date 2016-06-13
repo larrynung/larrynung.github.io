@@ -43,6 +43,7 @@ Deployer 套件安裝完後，要開啟部落格的設定檔設定 Deploy 的參
 再用 hexo deploy 進行發佈即可。
 
     hexo deploy
+    hexo d
 
 <br/>
 
@@ -51,7 +52,7 @@ Deployer 套件安裝完後，要開啟部落格的設定檔設定 Deploy 的參
 
     hexo clean
     hexo g
-    hexo deploy
+    hexo d
 
 <br/>
 
