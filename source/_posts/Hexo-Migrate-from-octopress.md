@@ -32,7 +32,7 @@ tags: Hexo
 <br/>
 
 
-最後因為 Octopress 文章內的時間資料只顯示到分，所以要用 * [Regular Expression Search and Replace Command Line Tool](https://sites.google.com/site/regexreplace/) 將日期部分修正到秒。  
+最後因為 Octopress 文章內的時間資料只顯示到分，所以要用 [Regular Expression Search and Replace Command Line Tool](https://sites.google.com/site/regexreplace/) 將日期部分修正到秒。  
 
     rxrepl -D "C:\Users\larry.nung\blog\source\_posts" -I *.md -a --no-backup --no-bom -e utf8 --output-encoding utf8 -s "(\d+-\d+-\d+\s+\d+:\d+)" -r "\1:00"
 
