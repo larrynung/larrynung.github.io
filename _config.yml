@@ -65,6 +65,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-next
+plugins: hexo-generator-robotstxt
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -85,3 +86,20 @@ google_analytics: UA-33537523-3
 
 sitemap:
   path: sitemap.xml
+
+robotstxt:
+  useragent: "*"
+  disallow:
+    - /vendors/
+    - /js/
+    - /css/
+    - /fonts/
+    - /vendors/
+    - /fancybox/
+  allow:
+    - /
+    - /archives/
+    - /categories/
+    - /tags/
+  sitemap: /sitemap.xml
+
