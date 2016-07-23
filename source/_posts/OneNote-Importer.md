@@ -25,19 +25,21 @@ tags:
 <br/>
 
 
-接著要選取要匯入 OneNote 的內容，這邊可先切換至 Evernote，將想匯入至 OneNote 的內容先行匯出。  
+接著要選取要匯入 OneNote 的內容，如果機器有安裝 Evernote，這邊可以直接點選到 Evernote 的 Notebook。
 
 {% asset_img 3.png %}
 
 <br/>
 
 
-匯出的格式選曲 ENEX 即可。  
+如果本機沒安裝 Evernote，或是要匯入的單位不是 Notebook 的話。這邊可先開啟 Evernote，將想匯入至 OneNote 的內容先行匯出。  
 
 {% asset_img 4.png %}
 
 <br/>
 
+
+匯出的格式選曲 ENEX 即可。  
 
 {% asset_img 5.png %}
 
@@ -49,42 +51,47 @@ tags:
 <br/>
 
 
-匯出完成，在 OneNote Importer 這邊指定剛匯出的檔案，點選 `Next` 按鈕。  
-
 {% asset_img 7.png %}
 
 <br/>
 
 
-接著輸入帳密登入 OneNote。  
+匯出完成，在 OneNote Importer 這邊指定剛匯出的檔案，點選 `Next` 按鈕。  
 
 {% asset_img 8.png %}
 
 <br/>
 
 
-再來調整匯入時的設定，看是否要將 Evernote 的 Tag 帶到 OneNote。設定完點選 `Import` 按鈕開始匯入。  
+接著輸入帳密登入 OneNote。  
 
 {% asset_img 9.png %}
 
 <br/>
 
 
+再來調整匯入時的設定，看是否要將 Evernote 的 Tag 帶到 OneNote。設定完點選 `Import` 按鈕開始匯入。  
+
 {% asset_img 10.png %}
 
 <br/>
 
-
-匯入完成可點選 `View notes in OneNote` 按鈕開啟 OneNote 進行確認。  
 
 {% asset_img 11.png %}
 
 <br/>
 
 
-沒意外的話應該會看到匯入的內容。  
+匯入完成可點選 `View notes in OneNote` 按鈕開啟 OneNote 進行確認。  
 
 {% asset_img 12.png %}
+
+<br/>
+
+
+沒意外的話應該會看到匯入的內容。  
+
+{% asset_img 13.png %}
 
 <br/>
 
