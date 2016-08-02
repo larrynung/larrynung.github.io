@@ -13,7 +13,7 @@ script:
 after_success:
 - git config --global user.name "Larry Nung"
 - git config --global user.email "larrynung@hotmail.com"
-- sed -i'' "/^ *repo/s~github\.com~${GH_Token}@github.com~" _config.yml
+- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
 dd:
-  secure: gX/0bQdI4VN1sTPaXj48y/XADXqRsY4OevnQ5sQ5visuz9c6znzWedniXsUEfijvDgVRlO3fkIupCWNeNts1jbUzHH85nJCr1EX7tiuQ9xrnaVysA3EY1NUN8/BIgInJiW4P2u6P1JzJ64oR+rjX2E7YxVC2cfH6khBEERSdfyA=
+  secure: k0M8nG94M91z3IHMrCV7EXU5FcCMlyNapHPW8eLRJ8g6lvQShta23ocApqmvoQlYK/F0sE2RobzFVeOtvvYtVfhAfqbmcsyTe6onGFq23re8/MDmKvCaZg5kiJFBjxi8icTiUDm/zyd2E+rkKQLDfBPEIhJP/iMyiE9CYY+sLGM=
