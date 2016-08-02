@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.12'
+branches:
+  only:
+  - source
+before_install:
+- npm install -g hexo-cli
+install:
+- npm install
+dd:
+  secure: fsDloyvLcMYSFrCrTaLSxfG26jaDtLc/W+IKRvPxvfz1u9SHByXZ7xGx/t6WKDVZI1vGdWx3ofVcTDiATaETqAWoox0aGIWMFOax0qUGUSv2JxwZ7kBG0nIehAYv9my77UVyFeZXivarqUdhoDP6mlUiJuJ4bNCHsu7pnqn9+r4=
