@@ -12,7 +12,10 @@ script:
 - hexo generate
 after_success:
 - git config --global user.name "Larry Nung"
+- git config --global user.email "larrynung@hotmail.com"
 - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
-dd:
-  secure: fsDloyvLcMYSFrCrTaLSxfG26jaDtLc/W+IKRvPxvfz1u9SHByXZ7xGx/t6WKDVZI1vGdWx3ofVcTDiATaETqAWoox0aGIWMFOax0qUGUSv2JxwZ7kBG0nIehAYv9my77UVyFeZXivarqUdhoDP6mlUiJuJ4bNCHsu7pnqn9+r4=
+
+env:
+  global:
+    secure: fsDloyvLcMYSFrCrTaLSxfG26jaDtLc/W+IKRvPxvfz1u9SHByXZ7xGx/t6WKDVZI1vGdWx3ofVcTDiATaETqAWoox0aGIWMFOax0qUGUSv2JxwZ7kBG0nIehAYv9my77UVyFeZXivarqUdhoDP6mlUiJuJ4bNCHsu7pnqn9+r4=
