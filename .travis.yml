@@ -13,12 +13,7 @@ script:
 after_success:
 - git config --global user.name "Larry Nung"
 - git config --global user.email "larrynung@hotmail.com"
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- node ./node_modules/grunt-cli/bin/grunt release
-- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+- sed -i'' "/^ *repo/s~github\.com~${GH_Token}@github.com~" _config.yml
 - hexo deploy
-
-env:
-  global:
-    secure: fsDloyvLcMYSFrCrTaLSxfG26jaDtLc/W+IKRvPxvfz1u9SHByXZ7xGx/t6WKDVZI1vGdWx3ofVcTDiATaETqAWoox0aGIWMFOax0qUGUSv2JxwZ7kBG0nIehAYv9my77UVyFeZXivarqUdhoDP6mlUiJuJ4bNCHsu7pnqn9+r4=
+dd:
+  secure: gX/0bQdI4VN1sTPaXj48y/XADXqRsY4OevnQ5sQ5visuz9c6znzWedniXsUEfijvDgVRlO3fkIupCWNeNts1jbUzHH85nJCr1EX7tiuQ9xrnaVysA3EY1NUN8/BIgInJiW4P2u6P1JzJ64oR+rjX2E7YxVC2cfH6khBEERSdfyA=
