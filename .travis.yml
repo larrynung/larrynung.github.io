@@ -8,5 +8,9 @@ before_install:
 - npm install -g hexo-cli
 install:
 - npm install
+script:
+- hexo generate
+after_success:
+- hexo deploy
 dd:
   secure: fsDloyvLcMYSFrCrTaLSxfG26jaDtLc/W+IKRvPxvfz1u9SHByXZ7xGx/t6WKDVZI1vGdWx3ofVcTDiATaETqAWoox0aGIWMFOax0qUGUSv2JxwZ7kBG0nIehAYv9my77UVyFeZXivarqUdhoDP6mlUiJuJ4bNCHsu7pnqn9+r4=
