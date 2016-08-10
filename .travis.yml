@@ -15,5 +15,6 @@ after_success:
 - git config --global user.email "larrynung@hotmail.com"
 - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy --silent
-dd:
-  secure: Fb6ignxOEhy6V/XIJyuRL3a/S3Ia3KRrT/EN3ohi+SRYhxS2s5MT30TXbQbc3iz6/TjfZzpBcA3MYDvx5a5DtB8crtPe5ofmJqYIhyioAH3ObZKvW3Ty5StqYI4wTXY+5FZI+cKA/4gVU7pTdLBNx4erLIXSzkRRgM1q7FZRdNE=
+env:
+  global:
+    secure: bSFkqDb5t3piUESFhjkzjVD88Xe0Cj4PIfdue+IVGh48fBMprsi0IqUTaIPMaEkremhmCodibzmI4XjDSje6IJdfoo0H4u1N52oX5iK3aEH9p7w7K4PqLQegcYiikI2lXxCQQvkyEyuNd+HmIaP40RIjMAAXl72sdGsGuEz95DY=
