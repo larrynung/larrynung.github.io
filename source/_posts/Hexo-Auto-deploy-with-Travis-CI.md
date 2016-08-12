@@ -46,7 +46,7 @@ Token 產生後複製留存以供後續使用。
 <br/>
 
 
-接著準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣：    
+接著準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (使用者名稱與電子郵件位置請自行替換)：    
 
 {% codeblock lang:yml %}
 language: node_js
@@ -99,7 +99,7 @@ after_success:
 <br/>
 
 
-使用命令列工具將 Token 寫入 Travis CI 設定檔。  
+使用命令列工具將剛產生出來的 Token 加密並寫入 Travis CI 設定檔。  
 
     travis encrypt 'GH_TOKEN=<TOKEN>' --add
 
