@@ -4,49 +4,57 @@ date: 2016-08-12 07:37:24
 tags: Hexo
 ---
 
-要使用 Travis CI 自動幫我們發佈 Hexo 部落格 (Travis CI 入門可參閱筆者 [Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community | Level Up](http://larrynung.github.io/2014/01/01/travis-ci-free-hosted-continuous-integration-platform-for-the-open-source-community/) 這篇)，首先我們需先準備一組 Personal access token 給 Travis CI。  
+要使用 Travis CI 自動幫我們發佈 Hexo 部落格，先參閱筆者 [Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community | Level Up](http://larrynung.github.io/2014/01/01/travis-ci-free-hosted-continuous-integration-platform-for-the-open-source-community/) 這篇，登入 Travis CI ，給予授權，並為 Repository 啟用 Travis CI。  
 
 <!-- More -->
 
-<br/>
-
-
-開啟 GitHub 的 Settings。  
 
 {% asset_img 1.png %}
 
 <br/>
 
 
-切到 Personal access tokens 頁面。  
+接著要準備一組 Personal access token 給 Travis CI。
+
+<br/>
+
+
+這邊將 GitHub 的 Settings 開啟。  
 
 {% asset_img 2.png %}
 
 <br/>
 
 
-按下 `Generate new token` 按鈕建立一組 token。  
+切到 Personal access tokens 頁面。  
 
 {% asset_img 3.png %}
 
 <br/>
 
 
-為這組 Token 設定一個名稱，並給予它 repo 的權限。  
+按下 `Generate new token` 按鈕建立一組 token。  
 
 {% asset_img 4.png %}
 
 <br/>
 
 
-Token 產生後複製留存以供後續使用。  
+為這組 Token 設定一個名稱，並給予它 repo 的權限。  
 
 {% asset_img 5.png %}
 
 <br/>
 
 
-接著準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (使用者名稱與電子郵件位置請自行替換)：    
+Token 產生後複製留存以供後續使用。  
+
+{% asset_img 6.png %}
+
+<br/>
+
+
+再來要準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (使用者名稱與電子郵件位置請自行替換)：    
 
 {% codeblock lang:yml %}
 language: node_js
@@ -63,8 +71,8 @@ script:
 - hexo clean
 - hexo generate
 after_success:
-- git config --global user.name "[Name]"
-- git config --global user.email "[Email]"
+- git config --global user.name "<Name>"
+- git config --global user.email "<Email>"
 - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
 {% endcodeblock %}
@@ -72,11 +80,11 @@ after_success:
 <br/>
 
 
-再來要安裝 travis 命令列工具 (官方提供的命令列工具是 Ruby 的版本，如果是 Windows 用戶需加裝 [RubyInstaller for Windows](http://rubyinstaller.org/)，然後用 `Start Command Prompt with Ruby` 進行下列操作)。  
+再安裝 travis 命令列工具 (官方提供的命令列工具是 Ruby 的版本，如果是 Windows 用戶需加裝 [RubyInstaller for Windows](http://rubyinstaller.org/)，然後用 `Start Command Prompt with Ruby` 進行下列操作)。  
 
     gem install travis
 
-{% asset_img 6.png %}
+{% asset_img 7.png %}
 
 <br/>
 
@@ -85,7 +93,7 @@ after_success:
 
     travis version
 
-{% asset_img 7.png %}
+{% asset_img 8.png %}
 
 <br/>
 
@@ -94,7 +102,7 @@ after_success:
 
     travis login
 
-{% asset_img 8.png %}
+{% asset_img 9.png %}
 
 <br/>
 
@@ -103,25 +111,23 @@ after_success:
 
     travis encrypt 'GH_TOKEN=<TOKEN>' --add
 
-{% asset_img 9.png %}
+{% asset_img 10.png %}
 
 <br/>
 
 
 寫入後的設定檔會變得像下面這樣：  
 
-{% asset_img 10.png %}
+{% asset_img 11.png %}
 
 <br/>
 
 
 將設定檔 Commit 回 Repository。  
 
-<br/>
-
-接著回到 Travis CI 將部落格的 Repository 啟用建置。  
-
-{% asset_img 11.png %}
+    git add .
+    git commit -a -m "Add .travis.yml"
+    git push origin <branch>
 
 <br/>
 
