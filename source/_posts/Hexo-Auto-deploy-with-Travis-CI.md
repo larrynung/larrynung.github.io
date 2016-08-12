@@ -72,7 +72,7 @@ after_success:
 <br/>
 
 
-再來要安裝 travis 命令列工具。  
+再來要安裝 travis 命令列工具 (官方提供的命令列工具是 Ruby 的版本，如果是 Windows 用戶需加裝 [RubyInstaller for Windows](http://rubyinstaller.org/)，然後用 `Start Command Prompt with Ruby` 進行下列操作)。  
 
     gem install travis
 
