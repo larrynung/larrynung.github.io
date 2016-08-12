@@ -14,12 +14,7 @@ tags: Hexo
 <br/>
 
 
-接著要準備一組 Personal access token 給 Travis CI。
-
-<br/>
-
-
-這邊將 GitHub 的 Settings 開啟。  
+接著要準備一組 Personal access token 給 Travis CI。先將 GitHub 的 Settings 開啟。  
 
 {% asset_img 2.png %}
 
