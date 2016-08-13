@@ -13,7 +13,7 @@ tags:
 <br/>
 
 
-像是下面的例子先刪除了一些資料，後續要用 SQL%ROWCOUNT 去判斷刪除的筆數，但中間卻調用了其它 function，導致 SQL%ROWCOUNT 的值不如我們的預期。  
+像是下面的例子，這邊先刪除了一些資料，後續要用 SQL%ROWCOUNT 去判斷刪除的筆數，但中間卻調用了其它 function，以致於 SQL%ROWCOUNT 的值不如我們的預期。  
 
 {% codeblock lang:sql %}
 CREATE PROCEDURE remove_emp_and_process (in_id IN emp.empno%TYPE) 
@@ -30,3 +30,8 @@ BEGIN
     END IF; 
 END remove_emp_and_process;
 {% endcodeblock %}
+
+<br/>
+
+
+所以我們必須避免在 SQL 語句運行與 implicit cursor 中間使用 procedure 或是 function。
