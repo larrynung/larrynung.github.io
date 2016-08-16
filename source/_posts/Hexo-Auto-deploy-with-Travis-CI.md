@@ -49,7 +49,7 @@ Token 產生後複製留存以供後續使用。
 <br/>
 
 
-再來要準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (使用者名稱與電子郵件位置請自行替換)：    
+再來要準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (branches 位置、使用者名稱、與電子郵件位置請自行替換)：    
 
 {% codeblock lang:yml %}
 language: node_js
@@ -130,6 +130,18 @@ after_success:
 這樣每當我們將部落格文章 Commit 回 Repository 時，Travis CI 就會自動開始進行發佈的動作。  
 
 {% asset_img 12.png %}
+
+<br/>
+
+
+注意到這邊，這樣的設定 Travis CI 也會嘗試建置 master branch，可透過設定讓他只建置有放 .travis.yml 檔的 branch。
+
+{% asset_img 13.png %}
+
+<br/>
+
+
+{% asset_img 14.png %}
 
 <br/>
 
