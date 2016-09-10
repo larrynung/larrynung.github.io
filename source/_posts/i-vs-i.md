@@ -128,4 +128,4 @@ IL_0009:  ret
 <br/>
 
 
-所以 i++ 會比 ++i 對一點點的 Overhead。  
+所以使用 i++ 會比使用 ++i 多一點點的 Overhead。  
