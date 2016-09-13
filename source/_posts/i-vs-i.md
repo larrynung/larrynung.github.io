@@ -10,6 +10,43 @@ i++ 與 ++i 如果在不影響結果的情況下使用，有可能是在 for 迴
 
 <br/>
 
+
+像是下面這樣單獨呼叫 ++i。  
+
+{% codeblock lang:c# %}
+var i = 0;
+++i;
+{% endcodeblock %}
+
+<br/>
+
+
+或是像是下面這樣單獨呼叫 i++。
+
+{% codeblock lang:c# %}
+var i = 0;
+i++;
+{% endcodeblock %}
+
+<br/>
+
+
+其對應的 IL 都是一樣的：  
+
+{% codeblock lang:IL %}
+IL_0000:  nop
+IL_0001:  ldc.i4.0
+IL_0002:  stloc.0
+IL_0003:  ldloc.0
+IL_0004:  ldc.i4.1
+IL_0005:  add
+IL_0006:  stloc.0
+IL_0007:  ret
+{% endcodeblock %}
+
+<br/>
+
+
 但在影響結果的情況下使用(像是處理完做了賦值的動作)，除了結果不同外，還會多耗用一個堆疊位置，這邊以一個簡單的例子來看：  
 
 {% codeblock lang:c# %}
