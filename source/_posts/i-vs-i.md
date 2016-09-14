@@ -180,3 +180,38 @@ IL_0009:  ret
 
 
 這樣的處理最多需要的堆疊大小為 2。  
+
+<br/>
+
+
+所以在這種情境下，能避開 i++ 就避開，像是下面這樣的程式：   
+
+{% codeblock lang:C# %}
+var idx = 0
+var data = new int[] { 1, 2, 3, 4 };
+
+var data1 = data[idx++];
+var data2 = data[idx++];
+var data3 = data[idx++];
+var data4 = data[idx++];
+{% endcodeblock %}
+
+<br/>
+
+
+就可以將它改寫成下面這樣：  
+
+{% codeblock lang:C# %}
+var idx = -1;
+var data = new int[] { 1, 2, 3, 4 };
+
+var data1 = data[++idx];
+var data2 = data[++idx];
+var data3 = data[++idx];
+var data4 = data[++idx];
+{% endcodeblock %}
+
+<br/>
+
+
+或是將它改成不影響結果的那種寫法也可以，
