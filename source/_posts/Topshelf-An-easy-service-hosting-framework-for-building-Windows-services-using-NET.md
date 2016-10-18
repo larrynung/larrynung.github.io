@@ -6,7 +6,7 @@ date: 2016-10-17 22:38:46
 tags:
 ---
 
-Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Services 程式，並將之 Hosting 起來運行。可以增加使用彈性，易於 Windows Services 的除錯，更可以跨平台運行。  
+Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Services 程式，並將之 Hosting 起來運行。可以增加使用彈性、易於除錯、更可以跨平台運行。  
 
 <!-- More -->
 
@@ -25,13 +25,12 @@ Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Servi
 <br/>
 
 
-套件安裝好後即可進行程式的撰寫，大方向是透過 HostFactory 建立 Host 後，將 Host 雲行起來即可。  
+套件安裝好後即可進行程式的撰寫，大方向是透過 HostFactory 建立 Host 後，將 Host 運行起來即可。  
 
 <br/>
 
 
-若是進一步來看，可再細分為兩種撰寫方式。一種是像下面這樣用委派的方式將
-怎樣建立服務，服務怎樣啟動，服務怎樣停止...等對應的設定設上去。  
+若是進一步來看，可再細分為兩種撰寫方式。一種是像下面這樣用委派的方式將怎樣建立服務、服務怎樣啟動、服務怎樣停止...等對應的設定設上去。  
 
 {% codeblock lang:c# %}
 using System; 
