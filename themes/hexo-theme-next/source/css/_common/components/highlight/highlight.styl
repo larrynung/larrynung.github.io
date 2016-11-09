@@ -1,7 +1,6 @@
 // https://github.com/chriskempson/tomorrow-theme
 
 @require "theme"
-@require "diff"
 
 // Placeholder: $code-block
 $code-block {
@@ -18,9 +17,9 @@ pre, code { font-family: $code-font-family; }
 
 code {
   padding: 2px 4px;
-  word-wrap: break-all;
-  color: $highlight-foreground;
-  background: $highlight-background;
+  word-break: break-all;
+  color: $code-foreground;
+  background: $code-background;
   border-radius: $code-border-radius;
   font-size $code-font-size;
 }
@@ -80,24 +79,12 @@ pre {
   .line { height: 20px; }
 }
 
-  
-.gutter {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-  
+
 .gist table {
   width: auto;
 
   td { border: none; }
 }
-
-// For diff highlight
-pre .deletion { background: $highlight-deletion; }
-pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
 
 pre {
 

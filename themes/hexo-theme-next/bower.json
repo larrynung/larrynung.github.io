@@ -19,7 +19,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "source/lib",
+    "source/vendors",
     "test",
     "tests",
     "screenshots"
