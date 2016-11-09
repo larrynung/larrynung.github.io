@@ -55,19 +55,23 @@
     </div>
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
+  <script>
+  var config = {
+    search_path : "{{ config.search.path }}",
+    root : "{{ config.root }}"
+  };
+  var element = document.createElement("script");
+  element.src = "{{ url_for('bundle') }}/all.min.js?v={{ theme.version }}";
+  document.body.appendChild(element);
+  </script>
 
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
-
   {% include '_scripts/third-party/comments.swig' %}
   {% include '_scripts/third-party/tinysou.swig' %}
-  {% include '_scripts/third-party/localsearch.swig' %}
   {% include '_scripts/third-party/mathjax.swig' %}
   {% include '_scripts/third-party/lean-analytics.swig' %}
   {% include '_scripts/baidu-push.swig' %}

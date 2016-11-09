@@ -5,12 +5,13 @@ branches:
   only:
   - hexo
 before_install:
-- npm install -g hexo-cli
+- npm install -g hexo-cli gulp
 install:
 - npm install
 script:
 - hexo clean
 - hexo generate
+- gulp
 after_success:
 - git config --global user.name "Larry Nung"
 - git config --global user.email "larrynung@hotmail.com"
