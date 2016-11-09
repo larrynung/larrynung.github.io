@@ -82,7 +82,7 @@ gulp.task('minify-css', function() {
         .pipe(cleanCSS({
             debug: true
         }, function(details) {
-            console.log(`${details.name}:[${Math.round(details.stats.efficiency *100)}%]${details.stats.originalSize}=>${details.stats.minifiedSize}`);
+            console.log('${details.name}:[${Math.round(details.stats.efficiency *100)}%]${details.stats.originalSize}=>${details.stats.minifiedSize}');
         }))
         .pipe(gulp.dest(bundle_css));
 })
