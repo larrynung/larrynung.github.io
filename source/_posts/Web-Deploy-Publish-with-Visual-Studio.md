@@ -1,5 +1,5 @@
 ---
-title: Visual Studio - Publish with web deploy
+title: Web Deploy - Publish with Visual Studio
 date: 2016-12-03 16:33:31
 tags: [Web Deploy, Visual Studio]
 ---
