@@ -18,3 +18,9 @@ tags: [Web Deploy]
 
 <br/>
 
+
+建置完成就可以在指定的位置看到產出的 Web Deploy package。  
+
+{% asset_img 2.png %}
+
+<br/>
