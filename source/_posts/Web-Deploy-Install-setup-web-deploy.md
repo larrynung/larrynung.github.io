@@ -85,7 +85,7 @@ Web Deploy 程式可至微軟網站下載。
 <br/>
 
 
-確定這邊的 `Enable remote connections` 是勾選的，以及 Port 號正確。  
+確定這邊的 `Enable remote connections` 是勾選的，以及 Port 號正確，若不修改就是走預設的 8172 Port。  
 
 {% asset_img 14.png %}
 
