@@ -48,9 +48,9 @@ Web Deploy 在運作上如下圖所示：
 <br/>
 
 
-可以看到兩邊都有 Provider，而 Web Deploy 之所以強大，就在於提供了許多不同的 Provider，不同的 Provider 彼此交互作用可以達到許多不同的效果。  
+可以看到來源端與目的端都有許多的 Provider，這些 Provider 能針對 Dump、Sync、Delete 等操作有著各自不同的處理方式。這些 Provider 彼此可以搭配使用，達到更多不同的效果。  
 
 <br/>
 
 
-另外要注意到的是，Server 與 Server 之間兩條路連線的路，一條是透過 Remote Agent Service，一條是透過 Web Management Service。透過 Remote Agent Service 這條路需使用 Admin 的帳號，若是非 Admin 帳號就要走 Web Management Service 這條路。這兩條路在使用上必須要有所了解，發生問題時才能知道是哪條路出了問題。    
+另外要注意到的是，來源端與目的端電腦之間有兩條可供連線的路，一條是透過 Remote Agent Service，一條是透過 Web Management Service。透過 Remote Agent Service 這條路需使用 Admin 的帳號，若是非 Admin 帳號就要走 Web Management Service 這條路。這兩條路在使用上必須要有所了解，安裝設定或是發生問題時才能知道要怎麼處理。    
