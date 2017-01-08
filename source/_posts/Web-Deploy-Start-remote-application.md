@@ -13,6 +13,3 @@ tags: [Web Deploy]
 <br/>
 
 
-{% asset_img 1.png %}
-
-<br/>
