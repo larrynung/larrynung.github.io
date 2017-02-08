@@ -30,3 +30,8 @@ Visual Studio 2017 針對 Attach to Process 對話框做了強化，新增過濾
 {% asset_img 3.png %}
 
 <br/>
+
+
+Link
+----
+* [Visual Studio 2017 Release Notes](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes)
