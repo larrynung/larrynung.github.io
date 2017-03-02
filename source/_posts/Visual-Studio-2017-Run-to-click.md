@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Run to click
 date: 2017-02-10 23:49:34
-tags: [Visaul Studio]
+tags: [Visaul Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以前，在除錯時若要讓斷點繼續向下運行至指定位置，我們需要在指定位置設定斷點後讓他向下運行，或是直接在指定位置上按下滑鼠右鍵，點選 `Run to cursor` 滑鼠右鍵選單也可以。  
