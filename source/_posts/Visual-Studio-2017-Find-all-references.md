@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Find all references
 date: 2017-02-19 23:18:31
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 針對 Find all references 視窗做了些強化，在要查詢 Reference 的地方按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中點選 `Find All References` 選單選項，將 Find all references 視窗開啟。  
