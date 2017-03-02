@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Lightweight solution load
 date: 2017-02-10 00:28:45
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 新增 Lightweight Solution load 功能，能 OnDemand 進行專案的載入，特別適用於大型專案的開發。
