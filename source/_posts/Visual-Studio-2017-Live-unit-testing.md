@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Live unit testing
 date: 2017-03-01 23:05:15
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 要啟動 Visual Studio 2017 Live Unit Testing 功能，可點選 [Test | Live Unit Testing | Start] 主選單選項。  
