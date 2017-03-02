@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Structure visualizer
 date: 2017-02-10 12:25:57
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以前，在編寫程式時有時我們會需要找一下程式碼中的刮號，確定我們在改的區塊是否正確。Visual Studio 2017 新增 Structure visualizer 功能，能讓我們更容易知道所修改的區塊是哪。  
