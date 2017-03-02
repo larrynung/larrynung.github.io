@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Modify extensions in bulk
 date: 2017-02-17 13:18:13
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以後使用 Extensions and Updates 視窗進行 Extension 的修改。  
