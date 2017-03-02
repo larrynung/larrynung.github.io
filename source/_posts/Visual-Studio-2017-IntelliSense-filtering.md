@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - IntelliSense filtering
 date: 2017-02-14 13:28:07
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以前 IntelliSense 是不具備 Filtering 功能的，必須從眾多成員中挑選出所要選用的，當成員過多時這問題會更加嚴重。  
