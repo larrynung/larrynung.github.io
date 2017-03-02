@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Roaming Extension Manager
 date: 2017-02-18 22:20:09
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以前安裝的 Extension 無法同步，所以在不同電腦間 Extension 都需要自行安裝。  
