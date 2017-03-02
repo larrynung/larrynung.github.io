@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Reattach to process
 date: 2017-02-15 13:11:51
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 以前如果要重新附加到相同的處理序，我們需要自行用 Attach to Process 對話框再次附加相同的處理序，或是透過 Visual Studio 2017 的外掛直接重新附加處理序。  
