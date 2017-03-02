@@ -1,7 +1,7 @@
 ---
 title: Visual Studio 2017 - Improved Code Navigation
 date: 2017-02-22 13:27:36
-tags: [Visual Studio]
+tags: [Visual Studio, Visual Studio 2017]
 ---
 
 Visual Studio 2017 對程式碼的巡覽做了些強化，[Edit | Go To] 主選單選項內有著所有的巡覽功能。  
