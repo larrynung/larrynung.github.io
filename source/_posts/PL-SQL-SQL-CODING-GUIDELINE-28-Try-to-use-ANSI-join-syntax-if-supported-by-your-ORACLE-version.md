@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 28 - Try to use ANSI-join syntax, if supported
   by your ORACLE version
 date: 2016-06-07 23:58:35
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款二十八，如果 Oracle 版本支援，請使用 ANSI-Join。  

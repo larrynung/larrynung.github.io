@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 26 - Always specify the target columns when
   executing an insert command
 date: 2016-06-07 00:07:30
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款二十六，運行插入命令時總是指定塞入的欄位。  

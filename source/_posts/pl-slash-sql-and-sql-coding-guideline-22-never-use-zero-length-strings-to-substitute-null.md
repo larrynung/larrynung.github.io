@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 22 - Never use zero-length strings to substitute NULL"
 date: 2015-12-15 05:11:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 22 - Never use zero-length strings to substitute NULL"
 ---
 

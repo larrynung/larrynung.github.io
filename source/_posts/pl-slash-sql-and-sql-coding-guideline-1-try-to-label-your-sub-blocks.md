@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 1 - Try to label your sub blocks"
 date: 2015-09-20 23:21:00
 comments: true
-tags:  
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 1 - Try to label your sub blocks"
 ---
 

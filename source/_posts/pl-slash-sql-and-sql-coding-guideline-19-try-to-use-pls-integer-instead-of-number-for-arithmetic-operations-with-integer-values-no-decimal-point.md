@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
 date: 2015-12-05 19:12:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL" 
 description: "PL/SQL &amp; SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
 ---
 

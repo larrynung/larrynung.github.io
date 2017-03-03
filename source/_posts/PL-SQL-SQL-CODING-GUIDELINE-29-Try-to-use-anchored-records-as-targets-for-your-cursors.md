@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 29 - Try to use anchored records as targets for
   your cursors
 date: 2016-06-08 23:33:51
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款二十九，Try to use anchored records as targets for your cursors。   

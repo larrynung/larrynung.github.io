@@ -1,7 +1,8 @@
 ---
 title: PL/SQL & SQL CODING GUIDELINE 40 - Always label your loops
 date: 2017-03-02 10:25:50
-tags: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款四十，如果程式中有 loop，嘗試使用 label 讓他的區塊範圍更為清楚。

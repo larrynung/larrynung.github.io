@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 34 - Avoid procedure or function calls between a
   SQL operation and an implicit cursor
 date: 2016-08-13 07:55:57
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款三十四，避免在 SQL 語句運行與 implicit cursor 中間使用 procedure 或是 function。  

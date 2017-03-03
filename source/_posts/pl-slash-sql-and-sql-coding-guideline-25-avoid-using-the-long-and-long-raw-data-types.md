@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
 date: 2015-12-18 03:40:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
 ---
 

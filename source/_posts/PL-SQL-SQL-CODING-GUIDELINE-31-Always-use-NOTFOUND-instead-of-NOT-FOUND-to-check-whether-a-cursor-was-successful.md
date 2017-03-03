@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 31 - Always use %NOTFOUND instead of NOT %FOUND
   to check whether a cursor was successful
 date: 2016-08-07 23:54:50
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款三十一，Always use %NOTFOUND instead of NOT %FOUND to check whether a cursor was successful。  

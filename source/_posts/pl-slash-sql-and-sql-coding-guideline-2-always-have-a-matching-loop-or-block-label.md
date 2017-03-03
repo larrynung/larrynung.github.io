@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 2 - Always have a matching loop or block label"
 date: 2015-09-20 23:51:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 2 - Always have a matching loop or block label"
 ---
 

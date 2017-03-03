@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 15 - Never use quoted identifiers"
 date: 2015-12-05 18:42:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 15 - Never use quoted identifiers"
 ---
 

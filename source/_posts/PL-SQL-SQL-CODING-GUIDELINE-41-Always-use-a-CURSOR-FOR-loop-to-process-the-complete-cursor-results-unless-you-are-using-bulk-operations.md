@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 41 - Always use a CURSOR FOR loop to process the
   complete cursor results unless you are using bulk operations
 date: 2017-03-03 10:01:57
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款四十一，總是使用 CURSOR for loop，除非使用 Bulk operations。

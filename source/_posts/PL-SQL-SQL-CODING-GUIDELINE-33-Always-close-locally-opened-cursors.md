@@ -1,7 +1,8 @@
 ---
 title: PL/SQL & SQL CODING GUIDELINE 33 - Always close locally opened cursors
 date: 2016-08-13 07:42:55
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款三十三，總是關閉開啟的游標。  

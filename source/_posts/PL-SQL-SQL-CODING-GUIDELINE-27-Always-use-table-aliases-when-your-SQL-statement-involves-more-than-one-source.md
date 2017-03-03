@@ -3,7 +3,8 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 27 - Always use table aliases when your SQL
   statement involves more than one source
 date: 2016-06-07 22:41:27
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款二十七，當使用多個來源做搜尋時，總是使用資料表別名。  

@@ -3,8 +3,8 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 8 - Try to use anchored declarations for variables"
 date: 2015-11-19 05:41:00
 comments: true
-tags: 
-keywords: 
+tags: [PL/SQL]
+keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 8 - Try to use anchored declarations for variables"
 ---
 

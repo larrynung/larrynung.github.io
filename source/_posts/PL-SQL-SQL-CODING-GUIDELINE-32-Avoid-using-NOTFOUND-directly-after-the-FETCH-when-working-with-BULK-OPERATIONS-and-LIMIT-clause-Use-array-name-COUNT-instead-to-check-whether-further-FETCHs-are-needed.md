@@ -4,7 +4,8 @@ title: >-
   FETCH when working with BULK OPERATIONS and LIMIT clause. Use
   [array_name].COUNT() instead to check whether further FETCHs are needed
 date: 2016-08-13 00:00:11
-tags:
+tags: [PL/SQL]
+keywords: "PL/SQL"
 ---
 
 條款三十二，當使用 BULK 與 LIMIT 操作時，避免直接在後面用 %NOTFOUND 判斷是否有資料處理，應改用 COUNT() 判斷。  
