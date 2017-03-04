@@ -77,3 +77,10 @@ C# 7.0 新增了 Value Type 的 Tuple，因為是 Value Type，所以對 GC 的�
 {% asset_img 10.png %}
 
 <br/>
+
+
+Link
+======
+* [Tackling Tuples: Understanding the New C# 7 Value Type - Our ComponentOne](http://our.componentone.com/2017/01/30/tackling-tuples-understanding-the-new-c-7-value-type/)
+* [C# 7.0 – Tuples – CsharpStar](http://www.csharpstar.com/csharp-tuples/)
+* [Tuple deconstruction in C# 7 | Thomas Levesque's .NET blog](http://www.thomaslevesque.com/2016/08/23/tuple-deconstruction-in-c-7/)
