@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Expression bodied members"
 date: 2014-10-09 23:47:00
 comments: true
-tags: [C#]
+tags: [CSharp, CSharp 6.0]
 keywords: "C#"
 description: "C# 6.0 - Expression bodied members"
 ---

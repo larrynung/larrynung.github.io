@@ -3,7 +3,7 @@ layout: post
 title: "C# 7.0 - Binary literals"
 date: 2016-05-16 05:27:00
 comments: true
-tags: 
+tags: [CSharp, CSharp 7.0]
 keywords: 
 description: "C# 7.0 - Binary literals"
 ---

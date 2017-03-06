@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Exception filters"
 date: 2014-07-30 22:43:00
 comments: true
-tags: [C#]
+tags: [CSharp, CSharp 6.0]
 keywords: "C#, Exception Filters"
 description: "C# 6.0 - Exception filters"
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'C# 7.0 - Tuple'
 date: 2017-03-04 15:29:44
-tags:
+tags: [CSharp, CSharp 7.0]
 ---
 
 C# 7.0 新增了 Value Type 的 Tuple，因為是 Value Type，所以對 GC 的負擔會比較少。另外增加了一些語法糖，改進了本來 Tuple 類別可讀性不佳的問題。  

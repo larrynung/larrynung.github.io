@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Nameof expressions"
 date: 2014-08-25 23:40:00
 comments: true
-tags: [C#]
+tags: [CSharp, CSharp 6.0]
 keywords: "C#"
 description: "C# 6.0 - Nameof expressions"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Using static members"
 date: 2014-07-21 23:05:00
 comments: true
-tags: [C#]
+tags: [CSharp, CSharp 6.0]
 keywords: "C#, Static, Using"
 description: "C# 6.0 - Using static members"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "C# 7.0 - Digit separators"
 date: 2016-05-21 00:00:00
 comments: true
-tags: 
+tags: [CSharp, CSharp 7.0]
 keywords: 
 description: "C# 7.0 - Digit separators"
 ---
