@@ -3,7 +3,7 @@ layout: post
 title: "Clr C# Heap Allocation Analyzer"
 date: 2014-11-05 00:00:00
 comments: true
-tags: [Roslyn, C#, Visual Studio]
+tags: [Roslyn, CSharp, Visual Studio]
 keywords: "C#, Roslyn, Visual Studio, Analyzer, Heap, Boxing"
 description: "Clr C# Heap Allocation Analyzer"
 ---
