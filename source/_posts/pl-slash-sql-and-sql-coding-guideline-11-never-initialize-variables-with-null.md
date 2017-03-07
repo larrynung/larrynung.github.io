@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
 date: 2015-11-25 05:44:00
 comments: true
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
 ---

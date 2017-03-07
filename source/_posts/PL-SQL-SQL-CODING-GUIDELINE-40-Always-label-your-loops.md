@@ -1,7 +1,7 @@
 ---
 title: PL/SQL & SQL CODING GUIDELINE 40 - Always label your loops
 date: 2017-03-02 10:25:50
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

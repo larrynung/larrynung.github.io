@@ -3,7 +3,7 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 35 - Try to use CASE rather than an IF statement
   with multiple ELSIF paths
 date: 2016-08-24 13:31:51
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

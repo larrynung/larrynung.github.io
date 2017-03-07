@@ -3,7 +3,7 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 38 - Always use CASE instead of NVL2 if
   parameter 2 or 3 of NVL2 is either a function call or a SELECT statement
 date: 2016-09-05 13:46:16
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

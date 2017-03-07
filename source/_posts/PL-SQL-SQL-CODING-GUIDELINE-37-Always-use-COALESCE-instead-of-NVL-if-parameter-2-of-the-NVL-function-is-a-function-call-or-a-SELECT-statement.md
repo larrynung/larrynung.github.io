@@ -3,7 +3,7 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 37 - Always use COALESCE instead of NVL, if
   parameter 2 of the NVL function is a function call or a SELECT statement
 date: 2016-08-28 00:07:58
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

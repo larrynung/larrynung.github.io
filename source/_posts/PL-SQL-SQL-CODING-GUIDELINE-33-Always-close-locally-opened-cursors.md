@@ -1,7 +1,7 @@
 ---
 title: PL/SQL & SQL CODING GUIDELINE 33 - Always close locally opened cursors
 date: 2016-08-13 07:42:55
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

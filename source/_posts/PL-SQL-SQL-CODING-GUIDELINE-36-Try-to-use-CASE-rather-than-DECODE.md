@@ -1,7 +1,7 @@
 ---
 title: PL/SQL & SQL CODING GUIDELINE 36 - Try to use CASE rather than DECODE
 date: 2016-08-27 23:34:16
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

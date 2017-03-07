@@ -3,7 +3,7 @@ title: >-
   PL/SQL & SQL CODING GUIDELINE 27 - Always use table aliases when your SQL
   statement involves more than one source
 date: 2016-06-07 22:41:27
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 

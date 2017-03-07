@@ -3,7 +3,7 @@ layout: post
 title: "PL/SQL &amp; SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
 date: 2015-12-05 20:10:00
 comments: true
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 description: "PL/SQL &amp; SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
 ---

@@ -4,7 +4,7 @@ title: >-
   FETCH when working with BULK OPERATIONS and LIMIT clause. Use
   [array_name].COUNT() instead to check whether further FETCHs are needed
 date: 2016-08-13 00:00:11
-tags: [PL/SQL]
+tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 keywords: "PL/SQL"
 ---
 
