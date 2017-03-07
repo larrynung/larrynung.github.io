@@ -1,9 +1,9 @@
----
+﻿---
 layout: post
 title: "C# 6.0 - Null propagation"
 date: 2014-08-21 00:03:00
 comments: true
-tags: [CSharp, CSharp 7.0]
+tags: [CSharp, CSharp 6.0]
 keywords: "C#"
 description: "C# 6.0 - Null propagation"
 ---
