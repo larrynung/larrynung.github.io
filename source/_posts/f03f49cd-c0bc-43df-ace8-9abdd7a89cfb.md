@@ -3,7 +3,7 @@ layout: post
 title: "[C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles"
 date: 2013-11-06 12:00:00
 comments: true
-tags: 
+tags: [CSharp]
 description: "[C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles"
 ---
 <p>.NET 4.0開始Directory類別新增了EnumerateFiles函式，該函式能提供較有效率的方式找尋檔案，不會等到整個搜尋動作完成才回傳。在.NET 4.0以前我們則可以用FindFirstFile、FindNextFile這幾個API來達到類似的效果。</p>  <p> </p>  <p>實做起來就像下面這樣，有需要的自行取用：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:cd2cbbeb-7d05-4934-9db3-914ccaefcdd8" class="wlWriterSmartContent"><pre name="code" class="c#">		private static readonly IntPtr INVALID_HANDLE_VALUE = new IntPtr(-1); 

@@ -3,7 +3,7 @@ layout: post
 title: "[C#]Json.NET - Reducing Serialized JSON Size"
 date: 2013-11-06 12:00:00
 comments: true
-tags: 
+tags: [CSharp]
 description: "[C#]Json.NET - Reducing Serialized JSON Size"
 ---
 <p>筆者在[C#]Json.NET - A high performance Json library</a>這篇簡單的帶過了一下JSON.NET這個序列化函式庫，基本的操作只要理解那篇大概都不成問題，但最近在使用上JSON.NET又碰到一個問題，就是有時候沒有資料並不是總是不要序列化，所以我們不能帶上JsonIgnoreAttribute去總是忽略它，而是必須要做些特殊的判斷，像是欄位有時候會是Null或是空的集合，這時候我們序列化傳送也只是增加無謂的資料量，因此我們必須做些對此做些處理。</p>  <p> </p>  <p>接下來筆者以<a href="http://www.dotblogs.com.tw/larrynung/archive/2012/04/05/71295.aspx">[C#]Json.NET - A high performance Json library這篇的例子來做個簡單的說明，假設我們有個Person類別長得像下面這樣：</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5bd6629c-0188-45bc-8797-73d95d395f30" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">public class Person

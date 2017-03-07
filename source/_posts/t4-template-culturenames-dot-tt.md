@@ -3,7 +3,7 @@ layout: post
 title: "T4 template - CultureNames.tt"
 date: 2016-03-08 05:31:00
 comments: true
-tags: [T4]
+tags: [T4, CSharp]
 keywords: "T4, Culture"
 description: "T4 template - CultureNames.tt"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "T4 Template - JsResource.tt"
 date: 2016-03-21 00:57:00
 comments: true
-tags: [T4]
+tags: [T4, CSharp]
 keywords: "T4"
 description: "T4 Template - JsResource.tt"
 ---
