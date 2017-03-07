@@ -3,7 +3,7 @@ layout: post
 title: "CShell - A simply, yet powerful, C# scripting IDE"
 date: 2015-03-16 23:40:00
 comments: true
-tags: [C#]
+tags: [CSharp]
 keywords: "C#, CShell"
 description: "CShell - A simply, yet powerful, C# scripting IDE"
 ---

@@ -3,7 +3,7 @@ layout: post
 title: ".NET - Access Embeded Resource"
 date: 2014-04-14 23:01:00
 comments: true
-tags: [C#]
+tags: [CSharp]
 keywords: "Embeded Resource"
 description: ".NET - Access Embeded Resource"
 ---

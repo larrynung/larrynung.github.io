@@ -3,7 +3,7 @@ layout: post
 title: ".NET - A Simple Finite State Machine Solution"
 date: 2014-05-15 13:20:00
 comments: true
-tags: [.NET, C#]
+tags: [.NET, CSharp]
 keywords: "State Machine, C#, .NET"
 description: ".NET - A Simple Finite State Machine Solution"
 ---
