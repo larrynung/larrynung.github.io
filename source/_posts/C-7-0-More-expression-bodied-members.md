@@ -47,16 +47,11 @@ class Program
 
 {% codeblock lang:C# %}
 ...
-class Program
+private string _myProperty;
+public string MyProperty
 {
-    ...
-    public string _myProperty;
-    public string MyProperty
-    {
-        get => _myProperty;
-        set => _myProperty = value;
-    }
-    ...
+    get => _myProperty;
+    set => _myProperty = value;
 }
 ...
 {% endcodeblock %}
@@ -68,15 +63,10 @@ class Program
 
 {% codeblock lang:C# %}
 ...
-class Program
+public event EventHandler MyEvent
 {
-    ...
-    public event EventHandler MyEvent
-    {
-        add => _myEvent += value;
-        remove => _myEvent -= value;
-    }
-    ...
+    add => _myEvent += value;
+    remove => _myEvent -= value;
 }
 ...
 {% endcodeblock %}
