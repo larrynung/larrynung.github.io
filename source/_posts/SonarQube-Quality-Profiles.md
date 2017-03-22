@@ -25,4 +25,4 @@ Profile 為分析 Rule 的集合，多半會造著語言或是套件下去區分
 <br/>
 
 
-在進行程式碼分析之前可先透過該頁面確認 Rule 的啟用狀態，因為有時套件安裝的 Profile 其 Rule 預設是未啟用的狀態，或是某些想要分析的 Rule 並未被啟用，這時可以按下 `Active More` 按鈕切到 Rules 頁面，透過 Rules 頁面將之啟用。  
+在進行程式碼分析之前可先透過該頁面確認 Profile 的 Rule 啟用狀態，因為有時套件安裝的 Profile 其 Rule 預設是未啟用的狀態，或是某些想要分析的 Rule 並未被啟用，這時可以按下 `Active More` 按鈕切到 Rules 頁面，透過 Rules 頁面將之啟用。  
