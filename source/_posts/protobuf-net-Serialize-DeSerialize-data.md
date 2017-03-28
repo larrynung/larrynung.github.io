@@ -1,7 +1,7 @@
 ---
 title: protobuf-net - Serialize/DeSerialize data
 date: 2016-08-23 23:52:16
-tags:
+tags: protobuf-net
 ---
 
 protobuf-net 預設只支援序列化至 stream，或是自 stream 姐序列化回物件。使用上就是透過 Serializer.Serialize 帶入 stream 與物件，帶入的物件就會被序列化至 stream，呼叫 Serializer.Deserialize，帶入 stream，泛型型態設定為指定的類別型態，就可以自 stream 解序列化回指定型態的物件。  
