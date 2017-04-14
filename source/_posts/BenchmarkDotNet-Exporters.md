@@ -4,7 +4,7 @@ date: 2017-04-14 13:42:20
 tags: [BenchmarkDotNet]
 ---
 
-Exporter 會將 benchmark 的結果輸出成不同的格式，預設輸出的檔案會被放置於 `.\BenchmarkDotNet.Artifacts\results` 下。  
+Exporter 會將 benchmark 的結果輸出成不同的格式。  
 
 <!-- More -->
 
@@ -40,6 +40,7 @@ public class ProgramBenchmarker {
 <br/>
 
 
+
 或是透過 config 的方式設定也可以。
 
 {% codeblock lang:c# %}
@@ -61,6 +62,9 @@ public class ProgramBenchmarker {
   …
 }
 {% endcodeblock %}
+
+<br/>
+預設輸出的檔案會被放置於 `.\BenchmarkDotNet.Artifacts\results` 下°  
 
 <br/>
 
