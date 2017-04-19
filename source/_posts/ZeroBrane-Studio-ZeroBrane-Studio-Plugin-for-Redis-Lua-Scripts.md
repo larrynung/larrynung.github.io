@@ -39,12 +39,17 @@ tags: [ZeroBrane Studio]
 <br/>
 
 
-切完後就可以支援 Redis 的 Lua Script。  
+切完後 ZeroBrane Studio 就可以支援 Redis 的 Lua Script，像是除錯、Intellisense...等。
 
 <br/>
 
 
-如果想要代參數運行，也可以選取 [Project|Command Line Parameters...] 主選單選項。  
+第一次運行會詢問 Redis 的位置，將 Redis 位置填入設定後即可。  
+
+<br/>
+
+
+如果需要帶參數運行，也可以選取 [Project|Command Line Parameters...] 主選單選項。  
 
 {% asset_img 6.png %}
 
