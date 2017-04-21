@@ -1,5 +1,5 @@
 ---
-title: R - Install R for Windows
+title: "RGui - Install R for Windows"
 date: 2017-04-20 22:12:31
 tags: [R]
 ---

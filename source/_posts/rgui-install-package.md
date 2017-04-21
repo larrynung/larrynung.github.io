@@ -1,5 +1,5 @@
 ---
-title: R - Install package
+title: "RGui - Install package"
 date: 2017-04-20 23:52:15
 tags: [R]
 ---
