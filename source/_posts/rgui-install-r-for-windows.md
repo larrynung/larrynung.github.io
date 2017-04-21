@@ -1,7 +1,7 @@
 ---
 title: "RGui - Install R for Windows"
 date: 2017-04-20 22:12:31
-tags: [R]
+tags: [RGui]
 ---
 
 要安裝 R for Windows，首先要至官網下載頁面。    
