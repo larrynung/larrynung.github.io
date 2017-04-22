@@ -1,5 +1,5 @@
 ---
-title: Zapier - Share new RSS items to your company LinkedIn profile
+title: "Zapier - Share new RSS items to your LinkedIn profile"
 date: 2017-04-22 22:32:57
 tags: [Zapier]
 ---
