@@ -11,7 +11,7 @@ Filebeat 的設定檔為 filebeat.yml，可以設定資料的輸入與輸出，�
 <br/>
 
 
-像是設定資料的輸入，這邊可以指定要輸入的 Log 檔位置。  
+像是設定資料的輸入，可以指定要輸入的 Log 檔位置。  
 
 {% codeblock lang:yaml %}
 filebeat.prospectors:
@@ -24,7 +24,7 @@ filebeat.prospectors:
 <br/>
 
 
-可以設定 Log 資料要怎樣切割傳送，像筆者使用 Log4Net 去記錄 Log，Log 前面一定會有 Log 的時間，就可以以 Log 時間當作切割傳送的依據。  
+可以設定 Log 資料要怎樣切割傳送，像是若使用 Log4Net 去記錄 Log，不特別調整格式的話 Log 前面一定會有 Log 的時間，就可以以 Log 時間當作切割傳送的依據。  
 
 {% codeblock lang:yaml %}
 filebeat.prospectors:
