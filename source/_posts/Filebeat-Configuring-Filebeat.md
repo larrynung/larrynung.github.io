@@ -274,8 +274,13 @@ filebeat.prospectors:
 
 <br/>
   
+若欲得知更多詳細的設定，請參閱 [Configuring Filebeat | Filebeat Reference [5.3] | Elastic](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html)。  
+
+<br/>
+
 
 Link
 ----
 * [Step 2: Configuring Filebeat | Filebeat Reference [5.3] | Elastic](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration.html)
 * [Step 3: Configuring Filebeat to Use Logstash | Filebeat Reference [5.3] | Elastic](https://www.elastic.co/guide/en/beats/filebeat/current/config-filebeat-logstash.html)
+* [Configuring Filebeat | Filebeat Reference [5.3] | Elastic](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html)
