@@ -22,7 +22,7 @@ FX.Configuration 是一號稱輕量，簡單，具彈性，可擴充的 Configur
 <br/>
 
 
-首先需先透過 Nuget 套件管理視窗安裝套件。  
+首先需先透過 NuGet 套件管理視窗安裝套件。  
 
 {% img /images/posts/FxConfiguration/2.png %}
 

@@ -13,9 +13,9 @@ SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Fram
 可支援Get、Post、Put、Delete這些呼叫方式，叫用時能設定Concurrent user、Request數、Header template...等。
 
 
-程式主檔可由Github、Nuget以及Chocolatey這三種方式取得。
+程式主檔可由Github、NuGet以及Chocolatey這三種方式取得。
 
-Nuget使用者可在Visual Studio的Package Manager Console視窗中輸入下列命令進行下載
+NuGet使用者可在Visual Studio的Package Manager Console視窗中輸入下列命令進行下載
     Install-Package SuperBenchmarker
 
 {% img /images/posts/SuperBenchmarker/1.jpeg %}
@@ -36,17 +36,17 @@ Chocolatey使用者可輸入下列命令進行下載
 
     cinst SuperBenchmarker
 
-不過該程式作者在開發時有用一些第三方的套件，而Nuget上所放置的版本並沒有把那些參考到的組件連帶釋出，所以要手動將參考到的組件ㄧㄧ補齊，不然無法正常運行。 
+不過該程式作者在開發時有用一些第三方的套件，而NuGet上所放置的版本並沒有把那些參考到的組件連帶釋出，所以要手動將參考到的組件ㄧㄧ補齊，不然無法正常運行。 
 
 {% img /images/posts/SuperBenchmarker/4.jpg %}
 
 <br/>
 
-而且該程式其實是一個獨立的主控台程式，跟專案與方案應該無任何關聯，為此要開個方案進行下載是有點弔詭。且依筆者的觀察，Nuget上的更新也比較緩慢。
+而且該程式其實是一個獨立的主控台程式，跟專案與方案應該無任何關聯，為此要開個方案進行下載是有點弔詭。且依筆者的觀察，NuGet上的更新也比較緩慢。
 
 程式的作者是建議用Chocolatey去取得程式主檔，因為放置的程式主檔已經被作者用ILMerge將參考到的組件合併，故取得後既可直接使用。 
 
-至於Github上放置的版本本來也跟Nuget取得的版本一樣需要自行下載相依的組件，但後來的版本看起來跟Chocolatey一樣也做了合併處理，所以要由此取得應該也是可以的。
+至於Github上放置的版本本來也跟NuGet取得的版本一樣需要自行下載相依的組件，但後來的版本看起來跟Chocolatey一樣也做了合併處理，所以要由此取得應該也是可以的。
 
 程式的使用方式可直接在命令列下輸入sb查看，裡面會有程式的使用方式、參數、及簡易的使用範例   
 

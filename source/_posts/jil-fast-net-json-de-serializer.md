@@ -42,7 +42,7 @@ Jil 是 JSON 處理的套件，號稱比 JSON.NET 更快，甚至是當前套件
 <br/>
 
 
-只要加入 Nuget 參考，Using Jil 命名空間即可開始使用。  
+只要加入 NuGet 參考，Using Jil 命名空間即可開始使用。  
 
 <br/>
 

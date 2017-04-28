@@ -13,7 +13,7 @@ tags: [NuGet]
 <br/>
 
 
-可嘗試將 '%AppData%\NuGet\Nuget.config' 刪除。  
+可嘗試將 '%AppData%\NuGet\NuGet.config' 刪除。  
 
 {% asset_img 2.png %}
 
