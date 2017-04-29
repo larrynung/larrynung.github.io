@@ -41,42 +41,73 @@ R 語言翻轉教室是一全中文互動式教材，教材的內容主要是來
 <br/>
 
 
-不過因為 RGui 在編輯器的編碼切換上會有些問題，建議還是使用 RStudio 來運行教材。  
+教材使用時需要做登入，選個希望使用的登入的方式並授權即可。  
 
 <br/>
 
 
-學習告一段落，將 RGui 或是 RStudio 關閉。下次要進入教材的話，只要將 swirl 套件載入，在輸入 swirl() 即可再次進入教材。  
+安裝且登入後，會先帶一下教材必奧的操作知識，像是看到 '...' 代表要按 'Enter' 按鈕繼續：看到 "Selection:" 就是要輸入選擇後按 'Enter' 按鈕繼續。  
 
 {% asset_img 5.png %}
 
 <br/>
 
 
-教材使用時需要做登入，選個希望的登入的方式並授權即可。  
+或是一些 swirl 提供的命令...等。  
 
 {% asset_img 6.png %}
 
 <br/>
 
 
-教材在使用上程式碼的部分可能會有中文顯示的問題，這時點選 RStudio 的 [File | Reopen with Encoding...] 主選單選項。  
+這部份帶完後才會開始進入課程，課程都放在 'DataScienceAndR' 下，所以這邊要選 1 繼續。  
 
 {% asset_img 7.png %}
 
 <br/>
 
 
-設定編碼為 UTF-8。  
+再挑選要上的課程即可。  
 
 {% asset_img 8.png %}
 
 <br/>
 
 
-中文顯示就會正常了。  
+不過因為 RGui 在編輯器的編碼切換上會有些問題，建議還是使用 RStudio 來運行教材。  
+
+<br/>
+
+
+學習告一段落，將 RGui 或是 RStudio 關閉。下次要進入教材的話，只要將 swirl 套件載入，輸入 swirl() 即可再次進入教材。  
 
 {% asset_img 9.png %}
+
+<br/>
+
+
+{% asset_img 10.png %}
+
+<br/>
+
+
+教材在使用上程式碼的部分可能會有中文顯示的問題，這時點選 RStudio 的 [File | Reopen with Encoding...] 主選單選項。  
+
+{% asset_img 11.png %}
+
+<br/>
+
+
+設定編碼為 UTF-8。  
+
+{% asset_img 12.png %}
+
+<br/>
+
+
+中文顯示就會正常了。  
+
+{% asset_img 13.png %}
 
 <br/>
 
