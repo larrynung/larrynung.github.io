@@ -8,7 +8,13 @@ tags: [Vue.js]
 
 <!-- More -->
 
+<br/>
+
+
+像是下面這樣的程式：  
+
 {% codeblock lang:html %}
+{% raw %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,10 +37,13 @@ tags: [Vue.js]
   </script>
 </body>
 </html>
+{% endraw %}
 {% endcodeblock %}
 
 <br/>
 
+
+其運行結果如下：  
 
 {% asset_img 1.png %}
 
