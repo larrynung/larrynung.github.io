@@ -11,7 +11,7 @@ Checkbox 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性
 <br/>
 
 
-如果有多個 Checkbox 要做繫結，只要將繫結的屬性宣告成陣列，Checkbox 這邊使用 v-model 指定繫結至相同的屬性，並在 Checkbox 指定選取時的 value 即可。    
+如果有多個 Checkbox 要做繫結，方法大同小異，只要將繫結的屬性宣告成陣列，Checkbox 這邊使用 v-model 指定繫結至相同的屬性，並在 Checkbox 指定選取時的 value 即可。    
 
 <br/>
 
