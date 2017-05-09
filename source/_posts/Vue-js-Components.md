@@ -4,9 +4,14 @@ date: 2017-05-05 00:18:38
 tags: [Vue.js]
 ---
 
-Vue.js Component 可使用局部註冊。  
+Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。
 
 <!-- More -->
+
+<br/>
+
+
+可在建立 Vue 時透過 components 宣告，進行局部註冊。  
 
 {% codeblock lang:html %}
 <!DOCTYPE html>
@@ -37,7 +42,7 @@ Vue.js Component 可使用局部註冊。
 <br/>
 
 
-也可以使用全域註冊。  
+也可以使用 Vue.component 宣告，進行全域註冊。  
 
 {% codeblock lang:html %}
 <!DOCTYPE html>
@@ -66,14 +71,14 @@ Vue.js Component 可使用局部註冊。
 <br/>
 
 
-像是這邊筆者就註冊了 Hello Component，該 Component 會顯示 Hello World 的字樣，註冊完我們就可以在 HTML 中使用 Hello 這個 Element。  
+像是這邊筆者就註冊了名為 Hello 的 Component，該 Component 會顯示出 Hello World 的字樣，Component 註冊完後可以在 HTML 中使用 Hello 這個 Component 的 Element。  
 
 {% asset_img 1.png %}
 
 <br/>
 
 
-Component 也支援設定 data，但 data 必須是 function。  
+Component 也支援設定 data，可存放ㄧ些 Component 會使用到的資料，但 data 必須是用 function 的方式宣告。  
 
 {% codeblock lang:html %}
 <!DOCTYPE html>
