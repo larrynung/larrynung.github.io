@@ -16,7 +16,7 @@ Checkbox 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性
 <br/>
 
 
-最後附上一個完整的測試範例：  
+像是下面這樣的程式：  
 
 {% codeblock lang:html %}
 {% raw %}
