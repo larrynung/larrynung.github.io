@@ -14,6 +14,7 @@ Radio 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性，
 像是下面這樣的程式：
 
 {% codeblock lang:html %}
+{% raw %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +38,7 @@ Radio 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性，
   </script>
 </body>
 </html>
+{% endraw %}
 {% endcodeblock %}
 
 <br/>
