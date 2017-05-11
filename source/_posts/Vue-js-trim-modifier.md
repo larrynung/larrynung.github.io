@@ -11,7 +11,7 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
 <br/>
 
 
-以下面這段程式為例，若不使用 .number modifer，輸入的資料如果有空格，繫結的屬性值也會含有空格。  
+以下面這段程式為例，若不使用 .trim modifer，輸入的資料如果有空格，繫結的屬性值也會含有空格。  
 
 {% codeblock lang:html %}
 {% raw %}
