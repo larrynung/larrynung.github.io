@@ -134,7 +134,7 @@ after_success:
 <br/>
 
 
-注意到這邊，這樣的設定 Travis CI 也會嘗試建置 master branch，可透過設定讓他只建置有放 .travis.yml 檔的 branch。
+注意到這邊，這樣的設定 Travis CI 也會嘗試建置 master branch，可透過設定讓他只建置有放 .travis.yml 檔的 branch。  
 
 {% asset_img 13.png %}
 
