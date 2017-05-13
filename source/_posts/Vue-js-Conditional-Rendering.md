@@ -4,7 +4,7 @@ date: 2017-05-13 23:44:27
 tags: [Vue.js]
 ---
 
-Vue.js 要使用條件渲染，像是想要當條件成立時才渲染，可以使用 `v-if`、`v-else-if`、 `v-else`。  
+Vue.js 要使用條件渲染，像是想要當條件成立時才渲染，可以使用 `v-if`、`v-else-if`、 `v-else`。    
 
 <!-- More -->
 
