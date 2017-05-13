@@ -19,11 +19,11 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
 <html>
 <head>
   <title> Vue - Hello World </title>
-  <script  src = "https://unpkg.com/vue/dist/vue.js"></script>
+  <script src = "https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div  id = "app">
-    <input  v-model = "message">
+  <div id = "app">
+    <input v-model = "message">
     <p> {{message.length}} </p>
   </div>
   <script>
@@ -55,11 +55,11 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
 <html>
 <head>
   <title> Vue - Hello World </title>
-  <script  src = "https://unpkg.com/vue/dist/vue.js"></script>
+  <script src = "https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div  id = "app">
-    <input  v-model.trim = "message">
+  <div id = "app">
+    <input v-model.trim = "message">
     <p> {{message.length}} </p>
   </div>
   <script>
