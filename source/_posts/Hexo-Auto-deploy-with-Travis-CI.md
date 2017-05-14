@@ -51,7 +51,7 @@ Token 產生後複製留存以供後續使用。
 
 再來要準備 Travis CI 的設定檔 .travis.yml，放置於 Repository 的根目錄，內容大概像這樣 (branches 位置、使用者名稱、與電子郵件位置請自行替換)：    
 
-{% codeblock lang:yml %}
+```yml
 language: node_js
 node_js:
 - '0.12'
@@ -70,7 +70,7 @@ after_success:
 - git config --global user.email "<Email>"
 - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
-{% endcodeblock %}
+```
 
 <br/>
 
