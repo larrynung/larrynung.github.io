@@ -14,6 +14,7 @@ Vue.js 要使用條件渲染，像是想要當條件成立時才渲染，可以�
 像是下面這程式，筆者使用輸入框繫結的 name 屬性去決定要顯示的文字，如果有輸入名字，則會對該名字 Hello，反之則顯示 Hello World。  
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +37,7 @@ Vue.js 要使用條件渲染，像是想要當條件成立時才渲染，可以�
   </script>
 </body>
 </html>
+{% endraw %}
 ```
 
 <br/>
