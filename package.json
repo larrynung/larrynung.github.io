@@ -12,7 +12,6 @@
     "gulp-concat": "^2.6.0",
     "gulp-uglify": "^2.0.0",
     "hexo": "^3.2.0",
-    "hexo-admin": "^2.0.1",
     "hexo-cli-extras": "^1.0.4",
     "hexo-deployer-git": "^0.1.0",
     "hexo-fs": "^0.1.5",
