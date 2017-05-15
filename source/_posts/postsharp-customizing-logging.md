@@ -83,7 +83,7 @@ Summary 頁面這邊只是告訴我們繼續下去會做什麼事，不外乎就
     < d:LoggingProfile Name="New profile " OnEntryOptions=" IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeThisArgument" OnSuccessOptions="IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeReturnValue | IncludeThisArgument" OnExceptionOptions="IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeThisArgument" />
   </ d:LoggingProfiles>
 </ Project>
-{% endcodeblock%}
+```
 
 <br/>
 
