@@ -17,7 +17,7 @@ TypeScript 的 Function 支援 Optional Parameters，使用上只要在參數名
 
 使用起來會像下面這樣：  
 
-{% codeblock lang:js %}
+```js
 function sayHello(name?: string) { 
 	var msg:string = 'Hello~';
 	if (name) 

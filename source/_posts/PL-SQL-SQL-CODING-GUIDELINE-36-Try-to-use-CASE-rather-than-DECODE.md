@@ -14,7 +14,7 @@ keywords: "PL/SQL"
 
 用 DECODE 的可讀性較低，不易閱讀。  
 
-{% codeblock lang:psql %}
+```psql
 BEGIN 
     SELECT DECODE(dummy, 'A', 1 
         , 'B', 2 
@@ -33,7 +33,7 @@ BEGIN
 
 改用 CASE 撰寫雖然程式變多，但閱讀起來相對會比較清楚。  
 
-{% codeblock lang:psql %}
+```psql
 BEGIN 
     l_result := CASE dummy 
         WHEN 'A' THEN 1 

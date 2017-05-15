@@ -8,7 +8,7 @@ Gruntfile 的設定可以直接從下面例子來看。
 
 <!-- More -->
 
-{% codeblock lang:js %}
+```js
 module.exports = function(grunt) { 
   grunt.initConfig({ 
     jshint: { 
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 
 Compact Format 設定方式如下，可指定一組 source 與 destination 檔案。  
 
-{% codeblock lang:js %}
+```js
 grunt.initConfig({ 
   jshint: { 
     foo: { 
@@ -75,7 +75,7 @@ grunt.initConfig({
 
 Files Object Format 設定方式如下，可指定多組 source 與 destination 檔案，`:` 前面是 destination，後面是 source。
 
-{% codeblock lang:js %}
+```js
 grunt.initConfig({ 
   concat: { 
     foo: { 
@@ -99,7 +99,7 @@ grunt.initConfig({
 
 Files Array Format 設定方式如下，除了可指定多組 source 與 destination 檔案外，還能附加額外的屬性。
 
-{% codeblock lang:js %}
+```js
 grunt.initConfig({ 
   concat: { 
     foo: { 

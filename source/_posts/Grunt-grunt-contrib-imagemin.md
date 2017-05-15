@@ -37,7 +37,7 @@ grunt-contrib-imagemin 套件可以用 Grunt 來將進行檔的壓縮。
 
 像是下面這邊設定了一個 imagemin 的 task，會將 images 目錄下副檔名為 png/jpg/gif 的圖片進行壓縮，壓縮後會放回到 images 目錄。   
 
-{% codeblock lang:js %}
+```js
 var grunt = require('grunt'); 
 grunt.initConfig({ 
   imagemin: { 

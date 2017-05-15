@@ -40,7 +40,7 @@ END;
 
 如果改用 cursor-anchored records 去實作，就可以省去一些不必要的變數宣告。  
 
-{% codeblock lang:sql %}
+```sql
 DECLARE 
     CURSOR c_user IS 
         SELECT user_id, firstname, lastname 

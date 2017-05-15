@@ -28,7 +28,7 @@ description: "Vagrant - Configures the virtual machine to use proxies"
 
 套件安裝完畢後，我們可以修改 Vagrantfile 做 proxy 的設定。像是下面這樣：  
 
-{% codeblock lang:rb %}
+```rb
 ...
 if Vagrant.has_plugin?("vagrant-proxyconf")
     config.proxy.http     = "http://proxy.xuenn.com:3128/"
@@ -48,7 +48,7 @@ if Vagrant.has_plugin?("vagrant-proxyconf") 用以判斷 vagrant-proxyconf 套�
 
 若是 Proxy 需經過認證，設定時要將帳密一併帶入：  
 
-{% codeblock lang:rb %}
+```rb
 ...
 if Vagrant.has_plugin?("vagrant-proxyconf")
 deblock %}

@@ -32,7 +32,7 @@ Common.Logging 的套件透過 NuGet 安裝即可，這邊也可以直接安裝 
 
 套件安裝完後要設定 Common.Logging，開啟設定檔設定 common 的 section group，在 common 的 section group 這邊要設定 Adapter 以及其參數，像這邊指定使用 Log4Net 的 Adapter 去處理 Log，指定並監控 Adapter 的設定檔 log4net.config。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
     <configSections> 
@@ -59,7 +59,7 @@ Common.Logging 的套件透過 NuGet 安裝即可，這邊也可以直接安裝 
 
 接著設定 Log4Net 設定檔。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <log4net> 
     <appender name="FullAppender" type="log4net.Appender.RollingFileAppender"> 

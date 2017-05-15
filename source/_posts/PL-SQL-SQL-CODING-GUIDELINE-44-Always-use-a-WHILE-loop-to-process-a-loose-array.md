@@ -15,7 +15,7 @@ tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式用 FOR loop 去遍巡處理 loose array，這不是被建議使用的寫法，雖然大部分的狀況下可以正常運行，但是當 loose array 的內容被刪除時，這樣的處理會因為 null 元素而運行錯誤。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
   ...
   l_index PLS_INTEGER; 
@@ -36,7 +36,7 @@ END;
 
 建議使用 WHILE loop 遍巡處理 loose array，才不會因為 Null 元素導致錯誤。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
   ...
   l_index PLS_INTEGER; 

@@ -46,7 +46,7 @@ description: "Code Analysis Error CA0058"
 
 Visual Studio 2012 後我們要開啟專案檔進行編輯，在第一個 PropertyGroup 中加入 CodeAnalysisAdditionalOptions，將其設為 /assemblyCompareMode:StrongNameIgnoringVersion。  
 
-{% codeblock lang:xml %}
+```xml
 ...
 <PropertyGroup>
   ...

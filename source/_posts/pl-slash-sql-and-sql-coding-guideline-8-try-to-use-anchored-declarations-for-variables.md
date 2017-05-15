@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 8 - Try to use anchored declarat
 
 像是下面這樣的程式：  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_empName VARCHAR2(10); 
 BEGIN 
@@ -35,7 +35,7 @@ END;
 
 若是使用 anchored declarations，型態會直接參照 schema 的定義，免去像這樣的困擾。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	 v_empName emp.ename%TYPE; 
 BEGIN 

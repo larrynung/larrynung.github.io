@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 像是下面這樣的語法，使用了過多的 ELSIF，可讀性沒有那麼好。  
 
-{% codeblock lang:sql %}
+```sql
 IF l_color = 'red' 
 THEN 
     ... 
@@ -33,7 +33,7 @@ THEN
 
 若換用 CASE 來撰寫，可讀性會好很多。  
 
-{% codeblock lang:sql %}	
+```sql	
 CASE l_color 
     WHEN 'red' THEN ... 
     WHEN 'blue' THEN ... 

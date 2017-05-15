@@ -33,7 +33,7 @@ i++;
 
 其對應的 IL 都是一樣的：  
 
-{% codeblock lang:IL %}
+```IL
 IL_0000:  nop
 IL_0001:  ldc.i4.0
 IL_0002:  stloc.0
@@ -59,7 +59,7 @@ var a = i++;
 
 對應的 IL 如下：  
 
-{% codeblock lang:IL %}
+```IL
 IL_0000:  nop         
 IL_0001:  ldc.i4.0    
 IL_0002:  stloc.0     // i
@@ -127,7 +127,7 @@ var a = ++i;
 
 其對應的 IL 如下：  
 
-{% codeblock lang:IL %}
+```IL
 IL_0000:  nop         
 IL_0001:  ldc.i4.0    
 IL_0002:  stloc.0     // i
@@ -186,7 +186,7 @@ IL_0009:  ret
 
 所以在這種情境下，能避開 i++ 就避開，像是下面這樣的程式：   
 
-{% codeblock lang:C# %}
+```C#
 var idx = 0
 var data = new int[] { 1, 2, 3, 4 };
 
@@ -201,7 +201,7 @@ var data4 = data[idx++];
 
 就可以將它改寫成下面這樣：  
 
-{% codeblock lang:C# %}
+```C#
 var idx = -1;
 var data = new int[] { 1, 2, 3, 4 };
 

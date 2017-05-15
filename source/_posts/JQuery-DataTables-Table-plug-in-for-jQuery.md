@@ -50,7 +50,7 @@ Table 建好後，加上對應的 JavaScript 檔引用：
 
 加入 JavaScript，用 JQuery 找到剛在 HTML 中建立的 Table，接著叫用 DataTable() 方法去啟用 JQuery Table：  
 
-{% codeblock lang:js %} 
+```js 
 $(document).ready( function () {
     $('#table_id').DataTable();
 } );
@@ -62,7 +62,7 @@ $(document).ready( function () {
 
 啟用的同時可視需求下去設定對應的參數：  
 
-{% codeblock lang:js %} 
+```js 
 $(document).ready( 
     function () 
     {

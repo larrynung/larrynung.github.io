@@ -28,7 +28,7 @@ TypeScript 內可用的型態有 Boolean、Number、String、Array、Any、Void�
 
 所以宣告起來會像下面這樣：   
 
-{% codeblock lang:js %}
+```js
 var booleanVariable: boolean;
 var numberVariable: number;
 var stringVariable: string;
@@ -75,7 +75,7 @@ Void 型態則是用以指定方法無回傳值時使用：
 
 最後附上完整的測試範例：  
 
-{% codeblock lang:js %}
+```js
 enum Color {Red, Green, Blue};
 
 var booleanVariable: boolean = true;

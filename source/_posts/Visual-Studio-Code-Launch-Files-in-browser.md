@@ -20,7 +20,7 @@ tags: [Visual Studio Code]
 
 MAC 下 task.json 可設定如下：  
 
-{% codeblock lang:json %}
+```json
 {
     "version": "0.1.0",
     "command": "Chrome",
@@ -41,7 +41,7 @@ MAC 下 task.json 可設定如下：
 
 Windows 下設定如下：  
 
-{% codeblock lang:json %}
+```json
 {
     "version": "0.1.0",
     "command": "Chrome",

@@ -40,7 +40,7 @@ Multicore JIT 的運作原理主要是將運行分為兩種 Mode。一個是 Rec
 
 以程式面來說，Asp.Net 4.5 與 Silverlight 5 這邊會自動啟用 Multicore JIT 功能，不需要做什麼特別的設定，如果有需要也可以修改 web.config 去將之關閉。  
 
-{% codeblock lang:xml %}
+```xml
 <system.web> 
   <compilation profileGuidedOptimizations="None" />
 </system.web>

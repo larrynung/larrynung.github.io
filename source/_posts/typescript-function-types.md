@@ -12,7 +12,7 @@ description: "TypeScript - Function Types"
 
 <!-- More -->
 
-{% codeblock lang:js %}
+```js
 //Named function
 function add(x, y) {
     return x+y;
@@ -39,7 +39,7 @@ TypeScript 可以在定義方法時設定參數與回傳值的型態，像是下
 
 所以上述的程式透過 TypeScript 改寫成像下面這樣，就不會碰到本來面臨的問題了。
 
-{% codeblock lang:js %}
+```js
 function add(x: number, y: number): number {
     return x+y;
 }

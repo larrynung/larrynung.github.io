@@ -34,7 +34,7 @@ description: "JQuery UI - Progressbar Widget"
 
 在 Javascript 中用 JQuery 找到該 div element，並叫用 progressbar 方法即可將該 div element 設為 progressbar。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#pb").progressbar();
   });
@@ -50,7 +50,7 @@ description: "JQuery UI - Progressbar Widget"
 
 若要做些細部設定，progressbar 有提供些 options 可供我們使用，像是 max 可以設定 progressbar 的最大值、value 可設定 progressbar 的當前值。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#pb").progressbar(
     {
@@ -70,7 +70,7 @@ description: "JQuery UI - Progressbar Widget"
 
 若要主動觸發 progressbar，也提供了些 methods 讓我們使用，像是 value。 
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#pb").progressbar();
     $("#increase").click(function()
@@ -93,7 +93,7 @@ description: "JQuery UI - Progressbar Widget"
 
 此外，也有提供些事件讓我們監聽，像是 change。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#pb").progressbar(
     {

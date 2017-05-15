@@ -32,7 +32,7 @@ script 這邊直接叫用 xbuild 去建置我們的專案或是方案就可以�
 
 整個設定檔撰寫起來會像下面這個樣子：
 
-{% codeblock lang:yaml %}
+```yaml
  Travis CI Integration
 
 language: c
@@ -47,7 +47,7 @@ script:
 
 若有單元測試的需求，這邊可改用 Nunit 去做測試。設定檔這邊只要在安裝 Mono 時順帶安裝 nunit-console ，然後在 script 那邊透過 nunit-console 進行測試即可。
 
-{% codeblock lang:yaml %}
+```yaml
  Travis CI Integration
 
 language: c

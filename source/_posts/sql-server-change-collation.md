@@ -20,7 +20,7 @@ description: "SQL Server - Change Collation"
 
 透過 GUI 設定是比較簡易，但是資料庫一多就不怎麼適用，這時可以用 SQL 語法來做處理，開啟一個新的 Query ，填入下列語法，修改 Collation name，接著依序針對不同的資料庫下去執行就可以了。
 
-{% codeblock lang:sql %}
+```sql
 declare @dbname varchar (100)
 set @dbname= quotename(db_name ())
 set @collationName = 'SQL_Latin1_General_CP1_CI_AS'
@@ -33,7 +33,7 @@ exec('ALTER DATABASE ' + @dbname + ' SET MULTI_USER');
 
 變更 Column 的 Collation 比較麻煩一點，雖然一樣可以用 GUI 去做切換，但欄位一多這方法也不怎麼適用。這時一樣得改用 SQL 語法來做處理，開啟一個新的 Query ，填入下列語法 ，修改 Collation name 後運行，即會自動產生出所有資料表內的 Column Collation 轉換語法，將之依序帶入 SQL Query 視窗運行即可。這邊比較麻煩的是若有設定PK、FK之類的，需先抽掉才能轉換。
 
-{% codeblock lang:sql %}
+```sql
 declare @TableName Nvarchar (4000),
       @ColumnName Nvarchar(4000 ),
       @CharacterMaxLen Nvarchar(4000 ),

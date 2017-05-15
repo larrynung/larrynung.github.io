@@ -17,7 +17,7 @@ description: "FX.Configuration - Read application configuration"
 
 接著在 Application Configuration 中設定資料。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
     <appSettings> 

@@ -13,7 +13,7 @@ C# 7.0 擴展了 Expression bodied。
 
 開始支援建構子。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 class Program
 {
@@ -29,7 +29,7 @@ class Program
 
 支援解構子。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 class Program
 {
@@ -45,7 +45,7 @@ class Program
 
 支援 property accessors。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 private string _myProperty;
 public string MyProperty
@@ -61,7 +61,7 @@ public string MyProperty
 
 支援 event accessors。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 public event EventHandler MyEvent
 {

@@ -15,7 +15,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 9 - Try to use subtypes for cons
 <br/>
 
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(4000); 
 BEGIN 
@@ -28,7 +28,7 @@ END;
 
 這邊將它設成名為 STRING_MAX 的 SubType，後續可直接拿來宣告使用。  
 
-{% codeblock lang:psql %}
+```psql
 CREATE OR REPLACE PACKAGE PKG_SUBTYPE 
 AS 
 	SUBTYPE STRING_MAX IS VARCHAR2(4000); 

@@ -32,7 +32,7 @@ Docker Provisioning 可以自動在 Vagrant 啟動時幫我們進行 Docker 的�
 
 像是下面這個例子，筆者使用 boot2docker 的 vagrant box，結合 docker provision 拉下 oracle-xe-11g 容器，以守護容器方式啟動，將 1521 port 導出，並掛上 data volume。  
 
-{% codeblock lang:rb %}
+```rb
 Vagrant.configure(2) do |config|
   config.vm.box = "blinkreaction/boot2docker"
 

@@ -17,7 +17,7 @@ TypeScript 的 Function 支援 Default Parameters，使用上只要在參數名�
 
 像是下面這樣：  
 
-{% codeblock lang:js %}
+```js
 function sayHello(name: string = 'World') {
   var msg:string = 'Hello~';
   if (name)

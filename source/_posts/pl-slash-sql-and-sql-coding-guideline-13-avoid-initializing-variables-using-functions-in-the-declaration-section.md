@@ -12,7 +12,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 13 - Avoid initializing variable
 
 <!-- More -->
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	l_company_name VARCHAR2(30) := util_pck.get_company_name(in_id => 47);
 BEGIN 
@@ -30,7 +30,7 @@ END;
 
 因此要像下面這樣將宣告與初始拆開處理。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	 v_str VARCHAR2(30); 
 BEGIN 

@@ -13,7 +13,7 @@ keywords: "PL/SQL"
 
 像是下面這樣的程式：
 
-{% codeblock lang:psql %}
+```psql
 BEGIN 
   FOR r_employee IN (SELECT * FROM emp) 
   LOOP 
@@ -27,7 +27,7 @@ END;
 
 可以像下面這樣改寫，在 loop 的前面加上 Label，然後在 End 後加上 Label Name。
 
-{% codeblock lang:psql %}
+```psql
 BEGIN 
   <<process_employees>> 
   FOR r_employee IN (SELECT * FROM emp) 

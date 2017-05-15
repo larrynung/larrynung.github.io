@@ -14,7 +14,7 @@ Windows Vista 後的作業系統開始導入 UAC ，在運行某些操作時必�
 
 好在有好心的網友整理好了下面這樣的程式碼片段
 
-{% codeblock lang:bat %}
+```bat
 :: BatchGotAdmin
 :-------------------------------------
 REM --> Check for permissions
@@ -46,7 +46,7 @@ CD /D "%~dp0"
 
 這邊筆者稍稍將之做些修改調整...  
 
-{% codeblock lang:bat %}
+```bat
 :TryToRunAsAdmin
     set GetAdminScriptFile="%temp%\getadmin.vbs"
 
@@ -87,7 +87,7 @@ CD /D "%~dp0"
 
 像是下面這樣...  
 
-{% codeblock lang:bat %}
+```bat
 @echo off
 
 call:TryToRunAsAdmin

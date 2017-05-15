@@ -36,7 +36,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 使用上需先加入 redis-lua 套件。  
 
-{% codeblock lang:lua %}
+```lua
     local redis = require 'redis'
 ```
 
@@ -45,7 +45,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 然後進行對 redis 的連線。  
 
-{% codeblock lang:lua %}
+```lua
     local client = redis.connect(ip, port)
 ```
 
@@ -54,7 +54,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 如果 redis 有設定認證，可調用 auth 命令並帶入對應的密碼。  
 
-{% codeblock lang:lua %}
+```lua
     client:auth(password)
 ```
 

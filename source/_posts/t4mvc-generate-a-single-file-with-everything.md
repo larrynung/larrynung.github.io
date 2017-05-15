@@ -20,7 +20,7 @@ T4MVC 預設在產生程式碼時會依 Controller 產生不同的檔案，這�
 
 好在 T4MVC 有留這部份的設定彈性，我們只要在 T4MVC.tt.settings.xml 設定檔中將 SplitIntoMultipleFiles 設為 False 即可。  
 
-{% codeblock lang:xml %}
+```xml
 ...
 <!-- If true,the template output will be split into multiple files. -->
 <SplitIntoMultipleFiles>false</SplitIntoMultipleFiles>

@@ -13,7 +13,7 @@ C# 7.0 新增 Deconstruction，可將 Tuple、結構、類別的成員拆解使�
 
 以 Tuple 為例，若想要將 Tuple 值拆解使用，可以用小括弧宣告出多個區域變數，並將 Value Tuple 指派過去，Value Tuple 的屬性值就會依序塞入這些區域變數。  
 
-{% codeblock lang:C# %}
+```C#
 (var v1, var v2) = GetTuple();
 var (v1, v2) = GetTuple();
 ```
@@ -34,7 +34,7 @@ var (v1, v2) = GetTuple();
 
 若是結構或是類別，則要建一個 public 的 Deconstruct 方法，方法的參數用 out 將拆解出來的值依序傳出，編譯時編譯器就會自行幫我們調用 Deconstruct 方法將值拆解。    
 
-{% codeblock lang:C# %}
+```C#
 (var v1, var v2) = new MyClass();
 ...
 class MyClass()
@@ -58,7 +58,7 @@ class MyClass()
 
 若有需要 Deconstruct 也支援多載。  
 
-{% codeblock lang:C# %}
+```C#
 (var v1, var v2) = new MyClass();
 ...
 class MyClass()

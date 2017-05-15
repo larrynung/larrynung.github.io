@@ -42,7 +42,7 @@ lvTable.ItemsSource = dt.DefaultView;
 
 那麼 XAML 這邊就會是像這個樣子  
 
-{% codeblock lang:xml %}
+```xml
 <ListView x :Name="lvTable" Margin="0">
   <ListView.View>
     <GridView>
@@ -56,7 +56,7 @@ lvTable.ItemsSource = dt.DefaultView;
 
 你也可以像下面這樣稍微包裝一下，將 ListView 的 ItemSource 與 DefaultView 繫結...
 
-{% codeblock lang:xml %}
+```xml
 <ListView x :Name="lvTable" Margin="0" ItemsSource="{Binding DefaultView}">
   <ListView.View>
     <GridView>

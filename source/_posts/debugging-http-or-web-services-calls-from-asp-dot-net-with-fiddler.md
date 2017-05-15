@@ -13,7 +13,7 @@ description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 <!-- More -->
 
 
-{% codeblock lang:xml %}
+```xml
 ...
 <system.net>
   <defaultProxy>

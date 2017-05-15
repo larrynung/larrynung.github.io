@@ -33,7 +33,7 @@ description: "JQuery UI - Datepicker Widget"
 
 在 Javascript 中用 JQuery 找到該 input element，並叫用 datapicker 方法即可將該 input element 設為 Datepicker。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#datepicker").datepicker();
   });
@@ -49,7 +49,7 @@ description: "JQuery UI - Datepicker Widget"
 
 若要做些細部設定，Datepicker 有提供些 options 可供我們使用，像是 minDate、maxDate 可以用來決定可供選取的時間範圍，onSelect 方法可以設定日期選取後的動作。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#datepicker").datepicker(
     {
@@ -72,7 +72,7 @@ description: "JQuery UI - Datepicker Widget"
 
 若要主動觸發 Datepicker，也提供了些 methods 讓我們使用，像是 setDate、show。  
 
-{% codeblock lang:js %}
+```js
   $(function() {
     $("#datepicker").datepicker();
     $("#datepicker").datepicker('setDate', new Date());

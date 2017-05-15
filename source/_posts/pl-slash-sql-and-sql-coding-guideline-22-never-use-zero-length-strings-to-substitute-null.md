@@ -16,7 +16,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 22 - Never use zero-length strin
 
 在  Oracle 這邊不論是對的 Varchar 或是 Varchar2 型態賦予空字串，Oracle 都會將其視為 Null，所以這邊不建議將其設為空字串。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
     v_str varchar2(4000) := ''; 
 BEGIN 
@@ -29,7 +29,7 @@ END;
 
 而是應該像下面，沒特別塞值時預設就是 Null。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
     v_str varchar2(4000); 
 BEGIN 

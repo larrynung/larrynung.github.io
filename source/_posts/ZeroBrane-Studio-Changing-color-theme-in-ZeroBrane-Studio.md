@@ -27,7 +27,7 @@ ZeroBrane Studio 內建已有不同的 color theme 可供切換使用，有需�
 <br/>
 
 加上 color theme 的設定，loadfile 這邊要帶入 `cfg/tomorrow.lua` 檔，並指定要套用的 color theme。  
-{% codeblock lang:lua %}
+```lua
 styles = loadfile('cfg/tomorrow.lua')('TomorrowNightEighties')
 stylesoutshell = styles -- apply the same scheme to Output/Console windows
 styles.auxwindow = styles.text -- apply text colors to auxiliary windows

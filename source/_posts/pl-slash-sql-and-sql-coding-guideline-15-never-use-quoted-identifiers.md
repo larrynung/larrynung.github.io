@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 15 - Never use quoted identifier
 
 像是下面這樣，宣告的變數加上雙引號是合法的。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	"v_str" VARCHAR2(30) ; 
 BEGIN 
@@ -30,7 +30,7 @@ END main;
 
 但不建議這樣宣告，建議還是不要加上雙引號。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(30) ; 
 BEGIN 

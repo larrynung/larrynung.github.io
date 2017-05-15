@@ -75,7 +75,7 @@ Summary 頁面這邊只是告訴我們繼續下去會做什麼事，不外乎就
 
 開啟副檔名為 pssln 的設定檔，可看到剛所設定的 Profile 資訊會放置在裡面。  
 
-{% codeblock lang:xml %} 
+```xml 
 <? xml version="1.0 " encoding=" utf-8"?>
 < Project xmlns="http://schemas.postsharp.org/1.0/configuration " xmlns:d="clr-namespace:PostSharp.Patterns.Diagnostics;assembly:PostSharp.Patterns.Diagnostics " xmlns:p=" http://schemas.postsharp.org/1.0/configuration ">
   < Property Name="LoggingEnabled " Value="{has-plugin('PostSharp.Patterns.Diagnostics')} " Deferred=" true" />

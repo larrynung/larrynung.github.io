@@ -20,7 +20,7 @@ TypeScript 支援 Lambda 語法，語法如下：
 
 寫起來就像下面這樣：  
 
-{% codeblock lang:js %}
+```js
 var Execute = (cmd: string, ...params: string[]): void =>
         alert(cmd + "(" + params.join(", ") + ")");
 

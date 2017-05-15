@@ -19,7 +19,7 @@ description: "Octopress - Failed to push some refs to GitHub"
 
 要解決這樣的問題我們可以依下面步驟操作。  
 
-{% codeblock lang:bash %}
+```bash
 cd _deploy
 git reset --hard origin/master
 cd ..
@@ -37,7 +37,7 @@ cd ..
 
 操作完就重新建立靜態檔案並 Deploy。   
  
-{% codeblock lang:bash %}
+```bash
 rake generate
 rake deploy
 ```

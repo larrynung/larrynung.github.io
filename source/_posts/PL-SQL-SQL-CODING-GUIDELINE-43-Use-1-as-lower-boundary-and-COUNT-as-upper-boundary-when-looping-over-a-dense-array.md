@@ -15,7 +15,7 @@ tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，使用了 FIRST() 與 LAST() 做為遍巡走訪的條件，dense array 不為空時可以正常運作，但當 dense array 為空時則會發生錯誤。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
   t_employees t_employee_type := t_employee_type(); 
 BEGIN 
@@ -32,7 +32,7 @@ END;
 
 簡單的解決方式可以加判斷 dense array 是否為空。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
   t_employees t_employee_type := t_employee_type(); 
 BEGIN 
@@ -52,7 +52,7 @@ END;
 
 但建議的方式是改以 1 與 COUNT() 做為遍巡走訪的條件。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
   t_employees t_employee_type := t_employee_type(); 
 BEGIN 

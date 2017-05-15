@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 這是因為 NVL 會先把每個可能的結果都先取出，儘管是根本不會出的結果，所以這樣會有不必要的 overhead。  
 
-{% codeblock lang:psql %}
+```psql
 SELECT NVL(dummy, function_call()) 
 FROM dual;
 ```
@@ -26,7 +26,7 @@ FROM dual;
 
 建議的做法是用 COALESCE 取代 NVL，以避開這樣的問題。  
 
-{% codeblock lang:psql %}
+```psql
 SELECT COALESCE(dummy, function_call()) 
 FROM dual;
 ```

@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 1 - Try to label your sub blocks
 
 像是下面這樣的程式：  
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 Begin
     DBMS_OUTPUT.put_line('Start');
@@ -33,7 +33,7 @@ End;
 
 可以像下面這樣改寫，在子 Block 的 Begin 前面加上 Label，然後在 End 後加上 Label Name。  
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 Begin
     DBMS_OUTPUT.put_line('Start');

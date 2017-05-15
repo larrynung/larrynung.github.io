@@ -51,7 +51,7 @@ namespace ConsoleApplication27
 
 套上 BufferingForwardingAppender。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>

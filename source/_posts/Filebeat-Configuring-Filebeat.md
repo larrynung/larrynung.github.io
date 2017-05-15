@@ -13,7 +13,7 @@ Filebeat 的設定檔為 filebeat.yml，可以設定資料的輸入與輸出，�
 
 像是設定資料的輸入，可以指定要輸入的 Log 檔位置。  
 
-{% codeblock lang:yaml %}
+```yaml
 filebeat.prospectors:
 
 - input_type: log
@@ -26,7 +26,7 @@ filebeat.prospectors:
 
 可以設定 Log 資料要怎樣切割傳送，像是若使用 Log4Net 去記錄 Log，不特別調整格式的話 Log 前面一定會有 Log 的時間，就可以以 Log 時間當作切割傳送的依據。  
 
-{% codeblock lang:yaml %}
+```yaml
 filebeat.prospectors:
 
 - input_type: log
@@ -47,7 +47,7 @@ filebeat.prospectors:
 
 可以設定多久以前的 Log 不要傳送，這設定在 Log 檔很多時特別重要，不做這設定可能會傳送過多的 Log，導致記憶體吃過凶。  
 
-{% codeblock lang:yaml %}
+```yaml
 filebeat.prospectors:
 
 - input_type: log
@@ -59,7 +59,7 @@ filebeat.prospectors:
 
 可設定資料的輸出，以送到 Logstash 為例，可以設定 Logstash 位置、每個 Logstash 要用幾個 worker 處理、資料壓縮的等級、是否負載平衡、及 Index 等。  
 
-{% codeblock lang:yaml %}
+```yaml
 output.logstash:
  
   # The Logstash hosts
@@ -88,7 +88,7 @@ output.logstash:
 
 也可以設定 Filebeat 的 Log，設定是否寫到檔案、檔案位置...等。
 
-{% codeblock lang:yaml %}
+```yaml
 # Logging to rotating files files. Set logging.to_files to false to disable logging to
 # files.
 logging.to_files: true
@@ -106,7 +106,7 @@ logging.files:
 
 完整的設定範例如下：  
 
-{% codeblock lang:yaml %}
+```yaml
 ##################$$$###### Filebeat Configuration ############################
 
 # This file is a full configuration example documenting all non-deprecated
@@ -186,7 +186,7 @@ logging.files:
 
 像是在 filebeat.yml 設定檔中保留輸出與 Filebeat Log 的設定，並在上面用 config_dir 設定其它設定檔存放的位置。  
   
-{% codeblock lang:yaml %}
+```yaml
 filebeat.config_dir: configs
 
 #----------------------------- Logstash output --------------------------------
@@ -235,7 +235,7 @@ logging.files:
 <br/>
 
   
-{% codeblock lang:yaml %}
+```yaml
   ##################$$$###### Filebeat Configuration ############################
 
 # This file is a full configuration example documenting all non-deprecated

@@ -12,7 +12,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 11 - Never initialize variables 
 
 <!-- More -->
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(30) := null; 
 BEGIN 
@@ -25,7 +25,7 @@ END;
 
 因為預設就是初始為 Null。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(30); 
 BEGIN 

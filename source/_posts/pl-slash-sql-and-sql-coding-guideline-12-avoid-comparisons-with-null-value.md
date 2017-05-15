@@ -12,7 +12,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null
 
 <!-- More -->
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(30); 
 BEGIN 
@@ -34,7 +34,7 @@ END;
 
 正確的方式應該是用 is 或 is not 去做判斷。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
 	v_str VARCHAR2(30); 
 BEGIN 

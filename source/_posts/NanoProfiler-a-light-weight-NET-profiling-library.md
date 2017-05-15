@@ -32,7 +32,7 @@ protected void Application_Start(object sender, EventArgs e)
 
 也可以透過設定檔設定...  
 
-{% codeblock lang:xml %}
+```xml
 <configuration>
   <configSections>
     <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />
@@ -82,7 +82,7 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
 
 這邊如果要將資料保存下來，可以加裝 NanoProfiler.Storages.Json，並修改設定去指定使用 Storage。  
 
-{% codeblock lang:xml %}
+```xml
 <configuration>
   <configSections>
     <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />
@@ -115,7 +115,7 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
 
 或是透過設定檔設定也可以。  
 
-{% codeblock lang:xml %}
+```xml
 <configuration>
   <configSections>
     <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />

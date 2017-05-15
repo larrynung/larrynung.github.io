@@ -8,7 +8,7 @@ tags: Grunt
 
 <!-- More -->
 
-{% codeblock lang:js %}
+```js
 var grunt = require('grunt'); 
 
 grunt.registerTask('default', '',function(){ 
@@ -28,7 +28,7 @@ grunt.registerTask('default', '',function(){
 
 接著可以試著撰寫難一點的來看看，註冊一個 world 任務，執行時會顯示 hello world，接著註冊一個 hello 任務，需帶入名字執行，執行會顯示 hello 以及帶入的名字，最後註冊 default 任務，執行時會調用 world 任務以及用 adrian 當參數去調用 hello 任務。  
 
-{% codeblock lang:js %}
+```js
 var grunt = require('grunt'); 
 
 grunt.registerTask('world', '', function(){ 

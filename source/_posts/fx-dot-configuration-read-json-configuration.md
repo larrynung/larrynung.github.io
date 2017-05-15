@@ -16,7 +16,7 @@ description: "FX.Configuration - Read JSON configuration"
 
 接著在 JSON Configuration 中設定資料。  
 
-{% codeblock lang:json %}
+```json
 { 
     "Setting1": "Larry Nung", 
     "Setting2": "Level Up (http://larrynung.github.io/index.html)" 

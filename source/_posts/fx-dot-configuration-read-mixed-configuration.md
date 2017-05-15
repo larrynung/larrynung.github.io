@@ -17,7 +17,7 @@ description: "FX.Configuration - Read mixed configuration"
 
 接著在 Application Configuration 中設定資料。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
     <appSettings> 
@@ -30,7 +30,7 @@ description: "FX.Configuration - Read mixed configuration"
 
 以及在 JSON Configuration 中設定資料。 
 
-{% codeblock lang:json %}
+```json
 {     
     "Setting2": "Level Up (http://larrynung.github.io/index.html)" 
 }

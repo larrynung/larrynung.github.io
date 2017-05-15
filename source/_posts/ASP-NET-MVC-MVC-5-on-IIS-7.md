@@ -15,7 +15,7 @@ tags: [ASP.NET MVC]
 
 這邊可以在 Web.Config 的 modules 這邊加上 `runAllManagedModulesForAllRequests="true"` 設定，並為網站加上 `UrlRoutingModule-4.0` 模組。  
 
-{% codeblock lang:objc %}
+```html
 ...
   <system.webServer>
     <modules runAllManagedModulesForAllRequests="true">

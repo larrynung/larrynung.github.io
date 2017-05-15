@@ -33,7 +33,7 @@ description: "JQuery UI - Spinner Widget"
 
 在 Javascript 中用 JQuery 找到該 input element，並叫用 spinner 方法即可將該 input element 設為 spinner。  
 
-{% codeblock lang:js %}
+```js
 $(function() {
   $("#spinner").spinner();
 });
@@ -49,7 +49,7 @@ $(function() {
 
 若要做些細部設定，spinner 有提供些 options 可供我們使用，像是 min 可以設定  spinner 的最小值，max 可以設定 spinner 的最大值，step 可以設定 spinner 按一次要增加多少值。  
 
-{% codeblock lang:js %}
+```js
 $(function() {
   $("#spinner").spinner(
   {
@@ -65,7 +65,7 @@ $(function() {
 
 若要主動觸發 spinner，也提供了些 methods 讓我們使用，像是 value。  
 
-{% codeblock lang:js %}
+```js
 $(function() {
   $("#spinner").spinner();
   $("#spinner").spinner("value", 0);

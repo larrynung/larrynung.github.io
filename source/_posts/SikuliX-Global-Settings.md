@@ -13,7 +13,7 @@ SikuliX 有提供一些設定值可供設定，像是 ActionLogs、InfoLogs、De
 
 像是我們可以修改滑鼠移動的延遲、修改點擊的延遲、修改滑鼠按下前的延遲、修改鍵盤輸入的延遲、修改等待逾時的時間。  
 
-{% codeblock lang:python %}
+```python
 Settings.MoveMouseDelay = 0
 Settings.ClickDelay = 0
 Settings.DelayBeforeMouseDown = 0

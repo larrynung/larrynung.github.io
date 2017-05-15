@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 24 -Try to use boolean data type
 
 像是如果要表達的是是否為較大的數值，如果沒有特別的理由，那就不該使用數值表示，因為數值代表的意義沒有 Boolean 型態來的明確。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
     v_IsBigger number(1) := 1; 
 BEGIN 
@@ -30,7 +30,7 @@ END;
 
 若用 Boolean 型態表達會比較清楚。  
 
-{% codeblock lang:psql %}
+```psql
 DECLARE 
     v_IsBigger BOOLEAN := true; 
 BEGIN 

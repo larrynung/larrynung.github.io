@@ -14,7 +14,7 @@ T4MVC 除了解決 ASP.NET MVC Magic String 的問題外，還能解決常見的
 
 只要在 T4MVC.tt.settings.xml 設定檔中將 AddTimestampToStaticLinks 設為 True 就可以了。
 
-{% codeblock lang:xml %}
+```xml
 ...
 <AddTimestampToStaticLinks>True</AddTimestampToStaticLinks>
 ...

@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 像是下面這樣的程式：
 
-{% codeblock lang:psql %}
+```psql
 ...
 BEGIN 
   <<process_employees>> 
@@ -33,7 +33,7 @@ END;
 
 可以像下面這樣改寫，程式碼的維護性會比較好。
 
-{% codeblock lang:psql %}
+```psql
 ...
 BEGIN 
   <<process_employees>> 

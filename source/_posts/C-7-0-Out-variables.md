@@ -8,7 +8,7 @@ C# 7.0 以前使用的方法若有 Out 參數，需要事先宣告才能帶入�
 
 <!-- More -->
 
-{% codeblock lang:C# %}
+```C#
 ...
 string data;
 GetData(out data);
@@ -25,7 +25,7 @@ static void GetData(out string data)
 
 C# 7.0 以後，可以在帶入 Out 參數時直接順帶宣告。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 GetData(out string data);
 ...
@@ -36,7 +36,7 @@ GetData(out string data);
 
 也可以結合使用區域型別推斷。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 GetData(out var data);
 ...
@@ -47,7 +47,7 @@ GetData(out var data);
 
 完整的範例程式如下：  
 
-{% codeblock lang:C# %}
+```C#
 using System;
 
 namespace ConsoleApp2

@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 2 - Always have a matching loop 
 
 像是下面這樣的程式：  
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 DECLARE
     i PLS_INTEGER;
@@ -34,7 +34,7 @@ End;
 
 可以像下面這樣改寫，在 For...Loop  前面加上 Label，然後在 End 後加上 Label Name。
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 DECLARE
     i PLS_INTEGER;

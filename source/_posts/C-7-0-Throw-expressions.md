@@ -13,7 +13,7 @@ C# 7.0 開始支援	Throw expressions。
 
 三元運算中可以視需要直接丟出 exception。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 this.FirstName = firstName == null ? throw new ArgumentNullException(nameof(firstName)) : firstName;
 ...
@@ -24,7 +24,7 @@ this.FirstName = firstName == null ? throw new ArgumentNullException(nameof(firs
 
 ?? 運算式中也可以直接丟出 exception。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
 ...
@@ -35,7 +35,7 @@ this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
 
 Expression bodied member 也可以丟出 exception。  
 
-{% codeblock lang:C# %}
+```C#
 ...
 public override string ToString() => throw new NotImplementedException();
 ...
@@ -46,7 +46,7 @@ public override string ToString() => throw new NotImplementedException();
 
 最後附上完整的測試範例：  
 
-{% codeblock lang:C# %}
+```C#
     class Program
     {
         static void Main(string[] args)

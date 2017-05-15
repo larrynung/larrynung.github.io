@@ -27,7 +27,7 @@ description: "Permission denied for a Mac OSX Dropbox app"
 
 查了一下要在 Terminal 下下列指令：  
 
-{% codeblock lang:bash %}
+```bash
 mv ~/.dropbox ~/.Trash
 sudo mv /Library/DropboxHelperTools ~/.Trash
 ```

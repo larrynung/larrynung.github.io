@@ -19,7 +19,7 @@ description: "FontAwesome - Use FontAwesome with bower"
 
 下載下來的 FontAwesome CSS 內會用相對路徑指定所要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。  
 
-{% codeblock lang:css %}
+```css
 ...
 @font-face {
   font-family: 'FontAwesome';
@@ -41,7 +41,7 @@ description: "FontAwesome - Use FontAwesome with bower"
 
 當然我們可以透過 Grunt、Gupl 之類的自動化工具將路徑改掉，但這樣的做法感覺並不是很好，因此這邊筆者是使用自己的 CSS 將 Font 的位置改掉。  
 
-{% codeblock lang:css %}
+```css
 ...
 @font-face {
   font-family: 'FontAwesome';

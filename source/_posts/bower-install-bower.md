@@ -29,7 +29,7 @@ Bower 依賴於 Node.js 與 Git，安裝 Bower 需透過 Node.js 內的 npm，�
 
 如果是 Ubuntu 用戶，可以透過下列命令將整個環境安裝起來：  
 
-{% codeblock lang:bash %}
+```bash
 sudo apt-get purge nodejs npm 
 sudo apt-get update 
 sudo apt-get install -y python-software-properties python g++ make 

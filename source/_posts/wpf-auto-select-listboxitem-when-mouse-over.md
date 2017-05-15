@@ -12,7 +12,7 @@ description: "WPF - Auto select ListBoxItem when mouse over"
 
 <!-- More -->
 
-{% codeblock lang:xml %}
+```xml
 <ListBox.Resources>
 <Style BasedOn="{StaticResource {x:Type ListBoxItem}}"
 TargetType="{x:Type ListBoxItem}">

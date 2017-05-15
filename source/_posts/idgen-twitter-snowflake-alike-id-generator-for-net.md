@@ -100,7 +100,7 @@ var generator = IdGenerator.CreateThreadSpecificGenerator();
 
 最後一種建構方式是透過 Config 建構，可在 Config 檔先做好設定。  
 
-{% codeblock lang:xml %}
+```xml
 <configuration>
   <configSections>
     <section name="idGenSection" type="IdGen.Configuration.IdGeneratorsSection, IdGen" />

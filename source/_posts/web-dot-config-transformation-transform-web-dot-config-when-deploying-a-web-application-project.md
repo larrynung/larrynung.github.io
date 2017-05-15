@@ -14,7 +14,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
 
 在使用上，當我們用 Visual Studio 建立一個 Web 專案，預設就會幫我們建好 Debug 跟 Release 最基本的轉換設定。以預設的設定來說，Debug 沒作任何的轉換動作，而 Release 會將 Web.Config 中除錯的設定拔除。
 
-{% codeblock lang:xml %}
+```xml
   ...
   <system.web>
     <compilation xdt:Transform="RemoveAttributes(debug)" />
@@ -24,7 +24,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
 
 我們可以參閱 Release 的轉換設定檔，設定檔內的註解會稍稍提示使用的方式，以及說明文件的位置，確實參閱後做些基本的設定應該都不成問題。  
 
-{% codeblock lang:xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 有關使用 web.config 轉換的詳細資訊，請造訪 http://go.microsoft.com/fwlink/?LinkId=125889 -->
 
@@ -62,7 +62,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
 
 像是連線字串的轉換，就只要像下面這樣設定。一樣是加入 `configuration/connectionStrings/add` 節點去設定連線字串，就像是一般我們在 Web.Config 內做的那樣。只不過要在節點上附加 Locator 與 Transform 屬性，指定如果 match 的到連線字串的 name，才套用這邊設定的 connectionString 屬性值。  
 
-{% codeblock lang:xml %}
+```xml
     ...
     <connectionStrings>
       <add name="SQLServer"
@@ -73,7 +73,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
 ```
 
 如果是 appSettings 的設定的轉換，也是一樣的設定方式。加入 `configuration/appSettings/add` 節點，節點的設定方式如同在一般的 Web.Config 設定，將預期的值帶入。接著附加 Locator 與 Transform 屬性，指定 match 到 ket 時套用 value 值。
-{% codeblock lang:xml %}
+```xml
   ...
   < appSettings>
     < add key="Bolg" value="Level Up" xdt:Transform="SetAttributes " xdt:Locator=" Match(key)"/>

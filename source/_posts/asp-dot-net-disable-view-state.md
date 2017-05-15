@@ -12,7 +12,7 @@ description: "ASP.NET - Disable View State"
 
 <!-- More -->
 
-{% codeblock lang:xml %}
+```xml
 ...
 <system.web>
 ...
@@ -25,7 +25,7 @@ description: "ASP.NET - Disable View State"
 
 若要在單一頁面禁用，可以在該檔案最前面加入...  
 
-{% codeblock lang:xml %}
+```xml
 <%@ Page EnableViewState= "true" ViewStateMode= "Disabled" .. . %>
 ...
 ```
@@ -33,7 +33,7 @@ description: "ASP.NET - Disable View State"
 
 若要指定單一控制項禁用，可直接為控制項加上 EnableViewState attribute，並將其值設為 false...  
 
-{% codeblock lang:xml %}
+```xml
 ...
 <asp:GridView ID= "gdvCustomers" runat= "server" DataSourceID= "mySqlDataSource" AllowPaging="True" EnableViewState ="false"/>
 ...
@@ -42,7 +42,7 @@ description: "ASP.NET - Disable View State"
 
 若要針對單一控制項啟用，頁面上其餘的控制項禁用，可以像下面這樣處理...  
 
-{% codeblock lang:xml %}
+```xml
 <%@ Page EnableViewState= "true" ViewStateMode= "Disabled" .. . %>
 ...
 <asp:GridView ID= "gdvCustomers" runat= "server" DataSourceID= "mySqlDataSource" AllowPaging="True" ViewStateMode= "Enabled"/>

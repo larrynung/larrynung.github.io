@@ -27,7 +27,7 @@ protobuf-net library 透過 NuGet 引用即可。
 
 接著準備用來做序列化或解序列化用的類別，類別可透過 Attribute 的方式決定怎樣序列化或解序列化。  
 
-{% codeblock lang:C# %}
+```C#
 [ProtoContract] 
 class Person { 
     [ProtoMember(1)] 
@@ -52,7 +52,7 @@ class Address {
 
 序列化時只要調用 Serializer.Serialize 帶入 Stream 與要序列化的物件。  
 
-{% codeblock lang:C# %}
+```C#
 var person = new Person { 
     Id = 12345, Name = "Fred", 
     Address = new Address { 
@@ -70,7 +70,7 @@ using (var file = File.Create("person.bin")) {
 
 解序列化時調用 Serializer.Deserialize 帶入 Stream，並用泛型指定解序列化回來的型態即可。  
 
-{% codeblock lang:C# %}
+```C#
 Person newPerson; 
 using (var file = File.OpenRead("person.bin")) { 
     newPerson = Serializer.Deserialize<Person>(file); 

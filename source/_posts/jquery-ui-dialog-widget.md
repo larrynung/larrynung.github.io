@@ -31,7 +31,7 @@ Hello World
 
 在 Javascript 中用 JQuery 找到該 div element，並叫用 dialog 方法即可將該 div element 設為 Dialog。  
 
-{% codeblock lang:js %}
+```js
 $(function() {
   $("#dialog").dialog();
 });
@@ -47,7 +47,7 @@ $(function() {
 
 若要做些細部設定，Dialog 有提供些 options 可供我們使用，像是 resizable 可以讓 dialog 進行手動縮放、buttons 可設定 dialog 的按鈕。  
 
-{% codeblock lang:js %}
+```js
 $(function() {
   $("#dialog").dialog(
   {
@@ -74,7 +74,7 @@ $(function() {
 
 若要主動觸發 Dialog，也提供了些 methods 讓我們使用，像是 open。  
 
-{% codeblock lang:js %}
+```js
 $("#open").click(function()
 {
     $("#dialog").dialog("open");

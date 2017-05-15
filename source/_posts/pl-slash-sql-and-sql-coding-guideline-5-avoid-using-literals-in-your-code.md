@@ -17,7 +17,7 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 5 - Avoid using literals in your
 
 像是下面這樣的程式：
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 Begin
     DBMS_OUTPUT.put_line('Root Account:' || 'Admin');
@@ -29,7 +29,7 @@ End;
 
 可以像下面這樣改寫，建立一個 Package 統一存放常數字串，呼叫端改透過 Package 叫用。  
 
-{% codeblock lang:psql %}
+```psql
 SET SERVEROUTPUT ON
 CREATE OR REPLACE PACKAGE CONST
 IS

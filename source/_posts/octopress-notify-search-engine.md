@@ -19,7 +19,7 @@ sitemap.xml 是 Google 提出來的標準，以 XML 為格式，紀錄著網頁�
 
 若是想要在 Octopress 中做這動作的話，我們可以編輯 Octopress 的 Rakefile 檔案，將下面腳本加入。  
 
-{% codeblock lang:ruby %}
+```ruby
 desc 'Ping pingomatic'
 task :pingomatic do
   begin
@@ -88,7 +88,7 @@ end
 
 像是下面這樣：  
 
-{% codeblock lang:ruby %}
+```ruby
 desc "Default deploy task"
 task :deploy => [:deploy1, :notify] do
 end

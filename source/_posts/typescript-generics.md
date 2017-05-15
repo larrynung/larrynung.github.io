@@ -12,7 +12,7 @@ TypeScript 支援泛型語法，使用方式如下：
 
 <!-- More -->
 
-{% codeblock lang:js %}
+```js
 function GenericsFunction<T>(param:T) { 
 	 ...
 } 
@@ -31,7 +31,7 @@ class GenericsClass<T>
 
 最後附上個簡單的使用範例：  
 
-{% codeblock lang:js %}
+```js
 function ShowMessage<T>(message:T) { 
 	alert(message); 
 } 

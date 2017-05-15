@@ -51,7 +51,7 @@ Travis CI 是免費的 CI 服務，支援 C、C++、Clojure、Erlang、Go、Groo
 
 接著在 Repository 中放置 Travis CI 的設定檔 .travis.yml。設定檔依語言的不同會有不同的設置，像是 C++ 的設定就會像下面這樣：  
 
-{% codeblock lang:yaml %}
+```yaml
 language: cpp
 compiler:
   - gcc

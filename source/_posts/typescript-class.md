@@ -12,7 +12,7 @@ TypeScript 的類別透過 class 關鍵字宣告，透過 new 關鍵字建立物
 
 <!-- More -->
 
-{% codeblock lang:js %}
+```js
 class MyClass { 
 	...
 } 
@@ -26,7 +26,7 @@ var obj = new MyClass();
 
 建構子的透過 constructor 關鍵字宣告。  
 
-{% codeblock lang:js %}
+```js
 ...
 constructor(...) { 
 	... 
@@ -39,7 +39,7 @@ constructor(...) {
 
 類別屬性的宣告，是透過 get/set 關鍵字定義 get/set 區塊。  
 
-{% codeblock lang:js %}
+```js
 ...
 private _name: string; 
 ...
@@ -53,7 +53,7 @@ set name(value:string){ this._name = value; }
 
 類別方法的宣告不需要加上 function 關鍵字，還可依需求套上不同的存取修飾符，不過目前支援 private/public，若不加上存取修飾服，預設宣告的是 public 的方法。  
 
-{% codeblock lang:js %}
+```js
 ...
 MyFunction():void { 
 	...
@@ -74,7 +74,7 @@ public PublicFunction():void {
 
 類別的繼承則是透過 extends 關鍵字。  
 
-{% codeblock lang:js %}
+```js
 class ChildClass extends MyClass { 
 	...
 } 
@@ -85,7 +85,7 @@ class ChildClass extends MyClass {
 
 最後附上完整的使用範例：  
 
-{% codeblock lang:js %}
+```js
 class Person { 
 	private _name: string; 
 	private _age: number; 

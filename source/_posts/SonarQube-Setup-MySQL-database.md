@@ -13,7 +13,7 @@ tags: [SonarQube]
 
 接著要設定 MySQL 資料庫，可先將下列 SQL 語法存放至副檔名為 SQL 的檔案 (這邊筆者選用 create_database.sql)。  
 
-{% codeblock lang:sql %}
+```sql
 CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER sonar@localhost IDENTIFIED BY 'password';
 CREATE USER sonar@'%' IDENTIFIED BY 'password';

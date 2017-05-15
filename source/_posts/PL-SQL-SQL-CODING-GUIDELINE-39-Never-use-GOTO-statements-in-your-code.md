@@ -14,7 +14,7 @@ keywords: "PL/SQL"
 
 像是下面這樣的程式。  
 
-{% codeblock lang:psql %}
+```psql
 ...
 BEGIN
   ...
@@ -46,7 +46,7 @@ END password_check;
 
 可考慮使用 exit 搭配 label 從迴圈內跳離。  
 
-{% codeblock lang:psql %}
+```psql
 ...
 BEGIN
   ...
@@ -78,7 +78,7 @@ END password_check;
 
 或是思考是否有其它的寫法，像是上面的程式是用來檢查密碼的，用正規表示式去判斷即可，不需要使用巢狀迴圈。  
 
-{% codeblock lang:psql %}
+```psql
 ...
 BEGIN
   IF NOT REGEXP_LIKE(in_password, co_digitpattern)

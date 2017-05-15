@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 這是因為 NVL2 會先把每個可能的結果都先取出，儘管是根本不會出的結果，所以這樣會有不必要的 overhead。  
 
-{% codeblock lang:psql %}
+```psql
 SELECT NVL2(dummy, function_call(), function_call()) 
 FROM dual;
 ```
@@ -26,7 +26,7 @@ FROM dual;
 
 建議的做法是用 CASE 取代 NVL2，以避開這樣的問題。  
 
-{% codeblock lang:psql %}
+```psql
 SELECT CASE 
     WHEN dummy IS NULL THEN function_call() 
     ELSE function_call()
