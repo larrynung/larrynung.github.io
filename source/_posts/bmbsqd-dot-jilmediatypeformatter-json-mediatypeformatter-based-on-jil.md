@@ -27,13 +27,13 @@ description: "Bmbsqd.JilMediaTypeFormatter - Json MediaTypeFormatter based on JI
 
 套件安裝完後，開啟 WebApiConfig 將 JsonFormatter 換成 JilMediaTypeFormatter。  
 
-{% codeblock lang:c# %}
+```c#
 using Bmbsqd.JilMediaFormatter;
 ...
 config.Formatters.Remove(config.Formatters.JsonFormatter);
 config.Formatters.Add(new JilMediaTypeFormatter());
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

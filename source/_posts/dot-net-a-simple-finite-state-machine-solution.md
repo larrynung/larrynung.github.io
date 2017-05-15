@@ -12,7 +12,7 @@ description: ".NET - A Simple Finite State Machine Solution"
 
 <!-- More -->
 
-{% codeblock lang:c# %} 
+```c# 
 public sealed class StateMachine<TState, TCommand>
 {
     #region  Fields
@@ -90,12 +90,12 @@ public sealed class StateMachine<TState, TCommand>
     }
     #endregion  Methods
 }
-{% endcodeblock %}
+```
 
 
 使用時只要宣告狀態的列舉以及用來觸發狀態轉換的命令列舉，然後帶入初始狀態去建立狀態機的物件實體。接著設定狀態機內所內含的狀態轉換，設定時需指定觸發時的狀態、用來觸發的命令、以及轉換後的狀態。最後在程式中適當的時機點插入觸發適當的命令即可，程式寫起來會像下面這樣：
 
-{% codeblock lang:c# %} 
+```c# 
 public enum Command
 {
     Next,
@@ -125,4 +125,4 @@ Console.WriteLine(stateMachine.CurrentState);
 stateMachine.Trigger(Command.Reset);
 Console.WriteLine(stateMachine.CurrentState);
 ...
-{% endcodeblock %}
+```

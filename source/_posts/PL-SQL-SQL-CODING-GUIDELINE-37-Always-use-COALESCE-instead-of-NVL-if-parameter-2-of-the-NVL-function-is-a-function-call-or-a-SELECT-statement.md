@@ -19,7 +19,7 @@ keywords: "PL/SQL"
 {% codeblock lang:psql %}
 SELECT NVL(dummy, function_call()) 
 FROM dual;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -29,4 +29,4 @@ FROM dual;
 {% codeblock lang:psql %}
 SELECT COALESCE(dummy, function_call()) 
 FROM dual;
-{% endcodeblock %}
+```

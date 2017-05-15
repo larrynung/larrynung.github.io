@@ -35,14 +35,14 @@ return 5.
 <br/>
 
 這邊筆者的作法是先將字串尾端的空字元刪除，然後用字元的長度去減去最後空字元的索引。  
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int LengthOfLastWord(string s) {
         var input = s.TrimEnd();
         return (input.Length - 1) - input.LastIndexOf(' ');
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/LengthOfLastWord/1.png %}
 

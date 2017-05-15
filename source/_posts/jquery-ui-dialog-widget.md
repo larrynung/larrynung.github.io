@@ -12,21 +12,21 @@ description: "JQuery UI - Dialog Widget"
 
 <!-- More -->
 
-{% codeblock lang:html %}
+```html
 <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="jqueryui/style.css">
-{% endcodeblock %}
+```
 
 
 接著在畫面上放入一個 div element。
 
-{% codeblock lang:html %}
+```html
 <div id="dialog">
 Hello World
 </div>
-{% endcodeblock %}
+```
 
 
 在 Javascript 中用 JQuery 找到該 div element，並叫用 dialog 方法即可將該 div element 設為 Dialog。  
@@ -35,7 +35,7 @@ Hello World
 $(function() {
   $("#dialog").dialog();
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -62,7 +62,7 @@ $(function() {
       }
   });
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -79,7 +79,7 @@ $("#open").click(function()
 {
     $("#dialog").dialog("open");
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -91,7 +91,7 @@ $("#open").click(function()
 
 最後這邊附上測試用的範例：
 
-{% codeblock lang:html %}
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -132,7 +132,7 @@ Hello World
 
 </body>
 </html>      
-{% endcodeblock %}
+```
 
 </br>
 

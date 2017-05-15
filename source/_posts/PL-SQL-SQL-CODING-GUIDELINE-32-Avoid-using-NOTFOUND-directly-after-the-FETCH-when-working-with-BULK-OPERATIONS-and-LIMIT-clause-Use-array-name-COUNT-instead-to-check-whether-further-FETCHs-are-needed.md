@@ -39,7 +39,7 @@ BEGIN
     END LOOP process_emp; 
     CLOSE c_emp; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -69,7 +69,7 @@ BEGIN
     END LOOP process_emp; 
     CLOSE c_emp; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -99,4 +99,4 @@ BEGIN
     END LOOP process_emp; 
     CLOSE c_emp; 
 END;
-{% endcodeblock %}
+```

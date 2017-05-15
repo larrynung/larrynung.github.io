@@ -36,7 +36,7 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 
 堆疊在使用前會先放一個空的字元，如果處理到最後堆疊內還剩一個字元，代表帶入的字串是正確的，反之則帶入的字串是錯誤的。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool IsValid(string s) {
         var validChars = new Dictionary<char, char>()
@@ -72,7 +72,7 @@ public class Solution {
 		return st.Count == 1;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

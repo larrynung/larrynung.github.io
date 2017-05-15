@@ -26,7 +26,7 @@ BEGIN
     i := i + 1;
   END LOOP process_employees; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -42,6 +42,6 @@ BEGIN
     … 
   END LOOP process_employees; 
 END;
-{% endcodeblock %}
+```
 
 <br/>

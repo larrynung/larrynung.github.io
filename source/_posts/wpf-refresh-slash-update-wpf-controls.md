@@ -21,7 +21,7 @@ description: "WPF - Refresh / Update WPF controls"
 
 在 WPF 的世界裡，我們沒現有的方法可以直接叫用，只能用些小技巧兜出類似的功能。像是將下面這段擴充方法加入…  
 
-{% codeblock lang:c# %}
+```c#
 public static class ExtensionMethods
 {
    private static Action EmptyDelegate = delegate() { }; 
@@ -30,7 +30,7 @@ public static class ExtensionMethods
       uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
    }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

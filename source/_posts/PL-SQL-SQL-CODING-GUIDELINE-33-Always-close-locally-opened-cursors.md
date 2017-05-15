@@ -28,7 +28,7 @@ BEGIN
         INTO out_count; 
 END not_close_cursor; 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -49,5 +49,5 @@ BEGIN
         INTO out_count; 
     CLOSE c1 
 END close_cursor;
-{% endcodeblock %}
+```
 

@@ -38,7 +38,7 @@ if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
 pushd "%CD%"
 CD /D "%~dp0"
 :--------------------------------------
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -71,7 +71,7 @@ CD /D "%~dp0"
 
     call %GetAdminScriptFile%
     goto :eof
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -121,7 +121,7 @@ goto :eof
 
     call %GetAdminScriptFile%
     goto :eof
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -19,7 +19,7 @@ Settings.ClickDelay = 0
 Settings.DelayBeforeMouseDown = 0
 Settings.TypeDelay = 0
 Settings.AutoWaitTimeout = 30 * 1000
-{% endcodeblock %}
+```
 
 <br/>
 

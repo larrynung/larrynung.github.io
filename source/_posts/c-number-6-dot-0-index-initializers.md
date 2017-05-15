@@ -18,7 +18,7 @@ description: "C# 6.0 - Index initializers"
 如果以 Dictionary 來說，因為他還是屬於集合的一種，所以仍舊可以像下面這樣透過 Collection Initializer 在初始的同時就將內容一併放入：  
 <!-- More -->
 >
-{% codeblock lang:c# %}
+```c#
 ...
 var blog1 = new Dictionary<string , string >()
 {
@@ -26,14 +26,14 @@ var blog1 = new Dictionary<string , string >()
     { "Url", "http://larrynung.github.io/index.html" }
 };
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 但並不是所有的情況下都可以用 Collection Initializer 來做 Index 的初始，所以在 C# 6.0 導入了 Index initializers，寫起來會像下面這樣，就像透過索引子塞值一般：
 
-{% codeblock lang:c# %}
+```c#
 ...
 var blog = new Dictionary<string , string >()
 {
@@ -53,7 +53,7 @@ var larry = new Person()
      }
 };
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -64,7 +64,7 @@ var larry = new Person()
 
 最後這邊來看個完整的使用範例：
 
-{% codeblock lang:c# %}
+```c#
 
 using System;
 using System.Collections;
@@ -145,7 +145,7 @@ class Blog
         this.Url = url;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

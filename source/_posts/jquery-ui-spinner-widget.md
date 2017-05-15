@@ -12,21 +12,21 @@ description: "JQuery UI - Spinner Widget"
 
 <!-- More -->
 
-{% codeblock lang:html %}
+```html
 <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="jqueryui/style.css">
-{% endcodeblock %}
+```
 
 <br/>
 
 
 接著在畫面上放入一個 input element。  
 
-{% codeblock lang:html %}
+```html
 <input id="spinner">
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -37,7 +37,7 @@ description: "JQuery UI - Spinner Widget"
 $(function() {
   $("#spinner").spinner();
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -58,7 +58,7 @@ $(function() {
       step:10
   });
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -70,14 +70,14 @@ $(function() {
   $("#spinner").spinner();
   $("#spinner").spinner("value", 0);
 });
-{% endcodeblock %}
+```
 
 <br/>
 
 
 最後這邊附上測試用的範例：   
 
-{% codeblock lang:html %}
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -103,7 +103,7 @@ $(function() {
 
 </body>
 </html>     
-{% endcodeblock %}
+```
 
 
 Link

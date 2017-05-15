@@ -27,4 +27,4 @@ function sayHello(name: string = 'World') {
 
 sayHello();
 sayHello('Larry Nung');
-{% endcodeblock %}
+```

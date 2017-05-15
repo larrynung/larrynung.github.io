@@ -32,7 +32,7 @@ log4net 在使用 RollingFileAppender 去做 Log 的紀錄時，我們需要注�
 
 這邊筆者簡單的做個試驗，寫了一個簡單的程式讓它持續的寫 log，而 log4net 設定每 1 KB 產生一個檔案，用以監測效能上的影響。  
 
-{% codeblock lang:c# %}
+```c#
 using log4net;
 using log4net.Config;
 using System;
@@ -67,7 +67,7 @@ namespace ConsoleApplication6
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -24,7 +24,7 @@ description: "Disruptor - Unicast: 1P - 1C"
 
 這透過 DSL 的方式撰寫會像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ...
 using Disruptor; 
 namespace ConsoleApplication29 { 
@@ -46,7 +46,7 @@ namespace ConsoleApplication29 {
         } 
     } 
 } 
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -60,7 +60,7 @@ namespace ConsoleApplication29 {
 
 程式寫起來會像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
 var barrier = ringBuffer.NewBarrier(); 
@@ -70,7 +70,7 @@ Task.Factory.StartNew(() => eventProcessor.Run());
 ... 
 eventProcessor.Halt(); 
 ... 
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -12,12 +12,12 @@ description: "T4 template - CultureNames.tt"
 
 <!-- More -->  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var currentThread = Thread.CurrentThread;
 currentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-tw");
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -28,7 +28,7 @@ currentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-tw");
 
 這邊筆者做了個 T4 Template，期望能解決這樣的問題。  
 
-{% codeblock lang:c# %}
+```c#
 <#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Globalization" #>
@@ -57,14 +57,14 @@ namespace System.Globalization
 #>
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 該  T4 Template 運行後會將所有可用的 Culture Name 彙整成一個靜態類別。  
 
-{% codeblock lang:c# %}
+```c#
 namespace System.Globalization
 {
     public static class CultureNames
@@ -1121,21 +1121,21 @@ namespace System.Globalization
 
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 有了該靜態類別我們就可以將這部份的 Hard code 拿掉了。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var currentThread = Thread.CurrentThread;
 currentThread.CurrentCulture = CultureInfo.GetCultureInfo(CultureNames.ZH_TW);
 
 Console.WriteLine(currentThread.CurrentCulture.Name);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

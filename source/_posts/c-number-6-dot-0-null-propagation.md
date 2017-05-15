@@ -20,31 +20,31 @@ Null propagation 能讓開發人員快速的在程式中做 Null 值的處理。
 
 像是 Null 時直接回傳，非 Null 時取其成員屬性、方法、索引子的值，就可以像下面這樣撰寫:  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var firstChar = str?[0];          //get 1st char if str not null            
 var length = str?.Length ?? 0;    //get str's length if str not null, and if null length will be zero
 var hashCode = str?.GetHashCode(); //get hashcode if str not null
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 也可以用於委派的觸發，不僅簡易且 Thread Safe。    
 
-{% codeblock lang:c# %} 
+```c# 
 protected void OnNameChanged(EventArgs e) 
 { 
     NameChanged?Invoke(this, e); 
 } 
-{% endcodeblock %} 
+``` 
 <br/>
 
 
 最後看個完整的範例：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Collections .Generic;
 
@@ -72,7 +72,7 @@ namespace ConsoleApplication2
         }
     }
 }
-{% endcodeblock %}
+```
 
 
 及其運行結果：  

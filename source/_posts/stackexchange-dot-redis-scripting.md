@@ -12,7 +12,7 @@ description: "StackExchange.Redis - Scripting"
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -26,14 +26,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ... 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 像是下面這邊筆者用 Lua script 實作了類似 Redis 的 MSET 命令，可同時設定三組 Key/Value，寫起來會像下面這樣：   
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using StackExchange.Redis; 
 
@@ -59,7 +59,7 @@ namespace ConsoleApplication4 {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -78,7 +78,7 @@ namespace ConsoleApplication4 {
 
 比較好的做法是先將 Lua script 預先載到 Server 上再運行。  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -94,14 +94,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ...
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using StackExchange.Redis; 
 
@@ -132,7 +132,7 @@ namespace ConsoleApplication4 {
                 Console.WriteLine(db.StringGet("Blog:Name", CommandFlags.PreferSlave)); 
                 Console.WriteLine(db.StringGet("Blog:Url", CommandFlags.PreferSlave));
           }        }     } }
-{% endcodeblock %}
+```
 
 <br/>
 

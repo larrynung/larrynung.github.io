@@ -23,7 +23,7 @@ Given an array of integers and an integer k, find out whether there there are tw
 
 這邊筆者是用迴圈搭配 Dictionary 來處理，每跑一個數就去判斷 Dictionary 是否有含有一樣的數值，如果有則去判斷索引值的差距是否在 k 內，是的話則回傳 true。如果不是或是數值不存在在 Dictionary 內，則將其加入或是將 Dictionary 中的索引值更新，便於後續查找。如果整個陣列跑完都找不到結果，將 false 回傳。      
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool ContainsNearbyDuplicate(int[] nums, int k) {
         var length = nums.Length;
@@ -42,7 +42,7 @@ public class Solution {
         return false;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

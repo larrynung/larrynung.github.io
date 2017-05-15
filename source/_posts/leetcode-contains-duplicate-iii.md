@@ -24,7 +24,7 @@ Given an array of integers, find out whether there are two distinct indices i an
 
 這邊筆者是用迴圈搭配 Dictionary 來處理，Dictionary 內只存放 k 筆資料，每次處理一個數值時就去查看 Dictionary 內是否有相差 t 的數值。  如果有則去判斷索引值的差距是否在 k 內，是的話則回傳 true。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
 	    public bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         var length = nums.Length;
@@ -55,7 +55,7 @@ public class Solution {
         return false;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

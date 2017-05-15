@@ -28,7 +28,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one
 
 最直覺得解法就是用迴圈下去處理，判斷數值是否大於等於 10，如果大於等於 10，則將每個位數的數值加總取代本來的數值。如果數值小於 10，則直接將數值回傳。    
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int AddDigits(int num) {
         var value = num;
@@ -49,7 +49,7 @@ public class Solution {
         return value;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -61,13 +61,13 @@ public class Solution {
 
 但比較漂亮的解法是像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int AddDigits(int num) {
         return (num - 1) % 9 + 1;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

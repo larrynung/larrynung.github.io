@@ -17,7 +17,7 @@ description: "StackExchange.Redis - Server Command Demo"
 
 像是下面這邊筆者遍巡了每台 Server，並將其相關的資訊顯示到主控台：    
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using StackExchange.Redis; 
 
@@ -44,7 +44,7 @@ namespace ConsoleApplication4 {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

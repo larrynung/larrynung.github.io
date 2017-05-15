@@ -36,7 +36,7 @@ var arrayVariable1: number[];
 var arrayVariable2: Array<number>;
 var anyVariable: any;
 var enumVariable: enumName; 
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -96,7 +96,7 @@ function log(msg:any): void
 
 log(colorName);
 log(colorValue);
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -26,7 +26,7 @@ XAML 這邊我們只要直接將 DataTable 的 Column 繫上 ListView 內 Grid C
 
 以個簡單的例子來看，假設我們要繫結的表單長的像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 var dt = new DataTable();
 dt.Columns.Add( "Key");
 dt.Columns.Add( "Value");
@@ -37,7 +37,7 @@ dt.Rows.Add( new object[] { "Key2", "Value2"});
 ...
 
 lvTable.ItemsSource = dt.DefaultView;
-{% endcodeblock %}
+```
 
 
 那麼 XAML 這邊就會是像這個樣子  
@@ -51,7 +51,7 @@ lvTable.ItemsSource = dt.DefaultView;
     </GridView>
   </ListView.View>
 </ListView>
-{% endcodeblock %}
+```
 
 
 你也可以像下面這樣稍微包裝一下，將 ListView 的 ItemSource 與 DefaultView 繫結...
@@ -65,7 +65,7 @@ lvTable.ItemsSource = dt.DefaultView;
     </GridView>
   </ListView.View>
 </ListView>
-{% endcodeblock %}
+```
 
 這樣在 Binding 時只要直接塞 DataTable 給 ListView 就好了...  
 

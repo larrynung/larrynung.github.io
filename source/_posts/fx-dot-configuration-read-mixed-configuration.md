@@ -23,7 +23,7 @@ description: "FX.Configuration - Read mixed configuration"
     <appSettings> 
         <add key="Setting1" value="Larry Nung"/>    </appSettings> 
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -34,14 +34,14 @@ description: "FX.Configuration - Read mixed configuration"
 {     
     "Setting2": "Level Up (http://larrynung.github.io/index.html)" 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 再來要設定 Configuration 對應的存取類別，這邊跟一般的 Model 實作類似，只是要類別需繼承自 MixedConfiguration。
 
-{% codeblock lang:c# %}
+```c#
 using FX.Configuration; 
 
 namespace ConsoleApplication12 { 
@@ -50,14 +50,14 @@ namespace ConsoleApplication12 {
         public string Setting2 { get; private set; } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 準備好後就只要將類別實體化即可透過成員屬性取得 Configuration 的設定值。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 
 namespace ConsoleApplication12 { 
@@ -70,7 +70,7 @@ namespace ConsoleApplication12 {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -19,19 +19,19 @@ Jil 在做時間的序列化，預設出來的資料會跟 JavaSriptSerializer �
 
 若要改成 ISO8601 的格式，我們可以帶入 Options 進行指定：  
 
-{% codeblock lang:c# %}
+```c#
 ...
 Console.WriteLine(JSON.Serialize(dt, new Options(dateFormat : DateTimeFormat.ISO8601)));
 Console.WriteLine(JSON.Serialize(dt, Options.ISO8601));
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 完整的範例如下：  
 
-{% codeblock lang:c# %}
+```c#
 using Jil;
 using System;
 
@@ -49,6 +49,6 @@ namespace ConsoleApplication5
         }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/JilIso8601/1.png %}

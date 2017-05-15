@@ -19,7 +19,7 @@ keywords: "PL/SQL"
 {% codeblock lang:psql %}
 SELECT NVL2(dummy, function_call(), function_call()) 
 FROM dual;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -32,4 +32,4 @@ SELECT CASE
     ELSE function_call()
 END 
 FROM dual;
-{% endcodeblock %}
+```

@@ -16,9 +16,9 @@ keywords: "PL/SQL"
 
 像是下面這樣，資料從兩個資料表來，如果不給資料表取別名我們會無法輕易識別資料是從哪個資料表來的。  
 
-{% codeblock lang:c# %}
+```c#
 SELECT 
     a.pid ,a.name ,a.birthday ,b.country 
 FROM person a JOIN country b ON (a.cid = b.cid) 
 WHERE …
-{% endcodeblock %}
+```

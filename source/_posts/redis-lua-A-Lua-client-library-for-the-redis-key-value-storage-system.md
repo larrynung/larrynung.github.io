@@ -38,7 +38,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 {% codeblock lang:lua %}
     local redis = require 'redis'
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -47,7 +47,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 {% codeblock lang:lua %}
     local client = redis.connect(ip, port)
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -56,7 +56,7 @@ redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能
 
 {% codeblock lang:lua %}
     client:auth(password)
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -19,7 +19,7 @@ CREATE USER sonar@localhost IDENTIFIED BY 'password';
 CREATE USER sonar@'%' IDENTIFIED BY 'password';
 GRANT ALL ON sonar.* TO sonar@localhost;
 GRANT ALL ON sonar.* TO sonar@'%';
-{% endcodeblock %}
+```
 
 {% asset_img 1.png %}
 

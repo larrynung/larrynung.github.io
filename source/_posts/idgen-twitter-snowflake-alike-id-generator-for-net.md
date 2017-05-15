@@ -37,7 +37,7 @@ IdGen 產生的 ID 預設有 64 bit，就一個 long 的大小， 由 1 bit 的�
 
 接著引用 IdGen 命名空間，建立 IdGenerator，然後調用 CreateId() 取得單一 ID，或是調用 Take() 取得多個 ID 即可。  
  
-{% codeblock lang:c# %}
+```c#
 using IdGen;
 ...
 var generator = GetIdGenerator();
@@ -46,54 +46,54 @@ var id = generator.CreateId();
 var count = 10;
 var ids = generator.Take(count);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 IdGenerator 的建立方式有幾種，最基本的做法，我們可以透過建構子下去建構，像是帶入 Generator Id 下去建構。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var generatorID = 0;
 var generator = new IdGenerator(generatorID);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或是帶入 EPoch 與 Mask 將 ID 的組成結構改掉，像是這邊帶入的 Mask 即是指定 45 bit 的 Timestamp， 8 bit 的 Generator Id， 10 bit 的 Sequence。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var gid = short.Parse(Dns.Resolve(Dns.GetHostName()).AddressList[0].ToString().Split('.')[3]);
 var mc = new MaskConfig(45, 8, 10);
 var generator = new IdGenerator(gid, new DateTime (1970, 1, 1), mc);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 第二種建構方式是透過 IdGenerator.CreateMachineSpecificGenerator() 取得該機器用的 Generator，這方法會用 Machine name 的 Hash code 當 Generator id 下去建構 Generator，以期讓每台機器的 Generator 能夠錯開，確保產生的 ID 不會重複。但礙於 ID 的大小，因此 Hash Code 只取了部分值，是不保險的處理方式，只能偶爾偷懶使用，實際使用上還是建議要自己處理。   
 
-{% codeblock lang:c# %}
+```c#
 ...
 var generator = IdGenerator.CreateMachineSpecificGenerator();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 第三種建構方式是透過 IdGenerator.CreateThreadSpecificGenerator() 取得該執行緒用的 Generator，當程式只會在一台機器上執行，但會跑再多執行緒的環境下適用。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var generator = IdGenerator.CreateThreadSpecificGenerator();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -115,25 +115,25 @@ var generator = IdGenerator.CreateThreadSpecificGenerator();
   </idGenSection>
 
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 然後調用 GetFromConfig，帶入 Generator 的名稱。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var generator = IdGenerator.GetFromConfig("foo");
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 最後附上完整的測試範例：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Linq;
 using System.Net;
@@ -159,7 +159,7 @@ namespace ConsoleApplication32
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

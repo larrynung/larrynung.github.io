@@ -40,7 +40,7 @@ description: "ASP.NET MVC - Post array data to MVC controller"
 
 對於非基本型態的陣列處理，可參閱[使用jQuery.ajax傳送物件陣列給ASP.NET MVC - 黑暗執行緒](http://blog.darkthread.net/post-2012-06-23-post-array-to-mvc-with-jquery-ajax.aspx)這篇，黑暗大刻了一個 JQuery Plugin 在發送資料前會將資料格式用正規表示式進行對應的轉換。
 
-{% codeblock lang:c# %}
+```c#
 function ($) {
     $.extend($, {
         //Replace item[0][propName] to item[0].propName for MVC model binder
@@ -59,7 +59,7 @@ function ($) {
         }
     });
 })(jQuery);
- {% endcodeblock %}
+ ```
 
 使用上只要將發送的動作改用這個 JQuery Plugin 去做就可以了。
 

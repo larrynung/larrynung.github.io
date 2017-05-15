@@ -16,7 +16,7 @@ C# 7.0 新增 Deconstruction，可將 Tuple、結構、類別的成員拆解使�
 {% codeblock lang:C# %}
 (var v1, var v2) = GetTuple();
 var (v1, v2) = GetTuple();
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -46,7 +46,7 @@ class MyClass()
     v2 = this.V2;
   }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -77,7 +77,7 @@ class MyClass()
     v3 = this.V3;
   }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

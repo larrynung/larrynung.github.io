@@ -25,7 +25,7 @@ var Execute = (cmd: string, ...params: string[]): void =>
         alert(cmd + "(" + params.join(", ") + ")");
 
 Execute("Test", "Param1", "Param2");
-{% endcodeblock %}
+```
 
 <br/>
 

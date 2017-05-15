@@ -22,7 +22,7 @@ description: "new CultureInfo v.s CultureInfo.GetCultureInfo"
 
 這邊筆者實際做個簡單的測試：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Globalization;
 using System.Diagnostics;
@@ -54,7 +54,7 @@ public class Program
         return sw.ElapsedMilliseconds;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

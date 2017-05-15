@@ -20,7 +20,7 @@ BEGIN
 		…
 	end if; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -42,4 +42,4 @@ BEGIN
 		…
 	end if; 
 END;
-{% endcodeblock %}
+```

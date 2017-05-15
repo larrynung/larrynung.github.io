@@ -29,7 +29,7 @@ description: "FontAwesome - Use FontAwesome with bower"
   font-style: normal;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -49,7 +49,7 @@ description: "FontAwesome - Use FontAwesome with bower"
   src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype') , url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg') ;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

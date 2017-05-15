@@ -30,7 +30,7 @@ description: "Permission denied for a Mac OSX Dropbox app"
 {% codeblock lang:bash %}
 mv ~/.dropbox ~/.Trash
 sudo mv /Library/DropboxHelperTools ~/.Trash
-{% endcodeblock %}
+```
 
 <br/>
 

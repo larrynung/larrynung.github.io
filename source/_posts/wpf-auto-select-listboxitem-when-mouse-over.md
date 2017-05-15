@@ -25,7 +25,7 @@ Value="True">
 </Style.Triggers>
 </Style>
 </ListBox.Resources>
-{% endcodeblock %}
+```
 
 <br/>
 

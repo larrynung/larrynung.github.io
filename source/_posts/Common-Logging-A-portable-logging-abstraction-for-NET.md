@@ -52,7 +52,7 @@ Common.Logging 的套件透過 NuGet 安裝即可，這邊也可以直接安裝 
         </logging> 
     </common> 
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -79,20 +79,20 @@ Common.Logging 的套件透過 NuGet 安裝即可，這邊也可以直接安裝 
             <appender-ref ref="FullAppender" /> 
     </root> 
 </log4net>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 最後在程式中加入撰寫 Log 的程式：  
 
-{% codeblock lang:c# %}
+```c#
 using Common.Logging; 
 ... 
 var logger = LogManager.GetLogger<Program>(); 
 logger.Info("Hello World!"); 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -39,7 +39,7 @@ Happy number 為一個正整數，將數值的每個位數平方後相加，反�
 
 筆者的解法：  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool IsHappy(int n) {
         var value = n;
@@ -55,7 +55,7 @@ public class Solution {
         return value == 1;
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/HappyNumber/1.png %}
 

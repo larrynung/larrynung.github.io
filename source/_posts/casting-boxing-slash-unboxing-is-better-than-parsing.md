@@ -27,7 +27,7 @@ description: "Casting (Boxing/Unboxing) is better than parsing"
 
 測試程式就像下面這樣簡單：    
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -65,7 +65,7 @@ namespace ConsoleApplication16
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -13,7 +13,7 @@ BenchmarkDotNet 如果要指定量測比較的標準，可在 BenchmarkAttribute
 
 像是下面這段程式：  
 
-{% codeblock lang:c# %}
+```c#
 using System.Threading; 
 using BenchmarkDotNet.Attributes; 
 ... 
@@ -30,7 +30,7 @@ public class ProgramBenchmarker {
     Thread.Sleep(20); 
   } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

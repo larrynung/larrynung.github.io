@@ -29,8 +29,7 @@ simple 範本建立出來的專案就只有一個 index.html 檔，裡面已經�
 
 這邊筆者將檔案修改成下面這樣：  
 
-{% codeblock lang:html %}
-{% raw %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,8 +51,7 @@ simple 範本建立出來的專案就只有一個 index.html 檔，裡面已經�
   </script>
 </body>
 </html>
-{% endraw %}
-{% endcodeblock %}
+```
 
 <br/>
 

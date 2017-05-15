@@ -27,7 +27,7 @@ set @collationName = 'SQL_Latin1_General_CP1_CI_AS'
 exec('ALTER DATABASE ' + @dbname + ' SET SINGLE_USER WITH ROLLBACK IMMEDIATE');
 exec('ALTER DATABASE ' + @dbname + ' COLLATE ' + @collationName);
 exec('ALTER DATABASE ' + @dbname + ' SET MULTI_USER');
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -85,4 +85,4 @@ FETCH NEXT FROM MyTableCursor INTO @TableName
 END
 CLOSE MyTableCursor
 DEALLOCATE MyTableCursor
-{% endcodeblock %}
+```

@@ -22,7 +22,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
 
 這邊筆者是用迴圈搭配 HashSet 來處理，每跑一個數就去判斷 HashSet 是否有重複的資料，有則回傳 true，沒有則加到 HashSet 中。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool ContainsDuplicate(int[] nums) {
         var length = nums.Length;
@@ -37,7 +37,7 @@ public class Solution {
         return false;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -23,7 +23,7 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(Length(v_str)); 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -37,4 +37,4 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(Length(v_str)); 
 END;
-{% endcodeblock %}
+```

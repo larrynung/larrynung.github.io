@@ -15,9 +15,9 @@ T4MVC 在 Visual Studio 2015 安裝完 Update 1 後，產生的程式碼會像�
 <br/>
 
 
-{% codeblock lang:c# %}
+```c#
 public override void ExecuteResult(System.Web.Mvc.ControllerContext ) { }
-{% endcodeblock %}
+```
 
 <br/>
 

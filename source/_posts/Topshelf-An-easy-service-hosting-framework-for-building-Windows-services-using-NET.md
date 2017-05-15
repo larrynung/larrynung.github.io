@@ -32,7 +32,7 @@ Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Servi
 
 若是進一步來看，可再細分為兩種撰寫方式。一種是像下面這樣用委派的方式將怎樣建立服務、服務怎樣啟動、服務怎樣停止...等對應的設定設上去。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using Topshelf;
 …
@@ -55,14 +55,14 @@ class Program {
     Console.WriteLine("Service stop..."); 
   }
 } 
-{% endcodeblock %}
+```
 
 <br/>
 
 
 一種則是實作 ServiceControl，將 Service 的動作都寫在 ServiceControl 中。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using Topshelf;
 ... 
@@ -84,7 +84,7 @@ class ProgramService : ServiceControl {
   } 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

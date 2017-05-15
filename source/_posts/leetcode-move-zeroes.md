@@ -30,7 +30,7 @@ Minimize the total number of operations.
 
 這邊我們可以用迴圈遍巡陣列中的每個元素，並用一個區域變數紀錄下一個非零值放置的索引。如果遍巡的元素值大於 0 則將該元素與下一個非零值索引位置的元素互換。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public void MoveZeroes(int[] nums) {
         var temp = 0;
@@ -49,7 +49,7 @@ public class Solution {
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

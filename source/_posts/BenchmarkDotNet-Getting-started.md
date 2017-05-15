@@ -30,7 +30,7 @@ tags: [BenchmarkDotNet]
 
 套件安裝好後進行 benchmark 程式的撰寫，撰寫方式只要寫個 benchmark 的方法，方法內去叫用要測的方法，最後在方法上面加上 BenchmarkAttribute 即可。  
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes; 
 …
   public class ProgramBenchmarker { 
@@ -41,14 +41,14 @@ using BenchmarkDotNet.Attributes;
     } 
   } 
 …
-{% endcodeblock %}
+```
 
 <br/>
 
 
 benchmark 程式寫好後撰寫 benchmark 運行的部份，只要透過 BenchmarkRunner.Run 帶入 benchmark 類別就可以了。  
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Running; 
 …
   public class Program { 
@@ -59,14 +59,14 @@ using BenchmarkDotNet.Running;
   } 
 …
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 完整的測試程式如下：
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
@@ -94,7 +94,7 @@ namespace ConsoleApplication2
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

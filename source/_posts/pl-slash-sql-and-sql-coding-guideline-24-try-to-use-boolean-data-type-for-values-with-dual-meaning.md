@@ -23,7 +23,7 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger = 1 THEN 'True' ELSE 'False' END); 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -36,4 +36,4 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger THEN 'True' ELSE 'False' END); 
 END;
-{% endcodeblock %}
+```

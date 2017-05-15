@@ -13,7 +13,7 @@ description: "StackExchange.Redis - Configuration"
 <!-- More -->
 
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = new ConfigurationOptions() 
@@ -29,14 +29,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ... 
 }
  ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 一種是透過字串的方式設定：  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = "localhost:6379,localhost:6380,password=LarryNung"; 
@@ -45,7 +45,7 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ... 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

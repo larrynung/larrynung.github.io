@@ -36,7 +36,7 @@ if Vagrant.has_plugin?("vagrant-proxyconf")
     config.proxy.no_proxy = "localhost,127.0.0.1"
 end
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -57,7 +57,7 @@ deblock %}
     config.proxy.no_proxy = "localhost,127.0.0.1"
 end
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

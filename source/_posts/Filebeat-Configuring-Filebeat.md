@@ -19,7 +19,7 @@ filebeat.prospectors:
 - input_type: log
   paths:
     - E:\AgileSlot\Log\*\*Full*log*
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -40,7 +40,7 @@ filebeat.prospectors:
   # that was (not) matched before or after or as long as a pattern is not matched based on negate.
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
   multiline.match: after
-{% endcodeblock %}
+```
   
 <br/>
 
@@ -52,7 +52,7 @@ filebeat.prospectors:
 
 - input_type: log
   ignore_older: 24h
-{% endcodeblock %}
+```
   
 <br/>
 
@@ -81,7 +81,7 @@ output.logstash:
   # Optional index name. The default index name is set to name of the beat
   # in all lowercase.
   index: "cas-agileslot-dev"
-{% endcodeblock %}
+```
   
 <br/>
 
@@ -99,7 +99,7 @@ logging.files:
   
   # The name of the files where the logs are written to.
   #name: filebeat
-{% endcodeblock %}
+```
   
 <br/>
 
@@ -175,7 +175,7 @@ logging.files:
   
   # The name of the files where the logs are written to.
   #name: filebeat
-{% endcodeblock %}
+```
   
 <br/>
   
@@ -223,7 +223,7 @@ logging.files:
   
   # The name of the files where the logs are written to.
   #name: filebeat
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -270,7 +270,7 @@ filebeat.prospectors:
   multiline.match: after
   
   ignore_older: 24h
-{% endcodeblock %}
+```
 
 <br/>
   

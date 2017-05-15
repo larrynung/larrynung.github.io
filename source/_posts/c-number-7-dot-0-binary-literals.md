@@ -17,7 +17,7 @@ description: "C# 7.0 - Binary literals"
 
 在  C# 7.0 後開始支援二進制數值表示法，使用上只需用 0b 當做前綴即可，像是  0 可以寫成 0b00、1 可以寫成 0b01、2 可以寫成 0b10、4 可以寫成 0b100，以此類推。  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 namespace ConsoleApplication1
@@ -35,7 +35,7 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

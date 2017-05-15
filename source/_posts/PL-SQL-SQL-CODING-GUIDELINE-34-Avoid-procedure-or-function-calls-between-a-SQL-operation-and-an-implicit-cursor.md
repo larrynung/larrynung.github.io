@@ -30,7 +30,7 @@ BEGIN
         ROLLBACK; 
     END IF; 
 END remove_emp_and_process;
-{% endcodeblock %}
+```
 
 <br/>
 

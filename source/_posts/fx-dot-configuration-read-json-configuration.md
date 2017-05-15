@@ -21,14 +21,14 @@ description: "FX.Configuration - Read JSON configuration"
     "Setting1": "Larry Nung", 
     "Setting2": "Level Up (http://larrynung.github.io/index.html)" 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 再來要設定 JSON Configuration 對應的存取類別，這邊跟一般的 Model 實作類似，只是要類別需繼承自 JsonConfiguration，另外要注意設定檔的位置在哪，如果是跟組件檔案同目錄下的 Config.json 檔，那我們不需多做處理，如果檔案在其他目錄下，或是檔案名稱不是 Config.json，我們可以透過建構子設定。  
 
-{% codeblock lang:c# %}
+```c#
 using FX.Configuration; 
 
 namespace ConsoleApplication12 { 
@@ -41,13 +41,13 @@ namespace ConsoleApplication12 {
         public string Setting2 { get; private set; } 
     } 
 }
-{% endcodeblock %}
+```
 <br/>
 
 
 準備好後就只要將類別實體化即可透過成員屬性取得 JSON Configuration 的設定值。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 
 namespace ConsoleApplication12 { 
@@ -60,7 +60,7 @@ namespace ConsoleApplication12 {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

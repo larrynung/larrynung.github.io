@@ -12,22 +12,22 @@ description: "JQuery UI - Progressbar Widget"
 
 <!-- More -->
 
-{% codeblock lang:html %}
+```html
 <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="jqueryui/style.css">
-{% endcodeblock %}
+```
 
 <br/>
 
 
 接著在畫面上放入一個 div element。   
 
-{% codeblock lang:html %}
+```html
 <div id="pb">
 </div>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -38,7 +38,7 @@ description: "JQuery UI - Progressbar Widget"
   $(function() {
     $("#pb").progressbar();
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -58,7 +58,7 @@ description: "JQuery UI - Progressbar Widget"
         value:50
     });
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -81,7 +81,7 @@ description: "JQuery UI - Progressbar Widget"
         $("#pb").progressbar("value", value);
     });
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -111,7 +111,7 @@ description: "JQuery UI - Progressbar Widget"
         $("#pb").progressbar("value", value);
     });
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -123,7 +123,7 @@ description: "JQuery UI - Progressbar Widget"
 
 最後這邊附上測試用的範例： 
 
-{% codeblock lang:html %}
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -163,7 +163,7 @@ description: "JQuery UI - Progressbar Widget"
  
 </body>
 </html>		
-{% endcodeblock %}
+```
 
 <br/>
 

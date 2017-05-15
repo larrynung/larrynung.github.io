@@ -49,11 +49,11 @@ Jil 是 JSON 處理的套件，號稱比 JSON.NET 更快，甚至是當前套件
 
 要序列化時，可將物件帶入 JSON.Serialize 方法，方法會回傳序列化後的 JSON 字串。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 var json = JSON.Serialize(larry);
 ...
-{% endcodeblock %}
+```
 
 <Br/>
 
@@ -61,11 +61,11 @@ var json = JSON.Serialize(larry);
 
 解序列化時，可將 JSON 字串帶入 JSON.Deserialize，並利用範型指定所要解回的物件型態即可。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 larry = JSON.Deserialize<Person>(json);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -73,11 +73,11 @@ larry = JSON.Deserialize<Person>(json);
 
 此外，它也支援動態解析的能力，使用上只要將 JSON 字串帶入 JSON.DeserializeDynamic 即會回傳 Dynamic 物件。   
 
-{% codeblock lang:c# %}
+```c#
 ...
 var person = JSON.DeserializeDynamic(json);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -85,7 +85,7 @@ var person = JSON.DeserializeDynamic(json);
 
 完整的操作範例如下：  
 
-{% codeblock lang:c# %}
+```c#
 using Jil;
 using System;
 
@@ -124,7 +124,7 @@ namespace ConsoleApplication5
         public String NickName { get; set; }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/Jil/7.png %}
 
@@ -133,7 +133,7 @@ namespace ConsoleApplication5
 
 接著我們看一下序列化時效能上的比較：
 
-{% codeblock lang:c# %}
+```c#
 using Jil;
 using Newtonsoft.Json;
 using System;
@@ -179,7 +179,7 @@ namespace ConsoleApplication5
         public String NickName { get; set; }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/Jil/8.png %}
 
@@ -193,7 +193,7 @@ namespace ConsoleApplication5
 
 接著看一下解列化時的效能比較：  
 
-{% codeblock lang:c# %}
+```c#
 using Jil;
 using Newtonsoft.Json;
 using System;
@@ -241,7 +241,7 @@ namespace ConsoleApplication5
         public String NickName { get; set; }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/Jil/10.png %}
 

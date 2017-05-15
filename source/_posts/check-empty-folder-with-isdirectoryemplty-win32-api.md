@@ -12,13 +12,13 @@ description: "Check empty folder with IsDirectoryEmplty Win32 API"
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 public bool IsDirectoryEmplty(string directory)
 {
 	//return !Directory.GetFiles(directory).Any() && !Directory.GetDirectories(directory).Any();
 	return !Directory.GetFileSystemEntries(directory).Any();
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -26,13 +26,13 @@ public bool IsDirectoryEmplty(string directory)
 
 在 .NET 4.0 後可改用 Directory.EnumerateFiles 、Directory.EnumerateDirectories 、或 Directory.EnumerateFileSystemEntries 替代。  
 
-{% codeblock lang:c# %}
+```c#
 public bool IsDirectoryEmplty(string directory)
 {
         //return !Directory.EnumerateFiles(directory).Any() && !Directory.EnumerateDirectories(directory).Any();
         return !Directory.EnumerateFileSystemEntries(directory).Any();
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -41,17 +41,17 @@ public bool IsDirectoryEmplty(string directory)
 
 以這邊來說，我們可以將之改用 IsDirectoryEmplty API 去處理。
 
-{% codeblock lang:c# %}
+```c#
 [ DllImport("Shlwapi.dll" , EntryPoint = "PathIsDirectoryEmpty")]
 [ return: MarshalAs (UnmanagedType.Bool)]
 public static extern bool IsDirectoryEmplty([MarshalAs (UnmanagedType.LPStr)] string directory);
-{% endcodeblock %}
+```
 
 <br/>
 
 使用起來會像下面這樣：
 
-{% codeblock lang:c# %}
+```c#
 using System.Text;
 using System.Threading.Tasks;
 
@@ -73,7 +73,7 @@ namespace ConsoleApplication23
         }
     }   
 }
-{% endcodeblock %}
+```
 
 <br/>
 

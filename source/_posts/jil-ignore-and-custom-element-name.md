@@ -13,7 +13,7 @@ description: "Jil - Ignore &amp; Custom Element Name"
 <!-- More -->
 
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System. Runtime.Serialization ;
 using Jil;
@@ -43,14 +43,14 @@ namespace ConsoleApplication10
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或是帶上 JilDirectiveAttribute，指定 Ignore：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System. Runtime.Serialization ;
 using Jil;
@@ -80,7 +80,7 @@ namespace ConsoleApplication10
         }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/JilIgnoreAndCustomElement/1.png %}
 
@@ -89,7 +89,7 @@ namespace ConsoleApplication10
 
 如果要客製輸出的 Element 名稱，則直接透過 JilDirectiveAttribute 帶入指定的名稱：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System. Runtime.Serialization ;
 using Jil;
@@ -119,6 +119,6 @@ namespace ConsoleApplication10
         }
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/JilIgnoreAndCustomElement/2.png %}

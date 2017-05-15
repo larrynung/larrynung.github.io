@@ -22,7 +22,7 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(CASE WHEN v_str is null THEN 'null' ELSE 'not null' END); 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -35,4 +35,4 @@ DECLARE
 BEGIN 
     DBMS_OUTPUT.PUT_LINE(CASE WHEN v_str is null THEN 'null' ELSE 'not null' END); 
 END;
-{% endcodeblock %}
+```

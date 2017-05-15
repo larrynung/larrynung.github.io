@@ -50,42 +50,42 @@ x86 與 x64 版本的 ODP.NET 不具位元適應性，需依運行環境使用�
 
 首先要先建立資料庫的連線。  
 
-{% codeblock lang:c# %}
+```c#
 using(var conn = new OracleConnection(connstring))
 {
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 接著將建立的資料庫連線開啟。
   
-{% codeblock lang:c# %}
+```c#
 conn.Open();
-{% endcodeblock %}
+```
 
 <br/>
 
 再來建立所要運行的命令。
 
-{% codeblock lang:c# %}
+```c#
 using (var comm = new OracleCommand(sql, conn))
 {
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 運行命令做對應的資料庫存取動作。  
 
-{% codeblock lang:c# %}
+```c#
 using(var rdr = comm.ExecuteReader())
 {
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -95,7 +95,7 @@ using(var rdr = comm.ExecuteReader())
 
 所以以呼叫一個簡單的 Select 命令來說，程式寫起來會像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 void DisplayAllTable(string connectionString)
 {
     using(var conn = new OracleConnection(connectionString))
@@ -114,13 +114,13 @@ void DisplayAllTable(string connectionString)
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 呼叫一個 StoredProcedure 會像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 void ExecuteStoredProcedure(string connectionString, string storedProcedure, OracleParameter[] parameters)
 {
     using(var cn = new OracleConnection(connectionString))
@@ -136,4 +136,4 @@ void ExecuteStoredProcedure(string connectionString, string storedProcedure, Ora
         }
     }
 }
-{% endcodeblock %}
+```

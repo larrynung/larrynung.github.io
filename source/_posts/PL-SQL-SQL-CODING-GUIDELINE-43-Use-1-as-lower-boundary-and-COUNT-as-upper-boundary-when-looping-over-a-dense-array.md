@@ -25,7 +25,7 @@ BEGIN
    … 
   END LOOP process_employees; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -45,7 +45,7 @@ BEGIN
     END LOOP process_employees; 
   END IF; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -62,6 +62,6 @@ BEGIN
     … 
   END LOOP process_employees; 
 END;
-{% endcodeblock %}
+```
 
 <br/>

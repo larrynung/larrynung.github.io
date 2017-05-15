@@ -17,7 +17,7 @@ description: "StackExchange.Redis - Pub/Sub Demo"
 
 像是下面這邊筆者訂閱了 MemberOnLine 的事件，當事件發生時會將上線資訊顯示在主控台，然後發佈 LarryNung 上線的事件給訂閱者：  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using StackExchange.Redis; 
 
@@ -36,7 +36,7 @@ namespace ConsoleApplication4 {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -54,7 +54,7 @@ description: "PostSharp - Automatically Implementing INotifyPropertyChanged"
 
 若再次用反射進行解析。  
 
-{% codeblock lang:c# %} 
+```c# 
 using System;
 using System. Collections.Generic ;
 using System. Linq;

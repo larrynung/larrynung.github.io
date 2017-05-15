@@ -19,7 +19,7 @@ class MyClass {
 
 var obj = new MyClass();
 ...
-{% endcodeblock %}
+```
 	
 <br/>
 
@@ -32,7 +32,7 @@ constructor(...) {
 	... 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -46,7 +46,7 @@ private _name: string;
 get name():string{ return this._name; } 
 set name(value:string){ this._name = value; } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -67,7 +67,7 @@ public PublicFunction():void {
         ...
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -78,7 +78,7 @@ public PublicFunction():void {
 class ChildClass extends MyClass { 
 	...
 } 
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -110,7 +110,7 @@ class Larry extends Person {
 } 
 var p = new Larry(); 
 alert(p.SayHello());
-{% endcodeblock %}
+```
 
 <br/>
 

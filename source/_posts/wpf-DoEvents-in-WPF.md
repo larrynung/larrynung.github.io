@@ -16,7 +16,7 @@ description: "WPF - DoEvents in WPF"
 
 只要將 `System.Windows.Forms.dll` 組件加入參考，接著將命名空間 `System.Windows.Forms` 加入，再呼叫 `Application.DoEvents()` 方法即可。  
 
-{% codeblock lang:c# %}
+```c#
 using System.Windows.Forms;
 
 ...
@@ -24,13 +24,13 @@ using System.Windows.Forms;
 Application.DoEvents();
 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 或者是自行撰寫像下面這樣的程式來處理也可以。  
 
-{% codeblock lang:c# %}
+```c#
 void DoEvents(){
 DispatcherFrame f = new DispatcherFrame();
 Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, 
@@ -40,7 +40,7 @@ Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background,
 }, f);
 Dispatcher.PushFrame(frame);
 }
-{% endcodeblock %}
+```
 
 Link
 ----

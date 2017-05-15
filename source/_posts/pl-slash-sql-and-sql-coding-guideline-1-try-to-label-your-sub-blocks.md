@@ -26,7 +26,7 @@ Begin
     End;
     DBMS_OUTPUT.put_line('End');
 End;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -43,7 +43,7 @@ Begin
     End Processing;
     DBMS_OUTPUT.put_line('End');
 End;
-{% endcodeblock %}
+```
 
 改完程式碼的區塊範圍清楚了許多。  
 

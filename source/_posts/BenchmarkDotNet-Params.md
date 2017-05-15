@@ -8,7 +8,7 @@ tags: [BenchmarkDotNet]
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes;
 ... 
 public class ProgramBenchmarker { 
@@ -20,7 +20,7 @@ public class ProgramBenchmarker {
     m_Program.Test(); 
   } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

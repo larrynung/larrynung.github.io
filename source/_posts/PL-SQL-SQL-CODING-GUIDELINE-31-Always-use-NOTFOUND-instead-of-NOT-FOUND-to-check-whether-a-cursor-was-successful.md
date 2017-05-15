@@ -21,7 +21,7 @@ LOOP
     EXIT WHEN NOT c_employees%FOUND; 
     ... 
 END LOOP;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -33,7 +33,7 @@ LOOP
     EXIT WHEN c_employees%NOTFOUND; 
     ... 
 END LOOP;
-{% endcodeblock %}
+```
 
 <br/>
 

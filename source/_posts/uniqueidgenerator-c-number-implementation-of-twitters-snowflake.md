@@ -33,7 +33,7 @@ UniqueIdGenerator 是 Twitter Snowflake ID 的 C# 實作。
 
 
 接著引用 UniqueIdGenerator.Net 命名空間，帶入 Generator id 與 EPoch 建立 Generator，然後調用 Next() 取得文字型態的 ID，或是透過 NextLong() 取得數值型態的 ID 即可。 
-{% codeblock lang:c# %}
+```c#
 ...
 using UniqueIdGenerator.Net;
 ...
@@ -44,14 +44,14 @@ var generator = new Generator(generatorID, epoch);
 var id = generator.Next();
 var idValue = generator.NextLong();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 最後附上完整的測試範例：  
 
-{% codeblock lang:c# %}
+```c#
 using System;  
 using System.Net;
 using UniqueIdGenerator.Net;
@@ -73,7 +73,7 @@ namespace ConsoleApplication32
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

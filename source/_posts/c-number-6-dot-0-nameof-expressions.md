@@ -34,7 +34,7 @@ Nameof expressions 的出現能幫助開發人員解決這樣的問題，使用�
 
 這邊直接看個完整的使用範例: 
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 namespace ConsoleApplication10
@@ -75,7 +75,7 @@ namespace ConsoleApplication10
         public string Url { get; set; }
     }
 }
-{% endcodeblock %}
+```
 
 
 其運行結果如下:  

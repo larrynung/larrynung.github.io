@@ -12,7 +12,7 @@ description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
         private void ComposeCurrentDirectoryParts()
         {
             using (var catalog = new DirectoryCatalog(Environment.CurrentDirectory))
@@ -21,13 +21,13 @@ description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
                 container.ComposeParts(this);
             }
         }
-{% endcodeblock %}
+```
 
 <br/>
 
 多半上面這段程式能夠運行良好。但有的時候會發生不如預期的效果，因為 DirectoryCatalog 會去找目錄下指定的檔案，可能會找到一些組件會相依於其它不存在的組件，導致發生 ReflectionTypeLoadException 錯誤。如果你碰到這樣的問題，可以避開使用 DirectoryCatalog，改成自己去遍巡處理，並用 AssemblyCatalog 載入，載入失敗則將之忽略不予處理。像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
     public class SafeDirectoryCatalog : ComposablePartCatalog
     {
 		#region Fields 
@@ -93,13 +93,13 @@ description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
         }
 		#endregion Constructors 
     }
-{% endcodeblock %}
+```
 
 <br/>
 
 這邊已參閱[Handle ReflectionTypeLoadException during MEF composition - Stack Overflow](http://stackoverflow.com/questions/4144683/handle-reflectiontypeloadexception-during-mef-composition)，將之整理成可重用的類別，使用時只要將本來的 DirectoryCatalog 改成用 SafeDirectoryCatalog 就可以了。  
 
-{% codeblock lang:c# %}
+```c#
         private void ComposeCurrentDirectoryParts()
         {
             using (var catalog = new SafeDirectoryCatalog(Environment.CurrentDirectory))
@@ -108,7 +108,7 @@ description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
                 container.ComposeParts(this);
             }
         }
-{% endcodeblock %}
+```
 
 <br/>
 

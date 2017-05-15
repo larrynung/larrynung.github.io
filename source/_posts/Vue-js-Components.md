@@ -13,7 +13,7 @@ Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。
 
 可在建立 Vue 時透過 components 宣告，進行局部註冊。  
 
-{% codeblock lang:html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +37,14 @@ Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。
   </script>
 </body>
 </html>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 也可以使用 Vue.component 宣告，進行全域註冊。  
 
-{% codeblock lang:html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +66,7 @@ Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。
   </script>
 </body>
 </html>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -80,7 +80,7 @@ Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。
 
 Component 也支援設定 data，可存放ㄧ些 Component 會使用到的資料，但 data 必須是用 function 的方式宣告。  
 
-{% codeblock lang:html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,14 +107,14 @@ Component 也支援設定 data，可存放ㄧ些 Component 會使用到的資料
   </script>
 </body>
 </html>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 如果 Component 需要由外面傳遞資訊進去，可以在註冊 Component 的同時用 props 設定接受的參數名稱，然後在 HTML 中使用 Component element 時，就可以使用設定的參數將資訊傳入。  
 
-{% codeblock lang:html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +137,7 @@ Component 也支援設定 data，可存放ㄧ些 Component 會使用到的資料
   </script>
 </body>
 </html>
-{% endcodeblock %}
+```
 
 <br/>
 

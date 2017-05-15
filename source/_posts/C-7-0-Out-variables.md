@@ -18,7 +18,7 @@ static void GetData(out string data)
 {
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -29,7 +29,7 @@ C# 7.0 以後，可以在帶入 Out 參數時直接順帶宣告。
 ...
 GetData(out string data);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -40,7 +40,7 @@ GetData(out string data);
 ...
 GetData(out var data);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -67,7 +67,7 @@ namespace ConsoleApp2
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

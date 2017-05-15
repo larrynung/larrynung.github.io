@@ -27,7 +27,7 @@ CanConverter 用來決定該型別是否可被該 Converter 處理、WriteJson �
 
 像是我們可以像下面這樣做個簡易的 Converter，裡面只是單純的將物件序列化與解序列化。    
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using Newtonsoft.Json;
 
@@ -51,24 +51,24 @@ namespace LevelUp.Converter
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 當我們在序列化物件時，若物件的成員屬性是 Interface，就可以用來指定序列化與解序列化時實際所要用的型態。  
 
-{% codeblock lang:c# %}
+```c#
 [JsonConverter(typeof(ConcreteTypeConverter<DecisionNode[]>))]
 IDecisionNode[] Nodes { get ; }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或者是像下面這段用來處理 Dictionary 的序列話與解序列化的 Converter 程式，裡面會用 JsonWriter 去處理序列化的動作、用 JsonReader 去處理解序列化的動作，寫起來比較複雜些，但可進行比較進階的處理。  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Collections;
 using System.Collections.Generic;

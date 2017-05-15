@@ -43,7 +43,7 @@ StackExchange.Redis 是 StackExchange 提供的 redis client 實作。
 
 套件安裝完後，就可進行 Redis 存取部分的撰寫，程式撰寫起來會像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -52,14 +52,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ... 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 程式一開始會先設定 Configuration，相當於一般我們在用的 DB 連線字串，用以指定 Redis 位置等資訊。 再來會用 ConnectionMultiplexer.Connect 將 Configuration 帶入開啟連線，連線開啟後可對 Server 進行操作，像是取得 Server 的資訊，或是運行 Server 的命令。  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -73,14 +73,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ...
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 可以對指定的 DB 進行操作。  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -90,14 +90,14 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ... 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 抑或是處理訂閱都可以。  
 
-{% codeblock lang:c# %}
+```c#
 using StackExchange.Redis; 
 ... 
 var configuration = GetConfiguration(); 
@@ -116,7 +116,7 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
     ...
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

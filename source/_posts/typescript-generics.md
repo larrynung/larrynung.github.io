@@ -24,7 +24,7 @@ class GenericsClass<T>
 		...
 	} 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -38,7 +38,7 @@ function ShowMessage<T>(message:T) {
 
 ShowMessage<string>("test"); 
 ShowMessage<number>(123);
-{% endcodeblock %}
+```
 
 <br/>
 

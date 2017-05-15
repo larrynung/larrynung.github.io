@@ -38,7 +38,7 @@ echo off
 call :AppendColorText %~1 %~2
 Echo.
 goto :eof
-{% endcodeblock %}
+```
 
 
 筆者在這邊宣告了兩個Method可以直接叫用,一個是AppendColorText,一個是AppendColorTextLine,差異只在於是否要做換行的動作
@@ -112,7 +112,7 @@ echo off
 call :AppendColorText %~1 %~2
 Echo.
 goto :eof
-{% endcodeblock %}
+```
 
 
 運行結果如下

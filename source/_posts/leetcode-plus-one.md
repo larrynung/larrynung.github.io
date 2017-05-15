@@ -26,7 +26,7 @@ The digits are stored such that the most significant digit is at the head of the
 
 這邊筆者是用 for 迴圈從輸入的陣列尾端往前遍巡，第一個處理的陣列元素加一後如果有超過 10，則將當前數值改為除 10 後的餘數，且進位的值帶到下一個陣列數值去做相同的處理。最後跑完如果無進位值，則把當前處理完的陣列回傳。若有進位值，則將進位值與當前處理完的陣列合併回傳。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int[] PlusOne(int[] digits) {
         var carry = 1;
@@ -45,7 +45,7 @@ public class Solution {
         return (new int[]{carry}).Concat(result).ToArray();
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

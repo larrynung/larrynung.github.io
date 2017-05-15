@@ -13,8 +13,7 @@ Vue.js 的 .lazy modifier 可以讓繫結的資料在資料改變後才進行同
 
 像是下面這樣的程式：  
 
-{% codeblock lang:html %}
-{% raw %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,8 +35,7 @@ Vue.js 的 .lazy modifier 可以讓繫結的資料在資料改變後才進行同
   </script>
 </body>
 </html>
-{% endraw %}
-{% endcodeblock %}
+```
 
 <br/>
 

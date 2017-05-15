@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", inline: "echo Hello, World" 
     ... 
 end
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", inline: $script 
     ... 
 end
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -54,7 +54,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "script.sh" 
     ... 
 end
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -70,7 +70,7 @@ Vagrant.configure("2") do |config|
     end 
     ... 
 end
-{% endcodeblock %}
+```
 
 <br/>
 

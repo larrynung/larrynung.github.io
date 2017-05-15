@@ -28,7 +28,7 @@ description: "T4 template - Auto generate ConnectionString's wrapper class"
 
 然後將其程式碼替換成下面這樣。
 
-{% codeblock lang:c# %}
+```c#
 <#@ template debug ="true" hostspecific="True" language= "C#" #>
 <#@ assembly name ="EnvDTE" #>
 <#@ assembly name ="System.Core.dll" #>
@@ -125,7 +125,7 @@ private string GetConfigPath()
     return "" ;
 }
 #>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -135,10 +135,10 @@ private string GetConfigPath()
 
 在系統中我們就可直接透過該強型別物件去取得連線字串，像是假設有個名為 Oracle 的 ConnectionString，就可像下面這樣取用。
 
-{% codeblock lang:c# %}
+```c#
 var connectionString = ConnectionStrings.Oracle;
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

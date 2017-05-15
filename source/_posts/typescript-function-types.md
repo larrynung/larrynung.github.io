@@ -20,7 +20,7 @@ function add(x, y) {
 
 //Anonymous function
 var myAdd = function(x, y) { return x+y; };
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -45,7 +45,7 @@ function add(x: number, y: number): number {
 }
 
 var myAdd = function(x: number, y: number): number { return x+y; };
-{% endcodeblock %}
+```
 
 <br/>
 

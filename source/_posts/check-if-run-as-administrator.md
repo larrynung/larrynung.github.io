@@ -26,14 +26,14 @@ description: "Check if run as administrator"
 
 所以整個程式會像下面這樣 : 
 
-{% codeblock lang:c# %} 
+```c# 
 private bool IsRunAsAdministrator() 
 {
     var wi = WindowsIdentity.GetCurrent(); 
     var wp = new WindowsPrincipal(wi); 
     return wp.IsInRole(WindowsBuiltInRole.Administrator);
 }
-{% endcodeblock %}
+```
 
 <br/>
 

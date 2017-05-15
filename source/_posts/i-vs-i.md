@@ -13,20 +13,20 @@ i++ 與 ++i 如果在不影響結果的情況下使用，有可能是在 for 迴
 
 像是下面這樣單獨呼叫 ++i。  
 
-{% codeblock lang:c# %}
+```c#
 var i = 0;
 ++i;
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或是像是下面這樣單獨呼叫 i++。
 
-{% codeblock lang:c# %}
+```c#
 var i = 0;
 i++;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -42,17 +42,17 @@ IL_0004:  ldc.i4.1
 IL_0005:  add
 IL_0006:  stloc.0
 IL_0007:  ret
-{% endcodeblock %}
+```
 
 <br/>
 
 
 但在影響結果的情況下使用(像是處理完做了賦值的動作)，除了結果不同外，還會多耗用一個堆疊位置，這邊以一個簡單的例子來看：  
 
-{% codeblock lang:c# %}
+```c#
 var i = 0;
 var a = i++;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -70,7 +70,7 @@ IL_0006:  add
 IL_0007:  stloc.0     // i
 IL_0008:  stloc.1     // a
 IL_0009:  ret        
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -117,10 +117,10 @@ IL_0009:  ret
 
 再來來看 ++i，一樣用個間單的例子來看：    
 
-{% codeblock lang:c# %}
+```c#
 var i = 0;
 var a = ++i;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -138,7 +138,7 @@ IL_0006:  dup
 IL_0007:  stloc.0     // i
 IL_0008:  stloc.1     // a
 IL_0009:  ret   
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -194,7 +194,7 @@ var data1 = data[idx++];
 var data2 = data[idx++];
 var data3 = data[idx++];
 var data4 = data[idx++];
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -209,7 +209,7 @@ var data1 = data[++idx];
 var data2 = data[++idx];
 var data3 = data[++idx];
 var data4 = data[++idx];
-{% endcodeblock %}
+```
 
 <br/>
 

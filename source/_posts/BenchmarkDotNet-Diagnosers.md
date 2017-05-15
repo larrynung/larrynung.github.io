@@ -13,7 +13,7 @@ Diagnoser 可以附加到 benchmark 上，並獲取一些有用的資訊。像�
 
 使用上只要透過 Attribute 的方式加到要 benchmark 的類別即可。像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes; 
 using BenchmarkDotNet.Configs; 
 using BenchmarkDotNet.Diagnosers; 
@@ -22,14 +22,14 @@ using BenchmarkDotNet.Diagnosers;
 public class ProgramBenchmarker { 
   ... 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或是透過 config 的方式設定也可以。  
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes; 
 using BenchmarkDotNet.Configs; 
 using BenchmarkDotNet.Diagnosers; 
@@ -43,7 +43,7 @@ public class ProgramBenchmarker {
   } 
   ... 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

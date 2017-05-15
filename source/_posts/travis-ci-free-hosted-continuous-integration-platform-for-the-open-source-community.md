@@ -58,7 +58,7 @@ compiler:
   - clang
 # Change this to your needs
 script: ./configure && make
-{% endcodeblock %}
+```
 
 
 詳細的設定請參閱 [Travis CI Documentation](http://about.travis-ci.org/docs/) 。  

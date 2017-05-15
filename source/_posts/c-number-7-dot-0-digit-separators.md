@@ -17,7 +17,7 @@ description: "C# 7.0 - Digit separators"
 
 C# 7.0 以後提供了 Digit separators 功能，允許開發人員使用 `_` 將數值做些分隔，有效解決了上述問題。最普遍的用法就是將數值做千分位分隔，像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 namespace ConsoleApplication1
@@ -35,7 +35,7 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

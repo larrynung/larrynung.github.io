@@ -58,7 +58,7 @@ end
 desc "Notify various services about new content"
 task :notify => [:pingomatic, :sitemapgoogle, :sitemapbing] do
 end
-{% endcodeblock %}
+```
 
 腳本中發送給搜尋引擎那邊的站名、網站位置、RSS位置、以及 sitemap 位置都要替換成自己的。  
 
@@ -105,7 +105,7 @@ task :deploy1 do
   Rake::Task[:copydot].invoke(source_dir, public_dir)
   Rake::Task["#{deploy_default}"].execute
 end
-{% endcodeblock %}
+```
 
 
 這樣修改後以後叫用 `rake deploy` 就會自動在部屬後通知搜尋引擎。

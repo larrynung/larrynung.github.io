@@ -50,7 +50,7 @@ Vagrant.configure(2) do |config|
      daemonize: true
   end
 end
-{% endcodeblock %}
+```
 
 <br/>
 

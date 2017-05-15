@@ -37,7 +37,7 @@ s = "rat", t = "car", 回傳 false.
 <br/>
 
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool IsAnagram(string s, string t) {
         return SortString(s) == SortString(t);
@@ -49,7 +49,7 @@ public class Solution {
         return new String(ca);
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

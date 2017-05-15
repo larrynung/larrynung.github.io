@@ -18,14 +18,14 @@ NanoProfiler 有許多的套件。
 
 套件安裝完後要設定 CircularBuffer，可透過程式設定...   
 
-{% codeblock lang:c# %}
+```c#
 protected void Application_Start(object sender, EventArgs e)
 {
     ...
     ProfilingSession.CircularBuffer = new CircularBuffer<ITimingSession>(200, session => false);
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -41,13 +41,13 @@ protected void Application_Start(object sender, EventArgs e)
   ...
   <nanoprofiler circularBufferSize="200" />
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 CircularBuffer 設定完後，就可以設定要 Profile 的部分，像是每個 Request 的進出。    
-{% codeblock lang:c# %}
+```c#
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             ProfilingSession.Start("root");
@@ -57,19 +57,19 @@ CircularBuffer 設定完後，就可以設定要 Profile 的部分，像是每�
         {
             ProfilingSession.Stop();
         }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 以及 Request 中想要監測的部分。  
 
-{% codeblock lang:c# %}
+```c#
 using (var step = ProfilingSession.Current.Step("[StepName]"))
 {
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -92,14 +92,14 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
   ...
   <nanoprofiler circularBufferSize="200" storage="EF.Diagnostics.Profiling.Storages.Json.JsonProfilingStorage, NanoProfiler.Storages.Json"/>
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
 
 如果 Profile 要過濾掉一些位置，可以透過程式設定 filter。  
 
-{% codeblock lang:c# %}
+```c#
         protected void Application_Start()
         {
             ...
@@ -108,7 +108,7 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
             ProfilingSession.ProfilingFilters.Add(new FileExtensionProfilingFilter("jpg", "js", "css"));
             ...
         }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -131,7 +131,7 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
     </filters>
   </nanoprofiler>
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 

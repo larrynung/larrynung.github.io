@@ -22,7 +22,7 @@ SET SERVEROUTPUT ON
 Begin
     DBMS_OUTPUT.put_line('Root Account:' || 'Admin');
 End;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -40,6 +40,6 @@ END CONST;
 Begin
     DBMS_OUTPUT.put_line('Root Account:' || CONST.ROOT_ACCOUNT);
 End;
-{% endcodeblock %}
+```
 
 這樣常數字串的宣告會集中在 Package 內，修改上也比較方便。  

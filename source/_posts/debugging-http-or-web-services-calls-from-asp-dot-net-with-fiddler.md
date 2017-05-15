@@ -21,7 +21,7 @@ description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
   </defaultProxy>
 </system.net>
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

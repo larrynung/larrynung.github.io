@@ -27,7 +27,7 @@ Begin
         DBMS_OUTPUT.put_line('i =' || i);
     End LOOP;
 End;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -45,6 +45,6 @@ Begin
         DBMS_OUTPUT.put_line('i =' || i);
     End LOOP Print1To10;
 End;
-{% endcodeblock %}
+```
 
 改完程式碼的區塊範圍清楚了許多。

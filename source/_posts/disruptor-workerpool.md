@@ -17,7 +17,7 @@ Disruptor 的 EventHandler，Consumer 間會相互合作，會依序消費收到
 
 像是我們可以撰寫下面這樣的 WorkerHandler：  
 
-{% codeblock lang:c# %}
+```c#
 ...
 public class Data
 {
@@ -37,13 +37,13 @@ public class DataWorkHandler : IWorkHandler<Data >
     }
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 這邊建造多個 WorkerHandler，帶入 Disruptor 的 HandleEventsWithWorkerPool 方法。  
-{% codeblock lang:c# %}
+```c#
 ...
 var disruptor = new Disruptor.Dsl. Disruptor< Data>(() => new Data(), (int)Math .Pow(2, 10), TaskScheduler.Default, ProducerType.SINGLE, new YieldingWaitStrategy());
 
@@ -67,7 +67,7 @@ while (true)
 
 disruptor.Shutdown();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

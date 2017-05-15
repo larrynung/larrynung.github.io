@@ -13,8 +13,7 @@ tags: [Vue.js]
 
 像是下面這樣的程式：  
 
-{% codeblock lang:html %}
-{% raw %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +36,7 @@ tags: [Vue.js]
   </script>
 </body>
 </html>
-{% endraw %}
-{% endcodeblock %}
+```
 
 <br/>
 

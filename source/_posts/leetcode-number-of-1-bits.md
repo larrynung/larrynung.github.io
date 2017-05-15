@@ -27,7 +27,7 @@ For example, the 32-bit integer ’11' has binary representation 000000000000000
 
 這邊我們可以用 while 迴圈持續的用 n-1 去做 and 運算，並計算運行次數，直至 n 變為 0。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int HammingWeight(uint n) {
          int count = 0;
@@ -38,7 +38,7 @@ public class Solution {
          return count;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

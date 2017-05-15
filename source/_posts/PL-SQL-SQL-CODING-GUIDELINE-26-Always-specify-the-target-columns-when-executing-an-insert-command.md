@@ -21,7 +21,7 @@ INSERT INTO
     messages 
 VALUES 
     (l_mess_no ,l_mess_typ ,l_mess_text );
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -34,4 +34,4 @@ INSERT INTO
     (mess_no ,mess_typ ,mess_text ) 
 VALUES 
     (l_mess_no ,l_mess_typ ,l_mess_text );
-{% endcodeblock %}
+```

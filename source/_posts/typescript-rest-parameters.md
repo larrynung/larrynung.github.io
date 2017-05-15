@@ -23,7 +23,7 @@ function Execute(cmd: string, ...params: string[]): void {
 } 
 
 Execute("Test", "Param1", "Param2");
-{% endcodeblock %}
+```
 
 <br/>
 

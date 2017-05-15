@@ -31,7 +31,7 @@ Ringbuffer 是一頭尾串接的環形陣列，資料一邊循序的存放，一
 
 這邊簡單的做個測試...  
 
-{% codeblock lang:c# %}
+```c#
 usingSystem;
 usingSystem.Diagnostics;
 
@@ -73,7 +73,7 @@ namespaceConsoleApplication25 {
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

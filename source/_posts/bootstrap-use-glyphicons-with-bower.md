@@ -29,7 +29,7 @@ description: "Bootstrap - Use Glyphicons with bower"
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype') , url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff') , url('../fonts/glyphicons-halflings-regular.ttf') format('truetype') , url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -51,7 +51,7 @@ description: "Bootstrap - Use Glyphicons with bower"
   src: url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype') , url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg') ;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

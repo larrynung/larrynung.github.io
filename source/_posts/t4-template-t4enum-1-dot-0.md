@@ -32,7 +32,7 @@ description: "T4 Template - T4Enum 1.0"
 
 實際使用會像是下面這樣：    
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using T4Enum;
 using T4Enum.Extensions;
@@ -77,7 +77,7 @@ namespace ConsoleApplication7
     }
 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -30,7 +30,7 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
 
 因為長度為 n 的陣列如果沒有跳號，裡面的元素應該是 0, ..., n，且缺少的數值只有一個。所以我們可以把帶入的陣列跟本來預期的值相減後加總，然後用陣列的長度與之相減。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int MissingNumber(int[] nums) {
         var sum = 0;
@@ -40,7 +40,7 @@ public class Solution {
         return length - sum;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

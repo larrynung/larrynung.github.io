@@ -25,4 +25,4 @@ T4MVC 預設在產生程式碼時會依 Controller 產生不同的檔案，這�
 <!-- If true,the template output will be split into multiple files. -->
 <SplitIntoMultipleFiles>false</SplitIntoMultipleFiles>
 ...
-{% endcodeblock %}
+```

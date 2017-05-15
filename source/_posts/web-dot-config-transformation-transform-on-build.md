@@ -22,7 +22,7 @@ Web.Config Transformation 功能在我們有多個環境需要部署時很方便
 <DependentUpon>Web.config</DependentUpon>
 </Content>
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -33,7 +33,7 @@ Web.Config Transformation 功能在我們有多個環境需要部署時很方便
 <Target Name="BeforeBuild">
 <TransformXml Source="Web.Base.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
 </Target>
-{% endcodeblock %}
+```
 
 <br/>
 

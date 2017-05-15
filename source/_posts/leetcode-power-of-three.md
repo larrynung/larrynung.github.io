@@ -24,13 +24,13 @@ Given an integer, write a function to determine if it is a power of three.
 
 這邊我們只要判斷數值是否大於零，且是否可整除 1162261467 即可。1162261467 是來自 3^19，為最大的 3 冪次整數，如果某數值可以將之整除，即代表該數值為 3 的冪次。    
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public bool IsPowerOfThree(int n) {
          return n > 0 && 1162261467 % n == 0;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

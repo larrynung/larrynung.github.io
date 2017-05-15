@@ -29,7 +29,7 @@ MAC 下 task.json 可設定如下：
     },
     "args": ["${file}"]
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -50,7 +50,7 @@ Windows 下設定如下：
     },
     "args": ["${file}"]
 }
-{% endcodeblock %}
+```
 
 <br/>
 

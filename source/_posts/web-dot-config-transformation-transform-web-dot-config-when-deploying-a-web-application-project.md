@@ -19,7 +19,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
   <system.web>
     <compilation xdt:Transform="RemoveAttributes(debug)" />
   ...
-{% endcodeblock %}
+```
 
 
 我們可以參閱 Release 的轉換設定檔，設定檔內的註解會稍稍提示使用的方式，以及說明文件的位置，確實參閱後做些基本的設定應該都不成問題。  
@@ -55,7 +55,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
     -->
   </system.web>
 </configuration>
-{% endcodeblock %}
+```
 
 
 轉換的語法不會太複雜，只要知道 Locator 與 Transform 的用法就可以了。 Locator 用來選取要做轉換的項目(若不指定則由 Transform 隱含指定)， Transform 則是用來設定要對選取的項目進行哪種轉換。簡單來說 Web.Config Transformation 也就只是使用 Locator 選取後透過 Transform 將設定值轉換成我們所預期的值。
@@ -70,7 +70,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
         xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     </connectionStrings>
     ...
-{% endcodeblock %}
+```
 
 如果是 appSettings 的設定的轉換，也是一樣的設定方式。加入 `configuration/appSettings/add` 節點，節點的設定方式如同在一般的 Web.Config 設定，將預期的值帶入。接著附加 Locator 與 Transform 屬性，指定 match 到 ket 時套用 value 值。
 {% codeblock lang:xml %}
@@ -80,7 +80,7 @@ Web.Config Transformation 允許開發人員依照特定的語法設定部署時
     < add key="Site" value="http://larrynung.github.com" xdt:Transform="SetAttributes " xdt:Locator=" Match(key)"/>
   </ appSettings>
   ...
-{% endcodeblock %}
+```
 
 簡單的使用方式大概就是這樣。再進階一點就要細看 Locator 的 Condition、 Match、 XPath 語法，以及 Transform 的 Replace、 Insert 、 InsertBefore 、 InsertAfter 、 Remove 、 RemoveAll 、 RemoveAttributes 、 SetAttributes 語法。若有需求或是有研究的興趣，可自行參閱 MSDN 的說明。  
 

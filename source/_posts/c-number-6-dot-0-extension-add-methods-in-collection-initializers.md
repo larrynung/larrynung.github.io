@@ -12,7 +12,7 @@ C# 6.0 以前，集合類別可以像下面這樣透過 Collection Initializers 
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 ...
 var blogs = new List< Blog>
 {
@@ -32,7 +32,7 @@ var blogs = new List< Blog>
 
 只要為集合撰寫 Add 擴充方法即可客製處理 Collection Initializers，像是如果預期要讓 List<Blog> 的初始可以直接帶入 name 與 url，就會像下面這樣撰寫：   
 
-{% codeblock lang:c# %}
+```c#
 ...
 public static class BlogExtension
 {
@@ -42,14 +42,14 @@ public static class BlogExtension
     }
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 集合成員的初始就可以像下面這樣撰寫：  
 
-{% codeblock lang:c# %}
+```c#
 ...
 blogs = new List< Blog>
 {
@@ -62,7 +62,7 @@ blogs = new List< Blog>
 
 最後附上完整的測試範例：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Collections.Generic;
 
@@ -117,7 +117,7 @@ public static class BlogExtension
         list.Add( new Blog(name, url));
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

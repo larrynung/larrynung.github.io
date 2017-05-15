@@ -39,7 +39,7 @@ Output: index1=1, index2=2
 
 這邊最直覺得解法，應該就是巢狀 for 迴圈下去處理，像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         for(var num1Idx = 0; num1Idx < nums.Length; ++num1Idx)
@@ -56,7 +56,7 @@ public class Solution {
         throw new ArgumentException("Invalid argument.");
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -70,7 +70,7 @@ public class Solution {
 
 要改善的話我們可以用迴圈搭配 Dictionary，每跑一個數就去判斷 Dictionary 是否有資料，如果有則將資料取出與當前索引一併加一回傳，如果沒有則將 目標數 - 當前數 做 Key 值，把目前索引存放在 Dictionary 中。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         var length = nums.Length;
@@ -86,7 +86,7 @@ public class Solution {
         throw new ArgumentException("Invalid argument.");
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

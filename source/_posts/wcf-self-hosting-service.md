@@ -18,46 +18,46 @@ description: "WCF - Self hosting service"
 
 接著在程式設計中建立 ServiceHost。建立的同時要指定欲運行的 Service 型態，以及要 Host 的位置。 
 
-{% codeblock lang:c# %}
+```c#
     var serviceUrl = "http://localhost:6525/ExecuteService";
     var serviceUri = new Uri( serviceUrl );
     using (var host = new ServiceHost (typeof(WcfServiceLibrary1. ExecuteService), serviceUri))
     {
         ...
     }
-{% endcodeblock %}
+```
 
 <br/>
 
 再來要建立 ServiceMetadataBehavior 並對其做些對應的設定，像是啟用 HttpGet。 
 
-{% codeblock lang:c# %}
+```c#
     ...
     var smb = new ServiceMetadataBehavior ();
     smb.HttpGetEnabled = true;
     smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
     ...
-{% endcodeblock %}
+```
 
 <br/>
 
 將剛建立的 ServiceMetadataBehavior 加到 ServiceHost.Description.Behaviors。
 
-{% codeblock lang:c# %}
+```c#
     ...
     host.Description.Behaviors.Add(smb);
     ...
-{% endcodeblock %}
+```
 
 <br/>
 
 在開始需要服務時，叫用 ServiceHost 的 Open 方法啟用 WCF 服務。  
 
-{% codeblock lang:c# %}
+```c#
     ...
     host.Open();
     ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -65,17 +65,17 @@ description: "WCF - Self hosting service"
 
 當不再需要使用 WCF Service 服務時，叫用 ServiceHost 的 Close 方法關閉 WCF 服務。  
 
-{% codeblock lang:c# %}
+```c#
     ...
     host.Close();
     ...
-{% endcodeblock %}
+```
 
 <br/>
 
 整個程式寫起來會像下面這樣： 
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,7 +120,7 @@ namespace ConsoleApplication16
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

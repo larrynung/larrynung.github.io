@@ -18,7 +18,7 @@ Embeded Resource 可以將程式需要的檔案內嵌在程式組件內，會增
 
 所以像是純文字檔，就可以像下面這樣處理：
 
-{% codeblock lang:c# %}
+```c#
 private static string ReadAllTextFromEmbededResource(string resourceName)
 {
     var assembly = Assembly.GetExecutingAssembly();
@@ -28,7 +28,7 @@ private static string ReadAllTextFromEmbededResource(string resourceName)
         return reader.ReadToEnd();
     }
 }
-{% endcodeblock %}
+```
 
 Link
 ----

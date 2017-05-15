@@ -26,7 +26,7 @@ description: "ASP.NET - Logging application shutdown events"
 
 程式寫起來就像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ...
         private void LogShutDownInfo()
         {
@@ -56,14 +56,14 @@ description: "ASP.NET - Logging application shutdown events"
             m_Logger.Info (string. Format(" {0}{1}{2}", message, Environment .NewLine, stack));
         }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 使用時只要在 Application_End 中呼叫即可：  
 
-{% codeblock lang:c# %}
+```c#
         /// <summary>
         /// Application_s the end.
         /// </summary>
@@ -74,7 +74,7 @@ description: "ASP.NET - Logging application shutdown events"
             LogShutDownInfo();
         }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

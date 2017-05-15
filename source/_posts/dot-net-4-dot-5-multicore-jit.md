@@ -44,16 +44,16 @@ Multicore JIT 的運作原理主要是將運行分為兩種 Mode。一個是 Rec
 <system.web> 
   <compilation profileGuidedOptimizations="None" />
 </system.web>
-{% endcodeblock %}
+```
 
 <br/>
 
 如果是非 Asp.Net 4.5 與 Silverlight 5 的程式，像是 Window Form 程式之類的則要手動啟用，需埋入兩行程式。  
 
-{% codeblock lang:c# %}
+```c#
  ProfileOptimization.SetProfileRoot(@"C:\MyAppFolder");
  ProfileOptimization.StartProfile("Startup.Profile");
-{% endcodeblock %}
+```
 
 <br/>
 

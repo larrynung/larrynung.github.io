@@ -12,7 +12,7 @@ description: "C# 6.0 - Parameterless constructors in structs"
 
 <!-- More --> 
 
-{% codeblock lang:c# %} 
+```c# 
 ...
 public Blog()
     : this( string.Empty, string.Empty)
@@ -25,7 +25,7 @@ public Blog(string name, string url)
     this.Url = url;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -44,7 +44,7 @@ public Blog(string name, string url)
 
 在 C# 6.0 以後，就比較沒有這樣的限制了，我們可以自行撰寫自己的 Paramless Constructor，加上自己想要的處理動作。唯一要注意的是需要透過 new 語法建立的才會觸發自己撰寫的 Paramless Constructor。  
 
-{% codeblock lang:c# %} 
+```c# 
 ...
 var blog = default( Blog);
 DumpBlog(blog);
@@ -56,14 +56,14 @@ blog = new Blog()
 };
 DumpBlog(blog);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 最後附上完整的使用範例：  
 
-{% codeblock lang:c# %} 
+```c# 
 using System;
 using System.Collections.Generic;
 
@@ -112,7 +112,7 @@ struct Blog
         this.Url = url;
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

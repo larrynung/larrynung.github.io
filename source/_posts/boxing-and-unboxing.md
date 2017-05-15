@@ -16,10 +16,10 @@ Boxing 是種隱含的處理，當 Value Type 物件塞到 Reference Type 時發
 
 舉個例子來說，像是這邊宣告個 int 變數 i，若我們像下面這樣將它塞到 object。  
 
-{% codeblock lang:c# %}
+```c#
 int i = 123; 
 object o = i; // explicit boxing
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/1.png %}
 
@@ -38,11 +38,11 @@ UnBoxing 是種明確的處理，當我們將裝箱的物件明確轉型時發�
 
 像是延續之前的例子，我們將 o 轉型成 int 時，裝箱在裡面的資料會被拆箱出來放到新的 Stack 位置。  
 
-{% codeblock lang:c# %}
+```c#
 int i = 123; // a value type 
 object o = i; // boxing 
 int j = (int)o; // unboxing
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/2.png %}
 
@@ -51,7 +51,7 @@ int j = (int)o; // unboxing
 
 之所以要了解 Boxing & UnBoxing 的運作，是因為他會帶來不必要的性能耗費，透過下面這段簡單的測試就可以清楚的看出。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using System.Diagnostics; 
 
@@ -75,7 +75,7 @@ internal class Program {
         return sw.ElapsedMilliseconds; 
     } 
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/3.png %}
 
@@ -84,7 +84,7 @@ internal class Program {
 
 到這邊你可能會說，其實我很少宣告成 Object，也不會這樣塞值。但真的是這樣嗎？看看以下例子：  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 using System.Diagnostics; 
 internal class Program { 
@@ -107,7 +107,7 @@ internal class Program {
         return sw.ElapsedMilliseconds; 
     } 
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/4.png %}
 
@@ -126,7 +126,7 @@ internal class Program {
 
 像是下面這段程式將整數數值塞入了物件，接著嘗試將物件轉型為 float。  
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 
 internal class Program { 
@@ -141,7 +141,7 @@ internal class Program {
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/5.png %}
 
@@ -155,7 +155,7 @@ internal class Program {
 
 接著看一下下面這段程式。    
 
-{% codeblock lang:c# %}
+```c#
 using System; 
 
 struct Counter 
@@ -179,7 +179,7 @@ internal class Program
        Console.WriteLine(((Counter)riddle.counter).Count); 
     } 
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/BoxingUnBoxing/6.png %}
 

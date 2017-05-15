@@ -22,7 +22,7 @@ class Program
     ...
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -38,7 +38,7 @@ class Program
     ...
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -54,7 +54,7 @@ public string MyProperty
     set => _myProperty = value;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -69,7 +69,7 @@ public event EventHandler MyEvent
     remove => _myEvent -= value;
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -26,7 +26,7 @@ BEGIN
   END LOOP read_employees; 
   CLOSE c_employees;
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -43,6 +43,6 @@ BEGIN
   END LOOP read_employees; 
 END;
 
-{% endcodeblock %}
+```
 
 <br/>

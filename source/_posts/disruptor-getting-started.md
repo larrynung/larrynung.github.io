@@ -24,7 +24,7 @@ description: "Disruptor - Getting started"
 
 像是如果要在收到資料時顯示一些相關的訊息在主控台上，我們就可像下面這樣撰寫 EventHandler：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 public class Data { 
     public string Value { get; set; } 
@@ -40,7 +40,7 @@ public class DataEventHandler : IEventHandler<Data>
     } 
 } 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -64,7 +64,7 @@ DSL 的寫法比較簡潔，首先要告訴 Disruptor 怎樣初始 Ringbuffer �
 
 程式寫起來就像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var disruptor = new Disruptor.Dsl.Disruptor<Data>(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default); 
 
@@ -84,7 +84,7 @@ ringBuffer.Publish(sequenceNo);
 
 disruptor.Shutdown(); 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -103,7 +103,7 @@ Non-DSL 寫起來相對複雜些，一樣要告訴 Disruptor 怎樣初始 Ringbu
 
 程式寫起來就像下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
 var barrier = ringBuffer.NewBarrier(); 
@@ -125,7 +125,7 @@ eventProcessor.Halt();
 
 Application.DoEvents(); 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

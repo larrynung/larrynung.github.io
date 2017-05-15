@@ -24,4 +24,4 @@ SELECT
     a.pid ,a.name ,a.birthday ,b.country 
 FROM person a JOIN country b ON (a.cid = b.cid) 
 WHERE …
-{% endcodeblock %}
+```

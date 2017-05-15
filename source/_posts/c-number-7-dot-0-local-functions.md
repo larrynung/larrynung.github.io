@@ -15,7 +15,7 @@ description: "C# 7.0 - Local functions"
 
 C# 7.0 後，我們可以改用 Local functions 功能去處理。使用方式很簡單，就是一般的方法宣告，只是是寫在方法裡面。像是：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 namespace ConsoleApplication1
@@ -33,14 +33,14 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 這邊也可以搭配使用 C# 6.0 的 Expression Bodied Members，程式碼會更為精簡。 
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 namespace ConsoleApplication1
@@ -55,7 +55,7 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 

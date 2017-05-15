@@ -12,7 +12,7 @@ C# 6.0 以前 await 無法用在 catch/finally 區塊，C# 6.0 後開始支援�
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Threading.Tasks;
 
@@ -45,4 +45,4 @@ namespace ConsoleApplication10
         }
     }
 }
-{% endcodeblock %}
+```

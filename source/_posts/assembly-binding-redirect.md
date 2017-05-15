@@ -31,7 +31,7 @@ Assembly Binding Redirect 可在電腦或是應用程式層級進行組件的導
 	</runtime>
 	...
 </configuration>
-{% endcodeblock %} 
+``` 
 
 <br/>
 
@@ -47,7 +47,7 @@ Assembly Binding Redirect 可在電腦或是應用程式層級進行組件的導
 	</runtime>
 	...
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -68,7 +68,7 @@ Assembly Binding Redirect 可在電腦或是應用程式層級進行組件的導
 	</runtime>
 	...
 </configuration>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -86,7 +86,7 @@ Assembly Binding Redirect 可在電腦或是應用程式層級進行組件的導
 		</dependentAssembly>
 	</assemblyBinding>
 </runtime>
-{% endcodeblock %}
+```
 
 <br/>
 

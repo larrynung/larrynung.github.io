@@ -24,7 +24,7 @@ description: "Disruptor - Diamond: 1P – 3C"
 
 透過 DSL 的方式撰寫，只要同時將兩個 EventHandler 帶入 HandleEventWith，再用 Then 方法串接第三個 EventHandler 即可，像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var disruptor = new Disruptor.Dsl.Disruptor<Data>(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default); 
 
@@ -34,7 +34,7 @@ var ringBuffer = disruptor.Start();
 ...
 disruptor.Shutdown();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -48,7 +48,7 @@ disruptor.Shutdown();
 
 用程式來寫，就是建立一個 Barrier 讓兩個 EventProcessor 共用，然後再建立一個 Barrier 接著前兩個 EventProcessor 的 Sequence， 將之帶入建立第三個 EventProcessor。  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
 var barrier = ringBuffer.NewBarrier(); 
@@ -64,7 +64,7 @@ eventProcessor1.Halt();
 eventProcessor2.Halt(); 
 eventProcessor3.Halt(); 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

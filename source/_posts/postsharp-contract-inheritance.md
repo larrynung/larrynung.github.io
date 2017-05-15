@@ -17,7 +17,7 @@ PostSharp 的 Contract 跟 Conde Contract 一樣，具備可被繼承的特性�
 
 這邊來看個例子，筆者撰寫了個 IWritable 的介面，在其 Write 方法上我們加上了 RequiredAttribute，再建立個 Blog 類別去實作該介面。    
 
-{% codeblock lang:c# %} 
+```c# 
 Using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,7 +68,7 @@ namespace ConsoleApplication1
 		}
 	}
 }
-{% endcodeblock %}
+```
 
 
 <br/>

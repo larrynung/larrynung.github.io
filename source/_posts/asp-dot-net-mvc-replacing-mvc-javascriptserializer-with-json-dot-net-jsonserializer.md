@@ -12,11 +12,11 @@ description: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET Jso
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 ...
 return new JsonResult(model);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -27,7 +27,7 @@ return new JsonResult(model);
 
 Json.Net 提供了 JsonNetResult 可解決這樣的問題，可將程式直接加到專案內使用。
 
-{% codeblock lang:c# %}
+```c#
 /// <summary> 
 /// Simple Json Result that implements the Json.NET serialiser offering more versatile serialisation 
 /// </summary> 
@@ -103,25 +103,25 @@ public class JsonNetResult : ActionResult
         } 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 使用上把本來的 JsonResult 替換成 JsonNetResult 就可以了。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 return new JsonNetResult(model);
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
 
 或是撰寫基底的 Controller 來處理也可以。
 
-{% codeblock lang:c# %}
+```c#
 public class BaseController:Controller
 {
    protected internal override JsonResult Json(object data)
@@ -136,7 +136,7 @@ public class MyController:BaseController
         return Json(model);
     ...
 }
-{% endcodeblock %}
+```
 
 Link
 -------

@@ -12,21 +12,21 @@ description: "JQuery UI - Datepicker Widget"
 
 <!-- More -->
 
-{% codeblock lang:html %}
+```html
 <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="jqueryui/style.css">
-{% endcodeblock %}
+```
 
 <br/>
 
 
 接著在畫面上放入一個 input element。  
 
-{% codeblock lang:html %}
+```html
 <p>Date：<input type="text" id="datepicker"></p>
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -37,7 +37,7 @@ description: "JQuery UI - Datepicker Widget"
   $(function() {
     $("#datepicker").datepicker();
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -60,7 +60,7 @@ description: "JQuery UI - Datepicker Widget"
         }
     });
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -80,7 +80,7 @@ description: "JQuery UI - Datepicker Widget"
     	$("#datepicker").datepicker('show');
     });
   });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -91,7 +91,7 @@ description: "JQuery UI - Datepicker Widget"
 
 最後這邊附上測試用的範例：  
 
-{% codeblock lang:html %}
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -125,7 +125,7 @@ description: "JQuery UI - Datepicker Widget"
  
 </body>
 </html>			
-{% endcodeblock %}
+```
 
 <br/>
 

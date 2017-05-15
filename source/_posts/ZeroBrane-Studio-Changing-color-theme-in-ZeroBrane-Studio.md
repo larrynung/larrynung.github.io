@@ -32,7 +32,7 @@ styles = loadfile('cfg/tomorrow.lua')('TomorrowNightEighties')
 stylesoutshell = styles -- apply the same scheme to Output/Console windows
 styles.auxwindow = styles.text -- apply text colors to auxiliary windows
 styles.calltip = styles.text -- apply text colors to tooltips
-{% endcodeblock %}
+```
 
 <br/>
 

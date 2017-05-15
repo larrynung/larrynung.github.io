@@ -27,20 +27,20 @@ Expression bodied members 是預計要在 C# 6.0 釋出的新功能，目前已�
 
 像是成員屬性的處理會像下面這樣，少了本來大括弧的區塊，也少了 Get 區塊。    
 
-{% codeblock lang:c# %}
+```c#
 ...
 public string ID => Guid.NewGuid().ToString();
 ...
-{% endcodeblock %}
+```
 
 
 如果是成員方法處理上也類似，只是本來大括弧區塊內的內容用 Lambda 取代。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 public override string ToString() => this.Name;
 ...
-{% endcodeblock %}
+```
 
 
 這邊可以看到用這樣的寫法可能會造成很難區別是屬性還是方法，使用上要特別注意小心，基本上差異只在於後面有沒有接小括弧區塊及方法的參數。  
@@ -50,7 +50,7 @@ public override string ToString() => this.Name;
 
 最後看個完整的範例：  
 
-{% codeblock lang:c# %}
+```c#
 using System;
 
 
@@ -71,7 +71,7 @@ public class Program(string name)
         Console.WriteLine(p.ToString());
     }
 }
-{% endcodeblock %}
+```
 
 
 運行結果：  

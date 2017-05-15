@@ -26,14 +26,14 @@ ASP.NET MVC 預設會載入多個 View engine，儘管在專案建立之時我�
 
 因此像這樣載入過多的 View engine 反而形成不必要的耗費，故我們可以在啟動時加入程式將之移除。
 
-{% codeblock lang:c# %} 
+```c# 
 protected void Application_Start()
 {
     ViewEngines.Engines.Clear();
     ViewEngines.Engines.Add(new RazorViewEngine());
     ...
 }
-{% endcodeblock %}
+```
 
 <br/>
 

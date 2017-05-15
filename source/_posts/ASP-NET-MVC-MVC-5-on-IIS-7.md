@@ -24,7 +24,7 @@ tags: [ASP.NET MVC]
       <add name="UrlRoutingModule-4.0" type="System.Web.Routing.UrlRoutingModule" preCondition=""></add>
     </modules>
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

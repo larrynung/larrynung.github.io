@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 像是下面這邊的程式就宣告了幾個變數，開啟 Cursor 後遍巡，將資料塞到變數後再進一步處理。  
 
-{% codeblock lang:c# %}
+```c#
 DECLARE 
     CURSOR c_user IS 
         SELECT user_id, firstname, lastname 
@@ -33,7 +33,7 @@ BEGIN
     END LOOP; 
     CLOSE c_user; 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -56,4 +56,4 @@ BEGIN
     END LOOP process_user; 
     CLOSE c_user; 
 END;
-{% endcodeblock %}
+```

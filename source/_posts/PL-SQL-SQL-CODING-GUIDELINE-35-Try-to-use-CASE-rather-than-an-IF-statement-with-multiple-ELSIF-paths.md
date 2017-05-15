@@ -26,7 +26,7 @@ THEN
 ELSIF l_color = 'black' 
 THEN 
     ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -39,4 +39,4 @@ CASE l_color
     WHEN 'blue' THEN ... 
     WHEN 'black' THEN ... 
 END
-{% endcodeblock %}
+```

@@ -42,7 +42,7 @@ install:
 script:
   - xbuild Source/LevelUp.Extensions.Core/LevelUp.Extensions.Core.csproj
   - xbuild Source/LevelUp.Extensions.Control/LevelUp.Extensions.Control.csproj
-{% endcodeblock %}
+```
 
 
 若有單元測試的需求，這邊可改用 Nunit 去做測試。設定檔這邊只要在安裝 Mono 時順帶安裝 nunit-console ，然後在 script 那邊透過 nunit-console 進行測試即可。
@@ -58,7 +58,7 @@ script:
   - xbuild Source/LevelUp.Extensions.Core/LevelUp.Extensions.Core.csproj
   - xbuild Source/LevelUp.Extensions.Control/LevelUp.Extensions.Control.csproj
   - nunit-console Bin/LevelUp.Extensions.Test.dll -exclude Integration,NotWorkingOnMono
-{% endcodeblock %}
+```
 
 
 Link

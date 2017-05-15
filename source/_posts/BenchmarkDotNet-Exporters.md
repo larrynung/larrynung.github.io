@@ -25,7 +25,7 @@ Exporter 會將 benchmark 的結果輸出成不同的格式。
 
 使用上只要透過 Attribue 掛上 benchmark 類別即可：
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Attributes.Exporters;
 …
 [AsciiDocExporter] 
@@ -35,7 +35,7 @@ using BenchmarkDotNet.Attributes.Exporters;
 public class ProgramBenchmarker { 
   …
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -43,7 +43,7 @@ public class ProgramBenchmarker {
 
 或是透過 config 的方式設定也可以。
 
-{% codeblock lang:c# %}
+```c#
 using BenchmarkDotNet.Configs; 
 using BenchmarkDotNet.Exporters; 
 using BenchmarkDotNet.Exporters.Csv; 
@@ -61,7 +61,7 @@ public class ProgramBenchmarker {
   } 
   …
 }
-{% endcodeblock %}
+```
 
 <br/>
 預設輸出的檔案會被放置於 `.\BenchmarkDotNet.Artifacts\results` 下°  

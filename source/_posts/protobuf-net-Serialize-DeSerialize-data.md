@@ -8,7 +8,7 @@ protobuf-net 預設只支援序列化至 stream，或是自 stream 姐序列化�
 
 <!-- More -->
 
-{% codeblock lang:c# %}
+```c#
 private static void SerializeToStream<T>(T obj, Stream stream) { 
     Serializer.Serialize(stream, obj); 
 } 
@@ -16,7 +16,7 @@ private static void SerializeToStream<T>(T obj, Stream stream) {
 private static T DeSerializeFromStream<T>(Stream stream) { 
     return Serializer.Deserialize<T>(stream); 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -37,14 +37,14 @@ private static T DeSerializeFromText<T>(string text) {
         return DeSerializeFromStream<T>(ms); 
     } 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
 
 序列化到檔案的話，就是開啟檔案串流，將物件序列化到檔案串流即可。解序列化一樣反向操作。  
 
-{% codeblock lang:c# %}
+```c#
 public virtual void SerializeToFile<T>(T obj, String file, Int32 bufferSize = 1024) { 
     using (var fs = File.Open(file, FileMode.Create, FileAccess.Write)) { 
         using (var bs = new BufferedStream(fs, bufferSize)) { 
@@ -60,4 +60,4 @@ public virtual T DeSerializeFromFile<T>(String file, Int32 bufferSize) {
         } 
     } 
 }
-{% endcodeblock %}
+```

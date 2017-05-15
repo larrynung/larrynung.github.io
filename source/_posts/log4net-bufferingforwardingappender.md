@@ -12,7 +12,7 @@ description: "log4net - BufferingForwardingAppender"
 
 <!-- More --> 
 
-{% codeblock lang:c# %}
+```c#
 using System;
 using System.Diagnostics;
 using log4net;
@@ -39,7 +39,7 @@ namespace ConsoleApplication27
         }
     }
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -73,7 +73,7 @@ namespace ConsoleApplication27
     </appender>
   </log4net>
 </configuration>
-{% endcodeblock %}
+```
 
 </br>
 
@@ -125,7 +125,7 @@ namespace ConsoleApplication27
 
 所以我們需要在程式中適當的時機點，像是在 Application_End 或是在全域例外處理這邊，將 Buffer Flush 讓 Log 可被寫入。  
 
-{% codeblock lang:c# %}
+```c#
 ...
 static void Main(string[] args)
 {
@@ -151,7 +151,7 @@ public static void FlushBuffers()
     }
 }
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

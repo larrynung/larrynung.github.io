@@ -14,7 +14,7 @@ var grunt = require('grunt');
 grunt.registerTask('default', '',function(){ 
   console.log('hello world'); 
 });
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -40,7 +40,7 @@ grunt.registerTask('hello', '', function(name){
   console.log('hello ' + name); 
 }); 
 grunt.registerTask('default', ['world', 'hello:adrian']);
-{% endcodeblock %}
+```
 
 <br/>
 

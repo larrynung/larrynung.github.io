@@ -45,7 +45,7 @@ class Address {
     [ProtoMember(2)] 
     public string Line2 {get;set;} 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -63,7 +63,7 @@ var person = new Person {
 using (var file = File.Create("person.bin")) { 
     Serializer.Serialize(file, person); 
 }
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -75,7 +75,7 @@ Person newPerson;
 using (var file = File.OpenRead("person.bin")) { 
     newPerson = Serializer.Deserialize<Person>(file); 
 }
-{% endcodeblock %}
+```
 
 <br/>
 

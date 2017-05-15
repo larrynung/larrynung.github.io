@@ -26,7 +26,7 @@ BEGIN
     INTO l_result 
     FROM dual; 
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -45,4 +45,4 @@ BEGIN
         ELSE 7 
     END; 
 ...
-{% endcodeblock %}
+```

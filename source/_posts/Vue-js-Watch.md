@@ -13,7 +13,7 @@ Vue.js 的 watch 可以設定監控特定的屬性，當屬性值變動時做對
 
 使用上只要在建構 Vue 建立時設定 watch 物件，裡面放置屬性值變化時要做的處理即可。   
 
-{% codeblock lang:html %}
+```html
 {% raw %}
   <div  id = "app">
     ...
@@ -34,14 +34,14 @@ Vue.js 的 watch 可以設定監控特定的屬性，當屬性值變動時做對
     })
   </script>
 {% endraw %}
-{% endcodeblock %}
+```
 
 <br/>
 
 
 像是下面這樣的程式，設定了 message 變動時將訊息寫入 console 內。  
 
-{% codeblock lang:html %}
+```html
 {% raw %}
 <!DOCTYPE html>
 <html>
@@ -70,7 +70,7 @@ Vue.js 的 watch 可以設定監控特定的屬性，當屬性值變動時做對
 </body>
 </html>
 {% endraw %}
-{% endcodeblock %}
+```
 
 <br/>
 

@@ -23,7 +23,7 @@ description: "Octopress - Failed to push some refs to GitHub"
 cd _deploy
 git reset --hard origin/master
 cd ..
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -40,7 +40,7 @@ cd ..
 {% codeblock lang:bash %}
 rake generate
 rake deploy
-{% endcodeblock %}
+```
 
 <br/>
 

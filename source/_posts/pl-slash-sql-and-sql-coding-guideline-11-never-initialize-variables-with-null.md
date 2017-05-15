@@ -18,7 +18,7 @@ DECLARE
 BEGIN 
 	... 
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -31,4 +31,4 @@ DECLARE
 BEGIN 
 	... 
 END;
-{% endcodeblock %}
+```

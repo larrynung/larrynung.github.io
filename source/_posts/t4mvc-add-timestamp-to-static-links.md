@@ -18,6 +18,6 @@ T4MVC 除了解決 ASP.NET MVC Magic String 的問題外，還能解決常見的
 ...
 <AddTimestampToStaticLinks>True</AddTimestampToStaticLinks>
 ...
-{% endcodeblock %}
+```
 
 這樣使用 T4MVC 去取用靜態檔案的位置時，T4MVC 就會幫我們在網址後面依照檔案的修改時間去附加雜湊值，避免前端快取。

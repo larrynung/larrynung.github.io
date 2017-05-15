@@ -17,7 +17,7 @@ C# 7.0 開始支援	Throw expressions。
 ...
 this.FirstName = firstName == null ? throw new ArgumentNullException(nameof(firstName)) : firstName;
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -28,7 +28,7 @@ this.FirstName = firstName == null ? throw new ArgumentNullException(nameof(firs
 ...
 this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -39,7 +39,7 @@ Expression bodied member 也可以丟出 exception。
 ...
 public override string ToString() => throw new NotImplementedException();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -68,7 +68,7 @@ public override string ToString() => throw new NotImplementedException();
 
         public override string ToString() => throw new NotImplementedException();
     }
-{% endcodeblock %}
+```
 
 <br/>
 

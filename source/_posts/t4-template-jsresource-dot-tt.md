@@ -17,7 +17,7 @@ description: "T4 Template - JsResource.tt"
 
 這邊筆者嘗試使用 T4 來解決這樣的問題。  
 
-{% codeblock lang:c# %}
+```c#
 <#@ template language="C#" debug="false" hostspecific="true"#>
 <#@ assembly name="System.Windows.Forms" #>
 <#@ assembly name="System.Core" #>
@@ -205,7 +205,7 @@ DeleteOldOutputs();
         return vsProject;
     }
 #>
-{% endcodeblock %}
+```
 
 <br/>
 

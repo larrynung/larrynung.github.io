@@ -37,7 +37,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 
 這邊筆者是用一個字典檔存放羅馬數字字元與其對應的數值，從輸入參數的後面往前處理，如果前一個字元對應到的數值大於現在這字元的數值，則將回傳值減去當前數值，反之則加上當前數值。  
 
-{% codeblock lang:c# %}
+```c#
 public class Solution {
     public int RomanToInt(string s) {
         var dict = new Dictionary<char, int>()
@@ -68,7 +68,7 @@ public class Solution {
 		return ret;
     }
 }
-{% endcodeblock %}
+```
 
 {% img /images/posts/RomanToInt/1.png %}
 

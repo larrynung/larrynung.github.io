@@ -39,7 +39,7 @@ BEGIN
   END IF;
 END password_check;
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -71,7 +71,7 @@ BEGIN
   END IF;
 END password_check;
 ...
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -87,4 +87,4 @@ BEGIN
   END IF;
 END password_check;
 ...
-{% endcodeblock %}
+```

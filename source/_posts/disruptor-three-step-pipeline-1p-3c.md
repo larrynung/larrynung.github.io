@@ -24,7 +24,7 @@ description: "Disruptor - Three Step Pipeline: 1P – 3C"
 
 透過 DSL 的方式撰寫，就是用 Then 去串接後續的 EventHandler，像是下面這樣：  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var disruptor = new Disruptor.Dsl.Disruptor<Data>(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default); 
 
@@ -36,7 +36,7 @@ var ringBuffer = disruptor.Start();
 ...
 disruptor.Shutdown(); 
 …
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -50,7 +50,7 @@ disruptor.Shutdown();
 
 用程式來寫，就是要建立一個 Barrier 將之帶入並建立 EventProcessor，接著將第一個 EventProcessor 的 Sequence 帶入建立出第二個 Barrier，再用第二個 Barrier 建立第二個 EventProcessor，最後用第二個 EventProcessor 的 Sequence 建立出第三個 Barrier，用第三個 Barrier 去建立第三個 EventProcessor 即可。  
 
-{% codeblock lang:c# %}
+```c#
 ... 
 var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
 var eventProcessor1 = new BatchEventProcessor<Data>(ringBuffer, ringBuffer.NewBarrier(), new DataEventHandler("Handler1")); 
@@ -65,7 +65,7 @@ eventProcessor1.Halt();
 eventProcessor2.Halt(); 
 eventProcessor3.Halt();
 ...
-{% endcodeblock %}
+```
 
 <br/>
 

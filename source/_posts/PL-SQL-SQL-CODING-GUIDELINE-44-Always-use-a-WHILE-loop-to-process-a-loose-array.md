@@ -29,7 +29,7 @@ BEGIN
     END LOOP process_employees;
   END IF;
 END;
-{% endcodeblock %}
+```
 
 <br/>
 
@@ -50,4 +50,4 @@ BEGIN
     l_index := t_employees.NEXT(l_index); 
   END LOOP process_employees; 
 END;
-{% endcodeblock %}
+```
