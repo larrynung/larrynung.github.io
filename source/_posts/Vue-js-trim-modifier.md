@@ -14,7 +14,7 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
 以下面這段程式為例，若不使用 .trim modifer，輸入的資料如果有空格，繫結的屬性值也會含有空格。  
 
 ```html
-{% raw %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +36,7 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
   </script>
 </body>
 </html>
-{% endraw %}
+
 ```
 
 <br/>
@@ -50,7 +50,7 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
 這時候需要使用 .trim modifier 來解決這樣的問題，將繫結的屬性值去除多餘的空格。  
 
 ```html
-{% raw %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +72,7 @@ Vue.js 的 .trim modifier 可以將繫結的屬性值去除多餘的空格。
   </script>
 </body>
 </html>
-{% endraw %}
+
 ```
 
 <br/>

@@ -61,7 +61,7 @@ simple 範本建立出來的專案就只有一個 index.html 檔，裡面已經�
 <br/>
 
 
-可以看到 script 這邊建立了一個 vue 物件，裡面設定了 el 為 #app，指向上方 id 為 app 的 div 為其作用範圍。接著設定 data，裡面有個 message 值為 'Hello World'，會被綁定到上方的 {% raw %}{{message}}{% endraw %}。  
+可以看到 script 這邊建立了一個 vue 物件，裡面設定了 el 為 #app，指向上方 id 為 app 的 div 為其作用範圍。接著設定 data，裡面有個 message 值為 'Hello World'，會被綁定到上方的 {{message}}。  
 
 <br/>
 
