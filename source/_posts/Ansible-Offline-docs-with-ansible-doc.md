@@ -75,3 +75,8 @@ ansible-doc 的使用方式如下：
 {% asset_img 4.png %}
 
 <br/>
+
+
+Link
+----
+* [Offline docs with ansible-doc](https://ansibledaily.com/offline-docs-with-ansible-doc/)
