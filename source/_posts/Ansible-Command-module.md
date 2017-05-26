@@ -13,7 +13,7 @@ Ansible 的 Command module 可以用來執行命令。
 
 可用的參數如下：  
 
-| parameter | required | default | choices | comments
+| parameter | required | default | choices | comments |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | chdir | no | | | cd into this directory before running the command |
 | creates | no | | | a filename or (since 2.0) glob pattern, when it already exists, this step will not be run. |
