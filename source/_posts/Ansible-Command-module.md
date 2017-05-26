@@ -20,7 +20,7 @@ Ansible 的 Command module 可以用來執行命令。
 | executable | no | | | change the shell used to execute the command. Should be an absolute path to the executable. |
 | free_form | yes | | | the command module takes a free form command to run. There is no parameter actually named 'free form'. See the examples! |
 | removes | no | | | a filename or (since 2.0) glob pattern, when it does not exist, this step will not be run. |
-| warn | no | True | | | if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false. |
+| warn | no | True | | if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false. |
 
 <br/>
 
