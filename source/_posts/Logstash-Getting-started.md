@@ -41,3 +41,12 @@ Logstash 安裝好後，可以用 Logstash 的 -e 參數帶入 Logstash 設定�
 {% asset_img 4.png %}
 
 <br/>
+
+
+除了 Input & Output 外，也可以試著設定 Filter，像是要用 Filter 去將訊息內的 IP 切成 client field，可以像下面這樣調用。  
+
+    logstash -e 'input { stdin{} } filter { grok { match => { "message" => "%{IP:client}" } } } output { stdout { codec => rubydebug } }'
+ 
+{% asset_img 5.png %}
+
+<br/>
