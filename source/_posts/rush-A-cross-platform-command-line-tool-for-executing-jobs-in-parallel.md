@@ -11,7 +11,7 @@ rush 是一跨平台的命令列工具，能用來並行指定的命令。
 <br/>
 
 
-至官網上下載下來後解壓縮即可使用。  
+自官網上下載下來後解壓縮即可使用。  
 
 {% asset_img 1.png %}
 
@@ -20,29 +20,29 @@ rush 是一跨平台的命令列工具，能用來並行指定的命令。
 
 其使用方式如下：  
 
+```
+rush -- a cross-platform command-line tool for executing jobs in parallel
 
-    rush -- a cross-platform command-line tool for executing jobs in parallel
-    
-    Version: 0.1.9
-    
-    Author: Wei Shen <shenwei356@gmail.com>
-    
-    Homepage: https://github.com/shenwei356/rush
-    
-    Usage:
-      rush [flags] [command] [args of command...]
-    
-    Examples:
-      1. simple run, quoting is not necessary
-          $ seq 1 10 | rush echo {}
-      2. keep order
-          $ seq 1 10 | rush 'echo {}' -k
-      3. timeout
-          $ seq 1 | rush 'sleep 2; echo {}' -t 1
-      4. retry
-          $ seq 1 | rush 'python script.py' -r 3
-      5. dirname & basename & remove suffix
-          $ echo dir/file_1.txt.gz | rush 'echo {/} {%} {^_1.txt.gz}'
+Version: 0.1.9
+
+Author: Wei Shen <shenwei356@gmail.com>
+
+Homepage: https://github.com/shenwei356/rush
+
+Usage:
+  rush [flags] [command] [args of command...]
+
+Examples:
+  1. simple run, quoting is not necessary
+      $ seq 1 10 | rush echo {}
+  2. keep order
+      $ seq 1 10 | rush 'echo {}' -k
+  3. timeout
+      $ seq 1 | rush 'sleep 2; echo {}' -t 1
+  4. retry
+      $ seq 1 | rush 'python script.py' -r 3
+  5. dirname & basename & remove suffix
+      $ echo dir/file_1.txt.gz | rush 'echo {/} {%} {^_1.txt.gz}'
           dir file.txt.gz dir/file
       6. basename without last or any extension
           $ echo dir.d/file.txt.gz | rush 'echo {.} {:} {%.} {%:}'
@@ -100,7 +100,7 @@ rush 是一跨平台的命令列工具，能用來並行指定的命令。
       -T, --trim string               trim white space (" \t\r\n") in input (available values: "l" for left, "r" for right, "lr", "rl", "b" for both side)
           --verbose                   print verbose information
       -V, --version                   print version information and check for update
-
+```
 
 <br/>
 
