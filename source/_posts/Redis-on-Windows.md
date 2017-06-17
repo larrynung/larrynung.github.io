@@ -77,7 +77,7 @@ tags: [Redis]
 <br/>
 
 
-更進一步可以直接使用 Telnet。
+更進一步可以使用 Telnet。
 
 {% asset_img 12.png %}
 
