@@ -101,10 +101,11 @@ rush 是一跨平台的命令列工具，能用來並行指定的命令。
           --verbose                   print verbose information
       -V, --version                   print version information and check for update
 
+
 <br/>
 
 
-比較重要的參數有 -D、-k、-T。
+比較重要的參數有 -D、-k、-T。  
 
 <br/>
 
