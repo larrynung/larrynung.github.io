@@ -77,9 +77,21 @@ tags: [Redis]
 <br/>
 
 
-更進一步可以直接使用附帶的 redis-cli 工具進行一下 Redis 的連線測試。  
+更進一步可以直接使用 Telnet。
 
 {% asset_img 12.png %}
+
+<br/>
+
+
+{% asset_img 13.png %}
+
+<br/>
+
+
+或是自帶的 redis-cli 工具進行一下 Redis 的連線測試。  
+
+{% asset_img 14.png %}
 
 <br/>
 
