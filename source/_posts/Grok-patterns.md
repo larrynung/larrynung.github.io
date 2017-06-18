@@ -4,14 +4,28 @@ date: 2017-06-17 21:49:06
 tags:
 ---
 
-使用 Logstash 免不了會用到 Grok patterns，Grok patterns 其實也就只是預先定義好的正規表示式，設定怎麼匹配，以及匹配成功後的 Group name，讓設定變得更為簡易、直覺。  
+使用 Logstash 免不了會用到 Grok patterns，Grok patterns 其實也就只是用預先定義好的正規表示式來設定怎麼匹配，以及匹配成功後的 Group name，讓設定變得更為簡易、直覺。  
 
 <!-- More -->
 
 <br/>
 
 
-Grok patterns 的設定可參閱 [logstash/grok-patterns at v1.4.2 · elastic/logstash](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)，參閱設定可更加了解要怎樣使用 Grok patterns，以及有助了解設定的 Grok patterns 為何會無法生效。  
+Grok patterns 的語法為...  
+
+    %{SYNTAX:SEMANTIC}
+
+<br/>
+
+
+SYNTAX 就是預先定義好的正規表示式，SEMANTIC 就是正規表示式匹配後的 Group name，等同於使用下面這樣的正規表示式語法。  
+
+    (?<<GroupName>><RegexPattern>)
+
+<br/>
+
+
+SYNTAX 的設定可參閱 [logstash/grok-patterns at v1.4.2 · elastic/logstash](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)，參閱設定可更加了解要怎樣使用 SYNTAX，以及有助了解設定的 SYNTAX 為何會無法正確的匹配。  
 
 ```
 USERNAME [a-zA-Z0-9._-]+
@@ -110,10 +124,28 @@ COMBINEDAPACHELOG %{COMMONAPACHELOG} %{QS:referrer} %{QS:agent}
 LOGLEVEL ([Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|INFO|[Ww]arn?(?:ing)?|WARN?(?:ING)?|[Ee]rr?(?:or)?|ERR?(?:OR)?|[Cc]rit?(?:ical)?|CRIT?(?:ICAL)?|[Ff]atal|FATAL|[Ss]evere|SEVERE|EMERG(?:ENCY)?|[Ee]merg(?:ency)?)
 ```
 
+<br/>  
+
+
+像是如果要將 IP 資料做個匹配，匹配後切到指定的欄位，就可以使用 IP SYNTAX 去做設定。  
+
+{% asset_img 1.png %}
+
 <br/>
 
 
-像是下面這樣的資料。  
+這樣的寫法也就等同於使用下面這樣的正規表示式去匹配。  
+
+    (?<ip>((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?|(?<![0-9])(?:(?:25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.](?:25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.](?:25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.](?:25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2}))(?![0-9]))
+
+
+{% asset_img 2.png %}
+
+<br/>
+
+
+
+如果是複雜一點的資料，像是下面這樣的資料。  
 
     55.3.244.1 GET /index.html 15824 0.043
 
@@ -125,24 +157,24 @@ LOGLEVEL ([Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|
     %{IP:client} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:bytes} %{NUMBER:duration}
 
 
-{% asset_img 1.png %}
+{% asset_img 3.png %}
 
 <br/>
 
 
-如果是像下面這樣的資料。  
+如果資料是像下面這樣。  
 
     2016-09-19T18:19:00 [8.8.8.8:prd] DEBUG this is an example log message
 
 <br/>
 
 
-Grok patterns 就可以像這樣設定。  
+那 Grok patterns 則可像這樣設定。  
 
     %{TIMESTAMP_ISO8601:timestamp} \[%{IPV4:ip}:%{WORD:environment}\] %{LOGLEVEL:log_level} %{GREEDYDATA:message}
 
 
-{% asset_img 2.png %}
+{% asset_img 4.png %}
 
 <br/>
 
