@@ -15,7 +15,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，使用 WHEN OTHERS 搭配 IF 條件式與 SQLCODE 去處理例外，就是不建議的作法。  
 
-```sql
+```psql
 ...
 EXCEPTION 
   WHEN OTHERS 
@@ -36,7 +36,7 @@ EXCEPTION
 
 如果明確使用例外的名稱去處理例外，可以免去不必要的 IF 判斷，及 SQLCODE 的使用。  
 
-```sql
+```psql
 ...
 EXCEPTION 
   WHEN DUP_VAL_ON_INDEX 

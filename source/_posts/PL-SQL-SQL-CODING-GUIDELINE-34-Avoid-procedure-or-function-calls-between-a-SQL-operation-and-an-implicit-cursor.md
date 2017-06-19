@@ -16,7 +16,7 @@ keywords: "PL/SQL"
 
 像是下面的例子，這邊先刪除了一些資料，後續要用 SQL%ROWCOUNT 去判斷刪除的筆數，但中間卻調用了其它 function，以致於 SQL%ROWCOUNT 的值不如我們的預期。  
 
-```sql
+```psql
 CREATE PROCEDURE remove_emp_and_process (in_id IN emp.empno%TYPE) 
 AS 
 BEGIN 

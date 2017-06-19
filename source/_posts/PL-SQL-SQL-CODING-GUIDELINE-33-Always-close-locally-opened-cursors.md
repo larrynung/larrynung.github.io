@@ -14,7 +14,7 @@ keywords: "PL/SQL"
 
 像是下面這樣將游標開啟後並未揪游標關閉，使用的資源不會自動釋放。  
 
-```sql
+```psql
 CREATE PROCEDURE not_close_cursor (out_count OUT INTEGER) 
 AS 
     CURSOR c1 
@@ -35,7 +35,7 @@ END not_close_cursor;
 
 應該要自己將游標在適當的時機點關閉，使用的資源才會被釋放。  
 
-```sql
+```psql
 CREATE PROCEDURE close_cursor (out_count OUT INTEGER) 
 AS 
     CURSOR c1 

@@ -13,7 +13,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，雖然使用了 EXIT WHEN 跳離迴圈，但是未搭配 label 使用，因此在巢狀迴圈下得一層一層的跳離。  
 
-```sql
+```psql
 BEGIN 
   ...
   <<outerloop>> 
@@ -34,7 +34,7 @@ END;
 
 如果將 EXIT WHEN 搭配 label 使用可以直接在巢狀迴圈下跳離，這樣程式會比較簡短、清晰、且易於維護。  
 
-```sql
+```psql
 BEGIN 
   ...
   <<outerloop>> 

@@ -15,7 +15,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，使用了 EXIT 去跳離迴圈，但是非 basic loop 都有迴圈的邊界條件可以設定，可以做到一樣的事情，所以這樣的寫法並不是很好。  
 
-```sql
+```psql
 ...
 i := co_min_value;
 <<while_loop>>
@@ -46,7 +46,7 @@ END LOOP process_employees;
 
 若使用非 basic loop，建議使用邊界條件來跳離迴圈。而 basic loop 因為沒有邊界條件的設定，因此也只能使用 EXIT 來跳離迴圈。  
 
-```sql
+```psql
 <<while_loop>>
 WHILE (i <= co_max_value)
 LOOP

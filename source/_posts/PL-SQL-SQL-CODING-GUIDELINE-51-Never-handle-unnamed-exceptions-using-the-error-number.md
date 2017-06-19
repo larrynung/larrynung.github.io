@@ -15,7 +15,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，直接使用 Error Number -2291 去處理 Unnamed Exception 就不是建議的作法。  
 
-```sql
+```psql
 BEGIN 
   ... 
 EXCEPTION 
@@ -33,7 +33,7 @@ END;
 
 比較好的作法是透過 pragma exception_init 將未命名的內部錯誤做個命名，然後直接用這個命名去攔截對應的錯誤做對應的處理。
 
-```sql
+```psql
 DECLARE 
   e_parent_missing EXCEPTION; 
   PRAGMA EXCEPTION_INIT(e_parent_missing,-2291); 

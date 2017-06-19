@@ -15,7 +15,7 @@ keywords: "PL/SQL"
 
 
 不要用 Not %FOUND 去撰寫判斷邏輯。  
-```sql
+```psql
 LOOP 
     FETCH c_employees INTO r_employee; 
     EXIT WHEN NOT c_employees%FOUND; 
@@ -27,7 +27,7 @@ END LOOP;
 
 
 取而代之的是要用 %NOTFOUND 去撰寫判斷邏輯。  
-```sql
+```psql
 LOOP 
     FETCH c_employees INTO r_employee; 
     EXIT WHEN c_employees%NOTFOUND; 

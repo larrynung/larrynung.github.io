@@ -19,7 +19,7 @@ keywords: "PL/SQL"
 
 使用上會像是下面這樣：  
 
-```sql
+```psql
 SELECT 
     a.pid ,a.name ,a.birthday ,b.country 
 FROM person a JOIN country b ON (a.cid = b.cid) 

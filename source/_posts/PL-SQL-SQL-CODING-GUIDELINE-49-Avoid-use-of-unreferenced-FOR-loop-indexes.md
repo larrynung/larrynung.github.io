@@ -13,7 +13,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式使用了 numeric FOR loop，卻未使用 FOR loop 的索引，導致程式碼變得更為複雜沒有效率。  
 
-```sql
+```psql
 DECLARE
     ...
 BEGIN
@@ -34,7 +34,7 @@ END;
 
 比較好的作法是要看看是否能透過索引撰寫出更適合的程式，如果不行則要反思這邊使用 numeric FOR loop 是否合適。  
 
-```sql
+```psql
 DECLARE
     ...
 BEGIN

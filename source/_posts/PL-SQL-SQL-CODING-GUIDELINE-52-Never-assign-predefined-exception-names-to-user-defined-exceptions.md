@@ -15,7 +15,7 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 像是下面這樣的程式，使用自定義錯誤重新定義了 no_data_found 錯誤，就是不建議的作法。  
 
-```sql
+```psql
 DECLARE 
   no_data_found EXCEPTION; 
   …
@@ -33,7 +33,7 @@ END;
 
 比較好的作法應該是反思是否需要重新定義 Oracle 預先定義的錯誤、是否應該定義的是不同的錯誤。  
 
-```sql
+```psql
 DECLARE 
   empty_value EXCEPTION; 
   ... 
