@@ -18,7 +18,7 @@ tags: [Grok]
 <br/>
 
 
-像是要處理 IP 資料，就可以在 Input 部份帶入要處理的 IP，在 Pattern 部份帶入 %{IP:<SEMANTIC>} 這樣的 Grok pattern，下方即會顯現經由 Grok pattern 處理完的結果，也就是 Logstash 的 field，以及其對應的資料。  
+像是要處理 IP 資料，就可以在 Input 部份帶入要處理的 IP，在 Pattern 部份帶入 %{IP:ip} 這樣的 Grok pattern，下方即會顯現經由 Grok pattern 處理完的結果，也就是 Logstash 的 field，以及其對應的資料。  
 
 {% asset_img 2.png %}
 
