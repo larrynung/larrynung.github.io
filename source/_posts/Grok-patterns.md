@@ -1,7 +1,7 @@
 ---
 title: Grok patterns
 date: 2017-06-17 21:49:06
-tags:
+tags: [Grok]
 ---
 
 使用 Logstash 免不了會用到 Grok patterns，Grok patterns 其實也就只是用預先定義好的正規表示式來設定怎麼匹配，以及匹配成功後的 Group name，讓設定變得更為簡易、直覺。  
