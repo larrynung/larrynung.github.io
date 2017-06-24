@@ -21,7 +21,7 @@ tags: [Yarn]
 <br/>
 
 
-apt-get 更新後即可進行 Yarn 的安裝。  
+Repository 設定完後，更新 apt-get，更新完即可進行 Yarn 的安裝。  
 
     sudo apt-get update && sudo apt-get install yarn
 
