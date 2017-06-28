@@ -6,6 +6,8 @@ tags: [Yarn]
 
 要透過 APT 安裝 Yarn，需要先設定 Repository。  
 
+<!-- More -->
+
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 
 {% asset_img 1.png %}
