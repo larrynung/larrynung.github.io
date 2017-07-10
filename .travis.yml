@@ -5,9 +5,10 @@ branches:
   only:
   - hexo
 before_install:
+- npm install -g yarn
 - npm install -g hexo-cli gulp
 install:
-- npm install
+- yarn
 script:
 - hexo clean
 - hexo generate
