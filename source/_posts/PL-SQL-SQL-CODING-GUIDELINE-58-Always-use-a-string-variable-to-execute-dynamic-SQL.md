@@ -17,9 +17,9 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 ```plsql
 DECLARE
-l_empno emp.empno%TYPE := 4711;
+  l_empno emp.empno%TYPE := 4711;
 BEGIN
-EXECUTE IMMEDIATE 'DELETE FROM emp WHERE epno = :p_empno' USING l_empno;
+  EXECUTE IMMEDIATE 'DELETE FROM emp WHERE epno = :p_empno' USING l_empno;
 END;
 ```
 
@@ -30,14 +30,14 @@ END;
 
 ```plsql
 DECLARE
-l_empno emp.empno%TYPE := 4711;
-l_sql VARCHAR2(32767);
+  l_empno emp.empno%TYPE := 4711;
+  l_sql VARCHAR2(32767);
 BEGIN
-l_sql := 'DELETE FROM emp WHERE epno = :p_empno';
-EXECUTE IMMEDIATE l_sql USING l_empno;
+  l_sql := 'DELETE FROM emp WHERE epno = :p_empno';
+  EXECUTE IMMEDIATE l_sql USING l_empno;
 EXCEPTION
-WHEN others
-THEN
-DBMS_OUTPUT.PUT_LINE(l_sql);
+  WHEN others
+  THEN
+    DBMS_OUTPUT.PUT_LINE(l_sql);
 END;
 ```
