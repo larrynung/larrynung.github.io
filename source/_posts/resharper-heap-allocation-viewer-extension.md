@@ -3,7 +3,7 @@ layout: post
 title: "ReSharper - Heap Allocation Viewer Extension"
 date: 2014-08-12 00:10:00
 comments: true
-tags: [Visual Studio]
+tags: [Visual Studio, ReSharper]
 keywords: "Visual Studio, ReSharper, Heap, Boxing"
 description: "ReSharper - Heap Allocation Viewer Extension"
 ---
