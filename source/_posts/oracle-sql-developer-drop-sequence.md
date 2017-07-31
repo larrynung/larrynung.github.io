@@ -3,7 +3,7 @@ layout: post
 title: "Oracle SQL Developer - Drop sequence"
 date: 2015-07-08 18:13:00
 comments: true
-tags: [Oracle sql developer]
+tags: [Oracle SQL Developer]
 keywords: "Oracle"
 description: "Oracle SQL Developer - Drop sequence"
 ---
