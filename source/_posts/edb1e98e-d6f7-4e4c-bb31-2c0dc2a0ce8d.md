@@ -3,7 +3,7 @@ layout: post
 title: "Tkinter's tkColorChooser"
 date: 2013-11-06 12:00:00
 comments: true
-tags: 
+tags: [Python]
 description: "Tkinter's tkColorChooser"
 ---
 <p>

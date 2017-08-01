@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code - Python on Visual Studio Code
 date: 2017-04-09 23:08:40
-tags: [Visual Studio Code]
+tags: [Visual Studio Code, Python]
 ---
 
 要在 Visual Studio Code 使用 Python，可安裝 Visual Studio Code 的 Python 套件。  

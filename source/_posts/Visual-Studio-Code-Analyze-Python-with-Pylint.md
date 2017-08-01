@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code - Analyze Python with Pylint
 date: 2017-04-24 23:45:28
-tags: [Visual Studio Code]
+tags: [Visual Studio Code, Python]
 ---
 
 要在 Visual Studio Code 中開發 Python 並使用 Pylint 進行程式碼的分析，Visual Studio Code 要先安裝 Python 的套件，完成 Python 開發環境的設定。   
