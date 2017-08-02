@@ -14,10 +14,14 @@ Lua 的邏輯運算會將 false 與 nil 視為 false，其它值視為 true。
 所以 and、or 運算寫起來就會像下面這樣。  
 
 ```Lua
-print(true and false)
-print(true or false)
-print(1 or 2)
-print(1 and 2)
+print(10 or 20)            
+print(true or false)    
+print(nil or "a")          
+print(nil and 10 )         
+print(true and false) 
+print(false and nil)       
+print(false or nil)        
+print(10 and 20)           
 ```
 
 <br/>
