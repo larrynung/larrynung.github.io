@@ -67,3 +67,4 @@ print(not 1)
 Link
 -----
 * [[Lua] 邏輯運算 « Huli's Blog](http://huli.logdown.com/posts/198881-lua-logical-operators)
+* [Lua 5.1 Reference Manual](http://www.lua.org/manual/5.1/manual.html#2.5.2)
