@@ -1,7 +1,7 @@
 ---
 title: "InstantClick - JS library to make your website instant"
 date: 2017-08-02 13:29:44
-tags:
+tags: [InstantClick]
 ---
 
 InstantClick 是一 JS 套件，能讓在 MouseHover 時就預先進行站台的載入，這樣在 MouseDown 後切換頁面就會只需要較少的載入時間，加速網站的載入速度。  
