@@ -20,7 +20,7 @@ tags: [InstantClick, Hexo]
 <br/>
 
 
-然後修改 Hexo 的 theme 啟動 InstantClick。以 next theme 為例，可開啟 next theme 的 layout\_layout.swig，將 InstantClick 啟動的程式插入即可。  
+接著修改 Hexo 的 theme 讓 InstantClick 得以啟動。以 next theme 為例，可開啟 next theme 的 layout\_layout.swig，將 InstantClick 啟動的程式插入即可。  
 
 ```js
 <script type="text/javascript" src= "js/instantclick.js" data-no-instant></script>
