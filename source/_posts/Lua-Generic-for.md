@@ -23,7 +23,7 @@ end
 local array = {}
 array[1] = "Value1"
 array[2] = "Value2"
-for idx, value in pairs(array) do
+for idx, value in ipairs(array) do
   print(idx .. "." .. value)
 end
 ```
