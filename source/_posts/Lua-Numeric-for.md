@@ -10,7 +10,7 @@ Lua numeric for 的語法如下，for 後面設定迴圈內要使用的變數，
 
 ```Lua
     for var=from,to[,step] do
-      something
+      ...
     end
 ```
 
