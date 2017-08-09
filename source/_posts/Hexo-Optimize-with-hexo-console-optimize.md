@@ -35,7 +35,7 @@ hexo-console-optimize 是 Hexo 的套件，可讓 Hexo 對 HTML、CSS、JS、Ima
 <br/>
 
 
-如果要在壓縮優化後直接進行佈署，也可以加帶 -d 參數。  
+如有需要，也可加帶 -d 參數在壓縮優化後直接進行佈署。  
 
     hexo o -d
 
