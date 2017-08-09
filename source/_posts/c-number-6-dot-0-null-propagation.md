@@ -14,9 +14,13 @@ Null propagation 是預計要在 C# 6.0 釋出的新功能，目前已可在 Vis
 
     <LangVersion>experimental</LangVersion>
 
+<br/>
+
+
 Null propagation 能讓開發人員快速的在程式中做 Null 值的處理。  
 
 <br/>
+
 
 像是 Null 時直接回傳，非 Null 時取其成員屬性、方法、索引子的值，就可以像下面這樣撰寫:  
 
@@ -33,12 +37,13 @@ var hashCode = str?.GetHashCode(); //get hashcode if str not null
 
 也可以用於委派的觸發，不僅簡易且 Thread Safe。    
 
-```c# 
+```c#
 protected void OnNameChanged(EventArgs e) 
 { 
     NameChanged?Invoke(this, e); 
 } 
-``` 
+```
+ 
 <br/>
 
 
@@ -58,7 +63,7 @@ namespace ConsoleApplication2
             string str = null;
             PrintData(str);
 
-            str = "Level Up, http://larrynung.github.io/index.html" ;
+            str = "Level Up, http://larrynung.github.io/index.html";
             PrintData(str);
         }
 
