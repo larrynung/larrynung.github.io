@@ -23,7 +23,7 @@ Aliaser 是 Visual Studio 的套件，能針對 C# 型別或是別名做轉換�
 <br/>
 
 
-To alias 可按選單選項或是 Ctrl + Shift + M 熱鍵觸發，可用來將選取的 C# 型別轉成別名。To instance 可案選單選項或是 Ctrl + Shift + Y 熱鍵觸發，可將選取的別名轉成 C# 型別。  
+To alias 可按選單選項或是 Ctrl + Shift + M 熱鍵觸發，可用來將選取的 C# 型別轉成別名。To instance 可按選單選項或是 Ctrl + Shift + Y 熱鍵觸發，可將選取的別名轉成 C# 型別。  
 
 {% asset_img 2.png %}
 
