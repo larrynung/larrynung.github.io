@@ -18,7 +18,7 @@ vscode-icons 是 Visual Studio Code 的套件，能讓 Visual Studio Code 的 Ex
 <br/>
 
 
-按下熱鍵 Ctrl-Shift-P / Cmd-Shift-P 開啟 command palette，輸入 Extensions:Install Extensions，輸入 vscode-icons 找到 vscode-hexo 擴充套件進行安裝。  
+按下熱鍵 Ctrl-Shift-P / Cmd-Shift-P 開啟 command palette，輸入 Extensions:Install Extensions，輸入 vscode-icons 找到 vscode-icons 擴充套件進行安裝。  
 
 {% asset_img 2.png %}
 
