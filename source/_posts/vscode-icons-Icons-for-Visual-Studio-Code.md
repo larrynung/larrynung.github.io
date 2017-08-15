@@ -37,7 +37,7 @@ vscode-icons 是 Visual Studio Code 的套件，能讓 Visual Studio Code 的 Ex
 <br/>
 
 
-重啟後啟用套件。  
+重啟後啟用 vscode-icons 套件。  
 
 {% asset_img 5.png %}
 
