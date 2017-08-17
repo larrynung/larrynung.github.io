@@ -102,19 +102,14 @@ tags: [Oracle SQL Developer]
 <br/>
 
 
-建立的 Unit Test 會出現在 Unit Test 視窗的 Tests 目錄下方。  
-
-<br/>
-
-
-點選上方工具列按鈕運行測試。     
+建立的 Unit Test 會出現在 Unit Test 視窗的 Tests 目錄下方，點選開啟該單元測試，可以看到該單元測試的設定值，若有需要也可以直接在這介面做設定的調動。若設定無誤，可點選上方工具列的 Run Test 按鈕或是按下熱鍵 F9 開始運行測試。     
 
 {% asset_img 14.png %}
 
 <br/>
 
 
-即可看到運行的測試結果。  
+測試運行完成即可看到測試的結果。  
 
 {% asset_img 15.png %}
 
