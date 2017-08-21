@@ -39,7 +39,7 @@ tags: [ProGet]
 <br/>	
 
 
-設定 npm registry 使用者帳號，這邊直接使用 ProGet 帳號轉小寫後輸入，再輸入密碼即可。  
+設定 npm registry 使用者帳號，這邊直接使用 ProGet 帳號轉小寫後輸入、輸入密碼。  
 
     npm adduser
 	
