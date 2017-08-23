@@ -63,10 +63,7 @@ end
 如果反過來用 LREM 將資料從頭部移除 1 - 10000。
 
 ```Lua
-for i=1,10000 do
-redis.call('lpush', 'Test123', i)
-end
-
+...
 for i=1, 10000 do
   redis.call('lrem', 'Test123', 1, i)
 end
