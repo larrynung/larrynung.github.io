@@ -47,7 +47,14 @@ PsExec 是一命令列工具，可讓我們執行遠端電腦的程式。
 
 {% img /images/posts/PsExec/3.png %}
 
-<Br/>
+<br/>
+
+
+命令第一次使用會跳授權視窗，如果要跳過授權視窗，可帶上 /accepteula。  
+
+    psexec \\TWDT092 /accepteula cmd /c dir d:
+
+<br/>	
 
 
 要查閱遠端電腦的 IP 設定的話：  
