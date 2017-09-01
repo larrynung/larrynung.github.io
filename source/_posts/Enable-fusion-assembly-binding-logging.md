@@ -27,7 +27,7 @@ Assembly binding 如果出錯，資訊不足以查出問題的話。
 <br/>
 
 
-開啟後再次運行，當 Assembly binding 發生錯誤時，就會有更為詳細的資訊。  
+開啟後再次運行，當 Assembly binding 發生錯誤時，就會顯示更為詳細的資訊。  
 
 {% asset_img 3.png %}
 
