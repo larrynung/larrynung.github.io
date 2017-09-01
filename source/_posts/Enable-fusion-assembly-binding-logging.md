@@ -38,3 +38,4 @@ Link
 ----
 * [Enable Fusion Assembly Binding Logging | Williams notatblog](https://williamwmy.wordpress.com/2013/05/23/enable-fusion-assembly-binding-logging/comment-page-1/)
 * [.NET enable and disable Fusion log](https://gist.github.com/jpluimers/2f2e3acdd53a2d6b9ec0)
+* [Debugging Assembly Loading Failures – Suzanne Cook's .NET CLR Notes](https://blogs.msdn.microsoft.com/suzcook/2003/05/29/debugging-assembly-loading-failures/)
