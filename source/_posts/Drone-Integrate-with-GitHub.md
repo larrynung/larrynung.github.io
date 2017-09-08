@@ -60,6 +60,11 @@ tags: [Drone]
 <br/>
 
 
+{% asset_img 7.png %}
+
+<br/>
+
+
 Link
 ----
 * [How to Setup Drone on Ubuntu/Debian - FoxuTech](https://foxutech.com/how-to-setup-drone/)
