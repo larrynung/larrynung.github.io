@@ -29,9 +29,18 @@ tags: [Drone]
 <br/>
 
 
-即可透過瀏覽器訪問架設好的 Drone 網站。  
+若有需要可開啟 Drone 配置文件配置 Port 以及資料庫連線，配置後將服務重啟。  
+
+    vi /etc/drone/drone.toml 
 
 {% asset_img 3.png %}
+
+<br/>
+
+
+即可用瀏覽器訪問架設好的 Drone 網站。  
+
+{% asset_img 4.png %}
 
 <br/>
 
