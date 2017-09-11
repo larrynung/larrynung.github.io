@@ -36,7 +36,7 @@ tags: [ProGet]
 <br/>
 
 
-若未設定 API Key，可用 [ID]:[Password] 替代。  
+若未設定 API key，可用 [UserName]:[Password] 替代。  
 
 <br/>
 
