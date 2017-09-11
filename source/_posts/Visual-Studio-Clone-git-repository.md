@@ -1,7 +1,7 @@
 ---
 title: Visual Studio - Clone git repository
 date: 2016-07-24 22:22:18
-tags: [Visual Studio]
+tags: [Visual Studio, Git]
 ---
 
 使用 Visual Studio clone git repository，先將 Team Explorer 視窗開啟。  

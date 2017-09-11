@@ -3,7 +3,7 @@ layout: post
 title: "Octopress - A blogging feamework for hackers."
 date: 2013-11-05 23:14:00
 comments: true
-tags: [Git,Octopress]
+tags: [Octopress]
 ---
 
 Octopress是ㄧ利用Jekll部落格引擎開發的部落格系統，能簡易的架設、擴充、客製、與套版，因其最後是生成靜態網頁，因此能很輕易的在許多服務上做部署，像是Github、Heroku、與Rsync等。

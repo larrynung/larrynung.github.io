@@ -3,7 +3,7 @@ layout: post
 title: "GitHub Pages"
 date: 2013-11-10 13:13:00
 comments: true
-tags: 
+tags: [GitHub]
 ---
 
 GitHub Pages服務可讓使用者免費Hosting網頁在GitHub上，享用GitHub不受限的儲存空間與網路流量。依用途不同可分為User/Organization Pages與Project Pages兩種。

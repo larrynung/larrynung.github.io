@@ -1,7 +1,7 @@
 ---
 title: Drone - Integrate with GitHub
 date: 2017-09-07 06:37:49
-tags: [Drone]
+tags: [Drone, GitHub]
 ---
 
 要將 GitHub 與 GitHub 整合，需要先在 GitHub 建立 Application。  
