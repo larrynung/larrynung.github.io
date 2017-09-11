@@ -17,6 +17,8 @@ description: "Permission denied for a Mac OSX Dropbox app"
 
 {% img /images/posts/DropboxPermissionDenied/1.png %}
 
+<br/>
+
 
 輸入密碼後權限好像都沒取道，怎樣都出現權限錯誤的問題。  
 
@@ -33,6 +35,7 @@ sudo mv /Library/DropboxHelperTools ~/.Trash
 ```
 
 <br/>
+
 
 指令下完後重新安裝就可以了。  
 
