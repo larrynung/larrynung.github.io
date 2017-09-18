@@ -125,6 +125,8 @@ Response 部分用來描述 http 的回應，像是回應的狀態碼、回應�
 | cookies | Array of cookies. It allows vars. |
 | body | Body string. It allows vars. |
 
+<br/>
+
 
 Control 部分不一定需要，用來做些控制使用的，像是回應的延遲時間、是否隨機回應錯誤...等。  
 
