@@ -46,7 +46,7 @@ tags: [mmock]
 <br/>
 
 
-其定義如下：  
+設定檔格式定義如下：  
 
     {
     	"description": "Some text that describes the intended usage of the current configuration",
@@ -106,7 +106,7 @@ Request 這塊是用來描述 http 請求的，像是請求的主機、http meth
 | Element | Description |
 |:-------------:|:-------------:|
 | host | Request http hostt. (without port)  |
-| method  | Request http method. It allows more than one separated by pipes "|" Mandatory |
+| method  | Request http method. |
 | path | Resource identifier. It allows :value matching. Mandatory |
 | queryStringParameters | Array of query strings. It allows more than one value for the same key. |
 | headers | Array of headers. It allows more than one value for the same key. |
