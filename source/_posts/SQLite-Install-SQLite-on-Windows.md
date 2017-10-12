@@ -27,7 +27,7 @@ tags:
 <br/>
 
 
-會看到三個執行檔，我們主要要用的是 sqlite3.exe 這個執行檔。  
+會看到幾個執行檔，我們主要要用的是 sqlite3.exe 這個執行檔。  
 
 {% asset_img 4.png %}
 
