@@ -1,7 +1,7 @@
 ---
 title: Calibre Web - Install on ubuntu 12.04
 date: 2017-09-29 00:20:23
-tags:
+tags: [Calibre Web]
 ---
 
 要在 ubuntu 12.04 安裝 Calibre Web，可先將 apt-get 更新。  
