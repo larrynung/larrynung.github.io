@@ -38,7 +38,7 @@ tags: [sonar]
 <br/>
 
 
-設定完 sonar 的設定 (.sonarrc) 就會產生在當前目錄。    
+設定完 sonar 的設定檔 (.sonarrc) 就會產生在當前目錄。    
 
 {% asset_img 4.png %}
 
