@@ -11,7 +11,7 @@ tags: [sonar]
 <br/>
 
 
-透過 npm 安裝 sonar 到全域。   
+再透過 npm 安裝 sonar 到全域。   
 
     npm install -g --engine-strict @sonarwhal/sonar
 
