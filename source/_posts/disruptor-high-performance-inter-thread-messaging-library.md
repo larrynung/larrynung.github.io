@@ -20,7 +20,7 @@ Disruptor 是 LMAX 提出的高效線程通信套件，能夠以很低的延遲�
 <br/>
 
 
-Disruptor 之所以能有如此優異的效能，是因為裡面運用了很多技術在。像是使用 Compare and swap (CAS) 去避開鎖的開銷，使用 mory barrier 去控制執行緒間的運行順序，使用‸Cache line padding 避免 false sharing 的問題，以及預先將記憶體配置並重用以避免不必要的 GC 回收。  
+Disruptor 之所以能有如此優異的效能，是因為裡面運用了很多技術在。像是使用 Compare and swap (CAS) 去避開鎖的開銷，使用 memory barrier 去控制執行緒間的運行順序，使用 Cache line padding 避免 false sharing 的問題，以及預先將記憶體配置並重用以避免不必要的 GC 回收。  
 
 <br/>
 
