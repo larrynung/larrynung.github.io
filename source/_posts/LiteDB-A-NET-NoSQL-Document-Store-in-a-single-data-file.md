@@ -20,6 +20,7 @@ LiteDB 是一用 C# 寫的 .NET NoSQL 免費開源資料庫。
 
 該資料庫輕量且快速且具備有以下特點：  
 
+- Thread safe and process safe
 - Portable UWP and Xamarin iOS/Android
 - ACID transaction
 - Recovery data in writing failure (journal mode)
@@ -29,6 +30,8 @@ LiteDB 是一用 C# 寫的 .NET NoSQL 免費開源資料庫。
 - Store files and stream data (like GridFS in MongoDB)
 - LINQ support
 - FREE for everyone - including commercial use
+- Shell command line
+- Datafile encryption using DES (AES) cryptography
 
 <br/>
 
