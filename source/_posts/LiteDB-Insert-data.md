@@ -180,3 +180,82 @@ namespace LiteDB.Demo3
     }
 }
 ```
+
+<br/>
+
+
+這邊筆者針對這兩個方法做了個簡單的效能比較。  
+
+```C#
+using System;
+using System.Diagnostics;
+using System.Linq;
+
+namespace LiteDB.Demo3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
+                var counts = new[] {100, 1000, 10000, 100000, 1000000};
+
+                foreach (var count in counts)
+                {
+                    var data = GetData(count);
+                    Console.WriteLine("Insert, count {0}, {1} ms", count, DoTest(1, () =>
+                    {
+                        persons.Insert(data);
+                    }));
+
+
+                    data = GetData(count);
+                    Console.WriteLine("InsertBulk, count {0}, {1} ms", count, DoTest(1, () =>
+                    {
+                        persons.InsertBulk(data);
+                    }));
+                }
+            }
+        }
+
+        static Person[] GetData(int count)
+        {
+            return Enumerable.Range(1, count).Select(item => new Person
+            {
+                Name = "Larry Nung " + item,
+                NickName = "Larry " + item
+            }).ToArray();
+        }
+
+        static long DoTest(int count, Action action)
+        {
+            var sw = Stopwatch.StartNew();
+            for (int i = 0; i < count; ++i) action();
+            return sw.ElapsedMilliseconds;
+        }
+    }
+
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
+}
+```
+
+<br/>
+
+
+運行結果如下：  
+
+{% asset_img 2.png %}
+
+<br/>
+ 
+
+{% asset_img 3.png %}
+
+<br/>
