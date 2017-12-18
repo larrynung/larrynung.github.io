@@ -4,7 +4,7 @@ date: 2017-12-17 22:53:59
 tags: [LiteDB]
 ---
 
-要將資料塞入 LiteDB，需先準備一個用來存放資料的 Model，該 Model 跟一般的 Model 一樣，不需要加掛特殊的 Attribute，只需要為 Model 加上一個 ID 的數值屬性，讓 LiteDB 用以識別資料。  
+要將資料塞入 LiteDB，需先準備一個用來存放資料的 Model，該 Model 跟一般的 Model 沒什麼太大的不同，不需要特別加掛 Attribute，只需要為 Model 加上一個 ID 的數值屬性，讓 LiteDB 用以識別資料。  
 
 <!-- More -->
 
@@ -92,6 +92,21 @@ namespace LiteDB.Demo1
 
 
 除了單筆的塞值，Collection.Insert 也允許塞入多筆資料，只要調用 Collection.Insert 時帶入資料的集合即可。  
+
+```C#
+…
+using (var db = new LiteDatabase(dbFile)) 
+{ 
+  var collection = db.GetCollection<T>(collectionName); 
+  ...
+  collection.Insert(collectionItems); 
+} 
+```
+
+<br/>
+
+
+像是下面這樣：  
 
 ```C#
 using System;
