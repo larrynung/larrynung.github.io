@@ -270,6 +270,8 @@ namespace LiteDB.Demo3
 
 <br/>
  
+ 
+可以看到使用 Insert 去塞入大量資料在速度上會優於 InsertBulk，但兩者在記憶體耗量之類的也會有所出入，使用哪個方法比較恰當還是需要多方的評估。  
 
 {% asset_img 3.png %}
 
