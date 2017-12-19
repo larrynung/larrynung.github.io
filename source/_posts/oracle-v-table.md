@@ -1,5 +1,5 @@
 ---
-title: "Oracle - v table"
+title: "Oracle - v$version table"
 date: 2017-12-19 21:47:54
 tags: [Oracle]
 ---
