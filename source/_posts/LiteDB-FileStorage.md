@@ -13,7 +13,7 @@ tags: [LiteDB]
 
 FileStorage 支援以下方法：  
 
-| Upload | Description | 
+| Method | Description | 
 |:-------------:|:-------------:|
 | Upload | Send file or stream to database. Can be used with file or Stream. If file already exists, file content is overwritten. |
 | Download | Get your file from database and copy to Stream parameter |
