@@ -108,7 +108,12 @@ namespace LiteDB.Demo4
 <br/>
 
 
-要將 LiteDB 內的二進制檔案寫回硬碟，可以使用 FileStorage.Download 方法，調用時代入識別檔案的 ID，及目的檔案串流。  
+{% asset_img 1.png %}
+
+<br/>
+
+
+要將 LiteDB 內的二進制檔案寫回硬碟，可以使用 FileStorage.Download 方法，調用時帶入識別檔案的 ID，及目的檔案串流。  
 
 ```C#
 …
@@ -148,3 +153,10 @@ namespace LiteDB.Demo5
     }
 }
 ```
+
+<br/>
+
+
+{% asset_img 2.png %}
+
+<br/>
