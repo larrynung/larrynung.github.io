@@ -22,6 +22,7 @@ using (var db = new LiteDatabase(dbFile))
 <br/>
 
 
+
 像是下面這個範例就會將資料寫入，將塞入的資料做個變更。  
 
 ```C#
@@ -37,22 +38,11 @@ namespace LiteDB.Demo2
             {
                 var persons = db.GetCollection<Person>("persons");
 
-                var larry = new Person
-                {
-                    Name = "Larry Nung",
-                    NickName = "Larry"
-                };
+                var firstPerson = collection.FindById(1);
 
-                persons.Insert(larry);
-
-                larry.NickName = "Larry Nung";
-                persons.Update(larry);
-
-                
-                foreach (var person in persons.FindAll())
-                {
-                    Console.WriteLine(person.NickName);
-                }
+                firstPerson.Name = "Larry Nung";
+                firstPerson.NickName = "Larry";
+                persons.Update(firstPerson);
             }
         }
     }
@@ -65,3 +55,76 @@ namespace LiteDB.Demo2
     }
 }
 ```
+
+<br/>
+
+
+若是要更新為全新的資料，也可以建立個資料物件指定 ID 將之替換。  
+
+```C#
+using System;
+
+namespace LiteDB.Demo2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
+
+                persons.Update(1, new Person()
+                {
+                    Name = "Larry Nung",
+                    NickName = "Larry Nung"
+                });
+            }
+        }
+    }
+
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
+}
+```
+
+<br/>
+
+
+```C#
+using System;
+
+namespace LiteDB.Demo2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
+
+                persons.Update(new Person()
+                {
+                    ID = 1,
+                    Name = "Larry Nung",
+                    NickName = "Larry Nung"
+                });
+            }
+        }
+    }
+
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
+}
+```
+
+<br/>
