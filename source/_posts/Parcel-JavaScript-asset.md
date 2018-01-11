@@ -37,12 +37,28 @@ tags: [Parcel]
 
 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面引用了 index.js。  
 
+```html
+<html>
+    <body>
+      <script src="./scripts/index.js"></script>
+    </body>
+</html>
+```
+
 {% asset_img 1.png %}
 
 <br/>
 
 
 index.js 內引用了不同類型的檔案。  
+
+```js
+//const hello = require('./hello');
+import hello from './hello';
+import '../style/index.css';
+import profileImageUrl from '../images/profile.jpg';
+console.log(profileImageUrl);
+```
 
 {% asset_img 2.png %}
 
@@ -51,12 +67,20 @@ index.js 內引用了不同類型的檔案。
 
 像是 js 檔(hello.js)。  
 
+```js
+console.log("hello world");
+```
+
 {% asset_img 3.png %}
 
 <br/>
 
 
-CSS 檔(index.css)。  
+CSS 檔(index.css)。
+
+```css
+body {background-color: coral;}
+```  
 
 {% asset_img 4.png %}
 
