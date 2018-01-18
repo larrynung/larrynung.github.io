@@ -1,5 +1,5 @@
 ---
-title: Parcel - TypeScript transformation
+title: "Parcel - TypeScript transform"
 date: 2018-01-17 23:08:06
 tags: [Parcel]
 ---
