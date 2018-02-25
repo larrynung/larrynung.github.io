@@ -6,6 +6,8 @@ tags: [Firebase]
 
 要將資料自 Firebase 讀取出來，需先進行 Firebase 與應用程式的連結，然後透過呼叫 Firebase 的 database 方法取得資料庫物件，調用 ref 方法取得資料物件的參考，最後調用 once 與 then 方法，在 then 方法中帶入一個委派，在委派內取用數值即可。  
 
+<!-- More -->
+
 {% asset_img 1.png %}
  
 <br/>
