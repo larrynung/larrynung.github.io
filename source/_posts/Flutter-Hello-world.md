@@ -26,17 +26,32 @@ void main() {
 <br/>
 
 
-可以看到 Flutter 程式撰寫上主要有幾個要注意的部分，首先需引用 flutter/material.dart 套件，再來就是要在 main 這個處函式內調用 runApp 方法，runApp 方法調用時要帶入構成畫面的 widget。  
-
-<br/>
-
-
-像是這邊就帶入一個 Center 的 Widget，Center 的 Widget 內又放置了一個 Text Widget，所以 Text Widget 設定的字串會在程式的正中央顯示。  
-
 {% asset_img 1.png %}
- 
+
 <br/>
 
+
+可以看到 Flutter 程式撰寫上主要有幾個要注意的部分，首先需引用 flutter/material.dart 套件。  
+
+```dart
+import 'package:flutter/material.dart';
+```
+
+<br/>
+
+
+再來就是要在 main 這個處函式內調用 runApp 方法，runApp 方法調用時要帶入構成畫面的 widget。  
+
+```dart
+void main() {
+  runApp(...);
+}
+```
+
+<br/>
+
+
+像是這邊的範例就帶入了一個 Center 的 Widget，Center 的 Widget 內又放置了一個 Text Widget，所以 Text Widget 設定的字串會在程式的正中央顯示。  
 
 {% asset_img 2.png %}
  
