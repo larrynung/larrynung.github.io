@@ -27,7 +27,7 @@ tags: [Flutter]
 <br/>
 
 
-Flutter app 運行的當中我們可以開啟 http://127.0.0.1:8101，進行 Flutter app 的 debug 與 profile。  
+Flutter app 運行的當中我們可以開啟 http://127.0.0.1:8101，進行 Flutter app 的 profiling。  
 
 {% asset_img 3.png %}
  
@@ -66,7 +66,7 @@ Flutter app 運行的當中我們可以開啟 http://127.0.0.1:8101，進行 Flu
 <br/>
 
 
-按下 R 將 app 重載，這邊 Flutter 只花了 748 ms 就完成了重載的動作。  
+按下 R 將 app 重載，Flutter 只花了 748 ms 就完成了重載的動作。  
 
 {% asset_img 9.png %}
  
