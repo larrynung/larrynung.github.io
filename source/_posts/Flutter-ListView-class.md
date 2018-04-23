@@ -14,9 +14,7 @@ Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆�
 其建構子如下：  
 
     ListView({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true, List<Widget> children: const [] })
-Creates a scrollable, linear array of widgets from an explicit List. [...]
     ListView.builder({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, @required IndexedWidgetBuilder itemBuilder, int itemCount, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true })
-Creates a scrollable, linear array of widgets that are created on demand. [...]
     ListView.custom({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, @required SliverChildDelegate childrenDelegate })
 
 <br/>
@@ -53,8 +51,7 @@ Creates a scrollable, linear array of widgets that are created on demand. [...]
 | buildViewport(BuildContext context, ViewportOffset offset, AxisDirection axisDirection, List<Widget> slivers) | Widget | Build the viewport. |
 | createElement() | StatelessElement | Creates a StatelessElement to manage this widget's location in the tree. |
 | debugDescribeChildren() | List<DiagnosticsNode> | Returns a list of DiagnosticsNode objects describing this node's children. |
-| getDirection(BuildContext context)  | AxisDirection | 
-Returns the AxisDirection in which the scroll view scrolls. |
+| getDirection(BuildContext context)  | AxisDirection | Returns the AxisDirection in which the scroll view scrolls. |
 | noSuchMethod(Invocation invocation) | dynamic | Invoked when a non-existent method or property is accessed. |
 | toDiagnosticsNode({String name, DiagnosticsTreeStyle style }) | DiagnosticsNode | Returns a debug representation of the object that is used by debugging tools and by toStringDeep. |
 | toString({DiagnosticLevel minLevel: DiagnosticLevel.debug }) | String | Returns a string representation of this object. |
