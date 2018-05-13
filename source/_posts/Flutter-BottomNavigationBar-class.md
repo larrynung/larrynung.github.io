@@ -4,7 +4,7 @@ date: 2018-05-09 23:33:10
 tags: [Flutter]
 ---
 
-Flutter 的 BottomNavigationBar widget 需搭配 Scaffold 使用。  
+Flutter 的 BottomNavigationBar widget 需搭配 Scaffold 使用，可用以設定 Scaffold 下方的巡覽列。  
 
 <!-- More -->
 
