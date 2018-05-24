@@ -8,8 +8,6 @@ tags: [TensorFlow]
 
 <!-- More -->
 
-<br/>
-
     sudo apt-get update
 
 {% asset_img 1.png %}
