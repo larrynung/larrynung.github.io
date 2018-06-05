@@ -57,7 +57,7 @@ bPlus = b + 1
 <br/>
 
 
-最後帶入 placeholder 的值丟到 session 運行即可。  
+最後用 feed_dict 帶入 placeholder 的值去運行即可。  
 
 ```python
 ...
@@ -65,7 +65,7 @@ print(sess.run(a2, feed_dict={a: 2}))
 print(sess.run(a2, feed_dict={a: [[1, 2, 3], [4, 5, 6]]}))
 print(sess.run(bPlus, feed_dict={b: [[1, 2, 3], [4, 5, 6]]}))
 ...
-```  
+```
 
 <br/>
 
