@@ -42,11 +42,21 @@ sess = tf.Session()
 
 <br/>
  
-最後將要運行的部分送至 Session 中運行即可。  
+將要運行的部分送至 Session 中運行。  
 
 ```python
 ...
 print(sess.run(hello))
+```
+
+<br/>
+
+
+最後記得要將 Session 關閉。  
+
+```python
+...
+sess.close()
 ```
 
 <br/>
@@ -61,6 +71,7 @@ hello = tf.constant("Hello World!")
 
 sess = tf.Session()
 print(sess.run(hello))
+sess.close()
 ```
 
 <br/>
@@ -69,4 +80,22 @@ print(sess.run(hello))
 運行結果如下：    
 
 {% asset_img 1.png %}
+
+<br/>
+
+
+也可以搭配使用 with as 寫法，這樣就不需要明確的調用 session.close()。  
+
+```python
+import tensorflow as tf
+
+hello = tf.constant("Hello World!")
+
+with tf.Session() as sess:
+    print(sess.run(hello))
+```
+
+{% asset_img 2.png %}
+
+<br/>
 
