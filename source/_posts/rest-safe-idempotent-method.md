@@ -25,6 +25,11 @@ POST、PATCH 則兩類方法都不是。
 <br/>
 
 
+了解 HTTP Method 屬於 Safe method 還是 Idempotent method，可讓我們清楚識別 API 應該使用哪種 HTTP method，也可以了解 HTTP method 在實作上所應該做的處理。  
+
+<br/>
+
+
 最後附上對應總表：  
 
 | Method | Safe | Indempotent |
