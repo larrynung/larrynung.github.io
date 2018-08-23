@@ -39,31 +39,35 @@ tags: [Event Store]
 <br/>
 
 
-發送完回到 Stream Broser 頁面，可以看到剛剛發送的 Event，可點選查閱。  
+發送完回到 Stream Broser 頁面，可以看到剛剛所發送的 Event，點選即可查閱。  
 
 {% asset_img 6.png %}
  
 <br/>
 
 
-Event 的 Data 與 Metadata 部分可點擊後方的 JSON 字樣，待展開後查閱。  
+要查閱更為細部的資訊可點選 Event 後方的 JSON 字樣。  
 
 {% asset_img 7.png %}
  
 <br/>
  
 
+即可看到更為細部的資訊。  
+
 {% asset_img 8.png %}
  
 <br/>
 
 
-也可以點擊 Event name 字樣在轉導過去的頁面查閱。  
+也可以透過點選 Event name 字樣。  
 
 {% asset_img 9.png %}
  
 <br/>
 
+
+一樣可看到更為細部的資訊。  
 
 {% asset_img 10.png %}
  
