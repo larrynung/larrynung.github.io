@@ -27,6 +27,11 @@ MediaType 可以是 JSON。
 <br/>
 
 
+Post 的內容需包含 eventId、eventType、data。  
+
+<br/>
+
+
 像是如果要發送個 Event 給 Event Store，就可以像下面這樣準備要發送的 Event 內容。  
 
 ```json  
@@ -40,9 +45,6 @@ MediaType 可以是 JSON。
   }
 ]
 ```
-
-<br/>
-
 
 {% asset_img 1.png %}
  
