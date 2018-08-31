@@ -22,6 +22,13 @@ description: "Disruptor - Multicast: 1P – 3C"
 <br/>
 
 
+可進一步簡化成下面這樣：  
+
+{% img /images/posts/DisruptorMulticast1P3C/2.png %}
+
+<br/>
+
+
 透過 DSL 的方式撰寫，只要同時將三個 EventHandler 帶入 HandleEventWith 即可，像是下面這樣：  
 
 ```c#
@@ -40,7 +47,7 @@ disruptor.Shutdown();
 
 是改用 Non-DSL 撰寫的話，本來的依賴關係圖形就會變成下面這樣：
 
-{% img /images/posts/DisruptorMulticast1P3C/2.png %}
+{% img /images/posts/DisruptorMulticast1P3C/3.png %}
 
 <br/>
 
@@ -69,6 +76,6 @@ eventProcessor3.Halt();
 <br/>
 
 
-程式運行起來可以看到有三個 Handler，分別在不同的執行緒上運作，Producer 產生的每一筆資料都會同時經過這三個 Handler 做處理。所以這邊可以看到每個 Sequence 資料都有經過三個 Handler，但是 Handler 執行的順序並不固定。   
+運行起來可以看到有三個 Handler，分別在不同的執行緒上運作，Producer 產生的每一筆資料都會同時經過這三個 Handler 做處理。所以這邊可以看到每個 Sequence 資料都有經過三個 Handler，但是 Handler 執行的順序並不固定。   
 
-{% img /images/posts/DisruptorMulticast1P3C/3.png %}
+{% img /images/posts/DisruptorMulticast1P3C/4.png %}

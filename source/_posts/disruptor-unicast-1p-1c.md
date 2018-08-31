@@ -22,7 +22,14 @@ description: "Disruptor - Unicast: 1P - 1C"
 <br/>
 
 
-這透過 DSL 的方式撰寫會像下面這樣：  
+可以將之簡化成下面這樣：  
+
+{% img /images/posts/DisruptorUnicast1P1C/2.png %}
+
+<br/>
+
+
+透過 DSL 的方式撰寫的話會像下面這樣：  
 
 ```c#
 ...
@@ -51,14 +58,14 @@ namespace ConsoleApplication29 {
 <br/>
 
 
-若是改用 Non-DSL 撰寫的話，本來的依賴關係圖形就會變成下面這樣：    
+若是改用 Non-DSL 撰寫的話，依賴關係圖形會像下面這樣：    
 
-{% img /images/posts/DisruptorUnicast1P1C/2.png %}
+{% img /images/posts/DisruptorUnicast1P1C/3.png %}
 
 <br/>
 
 
-程式寫起來會像下面這樣：  
+程式撰寫起來會像下面這樣：  
 
 ```c#
 ... 
@@ -75,5 +82,5 @@ eventProcessor.Halt();
 <br/>
 
 
-程式運行起來可以看到我們只有一個 Handler，這個 Handler 會在一個執行緒上循序地消費 Producer 產生的資料。	
-{% img /images/posts/DisruptorUnicast1P1C/3.png %}
+運行起來可以看到我們只有一個 Handler，這個 Handler 會在一個執行緒上循序地消費 Producer 產生的資料。	
+{% img /images/posts/DisruptorUnicast1P1C/4.png %}
