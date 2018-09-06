@@ -49,7 +49,7 @@ $streams 是 Event Store 預設提供的 Projection，可以將 Event Link 到�
 <br/>
 
 
-點進去會看到鋼索發送的 Event 都被 Link 在這個 Stream 內。  
+點進去會看到剛所發送的 Event 都被 Link 在這個 Stream 內。  
 
 {% asset_img 7.png %}
  
