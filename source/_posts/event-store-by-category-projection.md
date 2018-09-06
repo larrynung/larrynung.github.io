@@ -4,7 +4,7 @@ date: 2018-09-03 23:52:35
 tags: [Event Store]
 ---
 
-$by_category 是 Event Store 預設提供的 Projection，可以將 Event 依 Category 拆分成到對應的 Stream。  
+$by_category 是 Event Store 預設提供的 Projection，可以將 Event 依 Stream ID 去拆分成不同 Category 的 Stream。  
 
 <!-- More -->
 
@@ -89,7 +89,7 @@ $by_category projection 若有需要也可以做些調動，只要點選 Edit �
 <br/>
 
 
-$by_category project 就會依最後一個分隔符號下去切歌 Category。  
+$by_category project 就會依最後一個分隔符號下去切割 Category。  
 
 {% asset_img 13.png %}
  
