@@ -4,13 +4,22 @@ date: 2018-09-16 23:56:40
 tags: [Event Store]
 ---
 
-要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內的 Event，可以帶入 Stream 的名稱、起始的 Event 編號、以及預計要讀取的 Event 數，去調用 Connetction.ReadStreamEventsForwardAsync 方法，然後去讀取需要的 Event 資料。  
+要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內的 Event，可以帶入 Stream 的名稱、起始的 Event 編號、以及預計要讀取的 Event 數，去調用 Connetction.ReadStreamEventsForwardAsync 方法。  
 
 <!-- More -->
 
 ```C#
 ...
 var readEvents = conn.ReadStreamEventsForwardAsync(streamName, start, count, true).Result;
+...
+```
+
+<br/>
+
+然後再去讀取需要的 Event 資料即可。  
+
+```C#
+...
 foreach (var evt in readEvents.Events)
     Console.WriteLine("{0} {1}", evt.Event.EventNumber, Encoding.UTF8.GetString(evt.Event.Data));
 ...
