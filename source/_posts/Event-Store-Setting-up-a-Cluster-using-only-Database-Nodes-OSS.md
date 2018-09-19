@@ -4,7 +4,7 @@ date: 2018-09-18 23:03:28
 tags: [Event Store]
 ---
 
-要啟用 Event Store 的 Cluster 功能，可以開啟 Event Store，設定 IP、Port、雨 gossip-seed。  
+要啟用 Event Store 的 Cluster 功能，可以開啟 Event Store，設定 IP、Port、與 gossip-seed。  
 
 <!-- More -->
 
@@ -24,7 +24,7 @@ start EventStore.ClusterNode.exe --mem-db --log .\logs\log3 --int-ip 127.0.0.1 -
 <br/>
 
 
-服務啟用後，因為 Cluster 會互相操寫，所以可在 Web interface 的 Dashboard 頁面下面看到來自其他 Event Store 服務的連線。  
+服務啟用後，因為 Cluster 會互相抄寫，所以可在 Web interface 的 Dashboard 頁面下面看到來自其它 Event Store 服務的連線。  
 
 {% asset_img 2.png %}
  
