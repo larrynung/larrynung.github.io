@@ -8,7 +8,7 @@ tags: [Kafka]
 
 <!-- More -->
 
-    bin/kafka-topics.sh --list --zookeeper localhost:2181
+    bin/kafka-topics.sh --list --zookeeper [ZooKeeper]
 
 {% asset_img 1.png %}
  
