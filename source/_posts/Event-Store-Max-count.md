@@ -4,7 +4,7 @@ date: 2018-09-25 23:20:40
 tags: [Event Store]
 ---
 
-要設定 Event Store 的 Stream 只存放指定個數的 Event，可以設定 StreamMetadata。  
+要設定 Event Store 的 Stream 只存放指定個數的 Event，可以設定 Stream 的 Max count。  
 
 <!-- More -->
 
@@ -23,7 +23,7 @@ conn.SetStreamMetadataAsync(streamName, ExpectedVersion.StreamExists, streamMeta
 <br/>
 
 
-像是筆者這邊設定了 Stream 的 Metadata，指定 Stream 只存放 10 筆 Event，然後接著嘗試塞入 100 的 Event。  
+像是筆者這邊設定了 Stream 的 Metadata，指定 Stream 只存放指定個數的 Event，然後接著嘗試塞入超過指定個數的 Event。  
 
 ```C#
 using EventStore.ClientAPI;
@@ -54,7 +54,7 @@ using (var conn = EventStoreConnection.Create(connectionString, connectionName))
 <br/>
 
 
-可以看到 Stream 只會留下 10 筆 Event。  
+可以看到 Stream 最後只會留下指定個數的 Event。  
 
 {% asset_img 2.png %}
  
