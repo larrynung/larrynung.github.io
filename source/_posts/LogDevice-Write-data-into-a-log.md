@@ -10,13 +10,13 @@ tags: [LogDevice]
 
     echo [Data] | ldwrite [Config] [Sequence]
 
-{% asset_img 1.png %}
- 
 <br/>
 
 
-像這邊筆者就將 hello 這樣的資料寫到了 LogDevice 的第一個位置。  
+像這邊筆者就將 hello 這樣的資料寫到了 LogDevice 的第一個位置。
 
+{% asset_img 1.png %}
+ 
 <br/>
 
 
