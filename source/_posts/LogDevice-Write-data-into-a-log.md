@@ -8,7 +8,7 @@ tags: [LogDevice]
 
 <!-- More -->
 
-    echo [Data] | ldwrite [Config] [Sequence]
+    echo <Data> | ldwrite <Config> <Sequence>
 
 <br/>
 

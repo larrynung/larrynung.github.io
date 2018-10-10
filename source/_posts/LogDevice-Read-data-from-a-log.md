@@ -8,7 +8,7 @@ tags: [LogDevice]
 
 <!-- More -->
 
-    ldtail [Config] [Sequence]
+    ldtail <Config> <Sequence>
 
 <br/>
 

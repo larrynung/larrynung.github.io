@@ -8,7 +8,7 @@ tags: [LogDevice]
 
 <!-- More -->
 
-    ldshell -c [Config] logs show
+    ldshell -c <Config> logs show
 
 <br/>
 
@@ -29,4 +29,4 @@ log 增刪後可以用這方法在 log tree 中查閱對應的變化，
 
 Link
 ----
-* [Log configuration · LogDevice] (https://logdevice.io/docs/Logs.html)
+* [Log configuration · LogDevice](https://logdevice.io/docs/Logs.html)
