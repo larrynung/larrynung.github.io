@@ -50,7 +50,7 @@ MORE... 內也有些功能可供使用，像是 Kill process 可終止目前的 
 
 上音量鍵是特殊鍵，可做的功能有...  
 
-'''
+```
 Volume Up+E → Escape key
 Volume Up+T → Tab key
 Volume Up+1 → F1 (and Volume Up+2 → F2, etc)
@@ -70,7 +70,7 @@ Volume Up+N → Page Down
 Volume Up+. → Ctrl+\ (SIGQUIT)
 Volume Up+V → Show the volume control
 Volume Up+Q → Show extra keys view
-'''
+```
 
 </br>
 
@@ -94,7 +94,7 @@ Volume Up+Q → Show extra keys view
 
 下音量鍵是 CTRL，可做的功能有...
 
-'''
+```
 Ctrl+A → Move cursor to the beginning of line
 Ctrl+C → Abort (send SIGINT to) current process
 Ctrl+D → Logout of a terminal session
@@ -103,7 +103,7 @@ Ctrl+K → Delete from cursor to the end of line
 Ctrl+L → Clear the terminal
 Ctrl+Z → Suspend (send SIGTSTP to) current process
 Ctrl+alt+C → Open new session (only work in Hacker's Keyboard)
-'''
+```
 
 </br>
 
