@@ -17,9 +17,6 @@ tags: [termux]
 
     pkg install termux-api
 
-</br>
-
-
 {% asset_img 2.jpg %}
 
 </br>
