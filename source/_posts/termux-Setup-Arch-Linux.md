@@ -10,7 +10,7 @@ tags: [termux]
 
     curl https://raw.githubusercontent.com/sdrausty/TermuxArch/master/setupTermuxArch.sh --output setupTermuxArch
 
-{ asset_img 1.jpg %%}
+{% asset_img 1.jpg %}
 
 </br>
 
