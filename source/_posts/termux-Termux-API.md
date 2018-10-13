@@ -20,6 +20,11 @@ tags: [termux]
 </br>
 
 
+{% asset_img 2.jpg %}
+
+</br>
+
+
 Termux:API 提供如下功能:  
 
 ```
@@ -140,28 +145,28 @@ Get information about the last wifi scan.
 
 像是 termux-battery-status 可以取得電池資訊。  
 
-{% asset_img 2.jpg %}
+{% asset_img 3.jpg %}
 
 </br>
 
 
 termux-camera-info 可以取得相機資訊。  
 
-{% asset_img 3.jpg %}
+{% asset_img 4.jpg %}
 
 </br>
 
 
 termux-clipboard-set 可設定資料到剪貼簿。  
 
-{% asset_img 4.jpg %}
+{% asset_img 5.jpg %}
 
 </br>
 
 
 termux-clipboard-get 可取得剪貼簿內的資料。  
 
-{% asset_img 5.jpg %}
+{% asset_img 6.jpg %}
 
 </br>
 
