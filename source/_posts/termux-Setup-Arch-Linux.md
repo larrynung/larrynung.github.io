@@ -15,14 +15,14 @@ tags: [termux]
 </br>
 
 
-然後運行下載下來的 script 安裝，安裝在會直接進入到 Arch Linux。  
+然後運行下載下來的 script 安裝，安裝後會直接進入到 Arch Linux。  
 
 {% asset_img 2.jpg %}
 
 </br>
 
 
-如果要去 Arch Linux 退出，可調用 exit 命令。  
+如果要從 Arch Linux 退出，可調用 exit 命令。  
 
 {% asset_img 3.jpg %}
 
