@@ -1,7 +1,7 @@
 ---
 title: termux - Vue.js in termux
 date: 2018-10-16 19:37:07
-tags: [termux]
+tags: [termux, Vue.js]
 ---
 
 要在 termux 內建立 Vue.js 環境，需要安裝 Vue CLI 到全域。  
