@@ -4,7 +4,7 @@ date: 2018-10-20 23:56:45
 tags: [Vim]
 ---
 
-Vim 預設 Line number 是關閉的。  
+Vim 預設 Line number 是關閉的。   
 
 <!-- more -->
 
