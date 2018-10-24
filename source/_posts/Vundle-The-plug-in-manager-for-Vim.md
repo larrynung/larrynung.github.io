@@ -19,10 +19,10 @@ Vundle 是 Vim 的套件管理程式，安裝可直接透過 git 下載。
 
     vi ~/.vimrc
 
+</br>
+
 
 加入設定 (不需要的套件請自行移除)。  
-
-{% asset_img 2.jpg %}
 
 ```
 set nocompatible              " be iMproved, required
@@ -69,6 +69,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 ```
+
+{% asset_img 2.jpg %}
 
 </br>
 
