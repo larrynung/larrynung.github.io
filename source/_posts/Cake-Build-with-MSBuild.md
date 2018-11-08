@@ -48,14 +48,20 @@ Cake 任務運行後。
 </br>
 
 
+{% asset_img 3.png %}
+
+<br/>
+
+
+
 輸出目錄就會看到建置出來的檔案。  
 
-{% asset_img 3.png %}
+{% asset_img 4.png %}
 
 </br>
 
 
-{% asset_img 4.png %}
+{% asset_img 5.png %}
 
 </br>
 
