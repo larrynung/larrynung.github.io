@@ -1,7 +1,7 @@
 ---
 title: Chrome - Neutral Face Emoji Tools
 date: 2018-11-21 22:50:19
-tags: [Chrome]
+tags: [Chrome, Slack]
 ---
 
 Netural Face Emoji Tools 是 Chrome 的外掛套件，可讓 Slack 支援表情符號拖曳上傳。
