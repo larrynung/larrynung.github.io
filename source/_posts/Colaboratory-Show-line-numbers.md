@@ -4,7 +4,7 @@ date: 2018-11-26 23:47:14
 tags: [Colaboratory]
 ---
 
-要將 Colaboratary 程式碼區塊的行數開啟，可點選 [工具 | 偏好設定] 主選單選項。  
+要將 Colaboratory 程式碼區塊的行數開啟，可點選 [工具 | 偏好設定] 主選單選項。  
 
 <!-- More -->
 
