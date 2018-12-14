@@ -4,7 +4,7 @@ date: 2018-12-13 23:38:20
 tags: [Consul]
 ---
 
-要啟動 Consul Web UI 可在調用 Consul 命令時帶入 -ui 參數。  
+要啟動 Consul Web UI 可在調用 Consul 命令時帶入 -ui 參數，如果是用開發人員模式 (帶入-dev 參數)，-ui 參數可忽略不帶。  
 
 <!-- More -->
 
@@ -15,7 +15,7 @@ tags: [Consul]
 <br/>
 
 
-訪問 http://<Url>/ui，即可看到 Consul Web UI。  
+訪問 `http://<Url>/ui`，即可看到 Consul Web UI。  
 
 {% asset_img 2.png %}
 
@@ -29,12 +29,14 @@ tags: [Consul]
 <br/>
 
 
+在次起動 Consul Agent，會看到 Consul Web UI 畫面變成舊版畫面。  
+
 {% asset_img 4.png %}
 
 <br/>
 
 
-如果 Consul Web UI 訪問被拒。  
+如果在啟用 Consul Web UI 後發現訪問被拒。  
 
 {% asset_img 5.png %}
 
@@ -42,6 +44,8 @@ tags: [Consul]
 
 
 可加帶 -client 設定。  
+
+    consul agent -dev -ui 
 
 {% asset_img 6.png %}
 
