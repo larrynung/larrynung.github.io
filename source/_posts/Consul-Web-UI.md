@@ -36,14 +36,14 @@ tags: [Consul]
 <br/>
 
 
-如果在啟用 Consul Web UI 後發現訪問被拒。  
+如果運行環境比較複雜的(像是筆者在 Vagrant 的虛擬機內啟用 Consul Agent)，在啟用 Consul Web UI 後可能會有訪問被拒的現象。  
 
 {% asset_img 5.png %}
 
 <br/>
 
 
-可加帶 -client 設定。  
+在 Consul Agent 起動時再加帶 -client 參數應該就可以了。  
 
     consul agent -dev -ui 
 
