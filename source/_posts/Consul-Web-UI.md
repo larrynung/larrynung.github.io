@@ -45,7 +45,7 @@ tags: [Consul]
 
 在 Consul Agent 起動時再加帶 -client 參數應該就可以了。  
 
-    consul agent -dev -ui 
+    consul agent -dev -client=0.0.0.0 
 
 {% asset_img 6.png %}
 
