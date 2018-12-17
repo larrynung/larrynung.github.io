@@ -4,7 +4,7 @@ date: 2018-12-15 00:16:48
 tags: [Consul]
 ---
 
-Consual health check 可透過 Consul config 設定，在 Consul config 加入 check definition。  
+Consul health check 可透過 Consul config 設定，在 Consul config 加入 check definition。  
 
 <!-- More -->
 
