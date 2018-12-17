@@ -43,7 +43,7 @@ Consul health check 可透過 Consul config 設定，在 Consul config 加入 ch
 <br/>
 
 
-要異常服務的話，可用 HTTP API 檢測狀態為 Critical 的服務。   
+要抓出異常服務的話，可用 HTTP API 檢測狀態為 Critical 的服務。   
 
     curl http://<IP>:<Port>/v1/health/state/critical
 
