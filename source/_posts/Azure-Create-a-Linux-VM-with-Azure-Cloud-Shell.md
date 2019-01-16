@@ -4,14 +4,14 @@ date: 2019-01-16 23:26:44
 tags: [Azure]
 ---
 
-要使用 Azure Cloud Shell 建立 Linux VM，可以使用 az vm create 命令，用 --name 指定 VM 的名稱、--resource-group 指定資源群組(Resource groups)、--image 指定 VM 的映像、--location 指定放置的區域、--size 指定 VM 的大小(處理器速度、記憶體大小...等)、--admin-username 指定 VM 的使用者名稱、--generate-ssh-keys 建立用以登入 VM 的 SSH key。  
+要使用 Azure Cloud Shell 建立 Linux VM，可以使用 az vm create 命令，用 --name 指定 VM 的名稱、--resource-group 指定資源群組 (Resource groups)、--image 指定 VM 的映像 (e.x. UbuntuLTS)、--location 指定放置的區域、--size 指定 VM 的大小 (處理器速度、記憶體大小...等)、--admin-username 指定 VM 的使用者名稱、--generate-ssh-keys 建立用以登入 VM 的 SSH key。  
 
 <!-- More -->
 
     az vm create \
       --name $vmName \
       --resource-group $resourceGroup \
-      --image UbuntuLTS \
+      --image $image \
       --location $location \
       --size $size \
       --admin-username $adminUser \
@@ -25,8 +25,8 @@ tags: [Azure]
 當 VM 建立並啟動成功，可以用 az vm get-instance-view 命令查看。  
 
     az vm get-instance-view \
-      --name myVM \
-      --resource-group e835dce0-af06-4f31-a4fe-45cc291e560f \
+      --name $vmName \
+      --resource-group $resourceGroup \
       --output table
 
 {% asset_img 2.jpg %}
