@@ -8,7 +8,7 @@ oh-my-zsh 切換到 Git 版控目錄，若操作上十分緩慢，命令送出�
 
 <!-- More -->
 
-<% asset_img 1.jpg %>
+{% asset_img 1.jpg %}
 
 </br>
 
@@ -18,7 +18,7 @@ oh-my-zsh 切換到 Git 版控目錄，若操作上十分緩慢，命令送出�
     git config --global --add oh-my-zsh.hide-dirty 1
     git config --global --add oh-my-zsh.hide-status 1
 
-<% asset_img 2.jpg %>
+{% asset_img 2.jpg %}
 
 </br>
 
