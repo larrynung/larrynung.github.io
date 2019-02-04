@@ -21,3 +21,5 @@ after_success:
 env:
   global:
     secure: h8seWg250yPzJGOiFf1cVBHKnjlxBapOgXSP4lXEiFtqWaupYzsJSdo8qeqjMYQ41yHlIakuwP5edj8TCZYPlwbzQw6JEYYpUnJVRLMPq2ZfZS6kjqB4+M6JgF/RXC10EjvYAfAzfyJpVVGMgSPyA4tvPMMhSEccNI4wECMUeg0=
+notifications:
+   slack: larrynung:56feQ3oPHk7odHHMuWnevKgJ

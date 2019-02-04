@@ -13,7 +13,7 @@ tags: [Cake]
 <br/>
 
 
-調用上就是帶入方案檔即可，如有需要設定在帶入設定值而已。  
+調用上就是帶入方案檔即可，如有需要設定再帶入設定值而已。  
 
 <br/>
 
@@ -48,14 +48,20 @@ Cake 任務運行後。
 </br>
 
 
+{% asset_img 3.png %}
+
+<br/>
+
+
+
 輸出目錄就會看到建置出來的檔案。  
 
-{% asset_img 3.png %}
+{% asset_img 4.png %}
 
 </br>
 
 
-{% asset_img 4.png %}
+{% asset_img 5.png %}
 
 </br>
 
