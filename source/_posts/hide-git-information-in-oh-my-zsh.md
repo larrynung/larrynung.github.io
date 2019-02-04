@@ -1,5 +1,5 @@
 ---
-title: Speed up oh-my-zsh
+title: "Hide git information in oh-my-zsh"
 date: 2019-01-25 09:03:10
 tags:
 ---
