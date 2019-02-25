@@ -34,7 +34,12 @@ listen  stats
 <br/>
 
 
-調用命令啟動 HAProxy。  
+設定檔的 bind、uri 與 auth 資訊需視需要調動。  
+
+<br/>
+
+
+接著調用命令啟動 HAProxy。  
 
     sudo service haproxy start
 
@@ -46,6 +51,11 @@ listen  stats
 訪問設定的 HAProxy Statistics 網址。  
 
 {% asset_img 4.png %}
+
+<br/>
+
+
+帶入設定檔 auth 那邊設定的帳密。  
 
 <br/>
 
