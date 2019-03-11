@@ -4,7 +4,7 @@ date: 2019-03-11 15:07:33
 tags: [FastoRedis]
 ---
 
-要透過 FastoRedis 寫入資料到 Redis，我們可在 Redis 連線後在左側的樹狀節點中找到要寫入資料的 Database，在上面按下滑鼠右鍵，選取滑鼠右鍵快顯選單中的 Create key 選單選項。  
+要透過 FastoRedis 寫入資料到 Redis，可在 Redis 連線後在左側的樹狀節點中找到要寫入資料的 Database，在上面按下滑鼠右鍵，選取滑鼠右鍵快顯選單中的 Create key 選單選項。  
 
 <!-- More -->
 
