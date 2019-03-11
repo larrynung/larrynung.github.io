@@ -1,5 +1,5 @@
 ---
-title: Rider - Maekdown support plugin
+title: "Rider - Markdown support plugin"
 date: 2019-03-09 14:49:20
 tags: [Rider]
 ---
