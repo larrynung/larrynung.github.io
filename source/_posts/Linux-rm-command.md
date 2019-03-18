@@ -39,6 +39,7 @@ rm 命令提供 Linux 系統檔案刪除的功能。
 
 
 刪除的位置可帶入多組，也可以使用萬用字元的方式模糊指定。  
+    rm [Filter]
 
 {% asset_img 4.jpg %}
 
@@ -46,5 +47,7 @@ rm 命令提供 Linux 系統檔案刪除的功能。
 
 
 若是要刪除目錄，可加帶參數 -r。  
+
+    rm -r [Folder]
 
 {% asset_img 5.jpg %}
