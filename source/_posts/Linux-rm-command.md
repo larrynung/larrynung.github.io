@@ -15,7 +15,7 @@ rm 命令提供 Linux 系統檔案刪除的功能。
 
     rm
 
-{% asset_img 1.png %}
+{% asset_img 1.jpg %}
 
 <br/>
 
@@ -24,7 +24,7 @@ rm 命令提供 Linux 系統檔案刪除的功能。
 
     rm [File]
 
-{% asset_img 2.png %}
+{% asset_img 2.jpg %}
 
 <br/>
 
@@ -33,18 +33,18 @@ rm 命令提供 Linux 系統檔案刪除的功能。
 
     rm -i [File]
 
-{% asset_img 3.png %}
+{% asset_img 3.jpg %}
 
 <br/>
 
 
 刪除的位置可帶入多組，也可以使用萬用字元的方式模糊指定。  
 
-{% asset_img 4.png %}
+{% asset_img 4.jpg %}
 
 </br>
 
 
 若是要刪除目錄，可加帶參數 -r。  
 
-{% asset_img 5.png %}
+{% asset_img 5.jpg %}
