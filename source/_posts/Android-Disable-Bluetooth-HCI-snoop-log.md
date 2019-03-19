@@ -31,5 +31,7 @@ tags: [Android]
 
 {% asset_img 4.jpg %}
 
+<br/>
+
 
 系統就不會再因為寫入該檔案而吃掉大量手機空間。  
