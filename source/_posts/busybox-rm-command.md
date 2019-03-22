@@ -1,7 +1,7 @@
 ---
 title: "BusyBox - rm command"
 date: 2019-03-18 08:30:58
-tags: [Linux]
+tags: [BusyBox]
 ---
 
 rm 命令提供 Linux 系統檔案刪除的功能。  
