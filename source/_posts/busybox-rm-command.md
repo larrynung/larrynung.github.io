@@ -1,5 +1,5 @@
 ---
-title: Linux - rm command
+title: "BusyBox - rm command"
 date: 2019-03-18 08:30:58
 tags: [Linux]
 ---
