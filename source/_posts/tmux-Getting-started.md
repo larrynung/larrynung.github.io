@@ -54,6 +54,10 @@ tmux 在 Ubuntu 可透過 apt-get 安裝。
 
 <br/>
 
+{% asset_img 7.jpg %}
+
+<br/>
+
 
 進入 tmux 後即可對 panel/session/window 做些管控。  
 
@@ -64,8 +68,8 @@ tmux 在 Ubuntu 可透過 apt-get 安裝。
 
     exit
 
-{% asset_img 7.jpg %}
+{% asset_img 8.jpg %}
 
 <br/>
 
-{% asset_img 8.jpg %}
+{% asset_img 9.jpg %}
