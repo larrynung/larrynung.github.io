@@ -4,14 +4,14 @@ date: 2019-03-29 22:01:27
 tags: [tmux]
 ---
 
-tmux 的 Pane 可將一個 Terminal 視窗切成多個區塊。  
+tmux 的 Pane 可用來將一個 Terminal 視窗切成多個區塊。  
 
 <!-- More -->
 
 <br/>
 
 
-使用前先進入 tmux。
+使用前先進入 tmux 的 session。
 
     tmux
 
