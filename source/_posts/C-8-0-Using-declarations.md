@@ -99,6 +99,25 @@ namespace UsingDeclarations
 
 該語法是利用編譯器做成的語法糖，程式在編譯時編譯器會將 Using declarations 的語法編譯成 try/finally 區塊，在 finally 區塊中調用 Dispose 方法做釋放的動作。  
 
+```C#
+...
+DisposableClass disposableClass = new DisposableClass();
+try
+{
+    Console.WriteLine(disposableClass.ToString());
+}
+finally
+{
+    if (disposableClass != null)
+    {
+        ((IDisposable)disposableClass).Dispose();
+    }
+}
+...
+```
+
+{% asset_img 3.png %}
+
 <br/>
 
 
@@ -127,7 +146,7 @@ finally
 ...
 ```
 
-{% asset_img 3.png %}
+{% asset_img 4.png %}
 
 <br/>
 
@@ -183,7 +202,7 @@ namespace UsingDeclarations
 
 運行後可以看到會忠實的進行兩次物件釋放動作。  
 
-{% asset_img 4.png %}
+{% asset_img 5.png %}
 
 <br/>
 
@@ -209,7 +228,7 @@ finally
 ...
 ```
 
-{% asset_img 5.png %}
+{% asset_img 6.png %}
 
 <br/>
 
