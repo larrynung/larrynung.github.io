@@ -102,23 +102,28 @@ namespace UsingDeclarations
 <br/>
 
 
-值得注意的是這樣的寫法是方便了許多，也不需要額外的縮排，但是物件的生命週期會轉交給編譯器決定，釋放時機點可能會比較沒那麼恰當，已經沒在使用的物件了會無法立即釋放。  
+值得注意的是這樣的寫法是方便了許多，也不需要額外的縮排，但是物件的生命週期會轉交給編譯器決定，釋放時機點可能會比較沒那麼恰當。
+
+<br/>
+
+
+像是上面的例子經由反組譯後可以看到其實 disposableClass.ToString() 後物件就沒使用了，但是編譯器目前無法偵測到這點並在適合的時機點立即做釋放。  
 
 ```C#
 ...
-        DisposableClass disposableClass = new DisposableClass();
-        try
-        {
-            Console.WriteLine(disposableClass.ToString());
-            Console.WriteLine("Hello World");
-        }
-        finally
-        {
-            if (disposableClass != null)
-            {
-                ((IDisposable)disposableClass).Dispose();
-            }
-        }
+DisposableClass disposableClass = new DisposableClass();
+try
+{
+    Console.WriteLine(disposableClass.ToString());
+    Console.WriteLine("Hello World");
+}
+finally
+{
+    if (disposableClass != null)
+    {
+        ((IDisposable)disposableClass).Dispose();
+    }
+}
 ...
 ```
 
@@ -127,7 +132,12 @@ namespace UsingDeclarations
 <br/>
 
 
-對於程式語法的誤用目前也無法偵測。  
+另外對於程式語法的誤用目前編譯器也無法偵測。  
+
+<br/>
+
+
+像是如果未注意到使用的是 Using declarations 語法，再次主動調用 Dispose 方法。  
 
 ```c#
 ...
@@ -139,6 +149,74 @@ obj.Dispose();
 
 <br/>
 
+
+像是下面這樣：
+
+```C#
+using System;
+
+namespace UsingDeclarations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using var obj = new DisposableClass();
+            Console.WriteLine(obj.ToString());
+            obj.Dispose();
+            Console.WriteLine("Hello World");
+        }
+    }
+
+    class DisposableClass : IDisposable
+    {
+        public void Dispose()
+        {
+            Console.WriteLine("Dispose...");
+        }
+    }
+}
+```
+
+<br/>
+
+
+運行後可以看到會忠實的進行兩次物件釋放動作。  
+
+{% asset_img 4.png %}
+
+<br/>
+
+
+反組譯查看，也可以看到編譯器只是很單純的照著程式碼編譯。  
+
+```C#
+...
+DisposableClass disposableClass = new DisposableClass();
+try
+{
+    Console.WriteLine(disposableClass.ToString());
+    disposableClass.Dispose();
+    Console.WriteLine("Hello World");
+}
+finally
+{
+    if (disposableClass != null)
+    {
+        ((IDisposable)disposableClass).Dispose();
+    }
+}
+...
+```
+
+{% asset_img 5.png %}
+
+<br/>
+
+
+所以如果語法糖可能會造成誤用的話，還是要自行斟酌使用。  
+
+<br/>
 
 Link
 ----
