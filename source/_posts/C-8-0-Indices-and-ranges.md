@@ -37,6 +37,43 @@ var lastData = data[Index.FromEnd(1)];
 <br/>
 
 
+完整的範例會像下面這樣：  
+
+```C#
+using System;
+using System.Linq;
+
+namespace Indices
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var data = Enumerable.Range(1, 5).ToArray();
+
+            //var firstData = data[0];
+            //var secondData = data[1];
+            //var lastData = data[^1];
+            
+            var firstData = data[Index.Start];
+            var secondData = data[Index.FromStart(1)];
+            //var secondData = data[new Index(1)];
+            var lastData = data[Index.FromEnd(1)];
+            //var secondData = data[new Index(1, true)];
+
+            Console.WriteLine(firstData);
+            Console.WriteLine(secondData);
+            Console.WriteLine(lastData);
+        }
+    }
+}
+```
+
+{% asset_img 1.png %}
+
+<br/>
+
+
 若是要取得陣列的部分內容，可搭配 Range 使用，用 .. 串接起始與中止索引，指定索引的範圍。  
 
 ```C#
@@ -67,45 +104,40 @@ var middleData = data[new Range(Index.FromStart(2), Index.FromStart(4))];
 <br/>
 
 
-最後看一下完整的測試範例：  
+完整的範例會像下面這樣：  
 
 ```C#
 using System;
 using System.Linq;
 
-namespace IndicesAndRanges
+namespace Ranges
 {
     class Program
     {
         static void Main(string[] args)
         {
             var data = Enumerable.Range(1, 5).ToArray();
-            Index n = 2;
             
-            Console.Write("Display {0}st data: ", n.Value);
-            Console.WriteLine(data[n]);
+            //var allData = data[..];
+            //var firstTwoData = data[..2];
+            //var lastTwoData = data[^2..];
+            //var skipTwoData = data[2..];
+            //var middleData = data[2..4];
             
-            Console.Write("Display last data: ");
-            Console.WriteLine(data[^1]);
+            var allData = data[Range.All];
+            var firstTwoData = data[new Range(Index.Start, Index.FromStart(2))];
+            var lastTwoData = data[new Range(Index.FromEnd(2), Index.End)];
+            var skipTwoData = data[new Range(Index.FromStart(2), Index.End)];
+            var middleData = data[new Range(Index.FromStart(2), Index.FromStart(4))];
 
-            Console.Write("Display all data: ");
-            Console.WriteLine(string.Join(",", data[..]));
-            
-            Console.Write("Display first {0} data: ", n.Value);
-            Console.WriteLine(string.Join(",", data[..n]));
-            //Console.WriteLine(string.Join(",", data[..2]));
-            
-            Console.Write("Skip first {0} data: ", n.Value);
-            Console.WriteLine(string.Join(",", data[n..]));
-            //Console.WriteLine(string.Join(",", data[2..]));
-            
-            Console.Write("Display last {0} data: ", n.Value);
-            n = new Index(n.Value, true);
-            Console.WriteLine(string.Join(",", data[n..]));
-            //Console.WriteLine(string.Join(",", data[^2..]));
+            Console.WriteLine(string.Join(",", allData));
+            Console.WriteLine(string.Join(",", firstTwoData));
+            Console.WriteLine(string.Join(",", lastTwoData));
+            Console.WriteLine(string.Join(",", skipTwoData));
+            Console.WriteLine(string.Join(",", middleData));
         }
     }
 }
 ```
 
-{% asset_img 1.png %}
+{% asset_img 2.png %}
