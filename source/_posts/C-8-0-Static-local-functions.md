@@ -35,7 +35,7 @@ namespace StaticLocalFunctions
 <br/>
 
 
-Static Local functions 的資料要從參數傳入，如果直接 reference Local functions 外的變數編譯器會報錯。  
+Static Local functions 在使用上跟一般的靜態方法一樣，需要使用的資料需從參數傳入，或是直接使用靜態的變數值，如果直使用 static Local functions 外的區域變數編譯器會報錯。  
 
 ```C#
 using System;
