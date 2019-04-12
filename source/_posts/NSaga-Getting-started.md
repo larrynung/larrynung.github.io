@@ -58,7 +58,36 @@ public class SagaData
 <br/>
 
 
-再來就要定義 Transaction，也就是 NSaga 中的 Saga。造一個專屬的 Saga Class，實作 ISaga<T>，Transaction 的 Message 由 InitatedBy<T>、ConsumerOf<T> 介面實作去定義，Transaction的第一個 Message 用 InitatedBy<T> 去實作，其他的 Message 都用 ConsumerOf<T> 介面去實作，對應的實作方法用來定義執行對應 Message 時所要做的動作。  
+再來就要定義 Transaction，也就是 NSaga 中的 Saga。造一個專屬的 Saga Class，實作 ISaga<T>、InitatedBy<T>、ConsumerOf<T> 介面。  
+
+```C#
+public class Saga: ISaga<SagaData>, InitiatedBy<StartSagaMessage>, ConsumerOf<SagaMessage>
+{
+    ...
+}
+```
+
+<br/>
+
+
+Transaction 的 Message 由 InitatedBy<T>、ConsumerOf<T> 介面實作去定義，Transaction的第一個 Message 用 InitatedBy<T> 去實作，其他的 Message 都用 ConsumerOf<T> 介面去實作，對應的實作方法用來定義執行對應 Message 時所要做的動作。  
+
+```C#
+...
+public OperationResult Initiate(StartSagaMessage message)
+{
+    Console.WriteLine(message.GetType().Name);
+    SagaData.Executed.Add(message.GetType().Name);
+
+    return new OperationResult();
+}
+...
+```
+
+<br/>
+
+
+像是下面這樣：  
 
 ```C#
 public class Saga: ISaga<SagaData>, InitiatedBy<StartSagaMessage>, ConsumerOf<SagaMessage>
