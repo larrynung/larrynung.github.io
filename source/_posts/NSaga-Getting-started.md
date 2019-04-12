@@ -58,7 +58,7 @@ public class SagaData
 <br/>
 
 
-再來就要定義 Transaction，也就是 NSaga 中的 Saga。造一個專屬的 Saga Class，實作 ISaga<T>、InitatedBy<T>、ConsumerOf<T> 介面。  
+再來要定義 Transaction，也就是 NSaga 中的 Saga。造一個專屬的 Saga Class，實作 ISaga<T>、InitatedBy<T>、ConsumerOf<T> 介面。  
 
 ```C#
 public class Saga: ISaga<SagaData>, InitiatedBy<StartSagaMessage>, ConsumerOf<SagaMessage>
