@@ -13,12 +13,14 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 
 像是筆者這邊準備了一個 GRPC.Message 專案，proto 檔放在上上層的 proto 目錄下。  
 
+```
 .
 |___ proto
 |  |___ message.proto
 |  |___ service.proto
 |___ src
    |___ GRPC.Message
+```
 
 <br/>
 
