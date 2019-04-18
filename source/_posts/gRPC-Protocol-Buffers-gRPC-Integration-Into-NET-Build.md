@@ -11,7 +11,14 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 <br/>
 
 
-像是筆者這邊準備了一個 GRPC.Message 專案，proto 檔放在上上層的 proto 目錄下。  
+像是筆者這邊準備了一個 GRPC.Message 專案。加入 Grpc/Grpc.Tools/Google.Protobuf NuGet 套件參考。  
+
+{% asset_img 1.png %}
+
+<br/>
+
+
+proto 檔放在上上層的 proto 目錄下。  
 
 ```
 .
@@ -35,7 +42,7 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 ...
 ```
 
-{% asset_img 1.png %}
+{% asset_img 2.png %}
 
 <br/>
 
@@ -52,16 +59,19 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 | GrpcOutputDir | | | Directory for generated stubs |
 | GrpcServices | both | none, client, server, both | Generated gRPC stubs |
 
+<br/>
+
+
 設定好後建置專案。  
 
-{% asset_img 2.png %}
+{% asset_img 3.png %}
 
 <br/>
 
 
 proto 檔就會被編譯成對應的程式碼。  
 
-{% asset_img 3.png %}
+{% asset_img 4.png %}
 
 <br/>
 
