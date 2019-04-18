@@ -25,9 +25,9 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 <br/>
 
 
-那在 GRPC.Message 的專案檔中可以像下面這樣設定。  
+那在 GRPC.Message 的專案檔中可以像下面這樣加入 <Protobuf> 設定，會用 Include 指定 proto 檔、OutputDir 指定輸出位置...等。  
 
-```C#
+```xml
 ...
 <ItemGroup>
     <Protobuf Include="../../**/*.proto" OutputDir="." CompileOutputs="false" GrpcService="both" />
@@ -39,6 +39,18 @@ Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotn
 
 <br/>
 
+
+設定可參閱：  
+
+| Name | Default | Value | Synopsis |
+|:-----:|:-----:|:-----:|:-----:|
+| Access | public | public, internal | Generated class access |
+| ProtoCompile | true | true, false | Pass files to protoc? |
+| ProtoRoot |  |  | Common root for set of files |
+| CompileOutputs | true | true, false | C#-compile generated files? |
+| OutputDir | | | Directory for generated C# files |
+| GrpcOutputDir | | | Directory for generated stubs |
+| GrpcServices | both | none, client, server, both | Generated gRPC stubs |
 
 設定好後建置專案。  
 
