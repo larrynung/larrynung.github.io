@@ -37,7 +37,7 @@ proto 檔放在上上層的 proto 目錄下。
 ```xml
 ...
 <ItemGroup>
-    <Protobuf Include="../../**/*.proto" OutputDir="." CompileOutputs="false" GrpcService="both" />
+    <Protobuf Include="../../**/*.proto" OutputDir="%(RelativePath)" CompileOutputs="false" GrpcService="both" />
 </ItemGroup>
 ...
 ```
