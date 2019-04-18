@@ -139,6 +139,9 @@ server.Ports.Add(new ServerPort(host, port, ServerCredentials.Insecure));
 ...
 ```
 
+<br/>
+
+
 啟動 Server。  
 
 ```C#
@@ -147,13 +150,16 @@ server.Start();
 ...
 ```
 
+<br/>
+
+
 等待終止訊號，最後停止 Server 即可。
 
 ```C#
 ...
 server.ShutdownAsync();
 ...
-```  
+```
 
 <br/>
 
