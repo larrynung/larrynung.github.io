@@ -65,7 +65,7 @@ tags: [ZeroBrane Studio]
 <br/>
 
 
-帶上 Redis 運行 Lua Script 所需要的 KEYS 與 ARGS。  
+帶上 Redis 運行 Lua Script 所需要的 KEYS 與 ARGV，KEYS 與 ARGV 用 "," 隔開，且分隔符號前後要有空格。  
 
 {% asset_img 9.png %}
 
