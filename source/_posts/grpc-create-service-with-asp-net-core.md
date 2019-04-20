@@ -35,6 +35,13 @@ tags: [gRPC]
 <br/>
 
 
+編譯檔案時會將 Proto 編譯成對應的程式碼，產生在 obj 下。  
+
+{% asset_img 5.png%}
+
+<br/>
+
+
 另外是 .NET Core 3.0 的 gRPC Service 已經被整進 ASP.NET Core 去了，只要在 Startup.cs 中的 ConfigServices 將 gRPC 服務開啟。  
 
 ```C#
@@ -66,7 +73,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 這邊範本也都設定好了。  
 
-{% asset_img 5.png %}
+{% asset_img 6.png %}
 
 <br/>
 
@@ -77,11 +84,6 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 
 最後運行起來就可以看到 gRPC 正常的在運作。  
-
-{% asset_img 6.png %}
-
-<br/>
-
 
 {% asset_img 7.png %}
 
@@ -94,6 +96,11 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 
 {% asset_img 9.png %}
+
+<br/>
+
+
+{% asset_img 10.png %}
 
 <br/>
 
