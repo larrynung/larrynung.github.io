@@ -4,58 +4,45 @@ date: 2019-04-18 05:39:37
 tags: [gRPC, CSharp]
 ---
 
-要建立 gRPC 的 Server，先要用 proto 檔產生對應的 Service 類別。  
+要建立 gRPC 的 Server，須先將 GRPC.Tools、GRPC.Core、Google.Protobuf 這三個 NuGet 套件加入參考。  
 
 <!-- More -->
 
-<br/>
-
-
-像是這邊筆者用 proto 定義了一個 Service。  
-
-```
-syntax = "proto3";
-
-import "message.proto";
-
-package GRPC.Message;
-
-service HelloService {
-    rpc SayHello (HelloRequest) returns (HelloResponse) {}
-}
+```C#
+...
+<ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.20.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.0" />
+</ItemGroup>
+...
 ```
 
 <br/>
 
 
-該 Service 會使用到的 Message 定義如下。  
+然後設定從 Proto 檔產生需要的程式部分。  
 
+```C#
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Server" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+</ItemGroup>
 ```
-syntax = "proto3";
-
-package GRPC.Message;
-
-
-message HelloRequest {  
-    string name = 1;
-}
-
-message HelloResponse {  
-    string name = 1;
-}
-```
-
-<br/>
-
-
-在產生完程式碼後在 Server 的專案將它加入參考使用。  
 
 {% asset_img 1.png %}
 
 <br/>
 
 
-然後開始實作 Service。
+編譯後可在 obj 下看到產出的檔案。  
+
+{% asset_img 2.png %}
+
+<br/>
+
+
+接著開始實作 Service。
 
 <br/>
 
@@ -87,7 +74,6 @@ public override Task<HelloResponse> SayHello(HelloRequest request, ServerCallCon
 ```C#
 using System.Threading.Tasks;
 using Grpc.Core;
-using GRPC.Message;
 
 public class HelloServiceImpl:HelloService.HelloServiceBase
 {
@@ -124,7 +110,7 @@ var server = new Grpc.Core.Server();
 
 ```C#
 ...
-server.Services.Add(Message.HelloService.BindService(new HelloServiceImpl()));
+server.Services.Add(HelloService.BindService(new HelloServiceImpl()));
 ...
 ```
 
@@ -181,7 +167,7 @@ namespace GRPC.Server
 
             var server = new Grpc.Core.Server
             {
-                Services = {  Message.HelloService.BindService(new HelloServiceImpl())},
+                Services = {HelloService.BindService(new HelloServiceImpl())},
                 Ports =
                 {
                     new ServerPort(host, port, ServerCredentials.Insecure)
@@ -206,4 +192,4 @@ namespace GRPC.Server
 
 運行起來就可以提供 gRPC 的服務了。  
 
-{% asset_img 2.png %}
+{% asset_img 3.png %}
