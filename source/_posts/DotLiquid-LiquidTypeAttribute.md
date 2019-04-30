@@ -119,6 +119,10 @@ namespace DotLiquid.LiquidType
 <br/>
 
 
+{% asset_img 1.png %}
+
+<br/>
+
 Link
 ---
 * [DotLiquid for Developers · dotliquid/dotliquid Wiki](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers)
