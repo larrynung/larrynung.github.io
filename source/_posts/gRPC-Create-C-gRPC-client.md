@@ -4,11 +4,45 @@ date: 2019-04-18 14:24:33
 tags: [gRPC]
 ---
 
-要建立 gRPC 的 client，要先將 proto 檔產生對應的程式碼，建置成組件後在 Client 的專案將它加入參考使用。  
+要建立 gRPC 的 Client，須先將 GRPC.Tools、GRPC.Core、Google.Protobuf 這三個 NuGet 套件加入參考。  
 
 <!-- More -->
 
+```C#
+...
+<ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.20.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.0" />
+</ItemGroup>
+...
+```
+
+<br/>
+
+
+然後設定從 Proto 檔產生需要的程式部分。
+
+```C#
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Client" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+</ItemGroup>
+```
+
 {% asset_img 1.png %}
+
+<br/>
+
+
+編譯後可在 obj 下看到產出的檔案。
+
+{% asset_img 2.png %}
+
+<br/>
+
+
+接著開始實作 Client。
 
 <br/>
 
@@ -92,4 +126,4 @@ namespace GRPC.Client
 
 運行起來 Client 就會透過 rpc 去跟 Server 調用，並將訊息回傳。  
 
-{% asset_img 2.png %}
+{% asset_img 3.png %}
