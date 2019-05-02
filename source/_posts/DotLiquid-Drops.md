@@ -11,7 +11,7 @@ tags: [DotLiquid]
 <br/>
 
 
-該 Drop 型別繼承自 DotLiquid 的 Drop 型別，在建構子將原型別實體帶入，封裝並開出原型別具有的成員屬性。  
+該 Drop 型別繼承自 DotLiquid 的 Drop 型別，在建構子將原型別實體帶入，將原型別具有的成員屬性封裝並開出。  
 
 ```C#
 using System.Drawing;
@@ -38,7 +38,7 @@ namespace DotLiquid.Drops.Model
         }
     }
 }
-```  
+```
 
 <br/>
 
