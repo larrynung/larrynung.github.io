@@ -60,4 +60,4 @@ console.log('Load http://127.0.0.1:' + port + ' and watch the magic');
 
 用瀏覽器訪問服務的位置，即可看到服務回應我們預期的結果。  
 
-{% asset_img 3.png %}
+{% asset_img 3.jpg %}
