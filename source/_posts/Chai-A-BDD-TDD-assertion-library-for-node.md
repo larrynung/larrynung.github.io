@@ -20,23 +20,23 @@ Chai 是 Node.js 的 BDD / TDD 斷言套件。
 </br>
 
 
-Chai 有三種撰寫風格，should、expect、assert。  
+Chai 有三種撰寫風格，should、expect、assert，assert 是比較偏向傳統的斷言方式，expect 與 should 則是偏向 BDD style 的斷言方式。  
 
 </br>
 
 
 無論哪個撰寫風格在撰寫前都需引用 Chai 套件。  
 
-```
+```js
 const chai = require('chai');
 ```
 
 </br>
 
 
-should 撰寫風格會告知 Chai 套件使用 should 撰寫風格。  
+should 撰寫風格使用上要先告知 Chai 套件使用 should 撰寫風格。  
 
-```
+```js
 chai.should();
 ```
 
@@ -45,7 +45,7 @@ chai.should();
 
 接著用目標值應該是...、目標值應該等於...、目標值應該有...類似這樣的寫法撰寫斷言。  
 
-```
+```js
 ...
 target.should.be.a(type);
 target.should.eaequal(value);
@@ -56,9 +56,9 @@ target.should.have.lengthOf(length);
 </br>
 
 
-程式會像下面這樣:  
+程式寫起來會像下面這樣:  
 
-```
+```js
 const chai = require('chai');
 const foo = "bar";
 const beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
@@ -81,9 +81,9 @@ beverages.should.have.property('tea').with.lengthOf(3);
 </br>
 
 
-expect 撰寫風格是在 Chai 套件引用後，取得 expect。  
+expect 撰寫風格使用上要先取得 expect。  
 
-```
+```js
 var expect = chai.expect;
 ```
 
@@ -92,8 +92,9 @@ var expect = chai.expect;
 
 接著用預期目標值是...、預期目標值等於...、預期目標值有...類似這樣的寫法撰寫斷言。  
 
-```
-...                                                     expect(target).to.be.a(type);
+```js
+...                                                     
+expect(target).to.be.a(type);
 expect(target).to.eaequal(value);                  
 expect(target).to.have.lengthOf(length); 
 ...
@@ -102,9 +103,9 @@ expect(target).to.have.lengthOf(length);
 </br>
 
 
-程式會像下面這樣:                            
+程式寫起來會像下面這樣:                            
 
-```
+```js
 const chai = require('chai');
 
 const foo = "bar";
@@ -123,9 +124,9 @@ expect(beverages).to.have.property('tea').with.lengthOf(3);
 </br>
 
 
-assert 撰寫風格是在 Chai 套件引用後，取得 assert。 
+assert 撰寫風格使用上要先取得 assert。 
 
-```
+```js
 var assert = chai.assert;
 ```
 
@@ -134,7 +135,7 @@ var assert = chai.assert;
 
 接著用斷言目標值型態為指定型態、斷言目標值為指定值、預期目標值長度為指定長度...類似這樣的寫法撰寫斷言。  
 
-```
+```js
 ...         
 assert.typeOf(target, type);  
 assert.equal(target, value);  
@@ -145,9 +146,9 @@ assert.lengthof(target, length);
 </br>
 
 
-程式會像下面這樣:  
+程式寫起來會像下面這樣:  
 
-```
+```js
 const chai = require('chai');
 const foo = "bar";
 const beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
@@ -160,3 +161,13 @@ assert.lengthOf(beverages.tea, 3, 'beverages has 3 types of tea');
 ```
 
 {% asset_img 5.png %}
+
+<br/>
+
+
+Link
+----
+* [Chai](https://www.chaijs.com/)
+* [Assertion Styles - Chai](https://www.chaijs.com/guide/styles/)
+* [Assert - Chai](https://www.chaijs.com/api/assert/)
+* [Expect / Should - Chai](https://www.chaijs.com/api/bdd/)
