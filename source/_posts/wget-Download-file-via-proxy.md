@@ -24,6 +24,8 @@ tags: [wget]
 
     vim ~/.wgetrc
 
+{% asset_img 1.png %}
+
 </br>
 
 
@@ -32,6 +34,8 @@ tags: [wget]
     http_proxy = http://${ProxyServer}:${port}
     https_proxy = http://${ProxyServer}:${port}
     ftp_proxy = http://${ProxyServer}:{port}
+
+{% asset_img 2.png %}
 
 </br>
 
