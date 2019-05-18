@@ -25,10 +25,11 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
+        ...
         services.AddGrpc(options =>
         {
-            options.ReceiveMaxMessageSize = 1;
-            options.SendMaxMessageSize = 1;
+            options.ReceiveMaxMessageSize = receiveMsgLimit;
+            options.SendMaxMessageSize = sendMsgLimit;
         });
         ...
     }
@@ -49,10 +50,11 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
+        ...
         services.AddGrpc().AddServiceOptions<GreeterService>(options =>
         {
-            options.ReceiveMaxMessageSize = 1;
-            options.SendMaxMessageSize = 1;
+            options.ReceiveMaxMessageSize = receiveMsgLimit;
+            options.SendMaxMessageSize = sendMsgLimit;
         });
         ...
     }
