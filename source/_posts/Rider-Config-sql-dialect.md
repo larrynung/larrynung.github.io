@@ -13,6 +13,11 @@ Rider 如果沒設定 SQL dialect，開啟 SQL 檔時上方會有提示訊息，
 </br>
 
 
+或是透過滑鼠右鍵快顯選單也可以。  
+
+<br/>
+
+
 SQL dialect 的設定可分為 Global、Project、與 File 幾個層級。  
 
 {% asset_img 2.png %}
@@ -32,14 +37,14 @@ SQL dialect 的設定可分為 Global、Project、與 File 幾個層級。
 </br>
 
 
-SQL dialect 設好後 Rider 就會知道怎麼正確解讀撰寫的 SQL。
+SQL dialect 設好後 Rider 就會知道怎麼正確解讀 SQL 檔。
 
 {% asset_img 5.png %}
 
 </br>
 
 
-也能做些支援的處理，像是排版 SQL...等。  
+因此能做些對應的支援處理，像是排版、...等。  
 
 {% asset_img 6.png %}
 
