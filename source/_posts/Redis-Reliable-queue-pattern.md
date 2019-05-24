@@ -47,7 +47,7 @@ tags: [Redis]
 <br/>
 
 
-像是如果資料處理失敗走一定次數是否從 Working 轉到 Fail，避免處理一直卡住。  
+像是如果資料處理失敗達一定次數，可考慮是否從 Working 轉到 Fail，避免處理一直卡住。  
 
 {% asset_img 4.png %}
 
