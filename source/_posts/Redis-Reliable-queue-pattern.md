@@ -57,3 +57,11 @@ tags: [Redis]
 若是考慮到 Sharding 的話，Working 需要 by Worker 散開，且還需要有當 worker 死掉的接手機制。  
 
 {% asset_img 5.png %}
+
+<br/>
+
+
+Link
+----
+* [RPOPLPUSH – Redis](https://redis.io/commands/rpoplpush)
+* [Reliable Queueing in Redis (Part 1) | Engineering @ Bronto](https://brontoeng.wordpress.com/2014/07/30/reliable-queueing-in-redis-part-1/)
