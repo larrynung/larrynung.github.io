@@ -25,7 +25,7 @@ tags: [Redis]
 <br/>
 
 
-實作方式會變得稍微複雜了一點，簡單的說就是把資料的 Id 放在 List 之類的結構，實際的資料放在 Value，當你 Deque 時將 Id 從 Pendding 放到 Working，處理完才從 Working 清掉，順帶將 Value 對應的資料刪掉。  
+簡單的說就是把資料的 Id 放在 List 之類的結構，實際的資料放在 Value，當你 Deque 時將 Id 從 Pendding 放到 Working，處理完才從 Working 清掉，順帶將 Value 對應的資料刪掉。  
 
 <br/>
 
@@ -37,17 +37,7 @@ tags: [Redis]
 <br/>
 
 
-當資料要從 Redis 取出處理時，會先查看 Working 是否已經有資料，如果 Working 已經有資料，可能代表之前處理到一半之類的，這時資料直接由 Working 反查 Value 後吐回。  
-
-<br/>
-
-
-如果 Working 沒資料，會從 Pending 將需要處理的 Id 透過 rpoplpush 命令轉到 Working，然後反查 Value 吐回。
-
-<br/>
-
-
-資料處理完要將資料從 Redis 移除時，會將 Working 與 Value 中對應的資料移除。  
+當資料要從 Redis 取出處理時，會先查看 Working 是否已經有資料，如果 Working 已經有資料，可能代表之前處理到一半之類的，這時資料直接由 Working 反查 Value 後吐回。如果 Working 沒資料，會從 Pending 將需要處理的 Id 透過 rpoplpush 命令轉到 Working，然後反查 Value 吐回。資料處理完要將資料從 Redis 移除時，會將 Working 與 Value 中對應的資料移除。  
 
 <br/>
 
@@ -64,7 +54,6 @@ tags: [Redis]
 </br>
 
 
-若是考慮到 Sharding 的話 Working 還需要 by Worker 散開，
-且還需要有當 worker 死掉的接手機制。  
+若是考慮到 Sharding 的話，Working 需要 by Worker 散開，且還需要有當 worker 死掉的接手機制。  
 
 {% asset_img 5.png %}
