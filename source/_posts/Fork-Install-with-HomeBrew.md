@@ -6,9 +6,9 @@ tags: [Fork]
 
 要使用 HomeBrew 安裝 Fork，可透過 brew cask 的 Install 命令安裝 Fork 套件。  
 
-    brew cask install fork
-
 <!-- More -->
+
+    brew cask install fork
 
 {% asset_img 1.png %}
 
