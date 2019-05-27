@@ -39,6 +39,8 @@ tags: [Redis]
 
 當資料要從 Redis 取出處理時，會先查看 Working 是否已經有資料，如果 Working 已經有資料，可能代表之前處理到一半之類的，這時資料直接由 Working 反查 Value 後吐回。如果 Working 沒資料，會從 Pending 將需要處理的 Id 透過 rpoplpush 命令轉到 Working，然後反查 Value 吐回。資料處理完要將資料從 Redis 移除時，會將 Working 與 Value 中對應的資料移除。  
 
+{% asset_img 4.png %}
+
 <br/>
 
 
@@ -49,14 +51,14 @@ tags: [Redis]
 
 像是如果資料處理失敗達一定次數，可考慮是否從 Working 轉到 Fail，避免處理一直卡住。  
 
-{% asset_img 4.png %}
+{% asset_img 5.png %}
 
 </br>
 
 
 若是考慮到 Sharding 的話，Working 需要 by Worker 散開，且還需要有當 worker 死掉的接手機制。  
 
-{% asset_img 5.png %}
+{% asset_img 6.png %}
 
 <br/>
 
