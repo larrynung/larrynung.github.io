@@ -75,4 +75,5 @@ CAP 定理揭露了分散式系統最多只能擁有兩種特性。
 Link
 ----
 * [CAP定理 - 維基百科](https://zh.m.wikipedia.org/zh-tw/CAP定理)
-* [CAP 定理的含义](http://www.ruanyifeng.com/blog/2018/07/cap.html)
+* [CAP 定理的含义](http://www.ruanyifeng.com/blog/2018/07/cap.html
+* [分佈式系統理論基礎- CAP](https://www.cnblogs.com/GarfieldEr007/p/9950736.html))
