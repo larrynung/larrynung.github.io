@@ -1,5 +1,5 @@
 ---
-title: Dart - Install Dart on Termux
+title: "Dart - Install on Termux"
 date: 2019-06-21 07:15:50
 tags: [Dart, Termux]
 ---
