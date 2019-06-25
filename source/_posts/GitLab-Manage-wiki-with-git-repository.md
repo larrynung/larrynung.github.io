@@ -30,7 +30,12 @@ GitLab wiki 其實背後是放在一個 Git repository 內，所以除了支援�
 </br>
 
 
-Clone 下來後離線編譯 Wiki，透過喜好的 Markdown 文件撰寫工具撰寫。這邊注意因為 Wiki 支援線上撰寫，所以建議 Follow 線上撰寫的文件配置方式，可實際線上撰寫後用 Git Pull 下來參考。  
+Clone 下來後就可透過喜好的 Markdown 文件撰寫工具來撰寫 Wiki。
+
+</br>
+
+
+這邊注意因為 Wiki 支援線上撰寫，所以建議 Follow 線上撰寫的文件配置方式，可實際線上撰寫後用 Git Pull 下來參考。  
 
 </br>
 
