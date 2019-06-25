@@ -1,10 +1,10 @@
 ---
-title: termux - Internal and external storage
+title: Termux - Internal and external storage
 date: 2018-10-12 08:55:58
-tags: [termux]
+tags: [Termux]
 ---
 
-termux 裝完後預設只能看到 termux 空間內的資料，若要讓 termux 能使用到 Android 的內外部空間，需要自行呼叫命令開啟。  
+Termux 裝完後預設只能看到 Termux 空間內的資料，若要讓 Termux 能使用到 Android 的內外部空間，需要自行呼叫命令開啟。  
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ termux 裝完後預設只能看到 termux 空間內的資料，若要讓 termux 
 </br>
 
 
-命令跑完 termux 下會多個 ~/storage 目錄。
+命令跑完 Termux 下會多個 ~/storage 目錄。
 
 {% asset_img 3.jpg %}
 

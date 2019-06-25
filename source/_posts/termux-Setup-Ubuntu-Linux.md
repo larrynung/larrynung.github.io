@@ -1,10 +1,10 @@
 ---
-title: termux - Setup Ubuntu Linux
+title: Termux - Setup Ubuntu Linux
 date: 2018-10-14 21:37:10
-tags: [termux]
+tags: [Termux]
 ---
 
-要在 termux 安裝 Ubuntu Linux，首先要下載安裝用的 script。  
+要在 Termux 安裝 Ubuntu Linux，首先要下載安裝用的 script。  
 
 <!-- more -->
 

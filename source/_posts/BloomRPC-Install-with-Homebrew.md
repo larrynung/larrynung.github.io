@@ -1,7 +1,7 @@
 ---
 title: BloomRPC - Install with Homebrew
 date: 2019-04-18 15:37:21
-tags: [BloomRPC, Mac, Homebrew]
+tags: [BloomRPC, Mac, HomeBrew]
 ---
 
 要使用 Homebrew 安裝 BloomRPC，可以調用如下命令：    

@@ -1,10 +1,10 @@
 ---
-title: termux - Setup Arch Linux
+title: Termux - Setup Arch Linux
 date: 2018-10-13 22:30:14
-tags: [termux]
+tags: [Termux]
 ---
 
-要在 termux 安裝 Arch Linux，首先要下載安裝用的 script。  
+要在 Termux 安裝 Arch Linux，首先要下載安裝用的 script。  
 
 <!-- more -->
 

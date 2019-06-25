@@ -1,10 +1,10 @@
 ---
-title: termux - Package management
+title: Termux - Package management
 date: 2018-10-09 19:44:34
-tags: [termux]
+tags: [Termux]
 ---
 
-termux 除了可以使用 apt & apt-get 來做套件管理外，也提供 pkg 來做套件管理。  
+Termux 除了可以使用 apt & apt-get 來做套件管理外，也提供 pkg 來做套件管理。  
 
 <!--More-->
 

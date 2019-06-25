@@ -1,24 +1,24 @@
 ---
-title: termux - Getting started
+title: Termux - Getting started
 date: 2018-10-11 17:08:50
-tags: [termux]
+tags: [Termux]
 ---
 
-要使用 termux，首先需透過 Google Play 商店或是 F-Droid 下載安裝。  
+要使用 Termux，首先需透過 Google Play 商店或是 F-Droid 下載安裝。  
 
 <!-- more -->
 
 </br>
 
 
-安裝後點選 termux 圖示啟動。  
+安裝後點選 Termux 圖示啟動。  
 
 {% asset_img 1.jpg %}
 
 </br>
 
 
-termux 啟動後會看到如下終端機畫面，終端機畫面上會提供一些參考的資源，以及套件管理的常用操作。  
+Termux 啟動後會看到如下終端機畫面，終端機畫面上會提供一些參考的資源，以及套件管理的常用操作。  
 
 {% asset_img 2.jpg %}
 
@@ -34,14 +34,14 @@ termux 啟動後會看到如下終端機畫面，終端機畫面上會提供一�
 </br>
 
 
-為了便於使用 termux 在操作上也做了些巧思，像是長按螢幕可叫出選單，便於複製貼上。
+為了便於使用 Termux 在操作上也做了些巧思，像是長按螢幕可叫出選單，便於複製貼上。
 
 {% asset_img 4.jpg %}
 
 </br>
 
 
-MORE... 內也有些功能可供使用，像是 Kill process 可終止目前的 process (輸入 exit 離開也可以)、Help 可直接開啟 termux wiki。  
+MORE... 內也有些功能可供使用，像是 Kill process 可終止目前的 process (輸入 exit 離開也可以)、Help 可直接開啟 Termux wiki。  
 
 {% asset_img 5.jpg %}
 
@@ -113,7 +113,7 @@ Ctrl+alt+C → Open new session (only work in Hacker's Keyboard)
 </br>
 
 
-如果要起多個 session 操作或是要叫出鍵盤，可在 termux 上從最左側往右滑，開啟左側選單。  
+如果要起多個 session 操作或是要叫出鍵盤，可在 Termux 上從最左側往右滑，開啟左側選單。  
 
 {% asset_img 7.jpg %}
 

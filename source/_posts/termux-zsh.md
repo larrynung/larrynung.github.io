@@ -1,10 +1,10 @@
 ---
-title: termux - zsh
+title: Termux - zsh
 date: 2018-10-12 15:07:32
-tags: [termux]
+tags: [Termux]
 ---
 
-要設定 termux zsh，可以下載 termux-ohmyzsh 並運行安裝。  
+要設定 Termux zsh，可以下載 termux-ohmyzsh 並運行安裝。  
 
 <!-- more -->
 
@@ -55,6 +55,6 @@ tags: [termux]
 </br>
 
 
-設定完起一個新的 session 就會看到 termux 的 zsh 主題被套用上去了。  
+設定完起一個新的 session 就會看到 Termux 的 zsh 主題被套用上去了。  
 
 {% asset_img 7.jpg %}

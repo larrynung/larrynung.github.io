@@ -1,10 +1,10 @@
 ---
-title: termux - Custom welcome screen
+title: Termux - Custom welcome screen
 date: 2018-10-12 21:58:38
 tags: [termux]
 ---
 
-要修改 termux 的歡迎畫面，可以開啟 $PREFIX/etc/motd。  
+要修改 Termux 的歡迎畫面，可以開啟 $PREFIX/etc/motd。  
 
 <!-- more -->
 
@@ -15,7 +15,7 @@ tags: [termux]
 </br>
 
 
-開啟後可以看到 termux 的歡迎畫面。  
+開啟後可以看到 Termux 的歡迎畫面。  
 
 {% asset_img 2.jpg %}
 

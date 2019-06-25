@@ -1,10 +1,10 @@
 ---
-title: termux - Setup Hexo blog
+title: Termux - Setup Hexo blog
 date: 2018-10-16 08:17:03
-tags: [termux, Hexo]
+tags: [Termux, Hexo]
 ---
 
-在 termux 使用 Hexo 並沒什麼特別之處。  
+在 Termux 使用 Hexo 並沒什麼特別之處。  
 
 <!-- more -->
 

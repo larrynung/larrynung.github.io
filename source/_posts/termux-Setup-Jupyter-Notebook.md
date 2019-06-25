@@ -1,10 +1,10 @@
 ---
-title: termux - Setup Jupyter Notebook
+title: Termux - Setup Jupyter Notebook
 date: 2018-10-15 23:31:35
-tags: [termux]
+tags: [Termux]
 ---
 
-要在 termux 安裝 Jupyter Notebook，要先安裝一些依賴的套件。  
+要在 Termux 安裝 Jupyter Notebook，要先安裝一些依賴的套件。  
 
 <!-- more -->
 

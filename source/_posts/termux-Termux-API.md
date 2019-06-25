@@ -1,10 +1,10 @@
 ---
-title: 'termux - Termux:API'
+title: 'Termux - Termux:API'
 date: 2018-10-13 08:19:38
-tags: [termux]
+tags: [Termux]
 ---
 
-要讓 termux 可以獲取手機資訊或是跟手機進行互動，可以安裝 Termux:API application。  
+要讓 Termux 可以獲取手機資訊或是跟手機進行互動，可以安裝 Termux:API application。  
 
 <!-- more -->
 
@@ -13,7 +13,7 @@ tags: [termux]
 </br>
 
 
-然後在 termux 安裝 termux-api。  
+然後在 Termux 安裝 termux-api。  
 
     pkg install termux-api
 

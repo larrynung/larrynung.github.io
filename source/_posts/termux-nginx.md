@@ -1,10 +1,10 @@
 ---
-title: termux - nginx
+title: Termux - nginx
 date: 2018-10-15 08:38:15
-tags: [termux, nginx]
+tags: [Termux, nginx]
 ---
 
-要在 termux 內使用 nginx，首先要透過套件管理工具安裝 nginx 套件。  
+要在 Termux 內使用 nginx，首先要透過套件管理工具安裝 nginx 套件。  
 
 <!-- more -->
 

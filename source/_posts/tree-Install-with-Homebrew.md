@@ -1,10 +1,10 @@
 ---
-title: tree - Install with Homebrew
+title: tree - Install with HomeBrew
 date: 2019-04-19 04:56:51
-tags: [Homebrew, Mac]
+tags: [HomeBrew, Mac]
 ---
 
-在 Mac 下可以透過 Homebrew 安裝 tree 命令。
+在 Mac 下可以透過 HomeBrew 安裝 tree 命令。
 
 <!-- More -->
 
