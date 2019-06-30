@@ -1,7 +1,7 @@
 ---
 title: Rust - Getting started
 date: 2019-06-30 09:36:05
-tags: {Rust]
+tags: [Rust]
 ---
 
 Rust 安裝後來撰寫個簡單的程式上手一下。  
