@@ -6,6 +6,8 @@ tags: [ghz]
 
 要在 Linux 安裝 ghz，可到 [Release page](https://github.com/bojand/ghz/releases) 找到要使用的版本，然後下載下來。  
 
+<!-- More -->
+
     wget $url
 
 {% asset_img 1.png %}
