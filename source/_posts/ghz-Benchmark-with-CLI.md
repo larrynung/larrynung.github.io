@@ -87,7 +87,7 @@ ghz --proto $protofile --call $protoserv    ice -d '$protodata' --connections $c
 
 除了直接 Console 顯示 Benchmark 的結果，ghz 也提供了輸出成報表檔的功能，支援輸出 json 、html、csv、… 等格式，可透過 -O 指定輸出的格式，並透過 -o 指定輸出檔案的位置。  
 
-    ghz --proto $protofile --call $protoservice -d '$protodata' -c $concurrency -n $numbers --insecure $ip -O html -o /outputs/result.html
+    ghz --proto $protofile --call $protoservice -d '$protodata' -c $concurrency -n $numbers --insecure $ip -O html -o $outputfile
 
 {% asset_img 3.png %}
 
