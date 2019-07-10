@@ -91,7 +91,7 @@ Benchmark 打入的 MetaData 就會變成像下面這樣的資料。
     --call helloworld.Greeter.SayHello \
     -d '{"name":"Joe"}' \
     -m '{"trace_id":"{{.RequestNumber}}", "timestamp":"{{.TimestampUnix}}"}' \
-  0.0.0.0:50051
+    0.0.0.0:50051
 
 </br>
 
