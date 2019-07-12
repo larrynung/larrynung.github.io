@@ -4,7 +4,7 @@ date: 2019-07-12 19:51:47
 tags: [Blazor]
 ---
 
-若想讓 Blazor component 在畫面上使用時帶上參數設定，可以為 Component 加上 Parameter。  
+若想讓 Blazor component 在畫面上使用時帶上參數做些設定，可以為 Component 加上 Parameter。  
 
 <!-- More -->
 
@@ -21,6 +21,17 @@ tags: [Blazor]
     private int IncrementAmount { get; set;     } = 1;
     ...
 }
+```
+
+</br>
+
+
+在畫面上就可以透過 Component parameter 對 Component 做些設定。  
+
+```html
+...
+<Counter IncrementAmount="10" />
+...
 ```
 
 </br>
