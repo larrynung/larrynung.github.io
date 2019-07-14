@@ -38,7 +38,7 @@ MySQLTuner 是用 Perl 撰寫的腳本，可用來分析 MySQL 或是 MariaDB �
 </br>
 
 
-輸入命令可分析資料庫的設定並給予建議，只要針對前面是 !! 的下去處理即可。  
+輸入命令可分析資料庫的設定並給予建議，只要針對最下方的建議或是前面是 !! 的下去處理即可。  
 
     ./mysqltuner.pl 
     ./mysqltuner.pl --user $user --pass $password
