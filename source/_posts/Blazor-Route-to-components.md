@@ -58,6 +58,6 @@ Blazor component 在未加掛 @page directive 時只能像 HTML element 一樣�
 </br>
 
 
-就可以透過 Routing 導到該 Blazor component。  
+就可以透過 Routing 導到該 Blazor component，像是範本內的 Counter 就可以透過 https://localhost:5001/counter 訪問。  
 
 {% asset_img 3.png %}
