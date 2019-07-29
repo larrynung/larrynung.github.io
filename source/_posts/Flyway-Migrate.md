@@ -64,7 +64,7 @@ create table PERSON (
 
     flyway migrate
 
-{% asset_img 7.png %>
+{% asset_img 7.png %}
 
 </br>
 
