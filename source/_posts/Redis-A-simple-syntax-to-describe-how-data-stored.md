@@ -23,7 +23,7 @@ String 型態表示方式...
 </br>
 
 
-Hash 型態表示方式...
+Hash 型態表示方式...(設計概念為 Dictionary)
 
     $hash-key => {
         {$field-key, $field-value},
@@ -34,7 +34,7 @@ Hash 型態表示方式...
 </br>
 
 
-List 型態表示方式...
+List 型態表示方式...(設計概念為 Array)
 
     $list-key => [
         $list-value,
@@ -45,7 +45,7 @@ List 型態表示方式...
 </br>
 
 
-Set 型態表示方式...
+Set 型態表示方式...(設計概念為 Set)
 
     $set-key => {
         $set-value,
@@ -55,7 +55,7 @@ Set 型態表示方式...
 </br>
 
 
-SortedSet 表示方式...
+SortedSet 表示方式...(設計概念為 Tuple set)
 
     $sorted-set-key => {
         ($score, $set-value),
