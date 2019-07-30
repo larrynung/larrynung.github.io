@@ -1,5 +1,5 @@
 ---
-title: Flyway - Migrate
+title: "Flyway - Migrates the schema to the latest version"
 date: 2019-07-29 23:27:32
 tags: [Flyway]
 ---
