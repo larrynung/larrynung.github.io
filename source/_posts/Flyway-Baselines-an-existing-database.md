@@ -13,7 +13,8 @@ tags: [Flyway]
 </br>
 
 
-像是這邊筆者就先將現有的資料庫打上 Baseline。  
+像是這邊筆者就先將現有的資料庫打上 Baseline。 
+
     flyway baseline
 
 {% asset_img 2.png %}
