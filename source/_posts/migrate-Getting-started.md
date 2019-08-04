@@ -70,7 +70,7 @@ migrate 的 Source 跟 Database 支援眾多，各有不同的設定方式，Mig
 
 用 version 命令查閱當前資料庫的 Migration 版本。  
 
-{% aasset_img 3.png %}
+{% asset_img 3.png %}
 
 </br>
 
