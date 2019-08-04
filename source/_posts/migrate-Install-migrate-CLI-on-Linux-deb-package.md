@@ -1,7 +1,7 @@
 ---
 title: migrate - Install migrate CLI on Linux (*.deb package)
 date: 2019-08-03 21:08:02
-tags: [Flyway]
+tags: [migrate]
 ---
 
 要在 Linux 上安裝 migrate，先將 migrate 的金鑰加入。  
