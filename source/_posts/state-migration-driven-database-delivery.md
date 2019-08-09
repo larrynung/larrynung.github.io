@@ -1,5 +1,5 @@
 ---
-title: Database versioning
+title: "State/Migration driven database delivery"
 date: 2019-08-06 07:17:10
 tags:
 ---
