@@ -10,6 +10,8 @@ tags: [SchemaSync]
 
     git clone git://github.com/mmatuson/SchemaSync.git
 
+</br>
+
 {% asset_img 1.png %}
 
 </br>
