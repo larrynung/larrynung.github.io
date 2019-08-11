@@ -10,16 +10,16 @@ tags: [SchemaSync]
 
     git clone git://github.com/mmatuson/SchemaSync.git
 
-</br>
 
 {% asset_img 1.png %}
 
 </br>
 
 
-然後切到 clone 下來的目錄。
+然後切到 clone 下來的目錄。 
 
     cd SchemaSync
+
 
 {% asset_img 2.png %}
 
@@ -30,6 +30,7 @@ tags: [SchemaSync]
 
     sudo python setup.py install
 
+
 {% asset_img 3.png %}
 
 </br>
@@ -38,6 +39,7 @@ tags: [SchemaSync]
 安裝完可調用命令查驗版本，確認安裝無誤。  
 
     schemasync -V
+
 
 {% asset_img 4.png %}
 
