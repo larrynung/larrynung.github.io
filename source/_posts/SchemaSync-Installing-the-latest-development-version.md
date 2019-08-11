@@ -4,7 +4,7 @@ date: 2019-08-10 12:46:19
 tags: [SchemaSync]
 ---
 
-要安裝 SchemaSync 最新的開發版，先將 SchemaSync 用 git clone 下來。  
+要安裝 SchemaSync 最新的開發版，先將 SchemaSync 用 git clone 下來。
 
 <!-- More -->
 
