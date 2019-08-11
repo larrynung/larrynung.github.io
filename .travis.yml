@@ -10,6 +10,7 @@ before_install:
 install:
 - yarn
 script:
+- hexo clean
 - hexo generate
 - gulp
 after_success:
