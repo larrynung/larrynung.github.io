@@ -50,6 +50,13 @@ Migration 檔案用 SQL 語法下去撰寫。
 </br>
 
 
+schema_migrations 資料表內只會有一筆紀錄，只會有 version 與 dirty 資訊，沒有 Migration 的版本紀錄，也沒有 CRC 檢查碼驗證。  
+
+{% asset_img 7.png %}
+
+</br>
+
+
 Link
 ====
 * [MySQL](https://github.com/golang-migrate/migrate/tree/master/database/mysql)
