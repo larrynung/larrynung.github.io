@@ -47,25 +47,7 @@ Profiling 的層級如下:
 </br>
 
 
-設定完可用 db.getProfilingLevel 查驗設定的 Profiling 層級。
-
-    db.getProfilingLevel()
-
-{% asset_img 3.png %}
-
-</br>
-
-
-或是用 db.getProfilingStatus 查驗整個 Profiling 設定。
-
-    db.getProfilingStatus()
-
-{% asset_img 4.png %}
-
-</br>
-
-
-設定無誤，實際運行程式，MongoDB Profiler 就會依 Profiling 的設定幫我們抓出慢的操作。  
+設定完實際運行程式，MongoDB Profiler 就會依 Profiling 的設定幫我們抓出慢的操作。  
 
 </br>
 
@@ -74,4 +56,4 @@ Profiler 抓出的資料會被放置在 db.system.profile，可對此操作查�
 
     db.system.profile.find().pretty()
 
-{% asset_img 5.png %}
+{% asset_img 3.png %}
