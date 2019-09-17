@@ -26,7 +26,23 @@ tags: [MongoDB]
 
     db.setProfilingLevel($level, $slowms)
 
-{% asset_img 2.png %}
+{% asset_img 2.png %}                   
+
+</br>
+
+
+Profiling 的層級如下:  
+
+| Level | Description |
+| :---: | :---------: |
+| 0     | The profiler is off and does not collect any data. This is the default profiler level. |
+| 1     | The profiler collects data for operations that take longer than the value of slowms. |
+| 2     | The profiler collects data for all operations. |
+
+</br>
+
+
+如果層級設為 0，則會停止 Profiling;設為 1，則會抓取比 slowms 久的操作;設為 2，則會抓取所有操作。  
 
 </br>
 
