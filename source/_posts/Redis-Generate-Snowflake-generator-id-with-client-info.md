@@ -73,7 +73,7 @@ generator =>
 ```
 
 
-當第三個服務上線時，假設第一個服務也斷線了，透過 Redis 命令 CLIENT LIST 取得所有連線的 Id 得到 1 跟 3。得知連線 0 已經下線，故將 Generator id 0 可配給 Redis client 3。
+當第三個服務上線時，假設第一個服務也斷線了，透過 Redis 命令 CLIENT LIST 取得所有連線的 Id 得到 1 跟 3。比對 Redis 內的資料可得知連線 0 已經下線，故將 Generator id 0 可配給 Redis client 3。
 
 </br>
 
