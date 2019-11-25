@@ -40,7 +40,7 @@ Dump 出 .Net Core 的 Dump file 後。
 </br>
 
 
-要查看是哪個 unhandled exception 導致程式死掉，可使用 pe 命令。
+要查看是什麼錯誤導致程式死掉，可使用 pe 命令。
 
     pe -lines
 
