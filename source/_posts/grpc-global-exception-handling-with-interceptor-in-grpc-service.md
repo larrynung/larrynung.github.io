@@ -1,5 +1,5 @@
 ---
-title: gRPC - Global handling with interceptor in gRPC service
+title: "gRPC - Global exception handling with interceptor in gRPC service"
 date: 2019-11-27 07:26:13
 tags: [gRPC]
 ---
