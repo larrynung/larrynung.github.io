@@ -119,7 +119,7 @@ Interceptor 寫好後掛載進去。
             {
                 var interceptors = options.Interceptors;
                 interceptors.Add<LoggerInterceptor>();
-                interceptors.Add<ExceptionInterceptor>();
+                ...
             });
         }
         ...
