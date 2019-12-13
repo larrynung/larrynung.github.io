@@ -29,7 +29,7 @@ tags: [.NET Core, HomeBrew]
 </br>
 
 
-.NET core SDK 就會被要升級到 3.1 最新版。
+.NET core SDK 就會被升到 3.1 最新版。
 
     dotnet --version
 
