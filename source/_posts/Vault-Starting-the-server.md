@@ -15,7 +15,7 @@ Vault 安裝後可調用 Vault server 命令起服務試試，這邊可加帶 -d
 </br>
 
 
-服務啟用後注意到特別變色的區塊，裡面有 Vault server 的位置與 Token ID。  
+服務啟用後注意到特別變色的區塊，裡面有 Vault server 的位置與 Root token。  
 
 </br>
 
