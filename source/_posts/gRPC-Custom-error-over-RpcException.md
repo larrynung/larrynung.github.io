@@ -106,6 +106,11 @@ namespace GrpcService_CSharp1
 </br>
 
 
+這樣的做法可能在 UnHappy case 時會增加了一些 Overhead，但不需要為 Message 加入 StatusCode，在 UnHappy case 的處理上也比較一致，不會因傳遞方式不同有不同的處理。  
+
+</br>
+
+
 Link
 ====
 * [Enum StatusCode](csharp/api/Grpc.Core.StatusCode.html)
