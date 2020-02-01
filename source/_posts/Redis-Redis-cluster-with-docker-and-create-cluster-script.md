@@ -4,14 +4,14 @@ date: 2020-02-01 16:04:53
 tags: [Redis, Docker]
 ---
 
-透過 Docker 去起 Redis cluster，多半網路上的做法都是用多個容器去做，這邊筆者因為測試與開發上的便利性，試著用一個容器搭配 create-cluster 腳本去起 Redis cluster。  
+透過 Docker 去起 Redis cluster，多半網路上的做法都是用多個容器去做，這邊筆者考量測試與開發上的便利性，試著用一個容器搭配 create-cluster 腳本去起 Redis cluster。  
 
 <!-- More -->
 
 </br>
 
 
-這邊為了整合 Docker，create-cluster 腳本筆者做了些調整。只留下本來腳本中的 create 與 start 兩個步驟，將兩個步驟合併，並支援透過環境變數帶入 Host 與 Port，另外因為 Redis 不支援 Domain，所以 Host 帶入後會在容器內解析為 IP 後使用。  
+為了整合 Docker，create-cluster 腳本筆者做了些調整。只留下本來腳本中的 create 與 start 兩個步驟，將兩個步驟合併，並支援透過環境變數帶入 Host 與 Port，另外因為 Redis 不支援 Domain，所以 Host 帶入後會在容器內解析為 IP 後使用。  
 
 ```
 #!/bin/bash
