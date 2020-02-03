@@ -97,3 +97,89 @@ services:
     docker exec $container redis-cli cluster nodes
 
 {% asset_img 5.png %}
+
+</br>
+
+
+如果要使用 Redis 設定檔。  
+
+    vim redis.conf
+
+{% asset_img 6.png %}
+
+</br>
+
+
+看在 Redis 設定檔內加入 Redis 的設定，像是 cluster-enabled 等。  
+
+```
+cluster-enabled yes
+cluster-node-timeout 5000
+appendonly yes
+```
+
+{% asset_img 7.png %}
+
+</br>
+
+
+Docker 加掛 Redis 設定檔。  
+
+```
+version: '3'
+
+
+services:
+  redis-cluster:
+    image: redis:5.0.7
+    volumes:
+      - "./redis.conf:/usr/local/bin/redis/redis.conf"
+      - "./create-cluster.sh:/usr/local/bin/redis/create-cluster.sh"
+    environment:
+      - HOSTNAME=127.0.0.1
+      - PORT=6379
+    ports:
+      - "6379-6384:6379-6384"
+    command: bash -c "sh /usr/local/bin/redis/create-cluster.sh && tail -f /dev/null"
+```
+
+{% asset_img 8.png %}
+
+</br>
+
+
+create-cluster 腳本在起 Redis 服務時指定 Redis 設定檔就可以了。  
+
+```
+#!/bin/bash
+
+
+# Settings
+HOSTNAME=${HOSTNAME}
+PORT=${PORT}
+TIMEOUT=2000
+NODES=6
+REPLICAS=1
+CLUSTER_HOST=$(getent hosts $HOSTNAME | awk '{ print $1 }')
+
+
+# Create & start
+HOSTS=""
+ENDPORT=$((PORT+NODES))
+CURRENTPORT=$PORT
+
+
+while [ $((CURRENTPORT < ENDPORT)) != "0" ]; do
+    echo "Starting $CURRENTPORT"
+
+
+    redis-server /usr/local/bin/redis/redis.conf --port $CURRENTPORT --cluster-config-file nodes-${CURRENTPORT}.conf --daemonize yes
+
+
+    HOSTS="$HOSTS $CLUSTER_HOST:$CURRENTPORT"
+    CURRENTPORT=$((CURRENTPORT+1))
+done
+echo "yes"| redis-cli --cluster create $HOSTS --cluster-replicas $REPLICAS
+```
+
+{% asset_img 9.png %}
