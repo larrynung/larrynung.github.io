@@ -24,7 +24,7 @@ Docker 容器開多了沒關，要一次停掉可以用 docker ps 命令查閱�
 
 要一次殺掉可以用 docker ps 命令查閱所有容器，將容器資訊帶給 docker rm，一次殺掉。
 
-    docker rm $(docker ps -a -q)
+    docker rm -f $(docker ps -a -q)
 
 {% asset_img 3.png %}
 
