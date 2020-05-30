@@ -15,14 +15,14 @@ tags: [git]
 
     vim .gitmessage.txt
 
-<% asset_img 1.png %>
+{% asset_img 1.png %}
 
 <br>
 
 
 設定範本檔的內容。  
 
-<% asset_img 2.png %>
+{% asset_img 2.png %}
 
 <br>
 
@@ -31,7 +31,7 @@ tags: [git]
 
     git config commit.template .gitmessage.txt
 
-<% asset_img 3.png %>
+{% asset_img 3.png %}
 
 <br>
 
@@ -40,19 +40,19 @@ tags: [git]
 
     git add .
 
-<% asset_img 4.png %>
+{% asset_img 4.png %}
 
 <br>
 
 
     git commit
 
-<% asset_img 5.png %>
+{% asset_img 5.png %}
 
 <br>
 
 
-<% asset_img 6.png %>
+{% asset_img 6.png %}
 
 <br>
 
