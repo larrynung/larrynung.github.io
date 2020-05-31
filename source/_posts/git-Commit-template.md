@@ -64,11 +64,11 @@ tags: [git]
 
 Link
 ====
-*[一份建议的git commit模板](https://gist.github.com/jmaxhu/8e7fb69a7dcec1b9b953)
-*[Git 如何在Commit時加入樣板template的機制](https://ukyoappdev.blogspot.com/2018/03/git-committemplate.html)
-*[如何使用 git commit template 與 git hooks 管理團隊的 git log | AllenHsu的技術手扎](https://allen-hsu.github.io/2017/07/02/git-message-template-and-githook/)
-*[使用 git commit template 管理 git log - Dev Chill - Medium](https://medium.com/dev-chill/%E4%BD%BF%E7%94%A8-git-commit-template-%E7%AE%A1%E7%90%86-git-log-cb70f95fda2f)
-*[3. Git Commit Template · CodeDoesGood/business Wiki](https://github.com/CodeDoesGood/business/wiki/3.-Git-Commit-Template)
-*[Git: Write a good commit message for an atomic commit · Hello, World!](http://pre.tir.tw/008/blog/output/git-write-a-good-commit-message-for-an-atomic-commit.html)
-*[Karma - Git Commit Msg](http://karma-runner.github.io/0.10/dev/git-commit-msg.html)
-*[Git Commit Message Conventions - Google 文件](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)
+* [一份建议的git commit模板](https://gist.github.com/jmaxhu/8e7fb69a7dcec1b9b953)
+* [Git 如何在Commit時加入樣板template的機制](https://ukyoappdev.blogspot.com/2018/03/git-committemplate.html)
+* [如何使用 git commit template 與 git hooks 管理團隊的 git log | AllenHsu的技術手扎](https://allen-hsu.github.io/2017/07/02/git-message-template-and-githook/)
+* [使用 git commit template 管理 git log - Dev Chill - Medium](https://medium.com/dev-chill/%E4%BD%BF%E7%94%A8-git-commit-template-%E7%AE%A1%E7%90%86-git-log-cb70f95fda2f)
+* [3. Git Commit Template · CodeDoesGood/business Wiki](https://github.com/CodeDoesGood/business/wiki/3.-Git-Commit-Template)
+* [Git: Write a good commit message for an atomic commit · Hello, World!](http://pre.tir.tw/008/blog/output/git-write-a-good-commit-message-for-an-atomic-commit.html)
+* [Karma - Git Commit Msg](http://karma-runner.github.io/0.10/dev/git-commit-msg.html)
+* [Git Commit Message Conventions - Google 文件](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)
