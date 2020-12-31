@@ -65,7 +65,7 @@ tags: [MongoDB]
 </br>
 
 
-調用 rs.initate 命令，將三個 MongoDB instance 資料帶入，初始 MongoDB 的 replica set。
+調用 rs.initate 命令，將三個 MongoDB instance 資料帶入，初始 MongoDB 的 replica set。  
     rs.initiate( { _id : "rs0",members: [{ _id: 0, host: "mongo1" },{ _id: 1, host: "mongo2" },{ _id: 2, host: "mongo3" }   ]})
 
 {% asset_img 8.png %}
