@@ -13,7 +13,7 @@ dotnet-counters 可用來監控 .Net Core 的 Process，像是這邊筆者準備
 <br>
 
 
-將其運行起來。  
+將程式運行起來。  
 
     dotnet run
 
@@ -34,6 +34,8 @@ dotnet-counters 可用來監控 .Net Core 的 Process，像是這邊筆者準備
 接著就可透過 dotnet-counters 監控指定 Process 的資源使用狀態。  
 
     dotnet-counters monitor --refresh-interval $refreshInterval -p $processId
+
+<br>
 
 
 像是這邊剛剛查閱到了 dotnet run 起了兩個 Process，我們可以帶入 Process Id 監控。  
