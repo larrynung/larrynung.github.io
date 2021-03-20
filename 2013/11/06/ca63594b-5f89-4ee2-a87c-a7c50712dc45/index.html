@@ -1,0 +1,653 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]如何做出類似Facebook的web preview">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]如何做出類似Facebook的web preview">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/ca63594b-5f89-4ee2-a87c-a7c50712dc45/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]如何做出類似Facebook的web preview">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]如何做出類似Facebook的web preview">
+<meta name="twitter:description" content="[C#]如何做出類似Facebook的web preview">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]如何做出類似Facebook的web preview | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]如何做出類似Facebook的web preview
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/ca63594b-5f89-4ee2-a87c-a7c50712dc45/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/ca63594b-5f89-4ee2-a87c-a7c50712dc45/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>因為不是走Web開發的，這塊對於筆者滿陌生的，一直滿好奇Facebook打入網址後會顯示的預覽畫面是怎樣做的。抽空參閱Creating a Facebook Like Website Previewer這篇並試玩了一下，發現沒有想像中的困難，只是很單純的從網頁內容中擷取資訊而已，這邊稍稍對此做個整理。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1210/d736f1418485_E557/image_2.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\ca63594b-5f89-4ee2-a87c-a7c50712dc45\image_thumb.png" width="667" height="340"></a></p>  <p> </p>  <p>這邊我們可以先來檢視一下奇摩的原始碼，對照上圖在FB所擷取到的資訊，我們不難看出資訊都是從網頁原始碼中擷取出來的。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1210/d736f1418485_E557/image_4.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\ca63594b-5f89-4ee2-a87c-a7c50712dc45\image_thumb_1.png" width="691" height="577"> </a></p>  <p> </p>  <p>其中網頁預覽中的標題部份對應到的是&lt;Title&gt;這個HTML標籤所包的值，可以用下面的正規表示式將之擷取出來：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0ebd5f0e-9265-4cf8-89d3-c4d8039438a8" class="wlWriterSmartContent"><pre name="code" class="c#">&lt;title&gt;\s<em>(?&lt;Title&gt;[^&lt;&gt;]+)\s</em>&lt;/title&gt;</pre></div><br><br><p> </p>
+
+<p>而網頁預覽中的網頁描述部份則是對應到name值為description的meta標籤，可以用下面的正規表示式將之擷取出來：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d701e22b-2fd3-4fe7-a73b-f72ad8d63d63" class="wlWriterSmartContent"><pre name="code" class="xml">&lt;meta\s+name=”description”\s+content\s<em>=\s</em>“(?&lt;Description&gt;[^&lt;&gt;”]*)”</pre></div>
+
+<p> </p>
+
+<p>至於網頁預覽中的縮圖部份，可能是來自rel值為image_src的link標籤或是來自img標籤，圖片的網址部份要盡可能完整才收進來，可以用下面的正規表示式將之擷取出來：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5fd35181-1d20-4652-ae4b-b264fdbafd37" class="wlWriterSmartContent"><pre name="code" class="xml">&lt;(?:img\s+src\s<em>=|link\s+rel\s</em>=\s<em>“image_src”\s+ href\s</em>=)”(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))”</pre></div>
+
+<p> </p>
+
+<p>實際在做擷取時，就會像下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:733516b4-d7d4-4833-a3fa-df801be74f46" class="wlWriterSmartContent"><pre name="code" class="c#">…<br>#region Const<br>private const string TITLE_MATCH_PATTERN = @”&lt;title&gt;\s<em>(?&lt;Title&gt;[^&lt;&gt;]+)\s</em>&lt;/title&gt;”;<br>private const string DESCRIPTION_MATCH_PATTERN = @”&lt;meta\s+name=””description””\s+content\s<em>=\s</em>“”(?&lt;Description&gt;[^&lt;&gt;””]<em>)”””;<br>private const string THUMBNAIL_MATCH_PATTERN = @”&lt;(?:img\s+src\s</em>=|link\s+rel\s<em>=\s</em>“”image_src””\s+ href\s*=)””(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))”””;<br>#endregion<br>…<br>string htmlSourceCode;<br>…<br>var title = Regex.Match(htmlSourceCode, TITLE_MATCH_PATTERN).Groups[“Title”].Value;<br>var description = Regex.Match(htmlSourceCode,DESCRIPTION_MATCH_PATTERN).Groups[“Description”].Value;<br>var thumbnailURLs = Regex.Matches(htmlSourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast&lt;Match&gt;().Select(m =&gt; m.Groups[“Thumbnail”].Value);</pre></div>
+
+<p> </p>
+
+<p>這邊筆者在測試時隨手將這功能簡單的包了一下。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ce5ee1a2-9186-4032-9f4e-cc5f8e13c24a" class="wlWriterSmartContent"><pre name="code" class="c#">    public class WebPreview<br>    {<br>        #region Const<br>        private const string TITLE_MATCH_PATTERN = @”&lt;title&gt;\s?(?&lt;Title&gt;[^&lt;&gt;]+)\s?&lt;/title&gt;”;<br>        private const string DESCRIPTION_MATCH_PATTERN = @”&lt;meta\s+name=””description””\s+content\s?=””(?&lt;Description&gt;[^&lt;&gt;””]<em>)””&gt;”;<br>        private const string THUMBNAIL_MATCH_PATTERN = @”&lt;(?:img\s+src\s</em>=|link\s+rel\s<em>=\s</em>“”image_src””\s+ href\s*=)””(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))”””;<br>        #endregion<br><br>        #region Var<br>        private string _sourceCode;<br>        private string _title;<br>        private string _description;<br>        private IEnumerable&lt;String&gt; _thumbnailURLs;<br>        #endregion<br><br><br>        #region Private Property<br>        public string m_SourceCode<br>        {<br>            get<br>            {<br>                return _sourceCode ?? (_sourceCode = GetHTMLSourceCode(URL));<br>            }<br>        }<br>        #endregion<br><br><br><br>        #region Public Property<br>        /// &lt;summary&gt;<br>        /// Gets or sets the URL.<br>        /// &lt;/summary&gt;<br>        /// &lt;value&gt;The URL.&lt;/value&gt;<br>        public string URL { get; private set; }<br><br>        /// &lt;summary&gt;<br>        /// Gets the title.<br>        /// &lt;/summary&gt;<br>        /// &lt;value&gt;The title.&lt;/value&gt;<br>        public string Title<br>        {<br>            get<br>            {<br>                return _title ?? (_title = Regex.Match(m_SourceCode, TITLE_MATCH_PATTERN).Groups[“Title”].Value);<br>            }<br>        }<br><br>        /// &lt;summary&gt;<br>        /// Gets the description.<br>        /// &lt;/summary&gt;<br>        /// &lt;value&gt;The description.&lt;/value&gt;<br>        public string Description<br>        {<br>            get<br>            {<br>                return _description ?? (_description = Regex.Match(m_SourceCode,DESCRIPTION_MATCH_PATTERN).Groups[“Description”].Value);<br>            }<br>        }<br><br>        public IEnumerable&lt;String&gt; ThumbnailURLs<br>        {<br>            get<br>            {<br>                return _thumbnailURLs ?? (_thumbnailURLs = Regex.Matches(m_SourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast&lt;Match&gt;().Select(m =&gt; m.Groups[“Thumbnail”].Value));<br>            }<br>        }<br>        #endregion<br><br>        #region Constructor<br>        public WebPreview (string url)<br>        {<br>            this.URL = url;<br>        }<br>        #endregion<br><br><br>        #region Private Method<br>        private string GetHTMLSourceCode(string url)<br>        {<br>            HttpWebRequest request = (WebRequest.Create (url)) as HttpWebRequest;<br>            HttpWebResponse response = request.GetResponse() as HttpWebResponse;<br>            using (StreamReader sr = new StreamReader(response.GetResponseStream()))<br>            {<br>                return sr.ReadToEnd();<br>            }<br>        }<br>        #endregion<br>    }</pre></div>
+
+<p> </p>
+
+<p>使用起來就只要在建立物件時帶入網址就可以了。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:cbcd43f8-9907-4680-a343-0605e79a913c" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Windows.Forms;<br><br>namespace WindowsFormsApplication36<br>{<br>    public partial class Form1 : Form<br>    {<br>        private int m_Index { get; set; }<br>        private string[] m_ThumbnailURLs { get; set; }<br><br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }<br><br>        private void UpdateThumbnailIndexStatus()<br>        {<br>            lblIndexStatus.Text = string.Format(“{0}/{1}”, m_Index + 1, m_ThumbnailURLs.Length);<br>        }<br><br>        private void btnGO_Click(object sender, EventArgs e)<br>        {<br>            var preview = new WebPreview(tbxUrl.Text);<br>            lblTitle.Text = preview.Title;<br>            lblUrl.Text = preview.URL;<br>            lblDescription.Text = preview.Description;<br><br>            m_Index = 0;<br>            m_ThumbnailURLs = preview.ThumbnailURLs.ToArray();<br>            UpdateThumbnailIndexStatus();<br><br>            if (m_ThumbnailURLs.Length == 0)<br>                return;<br><br>            pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];<br>        }<br><br>        private void btnNext_Click(object sender, EventArgs e)<br>        {<br>            if (m_Index == m_ThumbnailURLs.Length - 1)<br>                return;<br>            m_Index += 1;<br>            pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];<br>            UpdateThumbnailIndexStatus();<br>        }<br><br>        private void btnPrevious_Click(object sender, EventArgs e)<br>        {<br>            if (m_Index == 0)<br>                return;<br>            m_Index -= 1;<br>            pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];<br>            UpdateThumbnailIndexStatus();<br>        }<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>運行的結果如下：</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\ca63594b-5f89-4ee2-a87c-a7c50712dc45\image_thumb_2.png" width="468" height="223"> </p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\ca63594b-5f89-4ee2-a87c-a7c50712dc45\image_thumb_3.png" width="468" height="223"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Creating a Facebook Like Website Previewer</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/c769a641-8d0b-4b7e-8d81-fe57d9daf989/" rel="next" title="[C#]使用NetSparkle為應用程式加入自動更新機制" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]使用NetSparkle為應用程式加入自動更新機制
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/cd475dc0-e24f-4f55-986a-e795ac41c9f7/" rel="prev" title="[Visual Studio][C#].NET 4.5 New Feature - Caller Information" data-instant>
+                [Visual Studio][C#].NET 4.5 New Feature - Caller Information <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/ca63594b-5f89-4ee2-a87c-a7c50712dc45/';
+      var disqus_title = "[C#]如何做出類似Facebook的web preview";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/ca63594b-5f89-4ee2-a87c-a7c50712dc45/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

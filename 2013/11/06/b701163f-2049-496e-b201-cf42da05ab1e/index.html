@@ -1,0 +1,667 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]PE檔案格式簡易介紹與PE檔案的檢測">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]PE檔案格式簡易介紹與PE檔案的檢測">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/b701163f-2049-496e-b201-cf42da05ab1e/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]PE檔案格式簡易介紹與PE檔案的檢測">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image12_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]PE檔案格式簡易介紹與PE檔案的檢測">
+<meta name="twitter:description" content="[C#]PE檔案格式簡易介紹與PE檔案的檢測">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/b701163f-2049-496e-b201-cf42da05ab1e/image_thumb_5.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]PE檔案格式簡易介紹與PE檔案的檢測 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]PE檔案格式簡易介紹與PE檔案的檢測
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/b701163f-2049-496e-b201-cf42da05ab1e/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/b701163f-2049-496e-b201-cf42da05ab1e/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>PE檔案是Portable Executable的簡稱，是windows系統中任何可執行模組或者DLL的檔案格式。這邊要介紹一下如何透過程式檢測檔案是否為合法的PE檔，因此必須針對PE檔的格式做些初步的介紹，就讓我們先來看一下PE檔的格式圖吧：</p>  <p> <img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image_thumb_5.png" width="214" height="260"> </p>  <p> </p>  <p>檔案最前端為MS-DOS Header，這邊可能會有人奇怪為什麼是叫MS-DOS Header,這是因為它並不是一個新的header,早在MS-DOS第二版時就有這個Header了，之所以會在一般Window下的PE檔保留有這個Header，是因為希望該PE檔在DOS下運行也能做些動作，也就是上面格式圖中MS-DOS Real-Mode Stub Program的部分，所以Window下的PE檔在DOS下運行時才可秀出“This program cannot be run in DOS mode.”訊息。</p>  <p> </p>  <p>MS-DOS Header對應的是C++的_IMAGE_DOS_HEADER Structure，所以我們可以透過該Structure來進一步的了解MS-DOS Header的格式：  </p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:71185b59-b2bd-4075-a172-237491a81bfe" class="wlWriterSmartContent"><pre name="code" class="c">typedef struct _IMAGE_DOS_HEADER {  // DOS .EXE header<br>    USHORT e_magic;         // Magic number<br>    USHORT e_cblp;          // Bytes on last page of file<br>    USHORT e_cp;            // Pages in file<br>    USHORT e_crlc;          // Relocations<br>    USHORT e_cparhdr;       // Size of header in paragraphs<br>    USHORT e_minalloc;      // Minimum extra paragraphs needed<br>    USHORT e_maxalloc;      // Maximum extra paragraphs needed<br>    USHORT e_ss;            // Initial (relative) SS value<br>    USHORT e_sp;            // Initial SP value<br>    USHORT e_csum;          // Checksum<br>    USHORT e_ip;            // Initial IP value<br>    USHORT e_cs;            // Initial (relative) CS value<br>    USHORT e_lfarlc;        // File address of relocation table<br>    USHORT e_ovno;          // Overlay number<br>    USHORT e_res[4];        // Reserved words<br>    USHORT e_oemid;         // OEM identifier (for e_oeminfo)<br>    USHORT e_oeminfo;       // OEM information; e_oemid specific<br>    USHORT e_res2[10];      // Reserved words<br>    LONG   e_lfanew;        // File address of new exe header<br>  } IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;</pre></div><br><br><p> </p>
+
+<p>裡面最重要的就是e_magic與e_lfanew這兩個成員。e_magic是主要是用來存放MS-DOS Header的簽章，所有兼容於DOS格式的PE檔其值皆會被設為0x5A4D，也就是ASCII的MZ，這邊之所以會是MZ而不是DOS之類比較好識別的字樣也是有其原因的，它其實是當初主導MS-DOS開發的Mark Zbikowski縮寫。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d5c53977-f2ff-46ae-846f-43d69eecb133" class="wlWriterSmartContent"><pre name="code" class="c">#define IMAGE_DOS_SIGNATURE             0x5A4D      // MZ</pre></div>
+
+<p><br><br></p><p> </p>
+
+<p>這也就是我們用十六進制編輯軟體來看執行檔時常會瞄到最前面有個MZ的關係。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image_thumb.png" width="644" height="282"> </p>
+
+<p><br>  <br>至於e_lfanew則是一個偏移量，該偏移量表示PE Header的偏移位置，它位於PE檔0x3C的位置，所以我們可以透過這個偏移值來找到PE檔內的PE Header。</p>
+
+<p> </p>
+
+<p>找到PE檔的PE Header位置後，我們可檢查前4Byte是否是PE00，若上面的MS-DOS Header那邊的檢查過了，這邊也是PE00的話，則代表它是合法的PE檔。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e0d44a13-9c95-40ce-8fb8-cfb892f799b3" class="wlWriterSmartContent"><pre name="code" class="c">#define IMAGE_NT_SIGNATURE              0x00004550  // PE00<br><br>typedef struct _IMAGE_NT_HEADERS {<br>  DWORD                 Signature;<br>  IMAGE_FILE_HEADER     FileHeader;<br>  IMAGE_OPTIONAL_HEADER OptionalHeader;<br>} IMAGE_NT_HEADERS, *PIMAGE_NT_HEADERS;</pre></div>
+
+<p>  </p>
+
+<p>所以我們透過十六進位編輯器來看PE檔的話，先找到0x3C位置找到偏移值，依照偏移值找到的地方就會是PE00。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image_thumb_6.png" width="644" height="452"> </p>
+
+<p> </p>
+
+<p>到這邊應該對PE檔的格式有個初步的了解了，依照這樣的概念可以知道要檢查一個PE檔是否合法，我們可以去檢查檔案中是否是MZ開頭與PE Header是否是PE00開頭。所以檢測的PE檔的程式寫起來會像下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6572e1b2-4d4d-4cd9-9d2b-325a641be2ba" class="wlWriterSmartContent"><pre name="code" class="c#">        public Boolean IsValidPEFile(string file)<br>        {<br>            using (FileStream s = new FileStream(file, FileMode.Open, FileAccess.Read))<br>            {<br>                using (BinaryReader r = new BinaryReader(s))<br>                {<br>                    byte[] bytes = r.ReadBytes(2);<br><br>                    // Verify file starts with “MZ” signature.<br>                    if ((bytes[0] != 0x4d) || (bytes[1] != 0x5a))<br>                    {<br>                        // Not a PE file.<br>                        return false;<br>                    }<br><br>                    // OFFSET_TO_PE_HEADER_OFFSET = 0x3c<br>                    s.Seek(0x3c, SeekOrigin.Begin);<br><br>                    // read the offset to the PE Header<br>                    uint offset = r.ReadUInt32();<br><br>                    // go to the beginning of the PE Header<br>                    s.Seek(offset, SeekOrigin.Begin);<br><br>                    bytes = r.ReadBytes(4);<br><br>                    // Verify PE header starts with ‘PE\0\0’.<br>                    if ((bytes[0] != 0x50) || (bytes[1] != 0x45) || (bytes[2] != 0) || (bytes[3] != 0))<br>                    {<br>                        // Not a PE file.<br>                        return false;<br>                    }<br>                    return true;<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p> 這邊可以實際撰寫個較為完整的範例：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:648de7a8-ac6b-437e-ab2a-da805e100e3a" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.IO;<br>using System.Linq;<br>using System.Text;<br>using System.Threading.Tasks;<br>using System.Windows.Forms;<br><br>namespace PEFileCheckDemo<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }<br><br>        private void button1_Click(object sender, EventArgs e)<br>        {<br>            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)<br>            {<br>                string file = openFileDialog1.FileName;<br>                MessageBox.Show((IsValidPEFile(file) ? “Valid” : “InValid”) + “ PE File!!”);<br>            }<br>        }<br><br>        public Boolean IsValidPEFile(string file)<br>        {<br>            using (FileStream s = new FileStream(file, FileMode.Open, FileAccess.Read))<br>            {<br>                using (BinaryReader r = new BinaryReader(s))<br>                {<br>                    byte[] bytes = r.ReadBytes(2);<br><br>                    // Verify file starts with “MZ” signature.<br>                    if ((bytes[0] != 0x4d) || (bytes[1] != 0x5a))<br>                    {<br>                        // Not a PE file.<br>                        return false;<br>                    }<br><br>                    // OFFSET_TO_PE_HEADER_OFFSET = 0x3c<br>                    s.Seek(0x3c, SeekOrigin.Begin);<br><br>                    // read the offset to the PE Header<br>                    uint offset = r.ReadUInt32();<br><br>                    // go to the beginning of the PE Header<br>                    s.Seek(offset, SeekOrigin.Begin);<br><br>                    bytes = r.ReadBytes(4);<br><br>                    // Verify PE header starts with ‘PE\0\0’.<br>                    if ((bytes[0] != 0x50) || (bytes[1] != 0x45) || (bytes[2] != 0) || (bytes[3] != 0))<br>                    {<br>                        // Not a PE file.<br>                        return false;<br>                    }<br>                    return true;<br>                }<br>            }<br>        }<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>界面簡單的放個按鈕，按下後可選取要檢測的檔案</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image9_thumb.png" width="234" height="113"> </p>
+
+<p> </p>
+
+<p>然後會彈出檢測的結果，像是若是Window下的執行檔應該會彈出”Valid PE File!!”，若是選取的是執行檔外的檔，像是文字檔之類的，應該會彈出”InValid PE File!!”。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image6_thumb.png" width="158" height="158"> <a href="http://files.dotblogs.com.tw/larrynung/1203/PE_11E08/image12.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\b701163f-2049-496e-b201-cf42da05ab1e\image12_thumb.png" width="158" height="158"> </a></p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Portable Executable </li><br><br>  <li>Peering Inside the PE: A Tour of the Win32 Portable Executable File Format </li><br><br>  <li>An In-Depth Look into the Win32 Portable Executable File Format </li><br><br>  <li>Exploring pe file headers using managed code </li><br><br>  <li>The Portable Executable File Format </li><br><br>  <li>x86 Disassembly/Windows Executable Files </li><br><br>  <li>[PDF]the PE format </li><br><br>  <li>[PPT]解析Windows 執行檔 </li><br><br>  <li>[PDF]使用Windbg调试程序的一些基础知识</li><br><br>  <li>IMAGE_NT_HEADERS structure</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/a7d981e8-4b65-441f-9c2a-d12de05a98ab/" rel="next" title="[Visual Studio][.NET Resource]使用ConnectionString Manager extension擴充元件管理方案中用到的連線字串" data-instant>
+                <i class="fa fa-chevron-left"></i> [Visual Studio][.NET Resource]使用ConnectionString Manager extension擴充元件管理方案中用到的連線字串
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/b799c52e-ce61-4062-8917-ead1a4c4fecf/" rel="prev" title="[Win8]如何啟用Win8檔案歷程紀錄為自己的作業環境加入簡易的版控措施" data-instant>
+                [Win8]如何啟用Win8檔案歷程紀錄為自己的作業環境加入簡易的版控措施 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/b701163f-2049-496e-b201-cf42da05ab1e/';
+      var disqus_title = "[C#]PE檔案格式簡易介紹與PE檔案的檢測";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/b701163f-2049-496e-b201-cf42da05ab1e/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

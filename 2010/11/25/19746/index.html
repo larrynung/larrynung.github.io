@@ -1,0 +1,728 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content=".NET 4.0 New Feature - System.Runtime.Caching">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 4.0 New Feature - System.Runtime.Caching">
+<meta property="og:url" content="http://larrynung.github.io/2010/11/25/19746/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content=".NET 4.0 New Feature - System.Runtime.Caching">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_8.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_9.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19746/image_thumb_5.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET 4.0 New Feature - System.Runtime.Caching">
+<meta name="twitter:description" content=".NET 4.0 New Feature - System.Runtime.Caching">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/19746/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> .NET 4.0 New Feature - System.Runtime.Caching | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                .NET 4.0 New Feature - System.Runtime.Caching
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-11-25T21:41:17+00:00" content="2010-11-26">
+              2010-11-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/11/25/19746/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/11/25/19746/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    .NET 4.0新增了一個System.Runtime.Caching命名空間，該命名空間主要提供了一個可擴充的資料快取框架，提供開發者使用與實作快取的功能。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    在以往我們可能得自行將資料Load到記憶體中，在背景去監控是否變動或是過期需要更新，甚至是自行撰寫Cache Pool去做控管，甚至是套用LRU演算法去釋放，避免快取佔用過多的記憶體。在.NET 4.0以後，再也不用那麼麻煩了。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    框架中比較重要的組成元件有ObjectCache、CacheItemPolicy、ChangeMonitor。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    ObjectCache為記憶體快取框架中的主要類別，簡單的說就是一個快取池。提供存取快取所需方法和屬性，支援加入、擷取與更新快取資料，主要職責為建立管理快取的元素、指定快取回收與到期的資訊、觸發變更事件。快取框架中所提供的MemoryCache類別即為ObjectCache抽象類別的實作，可將從快取介質所讀出的資料快取到記憶體中，有點類似於ASP.NET中的Cache類別。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    CacheItemPolicy的主要職責為告知ObjectCache內的內容何時會過期，我們可設定絕對的或是相對應的過期時間，也可與ChangeMonitor搭配使用。</p><p></p>
+<p></p><p><br>    <br><br>    ChangeMonitor為一抽象基底類別，主要職責為監控快取介質的狀態變更，可監控快取介質的狀態並判斷快取是否過期需要更新，透過適當的設定可讓資料在享有快取好處的同時也能保證資料不至於過時。快取框架中的CacheEntryChangeMonitor、FileChangeMonitor、HostFileChangeMonitor、SqlChangeMonitor等類別都是該抽象類別的實作。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    在快取框架的使用上我們需先將System.Runtime.Caching.dll組件加入參考，該框架不支援Client Profile的.NET Framework，若看不到請切回.NET Framework 4。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="372" src="\images\posts\19746\image_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    並加入System.Runtime.Caching命名空間。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c4d535d9-127a-40be-b813-d159f3642139" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="vb" name="code"><br>    using System.Runtime.Caching;</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    接著我們遵循著一定的開發Flow就可以了。首先記得要初始ObjectCache，這邊多半是直接取得內建的MemoryCache實體，然後我們要帶入Content的Key，試圖從ObjectCache取得快取的內容，如果有快取的內容就直接回傳，若無則我們需從介質中取得內容，設定CacheItemPolicy，將Content的Key、Content、以及CacheItemPolicy設定給ObjectCachem。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="518" src="\images\posts\19746\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="427"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊實際的示範個完整的範例</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:762d54b4-6b11-400d-9451-48b48d77bceb" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Diagnostics;<br>using System.Linq;<br>using System.Runtime.Caching;<br>using System.Text;<br>using System.Threading;<br>using System.Threading.Tasks;</pre></div></p>
+<p>namespace CacheItemPolicyDemo<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            ContentProvider textFile = new ContentProvider();<br>            Stopwatch sw = new Stopwatch();<br>            while (true)<br>            {<br>                sw.Reset();<br>                sw.Start();<br>                Console.WriteLine(DateTime.Now.ToString());<br>                Console.WriteLine(textFile.Content);<br>                sw.Stop();<br>                Console.WriteLine(“Elapsed Time: {0} ms”, sw.ElapsedMilliseconds);<br>                Console.WriteLine(new string(‘=’, 50));<br>                Console.ReadLine();<br>            }<br>        }<br>    }</p>
+<pre><code>public class ContentProvider
+{
+    public String Content
+    {
+        get
+        {
+            const string CACHE_KEY = &quot;Content&quot;;
+            string content = m_Cache[CACHE_KEY] as string;
+            if (content == null)
+            {
+                CacheItemPolicy policy = new CacheItemPolicy();
+                policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(1500);
+                //policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);
+
+                //policy.UpdateCallback = new CacheEntryUpdateCallback((args) =&amp;gt; 
+                //{
+                //    Console.WriteLine(&quot;MyCachedItemUpdatedCallback...&quot;);
+                //    Console.WriteLine(string.Format(&quot;Remove {0}...Because {1}&quot;,args.Key,args.RemovedReason.ToString()));
+                //    Console.WriteLine(new string(&apos;=&apos;, 50));
+                //});
+
+                //policy.RemovedCallback = new CacheEntryRemovedCallback((args) =&amp;gt; 
+                //{
+                //    Console.WriteLine(&quot;CacheEntryRemovedCallback...&quot;);
+                //    Console.WriteLine(string.Format(&quot;Remove {0}...Because {1}&quot;, args.CacheItem.Key, args.RemovedReason.ToString()));
+                //    Console.WriteLine(new string(&apos;=&apos;, 50));
+                //});
+
+                content = Guid.NewGuid().ToString();
+                Thread.Sleep(1000);
+                m_Cache.Set(CACHE_KEY, content, policy);
+            }
+            return content;
+        }
+    }
+
+
+    private ObjectCache _cache;
+    private ObjectCache m_Cache
+    {
+        get
+        {
+            if (_cache == null)
+                _cache = MemoryCache.Default;
+            return _cache;
+        }
+    }
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    以這例子來說，若是CacheItemPolicy設定了AbsoluteExpiration，像是下面這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:87851577-40bd-4399-bc47-800e106dbadb" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(1500);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    則快取的內容會在指定的時間內失效，所以我們程式運行起來一直按著Enter，大概每1.5秒就會更新一次內容，1.5秒以內問回來的資料都是在0ms左右。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="482" src="\images\posts\19746\image_thumb_7.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="482" src="\images\posts\19746\image_thumb_6.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="641"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若是CacheItemPolicy設定了SlidingExpiration，像是下面這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e6670b54-2215-4413-ba84-644d4a337ef8" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    程式運行起來一直按著Enter，快取的內容都不會更新，但是放開大約1.5秒再次按下，快取的內容就會被更新。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="459" src="\images\posts\19746\image_thumb_8.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="642"></p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="460" src="\images\posts\19746\image_thumb_9.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="645"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    CacheItemPolicy這邊也可以設定UpdateCallback與RemovedCallback，分別是快取更新前與更新後的回呼，若有需要這邊也可以自行設定去做些動作，像是紀錄LOG或是將資料回存之類的。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    再來看一個例子，假設今天我想要從檔案中讀取資料做顯示的動作，我希望每次顯示的值都是最新的內容，在以往我們可能需要在每次讀取時重新載入並回傳內容值；或是載入資料後用FileSystemWatcher監視檔案是否有更動，有更動就重新載入。現在有了.NET 4.0你可以將這樣的功能需求透過快取框架來實現，透過MemoryCache去做檔案內容的快取，並透過HostFileChangeMonitor去監控快取介質，在內部告知快取類別所存的快取是否過期，範例程式如下：</p><p></p>
+<p><script src="\images\posts\19746\5697828.js?file=gistfile1.cs"></script></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行前我們可以先準備如下內容的文字檔案</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="222" src="\images\posts\19746\image_thumb_2.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="325"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行後可以看到檔案的內容確實被讀出了，這邊可多按幾次Enter讓範例顯示檔案內容，在檔案未變更的狀況下，快取都不算過期，故取得的內容都是快取中的內容，不會耗費時間在讀取檔案內容上。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="219" src="\images\posts\19746\image_thumb_3.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="465"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    接著變更文字檔案內容後存檔</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="222" src="\images\posts\19746\image_thumb_4.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="325"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    按下Enter讓範例程式重新讀取，這時快取會自動透過HostFileChangeMonitor判斷到快取過期，因此我們從快取區讀回的值會是Null，整個檔案內容會再重新載入，顯示的內容就會是新的檔案內容。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="219" src="\images\posts\19746\image_thumb_5.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="465"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    除了HostFileChangeMonitor外，若是快取的介質是SQL資料庫，我們也可以換用SqlChangeMonitor，操作上大致雷同，只是建立出SqlChangeMonitor時要帶入對應的SqlDependency，有興趣的可自行參閱.NET 4.0 MemoryCache with SqlChangeMonitor，這邊不多做示範。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若有需要可至CacheItemPolicyDemo、<a href="https://github.com/larrynung/HostFileChangeMonitorDemo" target="_blank" rel="noopener">HostFileChangeMonitorDemo下載完整的程式範例。</a></p><p></p>
+<p></p><p style="margin: 0em 0em 1.5em; padding: 0em; color: rgb(102, 102, 102); font-family: Arial, sans-serif; font-size: 13px; line-height: 20px;"><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        System.Runtime.Caching 命名空間</li><br>    <li><br>        Extensible Caching Added to .NET 4.0</li><br>    <li><br>        Object Caching - .NET 4</li><br>    <li><br>        Caching in .NET Framework Applications</li><br>    <li><br>        .NET4.0的可擴展緩存系統</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/11/25/19711/" rel="next" title="PermissionController權限管理類別" data-instant>
+                <i class="fa fa-chevron-left"></i> PermissionController權限管理類別
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/11/29/19789/" rel="prev" title=".NET 4.0 New Feature - Environment.FailFast" data-instant>
+                .NET 4.0 New Feature - Environment.FailFast <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/11/25/19746/';
+      var disqus_title = ".NET 4.0 New Feature - System.Runtime.Caching";
+      var disqus_url = 'http://larrynung.github.io/2010/11/25/19746/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

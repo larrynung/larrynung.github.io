@@ -1,0 +1,688 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Findstr - Searches for patterns of text in files">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/18/findstr-searches-for-patterns-of-text-in-files/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Findstr/1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Findstr/2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Findstr/3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Findstr/4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Findstr/4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Findstr - Searches for patterns of text in files">
+<meta name="twitter:description" content="Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/Findstr/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Findstr - Searches for patterns of text in files | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Findstr - Searches for patterns of text in files
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-18T13:49:00+00:00" content="2013-11-18">
+              2013-11-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/18/findstr-searches-for-patterns-of-text-in-files/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/18/findstr-searches-for-patterns-of-text-in-files/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。</p>
+<a id="more"></a>
+<p>他的使用方式可以呼叫下列命令查閱  </p>
+<pre><code>findstr /?
+</code></pre><p>叫用後會看到如下使用說明</p>
+<pre><code>在檔案中搜尋字串。
+
+FINDSTR [/B] [/E] [/L] [/R] [/S] [/I] [/X] [/V] [/N] [/M] [/O] [/P] [/F:file]
+    [/C:string] [/G:file] [/D:dir list] [/A:color attributes] [/OFF[LINE]]
+    strings [[drive:][path]filename[ ...]]
+
+  /B        如果是在行的開端，則符合類型。
+  /E        如果是在行的尾端，則符合類型。
+  /L        逐字使用搜尋字串。
+  /R        使用搜尋字串為一般表示式。
+  /S        在現存目錄及所有的子目錄中
+            搜尋符合的檔案。
+  /I        指定搜尋不區分大小寫。
+  /X        列印完全符合的行數。
+  /V        只列印不含相符字串的行數。
+  /N        列印每一行符合的行數前的行編號。
+  /M        只列印包含相符字串的檔案的檔案名稱。
+  /O        列印每一個相符行之前的字元位移。
+  /P        跳過沒有可列印字元的檔案。
+  /OFF[LINE] 不要跳過有離線屬性設定的檔案。
+  /A:attr    以兩個十六進位數字指定色彩屬性。請參閱 &quot;color /?&quot;。
+  /F:file   從指定的檔案讀取檔案清單 (/ 代表主控台)。
+  /C:string 使用特定的字串作為逐字搜尋的字串。
+  /G:file   從指定的檔案取得搜尋字串 (/ 代表主控台)。
+  /D:dir    搜尋以分號隔開的目錄清單。
+  strings   要搜尋的文字。
+  [drive:][path]filename
+            指定要搜尋的一個或多個檔案。
+
+除非引數的字首有 /C，否則請以空格將多重搜尋字串分開。
+例如，&apos;FINDSTR &quot;hello there&quot; x.y&apos; 將會在檔案 x.y 中
+搜尋 &quot;hello&quot;，或 &quot;there&quot;。&apos;FINDSTR /C:&quot;hello there&quot; x.y&apos; 
+將會在檔案x.y 中搜尋 &quot;hello there&quot;。
+
+常見表示快速對照表:
+  .        萬用字元: 任何字元
+  *        重複: 零或之前字元或類別發生數次
+  ^        行的位置: 行的開頭
+  $        行的位置: 行的結尾
+  [class]  字元類別: 組的任何一個字元
+  [^class] 顛倒的類別: 不成組的任何一個字元
+  [x-y]    範圍: 在特定範圍內的任何字元
+  \x       跳開: metacharacter x 的字面使用方法
+  \&lt;xyz    字的位置: 字的開頭
+  xyz\&gt;    字的位置: 字的結尾
+
+有關 FINDSTR 一般表示式的資訊，請參閱線上
+命令參照。
+</code></pre><p>簡單的來說，Findstr使用時要帶入搜尋的字串與要搜尋的檔案。搜尋的字串可以用雙引號包住直接帶在Findstr後，如果要同時搜尋多個字串，可以用空格將多個欲搜尋的字串分開:</p>
+<pre><code>findstr &quot;[SearchText1] [SearchText2]&quot;  [SearchFile]
+</code></pre><p>若要明確的搜尋特定字串，可帶入參數/c指定:</p>
+<pre><code>findstr /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><p>比對時要忽略大小寫，可帶入參數/i：</p>
+<pre><code>findstr /i /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><p>要搜尋當前目錄及子目錄，可帶入參數/s：</p>
+<pre><code>findstr /s /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><img src="/images/posts/Findstr/1.png">
+<p>要在搜尋結果加入行號顯示，可帶入參數/n：</p>
+<pre><code>findstr /n /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><img src="/images/posts/Findstr/2.png">
+<p>要在搜尋結果加入字元位移量顯示，可帶入參數/o：</p>
+<pre><code>findstr /o /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><img src="/images/posts/Findstr/3.png">
+<p>若搜尋結果顯示的顏色不夠明顯想要變更，可帶入參數/A指定：</p>
+<pre><code>findstr /A:[Color] /c:&quot;[SearchText]&quot; [SearchFile]
+</code></pre><img src="/images/posts/Findstr/4.png">
+<p>若要從檔案讀出要比對的字串以及要比對的檔案：</p>
+<pre><code>findstr /g:[SearchTextFile] /f:filelist.txt
+</code></pre><p>若要比對當前目錄與子目錄，但只顯示有批配到的檔名，可帶入/m參數：</p>
+<pre><code>findstr /s /m &quot;[SearchText]&quot; *.*
+</code></pre><img src="/images/posts/Findstr/4.png">
+<p>若比對時要用正規表示式去比對，Findstr也可以支援。  </p>
+<p>最後一提，Findstr的參數也可以合併帶入，像是下面這樣：</p>
+<pre><code>findstr /sim &quot;[SearchText]&quot; *.*
+</code></pre><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="http://technet.microsoft.com/en-us/library/cc732459.aspx" target="_blank" rel="noopener">Findstr - TechNet - Microsoft</a></li>
+<li><a href="http://www.netingcn.com/window-findstr-command.html" target="_blank" rel="noopener">window中findstr命令的用法</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/13/octopress-read-more-excerpt-link/" rel="next" title="Octopress - Read more excerpt link" data-instant>
+                <i class="fa fa-chevron-left"></i> Octopress - Read more excerpt link
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/20/octopress-change-rss-subscribe-link/" rel="prev" title="Octopress - change rss subscribe link" data-instant>
+                Octopress - change rss subscribe link <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/18/findstr-searches-for-patterns-of-text-in-files/';
+      var disqus_title = "Findstr - Searches for patterns of text in files";
+      var disqus_url = 'http://larrynung.github.io/2013/11/18/findstr-searches-for-patterns-of-text-in-files/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

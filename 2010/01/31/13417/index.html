@@ -1,0 +1,621 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Visual Studio,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy">
+<meta name="keywords" content="Visual Studio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy">
+<meta property="og:url" content="http://larrynung.github.io/2010/01/31/13417/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image15_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image18_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image21_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image24_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image27_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image_thumb_10.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13417/image_thumb_12.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy">
+<meta name="twitter:description" content="[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/13417/image6_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-01-31T03:26:59+00:00" content="2010-01-31">
+              2010-01-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/01/31/13417/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/01/31/13417/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2><br>    Introduction</h2><p></p>
+<p><br>    Call Hierarchy是Visual Studio 2010的新功能之一，能讓開發人員快速的找到類別成員被參考使用到的地方、其所使用到的其它類別成員、覆寫的地方、與實作的地方。以往這樣的動作我們可能要透過搜尋、[Go To Define]、與[Find All References]來完成。透過Visual Studio 2010 Call Hierarchy的新功能，我們可以更為輕鬆快速的達到這個目的。</p><br><p><br>     </p><br><h2><br>    Call Hierarchy Window</h2><br><p><br>    若要檢視Call Hierarchy視窗，我們可透過[View]→ [Call Hierarchy]，或是按下熱鍵Ctrl+W,K叫起。</p><br><p><br>    <img alt="image" border="0" height="243" src="\images\posts\13417\image6_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="436"></p><br><p><br>     </p><br><p><br>    也可以滑鼠游標直接移到類別成員上，按下滑鼠右鍵，在快顯選單中選取[View Call Hierarchy]選項。Visual Studio會帶出Call Hierarchy視窗，並把其類別成員加入其中。<br><br>    <img alt="image" border="0" height="312" src="\images\posts\13417\image_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="484"></p><br><p><br>     </p><br><p><br>    Call Hierarchy視窗顯示上會像下面這樣。</p><br><p><br>    <img alt="image" border="0" height="250" src="\images\posts\13417\image9_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="474"></p><br><p><br>     </p><br><p><br>    上方的工具列具有過濾的功能，可選取所要監看的結果是整個方案、目前專案、或是目前文件。</p><br><p><br>    <img alt="image" border="0" height="250" src="\images\posts\13417\image15_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="474"></p><br><p><br>     </p><br><p><br>    還可以切換是否要詳細到顯示程式碼的資訊。</p><br><p><br>    <img alt="image" border="0" height="250" src="\images\posts\13417\image18_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="474"></p><br><p><br>     </p><br><p><br>    在Call Hierarchy功能的使用上，當我們把類別成員加入Call Hierarchy視窗後，資料會用Tree的型態來表示。根節點會顯示所要觀察的類別成員名稱，而其子節點則會顯示出叫用該類別成員的其它地方、或是該類別成員所叫用的其它類別成員，甚至是覆寫的地方(當觀看的是抽象或虛擬成員時)、與實作的地方(當觀看的是介面成員時)。</p><br><p><br>    <img alt="image" border="0" height="250" src="\images\posts\13417\image21_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="474"></p><br><p><br>     </p><br><p><br>    可自行針對有興趣的部份去作展開。像這邊展開[Calls To ‘Balance’]，就可以發現到只有Main這邊有使用到Balance。</p><br><p><br>    <img alt="image" border="0" height="250" src="\images\posts\13417\image24_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="474"></p><br><p><br>     </p><br><p><br>    若想移至程式碼部分，透過滑鼠左鍵點選兩下即可。</p><br><p><br>    <img alt="image" border="0" height="408" src="\images\posts\13417\image_thumb_1.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="421"></p><br><p><br>     </p><br><p><br>    也可以在右半邊的詳細列表中連點想觀看的程式碼部分，Visual Studio會自動幫您帶到程式碼中對應的地方。</p><br><p><br>    <img alt="image" border="0" height="454" src="\images\posts\13417\image_thumb_4.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="418"></p><br><p><br>     </p><br><p><br>    值得注意的是，Call Hierarchy視窗在顯示上是採用階層式的顯示方式，所以像下方的Main函式也可以再作展開，可以讓我們做一層層的監看。</p><br><p><br>    <img alt="image" border="0" height="418" src="\images\posts\13417\image27_thumb.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="527"></p><br><p><br>     </p><br><p><br>    若覺得一層層看很難看，我們也可以透過滑鼠右鍵，再彈出的快顯選單中點選[Add As New Root]。</p><br><p><br>    <img alt="image" border="0" height="191" src="\images\posts\13417\image_thumb_10.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="518"></p><br><p><br>     </p><br><p><br>    就可以把有興趣的部分再提出成為根節點。</p><br><p><br>    <img alt="image" border="0" height="186" src="\images\posts\13417\image_thumb_12.png" style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" width="515"></p><br><p><br>     </p><br><p><br>    另外快顯選單中還有整合舊有的[Go To Definition]、與[Find All References]，有興趣的可自行試驗。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Visual-Studio/" rel="tag” data-instant>#Visual Studio</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/01/24/13254/" rel="next" title="[VB.NET]取得Gif動畫圖檔內含的圖片" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]取得Gif動畫圖檔內含的圖片
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/02/03/13468/" rel="prev" title="[Visual Studio]Fix&ldquo;The application cannot start&rdquo;" data-instant>
+                [Visual Studio]Fix&ldquo;The application cannot start&rdquo; <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">    Call Hierarchy Window</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/01/31/13417/';
+      var disqus_title = "[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy";
+      var disqus_url = 'http://larrynung.github.io/2010/01/31/13417/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

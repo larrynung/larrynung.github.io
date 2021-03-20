@@ -1,0 +1,752 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="How to customize .NET 4.0&apos;s System.Runtime.Caching.ChangeMonitor">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to customize .NET 4.0&#39;s System.Runtime.Caching.ChangeMonitor">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/e4819f4e-9f19-47ae-befb-70bfa09710e2/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="How to customize .NET 4.0&apos;s System.Runtime.Caching.ChangeMonitor">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e4819f4e-9f19-47ae-befb-70bfa09710e2/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e4819f4e-9f19-47ae-befb-70bfa09710e2/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e4819f4e-9f19-47ae-befb-70bfa09710e2/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e4819f4e-9f19-47ae-befb-70bfa09710e2/image_thumb_2.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to customize .NET 4.0&#39;s System.Runtime.Caching.ChangeMonitor">
+<meta name="twitter:description" content="How to customize .NET 4.0&apos;s System.Runtime.Caching.ChangeMonitor">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/e4819f4e-9f19-47ae-befb-70bfa09710e2/image_thumb_4.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> How to customize .NET 4.0's System.Runtime.Caching.ChangeMonitor | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                How to customize .NET 4.0's System.Runtime.Caching.ChangeMonitor
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/e4819f4e-9f19-47ae-befb-70bfa09710e2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/e4819f4e-9f19-47ae-befb-70bfa09710e2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    筆者很久以前寫過一篇.NET 4.0 New Feature - System.Runtime.Caching，稍稍的簡單介紹了一下.NET 4.0新加入的快取框架。基本上的操作只要參閱那篇應該都不成問題，但是該快取框架內建只提供HostFileChangeMonitor與SqlChangeMonitor兩個ChangeMonitor的實作，我們要快取的資料不可能永遠在磁碟與SQL DB這兩個快取介質內，有時候我們可能會要自己串些Restful API抓取資料並做快取，或是是要套些比較複雜的檢查規則，這時我們就必須善用該快取框架易於擴充的特點，客制自己的ChangeMonitor。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要客制自己的ChangeMonitor不難，大概只有五個流程步驟：</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="327" src="\images\posts\e4819f4e-9f19-47ae-befb-70bfa09710e2\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    依序是：</p><p></p>
+<p><ol><br>    <li><br>        Create a class that Inherited ChangeMonitor</li><br>    <li><br>        Implement UniqueId property and Dispose method</li><br>    <li><br>        Init in constructor</li><br>    <li><br>        Invoke InitializationComplete method after init</li><br>    <li><br>        Invoke OnChanged method when content must update</li><br></ol></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    簡單的說就是要建立一個類別繼承至ChangeMonitor，並覆寫它的Uniqueid屬性與Dispose方法，接著在建構子這邊做些初始的動作，初始完呼叫InitializationComplete方法告知初始動作完成，最後在偵測到資料變動時呼叫OnChanged方法就可以了。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊可參閱MSDN ChangeMonitor Class 這篇的Notes to Inheritors這段，裡面有提到很多實作的眉眉角角需要注意。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    實際的來看個例子加深印象，筆者在這邊簡單的實做了一個ClipboardChangeMonitor，期望Cache的內容能在剪貼簿資料發生變動時失效。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:af59a12a-3dde-4df3-bded-65d9d120ace3" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Runtime.Caching;<br>using System.Text;<br>using System.Threading.Tasks;<br>using System.Windows.Forms;</pre></div></p>
+<p>namespace CustomChangeMonitorDemo<br>{<br>    public class ClipboardChangeMonitor : ChangeMonitor<br>    {</p>
+<pre><code>    #region Var
+    private string _clipboardText;
+    private Timer _timer;
+    private string _uniqueID; 
+    #endregion
+
+
+    #region Private Property
+    private string m_ClipboardText
+    {
+        get { return _clipboardText ?? string.Empty; }
+        set 
+        {
+            if (_clipboardText == value)
+                return;
+
+            _clipboardText = value;
+            OnChanged(value);
+        }
+    }
+
+    private System.Windows.Forms.Timer m_Timer 
+    {
+        get
+        {
+            return _timer ?? (_timer = new System.Windows.Forms.Timer());
+        }
+    } 
+    #endregion
+
+
+    #region Public Property
+    public override string UniqueId
+    {
+        get { return _uniqueID ?? (_uniqueID = Guid.NewGuid().ToString()); }
+    } 
+    #endregion
+
+
+    #region Constructor
+    public ClipboardChangeMonitor()
+    {
+        m_Timer.Interval = 1000;
+        m_Timer.Tick += m_Timer_Tick;
+        m_Timer.Start();
+
+        _clipboardText = Clipboard.GetText();
+
+        InitializationComplete();
+    }
+    #endregion
+
+
+    #region Protected Method
+    protected override void Dispose(bool disposing)
+    {
+    } 
+    #endregion
+
+
+    #region Event Process
+    void m_Timer_Tick(object sender, EventArgs e)
+    {
+        m_ClipboardText = Clipboard.GetText();
+    }  
+    #endregion
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    整個實作非常的簡單，只是在建構子這邊擷取剪貼簿的內容與設定Timer，然後叫用InitializationComplete，後面就只是定時的去看剪貼簿是否有所更動。Uniqueid屬性這邊筆者也只是簡單的傳回一個識別用的GUID，而Dispose方法因為該類別沒什麼非託管的資源，這邊就姑且讓它是空的。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊寫個簡單的Console程式測試一下：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:03d62304-6341-40a9-af26-a425167981d9" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Diagnostics;<br>using System.Linq;<br>using System.Runtime.Caching;<br>using System.Text;<br>using System.Threading;<br>using System.Threading.Tasks;<br>using System.Windows.Forms;</pre></div></p>
+<p>namespace CustomChangeMonitorDemo<br>{<br>    class Program<br>    {<br>        [STAThread]<br>        static void Main(string[] args)<br>        {<br>            FileContentProvider textFile = new FileContentProvider();<br>            Stopwatch sw = new Stopwatch();<br>            while (true)<br>            {<br>                sw.Reset();<br>                sw.Start();<br>                Console.WriteLine(textFile.Content);<br>                sw.Stop();<br>                Console.WriteLine(“Elapsed Time: {0} ms”, sw.ElapsedMilliseconds);<br>                Console.WriteLine(new string(‘=’, 50));<br>                Console.ReadLine();<br>                Application.DoEvents();<br>            }<br>        }<br>    }</p>
+<pre><code>public class FileContentProvider
+{
+    public String Content
+    {
+        get
+        {
+            const string CACHE_KEY = &quot;Content&quot;;
+            string content = m_Cache[CACHE_KEY] as string;
+            if (content == null)
+            {
+                CacheItemPolicy policy = new CacheItemPolicy();
+                //policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);
+
+                var changeMonitor = new ClipboardChangeMonitor();
+
+                policy.ChangeMonitors.Add(changeMonitor);
+
+                content = Guid.NewGuid().ToString();
+                Thread.Sleep(1000);
+                m_Cache.Set(CACHE_KEY, content, policy);
+            }
+            return content;
+        }
+    }
+
+    private ObjectCache _cache;
+    private ObjectCache m_Cache
+    {
+        get
+        {
+            if (_cache == null)
+                _cache = MemoryCache.Default;
+            return _cache;
+        }
+    }
+}
+</code></pre><p>}<br><br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行起來會像下面這樣，不論怎麼按Enter更新，Cache的GUID都是一樣的。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="304" src="\images\posts\e4819f4e-9f19-47ae-befb-70bfa09710e2\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    但是一經選取複製。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="304" src="\images\posts\e4819f4e-9f19-47ae-befb-70bfa09710e2\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    ClipboardChangeMonitor就會偵測到剪貼簿有變動，Cache的資料就會過期進而更新，因此複製完後按下Enter更新，這邊會重新抓取新的Guid。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="303" src="\images\posts\e4819f4e-9f19-47ae-befb-70bfa09710e2\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="645"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若有需要可至CustomChangeMonitorDemo下載完整的程式範例。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        CustomChangeMonitorDemo</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/e6c2c2cf-ad8f-4196-8294-88e7e32ddca3/" rel="next" title="[Win8]使用Windows 8的搜尋功能讓您快速取得想要的資訊" data-instant>
+                <i class="fa fa-chevron-left"></i> [Win8]使用Windows 8的搜尋功能讓您快速取得想要的資訊
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/e22104b8-d18c-46f9-bde5-b8b7f791dab9/" rel="prev" title="Google App Engine 1.8.2 New Feature - Push-to-Deploy" data-instant>
+                Google App Engine 1.8.2 New Feature - Push-to-Deploy <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/e4819f4e-9f19-47ae-befb-70bfa09710e2/';
+      var disqus_title = "How to customize .NET 4.0\'s System.Runtime.Caching.ChangeMonitor";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/e4819f4e-9f19-47ae-befb-70bfa09710e2/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

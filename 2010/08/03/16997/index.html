@@ -1,0 +1,635 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content=".NET Resource,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[.Net Resource]Mono Migration Analyzer (MoMA)">
+<meta name="keywords" content=".NET Resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[.Net Resource]Mono Migration Analyzer (MoMA)">
+<meta property="og:url" content="http://larrynung.github.io/2010/08/03/16997/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[.Net Resource]Mono Migration Analyzer (MoMA)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image3_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image12_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/16997/image15_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[.Net Resource]Mono Migration Analyzer (MoMA)">
+<meta name="twitter:description" content="[.Net Resource]Mono Migration Analyzer (MoMA)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/16997/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [.Net Resource]Mono Migration Analyzer (MoMA) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [.Net Resource]Mono Migration Analyzer (MoMA)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-08-03T03:44:53+00:00" content="2010-08-03">
+              2010-08-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/08/03/16997/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/08/03/16997/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Mono Migration Analyzer (MoMA)工具主要功能為偵測.NET應用程式是否可以被移轉到Mono上面，可幫助我們找到應用程式中有用到的平台叫用或是Mono尚未支援的部分。</p>  <p> </p>  <h2>如何使用</h2>  <h3>Step1.歡迎畫面，按下[Next]繼續。</h3>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image_thumb.png" width="644" height="444"></p>  <p> </p>  <h3>Step2.加入要偵測的組件，選取要測試的Mono版本，按下[Next]繼續。</h3>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image3_thumb.png" width="644" height="444"></p>  <p> </p>  <h3>Step3.該頁面會顯示分析完的結果，若有錯誤可按下下方的<em>View Detail Report</em>超連結觀看錯誤報表，或按下[Next]繼續。</h3>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/bfb9b85eb192_14EDC/image6.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image6_thumb.png" width="644" height="444"></a> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/bfb9b85eb192_14EDC/image9.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image9_thumb.png" width="626" height="484"></a></p>  <p> </p>  <h3>Step4.該頁面能將看不懂的錯誤訊息反饋，可向Mono團隊尋求幫助，或按下[Next]繼續。</h3>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/bfb9b85eb192_14EDC/image12.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image12_thumb.png" width="644" height="444"></a></p>  <p> </p>  <h3>Step5.按下[Close]關閉。</h3>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/bfb9b85eb192_14EDC/image15.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\16997\image15_thumb.png" width="644" height="444"></a></p>  <p> </p>  <h2>影響移轉的四大問題</h2>  <p>MoMA會偵測到的主要有下列四種問題 :</p>  <ol>   <li>Missing Methods </li>    <li>MonoTodo </li>    <li>NotImplementedException </li>    <li>P/Invokes </li> </ol>  <p> </p>  <h3>Missing Methods</h3>  <p>該問題是因為使用的方法在Mono中尚未實作。依照編譯器的不同可能會看到不同的錯誤訊息，像是用Mono編譯的話，在編譯時就會報錯，可看到下列的訊息：</p>  <p>myfile.cs(22,16): error CS0117: ‘xxxxxxxxxxxxxxxxx’ does not contain a definition for ‘xxxxxxxxxxxxxxx’</p>  <p> </p>  <p>而如果用微軟編譯器編輯的話，則必須執行到該方法處才會跳出MissingMethodException的例外：</p>  <p>System.MissingMethodException: Method not found: xxxxxxxxxxxxxxxxxxx</p>  <p> </p>  <p><a name="MonoTodo"></a></p>  <h3>MonoTodo</h3>  <p>該問題是因為應用程式中存在標記有MonoTodo的方法。這標記是用來提醒開發人員尚須處理的地方，通常這代表著方法尚未實做完全，或是實做完後開發者忘了將該標記移除。</p>  <p><a name="NotImplementedException"></a></p>  <p> </p>  <h3>NotImplementedException</h3>  <p>該問題是因為應用程式中存在會丟出NotImplementedException的方法。</p>  <p><a name="P.2FInvokes"></a></p>  <p> </p>  <h3>P/Invokes</h3>  <p>該問題是因為應用程式中存在著平台叫用。平台叫用通常是用來呼叫非託管的方法，尤其是平台本身提供的方法。</p>  <p> </p>  <h2>命令列執行</h2>  <p>MoMa從1.9版開始就已支援命令列執行的功能。</p>  <p>若要用命令列設定要偵測的組件並開啟MoMa，可以像下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f7c8f370-857d-46f0-b594-35b600c03c6b" class="wlWriterSmartContent"><pre name="code" class="xml">MoMA C:\app\myapp.exe</pre></div><br><br><p> </p>
+
+<p>若要用設定加入多個要偵測的組件並開啟MoMa，可以像下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:71dfc44b-6e97-4a60-b5f0-3ed5755bb0d1" class="wlWriterSmartContent"><pre name="code" class="xml">MoMA C:\app\myapp.exe C:\app\myapp.dll C:\app\myapp2.dll</pre></div>
+
+<p> </p>
+
+<p>若不想帶出MoMa介面，可透過–nogui設定並指派組件的位置，像是：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8f6f012c-f032-4f66-a118-b19ca9bf480d" class="wlWriterSmartContent"><pre name="code" class="xml">MoMA –nogui C:\app\myapp.exe</pre></div>
+
+<p> </p>
+
+<p>執行完後，在命令提示字元看不到任何訊息，須自行開啟報表查看，其報表會存放在MoMa目錄下的Reports目錄內。若要自行指定報表位置，可透過–out來設定，並指派輸出的報表檔位置，像是：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d08597fd-8253-40d6-857e-105a48dbc573" class="wlWriterSmartContent"><pre name="code" class="xml">MoMA –nogui –out C:\app\momareport\report.html C:\app\myapp.exe</pre></div>
+
+<pre> </pre>
+
+<h2>Link</h2>
+
+<ul><br>  <li>MoMA </li><br><br>  <li>Guide: Using MoMA </li><br><br>  <li>Guide: Fixing issues MoMA finds </li><br><br>  <li>Guide: Run MoMA from command line (automated builds, etc.) </li><br><br>  <li>介紹好用工具：Mono Migration Analyzer (MoMA) </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NET-Resource/" rel="tag” data-instant>#.NET Resource</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/07/29/16890/" rel="next" title="[Visual Studio]為專案加入不同Visual Studio版本的方案檔" data-instant>
+                <i class="fa fa-chevron-left"></i> [Visual Studio]為專案加入不同Visual Studio版本的方案檔
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/08/09/17101/" rel="prev" title="[.NET Resource]將Visual Studio編寫的.NET程式移轉至Mono平台上運行" data-instant>
+                [.NET Resource]將Visual Studio編寫的.NET程式移轉至Mono平台上運行 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">如何使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">Step1.歡迎畫面，按下[Next]繼續。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">Step2.加入要偵測的組件，選取要測試的Mono版本，按下[Next]繼續。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">Step3.該頁面會顯示分析完的結果，若有錯誤可按下下方的View Detail Report超連結觀看錯誤報表，或按下[Next]繼續。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">Step4.該頁面能將看不懂的錯誤訊息反饋，可向Mono團隊尋求幫助，或按下[Next]繼續。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">Step5.按下[Close]關閉。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">影響移轉的四大問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">Missing Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">MonoTodo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.3.</span> <span class="nav-text">NotImplementedException</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.4.</span> <span class="nav-text">P/Invokes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">命令列執行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/08/03/16997/';
+      var disqus_title = "[.Net Resource]Mono Migration Analyzer (MoMA)";
+      var disqus_url = 'http://larrynung.github.io/2010/08/03/16997/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

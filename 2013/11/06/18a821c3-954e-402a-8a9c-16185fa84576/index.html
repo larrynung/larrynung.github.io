@@ -1,0 +1,645 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]取用.picasa.ini內存的現有資訊來做臉部偵測">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]取用.picasa.ini內存的現有資訊來做臉部偵測">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/18a821c3-954e-402a-8a9c-16185fa84576/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]取用.picasa.ini內存的現有資訊來做臉部偵測">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/18a821c3-954e-402a-8a9c-16185fa84576/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/18a821c3-954e-402a-8a9c-16185fa84576/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]取用.picasa.ini內存的現有資訊來做臉部偵測">
+<meta name="twitter:description" content="[C#]取用.picasa.ini內存的現有資訊來做臉部偵測">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/18a821c3-954e-402a-8a9c-16185fa84576/image_thumb_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]取用.picasa.ini內存的現有資訊來做臉部偵測 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]取用.picasa.ini內存的現有資訊來做臉部偵測
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/18a821c3-954e-402a-8a9c-16185fa84576/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/18a821c3-954e-402a-8a9c-16185fa84576/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Picasa應該很多人都有聽過、用過Picasa這套看圖軟體，這套看圖軟體功能強大且快速。該軟體裡面有個功能滿好玩的就是它可以對照片做臉部偵測，使用者可以為識別出來的人臉加上標記，後續還會自動偵測可能有該人士存在的圖片，讓整理的動作變得很簡單。</p>  <p> </p>  <p>有用過這樣功能的人可能都會注意到它在目錄下會存放個.picasa.ini的檔案，裡面存放了一些額外的設定資訊，像是有將照片Tag的話臉部的區域資訊就會存放在裡面，裡面存放的內容像是下面這樣很明確的指出什麼檔案以及內含的臉部區域。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3dae14e5-2818-4ba0-830a-e1ddee7f2e0c" class="wlWriterSmartContent"><pre name="code" class="xml">…<br>[2012-08-07 10.55.18.jpg]<br>faces=rect64(935838f6a7865d3c),a0f74040cf5a5af0<br>backuphash=42094<br>[2012-08-07 10.55.16.jpg]<br>faces=rect64(878631419a6c532f),bfd272ce42839572;rect64(98a439f8acee5ebe),a0f74040cf5a5af0;rect64(adc440abc26565f2),84c440386cc98c13;rect64(27b13aa33f7f65b2),6e2f7ec9de361aab;rect64(c8a32962e54b5cfc),b6ca817b8552664d<br>backuphash=48903<br>…</pre></div><br><br><p> </p>
+
+<p>因為要做臉部偵測，我們比較關注的是臉部區域的編碼。可以看到上面的例子，臉部的資料是以rect64(CROP_RECTANGLE*), contact_id這樣的方式呈現，CROP_RECTANGLE部份是我們要的臉部範圍資訊，contact_id是用來識別這張是誰的臉，若是有多個臉部資訊則會用分號隔開。以這邊來說我們只要抓出人臉範圍並不需要知道這張臉是誰，因此只需要擷取出CROP_RECTANGLE的部份就可以了。但是透過上例我們可以看到CROP_RECTANGLE是串我們看不懂的數值，它有經過編碼的動作，在使用前我們必須將之解碼才知道臉部的區域在哪。詳細的格式說明可參閱.picasa.ini decoded：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3a54e334-38f9-42ae-8739-4473c7c15ecb" class="wlWriterSmartContent"><pre name="code" class="xml"># Picasa uses a special string format to store crop boxes of<br># detected faces and from an applied crop filters. The number encased<br># in the rect64() statement is a 64 bit hexadecimal number:<br><br>#     rect64(3f845bcb59418507)<br><br># break this number into 4 16-bit numbers by using substrings:<br><br># ‘3f845bcb59418507’.substring(0,4) //“3f84”<br># ‘3f845bcb59418507’.substring(4,8) //“5bcb”<br># ‘3f845bcb59418507’.substring(8,12) // “5941”<br># ‘3f845bcb59418507’.substring(12,16) // “8507”<br><br># convert each obtained substring to an integer and divide it<br># by the highest 16-bit number (2^16 = 65536), which should give 0 &lt; results &lt; 1.<br># these are the relative coordinates of the crop rectangle (left,top,right,bottom):<br><br># parseInt(“3f84”,16)/65536 //0.24810791015625  - left<br># parseInt(“5bcb”,16)/65536 //0.3585662841796875 - top<br># parseInt(“5941”,16)/65536 //0.3486480712890625 - right<br># parseInt(“8507”,16)/65536 //0.5196380615234375 - bottom<br><br># for absolute coordinates, multiply the left/right coordinates with<br># the image width and the top/bottom coordinates with the image height<br></pre></div>
+
+<p> </p>
+
+<p> 解碼的部份的實做可參閱GetPicasaFaces的GetRectangleFrom64Hash函式：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f8f5d47f-abe5-47fc-af58-e00ed3cfaacb" class="wlWriterSmartContent"><pre name="code" class="c#">        /// &lt;summary&gt;<br>        /// Extracts a RectangleF object from a 64-bit hex hash string.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”hash64”&gt;The 64-bit hex hash string.&lt;/param&gt;<br>        /// &lt;returns&gt;A RectangleF with the equivalent rectangle coordinates from the hash string.&lt;/returns&gt;<br>        public static RectangleF GetRectangleFrom64Hash(string hash64)<br>        {<br>            UInt64 hash = UInt64.Parse(hash64, System.Globalization.NumberStyles.HexNumber);<br>            byte[] bytes = BitConverter.GetBytes(hash);<br><br>            UInt16 l16 = BitConverter.ToUInt16(bytes, 6);<br>            UInt16 t16 = BitConverter.ToUInt16(bytes, 4);<br>            UInt16 r16 = BitConverter.ToUInt16(bytes, 2);<br>            UInt16 b16 = BitConverter.ToUInt16(bytes, 0);<br><br>            float left = l16 / 65535.0F;<br>            float top = t16 / 65535.0F;<br>            float right = r16 / 65535.0F;<br>            float bottom = b16 / 65535.0F;<br><br>            return new RectangleF(left, top, right - left, bottom - top);<br>        }</pre></div>
+
+<p> </p>
+
+<p>解碼的部份是主要程式的核心，核心準備好了我們剩下的就是從圖片檔案找出ini檔，並從ini檔中找尋看看是否有該圖片的臉部資訊。如果有該圖片的臉部資訊就將該部份擷取出來解碼，換算我們慣用的Rectangle就可以了。這邊筆者簡單的整理了一個輔助類別：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:eff292fd-115f-4cd9-aa51-a95ff2997e52" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Drawing;<br>using System.IO;<br>using System.Runtime.InteropServices;<br>using System.Text.RegularExpressions;<br><br>namespace WindowsFormsApplication27<br>{<br>    public class PicasaMetaDataHelper<br>    {<br>        #region DllImport<br>        [DllImport(“kernel32”)]<br>        private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);<br>        #endregion<br><br>        #region Const<br>        const string PICASA_INI_FILENAME = “.picasa.ini”;<br>        const string FACE_HASH_CODE_PATTERN = @”((\w+))“;<br>        #endregion<br><br>        #region Private Static Method<br>        /// &lt;summary&gt;<br>        /// Gets the rectangle from64 hash.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”hash64”&gt;The hash64.&lt;/param&gt;<br>        /// &lt;param name=”size”&gt;The size.&lt;/param&gt;<br>        /// &lt;returns&gt;&lt;/returns&gt;<br>        private static RectangleF GetRectangleFrom64Hash(string hash64, Size size)<br>        {<br>            return GetRectangleFrom64Hash(hash64, size.Width, size.Height);<br>        }<br><br>        /// &lt;summary&gt;<br>        /// Gets the rectangle from64 hash.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”hash64”&gt;The hash64.&lt;/param&gt;<br>        /// &lt;param name=”width”&gt;The width.&lt;/param&gt;<br>        /// &lt;param name=”height”&gt;The height.&lt;/param&gt;<br>        /// &lt;returns&gt;&lt;/returns&gt;<br>        private static RectangleF GetRectangleFrom64Hash(string hash64, int width, int height)<br>        {<br>            UInt64 hash = UInt64.Parse(hash64, System.Globalization.NumberStyles.HexNumber);<br>            byte[] bytes = BitConverter.GetBytes(hash);<br><br>            UInt16 l16 = BitConverter.ToUInt16(bytes, 6);<br>            UInt16 t16 = BitConverter.ToUInt16(bytes, 4);<br>            UInt16 r16 = BitConverter.ToUInt16(bytes, 2);<br>            UInt16 b16 = BitConverter.ToUInt16(bytes, 0);<br><br>            float left = l16 / 65535.0F;<br>            float top = t16 / 65535.0F;<br>            float right = r16 / 65535.0F;<br>            float bottom = b16 / 65535.0F;<br><br>            return new RectangleF(left <em> width, top </em> height, (right - left) <em> width, (bottom - top) </em> height);<br>        }<br>        #endregion<br><br><br>        #region Public Static Method<br>        /// &lt;summary&gt;<br>        /// Gets the face areas.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”photoFile”&gt;The photo file.&lt;/param&gt;<br>        /// &lt;returns&gt;&lt;/returns&gt;<br>        public static IEnumerable&lt;RectangleF&gt; GetFaceAreas(string photoFile)<br>        {<br>            var photo = Bitmap.FromFile(photoFile);<br>            return GetFaceAreas(photoFile, photo);<br>        }<br><br>        /// &lt;summary&gt;<br>        /// Gets the face areas.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”photoFile”&gt;The photo file.&lt;/param&gt;<br>        /// &lt;param name=”photo”&gt;The photo.&lt;/param&gt;<br>        /// &lt;returns&gt;&lt;/returns&gt;<br>        public static IEnumerable&lt;RectangleF&gt; GetFaceAreas(string photoFile, Image photo)<br>        {<br>            var folder = Path.GetDirectoryName(photoFile);<br>            var iniFile = Path.Combine(folder, PICASA_INI_FILENAME);<br><br>            if (!File.Exists(iniFile))<br>                yield break;<br><br>            var fileName = Path.GetFileName(photoFile);<br>            var faceDataBuffer = new StringBuilder(512);<br>            GetPrivateProfileString(fileName, “faces”, string.Empty, faceDataBuffer, 512, iniFile);<br><br>            var faceData = faceDataBuffer.ToString();<br><br>            if (faceData.Length == 0)<br>                yield break;<br><br>            var ms = Regex.Matches(faceData, FACE_HASH_CODE_PATTERN);<br><br>            foreach (Match m in ms)<br>            {<br>                var faceHashCode = m.Groups[1].Value;<br>                yield return GetRectangleFrom64Hash(faceHashCode, photo.Size);<br>            }<br>        }<br>        #endregion<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>使用起來就像這樣，將圖片載入後透過輔助類別取得臉部資訊，並在圖片上畫出臉部區域後顯示：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c073c945-e1e2-4670-85d2-93a99e4e29c6" class="wlWriterSmartContent"><pre name="code" class="c#">            …<br>            if (openFileDialog1.ShowDialog() == DialogResult.OK)<br>            {<br>                var image = Bitmap.FromFile(openFileDialog1.FileName);<br>                var faceAreas = PicasaMetaDataHelper.GetFaceAreas(openFileDialog1.FileName, image);<br><br>                using (var g = Graphics.FromImage(image))<br>                {<br>                    g.DrawRectangles(new Pen(Brushes.Red, 5), faceAreas.ToArray());<br>                }<br>                pbxPhoto.Image = image;<br>            }<br>            …</pre></div>
+
+<p> </p>
+
+<p>實際運行後可以看到我們正確的將臉部給標示出來，跟Picasa上看到的臉部範圍完全一樣。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\18a821c3-954e-402a-8a9c-16185fa84576\image_thumb_2.png" width="644" height="465"> </p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\18a821c3-954e-402a-8a9c-16185fa84576\image_thumb_3.png" width="643" height="484"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Picasa.ini 檔案 </li><br><br>  <li>.picasa.ini decoded </li><br><br>  <li>GetPicasaFaces </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/15a56048-9523-4292-8326-21414191bc7a/" rel="next" title="RVM (Ruby Version Manager)" data-instant>
+                <i class="fa fa-chevron-left"></i> RVM (Ruby Version Manager)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/6209310f-6d55-4897-b349-1a5c43e5bd19/" rel="prev" title="Google FeedBurner" data-instant>
+                Google FeedBurner <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/18a821c3-954e-402a-8a9c-16185fa84576/';
+      var disqus_title = "[C#]取用.picasa.ini內存的現有資訊來做臉部偵測";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/18a821c3-954e-402a-8a9c-16185fa84576/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/f0858316-43df-4866-9352-0ef014638275/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/f0858316-43df-4866-9352-0ef014638275/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)">
+<meta name="twitter:description" content="[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/f0858316-43df-4866-9352-0ef014638275/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/f0858316-43df-4866-9352-0ef014638275/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/f0858316-43df-4866-9352-0ef014638275/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近看Code有些體會，對於String的空值與否的判斷，看多了覺得有點礙眼。有時候字串變數短短的，卻因為使用上必須使用String的靜態方法，像是String.IsNullOrEmpty，讓整個程式看起來變長了不少。對於讓字串變數直接可以用IsNullOrEmpty成員方法去判斷這件事，看起來也沒什麼特別的不妥，而這樣的特性可透過擴充方法實現，因此這邊整理一下對應的擴充方法，沒有一定比本來的作法好，畢竟這樣對於擴充方法認識不清的會對null object還能叫用成員方法多少有點疑惑，這邊只是做個嘗試、整理與紀錄。</p>  <p> </p>  <p>擴充方法撰寫如下：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1ee5e3d0-82e0-4125-bf3c-b4fa214f21b4" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Text.RegularExpressions;<br><br>namespace ConsoleApplication1<br>{<br>    public static class StringExtension<br>    {<br>        public static Boolean IsNull(this string str)<br>        {<br>            return str == null;<br>        }<br><br>        public static Boolean IsNullOrEmpty(this string str)<br>        {<br>            return string.IsNullOrEmpty(str);<br>        }<br><br>        public static Boolean IsNullOrWhiteSpace(this string str)<br>        {<br>            return string.IsNullOrWhiteSpace(str);<br>        }<br><br>        public static bool IsMatch(this string str, string pattern)<br>        {<br>            if (str.IsNullOrEmpty())<br>                throw new ArgumentNullException(“str”);<br>            if (pattern.IsNullOrEmpty())<br>                throw new ArgumentNullException(“pattern”);<br>            return Regex.IsMatch(str, pattern);<br>        }<br>    }<br>}<br></pre></div><br><br><p> </p>
+
+<p>IsNull可用來判斷字串是否為null、IsNullOrEmpty可用來判斷字串是否為null或空值、IsNullOrWhiteSpace可用來判斷是否為null或是空白、IsMatch可帶入正規表示式判斷字串使否符合希望的格式。</p>
+
+<p> </p>
+
+<p>下面這邊是簡單的使用範例：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1c459d69-d0c2-4834-a1f2-91810306047f" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br><br>namespace ConsoleApplication1<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            string nullStr = null;<br>            string emptyStr = string.Empty;<br>            string whiteSpaceStr = new string(‘ ‘, 10);<br>            string matchStr = @”<a href="http://www.dotblogs.com.tw/larrynung&quot;" target="_blank" rel="noopener">http://www.dotblogs.com.tw/larrynung&quot;</a>;<br>            string matchPattern = “.<em>dotblogs.</em>“;<br><br>            Console.WriteLine(“nullStr.IsNull: “ + nullStr.IsNull().ToString());<br>            Console.WriteLine(“nullStr.IsNullOrEmpty: “ + nullStr.IsNullOrEmpty().ToString());<br>            Console.WriteLine(“nullStr.IsNullOrWhiteSpace: “ + nullStr.IsNullOrWhiteSpace().ToString());<br><br>            Console.WriteLine();<br>            Console.WriteLine(“emptyStr.IsNull: “ + emptyStr.IsNull().ToString());<br>            Console.WriteLine(“emptyStr.IsNullOrEmpty: “ + emptyStr.IsNullOrEmpty().ToString());<br>            Console.WriteLine(“emptyStr.IsNullOrWhiteSpace: “ + emptyStr.IsNullOrWhiteSpace().ToString());<br><br>            Console.WriteLine();<br>            Console.WriteLine(“whiteSpaceStr.IsNull: “ + whiteSpaceStr.IsNull().ToString());<br>            Console.WriteLine(“whiteSpaceStr.IsNullOrEmpty: “ + whiteSpaceStr.IsNullOrEmpty().ToString());<br>            Console.WriteLine(“whiteSpaceStr.IsNullOrWhiteSpace: “ + whiteSpaceStr.IsNullOrWhiteSpace().ToString());<br><br>            Console.WriteLine();<br>            Console.WriteLine(“{0} match {1}: {2}”, matchStr, matchPattern, matchStr.IsMatch(matchPattern));<br>        }<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>運行結果如下：</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\f0858316-43df-4866-9352-0ef014638275\image_thumb.png" width="577" height="303"></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/f1810d6f-04a3-4df9-a5d5-71f814e82de7/" rel="next" title="[Web]tryGit - 簡易又實用的Git免費教學課程" data-instant>
+                <i class="fa fa-chevron-left"></i> [Web]tryGit - 簡易又實用的Git免費教學課程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/f03f49cd-c0bc-43df-ace8-9abdd7a89cfb/" rel="prev" title="[C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles" data-instant>
+                [C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/f0858316-43df-4866-9352-0ef014638275/';
+      var disqus_title = "[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/f0858316-43df-4866-9352-0ef014638275/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

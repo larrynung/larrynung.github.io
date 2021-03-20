@@ -1,0 +1,637 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/3b17ae66-f87a-442e-805d-3df422e2b175/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/3b17ae66-f87a-442e-805d-3df422e2b175/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/3b17ae66-f87a-442e-805d-3df422e2b175/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案">
+<meta name="twitter:description" content="[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/3b17ae66-f87a-442e-805d-3df422e2b175/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/3b17ae66-f87a-442e-805d-3df422e2b175/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/3b17ae66-f87a-442e-805d-3df422e2b175/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>相信很多人都有玩過Everything這套搜尋軟體，也對他的快速搜尋印象深刻。其實它之所以快速是因為它很聰明的去掃了NTFS的USN Journal，它的資料量會比我們去遍巡檔案系統還要少的多，所以可以在很短的時間完成檔案的索引，自然運行起來就會很快速。</p>  <p> </p>  <p>那麼我們要怎樣在.NET程式中實現類似的效果呢？筆者暫時還不想長篇大論的跟大家解釋如何讀取USN Journal，所以這邊筆者是用MFT Scanner in VB.NET來做到類似的效果。檔案下載下來後可以看到裡面只有ㄧ個專案，運行起來就是ㄧ個簡單的搜尋程式，上方的輸入框是輸入要找尋的檔案位置，而下方的輸入框是讓我們指定找到的檔案清單要寫到哪個目錄下，輸入完後按下Start Processing按鈕就會開始進行MFT的搜尋與ㄧ般遞迴的搜尋，搜尋結束下方會顯示出搜尋的結果。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1210/CMFTScannerUSNJournal_13966/image_4.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\3b17ae66-f87a-442e-805d-3df422e2b175\image_thumb_1.png" width="553" height="598"> </a></p>  <p> </p>  <p>若要將這功能套用到自己的專案中，我們可以將他專案中的cEnumMFT.vb檔加入到自己的專案，並建立出cEnumMFT的物件實體，最後再透過建立出來的物件實體去叫用FindAllFiles就可以了。叫用時必需要帶入要搜尋的磁碟槽以及ㄧ個委派去負責處裡找到的檔案，最後兩個參數個人覺得意義不大，所以直接傳入Nothing就可以了。像是下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e72a25b6-958d-4d74-b741-d2d2e48dda9c" class="wlWriterSmartContent"><pre name="code" class="vb">        Dim scanner = New cEnumMFT<br>        scanner.FindAllFiles(“c:\”, Sub(file, size)<br>                                    End Sub, Nothing, Nothing)</pre></div><br><br><p> </p>
+
+<p>筆者也花了點時間將之轉成C#了，並做了些調整，有需要的可以直接取用。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f5b5743e-9d43-4275-b24a-14a3ca20c161" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Runtime.InteropServices;<br>using Microsoft.VisualBasic;<br><br>public class MFTScanner<br>{<br>    private static IntPtr INVALID_HANDLE_VALUE = new IntPtr(-1);<br>    private const uint GENERIC_READ = 0x80000000;<br>    private const int FILE_SHARE_READ = 0x1;<br>    private const int FILE_SHARE_WRITE = 0x2;<br>    private const int OPEN_EXISTING = 3;<br>    private const int FILE_READ_ATTRIBUTES = 0x80;<br>    private const int FILE_NAME_IINFORMATION = 9;<br>    private const int FILE_FLAG_BACKUP_SEMANTICS = 0x2000000;<br>    private const int FILE_OPEN_FOR_BACKUP_INTENT = 0x4000;<br>    private const int FILE_OPEN_BY_FILE_ID = 0x2000;<br>    private const int FILE_OPEN = 0x1;<br>    private const int OBJ_CASE_INSENSITIVE = 0x40;<br>    private const int FSCTL_ENUM_USN_DATA = 0x900b3;<br><br>    [StructLayout(LayoutKind.Sequential)]<br>    private struct MFT_ENUM_DATA<br>    {<br>        public long StartFileReferenceNumber;<br>        public long LowUsn;<br>        public long HighUsn;<br>    }<br><br>    [StructLayout(LayoutKind.Sequential)]<br>    private struct USN_RECORD<br>    {<br>        public int RecordLength;<br>        public short MajorVersion;<br>        public short MinorVersion;<br>        public long FileReferenceNumber;<br>        public long ParentFileReferenceNumber;<br>        public long Usn;<br>        public long TimeStamp;<br>        public int Reason;<br>        public int SourceInfo;<br>        public int SecurityId;<br>        public FileAttribute FileAttributes;<br>        public short FileNameLength;<br>        public short FileNameOffset;<br>    }<br><br>    [StructLayout(LayoutKind.Sequential)]<br>    private struct IO_STATUS_BLOCK<br>    {<br>        public int Status;<br>        public int Information;<br>    }<br><br>    [StructLayout(LayoutKind.Sequential)]<br>    private struct UNICODE_STRING<br>    {<br>        public short Length;<br>        public short MaximumLength;<br>        public IntPtr Buffer;<br>    }<br><br>    [StructLayout(LayoutKind.Sequential)]<br>    private struct OBJECT_ATTRIBUTES<br>    {<br>        public int Length;<br>        public IntPtr RootDirectory;<br>        public IntPtr ObjectName;<br>        public int Attributes;<br>        public int SecurityDescriptor;<br>        public int SecurityQualityOfService;<br>    }<br><br>    //// MFT_ENUM_DATA<br>    [DllImport(“kernel32.dll”, ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]<br>    private static extern bool DeviceIoControl(IntPtr hDevice, int dwIoControlCode, ref MFT_ENUM_DATA lpInBuffer, int nInBufferSize, IntPtr lpOutBuffer, int nOutBufferSize, ref int lpBytesReturned, IntPtr lpOverlapped);<br><br>    [DllImport(“kernel32.dll”, SetLastError = true, CharSet = CharSet.Auto)]<br>    private static extern IntPtr CreateFile(string lpFileName, uint dwDesiredAccess, int dwShareMode, IntPtr lpSecurityAttributes, int dwCreationDisposition, int dwFlagsAndAttributes, IntPtr hTemplateFile);<br><br>    [DllImport(“kernel32.dll”, ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]<br>    private static extern Int32 CloseHandle(IntPtr lpObject);<br><br>    [DllImport(“ntdll.dll”, ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]<br>    private static extern int NtCreateFile(ref IntPtr FileHandle, int DesiredAccess, ref OBJECT_ATTRIBUTES ObjectAttributes, ref IO_STATUS_BLOCK IoStatusBlock, int AllocationSize, int FileAttribs, int SharedAccess, int CreationDisposition, int CreateOptions, int EaBuffer,<br>    int EaLength);<br><br>    [DllImport(“ntdll.dll”, ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]<br>    private static extern int NtQueryInformationFile(IntPtr FileHandle, ref IO_STATUS_BLOCK IoStatusBlock, IntPtr FileInformation, int Length, int FileInformationClass);<br><br>    private IntPtr m_hCJ;<br>    private IntPtr m_Buffer;<br>    private int m_BufferSize;<br><br>    private string m_DriveLetter;<br><br>    private class FSNode<br>    {<br>        public long FRN;<br>        public long ParentFRN;<br>        public string FileName;<br><br>        public bool IsFile;<br>        public FSNode(long lFRN, long lParentFSN, string sFileName, bool bIsFile)<br>        {<br>            FRN = lFRN;<br>            ParentFRN = lParentFSN;<br>            FileName = sFileName;<br>            IsFile = bIsFile;<br>        }<br><br>    }<br><br><br>    private IntPtr OpenVolume(string szDriveLetter)<br>    {<br><br>        IntPtr hCJ = default(IntPtr);<br>        //// volume handle<br><br>        m_DriveLetter = szDriveLetter;<br><br>        hCJ = CreateFile(“\\.\“ + szDriveLetter, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, IntPtr.Zero, OPEN_EXISTING, 0, IntPtr.Zero);<br><br>        return hCJ;<br><br>    }<br><br><br>    private void Cleanup()<br>    {<br>        if (m_hCJ != IntPtr.Zero)<br>        {<br>            // Close the volume handle.<br>            CloseHandle(m_hCJ);<br>            m_hCJ = INVALID_HANDLE_VALUE;<br>        }<br><br>        if (m_Buffer != IntPtr.Zero)<br>        {<br>            // Free the allocated memory<br>            Marshal.FreeHGlobal(m_Buffer);<br>            m_Buffer = IntPtr.Zero;<br>        }<br><br>    }<br><br><br>    public IEnumerable&lt;String&gt; EnumerateFiles(string szDriveLetter)<br>    {<br>        try<br>        {<br>            var usnRecord = default(USN_RECORD);<br>            var mft = default(MFT_ENUM_DATA);<br>            var dwRetBytes = 0;<br>            var cb = 0;<br>            var dicFRNLookup = new Dictionary&lt;long, FSNode&gt;();<br>            var bIsFile = false;<br><br>            // This shouldn’t be called more than once.<br>            if (m_Buffer.ToInt32() != 0)<br>            {<br>                throw new Exception(“invalid buffer”);<br>            }<br><br>            // Assign buffer size<br>            m_BufferSize = 65536;<br>            //64KB<br><br>            // Allocate a buffer to use for reading records.<br>            m_Buffer = Marshal.AllocHGlobal(m_BufferSize);<br><br>            // correct path<br>            szDriveLetter = szDriveLetter.TrimEnd(‘\‘);<br><br>            // Open the volume handle<br>            m_hCJ = OpenVolume(szDriveLetter);<br><br>            // Check if the volume handle is valid.<br>            if (m_hCJ == INVALID_HANDLE_VALUE)<br>            {<br>                throw new Exception(“Couldn’t open handle to the volume.”);<br>            }<br><br>            mft.StartFileReferenceNumber = 0;<br>            mft.LowUsn = 0;<br>            mft.HighUsn = long.MaxValue;<br><br>            do<br>            {<br>                if (DeviceIoControl(m_hCJ, FSCTL_ENUM_USN_DATA, ref mft, Marshal.SizeOf(mft), m_Buffer, m_BufferSize, ref dwRetBytes, IntPtr.Zero))<br>                {<br>                    cb = dwRetBytes;<br>                    // Pointer to the first record<br>                    IntPtr pUsnRecord = new IntPtr(m_Buffer.ToInt32() + 8);<br><br>                    while ((dwRetBytes &gt; 8))<br>                    {<br>                        // Copy pointer to USN_RECORD structure.<br>                        usnRecord = (USN_RECORD)Marshal.PtrToStructure(pUsnRecord, usnRecord.GetType());<br><br>                        // The filename within the USN_RECORD.<br>                        string FileName = Marshal.PtrToStringUni(new IntPtr(pUsnRecord.ToInt32() + usnRecord.FileNameOffset), usnRecord.FileNameLength / 2);<br><br>                        bIsFile = !usnRecord.FileAttributes.HasFlag(FileAttribute.Directory);<br>                        dicFRNLookup.Add(usnRecord.FileReferenceNumber, new FSNode(usnRecord.FileReferenceNumber, usnRecord.ParentFileReferenceNumber, FileName, bIsFile));<br><br>                        // Pointer to the next record in the buffer.<br>                        pUsnRecord = new IntPtr(pUsnRecord.ToInt32() + usnRecord.RecordLength);<br><br>                        dwRetBytes -= usnRecord.RecordLength;<br>                    }<br><br>                    // The first 8 bytes is always the start of the next USN.<br>                    mft.StartFileReferenceNumber = Marshal.ReadInt64(m_Buffer, 0);<br><br><br>                }<br>                else<br>                {<br>                    break; // TODO: might not be correct. Was : Exit Do<br><br>                }<br><br>            } while (!(cb &lt;= 8));<br><br>            // Resolve all paths for Files<br>            foreach (FSNode oFSNode in dicFRNLookup.Values.Where(o =&gt; o.IsFile))<br>            {<br>                string sFullPath = oFSNode.FileName;<br>                FSNode oParentFSNode = oFSNode;<br><br>                while (dicFRNLookup.TryGetValue(oParentFSNode.ParentFRN, out oParentFSNode))<br>                {<br>                    sFullPath = string.Concat(oParentFSNode.FileName, “\“, sFullPath);<br>                }<br>                sFullPath = string.Concat(szDriveLetter, “\“, sFullPath);<br><br>                yield return sFullPath;<br>            }<br>        }<br>        finally<br>        {<br>            //// cleanup<br>            Cleanup();<br>        }<br>    }<br>}<br></pre></div>
+
+<p> </p>
+
+<p>因為USN Journal是綁磁碟的，所以筆者也將之整理成DriveInfo的擴充方法，使用上會比較方便些。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9fd5c367-96e0-458c-92b3-9d18b78f262b" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.IO;<br><br>public static class DriveInfoExtension<br>{<br>    public static IEnumerable&lt;String&gt; EnumerateFiles(this DriveInfo drive)<br>    {<br>        return (new MFTScanner()).EnumerateFiles(drive.Name);<br>    }<br>}<br><br></pre></div>
+
+<p> </p>
+
+<p>使用起來會像下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:55c8f4d6-dc0f-401e-bbdb-c9ab816ebce2" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.IO;<br>using System.Diagnostics;<br><br>namespace ConsoleApplication28<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            var sw = Stopwatch.StartNew();<br>            var files = (new DriveInfo(@”c:\”)).EnumerateFiles().ToArray();<br>            var elapsed = sw.ElapsedMilliseconds.ToString();<br>            Console.WriteLine(string.Format(“Found {0} files, elapsed {1} ms”, files.Length, elapsed));<br>        }<br>    }<br>}<br></pre></div>
+
+<p> </p>
+
+<p>運行後我們可以看到，程式找尋筆者的磁碟C，找到501230個檔案也才花了7344ms。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\3b17ae66-f87a-442e-805d-3df422e2b175\image_thumb.png" width="409" height="175"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>MFT Scanner in VB.NET</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/2f48955e-1250-4dda-850c-d0318cbed27c/" rel="next" title="[C#]如何使用Windows Shell做Zip檔的壓縮與解壓縮" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]如何使用Windows Shell做Zip檔的壓縮與解壓縮
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/60a233e2-1b42-436c-a55d-64a0b5f70f65/" rel="prev" title="GAE's Mail Python API" data-instant>
+                GAE's Mail Python API <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/3b17ae66-f87a-442e-805d-3df422e2b175/';
+      var disqus_title = "[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/3b17ae66-f87a-442e-805d-3df422e2b175/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

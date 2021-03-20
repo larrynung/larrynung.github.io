@@ -1,0 +1,608 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][VB.NET]自定義.NET WindowForm表單介面(二)">
+<meta name="keywords" content="CSharp,VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][VB.NET]自定義.NET WindowForm表單介面(二)">
+<meta property="og:url" content="http://larrynung.github.io/2009/03/21/7625/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][VB.NET]自定義.NET WindowForm表單介面(二)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7625/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7625/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7625/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7625/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7625/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][VB.NET]自定義.NET WindowForm表單介面(二)">
+<meta name="twitter:description" content="[C#][VB.NET]自定義.NET WindowForm表單介面(二)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/7625/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][VB.NET]自定義.NET WindowForm表單介面(二) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][VB.NET]自定義.NET WindowForm表單介面(二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-03-21T03:19:35+00:00" content="2009-03-21">
+              2009-03-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/03/21/7625/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/03/21/7625/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前寫過一篇『自定義.NET WindowForm表單介面』，據網友反應才注意到其做出來的視窗無縮放的效果，因此這篇的重點將Focuse在自定義表單的縮放功能實作。</p><p>要實作具縮放功能的WindowForm表單目前得知的方法大概有三種，這邊就讓我們分別來探討。</p><p> </p><h3>方法一  用 FormBorderStyle = None 來做自定義表單並自行實作縮放</h3><p>用 FormBorderStyle = None 來做自定義表單的方法請參考『<a href="http://www.dotblogs.com.tw/larrynung/archive/2008/11/11/5959.aspx" target="_blank" rel="noopener">自定義.NET WindowForm表單介面』這篇，實做完後加入如下縮放代碼即可。</a></p><p>VB.NET</p><div style="width: 614px; height: 226px; overflow: auto"><div class="csharpcode"><pre class="alt"><br>   <span class="kwrd">Enum</span> Direction</pre><pre><br>        NONE</pre><pre class="alt"><br>        TOP</pre><pre><br>        BOTTOM</pre><pre class="alt"><br>        LEFT</pre><pre><br>        RIGHT</pre><pre class="alt"><br>        LEFTTOP</pre><pre><br>        LEFTBOTTOM</pre><pre class="alt"><br>        RIGHTTOP</pre><pre><br>        RIGHTBOTTOM</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Enum</span></pre><pre><br> </pre><pre class="alt"><br> </pre><pre><br>    <span class="kwrd">Dim</span> alreadyCaptured <span class="kwrd">As</span> <span class="kwrd">Boolean</span></pre><pre class="alt"><br>    <span class="kwrd">Dim</span> x <span class="kwrd">As</span> <span class="kwrd">Integer</span></pre><pre><br>    <span class="kwrd">Dim</span> y <span class="kwrd">As</span> <span class="kwrd">Integer</span></pre><pre class="alt"><br>    <span class="kwrd">Dim</span> interval <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 5</pre><pre><br>    <span class="kwrd">Dim</span> adjustDirection <span class="kwrd">As</span> Direction</pre><pre class="alt"><br> </pre><pre><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Form_MouseMove(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> <span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.Windows.Forms.MouseEventArgs) <span class="kwrd">Handles</span> <span class="kwrd">Me</span>.MouseMove</pre><pre class="alt"><br>        <span class="kwrd">If</span> <span class="kwrd">Me</span>.Capture <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">If</span> alreadyCaptured <span class="kwrd">Then</span></pre><pre class="alt"><br>                AdjustBounds(e)</pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br> </pre><pre><br>            x = e.X</pre><pre class="alt"><br>            y = e.Y</pre><pre><br>        <span class="kwrd">Else</span></pre><pre class="alt"><br>            SetAdjustDirection(e)</pre><pre><br>            SetCursor()</pre><pre class="alt"><br>        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>        alreadyCaptured = <span class="kwrd">Me</span>.Capture</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Function</span> IsMatch(<span class="kwrd">ByVal</span> n <span class="kwrd">As</span> <span class="kwrd">Integer</span>, <span class="kwrd">ByVal</span> xy <span class="kwrd">As</span> <span class="kwrd">Integer</span>) <span class="kwrd">As</span> <span class="kwrd">Boolean</span></pre><pre><br>        <span class="kwrd">Return</span> (xy - interval &lt; n) <span class="kwrd">AndAlso</span> (n &lt; xy + interval)</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre><br> </pre><pre class="alt"><br> </pre><pre><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> SetCursor()</pre><pre class="alt"><br>        <span class="kwrd">Select</span> <span class="kwrd">Case</span> adjustDirection</pre><pre><br>            <span class="kwrd">Case</span> Direction.LEFTTOP, Direction.RIGHTBOTTOM</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Cursor = Cursors.SizeNWSE</pre><pre><br>            <span class="kwrd">Case</span> Direction.RIGHTTOP, Direction.LEFTBOTTOM</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Cursor = Cursors.SizeNESW</pre><pre><br>            <span class="kwrd">Case</span> Direction.LEFT, Direction.RIGHT</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Cursor = Cursors.SizeWE</pre><pre><br>            <span class="kwrd">Case</span> Direction.TOP, Direction.BOTTOM</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Cursor = Cursors.SizeNS</pre><pre><br>            <span class="kwrd">Case</span> Direction.NONE</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Cursor = Cursors.<span class="kwrd">Default</span></pre><pre><br>        <span class="kwrd">End</span> <span class="kwrd">Select</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><br> </pre><pre class="alt"><br> </pre><pre><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> SetAdjustDirection(<span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.Windows.Forms.MouseEventArgs)</pre><pre class="alt"><br>        <span class="kwrd">If</span> IsMatch(e.X, 0) <span class="kwrd">AndAlso</span> IsMatch(e.Y, 0) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.LEFTTOP</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.X, 0) <span class="kwrd">AndAlso</span> IsMatch(e.Y, <span class="kwrd">Me</span>.Height - 1) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.LEFTBOTTOM</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.X, <span class="kwrd">Me</span>.Width - 1) <span class="kwrd">AndAlso</span> IsMatch(e.Y, 0) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.RIGHTTOP</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.X, <span class="kwrd">Me</span>.Width - 1) <span class="kwrd">AndAlso</span> IsMatch(e.Y, <span class="kwrd">Me</span>.Height - 1) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.RIGHTBOTTOM</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.X, 0) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.LEFT</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.X, <span class="kwrd">Me</span>.Width - 1) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.RIGHT</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.Y, 0) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.TOP</pre><pre class="alt"><br>        <span class="kwrd">ElseIf</span> IsMatch(e.Y, <span class="kwrd">Me</span>.Height - 1) <span class="kwrd">Then</span></pre><pre><br>            adjustDirection = Direction.BOTTOM</pre><pre class="alt"><br>        <span class="kwrd">Else</span></pre><pre><br>            adjustDirection = Direction.NONE</pre><pre class="alt"><br>        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt"><br> </pre><pre><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> AdjustBounds(<span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.Windows.Forms.MouseEventArgs)</pre><pre class="alt"><br>        <span class="kwrd">Dim</span> x <span class="kwrd">As</span> <span class="kwrd">Integer</span> = e.X - <span class="kwrd">Me</span>.x</pre><pre><br>        <span class="kwrd">Dim</span> y <span class="kwrd">As</span> <span class="kwrd">Integer</span> = e.Y - <span class="kwrd">Me</span>.y</pre><pre class="alt"><br>        <span class="kwrd">Select</span> <span class="kwrd">Case</span> adjustDirection</pre><pre><br>            <span class="kwrd">Case</span> Direction.LEFTTOP</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Left += e.X</pre><pre><br>                <span class="kwrd">Me</span>.Width -= e.X</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Top += e.Y</pre><pre><br>                <span class="kwrd">Me</span>.Height -= e.Y</pre><pre class="alt"><br>            <span class="kwrd">Case</span> Direction.LEFTBOTTOM</pre><pre><br>                <span class="kwrd">Me</span>.Left += e.X</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Width -= e.X</pre><pre><br>                <span class="kwrd">Me</span>.Height += y</pre><pre class="alt"><br>            <span class="kwrd">Case</span> Direction.RIGHTBOTTOM</pre><pre><br>                <span class="kwrd">Me</span>.Width += x</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Height += y</pre><pre><br>            <span class="kwrd">Case</span> Direction.RIGHTTOP</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Top += e.Y</pre><pre><br>                <span class="kwrd">Me</span>.Height -= e.Y</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Width += x</pre><pre><br>            <span class="kwrd">Case</span> Direction.LEFT</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Left += e.X</pre><pre><br>                <span class="kwrd">Me</span>.Width -= e.X</pre><pre class="alt"><br>            <span class="kwrd">Case</span> Direction.RIGHT</pre><pre><br>                <span class="kwrd">Me</span>.Width += x</pre><pre class="alt"><br>            <span class="kwrd">Case</span> Direction.TOP</pre><pre><br>                <span class="kwrd">Me</span>.Top += e.Y</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Height -= e.Y</pre><pre><br>            <span class="kwrd">Case</span> Direction.BOTTOM</pre><pre class="alt"><br>                <span class="kwrd">Me</span>.Height += y</pre><pre><br>        <span class="kwrd">End</span> <span class="kwrd">Select</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> Sub</pre></div></div><p> </p><p>C#</p><div style="width: 613px; height: 301px; overflow: auto"><div class="csharpcode"><pre class="alt"><br>   <span class="kwrd">enum</span> Direction</pre><pre><br>        {</pre><pre class="alt"><br>            NONE,</pre><pre><br>            TOP,</pre><pre class="alt"><br>            BOTTOM,</pre><pre><br>            LEFT,</pre><pre class="alt"><br>            RIGHT,</pre><pre><br>            LEFTTOP,</pre><pre class="alt"><br>            LEFTBOTTOM,</pre><pre><br>            RIGHTTOP,</pre><pre class="alt"><br>            RIGHTBOTTOM</pre><pre><br>        };</pre><pre class="alt"><br>        Boolean alreadyCaptured;</pre><pre><br>        <span class="kwrd">int</span> x;</pre><pre class="alt"><br>        <span class="kwrd">int</span> y;</pre><pre><br>        <span class="kwrd">int</span> interval = 5;</pre><pre class="alt"><br>        Direction adjustDirection;</pre><pre><br>        <span class="kwrd">private</span> <span class="kwrd">void</span> Form1_MouseMove(<span class="kwrd">object</span> sender, MouseEventArgs e)</pre><pre class="alt"><br>        {</pre><pre><br>            <span class="kwrd">if</span> (<span class="kwrd">this</span>.Capture)</pre><pre class="alt"><br>            {</pre><pre><br>                <span class="kwrd">if</span> (alreadyCaptured)</pre><pre style="width: 100%; height: 3px" class="alt"><br>                    AdjustBounds(e);</pre><pre><br>                x = e.X;</pre><pre class="alt"><br>                y = e.Y;</pre><pre><br>            }</pre><pre class="alt"><br>            <span class="kwrd">else</span></pre><pre><br>            {</pre><pre class="alt"><br>                SetAdjustDirection(e);</pre><pre><br>                SetCursor();</pre><pre class="alt"><br>            }</pre><pre><br>            alreadyCaptured = <span class="kwrd">this</span>.Capture;</pre><pre class="alt"><br> </pre><pre><br>        }</pre><pre class="alt"><br> </pre><pre><br>        <span class="kwrd">private</span> Boolean IsMatch(<span class="kwrd">int</span> n, <span class="kwrd">int</span> xy)</pre><pre class="alt"><br>        {</pre><pre><br>            <span class="kwrd">return</span> (xy - interval &lt; n) &amp;&amp; (n &lt; xy + interval);</pre><pre class="alt"><br>        }</pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">private</span> <span class="kwrd">void</span> SetCursor()</pre><pre><br>        {</pre><pre class="alt"><br>            <span class="kwrd">switch</span> (adjustDirection)</pre><pre><br>            {</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.LEFTTOP :</pre><pre><br>                <span class="kwrd">case</span> Direction .RIGHTBOTTOM :</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Cursor = Cursors.SizeNWSE;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.RIGHTTOP:</pre><pre><br>                <span class="kwrd">case</span> Direction.LEFTBOTTOM:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Cursor = Cursors.SizeNESW;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.LEFT:</pre><pre><br>                <span class="kwrd">case</span> Direction.RIGHT:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Cursor = Cursors.SizeWE;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.TOP:</pre><pre><br>                <span class="kwrd">case</span> Direction.BOTTOM:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Cursor = Cursors.SizeNS;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">default</span> :</pre><pre><br>                    <span class="kwrd">this</span>.Cursor = Cursors.Default;</pre><pre class="alt"><br>                    <span class="kwrd">break</span>;</pre><pre><br>            }</pre><pre class="alt"><br>        }</pre><pre><br> </pre><pre class="alt"><br> </pre><pre><br>        <span class="kwrd">private</span> <span class="kwrd">void</span> SetAdjustDirection(System.Windows.Forms.MouseEventArgs e)</pre><pre class="alt"><br>        {</pre><pre><br>            <span class="kwrd">if</span> (IsMatch(e.X, 0) &amp;&amp; IsMatch(e.Y, 0))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.LEFTTOP;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.X, 0) &amp;&amp; IsMatch(e.Y, <span class="kwrd">this</span>.Height - 1))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.LEFTBOTTOM;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.X, <span class="kwrd">this</span>.Width - 1) &amp;&amp; IsMatch(e.Y, 0))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.RIGHTTOP;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.X, <span class="kwrd">this</span>.Width - 1) &amp;&amp; IsMatch(e.Y, <span class="kwrd">this</span>.Height - 1))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.RIGHTBOTTOM;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.X, 0))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.LEFT;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.X, <span class="kwrd">this</span>.Width - 1))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.RIGHT;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.Y, 0))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.TOP;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span> <span class="kwrd">if</span> (IsMatch(e.Y, <span class="kwrd">this</span>.Height - 1))</pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.BOTTOM;</pre><pre class="alt"><br>            }</pre><pre><br>            <span class="kwrd">else</span></pre><pre class="alt"><br>            {</pre><pre><br>                adjustDirection = Direction.NONE;</pre><pre class="alt"><br>            }</pre><pre><br>        }</pre><pre class="alt"><br>        <span class="kwrd">private</span> <span class="kwrd">void</span> AdjustBounds(System.Windows.Forms.MouseEventArgs e)</pre><pre><br>        {</pre><pre class="alt"><br>            <span class="kwrd">int</span> x = e.X - <span class="kwrd">this</span>.x;</pre><pre><br>            <span class="kwrd">int</span> y = e.Y - <span class="kwrd">this</span>.y;</pre><pre class="alt"><br>            <span class="kwrd">switch</span> (adjustDirection)</pre><pre><br>            {</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.LEFTTOP:</pre><pre><br>                    <span class="kwrd">this</span>.Left += e.X;</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Width -= e.X;</pre><pre><br>                    <span class="kwrd">this</span>.Top += e.Y;</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Height -= e.Y;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.LEFTBOTTOM:</pre><pre><br>                    <span class="kwrd">this</span>.Left += e.X;</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Width -= e.X;</pre><pre><br>                    <span class="kwrd">this</span>.Height += y;</pre><pre class="alt"><br>                    <span class="kwrd">break</span>;</pre><pre><br>                <span class="kwrd">case</span> Direction.RIGHTBOTTOM:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Width += x;</pre><pre><br>                    <span class="kwrd">this</span>.Height += y;</pre><pre class="alt"><br>                    <span class="kwrd">break</span>;</pre><pre><br>                <span class="kwrd">case</span> Direction.RIGHTTOP:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Top += e.Y;</pre><pre><br>                    <span class="kwrd">this</span>.Height -= e.Y;</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Width += x;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.LEFT:</pre><pre><br>                    <span class="kwrd">this</span>.Left += e.X;</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Width -= e.X;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>                <span class="kwrd">case</span> Direction.RIGHT:</pre><pre><br>                    <span class="kwrd">this</span>.Width += x;</pre><pre class="alt"><br>                    <span class="kwrd">break</span>;</pre><pre><br>                <span class="kwrd">case</span> Direction.TOP:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Top += e.Y;</pre><pre><br>                    <span class="kwrd">this</span>.Height -= e.Y;</pre><pre class="alt"><br>                    <span class="kwrd">break</span>;</pre><pre><br>                <span class="kwrd">case</span> Direction.BOTTOM:</pre><pre class="alt"><br>                    <span class="kwrd">this</span>.Height += y;</pre><pre><br>                    <span class="kwrd">break</span>;</pre><pre class="alt"><br>            }</pre><pre><br>        }</pre></div></div><p> </p><p>用這方法的缺點就是比較麻煩，有點土法鍊鋼的感覺。而且有個問題存在，就是當滑鼠移到工作列上(如下圖)按右鍵，右鍵選單不會出來。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="187" height="53" src="\images\posts\7625\image_thumb.png"></p><p> </p><h3>方法二 用 ControlBox = False 來做自定義表單</h3><p>用 ControlBox = False 來做自定義表單的方法很簡單，簡述如下：</p><p><strong>Step1.Form.ControlBox設為False</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0903/1387ac2c5637.NETWindowForm_8F1B/image_4.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="244" height="24" src="\images\posts\7625\image_thumb_1.png"></a></p><p> </p><p><strong>Step2.清空Form.Text</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0903/1387ac2c5637.NETWindowForm_8F1B/image_6.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="244" height="19" src="\images\posts\7625\image_thumb_2.png"></a></p><p>如下圖所示，設完後會發現表單的標題列已經消失。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0903/1387ac2c5637.NETWindowForm_8F1B/image_8.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="335" height="327" src="\images\posts\7625\image_thumb_3.png"></a></p><p> </p><p><strong>Step3.依照『</strong><a href="http://www.dotblogs.com.tw/larrynung/archive/2008/11/11/5959.aspx" target="_blank" rel="noopener"><strong>自定義.NET WindowForm表單介面</strong></a><strong>』這篇的要領完成自定義表單。</strong></p><p> </p><p>用這方法可以很簡單的做出自定義表單，且表單本來具有的縮放功能仍會存在，因此我們不需額外處理表單的縮放。但是這個方法仍有缺點存在，如下圖，使用該方法工作列上的標題會是空的，且按右鍵也是無選單彈出。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0903/1387ac2c5637.NETWindowForm_8F1B/image_10.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="177" height="49" src="\images\posts\7625\image_thumb_4.png"></a></p><p> </p><h3>方法三 利用Form.Region來做自定義表單</h3><p>利用Form.Region來做自定義表單的方法簡述如下：</p><p><strong>Step1.加入程式碼用以去掉標題列</strong></p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> r <span class="kwrd">As</span> Rectangle = <span class="kwrd">New</span> Rectangle(0, 30, <span class="kwrd">Me</span>.Width, <span class="kwrd">Me</span>.Height)</pre><pre><span class="kwrd">Me</span>.Region = <span class="kwrd">New</span> Region(r)</pre></div><p><style type="text/css">&lt;![CDATA[<br><br><br><br><br><br><br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style></p><p> </p><p>C#</p><div class="csharpcode"><pre class="alt"><br>Rectangle r = <span class="kwrd">new</span> Rectangle(0, 30, <span class="kwrd">this</span>.Width, <span class="kwrd">this</span>.Height);</pre><pre><span class="kwrd">this</span>.Region = <span class="kwrd">new</span> Region(r);</pre></div><p><style type="text/css">&lt;![CDATA[<br><br><br><br><br><br><br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style></p><p> </p><p> </p><p><strong>Step2.依照『</strong><strong>自定義.NET WindowForm表單介面</strong><strong>』這篇的要領完成自定義表單。</strong></p><p> </p><p> </p><p><strong>Step3.依照方法一的方法補上表單上方的縮放功能</strong></p><p> </p><p> </p><p>用這方法可以很簡單的做出自定義表單，基本上該有的功能也都有，只是需要額外補上表單上方的縮放功能而已。</p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags vb-net " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/03/13/7461/" rel="next" title="[Performance][VB.NET].NET空字串判斷徹底研究" data-instant>
+                <i class="fa fa-chevron-left"></i> [Performance][VB.NET].NET空字串判斷徹底研究
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/03/24/7669/" rel="prev" title="[.NET Concept][C#][VB.NET].NET兩個表單間的資料互通" data-instant>
+                [.NET Concept][C#][VB.NET].NET兩個表單間的資料互通 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">方法一  用 FormBorderStyle = None 來做自定義表單並自行實作縮放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">方法二 用 ControlBox = False 來做自定義表單</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">方法三 利用Form.Region來做自定義表單</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/03/21/7625/';
+      var disqus_title = "[C#][VB.NET]自定義.NET WindowForm表單介面(二)";
+      var disqus_url = 'http://larrynung.github.io/2009/03/21/7625/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

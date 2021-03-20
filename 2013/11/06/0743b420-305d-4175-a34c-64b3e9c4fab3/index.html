@@ -1,0 +1,860 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]從PE檔中讀取組件資訊">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]從PE檔中讀取組件資訊">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/0743b420-305d-4175-a34c-64b3e9c4fab3/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]從PE檔中讀取組件資訊">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image23_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]從PE檔中讀取組件資訊">
+<meta name="twitter:description" content="[C#]從PE檔中讀取組件資訊">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/0743b420-305d-4175-a34c-64b3e9c4fab3/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]從PE檔中讀取組件資訊 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]從PE檔中讀取組件資訊
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/0743b420-305d-4175-a34c-64b3e9c4fab3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/0743b420-305d-4175-a34c-64b3e9c4fab3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    筆者在[C#]PE檔案格式簡易介紹與PE檔案的檢測這篇針對PE檔的格式已經做了初步的介紹，這邊接著這個議題下去探討，嘗試從PE檔中讀取一些進階的資訊，像是CPU的版本以及PE檔編譯時所設定的.NET Framework的版本。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    延續[C#]PE檔案格式簡易介紹與PE檔案的檢測這篇，筆者已經帶到了PE Header，所以就不重複再帶這部分了，接著讓我們繼續往下看IMAGE_FILE_HEADER的部分。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:660da19f-0a6d-4816-8b46-f51eea3d5593" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c" name="code"><br>typedef struct _IMAGE_NT_HEADERS {<br>  DWORD                 Signature;<br>  IMAGE_FILE_HEADER     FileHeader;<br>  IMAGE_OPTIONAL_HEADER OptionalHeader;<br>} IMAGE_NT_HEADERS, *PIMAGE_NT_HEADERS;<br></pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    IMAGE_FILE_HEADER的結構裡面比較重要的是Machine這個成員，它可以表示組件的目標平台。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6dbf5ab9-1277-4475-bd97-c4de754be03d" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c" name="code"><br>typedef struct _IMAGE_FILE_HEADER {<br>  WORD  Machine;<br>  WORD  NumberOfSections;<br>  DWORD TimeDateStamp;<br>  DWORD PointerToSymbolTable;<br>  DWORD NumberOfSymbols;<br>  WORD  SizeOfOptionalHeader;<br>  WORD  Characteristics;<br>} IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;</pre><br></div></p>
+<p></p><p><br>    <img alt="image" border="0" height="291" src="\images\posts\0743b420-305d-4175-a34c-64b3e9c4fab3\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若不知道目標平台為何，可看一下Visual Studio的專案屬性設定那邊就知道在說什麼了。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="43" src="\images\posts\0743b420-305d-4175-a34c-64b3e9c4fab3\image_thumb_5.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="408"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    接著下來是IMAGE_OPTIONAL_HEADER…</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:af19de29-e546-4dc6-aee4-78c87cd842df" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c" name="code"><br>typedef struct _IMAGE_OPTIONAL_HEADER {<br>  WORD                 Magic;<br>  BYTE                 MajorLinkerVersion;<br>  BYTE                 MinorLinkerVersion;<br>  DWORD                SizeOfCode;<br>  DWORD                SizeOfInitializedData;<br>  DWORD                SizeOfUninitializedData;<br>  DWORD                AddressOfEntryPoint;<br>  DWORD                BaseOfCode;<br>  DWORD                BaseOfData;<br>  DWORD                ImageBase;<br>  DWORD                SectionAlignment;<br>  DWORD                FileAlignment;<br>  WORD                 MajorOperatingSystemVersion;<br>  WORD                 MinorOperatingSystemVersion;<br>  WORD                 MajorImageVersion;<br>  WORD                 MinorImageVersion;<br>  WORD                 MajorSubsystemVersion;<br>  WORD                 MinorSubsystemVersion;<br>  DWORD                Win32VersionValue;<br>  DWORD                SizeOfImage;<br>  DWORD                SizeOfHeaders;<br>  DWORD                CheckSum;<br>  WORD                 Subsystem;<br>  WORD                 DllCharacteristics;<br>  DWORD                SizeOfStackReserve;<br>  DWORD                SizeOfStackCommit;<br>  DWORD                SizeOfHeapReserve;<br>  DWORD                SizeOfHeapCommit;<br>  DWORD                LoaderFlags;<br>  DWORD                NumberOfRvaAndSizes;<br>  IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];<br>} IMAGE_OPTIONAL_HEADER, *PIMAGE_OPTIONAL_HEADER;</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊一樣也有很多資訊可以讀取，比較重要的是Magic與Subsystem這兩個成員，以Magic來說它可以讓你知道目標平台是否是設定為Any CPU。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="329" src="\images\posts\0743b420-305d-4175-a34c-64b3e9c4fab3\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    而SubSystem可以讓我們判斷該組件是有視窗的GUI程式還是Console程式，若值為2則是GUI程式，值為3則是Console程式。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="148" src="\images\posts\0743b420-305d-4175-a34c-64b3e9c4fab3\image23_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    最後比較重要的資訊就是CLR Header內的資訊，IMAGE_OPTIONAL_HEADER後有16個DataDirectory，CLR Header位於第15個DataDirectory，裡面可取得的資訊有組件所用的.Net Framework版本等。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="344" src="\images\posts\0743b420-305d-4175-a34c-64b3e9c4fab3\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="494"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    實際使用上程式碼該如何撰寫可參閱How to detect .NET 2.0 vs. .NET 4.0 assemblies, and x86 vs. x64 vs. AnyCPU這篇所提供的<a href="http://wyupdate.googlecode.com/files/AssemblyParser-v2.zip" target="_blank" rel="noopener">程式碼範例，這邊將主要的片段節錄如下，搭配上面的解說去看應該不會太難理解：</a></p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e0938709-3906-4e44-b9f5-a6107da88101" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>using System.IO;</pre></div></p>
+<p>/// &lt;summary&gt;<br>/// AssemblyDetails is used in the update builder, wyBuild (http://wyday.com/wybuild/),<br>/// to automagically detect .NET assemblies properties, namely:<br>///  - if they are compiled with a Strong Name,<br>///  - CPUVersion the assembly was compiled as,<br>///  - .NET Framework the assembly was compiled for (.NET 2.0 or 4.0)<br>/// &lt;/summary&gt;<br>public class AssemblyDetails<br>{<br>    /// &lt;summary&gt;<br>    /// The CPUVersion the assembly was compiled with.<br>    /// &lt;/summary&gt;<br>    public CPUVersion CPUVersion;</p>
+<pre><code>/// &amp;lt;summary&amp;gt;
+/// The .NET Framework required for the assembly.
+/// &amp;lt;/summary&amp;gt;
+public FrameworkVersion FrameworkVersion;
+
+/// &amp;lt;summary&amp;gt;
+/// True if the assembly has a strong name. (Neccessary for GAC installations)
+/// &amp;lt;/summary&amp;gt;
+public bool StrongName;
+
+
+/// &amp;lt;summary&amp;gt;
+/// Get the AssemblyDetails of a .NET 2.0+ assembly.
+/// &amp;lt;/summary&amp;gt;
+/// &amp;lt;param name=&quot;file&quot;&amp;gt;The file to get the AssemblyDetails of.&amp;lt;/param&amp;gt;
+/// &amp;lt;returns&amp;gt;An AssemblyDetails object for .NET 2.0+ assemblies. Null otherwise.&amp;lt;/returns&amp;gt;
+public static AssemblyDetails FromFile(string file)
+{
+    AssemblyDetails assembInfo = new AssemblyDetails();
+
+    using (FileStream s = new FileStream(file, FileMode.Open, FileAccess.Read))
+    {
+        using (BinaryReader r = new BinaryReader(s))
+        {
+            byte[] bytes = r.ReadBytes(2);
+
+            // Verify file starts with &quot;MZ&quot; signature.
+            if ((bytes[0] != 0x4d) || (bytes[1] != 0x5a))
+            {
+                // Not a PE file.
+                return null;
+            }
+
+            // Partion II, 25.2.1
+
+            // OFFSET_TO_PE_HEADER_OFFSET = 0x3c
+            s.Seek(0x3c, SeekOrigin.Begin);
+
+            // read the offset to the PE Header
+            uint offset = r.ReadUInt32();
+
+            // go to the beginning of the PE Header
+            s.Seek(offset, SeekOrigin.Begin);
+
+            bytes = r.ReadBytes(4);
+
+            // Verify PE header starts with &apos;PE\0\0&apos;.
+            if ((bytes[0] != 0x50) || (bytes[1] != 0x45) || (bytes[2] != 0) || (bytes[3] != 0))
+            {
+                // Not a PE file.
+                return null;
+            }
+
+
+            // It&apos;s a PE file, verify that it has the right &quot;machine&quot; code.
+            // Partion II, 25.2.2
+            //
+            ushort machineCode = r.ReadUInt16();
+
+            // IMAGE_FILE_MACHINE_AMD64 (aka x64) = 0x8664
+            // IMAGE_FILE_MACHINE_I386 (aka x86) = 0x14c
+            if (!(machineCode == 0x014c || machineCode == 0x8664))
+            {
+                // Invalid or unrecognized PE file of some kind.
+                return null;
+            }
+
+
+            // Locate the PE_OPTIONAL_HEADER
+
+
+            // The PE_FILE_HEADER is 20bytes long we already
+            // read the 2 byte machine code (hence 18byte seek)
+            s.Seek(18, SeekOrigin.Current);
+
+            ushort magic = r.ReadUInt16();
+
+            switch (magic)
+            {
+                case 0x10b: // PE32
+
+                    // set to AnyCPU for now - we&apos;ll check later if image is x86 specific
+                    assembInfo.CPUVersion = CPUVersion.AnyCPU;
+
+                    break;
+
+                case 0x20b: // PE32+ (aka x64)
+                    assembInfo.CPUVersion = CPUVersion.x64;
+                    break;
+
+                default: // unknown assembly type
+                    return null;
+            }
+
+
+            // Read the SectionAlignment &amp;amp; FileAlignment for
+            // conversion from RVA to file address
+            s.Seek(30, SeekOrigin.Current);
+
+            uint sectionAlignment = r.ReadUInt32();
+            uint fileAlignment = r.ReadUInt32();
+
+
+            // go to &apos;NumberOfRvaAndSizes&apos; in the PE Header
+            // at 92/108 from start of PE Header for PE32/PE32+
+            s.Seek(magic == 0x10b ? 52 : 68, SeekOrigin.Current);
+
+            // verify that the number of data directories is 0x10.
+
+            uint numDataDirs = r.ReadUInt32();  // Partition II, 25.2.3.2
+
+            if (numDataDirs != 0x10) // Partition II, 25.2.3.2
+            {
+                // Invalid or unrecognized PE file of some kind.
+                return null;
+            }
+
+
+            // Go to the CLR Runtime Header
+            // at 208/224 from start of PE Header for PE32/PE32+
+            s.Seek(112, SeekOrigin.Current);
+
+
+            // Check for the existence of a non-null CLI header.
+            // If found, this is an assembly of some kind, otherwise
+            // it&apos;s a native PE file of one kind or another.
+
+            uint rvaCLIHeader = r.ReadUInt32();  // Partition II, 25.2.3.3, CLI Header (rva)
+            // uint cliHeaderSize = UIntFromBytes(pPEOptionalHeader + 212); // Partition II, 25.2.3.3, CLI Header (size)
+
+            if (rvaCLIHeader == 0)
+            {
+                // Not an assembly.
+                return null;
+            }
+
+
+            // Partition II, 25.3.3 (CLI Header)
+
+
+            // Go to the begginning of the CLI header (RVA -&amp;gt; file address)
+
+            /*
+            -&amp;gt; Converting from Relative Virtual Address to File Address:
+
+               FA = RVA - sectionAlignment + fileAlignment
+
+                   The section alignment in memory is sectionAlignment (usually 0x2000),
+               and since the RVA for the CLR header is 2008, on subtracting 2000 from
+               2008, the difference comes to 8. Thus, the CLR header is placed 8 bytes
+               away from the start of the section.
+
+                   A file on disk has the alignment of fileAlignment (usually 512 bytes).
+               Therefore, the first section would start at position 512 from the start
+               of the file. As the CLR is 8 bytes away from the section start, 8 is added
+               to 512, (section start for a file on disk), thereby arriving at a value of 520.
+               The next 72 bytes (0x48) are picked up from this position, since they
+               constitute the CLR header, and they are loaded at location 0x4002008.
+
+            */
+
+            // Also, skip the CLI header size = 4 bytes
+            s.Seek((rvaCLIHeader - sectionAlignment + fileAlignment) + 4, SeekOrigin.Begin);
+
+            ushort majorVersion = r.ReadUInt16();
+            ushort minorVersion = r.ReadUInt16();
+
+            // 2.5 means the file is a .NET Framework 2.0+ assembly
+            if (!(majorVersion == 2 &amp;amp;&amp;amp; minorVersion == 5))
+                return null;
+
+
+            // RVA for the MetaData (we&apos;ll read the metadata later)
+            uint rvaMetaData = r.ReadUInt32();
+            s.Seek(4, SeekOrigin.Current); // skip the size
+
+            // Partition II, 25.3.3.1
+
+            // read the CLI flags
+            uint cliFlags = r.ReadUInt32();
+
+            // Detect if compiled with Platform Target of &quot;x86&quot;
+            // COMIMAGE_FLAGS_32BITREQUIRED = 0x2;
+            if (assembInfo.CPUVersion == CPUVersion.AnyCPU &amp;amp;&amp;amp; (cliFlags &amp;amp; 0x2) == 0x2)
+            {
+                assembInfo.CPUVersion = CPUVersion.x86;
+            }
+
+            // Detect if the assembly is built with a strong name
+            // CLI_FLAG_STRONG_NAME_SIGNED = 0x8;
+            assembInfo.StrongName = ((cliFlags &amp;amp; 0x8) == 0x8);
+
+            s.Seek((rvaMetaData - sectionAlignment + fileAlignment) + 12, SeekOrigin.Begin);
+
+
+            // Read the framework version required (meta data - Partition II, 24.2.1 - pg 200)
+
+            // read the version string length
+            int versionLen = r.ReadInt32();
+
+            char[] versionStr = r.ReadChars(versionLen);
+
+            // read the .NET framework version required from the meta-data
+            //Note: we only read the first 2 numbers of the version - if you want to
+            //      detect beta vs. rc vs. rtm, then read the whole version.
+            // We assume no one will be stupid enough to use beta created exes/dlls in the wild.
+            if (versionStr[1] == &apos;2&apos; &amp;amp;&amp;amp; versionStr[3] == &apos;0&apos;)
+                assembInfo.FrameworkVersion = FrameworkVersion.Net2_0;
+            else if (versionStr[1] == &apos;4&apos; &amp;amp;&amp;amp; versionStr[3] == &apos;0&apos;)
+                assembInfo.FrameworkVersion = FrameworkVersion.Net4_0;
+            else
+                assembInfo.FrameworkVersion = FrameworkVersion.Unknown;
+        }
+    }
+
+    return assembInfo;
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        How to detect .NET 2.0 vs. .NET 4.0 assemblies, and x86 vs. x64 vs. AnyCPU</li><br>    <li><br>        [C#]PE檔案格式簡易介紹與PE檔案的檢測</li><br>    <li><br>        Peering Inside the PE: A Tour of the Win32 Portable Executable File Format</li><br>    <li><br>        IMAGE_FILE_HEADER structure</li><br>    <li><br>        IMAGE_OPTIONAL_HEADER structure</li><br>    <li><br>        IMAGE_DATA_DIRECTORY structure</li><br>    <li><br>        Windows PE Header</li><br>    <li><br>        Anatomy of a .NET Assembly - CLR metadata 1</li><br>    <li><br>        The PE File Format</li><br>    <li><br>        How to learn type of an executed file?</li><br>    <li><br>        How to determine whether a file is a .NET Assembly or not?</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/6af94d32-364a-48e2-aace-9f633a8056b1/" rel="next" title="[Visual Studio]Process Pro Extension v1.0" data-instant>
+                <i class="fa fa-chevron-left"></i> [Visual Studio]Process Pro Extension v1.0
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/cef6ef22-119a-4872-9e1c-2390b893e807/" rel="prev" title="Formatting XAML Code" data-instant>
+                Formatting XAML Code <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/0743b420-305d-4175-a34c-64b3e9c4fab3/';
+      var disqus_title = "[C#]從PE檔中讀取組件資訊";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/0743b420-305d-4175-a34c-64b3e9c4fab3/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

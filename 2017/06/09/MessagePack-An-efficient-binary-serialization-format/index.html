@@ -1,0 +1,823 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MessagePack,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="MessagePack 是一個有效率的二進制序列化格式，傳遞的資料內容有點像是 JSON，但是因為是二進制的序列化格式，所以資料量更快且更小。">
+<meta name="keywords" content="MessagePack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MessagePack - An efficient binary serialization format">
+<meta property="og:url" content="http://larrynung.github.io/2017/06/09/MessagePack-An-efficient-binary-serialization-format/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="MessagePack 是一個有效率的二進制序列化格式，傳遞的資料內容有點像是 JSON，但是因為是二進制的序列化格式，所以資料量更快且更小。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/09/MessagePack-An-efficient-binary-serialization-format/1.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/09/MessagePack-An-efficient-binary-serialization-format/2.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:39.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MessagePack - An efficient binary serialization format">
+<meta name="twitter:description" content="MessagePack 是一個有效率的二進制序列化格式，傳遞的資料內容有點像是 JSON，但是因為是二進制的序列化格式，所以資料量更快且更小。">
+<meta name="twitter:image" content="http://larrynung.github.io/2017/06/09/MessagePack-An-efficient-binary-serialization-format/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> MessagePack - An efficient binary serialization format | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MessagePack - An efficient binary serialization format
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-06-09T05:22:18+00:00" content="2017-06-09">
+              2017-06-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/09/MessagePack-An-efficient-binary-serialization-format/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/09/MessagePack-An-efficient-binary-serialization-format/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>MessagePack 是一個有效率的二進制序列化格式，傳遞的資料內容有點像是 JSON，但是因為是二進制的序列化格式，所以資料量更快且更小。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>像是下面這張官網的圖，可以看到 {“compact”:true,”schema”:0} 這樣的 JSON 資料換由 MessagePack 來處理，資料量會從 27 bytes 降到 18 bytes，減少了 67%。  </p>
+<img src="/2017/06/09/MessagePack-An-efficient-binary-serialization-format/1.png">
+<p><br></p>
+<p>不過官網這張圖只是簡單的示意，實際上 compact 與 schema 這兩個字串得替換為 ascii，所以實際傳送的資料會變為 82 a7 63 6f 6d 70 61 63 74 c3 a6 73 63 68 65 6d 61 00。  </p>
+<img src="/2017/06/09/MessagePack-An-efficient-binary-serialization-format/2.png">
+<p><br></p>
+<p>若想要讀懂 MessagePack 格式的資料，必需先了解 MessagePack 的 format，其定義如下：  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">format name</th>
+<th style="text-align:center">first byte (in binary)</th>
+<th style="text-align:center">first byte (in hex)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">positive fixint</td>
+<td style="text-align:center">0xxxxxxx</td>
+<td style="text-align:center">0x00 - 0x7f</td>
+</tr>
+<tr>
+<td style="text-align:center">fixmap</td>
+<td style="text-align:center">1000xxxx</td>
+<td style="text-align:center">0x80 - 0x8f</td>
+</tr>
+<tr>
+<td style="text-align:center">fixarray</td>
+<td style="text-align:center">1001xxxx</td>
+<td style="text-align:center">0x90 - 0x9f</td>
+</tr>
+<tr>
+<td style="text-align:center">fixstr</td>
+<td style="text-align:center">101xxxxx</td>
+<td style="text-align:center">0xa0 - 0xbf</td>
+</tr>
+<tr>
+<td style="text-align:center">nil</td>
+<td style="text-align:center">11000000</td>
+<td style="text-align:center">0xc0</td>
+</tr>
+<tr>
+<td style="text-align:center">(never used)</td>
+<td style="text-align:center">11000001</td>
+<td style="text-align:center">0xc1</td>
+</tr>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">11000010</td>
+<td style="text-align:center">0xc2</td>
+</tr>
+<tr>
+<td style="text-align:center">true</td>
+<td style="text-align:center">11000011</td>
+<td style="text-align:center">0xc3</td>
+</tr>
+<tr>
+<td style="text-align:center">bin 8</td>
+<td style="text-align:center">11000100</td>
+<td style="text-align:center">0xc4</td>
+</tr>
+<tr>
+<td style="text-align:center">bin 16</td>
+<td style="text-align:center">11000101</td>
+<td style="text-align:center">0xc5</td>
+</tr>
+<tr>
+<td style="text-align:center">bin 32</td>
+<td style="text-align:center">11000110</td>
+<td style="text-align:center">0xc6</td>
+</tr>
+<tr>
+<td style="text-align:center">ext 8</td>
+<td style="text-align:center">11000111</td>
+<td style="text-align:center">0xc7</td>
+</tr>
+<tr>
+<td style="text-align:center">ext 16</td>
+<td style="text-align:center">11001000</td>
+<td style="text-align:center">0xc8</td>
+</tr>
+<tr>
+<td style="text-align:center">ext 32</td>
+<td style="text-align:center">11001001</td>
+<td style="text-align:center">0xc9</td>
+</tr>
+<tr>
+<td style="text-align:center">float 32</td>
+<td style="text-align:center">11001010</td>
+<td style="text-align:center">0xca</td>
+</tr>
+<tr>
+<td style="text-align:center">float 64</td>
+<td style="text-align:center">11001011</td>
+<td style="text-align:center">0xcb</td>
+</tr>
+<tr>
+<td style="text-align:center">uint 8</td>
+<td style="text-align:center">11001100</td>
+<td style="text-align:center">0xcc</td>
+</tr>
+<tr>
+<td style="text-align:center">uint 16</td>
+<td style="text-align:center">11001101</td>
+<td style="text-align:center">0xcd</td>
+</tr>
+<tr>
+<td style="text-align:center">uint 32</td>
+<td style="text-align:center">11001110</td>
+<td style="text-align:center">0xce</td>
+</tr>
+<tr>
+<td style="text-align:center">uint 64</td>
+<td style="text-align:center">11001111</td>
+<td style="text-align:center">0xcf</td>
+</tr>
+<tr>
+<td style="text-align:center">int 8</td>
+<td style="text-align:center">11010000</td>
+<td style="text-align:center">0xd0</td>
+</tr>
+<tr>
+<td style="text-align:center">int 16</td>
+<td style="text-align:center">11010001</td>
+<td style="text-align:center">0xd1</td>
+</tr>
+<tr>
+<td style="text-align:center">int 32</td>
+<td style="text-align:center">11010010</td>
+<td style="text-align:center">0xd2</td>
+</tr>
+<tr>
+<td style="text-align:center">int 64</td>
+<td style="text-align:center">11010011</td>
+<td style="text-align:center">0xd3</td>
+</tr>
+<tr>
+<td style="text-align:center">fixext 1</td>
+<td style="text-align:center">11010100</td>
+<td style="text-align:center">0xd4</td>
+</tr>
+<tr>
+<td style="text-align:center">fixext 2</td>
+<td style="text-align:center">11010101</td>
+<td style="text-align:center">0xd5</td>
+</tr>
+<tr>
+<td style="text-align:center">fixext 4</td>
+<td style="text-align:center">11010110</td>
+<td style="text-align:center">0xd6</td>
+</tr>
+<tr>
+<td style="text-align:center">fixext 8</td>
+<td style="text-align:center">11010111</td>
+<td style="text-align:center">0xd7</td>
+</tr>
+<tr>
+<td style="text-align:center">fixext 16</td>
+<td style="text-align:center">11011000</td>
+<td style="text-align:center">0xd8</td>
+</tr>
+<tr>
+<td style="text-align:center">str 8</td>
+<td style="text-align:center">11011001</td>
+<td style="text-align:center">0xd9</td>
+</tr>
+<tr>
+<td style="text-align:center">str 16</td>
+<td style="text-align:center">11011010</td>
+<td style="text-align:center">0xda</td>
+</tr>
+<tr>
+<td style="text-align:center">str 32</td>
+<td style="text-align:center">11011011</td>
+<td style="text-align:center">0xdb</td>
+</tr>
+<tr>
+<td style="text-align:center">array 16</td>
+<td style="text-align:center">11011100</td>
+<td style="text-align:center">0xdc</td>
+</tr>
+<tr>
+<td style="text-align:center">array 32</td>
+<td style="text-align:center">11011101</td>
+<td style="text-align:center">0xdd</td>
+</tr>
+<tr>
+<td style="text-align:center">map 16</td>
+<td style="text-align:center">11011110</td>
+<td style="text-align:center">0xde</td>
+</tr>
+<tr>
+<td style="text-align:center">map 32</td>
+<td style="text-align:center">11011111</td>
+<td style="text-align:center">0xdf</td>
+</tr>
+<tr>
+<td style="text-align:center">negative fixint</td>
+<td style="text-align:center">111xxxxx</td>
+<td style="text-align:center">0xe0 - 0xff</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>這邊舉幾個簡單的例子來看。  </p>
+<p><br></p>
+<p>Nil、False、True 這些簡易資料可經由查表直接得知為 0xc0、0xc2、0xc3。  </p>
+<p><br></p>
+<p>如果是正整數的話，其格式為 0xxxxxxx，所以 0 的話就是 00000000，也就是 0x00。1 的話就是 00000001，也就是 0x01。  </p>
+<p><br></p>
+<p>如果是字串的話，其格式為 101xxxxx，xxxxx 的部份要用來描述字串的長度，後面要接字串的內容，所以像是 Compact 字串，就會變成 10100007 01100011 01101111 01101101 01110000 01100001 01100011 01110100，也就是 a7 63 6f 6d 70 61 63 74。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MessagePack/" rel="tag” data-instant>#MessagePack</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/08/PL-SQL-SQL-CODING-GUIDELINE-48-Do-not-use-a-cursor-for-loop-to-check-whether-a-cursor-returns-data/" rel="next" title="PL/SQL & SQL CODING GUIDELINE 48 - Do not use a cursor for loop to check whether a cursor returns data" data-instant>
+                <i class="fa fa-chevron-left"></i> PL/SQL & SQL CODING GUIDELINE 48 - Do not use a cursor for loop to check whether a cursor returns data
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/09/MsgPack-Cli-MessagePack-implementation-for-Common-Language-Infrastructure/" rel="prev" title="MsgPack.Cli - MessagePack implementation for Common Language Infrastructure" data-instant>
+                MsgPack.Cli - MessagePack implementation for Common Language Infrastructure <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2017/06/09/MessagePack-An-efficient-binary-serialization-format/';
+      var disqus_title = "MessagePack - An efficient binary serialization format";
+      var disqus_url = 'http://larrynung.github.io/2017/06/09/MessagePack-An-efficient-binary-serialization-format/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

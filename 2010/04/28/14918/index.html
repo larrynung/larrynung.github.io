@@ -1,0 +1,632 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[VB.NET]SecureString較為安全的加密字串類別">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[VB.NET]SecureString較為安全的加密字串類別">
+<meta property="og:url" content="http://larrynung.github.io/2010/04/28/14918/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[VB.NET]SecureString較為安全的加密字串類別">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14918/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[VB.NET]SecureString較為安全的加密字串類別">
+<meta name="twitter:description" content="[VB.NET]SecureString較為安全的加密字串類別">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/14918/image_thumb_3.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [VB.NET]SecureString較為安全的加密字串類別 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [VB.NET]SecureString較為安全的加密字串類別
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-04-28T18:10:06+00:00" content="2010-04-29">
+              2010-04-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/04/28/14918/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/04/28/14918/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2>Namespace</h2>  <p>System.Security </p>  <p> </p>  <h2>Framework</h2>  <p>2.0 or Latter</p>  <p> </p>  <h2>SecureString</h2>  <p>SecureString是.NET 2.0開始提供的加密字串類別，為一較安全的字串處理類別，適合用以保存較為機密或是較為敏感的字串。</p>  <p>SecureString內部使用DPAPI對記憶體作加密的動作，存入的資料會自動進行加密的動作，甚至可以使用MakeReadOnly方法讓物件執行個體設為唯讀狀態，避免被進一步修改。</p>  <p>在記憶體層級的保護上，對於該物件執行個體所使用的記憶體會被禁止作複製的動作(除非自行呼叫複製)。</p>  <p>SecureString提供較少的類別成員，像是檢查、比較或轉換等成員皆未提供，有助於防止執行個體值被不慎或惡意公開。此外，也有實作IDisposiable介面，可在不需使用資源時作即時的資源釋放，不像String一樣需等待GC的回收，減少機密資料存在記憶體中的時間，降低被竊取的風險。</p>  <p> </p>  <h2>重要成員</h2>  <p>屬性</p>  <table border="1" cellspacing="0" cellpadding="2" width="391"><tbody>     <tr>       <td valign="top" width="110">名稱</td>        <td valign="top" width="279">說明</td>     </tr>      <tr>       <td valign="top" width="110"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.length(v=VS.90).aspx" target="_blank">Length</a></td>        <td valign="top" width="279">取得目前安全字串的長度。</td>     </tr>   </tbody></table>  <p> </p>  <p>方法</p>  <table border="1" cellspacing="0" cellpadding="2" width="389"><tbody>     <tr>       <td valign="top" width="113">名稱</td>        <td valign="top" width="274">說明</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.appendchar(v=VS.90).aspx" target="_blank">AppendChar</a></td>        <td valign="top" width="274">將字元附加至目前安全字串的結尾。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.clear(v=VS.90).aspx" target="_blank">Clear</a></td>        <td valign="top" width="274">刪除目前安全字串的值。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.copy(v=VS.90).aspx" target="_blank">Copy</a></td>        <td valign="top" width="274">建立目前安全字串的複本</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.dispose(v=VS.90).aspx" target="_blank">Dispose</a></td>        <td valign="top" width="274">釋放由目前的 <a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring(v=VS.90).aspx" target="_blank">SecureString</a> 物件使用的所有資源。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.insertat(v=VS.90).aspx" target="_blank">InsertAt</a></td>        <td valign="top" width="274">將這個安全字串中的字元插入指定索引位置。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.isreadonly(v=VS.90).aspx" target="_blank">IsReadOnly</a></td>        <td valign="top" width="274">指示這個安全字串是否標示為唯讀。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.makereadonly(v=VS.90).aspx" target="_blank">MakeReadOnly</a></td>        <td valign="top" width="274">使這個安全字串的文字值成為唯讀。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.removeat(v=VS.90).aspx" target="_blank">RemoveAt</a></td>        <td valign="top" width="274">從這個安全字串移除位在指定索引位置的字元。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.setat(v=VS.90).aspx" target="_blank">SetAt</a></td>        <td valign="top" width="274">使用另一個字元，取代位在指定索引位置的現有字元。</td>     </tr>   </tbody></table>  <p> </p>  <h2>設定字串</h2>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3d3d0719-5471-4bc3-8619-df3fb7b99aaa" class="wlWriterEditableSmartContent"><pre name="code" class="vb">        Const testString As String = “Level Up”  ‘要寫入的字串<br>        Dim secureString As New SecureString<br>        For Each c In testString<br>            secureString.AppendChar(c)           ‘使用AppendChar加入SecureString<br>        Next<br>        secureString.MakeReadOnly()              ‘設定為唯讀狀態</pre></div><br><br><p> </p><br><br><h2>讀取字串</h2>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:00cdbae8-8fa6-45eb-95cb-05717872134e" class="wlWriterEditableSmartContent"><pre name="code" class="vb">        ‘配置 BSTR，並將 Managed SecureString 物件的內容複製到其中。<br>        Dim stringPointer As IntPtr = Marshal.SecureStringToBSTR(secureString)<br>        Try<br>            ‘配置 Managed String，並將儲存在 Unmanaged 記憶體的 BSTR 字串複製到其中，並顯示出來。<br>            Console.WriteLine(Marshal.PtrToStringBSTR(stringPointer))<br>        Finally<br>            ‘釋放之前使用 SecureStringToBSTR 方法配置的 BSTR 指標。<br>            Marshal.ZeroFreeBSTR(stringPointer)<br>        End Try</pre></div>
+
+<p> </p>
+
+<h2>清除字串</h2>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1b791e23-c9c1-494e-b700-d0af9d50e91e" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Sub Main()<br>        Dim secureString As New SecureString<br>        …<br>        Console.WriteLine(“原字串…”)<br>        PrintSecureString(secureString)<br>        secureString.Clear()                     ‘使用Clear清除SecureString字串內容<br>        Console.WriteLine()<br>        Console.WriteLine(“Clear呼叫後…”)<br>        PrintSecureString(secureString)<br>    End Sub<br><br><br>    Public Sub PrintSecureString(ByVal secureString As SecureString)<br>    …<br>    End Sub</pre></div>
+
+<p> </p>
+
+<h2>完整範例</h2>
+
+<p>該範例主要是參閱How to: Use strings in a secure manner with SecureString class與<a href="http://blogs.msdn.com/shawnfa/archive/2004/05/27/143254.aspx" target="_blank">Making Strings More Secure兩篇的範例所撰寫。</a></p>
+
+<p><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3b53ff4b-3b16-4ddc-95bb-68623f78b2c1" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Security<br>Imports System.Runtime.InteropServices<br><br>Module Module1<br><br>    Sub Main()<br>        Console.WriteLine(“Please enter your password to be encrypted:”)<br><br>        Dim password As SecureString = ReadPassword()<br><br>        Console.WriteLine()<br><br>        Console.WriteLine(“Decripted password:”)<br><br>        PrintPassword(password)<br>    End Sub<br><br><br>    Public Function ReadPassword() As SecureString<br><br>        Dim password As New SecureString()<br><br>        Dim nextKey As ConsoleKeyInfo = Console.ReadKey(True)<br><br>        While nextKey.Key &lt;&gt; ConsoleKey.Enter<br>            If nextKey.Key = ConsoleKey.Backspace Then<br>                If password.Length &gt; 0 Then<br>                    password.RemoveAt(password.Length - 1)<br><br>                    ‘ erase the last <em> as well<br>                    Console.Write(nextKey.KeyChar)<br>                    Console.Write(“ “)<br>                    Console.Write(nextKey.KeyChar)<br>                End If<br>            Else<br>                password.AppendChar(nextKey.KeyChar)<br>                Console.Write(“</em>“)<br>            End If<br><br>            nextKey = Console.ReadKey(True)<br>        End While<br><br>        password.MakeReadOnly()<br>        ‘ make the password read-only.<br><br>        ‘ return the encrypted password.<br><br>        Return password<br><br>    End Function<br><br>    Public Sub PrintPassword(ByVal password As SecureString)<br><br>        ‘ Uncrypt the password and get a reference to it…<br><br>        Dim bstr As IntPtr = Marshal.SecureStringToBSTR(password)<br><br><br>        Try<br>            ‘ Printing the uncrypted password…<br><br>            Console.WriteLine(Marshal.PtrToStringBSTR(bstr))<br><br>        Finally<br><br>            Marshal.ZeroFreeBSTR(bstr)<br><br>        End Try<br><br>    End Sub<br><br>End Module</pre></div><br><br><br><p> </p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\14918\image_thumb_3.png" width="449" height="359"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>SecureString 類別</li><br><br>  <li>SecureString 應用程式範例</li><br><br>  <li>Security Enhancements in the .NET Framework 2.0</li><br><br>  <li>SecureString in .Net 2.0</li><br><br>  <li>How to: Use strings in a secure manner with SecureString class</li><br><br>  <li>Making Strings More Secure</li><br><br>  <li>C# SecureString</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/04/27/14886/" rel="next" title="[VB.NET]Keys &lt;=&gt; Char" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]Keys &lt;=&gt; Char
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/05/09/15105/" rel="prev" title="[VB.NET]使用SuppressIldasmAttribute防止MSIL反組譯工具對組件進行反組譯" data-instant>
+                [VB.NET]使用SuppressIldasmAttribute防止MSIL反組譯工具對組件進行反組譯 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Namespace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">SecureString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">重要成員</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">設定字串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">讀取字串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">清除字串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">8.</span> <span class="nav-text">完整範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">9.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/04/28/14918/';
+      var disqus_title = "[VB.NET]SecureString較為安全的加密字串類別";
+      var disqus_url = 'http://larrynung.github.io/2010/04/28/14918/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

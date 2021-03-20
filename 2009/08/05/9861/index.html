@@ -1,0 +1,630 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]C# 4.0 動態繫結 (Dynamic Lookup)">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]C# 4.0 動態繫結 (Dynamic Lookup)">
+<meta property="og:url" content="http://larrynung.github.io/2009/08/05/9861/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]C# 4.0 動態繫結 (Dynamic Lookup)">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]C# 4.0 動態繫結 (Dynamic Lookup)">
+<meta name="twitter:description" content="[C#]C# 4.0 動態繫結 (Dynamic Lookup)">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]C# 4.0 動態繫結 (Dynamic Lookup) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]C# 4.0 動態繫結 (Dynamic Lookup)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-08-05T01:02:48+00:00" content="2009-08-05">
+              2009-08-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/08/05/9861/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/08/05/9861/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>Introduction</h2><p>動態繫結是C# 4.0的特色之一，其功能在現階段與晚期繫結大同小異。有用過VB.NET晚期繫結的，相信都能很快速的上手。主要能讓程式在執行階段才指定型別，並進行動態叫用。</p><blockquote><p>VB.NET在VB2005 (VB 7.0)開始支援晚期繫結 (Late-Binding)</p></blockquote><h2>Support</h2><ul><li>C# 4.0 or latter</li></ul><h2><br>動態繫結</h2><p>動態繫結最大的功能就是能在執行階段才決定指定的型態，並在執行階段做型別檢查，且可動態叫用函示、運算、索引子、屬性、與欄位。不論你的物件是從COM、IronPython、HTML DOM、或是reflection所取得，動態繫結允許你採用一至的方法動態的去叫用它。</p><p>此外，使用動態繫結還有個好處，就是可以精簡程式碼。</p><p>像下面這樣的程式</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1fa11b0e-e24e-4171-95ec-673f0ee2cf20" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>Calculator calc = GetCalculator();<br>int sum = calc.Add(10, 20);</pre></div><p> </p><p>在以往要達到動態的效果，我們可能會用反射來寫</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9c99e371-4493-42ce-a73e-96274e7ea6ca" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>object calc = GetCalculator();<br>Type calcType = calc.GetType();<br>object res = calcType.InvokeMember(“Add”,<br>    BindingFlags.InvokeMethod, null,<br>    new object[] { 10, 20 });<br>int sum = Convert.ToInt32(res);<br></pre></div><p> </p><p>或是寫成像下面這樣</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a7353500-42c1-4992-b388-515784729446" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>ScriptObject calc = GetCalculator();<br>object res = calc.Invoke(“Add”, 10, 20);<br>int sum = Convert.ToInt32(res);</pre></div><p> </p><p>但有了動態繫結我們可以更為精簡</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8e5754d8-eff3-4c23-b2ee-e8f6d33a13eb" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>dynamic calc = GetCalculator();<br>int sum = calc.Add(10, 20);</pre></div><blockquote><p>在使用動態繫結時，IDE的IntelliSense功能會無法提示。不用太在意，直接輸入就可以了。若輸入錯誤或該成員不存在，則程式會在執行階段做告知的動作。</p></blockquote><p> </p><h2>使用方式</h2><p>在C# 4.0中要使用動態繫結我們可以使用dynamic關鍵字。讓我們直接來看New Features in C# 4.0文件中的程式碼片段。</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:668b27e7-6555-4578-8ba6-42603aa1f301" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>dynamic d = GetDynamicObject(…);<br>d.M(7); // calling methods<br>d.f = d.P; // getting and settings fields and properties<br>d[“one”] = d[“two”]; // getting and setting thorugh indexers<br>int i = d + 3; // calling operators<br>string s = d(5,7); // invoking as a delegate<br></pre></div><p>相信多數人光看這個程式碼片段還是很模糊，但起碼能從中了解它能動態叫用方法、欄位與運算子、索引子、委派。</p><p> </p><p>接著我們再看一範例應該就會清楚些</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:35e9805a-48f7-43f9-bf5a-67b628a27424" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<p></p>
+<p>namespace ConsoleApplication16<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            dynamic[] ds = new dynamic[2];<br>            ds[0] = new System.Windows.Forms.TextBox(){Name=”TextBox”};<br>            ds[1] = new Person() { Name = “Larry” };<br>            foreach (dynamic d in ds)<br>            {<br>                Console.WriteLine(d.Name);<br>            }<br>        }<br>    }<br>    class Person<br>    {<br>        public string Name { get; set; }<br>    }<br>}<br></p></pre></div><p> </p><p>由於不用把型態從Object轉回匿名型別，因此動態繫結也可以用在匿名型別上，真的方便許多,看來以後若要偷懶直接傳遞匿名型別也可以了(不建議也不鼓勵濫用)。</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1bc4648b-78a8-4baa-8b41-afd4aaf97fe6" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<p></p>
+<p>namespace ConsoleApplication19<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            dynamic d = new { Name = “Larry” };<br>            Console.WriteLine(d.Name);</p>
+<pre><code>        d = GetLarry();
+        Console.WriteLine(d.Name);
+    }
+
+    static dynamic GetLarry()
+    {
+        return new { Name = &quot;Larry&quot; };
+    }
+}
+</code></pre><p>}<br></p></pre></div><p> </p><p>就算回傳值改為Object也可以使用</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e4e423f7-9c34-4c4e-a7c6-cc409aebe3c7" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<p></p>
+<p>namespace ConsoleApplication19<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            dynamic d = new { Name = “Larry” };<br>            Console.WriteLine(d.Name);</p>
+<pre><code>        d = GetLarry();
+        Console.WriteLine(d.Name);
+    }
+
+    static Object GetLarry()
+    {
+        return new { Name = &quot;Larry&quot; };
+    }
+}
+</code></pre><p>}<br></p></pre></div><p> </p><h2>Link</h2><ul><li>C# 4.0（VB 10）與CLR 4.0之驚鴻一瞥</li><li><a target="_blank" href="http://blog.miniasp.com/post/2009/02/CSharp-40-New-Features-Dynamic-Lookup-and-Named-and-Optional-Arguments.aspx">C# 4.0 新特性：動態型別、選用參數、具名參數</a></li><li><a target="_blank" href="http://code.msdn.microsoft.com/csharpfuture/Release/ProjectReleases.aspx?ReleaseId=1686">New Features in C# 4.0</a></li><li><a target="_blank" href="http://www.dev102.com/2008/11/03/c-40-dynamic-lookup-are-you-kidding-me/">C# 4.0 Dynamic Lookup - Are You Kidding Me?</a></li><li><a target="_blank" href="http://www.codeproject.com/KB/cs/CSharp4Features.aspx?msg=3110596">C# 4.0’s New Features Explained</a></li><li><a href="http://huan-lin.blogspot.com/2009/02/dynamic-binding-in-csharp-4.html" target="_blank" rel="noopener">C# 4.0 新功能：動態繫結</a></li><li><a href="http://towardsnext.wordpress.com/2009/03/16/dynamic-lookup-dynamic-type-c-40-part-1/" target="_blank" rel="noopener">Dynamic Lookup &amp; dynamic Type, C# 4.0 Part 1</a></li></ul><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/07/31/9758/" rel="next" title="[C#]利用FlowLayoutPanel控制項合併大量圖片" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]利用FlowLayoutPanel控制項合併大量圖片
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/08/11/9988/" rel="prev" title="[VB.NET]VB 10.0 Auto-Implemented Properties" data-instant>
+                [VB.NET]VB 10.0 Auto-Implemented Properties <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">Support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">動態繫結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/08/05/9861/';
+      var disqus_title = "[C#]C# 4.0 動態繫結 (Dynamic Lookup)";
+      var disqus_url = 'http://larrynung.github.io/2009/08/05/9861/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

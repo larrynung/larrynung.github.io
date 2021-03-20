@@ -1,0 +1,621 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="T4, ConnectionString, Strong Type">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="T4 template - Auto generate ConnectionString&apos;s wrapper class">
+<meta name="keywords" content="T4, ConnectionString, Strong Type">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T4 template - Auto generate ConnectionString&#39;s wrapper class">
+<meta property="og:url" content="http://larrynung.github.io/2014/03/27/t4-template-auto-generate-connectionstrings-wrapper-class/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="T4 template - Auto generate ConnectionString&apos;s wrapper class">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.645Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="T4 template - Auto generate ConnectionString&#39;s wrapper class">
+<meta name="twitter:description" content="T4 template - Auto generate ConnectionString&apos;s wrapper class">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> T4 template - Auto generate ConnectionString's wrapper class | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                T4 template - Auto generate ConnectionString's wrapper class
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2014-03-27T15:28:00+00:00" content="2014-03-27">
+              2014-03-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/03/27/t4-template-auto-generate-connectionstrings-wrapper-class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/03/27/t4-template-auto-generate-connectionstrings-wrapper-class/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 .Net 程式中要使用資料庫的連線字串，多半我們會將資料庫的連線字串設定在 Config 檔中，然後透過 ConfigurationManager.ConnectionStrings 帶入對應的 Key 去將之取出來使用。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>用這樣的撰寫方式，連線字串名稱打錯無法立即的被意識到，連線字串名稱調動時也很容易漏改，造成系統運行時的錯誤。因此有的人會將連線字串這邊再包一層，透過這層物件的屬性去取得連線字串，將連線字串的修改都在這層處理，減少人為造成的錯誤。 </p>
+<p><br></p>
+<p>然而這樣的做法並無法完全解決問題，因為多包的那層還是人工下去做的，仍舊是無法避免連線名稱鍵錯的問題，連線字串變動時仍是會有改錯的可能。故這邊筆者嘗試使用 T4 template，讀取專案的 config 檔，動態產生強型別物件，提供連線字串給系統使用。 </p>
+<p><br></p>
+<p>首先我們要為專案加入一個 t4 template 檔。 </p>
+<p><br></p>
+<p>然後將其程式碼替換成下面這樣。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">&lt;#@ template debug =&quot;true&quot; hostspecific=&quot;True&quot; language= &quot;C#&quot; #&gt;</span><br><span class="line">&lt;#@ assembly name =&quot;EnvDTE&quot; #&gt;</span><br><span class="line">&lt;#@ assembly name =&quot;System.Core.dll&quot; #&gt;</span><br><span class="line">&lt;#@ assembly name =&quot;System.Configuration&quot; #&gt;</span><br><span class="line">&lt;#@ assembly name =&quot;System.Xml&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace =&quot;System.Collections.Generic&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace =&quot;System.Configuration&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace =&quot;EnvDTE&quot; #&gt;</span><br><span class="line">&lt;#@ import namespace =&quot;System.Xml&quot; #&gt;</span><br><span class="line">&lt;#@ output extension =&quot;.cs&quot; #&gt;</span><br><span class="line">using System.Configuration;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace &lt;#=GetDefaultNamespace()#&gt;</span><br><span class="line">&#123;</span><br><span class="line">    public class ConnectionStrings</span><br><span class="line">    &#123;</span><br><span class="line">&lt;#</span><br><span class="line">        var configFile = new ExeConfigurationFileMap();</span><br><span class="line">       configFile.ExeConfigFilename = GetConfigPath();</span><br><span class="line">        var config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFile, ConfigurationUserLevel.None);</span><br><span class="line">        var connectionStrings = config.ConnectionStrings.ConnectionStrings;</span><br><span class="line">        foreach (ConnectionStringSettings connectionString in connectionStrings)</span><br><span class="line">       &#123;</span><br><span class="line">#&gt;</span><br><span class="line">           public static string &lt;#= connectionString.Name#&gt;</span><br><span class="line">           &#123;</span><br><span class="line">              get</span><br><span class="line">              &#123;</span><br><span class="line">                     return ConfigurationManager.ConnectionStrings[&quot; &lt;#= connectionString.Name#&gt; &quot;].ConnectionString;</span><br><span class="line">              &#125;</span><br><span class="line">           &#125;</span><br><span class="line">&lt;#</span><br><span class="line">  &#125;</span><br><span class="line">#&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;#+</span><br><span class="line">private string GetDefaultNamespace()</span><br><span class="line">&#123;</span><br><span class="line">        var project = GetCurrentProject();</span><br><span class="line">        return project.Properties.Item(&quot;DefaultNamespace&quot;).Value.ToString();</span><br><span class="line">&#125;</span><br><span class="line">private EnvDTE.Project GetCurrentProject()</span><br><span class="line">&#123;</span><br><span class="line">        var hostServiceProvider = (IServiceProvider)this.Host;</span><br><span class="line">       </span><br><span class="line">        if (hostServiceProvider == null)</span><br><span class="line">           throw new Exception(&quot;Host property returned unexpected value (null)&quot;);</span><br><span class="line">       </span><br><span class="line">       EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof (EnvDTE.DTE));</span><br><span class="line">        if (dte == null )</span><br><span class="line">           throw new Exception(&quot;Unable to retrieve EnvDTE.DTE&quot;);</span><br><span class="line">       </span><br><span class="line">       Array activeSolutionProjects = (Array)dte.ActiveSolutionProjects;</span><br><span class="line">        if (activeSolutionProjects == null)</span><br><span class="line">           throw new Exception(&quot;DTE.ActiveSolutionProjects returned null&quot;);</span><br><span class="line">       </span><br><span class="line">       EnvDTE.Project dteProject = (EnvDTE.Project)activeSolutionProjects.GetValue(0);</span><br><span class="line">        if (dteProject == null )</span><br><span class="line">           throw new Exception(&quot;DTE.ActiveSolutionProjects[0] returned null&quot;);</span><br><span class="line">       </span><br><span class="line">        return dteProject;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">private string GetProjectPath()</span><br><span class="line"> &#123;</span><br><span class="line">       EnvDTE.Project project = GetCurrentProject();</span><br><span class="line">    System.IO.FileInfo info = new System.IO.FileInfo(project.FullName);</span><br><span class="line">    return info.Directory.FullName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">private string GetConfigPath()</span><br><span class="line">&#123;</span><br><span class="line">       EnvDTE.Project project = GetCurrentProject();</span><br><span class="line">    foreach (EnvDTE.ProjectItem item in project.ProjectItems)</span><br><span class="line">    &#123;</span><br><span class="line">               // if it is the app.config file, then open it up</span><br><span class="line">        if (string .Compare(item.Name, &quot;App.config&quot;, true ) == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            return GetProjectPath() + &quot;\\&quot; + item.Name;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        // if it is the web.config file, then open it up</span><br><span class="line">        if (string .Compare(item.Name, &quot;Web.config&quot;, true ) == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            return GetProjectPath() + &quot;\\&quot; + item.Name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return &quot;&quot; ;</span><br><span class="line">&#125;</span><br><span class="line">#&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>存檔運行，沒意外的話應該可以看到對應的強型別物件被產生了出來。</p>
+<br>
+
+<p>在系統中我們就可直接透過該強型別物件去取得連線字串，像是假設有個名為 Oracle 的 ConnectionString，就可像下面這樣取用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var connectionString = ConnectionStrings.Oracle;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>如果後續 config 內的連線字串有所增減，或是連線字串的名稱有所更動，可直接在該 t4 template 上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中點選 Run custom tool 這個滑鼠右鍵選單選項，讓 t4 template 重新產生對應的強型別物件就可以了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags t4 " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/03/26/dot-net-4-dot-5-multicore-jit/" rel="next" title=".NET 4.5 - Multicore JIT" data-instant>
+                <i class="fa fa-chevron-left"></i> .NET 4.5 - Multicore JIT
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/04/03/wcf-self-hosting-service/" rel="prev" title="WCF - Self hosting service" data-instant>
+                WCF - Self hosting service <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2014/03/27/t4-template-auto-generate-connectionstrings-wrapper-class/';
+      var disqus_title = "T4 template - Auto generate ConnectionString\'s wrapper class";
+      var disqus_url = 'http://larrynung.github.io/2014/03/27/t4-template-auto-generate-connectionstrings-wrapper-class/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

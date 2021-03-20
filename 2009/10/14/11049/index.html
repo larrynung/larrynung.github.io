@@ -1,0 +1,671 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合">
+<meta property="og:url" content="http://larrynung.github.io/2009/10/14/11049/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合">
+<meta name="twitter:description" content="[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-10-14T01:01:03+00:00" content="2009-10-14">
+              2009-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/10/14/11049/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/10/14/11049/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    在C++中，所有類型都被定義為值類型，但可以自行選擇建立他們的參考形式；在JAVA中，所有自定義的類別都為參考類型。而在C#中，我們必須在設計類型的時候決定類型的型態。且必須清楚了解這個決定的後果，因為後期的更改會導致許多程式碼在不經意間出現錯誤。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    值類型與參考類型的抉擇，應依照類型的責任與期望的使用方式，去選擇適合的類型。值類型不支援多型，適合儲存供應用程式操作的數據、與較小的輕量級類別。參考類型支援多型，適用於定義應用程式的行為、與建構整個類層級。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    讓我們先來看段程式：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:16919efb-5b5f-4661-a6ca-8a357b00c51e" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    private MyData _myData;<br>public MyData GetData()<br>{<br>    return _myData;<br>}</pre></div></p>
+<p>MyData data= GetData();<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊如果MyData是值類型，返回值將複製一份到data所在的空間。但是，如果MyData是參考類型，則會把內部變數的參考曝露給外界，造成外界的變動連帶影響類別內部的變數。這樣的程式具備著一定的風險，也違反了類別封裝的原則。但如果把上面代碼做點調整：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2d1c5263-91e3-4c47-9de6-3f16c5347fd3" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    private MyData _myData;<br>public MyData GetData()<br>{<br>    return _myData.Clone() as MyData;<br>}</pre></div></p>
+<p>MyData data= GetData();<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    此時返回值將會是物件副本。雖然這麼寫可避免直接把類別的內部變數曝露給外界，但卻會產生額外不必要的負擔(複製物件與型別檢查的成本)。同樣的我們也可以改用介面來當返回值傳遞：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b0c6a03c-2ceb-4154-afea-d2dc9e23c105" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    private MyData _myData;<br>public IMyInterface GetData()<br>{<br>    return _myData as IMyInterface<br>}</pre></div></p>
+<p>IMyInterface data= GetData();<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    使用介面，可以避免直接返回內部變數，透過介面所預先定義的契約來存取控制，達到類似的效果。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    接著我們來釐清一下不同類型在記憶體中的儲存狀態。先來看一下程式碼片段：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fe6276c3-2d0c-4002-9b2e-9f2498eae46a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    public class C<br>{<br>    private MyType _a = new MyType();<br>    private MyType _b = new MyType();<br>}</pre></div></p>
+<p>C var = new C();<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    如果MyType為值類型，則建置一個物件C需要一次的記憶體配置，其大小為MyType類別的兩倍大。如果是參考類型，則需要三次的記憶體配置：一次用於物件C，大小為8Byte (假設為32位元)；兩次用於物件C中所包含的MyType(_a與_b)。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    再看一段程式碼來加深概念：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:367bb88d-b67c-491b-b872-640c0c3ee110" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    MyType[] var = new MyType[100];</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    如果MyType為值類型，則只需一次的記憶體配置，其大小為MyType類別的100倍大。如果為參考類型，其陣列變數宣告就需要一次記憶體配置(此時陣列成員的值仍為null)。若要初始化每個陣列元素，總共需做101次記憶體配置(陣列變數1次+陣列元素100次)。因此值類型在效能上會優於參考類型，相較於參考類型來說，也較少的零碎記憶體空間。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    類型的抉擇是ㄧ項很重要的決定，必須在一開始就決定好。若是一開始沒有確認清楚，後續變換類型將會造成很大的影響。像是假設今天我們做一個薪資管理的程式，使用值類型來做：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:22ff516d-ff45-4463-a97e-389a5b7e2cda" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    public struct Employee<br>{<br>    private string _name;<br>    private int _ID;<br>    private decimal _salary;</pre></div></p>
+<pre><code>public void Pay(BankAccount b)
+{
+    b.Balance -= _salary;
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    而後來由於需求變更，我們希望系統能提供不同種類的員工，因此把它改為參考類型：</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2306668c-7e6b-4c01-9f2e-5805ac66a4d5" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    public class Employee<br>{<br>    private string _name;<br>    private int _ID;<br>    private decimal _salary;</pre></div></p>
+<pre><code>public void Pay(BankAccount b)
+{
+    b.Balance -= _salary;
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這樣一改，本來系統的程式可能就會出錯。像下面這段程式碼，就會從一次性獎金發放，變為永久性的調薪。</p><p></p>
+<p><div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:15a182e6-38b6-4f53-a685-7edc8c53a71a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#:nocontrols" name="code"><br>    Employee e = Employees.Find(“CEO”);<br>e.Salary += Bonus;<br>e.Pay(CEOBankAccount);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    總體來說，值類型在記憶體的管理上具有較好的效率：較少的零碎空間，較少的記憶體垃圾，以及較少的間接存取。更重要的是，值類型傳遞的是物件副本,可避免內部成員的參考曝露給外界的風險。而其缺點在於只具有有限的物件導向特性，少了繼承的特性。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    作者在這邊也提出了值類型的判斷依據，供大家參考。如果以下問題都是Yes，則應該使用值類型。</p><p></p>
+<ol><br>    <li><br>        該類型的主要職責是否用於儲存數據？</li><br>    <li><br>        該類型的公用接口是否完全由一些數據成員存取屬性定義？</li><br>    <li><br>        是否確信該類型永遠不會有子類別？</li><br>    <li><br>        是否確信該類型永遠不可能具有多型？</li><br></ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/10/07/10935/" rel="next" title="[C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/10/15/11061/" rel="prev" title="[C#]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型" data-instant>
+                [C#]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/10/14/11049/';
+      var disqus_title = "[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合";
+      var disqus_url = 'http://larrynung.github.io/2009/10/14/11049/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

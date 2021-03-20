@@ -1,0 +1,623 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="C++,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題">
+<meta property="og:url" content="http://larrynung.github.io/2011/10/29/47866/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image3_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image15_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/47866/image_thumb_6.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題">
+<meta name="twitter:description" content="[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/47866/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2011-10-29T03:03:24+00:00" content="2011-10-29">
+              2011-10-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/10/29/47866/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/10/29/47866/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    Cppcheck是開放源碼的靜態分析工具，可用於分析C/C++的程式。跟一般的編譯器所具備的靜態分析功能不同的是，Cppcheck被定位在專門偵測編譯器一般偵測不到的問題，所以能幫我們檢查出程式中是否有記憶體洩漏、未初始的變數或是未使用到的方法、或是存取位置超出範圍…等等，而像是語法錯誤這類編譯器能偵測到的問題Cppcheck就不提供了。主要能偵測的有下面幾項：</p><p></p>
+<ul><br>    <li><br>        Out of bounds</li><br>    <li><br>        Exception safety</li><br>    <li><br>        Memory leaks</li><br>    <li><br>        Obsolete functions are used</li><br>    <li><br>        Invalid usage of <acronym>STL</acronym></li><br>    <li><br>        Uninitialized variables and unused functions</li><br></ul><br><p><br>     </p><br><p><br>    Cppcheck在使用上能下載Standalone Client直接使用，或是能透過外掛的方式跟現有的開發環境整合，這邊可參閱Cppcheck - A tool for static C/C++ code analysis上的資料，開放源碼的外掛與商業授權的外掛都整理得很仔細：</p><br><p><br>    Clients and plugins (open source):</p><br><ul><br>    <li><br>        <b>Code::Blocks</b> - Integrated</li><br>    <li><br>        <b>Codelite</b> - Integrated</li><br>    <li><br>        <b>Eclipse</b> - <a href="http://cppcheclipse.googlecode.com/" target="_blank" rel="noopener">http://cppcheclipse.googlecode.com/</a></li><br>    <li><br>        <b>Hudson</b> - <a href="http://wiki.hudson-ci.org/display/HUDSON/Cppcheck+Plugin" target="_blank" rel="noopener">http://wiki.hudson-ci.org/display/HUDSON/Cppcheck+Plugin</a></li><br>    <li><br>        <b>Jenkins</b> - <a href="http://wiki.jenkins-ci.org/display/JENKINS/Cppcheck+Plugin" target="_blank" rel="noopener">http://wiki.jenkins-ci.org/display/JENKINS/Cppcheck+Plugin</a></li><br></ul><br><p><br>    Clients and plugins (commercial)</p><br><ul><br>    <li><br>        <b>Visual Studio</b> / <b>Eclipse</b> - Visual Lint by RiverBlade</li><br>    <li><br>        Command line - LintProject by RiverBlade</li><br></ul><br><p><br>     </p><br><p><br>    Client程式可直接至Cppcheck網站上下載，安裝後運行能看到如下的畫面：</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    點選上方工具列最左邊的工具按鈕，可以指定要偵測的程式所在目錄位置。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image3_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    選取完畢程式會直接進入分析的動作，分析的結果會列表在程式中，將列出的檔案展開可查閱指定的檔案有檢查出哪些問題，是警告還是錯誤、被視為問題的原因、與問題所在的行數。若嫌資料太多難以查閱，可進一步透過上方工具列做過濾或篩選。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image6_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    要查閱程式碼時可用滑鼠連點，Cppcheck會用記事本帶出對應的程式碼 。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image15_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    要將分析結果給團隊成員看時，Cppcheck也能將分析結果給匯出成txt、xml、與csv檔，方便散佈分析的結果。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image_thumb_7.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    透過GUI的方式使用Cppcheck就是那麼簡單，若嫌分析的速度過慢，我們還可以透過Preferences去設定要用多少執行緒去處理。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image9_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    若覺得用記事本帶出程式碼很難使用，也可以設定自己所喜好的編輯器，所以想要用UltraEdit之類功能強大的編輯器來開啟程式碼也是可以的。</p><br><p><br>    <img alt="image" border="0" height="484" src="\images\posts\47866\image_thumb_6.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618"></p><br><p><br>     </p><br><p><br>    另外一提，Cppcheck也允許透過Command的方式使用，所以我們也能利用他跟Visual Studio外部工具整合，將分析結果導到輸出視窗。這邊就不多做介紹，有興趣的可以在MS-Dos下運行Cppcheck就可以看到進一步的使用方法。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:225417d2-4b20-40b2-904e-f33a9b75005b" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>Cppcheck - A tool for static C/C++ code analysis<br><br>Syntax:<br>    cppcheck [OPTIONS] [files or paths]<br><br>If a directory is given instead of a filename, <em>.cpp, </em>.cxx, <em>.cc, </em>.c++, <em>.c,
+</em>.tpp, and <em>.txx files are checked recursively from the given directory.<br><br>Options:<br>    –append=&lt;file&gt;      This allows you to provide information about<br>                         functions by providing an implementation for them.<br>    –check-config       Check cppcheck configuration. The normal code<br>                         analysis is disabled by this flag.<br>    -D&lt;ID&gt;               By default Cppcheck checks all configurations.<br>                         Use -D to limit the checking. When -D is used the<br>                         checking is limited to the given configuration.<br>                         Example: -DDEBUG=1 -D__cplusplus<br>    –enable=&lt;id&gt;        Enable additional checks. The available ids are:
+                          </em> all<br>                                  Enable all checks<br>                          <em> style<br>                                  Enable all coding style checks. All messages<br>                                  with the severities ‘style’, ‘performance’<br>                                  and ‘portability’ are enabled.
+                          </em> performance<br>                                  Enable performance messages<br>                          <em> portability<br>                                  Enable portability messages
+                          </em> information<br>                                  Enable information messages<br>                          <em> unusedFunction<br>                                  Check for unused functions
+                          </em> missingInclude<br>                                  Warn if there are missing includes.<br>                                  For detailed information use –check-config<br>                         Several ids can be given if you separate them with<br>                         commas.<br>    –error-exitcode=&lt;n&gt; If errors are found, integer [n] is returned instead<br>                         of the default 0. 1 is returned<br>                         if arguments are not valid or if no input files are<br>                         provided. Note that your operating system can<br>                         modify this value, e.g. 256 can become 0.<br>    –errorlist          Print a list of all the error messages in XML format.<br>    –exitcode-suppressions=&lt;file&gt;<br>                         Used when certain messages should be displayed but<br>                         should not cause a non-zero exitcode.<br>    –file-list=&lt;file&gt;   Specify the files to check in a text file. Add one<br>                         filename per line. When file is -, the file list will<br>                         be read from standard input.<br>    -f, –force          Force checking of all configurations in files that have<br>                         “too many” configurations.<br>    -h, –help           Print this help.<br>    -I &lt;dir&gt;             Give include path. Give several -I parameters to give<br>                         several paths. First given path is checked first. If<br>                         paths are relative to source files, this is not needed.<br>    -i &lt;dir or file&gt;     Give a source file or source file directory to exclude<br>                         from the check. This applies only to source files so<br>                         header files included by source files are not matched.<br>                         Directory name is matched to all parts of the path.<br>    –inline-suppr       Enable inline suppressions. Use them by placing one or<br>                         more comments, like: // cppcheck-suppress warningId<br>                         on the lines before the warning to suppress.<br>    -j &lt;jobs&gt;            Start [jobs] threads to do the checking simultaneously.<br>    –platform=&lt;type&gt;    Specifies platform specific types and sizes. The<br>                         available platforms are:<br>                          <em> unix32<br>                                 32 bit unix variant
+                          </em> unix64<br>                                 64 bit unix variant<br>                          <em> win32A<br>                                 32 bit Windows ASCII character encoding
+                          </em> win32W<br>                                 32 bit Windows UNICODE character encoding<br>                          <em> win64<br>                                 64 bit Windows<br>    -q, –quiet          Only print error messages.<br>    –report-progress    Report progress messages while checking a file.<br>    –rule=&lt;rule&gt;        Match regular expression.<br>    –rule-file=&lt;file&gt;   Use given rule file. For more information, see:<br>                         <a href="https://sourceforge.net/projects/cppcheck/files/Articles/" target="_blank" rel="noopener">https://sourceforge.net/projects/cppcheck/files/Articles/</a><br>    -s, –style          Deprecated, use –enable=style<br>    –std=posix          Code is posix<br>    –std=c99            Code is C99 standard<br>    –suppress=&lt;spec&gt;    Suppress warnings that match &lt;spec&gt;. The format of<br>                         &lt;spec&gt; is:<br>                         [error id]:[filename]:[line]<br>                         The [filename] and [line] are optional. If [error id]<br>                         is a wildcard ‘</em>‘, all error ids match.<br>    –suppressions-list=&lt;file&gt;<br>                         Suppress warnings listed in the file. Each suppression<br>                         is in the same format as &lt;spec&gt; above.<br>    –template ‘&lt;text&gt;’  Format the error messages. E.g.<br>                         ‘{file}:{line},{severity},{id},{message}’ or<br>                         ‘{file}({line}):({severity}) {message}’<br>                         Pre-defined templates: gcc, vs<br>    -v, –verbose        Output more detailed error information.<br>    –version            Print out version number.<br>    –xml                Write results in xml format to error stream (stderr).<br>    –xml-version=&lt;version&gt;<br>                         Select the XML file version. Currently versions 1 and 2<br>                         are available. The default version is 1.<br>Example usage:<br>  # Recursively check the current folder. Print the progress on the screen and<br>    write errors to a file:<br>    cppcheck . 2&gt; err.txt<br>  # Recursively check ../myproject/ and don’t print progress:<br>    cppcheck –quiet ../myproject/<br>  # Check only files one.cpp and two.cpp and give all information there is:<br>    cppcheck -v -s one.cpp two.cpp<br>  # Check f.cpp and search include files from inc1/ and inc2/:<br>    cppcheck -I inc1/ -I inc2/ f.cpp<br><br>For more information:<br>    <a href="http://cppcheck.sf.net/manual.pdf" target="_blank" rel="noopener">http://cppcheck.sf.net/manual.pdf</a><br>cppcheck: error: could not find or open any of the paths given.</pre><br></div><br><p><br>     </p><br><h2><br>    Link</h2><br><ul><br>    <li><br>        Cppcheck</li><br>    <li><br>        Cppcheck - A tool for static C/C++ code analysis</li><br>    <li><br>        Cppcheck - A tool for static C/C++ code analysis</li><br>    <li><br>        cppcheck的简单介绍</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag” data-instant>#C++</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/10/24/46293/" rel="next" title="[C#].NET 4.5 New Feature - Regex match with timeout" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#].NET 4.5 New Feature - Regex match with timeout
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/11/01/49465/" rel="prev" title="[Visual Studio]使用VSSpeedster加速Visual Studio建置" data-instant>
+                [Visual Studio]使用VSSpeedster加速Visual Studio建置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2011/10/29/47866/';
+      var disqus_title = "[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題";
+      var disqus_url = 'http://larrynung.github.io/2011/10/29/47866/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

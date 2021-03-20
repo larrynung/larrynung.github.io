@@ -1,0 +1,638 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]使用Faker.Net輔助建立假的數據資料">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]使用Faker.Net輔助建立假的數據資料">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/9d516460-761c-4298-85bd-cb706d9672c2/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]使用Faker.Net輔助建立假的數據資料">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]使用Faker.Net輔助建立假的數據資料">
+<meta name="twitter:description" content="[C#]使用Faker.Net輔助建立假的數據資料">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/9d516460-761c-4298-85bd-cb706d9672c2/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]使用Faker.Net輔助建立假的數據資料 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]使用Faker.Net輔助建立假的數據資料
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/9d516460-761c-4298-85bd-cb706d9672c2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/9d516460-761c-4298-85bd-cb706d9672c2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有時候在做些測試時，我們會期望有一定的資料量來做測試，這時我們可能會用程式來產生大量假的資料，而Faker.Net就是可以輔助我們完成這個需求的工具。</p>  <p> </p>  <p>使用前需先加入組件參考，這部分可透過NuGet完成，帶入Faker.net關鍵字下去搜尋，並按下Faker.Net搜尋結果後方的Install按鈕就可以了。</p>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\9d516460-761c-4298-85bd-cb706d9672c2\image_thumb.png" width="644" height="431"></p>  <p> </p>  <p>加入完組件參考後，我們可以透過物件瀏覽器來看一下組件中含有哪些東西。可以看到的是裡面含有Address、Company、Internet、Name、Phone等物件，不難看出這個元件能為我們做些什麼，像是可以產生地址、公司名稱、電子郵件位置、使用者名字、與使用者電話等，Faker.Net都可以做到。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1204/2ac306d32214_ADA3/image_4.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\9d516460-761c-4298-85bd-cb706d9672c2\image_thumb_1.png" width="327" height="409"></a></p>  <p> </p>  <p>在實際使用上Faker.Net十分的簡單易用，透過類別的靜態方法就可以直接產生我們要的假資料，像是要取得一個假的使用者名稱，我們可以透過呼叫Faker.Name.FullName()，要取得假的電子郵件信箱，可以呼叫Faker.Internet.Email()，使用上就是那麼的簡單，沒有什麼難度，你需要的就是釐清各類別的用途，然後看看該類別具有哪些靜態方法，以及它能提供怎麼樣的資料。</p>  <p> </p>  <p>這邊筆者來帶幾個簡單的使用範例，假設今天我們要產生的假資料是使用者的資訊，我們可以像下面這樣撰寫：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:32c48eee-ad98-4180-8f06-d920f179aa2b" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br><br>namespace ConsoleApplication11<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            for (int i = 0; i &lt; 3; ++i)<br>            {<br>                ShowFakeUserInfo();<br>                Console.WriteLine(new String(‘=’, 50));<br>            }<br>        }<br><br>        static void ShowFakeUserInfo()<br>        {<br>            Console.WriteLine(String.Format(“User: {0}”, Faker.Name.FullName()));<br>            Console.WriteLine(String.Format(“Phone: {0}”, Faker.Phone.Number()));<br>            Console.WriteLine(String.Format(“Email1: {0}”, Faker.Internet.Email()));<br>            Console.WriteLine(String.Format(“Email2: {0}”, Faker.Internet.FreeEmail()));<br>            Console.WriteLine(String.Format(“Company: {0}”, Faker.Company.Name()));<br>            Console.WriteLine(String.Format(“Country: {0}”, Faker.Address.Country()));<br>        }<br>    }<br>}</pre></div><br><br><p> </p>
+
+<p>運行後可以得到像是下面這樣的結果，使用者的名字、電話、電子郵件、公司名稱、所屬城市這些資料是不是看起來都很真呢？</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\9d516460-761c-4298-85bd-cb706d9672c2\image_thumb_2.png" width="497" height="431"></p>
+
+<p> </p>
+
+<p>另外若是造假的資料是要一個句子或是一段話呢，我們可透過Faker.Lorem去做，像是：</p>
+
+<p><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0e091150-15e1-4e98-af78-a73420cf75d0" class="wlWriterSmartContent"><pre name="code" class="c#">Console.WriteLine(Faker.Lorem.Sentence());</pre></div><br><br><br><p> </p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\9d516460-761c-4298-85bd-cb706d9672c2\image_thumb_5.png" width="441" height="207"> </p>
+
+<p> </p>
+
+<p>或是：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7b909297-65c8-4e62-a1f7-9c085d925782" class="wlWriterSmartContent"><pre name="code" class="c#">onsole.WriteLine(Faker.Lorem.Paragraph());</pre></div>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\9d516460-761c-4298-85bd-cb706d9672c2\image_thumb_4.png" width="681" height="446">  </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Use Faker.NET To Fake Your Data </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/9e3276ef-1d1d-445c-9a37-c884bb379ada/" rel="next" title="[IADP]Intel AppUp software uninstall process" data-instant>
+                <i class="fa fa-chevron-left"></i> [IADP]Intel AppUp software uninstall process
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/9ccfeb82-d2bf-453b-83d5-43817c5b4a9f/" rel="prev" title="[C#]DateTime 與 ISO8601 格式字串的相互轉換" data-instant>
+                [C#]DateTime 與 ISO8601 格式字串的相互轉換 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/9d516460-761c-4298-85bd-cb706d9672c2/';
+      var disqus_title = "[C#]使用Faker.Net輔助建立假的數據資料";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/9d516460-761c-4298-85bd-cb706d9672c2/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[VB.NET].NET多語系程式(一)">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[VB.NET].NET多語系程式(一)">
+<meta property="og:url" content="http://larrynung.github.io/2009/04/24/8158/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[VB.NET].NET多語系程式(一)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_16.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_9.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_9.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_12.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_11.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_13.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_14.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_8.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_17.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[VB.NET].NET多語系程式(一)">
+<meta name="twitter:description" content="[VB.NET].NET多語系程式(一)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/8158/image_thumb_16.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [VB.NET].NET多語系程式(一) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [VB.NET].NET多語系程式(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-04-24T04:32:11+00:00" content="2009-04-24">
+              2009-04-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/04/24/8158/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/04/24/8158/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2><br>    <img alt="image" border="0" height="179" src="\images\posts\8158\image_thumb_16.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="561"></h2><p></p>
+<p></p><h2><br>    範例說明</h2><p></p>
+<p><br>    本篇將介紹.NET多語系程式的寫法 ，下面會利用最簡單方便且正統的方法也就是資源檔來達到多語系的功能。</p><br><p><br>     </p><br><h2><br>    學習目標</h2><br><ul><br>    <li><br>        .NET多語程式撰寫</li><br>    <li><br>        資源檔的使用與操作</li><br>    <li><br>        CultureInfo類別的使用</li><br>    <li><br>        語系的切換</li><br></ul><br><p><br>     </p><br><h2><br>    操作步驟</h2><br><h3><br>    介面上的多語</h3><br><p><br>    <strong>Step1.將表單的Localizable屬性設為True</strong></p><br><p><br>    <img alt="image" border="0" height="24" src="\images\posts\8158\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="244"></p><br><p><br>     </p><br><p><br>    <strong>Step2.切換表單的Language屬性為欲使用的語系</strong></p><br><p><br>    <img alt="image" border="0" height="23" src="\images\posts\8158\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="244"></p><br><p><br>    設完後會在分頁標籤上看到目前設定的語系</p><br><p><br>    <img alt="image" border="0" height="25" src="\images\posts\8158\image_thumb_4.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="244"></p><br><p><br>     </p><br><p><br>    <strong>Step3.設定介面上欲顯示的字樣並適當的調整版面</strong></p><br><p><br>    <img alt="image" border="0" height="23" src="\images\posts\8158\image_thumb_2.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="244"></p><br><p><br>    <img alt="image" border="0" height="108" src="\images\posts\8158\image_thumb_3.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="206"></p><br><p><br>     </p><br><p><br>    到此，用資源檔做的多語系程式就完成了。</p><br><p><br>    我們可以到檔案總管看一下，可看到Visual Studio自己幫我們產生了對應的資源檔。</p><br><p><br>    <img alt="image" border="0" height="170" src="\images\posts\8158\image_thumb_5.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="244"></p><br><p><br>    因此，在實作介面上的多語時，我們並不需自己手動加入資源檔。</p><br><p><br>    <img alt="image" border="0" height="395" src="\images\posts\8158\image_thumb_9.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="687"></p><br><p><br>     </p><br><h3><br>    訊息的多語</h3><br><p><br>    上面的範例帶出了介面上支援多語的寫法，但卻不適用於訊息上，若要在訊息上也支援多語。請依下列步驟：</p><br><p><br>    <strong>Step1.加入資源檔</strong></p><br><p><br>    資源檔依照 “資源檔名.文化特性.resx” 格式命名，如 “Resources.zh-tw.resx”。</p><br><p><br>    <img alt="image" border="0" height="395" src="\images\posts\8158\image_thumb_9.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="687"></p><br><p><br>     </p><br><p><br>    <strong>Step2.設定資源檔內的訊息內容</strong></p><br><p><br>    在資源檔上連點兩下</p><br><p><br>    <img alt="image" border="0" height="205" src="\images\posts\8158\image_thumb_12.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="283"></p><br><p><br>    設定對應的語系字串</p><br><p><br>    <img alt="image" border="0" height="141" src="\images\posts\8158\image_thumb_11.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="424"></p><br><p><br>    <img alt="image" border="0" height="133" src="\images\posts\8158\image_thumb_13.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="388"></p><br><p><br>     </p><br><p><br>    <strong>Step3.使用資源檔內的訊息內容</strong></p><br><p><br>    這邊只要透過My.Resources去取出資源檔內的值即可，內部OR Mapping轉換都幫你做好好，可以用強型別的方式直接取用，能避免掉許多不必要的低級錯誤。</p><br><div class="csharpcode"><br>    <pre class="alt"><br>MsgBox(My.Resources.Resource1.String1)</pre><br></div><br><div class="csharpcode"><br>     </div><br><p><br>     </p><br><p><br>    </p><style type="text/css">&lt;![CDATA[<br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style><br><br><p><br>     </p><br><p><br>    其實個人習慣是命名為 “Resources.文化特性.resx”，因為專案裡已偷放了一個Resources.resx資源檔，因此只需加入非預設語系的資源檔即可。</p><br><p><br>    <img alt="image" border="0" height="207" src="\images\posts\8158\image_thumb_14.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="277"></p><br><p><br>     </p><br><p><br>    在使用上也會變得較為簡短</p><br><div class="csharpcode"><br>    <pre class="alt"><br>MsgBox(My.Resources.String1)</pre><br></div><br><p><br>     </p><br><p><br>    </p><style type="text/css">&lt;![CDATA[<br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style><br><br><p><br>     </p><br><h2><br>    切換語系</h2><br><p><br>    依上面步驟操作完後，其實已具多語支援能力。當程式開啟時，會自動依照當前語系去顯示介面畫面。因此我們開啟時應該是顯示中文而不是本來的英文。若要自己切換語系可利用Threading.Thread.CurrentThread.CurrentUICulture。</p><br><div class="csharpcode"><br>    <pre class="alt"><br>Threading.Thread.CurrentThread.CurrentUICulture = New CultureInfo(<span class="str">“en”</span>)</pre><br></div><br><p><br>    值得注意的是，這樣的寫法是不會影響已開啟的視窗的。只有後來開啟的視窗會被切換語系。</p><br><p><br>    那是否已開啟的視窗就無法切換了呢？那倒也不是。可以透過使用ResourceManager.GetString去取得對應的字串，把取出的字串再設到介面上即可。但是這也不是很好的方法，個人傾向使用ComponentResourceManager配合遞迴去把介面上的字串換成對應語系的字串。有興趣的可以參考Form.Designer.vb檔的程式碼。</p><br><p><br>    <img alt="image" border="0" height="200" src="\images\posts\8158\image_thumb_7.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="281"></p><br><p><br>     </p><br><p><br>    </p><style type="text/css">&lt;![CDATA[<br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style><br><br><p><br>    <img alt="image" border="0" height="269" src="\images\posts\8158\image_thumb_8.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="440"></p><br><p><br>     </p><br><h2><br>    注意事項</h2><br><p><br>    在用多國語言資源檔時，建議最後在弄其它語系的設定。因為當我們設定多語系時，Visual Studio會自動幫我們產生資源檔，且內含預設的設定值。若太早讓Visual Studi產生資源檔，則預設的設定值將只有少少的幾個，後面的設定值都需手動的設定，且每個語系的資源檔都要設定。</p><br><p><br>    <img alt="image" border="0" height="376" src="\images\posts\8158\image_thumb_17.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="770"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/04/24/8169/" rel="next" title="[VB.NET].NET多語系程式(二)" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET].NET多語系程式(二)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/04/24/8159/" rel="prev" title="[Design Pattern]Singleton模式" data-instant>
+                [Design Pattern]Singleton模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">    範例說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">    學習目標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">    操作步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">    介面上的多語</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">4.2.</span> <span class="nav-text">    訊息的多語</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">    切換語系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">    注意事項</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/04/24/8158/';
+      var disqus_title = "[VB.NET].NET多語系程式(一)";
+      var disqus_url = 'http://larrynung.github.io/2009/04/24/8158/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

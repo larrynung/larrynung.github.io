@@ -1,0 +1,620 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,MEF,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介">
+<meta name="keywords" content="CSharp,MEF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image12_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介">
+<meta name="twitter:description" content="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/7012fd7d-7761-4be2-830d-ad1dba493b87/image9_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>     <img alt="image" border="0" height="244" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image9_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="210"></p><p></p>
+<p></p><p><br>    Managed Extensibility Framework(MEF)是.NET 4.0與Silverlight 4.5開始內建在BCL中的輕量型可擴充式框架(若是使用.NET 3.5，也可以另行加入組件使用)，可以輔助開發人員建立具有擴充彈性且易於維護的應用程式。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    在以往若是我們要為程式加上可擴充性的功能，可能必須要使用反射來做，可參閱筆者使用反射(Reflection)實現應用程式擴充元件機制這篇。為了要達到類似的效果，我們必需去找出目錄所內含的組件檔，循序的去將找到的組件載入，載入後遍循所有可被實體化的類別，並從中找出有實作指定介面的類別，再將其實體化後塞入正確的位置。在做這樣的動作時，目錄內可能會存放著非.net的組件，不小心載入系統就會丟出例外而讓整個載入流程中斷。而將類別實體化為物件時，又需考慮類別的建構子，建構子不對也無法正確地將類別實體化為物件。而且做這樣的動作多半必需依賴著特定型別或介面去做。當系統中的擴充點一多，這樣的動作就得成倍數成長，十分的不好處理。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    MEF的出現可以讓開發人員有效的簡化這樣的動作，開發時開發人員只要知道哪邊是會有變動或是需要擴充的點、要塞入擴充點的動作為何、以及甚麼時候要將擴充的動作塞入擴充點。擴充功能的探索以及擴充功能與擴充點的組合，MEF都做了相當的封裝，使用起來非常的方便，而前面提到載入時可能發生的問題MEF也都處理掉了，開發人員可以更專注於擴充點與擴充功能的建立。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    為了易於了解，這邊我們可以把擴充點想成是插座(母頭)，擴充的功能是電器的插頭(公頭)。每個插座雖然在外觀上會有些差異(接口不同)，但都是提供電器運轉所需要的電，而每個電器也都有著不同的功能，只要能插到正確的插座就能夠發揮電器該有的效果。同一個插座可能依插上的電器不同一會具有照明的功能，一會具有發熱的功能，或是透過擴充插座同時照明與發熱，這就是我們程式開發所需要的擴充彈性。而MEF在這邊扮演的就是一個代理人，只要我們將插座與插頭交給它，插頭就會插在正確的插座上，它自行會依照一些線索(插座與插頭的外觀)下去推斷要做怎樣的組合，不用煩惱它到底是歐規、美規、兩頭、三頭、110v、220v…</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    MEF主要是由下列幾個部分所組成 </p><p></p>
+<ul><br>    <li><br>        Composable part</li><br>    <li><br>        Export</li><br>    <li><br>        Import</li><br>    <li><br>        Composition Container</li><br>    <li><br>        Catalog </li><br></ul><br><p><br>     </p><br><p><br>    Composable part 是composable unit，也就是最小的組成單位，可以提供服務給其他組件使用(擴充功能)或是操作其他組件提供的服務(擴充點)。</p><br><p><br>    Export 是指提供的服務，也就是我們所說的擴充功能。透過ExportAttribute來設定。</p><br><p><br>    Import 是指所使用的服務，也就是我們所說的擴充點。透過ImportAttribute來設定。</p><br><p><br>    Composition Container 是組合容器，會去mapping import跟export、組合Composable part。</p><br><p><br>    Catalog 主要是用來探索Composable part用的，可從型別、組件 (Assembly) 或目錄 (Directory)探索到Composable part。</p><br><p><br>     </p><br><p><br>    了解了MEF的概念以及組成元件後，讓我們來看一下MEF官方的示意圖片。由下圖中我們可以很清楚的看到Composable part內具有Import與Export，而Export與Import可以透過MEF做組合，表示著透過MEF我們可以很容易的在程式撰寫時透過Attribute去指定擴充點與擴充功能，並透過MEF將它組合起來達到我們想要的效果。簡單的一張圖帶出了上面提到的Import、Export、Composable Part、以及Composition等概念。</p><br><p><br>    <img alt="image" border="0" height="291" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image6_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="423"></p><br><p><br>     </p><br><p><br>    而下圖則是表示著Catalog可以幫我們探索Composable part，並且透過Composition Container元件我們可以將之組合在一起。</p><br><p><br>    <img alt="image" border="0" height="469" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="615"></p><br><p><br>     </p><br><p><br>    這邊讓我們實際來寫個簡易的MEF程式。為了便於比較，這邊筆者直接拿使用反射(Reflection)實現應用程式擴充元件機制這篇的範例稍作修改，從反射叫用改用MEF下去實作。</p><br><p><br>     </p><br><p><br>    首先我們必須將System.ComponentModel.Composition.dll加入參考。</p><br><p><br>    <img alt="image" border="0" height="450" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image12_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="565"></p><br><p><br>     </p><br><p><br>    然後在程式中引用System.ComponentModel.Composition命名空間：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0d8f3b34-2923-43b0-af5a-edc529381274" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>using System.ComponentModel.Composition;</pre><br></div><br><p><br>     </p><br><p><br>    接著將PlugIn.Core的內的Interface做些調整。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fa532a95-ddd8-48ff-95d2-1aa420f41b40" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>namespace PlugIn.Core<br>{<br>    public interface IHost<br>    {<br>        IEnumerable&lt;IModule&gt; Modules { get; set; }<br>    }<br>}</pre><br></div><br><p><br>     </p><br><p><br>    並在PlugIn.Core.IModule上附加InheritedExportAttribute(前面所提到的Export)，用以指定所有實作該介面的類別都視為我們程式中的擴充功能。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5fbe0a92-ee9b-47e9-af09-1dd75704d73f" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>namespace PlugIn.Core<br>{<br>    [InheritedExport]<br>    public interface IModule<br>    {<br>        String Name { get; }<br>        IHost Host { get; set; }<br>        void Execute();<br>    }<br>}</pre><br></div><br><p><br>     </p><br><p><br>    最後要調整的是PlugIn.Host.MainForm，將之實作IHost介面，在Modules成員屬性上附加ImportManyAttribute(前面提到的Import)，用以指定Modules成員屬性為我們程式中的擴充點，並在建構子中透過DirectoryCatalog(前面提到的Catalog)找出當前目錄下有哪些可擴充的元件(Composable part)，然後用CompositionContainer將擴充點與擴充功能組合就可以了。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0e7e4972-d70f-4676-b919-b4f0edf679b8" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="c#" name="code"><br>namespace Host<br>{<br>    public partial class MainForm : Form, IHost<br>    {<br>        …<br>        [ImportMany]<br>        public IEnumerable&lt;IModule&gt; Modules { get; set; }<br><br>        public MainForm()<br>        {<br>            InitializeComponent();<br><br>            var catalog = new DirectoryCatalog(Environment.CurrentDirectory, “*.dll”);<br>            var container = new CompositionContainer(catalog);<br>            container.ComposeParts(this);<br><br>            foreach (IModule module in Modules)<br>            {<br>                module.Host = this;<br>                模組MToolStripMenuItem.DropDownItems.Add(module.Name, null, Module_Click).Tag = module;<br>            }<br>        }<br>        …<br>   }<br>}</pre><br></div><br><p><br>     </p><br><p><br>    程式撰寫起來比使用反射來說簡單了許多，使用反射(Reflection)實現應用程式擴充元件機制這篇範例內用到的PlugInController整個都可以拿掉了。</p><br><p><br>     </p><br><p><br>    運行結果如下：</p><br><p><br>    <img alt="image" border="0" height="382" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image_thumb.png" width="541"></p><br><p><br>    <img alt="image" border="0" height="382" src="\images\posts\7012fd7d-7761-4be2-830d-ad1dba493b87\image_thumb_1.png" width="541"></p><br><p><br>     </p><br><h2><br>    Download</h2><br><p><br>    PlugInDemo.zip</p><br><p><br>     </p><br><h2><br>    Link</h2><br><ul><br>    <li><br>        Managed Extensibility Framework</li><br>    <li><br>        Managed Extensibility Framework - Wikipedia, the free encyclopedia</li><br>    <li><br>        Building Composable Apps in .NET 4 with the Managed Extensibility Framework</li><br>    <li><br>        [VS2010 Online]Managed Extensibility Framework in Visual Studio 2010 – (1)</li><br>    <li><br>        MEF (Managed Extensibility Framework) in .NET 4.0</li><br>    <li><br>        Extending Microsoft.Composition with Alternative Programming Models</li><br>    <li><br>        DotNet 4 學習筆記之1————-MEF (Managed Extensibility Framework)</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags mef " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/" rel="next" title="停用Debug.Assert警示對話框與啟用訊息記錄" data-instant>
+                <i class="fa fa-chevron-left"></i> 停用Debug.Assert警示對話框與啟用訊息記錄
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/71dddf38-a05e-42c0-b7b7-57ad6912da4a/" rel="prev" title="[C#]DropBox開發系列 - 使用DropNet遍巡DropBox內存放的檔案" data-instant>
+                [C#]DropBox開發系列 - 使用DropNet遍巡DropBox內存放的檔案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Download</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/';
+      var disqus_title = "[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

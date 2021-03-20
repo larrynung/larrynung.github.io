@@ -1,0 +1,606 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,Control,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][Control]指撥開關控制項的概念與簡易實作">
+<meta name="keywords" content="CSharp,Control">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][Control]指撥開關控制項的概念與簡易實作">
+<meta property="og:url" content="http://larrynung.github.io/2011/12/10/61495/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][Control]指撥開關控制項的概念與簡易實作">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/61495/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/61495/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][Control]指撥開關控制項的概念與簡易實作">
+<meta name="twitter:description" content="[C#][Control]指撥開關控制項的概念與簡易實作">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/61495/image_thumb_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][Control]指撥開關控制項的概念與簡易實作 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][Control]指撥開關控制項的概念與簡易實作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2011-12-10T02:21:35+00:00" content="2011-12-10">
+              2011-12-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/12/10/61495/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/12/10/61495/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><br>    筆者在前一家公司時是做自動儀器控制的，有些地方會要用類似像指撥開關這樣的設計給使用者跟真實世界一致的體驗，當初筆者有將這部分獨立出來做成可重用的元件，對其背後的實現概念有些許的體會，這邊簡單的摘錄其概念與簡單的實作範例。</p><br><p><br>     </p><br><p><br>    所謂指撥開關指的是有點像家裡總電源那樣的開關，會有凸出一根讓使用者用指頭去撥他，用以切換開關狀態，用在小型電器上通常往上代表是開，往下是關。要做這樣的元件就要利用.NET控制項本身的Dock屬性，將Button Dock在上方表示開啟，Dock在下方表示關閉，Button被點擊時改變Dock狀態，並在整個控制項大小調整時讓用來指撥的按鈕維持整個控制項一半的高度就可以了。</p><br><p><br>     </p><br><p><br>    實作時我們可以開個使用者控制項，將其BorderStyle設為Fixed3D，這樣指撥開關元件看起來會比較有感覺。接著在裡面放個Button給使用者指撥用，Button的文字要清除，並將Dock設為Bottom，表示一開始是關閉的狀態。</p><br><p><br>    <img alt="image" border="0" height="154" src="\images\posts\61495\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="193"></p><br><p><br>     </p><br><p><br>    再來必須要讓指撥按鈕隨著控制項變更大小，這只要在控制項大小改變時調整尺寸為控制項高度的一半就可以了。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b56d7a58-4ccc-4605-9ab9-95b69d9fe91a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>        private void SwitchButton_SizeChanged(object sender, EventArgs e)<br>        {<br>            OnOffButton.Height = this.Height / 2;<br>        }</pre><br></div><br><p><br>     </p><br><p><br>    到了這邊就完成一大半了，整個元件外觀都出來了，只是沒有指撥的效果。所以我們要再幫他加入指撥效果，這邊筆者開個列舉跟屬性，用以表示目前指撥開關的狀態，在指撥狀態改變時會去調整指撥按鈕的位置。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:75da9c95-db75-487f-943b-e9331a9b31ad" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>        public enum SwitchState<br>        {<br>            On,<br>            Off<br>        }<br><br>        private SwitchState _state;<br>        public SwitchState State<br>        {<br>            get<br>            {<br>                return _state;<br>            }<br>            set<br>            {<br>                if (_state == value)<br>                    return;<br>                _state = value;<br>                AdjustOnOffButton();<br>            }<br>        }<br>        private void AdjustOnOffButton()<br>        {<br>            switch (State)<br>            {<br>                case SwitchState.On:<br>                    OnOffButton.Dock = DockStyle.Top;<br>                    break;<br>                case SwitchState.Off:<br>                    OnOffButton.Dock = DockStyle.Bottom;<br>                    break;<br>                default:<br>                    break;<br>            }<br>        }</pre><br></div><br><p><br>     </p><br><p><br>    此時整個控制項已經能讓使用者透過程式的方式控制指撥狀態了，尚缺的部分就是當使用者在界面上按下指撥按鈕時不會有任何效果，這也很好處理，只要繫結指撥按鈕的點擊事件，在其事件處理常式中做狀態的切換就可以了。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6195ad08-c269-4494-bbe7-6f389e7081ad" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>        public void Toggle()<br>        {<br>            State = State == SwitchState.On? SwitchState.Off: SwitchState.On;<br>        }<br><br>        private void OnOffButton_Click(object sender, EventArgs e)<br>        {<br>            Toggle();<br>        }</pre><br></div><br><p><br>     </p><br><p><br>    實作完成你可以看到類似下面的運行效果。</p><br><p><br>    <img alt="image" border="0" height="304" src="\images\posts\61495\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="304"></p><br><p><br>     </p><br><p><br>    這邊帶的只是個很簡單的範例，實際運用上若有需求也可以再進一步替換指撥按鈕的外觀，讓整個控制項更為美觀。</p><br><p><br>     </p><br><p><br>    最後這邊附上完整的控制項程式碼：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:411dbca0-d81a-4d5a-b04b-050862eb602f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Drawing;<br>using System.Data;<br>using System.Linq;<br>using System.Text;<br>using System.Threading.Tasks;<br>using System.Windows.Forms;<br><br>namespace WindowsFormsApplication3<br>{<br>    public partial class SwitchButton : UserControl<br>    {<br><br>        public enum SwitchState<br>        {<br>            On,<br>            Off<br>        }<br><br>        private SwitchState _state;<br>        public SwitchState State<br>        {<br>            get<br>            {<br>                return _state;<br>            }<br>            set<br>            {<br>                if (_state == value)<br>                    return;<br>                _state = value;<br>                AdjustOnOffButton();<br>            }<br>        }<br><br>        public SwitchButton()<br>        {<br>            InitializeComponent();<br>            State = SwitchState.Off;<br>        }<br><br>        private void AdjustOnOffButton()<br>        {<br>            switch (State)<br>            {<br>                case SwitchState.On:<br>                    OnOffButton.Dock = DockStyle.Top;<br>                    break;<br>                case SwitchState.Off:<br>                    OnOffButton.Dock = DockStyle.Bottom;<br>                    break;<br>                default:<br>                    break;<br>            }<br>        }<br><br>        public void Toggle()<br>        {<br>            State = State == SwitchState.On? SwitchState.Off: SwitchState.On;<br>        }<br><br>        private void SwitchButton_SizeChanged(object sender, EventArgs e)<br>        {<br>            OnOffButton.Height = this.Height / 2;<br>        }<br><br>        private void OnOffButton_Click(object sender, EventArgs e)<br>        {<br>            Toggle();<br>        }<br>    }<br>}</pre><br></div><br><p><br>     </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags control " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/12/08/61234/" rel="next" title="[C#][WPF]DependencyProperty" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#][WPF]DependencyProperty
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/12/11/61540/" rel="prev" title="[C#][Control]BitsControl概念與簡易實做" data-instant>
+                [C#][Control]BitsControl概念與簡易實做 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2011/12/10/61495/';
+      var disqus_title = "[C#][Control]指撥開關控制項的概念與簡易實作";
+      var disqus_url = 'http://larrynung.github.io/2011/12/10/61495/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

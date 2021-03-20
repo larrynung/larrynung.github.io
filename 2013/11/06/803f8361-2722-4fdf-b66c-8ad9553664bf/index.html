@@ -1,0 +1,652 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[JavaScript]HTML5 New Feature - Web Storage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[JavaScript]HTML5 New Feature - Web Storage">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/803f8361-2722-4fdf-b66c-8ad9553664bf/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[JavaScript]HTML5 New Feature - Web Storage">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[JavaScript]HTML5 New Feature - Web Storage">
+<meta name="twitter:description" content="[JavaScript]HTML5 New Feature - Web Storage">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [JavaScript]HTML5 New Feature - Web Storage | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [JavaScript]HTML5 New Feature - Web Storage
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/803f8361-2722-4fdf-b66c-8ad9553664bf/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/803f8361-2722-4fdf-b66c-8ad9553664bf/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    Web storage是HTML5新功能之一，允許使用者透過瀏覽器將資料暫存在client端。以往使用cookie來做類似這樣的需求，每個頁面可容納的資料量，約只有 4 KB 左右，且會在HTTP Request時上傳資料至Server端，造成不必要的頻寬浪費，也對執行效能造成不好的影響。而若是透過 Web Storage來儲存，儲存容量依瀏覽器不同而有不同，約有 1-5MB，且能手動調整透過設定將空間放大，能存放更大的資料量，不耗費不必要的頻寬，使用起來也更為方便。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Web storage可依其儲存特性再被細分為sessionStorage與localStorage。以sessionStorage來說，所儲存的資料在瀏覽的分頁或是瀏覽器關閉時就會被清除，較適合用來儲存比較臨時性的資料。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    至於localStorage所儲存的資料則是沒有像sessionStorage這樣的限制，其儲存的資料能一直存放在本地端，直至我們明確的呼叫釋放動作，儲存的資料才會自本地端移除。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Web Storage實作了Storage介面，這個介面資料的儲存與操作都是以key/value成對的方式下去做處理，類似一般我們所常見的字典檔的架構。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:df4d85fe-3fa8-4d37-82b5-0c28f0997fb3" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>interface Storage {<br>  readonly attribute unsigned long length;<br>  getter DOMString key(in unsigned long index);<br>  getter any getItem(in DOMString key);<br>  setter creator void setItem(in DOMString key, in any data);<br>  deleter void removeItem(in DOMString key);<br>  void clear();<br>};</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    不論是sessionStorage還是localStorage皆遵循這樣的介面，因此使用起來十分的相似，並沒有太大的差異。像是設定資料時可透過setItem方法，將key與value成對帶入，即可將資料存放至Web Storage：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:df2f4dcf-657d-4a8b-af67-f846b861fc31" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>sessionStorage.setItem(key, value);<br>localStorage.setItem(key, value);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    除此之外也可以直接將key值當作成員變數來存取：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b27e7675-e3f4-4f5a-bf98-a6898aafeb8a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>sessionStorage.key = value;<br>localStorage.key = value;</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要取得存放的資料時可透過getItem方法，帶入存放資料時所設定的key值，即可回傳所存放的資料值：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:00f2150b-0a83-439f-bdff-783d636d88c4" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>value = sessionStorage.getItem(key);<br>value = localStorage.getItem(key);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    同樣的這也支援將key值當作成員變數來存取的操作方式：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:01a8d9ce-b707-4e6a-bac4-3a5483e55401" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>value = sessionStorage.key;<br>value = localStorage.key;</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    當有移除某特定資料的需求時，可帶入要刪除的資料key值，像是下面這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0f93a893-2816-4ab7-963a-c2f48771e7fe" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>sessionStorage.removeItem(key);<br>localStorage.removeItem(key);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    也可以透過叫用clear方法清除所有存放在Web Storage內的資料：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:01a7beb9-c836-407a-9d58-a66a75837bae" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>sessionStorage.clear();<br>localStorage.clear();</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    到這邊應該可以看出來因為是實作相同Interface的關係，sessionStorage跟localStorage的存取方式幾乎沒有差異，只是針對不同的類別下去存取。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊實際寫個示範用的範例，該範例可以將按鈕的點擊次數資料存放在Web Storage中</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:93373dcb-a2b0-4ce0-96c9-cf43ab9bf449" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;script&gt;<br>function clickCounter()<br>{<br>  var key   = “clickcount”;<br>  var value = localStorage.getItem(key);<br>  if (value)<br>    {<br>    localStorage.setItem(key, Number(value)+1);<br>    }<br>  else<br>    {<br>    localStorage.setItem(key, 1);<br>    }<br>  document.getElementById(“result”).innerHTML=”You have clicked the button “ + localStorage.clickcount + “ time(s).”;<br>}<br>&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;p&gt;&lt;button onclick=”clickCounter()” type=”button”&gt;Click me!&lt;/button&gt;&lt;/p&gt;<br>&lt;div id=”result”&gt;&lt;/div&gt;<br>&lt;p&gt;Click the button to see the counter increase.&lt;/p&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行後結果會像下面這樣，點擊按鈕會累加點擊次數，而點擊次數會存放在localStorage中，因此下次再開啟相同的頁面仍能繼續累加。有興趣的可以將範例的localStorage字樣全部取代為sessionStorage，這樣運行起來點擊的次數就會在每次重開啟時重新計算。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="484" src="\images\posts\803f8361-2722-4fdf-b66c-8ad9553664bf\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="590"></p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="484" src="\images\posts\803f8361-2722-4fdf-b66c-8ad9553664bf\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="590"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    最後這邊再補充一下，上面有提到Web Storage是實作自Storage介面，因此我們可以透過這個特性下去做瀏覽器支援與否的判斷，判斷Storage是否沒有被定義，若有定義則代表該瀏覽器支援Web Storage，若是undefined則代表該瀏覽器不支援Web Storage。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2f839c4e-8f9e-467b-826a-4e7b4e931de7" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>function checkWebStorageSupportable()<br>{<br>    return (typeof(Storage)!==”undefined”);<br>}</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊一樣也提供個簡單的示範：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d59c22b3-8f33-4a7d-8c37-49d270832fed" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="xml" name="code"><br>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;body onLoad = “OnLoad();”&gt;<br>&lt;div id=”result”&gt;&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</pre></div></p>
+<p>&lt;script&gt;<br>function OnLoad()<br>{<br>    document.getElementById(“result”).innerHTML = checkWebStorageSupportable()?”Support”:”UnSupport”;<br>}</p>
+<p>function checkWebStorageSupportable()<br>{<br>    return (typeof(Storage)!==”undefined”);<br>}<br>&lt;/script&gt;<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行後會像下面這樣，會顯示出瀏覽器是否支援Web Storage。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="640" src="\images\posts\803f8361-2722-4fdf-b66c-8ad9553664bf\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="780"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        Web Storage</li><br>    <li><br>        Web storage</li><br>    <li><br>        HTML5 Web Storage</li><br>    <li><br>        JavaScript Web Storage (DOM Storage)</li><br>    <li><br>        Web Storage 使用經驗</li><br>    <li><br>        WebStorage API 簡介</li><br>    <li><br>        [HTML5]簡述HTML5的Client端暫存-localStorage/sessionStorage</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/430b9055-b166-466e-be27-7c709439c47d/" rel="next" title="[C#]設定WebBrowser Control運行的User Agent版本" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]設定WebBrowser Control運行的User Agent版本
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/780bcd3b-76c5-4edb-b712-647692412d69/" rel="prev" title="FlickrNet開發系列- FlickrNet基本功能開發(一)" data-instant>
+                FlickrNet開發系列- FlickrNet基本功能開發(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/803f8361-2722-4fdf-b66c-8ad9553664bf/';
+      var disqus_title = "[JavaScript]HTML5 New Feature - Web Storage";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/803f8361-2722-4fdf-b66c-8ad9553664bf/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

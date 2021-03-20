@@ -1,0 +1,641 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="JIT,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="RyuJIT_ The next-generation JIT compiler for .NET">
+<meta name="keywords" content="JIT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RyuJIT_ The next-generation JIT compiler for .NET">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="RyuJIT_ The next-generation JIT compiler for .NET">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/5518.clip_5F00_image0021_5F00_530F9608.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.7_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.6_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.5_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.1_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.3_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/screenshot.2_thumb.jpg">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RyuJIT_ The next-generation JIT compiler for .NET">
+<meta name="twitter:description" content="RyuJIT_ The next-generation JIT compiler for .NET">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/5518.clip_5F00_image0021_5F00_530F9608.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> RyuJIT_ The next-generation JIT compiler for .NET | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RyuJIT_ The next-generation JIT compiler for .NET
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    RyuJIT是微軟新一代的JIT Compiler。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    之所以要開發新的JIT Compiler，是因為舊的x64 JIT Compiler當初在開發之時， 以當時的時空背景來說，64bit的機器尚未普及，且多是用於伺服器上面，雲端應用也尚未盛行，所以伺服器上的網站或服務就是最主要的使用場景。這些服務通常預先就已開啟，且是長時間的運行，編譯及啟動速度不是那麼的重要，若真有需求也可以用Ngen去解，因此當初是以C++的O<span style="color: rgb(66, 66, 66); font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19.5px;">ptimizing C</span>ompiler為基礎下去開發，以期望產生較為高效的程式碼。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    反觀現今，64 bit機器普及，雲端應用亦已盛行。相較於產生高效的程式碼，編譯及啟動速度變得更為重要了。因此新的RyuJIT改採用本來的x86 JIT Compiler為基礎下去開發。本來的x86 JIT Compiler在編譯以及啟動速度上的優化已經做的很好了，故採用x86 JIT Compiler為基礎，能讓x64 JIT Compiler有較佳的編譯及啟動速度 ，微軟這邊也不需要維護兩份不同的程式碼，能加快開發的速度。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    RyuJIT比舊的64bit JIT Compiler快上2倍，啟動時間也快上30%(因為JIT Compiler的處理只佔啟動時間的ㄧ部份，所以速度提升無法到達兩倍) 。這邊官方有提供一份效能分析表可供參考，以RFC822 e-mail RegEx來說，Compile benchmark以以前的JIT64要花60秒以及1.4 GB的記憶體空間，而RyuJIT只需要1.8秒以及199MB的記憶體空間。</p><p></p>
+<p></p><p><br>    <img alt="clip_image002[1]" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\5518.clip_5F00_image0021_5F00_530F9608.png"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    目前RyuJIT還在CTP版，只支援Windows 8.1 x64與Windows Server 2012 R2，後續開發告一段落後，將會取代現有的JIT Compiler，也會開始支援x86。若要搶先體驗，可至<a href="http://aka.ms/RyuJIT這邊下載安裝程式，並將之安裝。" target="_blank" rel="noopener">http://aka.ms/RyuJIT這邊下載安裝程式，並將之安裝。</a></p><p></p>
+<p></p><p><br>    <img alt="screenshot.7" border="0" height="344" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.7_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="440"></p><p></p>
+<p></p><p><br>    <img alt="screenshot.6" border="0" height="346" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.6_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="442"></p><p></p>
+<p></p><p><br>    <img alt="screenshot.5" border="0" height="345" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.5_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="442"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    安裝完成後，若要針對特定程式使用RyuJIT，可設定環境變數COMPLUS_AltJit=*。</p><p></p>
+<p></p><p><br>    <img alt="screenshot.1" border="0" height="153" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.1_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="641"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若要針對所有程式都套用RyuJIT，可以在登錄檔HKLM\SOFTWARE\Microsoft.NETFramework這邊設定名為AltJit且值為”*”的字串值。</p><p></p>
+<p></p><p><br>    <img alt="screenshot.3" border="0" height="366" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.3_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="584"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    值得注意的是，RyuJIT目前在運行時，據官方的說法是會讓Visual Studio的Edit and continue功能失效，但依筆者實際測試是會讓除錯發生錯誤，這部份可能後續會做個調整。但無論如何，該特性暫時可用來做為是否啟用RyuJIT的一個判斷依據。</p><p></p>
+<p></p><p><br>    <img alt="screenshot" border="0" height="445" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="682"></p><p></p>
+<p></p><p><br>    <img alt="screenshot.2" border="0" height="222" src="\images\posts\79cd1bdc-a6ca-434e-bee0-32adb76e7d71\screenshot.2_thumb.jpg" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="504"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        RyuJIT: The next-generation JIT compiler for .NET</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JIT/" rel="tag” data-instant>#JIT</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/7b747a91-a478-420c-8d14-b5cfda3d3a35/" rel="next" title="[Win7]叫出工具列釘選程式的快顯選單" data-instant>
+                <i class="fa fa-chevron-left"></i> [Win7]叫出工具列釘選程式的快顯選單
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/7816fbce-e8e2-4b26-b557-54d9dd2c7c69/" rel="prev" title="如何使用Firebug Lite來輔助偵錯網頁" data-instant>
+                如何使用Firebug Lite來輔助偵錯網頁 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/';
+      var disqus_title = "RyuJIT_ The next-generation JIT compiler for .NET";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/79cd1bdc-a6ca-434e-bee0-32adb76e7d71/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

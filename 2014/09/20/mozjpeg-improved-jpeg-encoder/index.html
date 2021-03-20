@@ -1,0 +1,640 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Mozjpeg">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Mozjpeg - Improved JPEG encoder">
+<meta name="keywords" content="Mozjpeg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mozjpeg - Improved JPEG encoder">
+<meta property="og:url" content="http://larrynung.github.io/2014/09/20/mozjpeg-improved-jpeg-encoder/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Mozjpeg - Improved JPEG encoder">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Mozjpeg/1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/Mozjpeg/2.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mozjpeg - Improved JPEG encoder">
+<meta name="twitter:description" content="Mozjpeg - Improved JPEG encoder">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/Mozjpeg/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Mozjpeg - Improved JPEG encoder | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mozjpeg - Improved JPEG encoder
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2014-09-20T08:21:00+00:00" content="2014-09-20">
+              2014-09-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/09/20/mozjpeg-improved-jpeg-encoder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/09/20/mozjpeg-improved-jpeg-encoder/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能力，以減少檔案大小並加速網頁傳輸所開的專案。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>目前現階段已發行到了 2.1 版，以數據來說平均約可減少 5% 的檔案大小。  </p>
+<p><br></p>
+<p>有興趣的可至 <a href="https://github.com/mozilla/mozjpeg" target="_blank" rel="noopener">mozilla/mozjpeg · GitHub</a> 這邊下載編譯來使用，編譯方式可參閱 <a href="https://github.com/mozilla/mozjpeg/blob/master/BUILDING.txt" target="_blank" rel="noopener">BUILDING.txt</a> 文件。  </p>
+<p><br></p>
+<p>如果不會編譯的也沒關係，可到 <a href="http://mozjpeg.codelove.de/binaries.html" target="_blank" rel="noopener">mozjpeg | binaries</a> 這邊直接下載別人編譯好的檔案來用。  </p>
+<img src="/images/posts/Mozjpeg/1.png">
+<p><br></p>
+<p>檔案取得後，我們會看到裡面有四個執行檔，一個Dll。四個執行檔各自有不同的功用，像是壓縮、解壓縮、轉換…之類的，使用上可參閱 <a href="https://github.com/mozilla/mozjpeg/blob/master/usage.txt" target="_blank" rel="noopener">usage.txt</a>。  </p>
+<p><br></p>
+<p>不過基本上我們多半只會需要做些圖檔壓縮或無失真的減肥處理動作，因此我們通常只需要熟悉 cjpeg 以及 jpegtran 的使用。  </p>
+<p><br></p>
+<p>使用方式我們可直接呼叫 cjpeg 命令，並帶入參數 -? 查詢。  </p>
+<pre><code>cjpeg -?
+</code></pre><img src="/images/posts/Mozjpeg/2.png">
+<p><br></p>
+<p>使用上大概是遵循下面這樣的方式去叫用：<br>    cjpeg [switches] -outfile jpegfile  imagefile    ‘ Support all systems<br>    cjpeg [switches] [imagefile] &gt;jpegfile        ‘ Support Unix-like systems<br>    cjpeg [switches] imagefile jpegfile        ‘ Support non-Unix systems</p>
+<p><br></p>
+<p>指令參數部分很多都是一般我們不會需要用到的，若有需要到時再回過來查也就好了。基本使用我們只要知道 -quality 與 -baseline 這兩個參數應該就可以了。</p>
+<p><br></p>
+<p>-quality 參數是用來指定壓縮圖檔的品質的，一般是建議將其值設在 60 - 90 之間，若不設定預設是用 75。</p>
+<pre><code>cjpeg -quality 80 -outfile Desert_Compressed.jpg Desert.jpg
+</code></pre><p>-baseline 參數是用來指定產生 Baseline 的圖檔，預設產生的是 Progressive 的圖檔，若有需要變更就要特別指定。  </p>
+<pre><code>cjpeg -baseline -quality 80 -outfile Desert_Compressed.jpg Desert.jpg
+</code></pre><p>cjpegtran 的使用上，我們主要是拿來做無失真的減肥處理，只要像下面這樣帶入 -copy none 參數即可。  </p>
+<pre><code>jpegtran -copy none -outfile Desert_Compressed.jpg Desert.jpg
+</code></pre><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/mozilla/mozjpeg" target="_blank" rel="noopener">mozilla/mozjpeg · GitHub</a></li>
+<li><a href="https://github.com/mozilla/mozjpeg/blob/master/BUILDING.txt" target="_blank" rel="noopener">mozjpeg/BUILDING.txt at master · mozilla/mozjpeg · GitHub</a></li>
+<li><a href="https://github.com/mozilla/mozjpeg/blob/master/usage.txt" target="_blank" rel="noopener">mozjpeg/usage.txt at master · mozilla/mozjpeg · GitHub</a></li>
+<li><a href="http://mozjpeg.codelove.de/binaries.html" target="_blank" rel="noopener">mozjpeg | binaries</a></li>
+<li><a href="http://www.ithome.com.tw/news/89459" target="_blank" rel="noopener">Mozilla釋出檔案更小的Mozjpeg 2.0圖檔，FB採用並贊助發展下一代 | iThome</a></li>
+<li><a href="http://blog.mozilla.com.tw/posts/6084/using-mozjpeg-to-create-efficient-jpegs" target="_blank" rel="noopener">用 mozjpeg 產生高效率的 JPEG | 部落格 | Mozilla Taiwan</a></li>
+<li><a href="http://www.oschina.net/news/54087/mozjpeg-2-0-released" target="_blank" rel="noopener">mozjpeg：JPEG图片压缩5%，获Facebook支持 - 开源中国社区</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/09/03/slowcheetah-xml-transforms-extension/" rel="next" title="SlowCheetah - XML Transforms extension" data-instant>
+                <i class="fa fa-chevron-left"></i> SlowCheetah - XML Transforms extension
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/09/21/mozjpeg-encoder-smaller-jpegs-for-everyone/" rel="prev" title="mozjpeg encoder - smaller jpegs for everyone" data-instant>
+                mozjpeg encoder - smaller jpegs for everyone <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2014/09/20/mozjpeg-improved-jpeg-encoder/';
+      var disqus_title = "Mozjpeg - Improved JPEG encoder";
+      var disqus_url = 'http://larrynung.github.io/2014/09/20/mozjpeg-improved-jpeg-encoder/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

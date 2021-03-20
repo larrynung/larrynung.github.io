@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]Effective C# 條款十八：實現標準Dispose模式">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]Effective C# 條款十八：實現標準Dispose模式">
+<meta property="og:url" content="http://larrynung.github.io/2011/03/10/21774/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]Effective C# 條款十八：實現標準Dispose模式">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]Effective C# 條款十八：實現標準Dispose模式">
+<meta name="twitter:description" content="[C#]Effective C# 條款十八：實現標準Dispose模式">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]Effective C# 條款十八：實現標準Dispose模式 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]Effective C# 條款十八：實現標準Dispose模式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2011-03-10T00:22:50+00:00" content="2011-03-10">
+              2011-03-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/03/10/21774/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/03/10/21774/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><br>    IDisposable接口為.Net程式釋放非託管資源的標準解決方案，可為類別提供即時釋放資源的機制。</p><br><p><br>    <br><br>    其內含有Dispose方法，為資源釋放動作的本體，在該方法的實作上需注意到需內含下面幾個重點任務:</p><br><p><br>    1.判斷是否做過釋放動作<br><br>    因為透過Dispose做資源的釋放後，資源仍舊會有短時間會滯留在記憶體中。此時若該物件仍具有強引用參考，垃圾收集器會無法對該物件做回收的動作。因此該物件有可能會因此再次被錯用 ，重覆釋放到已經釋放的資源，故需在該方法實作時做些檢查的動作。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:bc27b572-c194-42a7-941b-54d7f34e6fc8" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c" name="code"><br>    public class MyResource: IDisposable<br>    {<br>        private bool disposed = false;<br>        …<br>        protected virtual void Dispose(bool disposing)<br>        {<br>            if(this.disposed)<br>                return;<br>           …<br>                disposed = true;<br>        }<br>      }<br></pre><br></div><br><p><br>    <br><br>    2.釋放托管資源</p><br><p><br>    釋放物件中的託管資源。這部分包含釋放有實作IDisposable接口的類別成員，以及斷開有繫結的事件。</p><br><p><br>    <br><br>    3.釋放非托管資源</p><br><p><br>    釋放物件中的非託管資源。</p><br><p><br>    <br><br>    4.取消解構子調用</p><br><p><br>    如我們所了解的，具有解構子的物件其在被垃圾收集器回收處理時，會先被放入解構佇列之中，再交由另一個專門處理解構動作的執行緒去做解構的動作，當解構的動作完成，該物件又會被放回原來的佇列等待垃圾收集器的回收，因此其性能上的耗費會比沒有解構子的物件還來的多。由於IDisposable在實作上會習慣加入解構子做為保險措施，防止類別的使用者忘記叫用Dispose方法，造成資源的洩漏。故在釋放完資源後，我們應該隨即在後呼叫GC.SuppressFinalize，告知垃圾收集器該物件的解構動作跳過不處理。像是:</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:05a7b47a-52dc-4d91-ac26-b048e7b963b0" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>        …<br>        public void Dispose()<br>        {<br>            Dispose(true);<br>            GC.SuppressFinalize(this);<br>        }<br>        protected virtual void Dispose(bool disposing)<br>        {<br>            …<br>        }<br><br>         ~MyResource()<br>        {<br>            Dispose(false);<br>        }<br>        …<br></pre><br></div><br><p><br>     </p><br><p><br>    完整的實作範例如下(摘至MSDN):</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:385214cf-f401-419e-846c-45a9d7f674f7" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.ComponentModel;<br>// The following example demonstrates how to create// a resource class that implements the IDisposable interface// and the IDisposable.Dispose method.public class DisposeExample<br>{<br>    // A base class that implements IDisposable.<br>    // By implementing IDisposable, you are announcing that<br>    // instances of this type allocate scarce resources.<br>    public class MyResource: IDisposable<br>    {<br>        // Pointer to an external unmanaged resource.<br>        private IntPtr handle;<br>        // Other managed resource this class uses.<br>        private Component component = new Component();<br>        // Track whether Dispose has been called.<br>        private bool disposed = false;<br>        // The class constructor.<br>        public MyResource(IntPtr handle)<br>        {<br>            this.handle = handle;<br>        }<br>        // Implement IDisposable.<br>        // Do not make this method virtual.<br>        // A derived class should not be able to override this method.<br>        public void Dispose()<br>        {<br>            Dispose(true);<br>            // This object will be cleaned up by the Dispose method.<br>            // Therefore, you should call GC.SupressFinalize to<br>            // take this object off the finalization queue<br>            // and prevent finalization code for this object<br>            // from executing a second time.<br>            GC.SuppressFinalize(this);<br>        }<br>        // Dispose(bool disposing) executes in two distinct scenarios.<br>        // If disposing equals true, the method has been called directly<br>        // or indirectly by a user’s code. Managed and unmanaged resources<br>        // can be disposed.<br>        // If disposing equals false, the method has been called by the<br>        // runtime from inside the finalizer and you should not reference<br>        // other objects. Only unmanaged resources can be disposed.<br>        protected virtual void Dispose(bool disposing)<br>        {<br>            // Check to see if Dispose has already been called.<br>            if(!this.disposed)<br>            {<br>                // If disposing equals true, dispose all managed<br>                // and unmanaged resources.<br>                if(disposing)<br>                {<br>                    // Dispose managed resources.<br>                    component.Dispose();<br>                }<br>                // Call the appropriate methods to clean up<br>                // unmanaged resources here.<br>                // If disposing is false,<br>                // only the following code is executed.<br>                CloseHandle(handle);<br>                handle = IntPtr.Zero;<br>                // Note disposing has been done.<br>                disposed = true;<br>            }<br>        }<br>        // Use interop to call the method necessary<br>        // to clean up the unmanaged resource.<br>        [System.Runtime.InteropServices.DllImport(“Kernel32”)]<br>        private extern static Boolean CloseHandle(IntPtr handle);<br>        // Use C# destructor syntax for finalization code.<br>        // This destructor will run only if the Dispose method<br>        // does not get called.<br>        // It gives your base class the opportunity to finalize.<br>        // Do not provide destructors in types derived from this class.<br>        ~MyResource()<br>        {<br>            // Do not re-create Dispose clean-up code here.<br>            // Calling Dispose(false) is optimal in terms of<br>            // readability and maintainability.<br>            Dispose(false);<br>        }<br>    }<br>    public static void Main()<br>    {<br>        // Insert code here to create<br>        // and use the MyResource object.<br>    }<br>}</pre><br></div><br><p><br>     </p><br><p><br>    這邊要再特別注意的是，在建立衍生類別時，若其基底類別實作有IDisposable介面，衍生類別也需隨之實作IDisposable介面。</p><br><p><br>     </p><br><p><br>    另外若在實現衍生類別的同時，有對Dispose方法或解構子覆寫的需求，務必要調用對應的基類方法，以確保基類資源能被徹底釋放。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/03/09/21757/" rel="next" title="[C#]More Effective C# 條款四十九： 考慮為大型物件使用弱引用" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]More Effective C# 條款四十九： 考慮為大型物件使用弱引用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/03/14/21824/" rel="prev" title="[C#]Everything SDK" data-instant>
+                [C#]Everything SDK <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2011/03/10/21774/';
+      var disqus_title = "[C#]Effective C# 條款十八：實現標準Dispose模式";
+      var disqus_url = 'http://larrynung.github.io/2011/03/10/21774/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

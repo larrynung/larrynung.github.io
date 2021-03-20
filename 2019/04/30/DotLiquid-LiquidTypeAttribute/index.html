@@ -1,0 +1,626 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="DotLiquid,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="使用 DotLiquid 做範本渲染時，如果需要使用到自訂型別當作參數，自訂型別可加掛 LiquidTypeAttribute 指定範本會使用到的屬性。">
+<meta name="keywords" content="DotLiquid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DotLiquid - LiquidTypeAttribute">
+<meta property="og:url" content="http://larrynung.github.io/2019/04/30/DotLiquid-LiquidTypeAttribute/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="使用 DotLiquid 做範本渲染時，如果需要使用到自訂型別當作參數，自訂型別可加掛 LiquidTypeAttribute 指定範本會使用到的屬性。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2019/04/30/DotLiquid-LiquidTypeAttribute/1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:39.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DotLiquid - LiquidTypeAttribute">
+<meta name="twitter:description" content="使用 DotLiquid 做範本渲染時，如果需要使用到自訂型別當作參數，自訂型別可加掛 LiquidTypeAttribute 指定範本會使用到的屬性。">
+<meta name="twitter:image" content="http://larrynung.github.io/2019/04/30/DotLiquid-LiquidTypeAttribute/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> DotLiquid - LiquidTypeAttribute | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                DotLiquid - LiquidTypeAttribute
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2019-04-30T07:35:09+00:00" content="2019-04-30">
+              2019-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/04/30/DotLiquid-LiquidTypeAttribute/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/30/DotLiquid-LiquidTypeAttribute/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>使用 DotLiquid 做範本渲染時，如果需要使用到自訂型別當作參數，自訂型別可加掛 LiquidTypeAttribute 指定範本會使用到的屬性。  </p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line"></span><br><span class="line">namespace DotLiquid.LiquidType.Model</span><br><span class="line">&#123;</span><br><span class="line">    [LiquidType(nameof(Person.Id), nameof(Person.Name), nameof(Person.NickName))]</span><br><span class="line">    public class Person</span><br><span class="line">    &#123;</span><br><span class="line">        public string Id &#123; get; set; &#125;</span><br><span class="line">        public string Name &#123; get; set; &#125;</span><br><span class="line">        public string NickName &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">        public Person()</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public Person(string name)</span><br><span class="line">        &#123;</span><br><span class="line">            this.Id = Guid.NewGuid().ToString();</span><br><span class="line">            this.Name = name;</span><br><span class="line">            this.NickName = name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>加掛 Attribute 後範本就可以使用自訂型別來渲染。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for person in persons -%&#125;</span><br><span class="line">hi &#123;&#123;person.NickName&#125;&#125;(&#123;&#123;person.Id&#125;&#125;, &#123;&#123;person.Name&#125;&#125;)~</span><br><span class="line">&#123;% endfor -%&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>渲染時注意要設定使用 CSharpNamingConvention，不然會使用到 Ruby 的命名規則，設定的屬性名稱會被轉為小寫且用底線隔開，會找不到對應的屬性。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Template.NamingConvention = new NamingConventions.CSharpNamingConvention();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>整個程式寫起來會像下面這樣：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.IO;</span><br><span class="line">using System.Reflection;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using DotLiquid.LiquidType.Model;</span><br><span class="line"></span><br><span class="line">namespace DotLiquid.LiquidType</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Template.NamingConvention = new NamingConventions.CSharpNamingConvention();</span><br><span class="line">            </span><br><span class="line">            var larry = new Person(&quot;Larry&quot;);</span><br><span class="line">            var result = GenerateHelloWorld(larry);</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(result);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static string Generate(string templateContext, object model)</span><br><span class="line">        &#123;</span><br><span class="line">            var template = Template.Parse(templateContext);</span><br><span class="line">            return template.Render(Hash.FromAnonymousObject(model));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static string GenerateHelloWorld(params Person[] persons)</span><br><span class="line">        &#123;</span><br><span class="line">            var templateContext = ReadContentFromResource(&quot;DotLiquid.LiquidType.Template.HelloWorld.tpl&quot;);</span><br><span class="line">            var model = new &#123;persons = persons&#125;;</span><br><span class="line"></span><br><span class="line">            return Generate(templateContext, model);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        private static string ReadContentFromResource(string resourceName)</span><br><span class="line">        &#123;</span><br><span class="line">            return ReadContentFromResourceAsync(resourceName).Result;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        private static async Task&lt;string&gt; ReadContentFromResourceAsync(string resourceName)</span><br><span class="line">        &#123;</span><br><span class="line">            var assembly = Assembly.GetExecutingAssembly();</span><br><span class="line">            using (var stream = assembly.GetManifestResourceStream(resourceName))</span><br><span class="line">            using (var reader = new StreamReader(stream))</span><br><span class="line">            &#123;</span><br><span class="line">                return await reader.ReadToEndAsync();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<img src="/2019/04/30/DotLiquid-LiquidTypeAttribute/1.png">
+<p><br></p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers" target="_blank" rel="noopener">DotLiquid for Developers · dotliquid/dotliquid Wiki</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DotLiquid/" rel="tag” data-instant>#DotLiquid</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/27/DotLiquid-Getting-started/" rel="next" title="DotLiquid - Getting started" data-instant>
+                <i class="fa fa-chevron-left"></i> DotLiquid - Getting started
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/01/DotLiquid-Drops/" rel="prev" title="DotLiquid - Drops" data-instant>
+                DotLiquid - Drops <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2019/04/30/DotLiquid-LiquidTypeAttribute/';
+      var disqus_title = "DotLiquid - LiquidTypeAttribute";
+      var disqus_url = 'http://larrynung.github.io/2019/04/30/DotLiquid-LiquidTypeAttribute/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]擷取Picasa資料庫(_.PMP)內現有的資料">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]擷取Picasa資料庫(_.PMP)內現有的資料">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/45365d47-127e-4354-8d69-6d5aa9eb9b6d/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]擷取Picasa資料庫(_.PMP)內現有的資料">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/45365d47-127e-4354-8d69-6d5aa9eb9b6d/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/45365d47-127e-4354-8d69-6d5aa9eb9b6d/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]擷取Picasa資料庫(_.PMP)內現有的資料">
+<meta name="twitter:description" content="[C#]擷取Picasa資料庫(_.PMP)內現有的資料">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/45365d47-127e-4354-8d69-6d5aa9eb9b6d/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]擷取Picasa資料庫(_.PMP)內現有的資料 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]擷取Picasa資料庫(_.PMP)內現有的資料
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/45365d47-127e-4354-8d69-6d5aa9eb9b6d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/45365d47-127e-4354-8d69-6d5aa9eb9b6d/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>筆者在[C#]取用.picasa.ini內存的現有資訊來做臉部偵測這篇透過了Picasa的ini檔擷取出了臉部的資訊，但是該ini檔如果不經過Picasa去整理相片就不會產生。因此這邊筆者想要直接去擷取Picasa的資料庫，因為用Picasa瀏覽時多半相片都會顯示臉部的範圍，儘管使用者沒有做過Tag的動作，代表Picasa其實不論是否有做過Tag都會有臉部識別的資訊，只是可能存放在自己的資料庫中。</p>  <p> </p>  <p>Picasa的資料庫檔存放在%localappdata%\Google\Picasa2\db3下，以.pmp為附檔名。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1208/CPicasa.PMP_BE23/image_4.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\45365d47-127e-4354-8d69-6d5aa9eb9b6d\image_thumb_1.png" width="518" height="422"></a> </p>  <p> </p>  <p>.pmp是Picasa自己的檔案格式，格式的說明可參閱<a href="http://sbktech.blogspot.tw/2011/12/picasa-pmp-format.html" target="_blank">The Picasa .pmp format，簡單的來說該檔案的Header長得像下面這樣：</a></p>  <p>4bytes: magic: 0x3fcccccd   <br>2bytes: field-type: unsigned short.    <br>2bytes: 0x1332 – constant.    <br>4bytes: 0x00000002 – constant.    <br>2bytes: field-type: unsigned short – identical with field-type above.    <br>2bytes: 0x1332 – constant.    <br>4bytes: number-of-entries: unsigned int.</p>  <p> </p>  <p>1~4 Byte是用來識別的，固定是0x3fcccccd。</p>  <p> </p>  <p>5~6 Byte是後面存放的資料型態，這主要是告訴我們後面要怎樣將存放的資料讀取出來，它的值介於0x00 - 0x07：</p>  <p>0x0: null-terminated strings.   <br>0x1: unsigned integers, 4 bytes.    <br>0x2: dates, 8 bytes as a double.    <br>0x3: byte field, 1 unsigned byte.    <br>0x4: unsigned long, 8bytes.    <br>0x5: unsigned short, 2bytes.    <br>0x6: null-terminated string.    <br>0x7: unsigned int, 4 bytes.</p>  <p> </p>  <p>7~8 Byte是個常數值，固定是0x1332。</p>  <p> </p>  <p>9~12 Byte也是個常數，固定是0x00000002。</p>  <p> </p>  <p>13~14 Byte一樣是檔案的型態，取出的值必須要跟5~6 Byte取出的值是一樣的。</p>  <p> </p>  <p>15~16 Byte是個常數值，固定是0x1332。</p>  <p> </p>  <p>17~20 Byte是表示後面有多少的資料量。</p>  <p> </p>  <p>第21個Byte後面就是實際的資料，資料的讀取方式依照前面取出的資料型態不同，解析的方式就有所不同。</p>  <p> </p>  <p>規則知道後我們可以很輕鬆的分析檔案是否是.pmp的格式，也可以擷取出裡面的資料。像是下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9f1244a8-2a0a-4190-be71-c19618a7b1e5" class="wlWriterSmartContent"><pre name="code" class="c#">            …<br>            using (var fs = File.OpenRead(file))<br>            {<br>                using (var br = new BinaryReader(fs))<br>                {<br>                    var magic = br.ReadBytes(4);<br>                    if(magic[0] != 0xcd ||<br>                        magic[1] != 0xcc ||<br>                        magic[2] != 0xcc ||<br>                        magic[3] != 0x3f)<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    var type = br.ReadInt16();<br><br>                    if (0x1332 != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (0x00000002 != br.ReadInt32())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (type != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (0x1332 != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    var number = br.ReadInt32();<br><br>                    switch (type)<br>                    {<br>                         case 0x00:<br>                            DumpStringField(br, number);<br>                            break;<br>                        case 0x01:<br>                            Dump4ByteField(br, number);<br>                            break;<br>                        case 0x02:<br>                            DumpDateField(br, number);<br>                            break;<br>                        case 0x03:<br>                            DumpByteField(br, number);<br>                            break;<br>                        case 0x04:<br>                            Dump8ByteField(br, number);<br>                            break;<br>                        case 0x05:<br>                            Dump2ByteField(br, number);<br>                            break;<br>                        case 0x06:<br>                            DumpStringField(br, number);<br>                            break;<br>                        case 0x07:<br>                            Dump4ByteField(br, number);<br>                            break;<br>                        default:<br>                            throw new Exception(“Incorrect format”);<br>                    }<br>                }<br>            }<br>            …</pre></div><br><br><p> </p>
+
+<p>比較完整的程式碼範例如下(Date那邊的處理程式是壞的，以筆者的需求來說也暫時用不到，故目前請忽略該段處理)：</p>
+
+<p><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2088d4da-fa90-41df-93e7-e6ed5cec568d" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Windows.Forms;<br>using System.IO;<br><br>namespace WindowsFormsApplication28<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }<br><br>        private void btnLoad_Click(object sender, EventArgs e)<br>        {<br>            if (openFileDialog1.ShowDialog() != DialogResult.OK)<br>                return;<br><br>            textBox1.Text = string.Empty;<br><br>            var file = openFileDialog1.FileName;<br><br>            using (var fs = File.OpenRead(file))<br>            {<br>                using (var br = new BinaryReader(fs))<br>                {<br>                    var magic = br.ReadBytes(4);<br>                    if(magic[0] != 0xcd ||<br>                        magic[1] != 0xcc ||<br>                        magic[2] != 0xcc ||<br>                        magic[3] != 0x3f)<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    var type = br.ReadInt16();<br><br>                    if (0x1332 != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (0x00000002 != br.ReadInt32())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (type != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    if (0x1332 != br.ReadInt16())<br>                    {<br>                        throw new Exception(“Incorrect format”);<br>                    }<br><br>                    var number = br.ReadInt32();<br><br>                    switch (type)<br>                    {<br>                         case 0x00:<br>                            DumpStringField(br, number);<br>                            break;<br>                        case 0x01:<br>                            Dump4ByteField(br, number);<br>                            break;<br>                        case 0x02:<br>                            DumpDateField(br, number);<br>                            break;<br>                        case 0x03:<br>                            DumpByteField(br, number);<br>                            break;<br>                        case 0x04:<br>                            Dump8ByteField(br, number);<br>                            break;<br>                        case 0x05:<br>                            Dump2ByteField(br, number);<br>                            break;<br>                        case 0x06:<br>                            DumpStringField(br, number);<br>                            break;<br>                        case 0x07:<br>                            Dump4ByteField(br, number);<br>                            break;<br>                        default:<br>                            throw new Exception(“Incorrect format”);<br>                    }<br>                }<br>            }<br>        }<br><br>        private void DumpStringField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder(1024);<br>            for (long i = 0; i &lt; number; i++)<br>            {<br>                var value = getString(br);//br.ReadString();<br>                sb.AppendFormat(“[{0}] {1}”, i, value);<br>                sb.Append(Environment.NewLine);<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br><br>        private String getString(BinaryReader br)<br>        {<br>            var sb = new StringBuilder();<br>            int c;<br>            while((c = br.Read()) != 0) {<br>                sb.Append((char)c);<br>            }<br>            return sb.ToString();<br>        }<br><br>        private void DumpDateField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder();<br>            int[] bytes = new int[8];<br>            for (long idx = 0; idx &lt; number; idx++)<br>            {<br>                long ld = 0;<br>                for (int i = 0; i &lt; 8; i++)<br>                {<br>                    bytes[i] = br.ReadByte();<br>                    var temp = bytes[i];<br>                    temp &lt;&lt;= (8 <em> i);<br>                    ld += temp;<br>                }<br><br>                sb.Append(“[“ + idx + “] “);<br><br>                double d = BitConverter.Int64BitsToDouble(ld);<br><br>                d -= 25569;<br>                long ut = (long)Math.Round(d </em> 864001 * 10001);<br><br>                sb.Append(DateTime.FromFileTime(ut));<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br><br>        private void DumpByteField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder(1024);<br>            for (long i = 0; i &lt; number; i++)<br>            {<br>                var value = br.ReadByte();<br>                sb.AppendFormat(“[{0}] {1}”, i, value);<br>                sb.Append(Environment.NewLine);<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br><br>        private void Dump2ByteField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder(1024);<br>            for (long i = 0; i &lt; number; i++)<br>            {<br>                var value = br.ReadInt16();<br>                sb.AppendFormat(“[{0}] {1}”, i, value);<br>                sb.Append(Environment.NewLine);<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br><br>        private void Dump4ByteField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder(1024);<br>            for (long i = 0; i &lt; number; i++)<br>            {<br>                var value = br.ReadInt32();<br>                sb.AppendFormat(“[{0}] {1}”, i, value);<br>                sb.Append(Environment.NewLine);<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br><br>        private void Dump8ByteField(BinaryReader br, int number)<br>        {<br>            var sb = new StringBuilder();<br>            int[] bytes = new int[8];<br>            for (long idx = 0; idx &lt; number; idx++)<br>            {<br>                for (int i = 0; i &lt; 8; i++)<br>                {<br>                    bytes[i] = br.ReadByte();<br>                }<br><br>                sb.Append(“[“ + idx + “] “);<br><br>                for (int i = 7; i &gt;= 0; i–)<br>                {<br>                    String x = Convert.ToString(bytes[i], 16);<br><br>                    if (x.Length == 1)<br>                    {<br>                        sb.Append(“0”);<br>                    }<br>                    sb.Append(x);<br>                }<br>                sb.AppendLine();<br>            }<br>            textBox1.Text = sb.ToString();<br>        }<br>    }<br>}</pre></div><br><br><br><p> </p>
+
+<p>運行後我們就可以查驗.pmp的檔案，像是下圖筆者就成功的將Picasa內的目錄資訊給正確的擷取出來了。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\45365d47-127e-4354-8d69-6d5aa9eb9b6d\image_thumb.png" width="304" height="304"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>The Picasa .pmp format</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/43587ea2-bd7c-4317-b931-6e56c8801f45/" rel="next" title="[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/420f1e7d-3a75-437d-9361-8ecf79231634/" rel="prev" title=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (一) 概念與簡介" data-instant>
+                .NET 4.0 New Feature - 程式碼合約(Code Contracts) (一) 概念與簡介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/45365d47-127e-4354-8d69-6d5aa9eb9b6d/';
+      var disqus_title = "[C#]擷取Picasa資料庫(_.PMP)內現有的資料";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/45365d47-127e-4354-8d69-6d5aa9eb9b6d/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

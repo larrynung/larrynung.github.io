@@ -1,0 +1,616 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[VB.NET]突破Disable按鈕的封鎖與限制">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[VB.NET]突破Disable按鈕的封鎖與限制">
+<meta property="og:url" content="http://larrynung.github.io/2009/05/27/8584/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[VB.NET]突破Disable按鈕的封鎖與限制">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8584/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8584/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8584/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8584/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8584/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[VB.NET]突破Disable按鈕的封鎖與限制">
+<meta name="twitter:description" content="[VB.NET]突破Disable按鈕的封鎖與限制">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/8584/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [VB.NET]突破Disable按鈕的封鎖與限制 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [VB.NET]突破Disable按鈕的封鎖與限制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-05-27T17:28:08+00:00" content="2009-05-28">
+              2009-05-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/05/27/8584/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/05/27/8584/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>Introduction</h2><p>一般來說，當我們程式中有部份功能欲不讓使用者使用時。通常我們會把按鈕給Disable掉，讓使用者無法執行特定的功能。但這樣做真的就安全嗎？答案是否定的。其實光是把按鈕給Disable掉是很容易破解的，在對岸就已有許多破解工具 (e.x. 按鈕突破大師)，因此在編碼上最好還是要在程式中自行加上判斷，讓按鈕就算被突破也無法執行。</p><p> </p><h2>突破Disable按鈕的封鎖與限制</h2><p>欲突破Disable按鈕的封鎖與限制，其實很簡單。只要透過Win32 API即可達成。</p><p>需要使用的API有：</p><ul><li>ChildWindowFromPoint</li><li>GetForegroundWindow</li><li>IsWindowEnabled</li><li>EnableWindow</li><li>GetCursorPos</li><li>ScreenToClient</li></ul><p> </p><p>程式流程如下：</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="274" height="534" src="\images\posts\8584\image_thumb.png"></p><p> </p><p>程式範例如下：</p><p>MFC</p><div style="width: 622px; height: 271px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">void</span> CBtnEnableDlg::OnButton1() </pre><pre><br>{</pre><pre class="alt"><br>  SetTimer(1,100,NULL);</pre><pre><br>}</pre><pre class="alt"><br> </pre><pre><span class="kwrd">void</span> CBtnEnableDlg::OnTimer(UINT nIDEvent) </pre><pre class="alt"><br>{</pre><pre><br> HWND hWnd,hWndChild;</pre><pre class="alt"><br>  POINT point;</pre><pre><br> </pre><pre class="alt"><br>    hWnd=::GetForegroundWindow();</pre><pre><br>    GetCursorPos(&amp;point);</pre><pre class="alt"><br>    ::ScreenToClient(hWnd,&amp;point);</pre><pre><br>    hWndChild=::ChildWindowFromPoint(hWnd,point);</pre><pre class="alt"><br>    <span class="kwrd">if</span>(::IsWindowEnabled(hWndChild)==0)</pre><pre><br>    {            </pre><pre class="alt"><br>    ::EnableWindow(hWndChild,1);</pre><pre><br>  }             </pre><pre class="alt"><br>    </pre><pre><br>    CDialog::OnTimer(nIDEvent);</pre><pre class="alt"><br>}</pre></div></div><p> </p><p><style type="text/css">&lt;![CDATA[</p>
+<p>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style></p><p> </p><p>VB.NET</p><div style="width: 622px; height: 329px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Imports</span> System.Runtime.InteropServices</pre><pre><br> </pre><pre class="alt"><span class="kwrd">Public</span> <span class="kwrd">Class</span> Form1</pre><pre><br> </pre><pre class="alt"><br>    &lt;DllImport(<span class="str">“user32.dll”</span>)&gt; _</pre><pre><span class="kwrd">Private</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ChildWindowFromPoint(<span class="kwrd">ByVal</span> hWndParent <span class="kwrd">As</span> IntPtr, <span class="kwrd">ByVal</span> Point <span class="kwrd">As</span> Point) <span class="kwrd">As</span> IntPtr</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre><br> </pre><pre class="alt"><br>    &lt;DllImport(<span class="str">“user32.dll”</span>, SetLastError:=<span class="kwrd">True</span>)&gt; _</pre><pre><span class="kwrd">Private</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> GetForegroundWindow() <span class="kwrd">As</span> IntPtr</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre><br> </pre><pre class="alt"><br>    &lt;DllImport(<span class="str">“user32.dll”</span>)&gt; _</pre><pre><span class="kwrd">Private</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> IsWindowEnabled(<span class="kwrd">ByVal</span> hWnd <span class="kwrd">As</span> IntPtr) <span class="kwrd">As</span> &lt;MarshalAs(UnmanagedType.Bool)&gt; <span class="kwrd">Boolean</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Declare</span> <span class="kwrd">Function</span> EnableWindow <span class="kwrd">Lib</span> <span class="str">“user32”</span> (<span class="kwrd">ByVal</span> hwnd <span class="kwrd">As</span> IntPtr, <span class="kwrd">ByVal</span> fEnable <span class="kwrd">As</span> <span class="kwrd">Integer</span>) <span class="kwrd">As</span> <span class="kwrd">Integer</span></pre><pre><br> </pre><pre class="alt"><br>    &lt;DllImport(<span class="str">“user32.dll”</span>, SetLastError:=<span class="kwrd">True</span>)&gt; _</pre><pre><span class="kwrd">Private</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ScreenToClient(<span class="kwrd">ByVal</span> hWnd <span class="kwrd">As</span> IntPtr, <span class="kwrd">ByRef</span> lpPoint <span class="kwrd">As</span> Point) <span class="kwrd">As</span> <span class="kwrd">Boolean</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Timer1_Tick(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Timer1.Tick</pre><pre><br>        <span class="kwrd">Dim</span> p <span class="kwrd">As</span> Point = MousePosition</pre><pre class="alt"><br>        <span class="kwrd">Dim</span> hWnd, hWndChild <span class="kwrd">As</span> IntPtr</pre><pre><br>        hWnd = GetForegroundWindow()</pre><pre class="alt"><br>        ScreenToClient(hWnd, p)</pre><pre><br>        hWndChild = ChildWindowFromPoint(hWnd, p)</pre><pre class="alt"><br> </pre><pre><br>        <span class="kwrd">If</span> <span class="kwrd">Not</span> IsWindowEnabled(hWndChild) <span class="kwrd">Then</span></pre><pre class="alt"><br>            EnableWindow(hWndChild, 1)</pre><pre><br>        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> CheckBox1_CheckedChanged(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> CheckBox1.CheckedChanged</pre><pre><br>        Timer1.Enabled = CheckBox1.Checked</pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><span class="kwrd">End</span> <span class="kwrd">Class</span></pre></div></div><p> </p><p><style type="text/css">&lt;![CDATA[</p>
+<p>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style><style type="text/css">&lt;![CDATA[</p>
+<p>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style></p><p> </p><p>執行後我們把滑鼠移到Disable的按鈕上，按鈕就會被強制變回Enable狀態了。變回Enable的按鈕也變得可以按下與執行。</p><p> </p><h2>執行步驟</h2><p><strong>Step1.開啟按鈕突破程式</strong></p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="170" height="112" src="\images\posts\8584\image_thumb_1.png"></p><p> </p><p><strong>Step2.開啟欲突破的程式</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/Disable_119C/image_6.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="490" height="336" src="\images\posts\8584\image_thumb_2.png"></a></p><p> </p><p><strong>Step3.啟動按鈕突破功能</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/Disable_119C/image_8.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="170" height="112" src="\images\posts\8584\image_thumb_3.png"></a></p><p> </p><p><strong>Step4.把滑鼠移到欲突破的按鈕上</strong></p><p>當滑鼠移到欲突破的Disable按鈕上，按鈕會被強制設回Enable。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/Disable_119C/image_10.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="490" height="336" src="\images\posts\8584\image_thumb_4.png"></a></p><p> </p><p>P.S.</p><ul><li>上述範例對.NET程式的按鈕無效，請使用非.NET程式來測試。</li><li>雖範例無法達到突破.NET按鈕，但這不代表.NET程式不需注意這問題。因為能突破.NET按鈕的工具確實存在(e.x. Enable.NET)。</li><li>雖範例只能把Disable按鈕設為Enable，但其實運用同樣的概念也可以把隱藏的元件顯示出來。</li></ul><p> </p><h2>Conclusion</h2><p>此篇的主旨不是要教程式員破解，而是要提醒設計員在程式的設計上不是只要把按鈕給Disable掉就安全了。還是要額外利用Code去判斷是否可以執行才是較為安全的作法，尤其是程式中重要的功能更是要加以防堵。</p><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/05/23/8537/" rel="next" title="[VB.NET]即時座標交叉線條" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]即時座標交叉線條
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/05/27/8590/" rel="prev" title="[.NET Resource][Visual Studio]The Code Project Add-In for Visual Studio 2008" data-instant>
+                [.NET Resource][Visual Studio]The Code Project Add-In for Visual Studio 2008 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">突破Disable按鈕的封鎖與限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">執行步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/05/27/8584/';
+      var disqus_title = "[VB.NET]突破Disable按鈕的封鎖與限制";
+      var disqus_url = 'http://larrynung.github.io/2009/05/27/8584/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

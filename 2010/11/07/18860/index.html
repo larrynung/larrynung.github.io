@@ -1,0 +1,660 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content=".NET 4.0 New Feature - Generic Lazy class">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 4.0 New Feature - Generic Lazy class">
+<meta property="og:url" content="http://larrynung.github.io/2010/11/07/18860/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content=".NET 4.0 New Feature - Generic Lazy class">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/18860/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/18860/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/18860/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET 4.0 New Feature - Generic Lazy class">
+<meta name="twitter:description" content=".NET 4.0 New Feature - Generic Lazy class">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/18860/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> .NET 4.0 New Feature - Generic Lazy class | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                .NET 4.0 New Feature - Generic Lazy class
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-11-07T03:39:14+00:00" content="2010-11-07">
+              2010-11-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/11/07/18860/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/11/07/18860/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    .NET 4.0新增一泛型Lazy類型，可用以延遲物件初始化設定，透過Lazy類型的建構子我們可將要延遲初始化的物件類型與其初始化動作傳入，第一次存取Lazy.Value屬性或是呼叫Lazy.ToString方法時，該類型就會幫我們執行對應的初始化動作，後續再去存取就會直接取得結果，而不會再去做初始化的動作。透過這樣的Lazy類型我們可以很輕鬆的延遲物件初始化設定，可以分散物件初始化的時間點、與避免不必要的初始化動作，我們不再需要使用以往的方法自行為物件成員加上延遲初始化的機制，也不需要在程式中加入額外的變數與Flag來做這樣的機制,在會耗用大量資源的物件上相當的好用。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Lazy類型在實作上其概念大概如Lazy Computation in C#這篇文章所提，會在建構時傳入初始化函式的指標並設定給內部成員變數，當呼叫Value屬性時會依內部成員變數去判別是否已經做過初始化的動作，若已初始化則傳回當初初始完後的值，若未出始化則初始化後再將其值設定給內部成員變數後回傳，當然這只是概念上的示意，實際底層的運作會比這個來的複雜許多。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:47430b89-21c9-4963-8603-3db91b5b590c" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    using System.Linq;<br>public class Lazy&lt;T&gt; {<br>  private Func&lt;T&gt; func;<br>  private T result;<br>  private bool hasValue;<br>  public Lazy(Func&lt;T&gt; func) {<br>    this.func = func;<br>    this.hasValue = false;<br>  }<br>  public T Value {<br>    get {<br>      if (!this.hasValue) {<br>        this.result = this.func();<br>        this.hasValue = true;<br>      }<br>      return this.result;<br>    }<br>  }<br>}</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    知道了實作原理後，接著來看一下如何使用，Lazy類型並未含有太多複雜的成員，只有兩個重要的屬性IsVauleCreated與Value。IsValueCreated屬性可用以判別是否有已經運行過初始化的動作，而Value則是會初始化物件或是直接將初始化後的值傳出。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="91" src="\images\posts\18860\image_thumb.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="562"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊來看一個簡單的使用範例：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:44cfb4de-b33c-436d-9ee7-5d2a9018e21f" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    using System;<br>using System.Diagnostics;</pre></div></p>
+<p>namespace ConsoleApplication1<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            Lazy&lt;Boolean&gt; lazy = new Lazy&lt;Boolean&gt;(() =&gt;<br>            {<br>                Console.WriteLine(“Initializing…”);<br>                System.Threading.Thread.Sleep(10000);<br>                Console.WriteLine(“Initialized…”);<br>                return true;<br>            });</p>
+<pre><code>        Console.WriteLine(&quot;IsValueCreated = {0}&quot;, lazy.IsValueCreated);
+        Stopwatch sw = Stopwatch.StartNew();
+        Console.WriteLine(&quot;result = {0}&quot;, lazy.Value);
+        //Console.WriteLine(&quot;result = {0}&quot;, lazy.ToString());
+        Console.WriteLine(&quot;Elapsed Time = {0} ms&quot;, sw.ElapsedMilliseconds);
+
+        Console.WriteLine(new string(&apos;=&apos;, 50));
+        Console.WriteLine(&quot;IsValueCreated = {0}&quot;, lazy.IsValueCreated);
+        sw.Restart();
+        Console.WriteLine(&quot;result = {0}&quot;, lazy.Value);
+        //Console.WriteLine(&quot;result = {0}&quot;, lazy.ToString());
+        Console.WriteLine(&quot;Elapsed Time = {0} ms&quot;, sw.ElapsedMilliseconds);
+    }
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行後我們可看到下面這樣的運行結果，可以看到只有第一次運行時會做初始化的動作，會耗費比較多的時間，後續再運行</p><p></p>
+<p></p><p><br>    就直接回傳初始化後的結果，因此會比較快速。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="227" src="\images\posts\18860\image_thumb.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="456"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    也可以搭配變數初始器使用，同時取得變數初始器與Lazy initialization的優點：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e86b5db3-ed15-4d88-b816-df64e3196f1b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    class Person<br>    {<br>        Lazy&lt;int[]&gt; _stocks = new Lazy&lt;int[]&gt;(<br>            () =&gt;<br>            {<br>                //Initializing…<br>                return new int[] { 2002, 2360, 0050 };<br>            }<br>            );</pre></div></p>
+<pre><code>    public int[] Stocks { get { return _stocks.Value; } }
+}
+...
+static void Main(string[] args)
+{
+    Person p = new Person();
+    System.Console.WriteLine(string.Join(&quot;,&quot;, p.Stocks.Select((value) =&amp;gt; { return value.ToString(); })));
+}&lt;/pre&gt;
+</code></pre><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行結果如下：</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="123" src="\images\posts\18860\image_thumb_1.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="353"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    需特別注意Lazy類型是用來作初始化動作的，故其被定位為初始後就不得清除變更，初始化後的值會被快取，在使用上若某些方法可能會每次呼叫傳出不同值的話並不適用於Lazy類型。另外該篇只是做個初淺的整理介紹，建議還是要參閱Lazy Computation in C#這篇文章以獲取較為清楚的概念，尤其是下方最後一個範例。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        Lazy(Of T) 類別</li><br>    <li><br>        Lazy(Of T) 成員</li><br>    <li><br>        Lazy initialization in .NET 4 – Lazy&lt;T&gt;</li><br>    <li><br>        Lazy Computation in C#</li><br>    <li><br>        .Net Framework 4.0: Using System.Lazy&lt;T&gt;</li><br>    <li><br>        Lazy(Of T) class in .Net Framework4.0</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/11/05/18812/" rel="next" title="[VB.NET]用Extension Method移除控制項" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]用Extension Method移除控制項
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/11/10/19347/" rel="prev" title="使用Extension Method計算漢字筆畫" data-instant>
+                使用Extension Method計算漢字筆畫 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/11/07/18860/';
+      var disqus_title = ".NET 4.0 New Feature - Generic Lazy class";
+      var disqus_url = 'http://larrynung.github.io/2010/11/07/18860/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

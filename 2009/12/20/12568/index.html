@@ -1,0 +1,703 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,Performance,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[Performance][C#]同時判斷多個字串是否為數值型態">
+<meta name="keywords" content="CSharp,Performance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Performance][C#]同時判斷多個字串是否為數值型態">
+<meta property="og:url" content="http://larrynung.github.io/2009/12/20/12568/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[Performance][C#]同時判斷多個字串是否為數值型態">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/12568/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Performance][C#]同時判斷多個字串是否為數值型態">
+<meta name="twitter:description" content="[Performance][C#]同時判斷多個字串是否為數值型態">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/12568/image_thumb_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [Performance][C#]同時判斷多個字串是否為數值型態 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Performance][C#]同時判斷多個字串是否為數值型態
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-12-20T00:08:45+00:00" content="2009-12-20">
+              2009-12-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/12/20/12568/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/12/20/12568/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一般來說，在C#中若我們想要判斷字串是否為數值形式。多半我們會利用TryParse、正規表示式這兩種方式來做處理。相關的文章在網路上已經很多了，像是TryParse的方法就可以參閱HOW TO：判斷字串是否表示數值 (C# 程式設計手冊)這篇MSDN文章。</p>  <p> </p>  <p>這邊摘錄MSDN的範例，簡單的帶過：     <br>    </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8355b220-81ee-4554-8807-5bdc2580cb4a" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">  int i = 0;<br>  string s = “108”;<br>  bool result = int.TryParse(s, out i); //i now = 108</pre></div><br><br><br><p> </p>
+
+<p>以上就是判斷字串是否為數值的程式寫法，相信這個簡單的程式大家應該都會寫，這邊就不再深入探討。今天要談的重點是當今天碰到要判斷很多字串是否都為數值時，您會怎摸樣去做？</p>
+
+<p>這邊我大概的提出了幾個我能想到的作法，再對其效能做些比較。</p>
+
+<p> </p>
+
+<h2>方法一</h2>
+
+<p>應該是大家最常用的方法，分別判斷所有的字串是否為數值。  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:245a386e-9055-4932-bcd0-045cbb13c13c" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static Boolean IsNumeric1(string[] values)<br>        {<br>            int tempValue;<br>            foreach (string value in values)<br>            {<br>                if (!int.TryParse(value, out tempValue))<br>                    return false;<br>            }<br>            return true;<br>        }</pre></div><br><br><br><p> </p>
+
+<h2>方法二</h2>
+
+<p>主要是把所有字串先合併成一個字串，再用TryParse作數值判斷的動作。(這個方法需特別注意的是，此種合併的作法可能會讓數值溢位。)  <br> </p>
+
+<p><strong>方法二之一</strong></p>
+
+<p>不處理負數的情況  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:018a734d-ef00-476b-b0c3-3d8fd4ed13f5" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static Boolean IsNumeric2_1(string[] values)<br>        {<br>            int tempValue;<br>            return int.TryParse(string.Join(string.Empty, values), out tempValue);<br>        }</pre></div><br><br><br><p> </p>
+
+<p><strong>方法二之二</strong></p>
+
+<p>處理負數的情況  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4a67dca2-ce4e-49b6-b5db-84a097e95510" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static Boolean IsNumeric2_2(string[] values)<br>        {<br>            int tempValue;<br>            int idx = 0;<br>            foreach (string value in values)<br>            {<br>                values[idx] = value.TrimStart(‘-‘);<br>            }<br>            return int.TryParse(string.Join(string.Empty, values), out tempValue);<br>        }</pre></div><br><br><br><p> </p>
+
+<h2>方法三</h2>
+
+<p>用正規表示式分別判斷其是否為數值。  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ec2b1fd6-0667-4ab7-b0b5-1e2d0074ec6f" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static Boolean IsNumeric3(string[] values)<br>        {<br>            foreach (string value in values)<br>            {<br>                if (!Regex.IsMatch(value,@”\d+”))<br>                    return false;<br>            }<br>            return true;<br>        }</pre></div><br><br><br><p> </p>
+
+<p> </p>
+
+<h2>方法四</h2>
+
+<p>把所有字串先合併成一個字串，再用正規表示式作數值判斷的動作。   <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a81807ff-1c26-480e-86fc-944e0be2b539" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static Boolean IsNumeric4(string[] values)<br>        {<br>            return Regex.IsMatch(string.Join(string.Empty, values), @”\d+”);<br>        }</pre></div><br><br><br><p> </p>
+
+<p> </p>
+
+<h2>效能比較</h2>
+
+<p>測試程式如下：     <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0819aeef-eff0-4aad-b88b-54dc7356ae77" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">        static void Main(string[] args)<br>        {<br>            //String[] values = InitTestStrings(1);<br>            String[] values = InitTestStrings(10);<br>            //String[] values = InitTestStrings(10,1);<br>            //String[] values = InitTestStrings(10, 2);<br>            //String[] values = InitTestStrings(10, 3);<br>            int testCount = 1000000;<br>            Stopwatch sw = Stopwatch.StartNew();<br>            for (int idx = 0; idx &lt; testCount; ++idx)<br>            {<br>                IsNumeric1(values);<br>            }<br>            sw.Stop();<br>            Console.WriteLine(“Method1: “ + sw.ElapsedMilliseconds + “ ms”);<br><br>            sw.Reset();<br>            sw.Start();<br>            for (int idx = 0; idx &lt; testCount; ++idx)<br>            {<br>                IsNumeric2_1(values);<br>            }<br>            sw.Stop();<br>            Console.WriteLine(“Method2-1: “ + sw.ElapsedMilliseconds + “ ms”);<br><br>            sw.Reset();<br>            sw.Start();<br>            for (int idx = 0; idx &lt; testCount; ++idx)<br>            {<br>                IsNumeric2_2(values);<br>            }<br>            sw.Stop();<br>            Console.WriteLine(“Method2-2: “ + sw.ElapsedMilliseconds + “ ms”);<br><br>            sw.Reset();<br>            sw.Start();<br>            for (int idx = 0; idx &lt; testCount; ++idx)<br>            {<br>                IsNumeric3(values);<br>            }<br>            sw.Stop();<br>            Console.WriteLine(“Method3: “ + sw.ElapsedMilliseconds + “ ms”);<br><br>            sw.Reset();<br>            sw.Start();<br>            for (int idx = 0; idx &lt; testCount; ++idx)<br>            {<br>                IsNumeric4(values);<br>            }<br>            sw.Stop();<br>            Console.WriteLine(“Method4: “ + sw.ElapsedMilliseconds + “ ms”);<br>        }<br><br>        static string[] InitTestStrings(int count)<br>        {<br>            string[] testStrings = new string[count];<br>            for (int idx = 0; idx &lt; count; ++idx)<br>            {<br>                testStrings[idx] = idx.ToString();<br>            }<br>            return testStrings;<br>        }<br><br>        static string[] InitTestStrings(int count,int nonValueIndex)<br>        {<br>            string[] testStrings = InitTestStrings(count);<br>            testStrings[nonValueIndex] = “Test”;<br>            return testStrings;<br>        }</pre></div><br><br><br><p> </p>
+
+<p>帶入以下測試條件 ：  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:48b610eb-4016-4092-afb9-2e56118e1cd3" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">String[] values = InitTestStrings(1);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：<br>  <br><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb_2.png" width="465" height="191"></p>
+
+<p> </p>
+
+<p>帶入以下測試條件 ：  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fdb69bc7-f9da-4674-aa2e-0ac61c0f4386" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">            String[] values = InitTestStrings(10);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb_3.png" width="457" height="223"></p>
+
+<p> </p>
+
+<p>帶入以下測試條件 ：  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e6e6569f-9e2e-4dde-a11a-724bd0154324" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">String[] values = InitTestStrings(10,1);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb_4.png" width="449" height="175"></p>
+
+<p> </p>
+
+<p>帶入以下測試條件 ：  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:94dd71c7-702f-4ebc-ad1b-d69276d6c396" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">            String[] values = InitTestStrings(10, 2);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb_5.png" width="521" height="191"></p>
+
+<p> </p>
+
+<p>帶入以下測試條件 ：  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7e652a92-1f85-49f4-b3f0-ffadb1ed1553" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">String[] values = InitTestStrings(10, 3);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb_6.png" width="553" height="191"></p>
+
+<p> </p>
+
+<p>帶入以下測試條件 ：<br>  <br><br><br>  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:11049a60-d424-4da8-9993-7646742ed0a9" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols"> String[] values = InitTestStrings(10, 4);</pre></div><br><br><br><p> </p>
+
+<p>其運行結果如下：<br>  <br><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\12568\image_thumb.png" width="465" height="191"> </p>
+
+<p> </p>
+
+<p>由以上實驗，我們可以看見的是，在某些條件下，方法二這種先合併字串，再用TryParse的方式效能最佳。某些條件下，先合併字串在集中判斷可以獲得較好的效能。主要取決於字串合併數量的多寡、與第幾個字串不為數值這兩個條件。</p>
+
+<p>實驗下來我們也可以發現，字串處理的OverHead好像比數值判斷來得低很多。因此使用字串合併後再判斷約有7/10的機率可獲取較高的效，另外適時的使用功能不那摸強大的判斷方式，也可以適當的提升效能，而使用正規表示式的方式則是效能最差的判斷方式。</p>
+
+<p>另外一提，有興趣的可以試者把Int.TryParse改為Decimal.TryParse看看，其對效能也有相當的影響，所以依需求用對適當的型別來處理也是很重要的。</p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Int32.TryParse 方法</li><br><br>  <li>HOW TO：判斷字串是否表示數值 (C# 程式設計手冊)</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags performance " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/12/15/12489/" rel="next" title="[C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/12/22/12615/" rel="prev" title="[Performance][C#]String.Empty V.S &ldquo;&rdquo;" data-instant>
+                [Performance][C#]String.Empty V.S &ldquo;&rdquo; <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">方法四</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">效能比較</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/12/20/12568/';
+      var disqus_title = "[Performance][C#]同時判斷多個字串是否為數值型態";
+      var disqus_url = 'http://larrynung.github.io/2009/12/20/12568/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

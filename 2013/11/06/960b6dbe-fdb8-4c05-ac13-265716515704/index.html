@@ -1,0 +1,663 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/960b6dbe-fdb8-4c05-ac13-265716515704/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響">
+<meta name="twitter:description" content="[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/960b6dbe-fdb8-4c05-ac13-265716515704/image_thumb_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/960b6dbe-fdb8-4c05-ac13-265716515704/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/960b6dbe-fdb8-4c05-ac13-265716515704/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在用Process時才發現自己對於Process類別實在不是很熟，本來以為在主執行緒將Process叫起來後關閉，Process.Exited事件會被導回主執行緒去觸發，後來才發現並不是那麼一回事，這邊以一個簡單的範例來看：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9550649a-3613-411d-8809-6dadf8bf0c72" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Diagnostics;<br>using System.Threading;<br>using System.Windows.Forms;<br><br>namespace WindowsFormsApplication13<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }<br><br>        private void Form1_Load(object sender, EventArgs e)<br>        {<br>            var process = Process.Start(“calc.exe”);<br>            process.EnableRaisingEvents = true;<br>            process.Exited += new EventHandler(process_Exited);<br>            textBox1.Text = “Main Thread ID:” + Thread.CurrentThread.ManagedThreadId.ToString();<br>            Console.Read();<br>        }<br><br>        void process_Exited(object sender, EventArgs e)<br>        {<br>            MessageBox.Show(“Process Thread ID:” + Thread.CurrentThread.ManagedThreadId.ToString());<br>        }<br>    }<br>}</pre></div><br><br><p> </p>
+
+<p>程式啟動時會順帶開啟計算機程式，並秀出主執行緒ID。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_2.png" width="638" height="484"> </p>
+
+<p> </p>
+
+<p>關閉計算機程式時會顯示出所在的執行緒ID，從下圖可以看出執行緒ID並不一樣，Process.Exited被帶到另外個執行緒了。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_3.png" width="644" height="448"> </p>
+
+<p> </p>
+
+<p>後來詢問網友才發現原來Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響，這在MSDN中的Process.Exited 事件也有稍稍提到。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_5.png" width="644" height="62"> </p>
+
+<p> </p>
+
+<p>MSDN把這個細節寫在Process.SynchronizingObject 屬性那邊。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_6.png" width="644" height="217"> </p>
+
+<p> </p>
+
+<p>裡面也有提到說如果是透過工具列將Process元件加入使用的話，Visual Studio會幫你自動設定SynchornizingObject屬性。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_7.png" width="434" height="176"> </p>
+
+<p> </p>
+
+<p>這邊試著加入SynchornizingObject屬性設定後再跑一次。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1d576c91-1c58-452a-8d07-806d6b1e1979" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Diagnostics;<br>using System.Threading;<br>using System.Windows.Forms;<br><br>namespace WindowsFormsApplication13<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }<br><br>        private void Form1_Load(object sender, EventArgs e)<br>        {<br>            var process = Process.Start(“calc.exe”);<br>            process.EnableRaisingEvents = true;<br>            process.Exited += new EventHandler(process_Exited);<br>            process.SynchronizingObject = this;<br>            textBox1.Text = “Main Thread ID:” + Thread.CurrentThread.ManagedThreadId.ToString();<br>            Console.Read();<br>        }<br><br>        void process_Exited(object sender, EventArgs e)<br>        {<br>            MessageBox.Show(“Process Thread ID:” + Thread.CurrentThread.ManagedThreadId.ToString());<br>        }<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>Process.Exited觸發的動作就會被帶回到主執行緒。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\960b6dbe-fdb8-4c05-ac13-265716515704\image_thumb_4.png" width="474" height="414"> </p>
+
+<p> </p>
+
+<p>這邊筆者還是有點Confuse，基本上Process離開時多半人預想都是回到主執行緒，而多半在使用時也都是帶入表單讓它帶回主執行緒，甚至透過工具列使用Process元件也是自動設定讓它帶回主執行緒，那做這樣的設計實在有些奇怪，也許是因為實作上有些限制而採取這樣的設計吧。</p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Process.SynchronizingObject 屬性</li><br><br>  <li>Process.Exited 事件</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/96776032-8ad6-4038-9b7f-ef6105e54160/" rel="next" title="Managing AVDs with AVD Manager" data-instant>
+                <i class="fa fa-chevron-left"></i> Managing AVDs with AVD Manager
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/82d44d46-a0ac-450d-9600-a1dd40c407a9/" rel="prev" title="[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性" data-instant>
+                [C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/960b6dbe-fdb8-4c05-ac13-265716515704/';
+      var disqus_title = "[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/960b6dbe-fdb8-4c05-ac13-265716515704/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

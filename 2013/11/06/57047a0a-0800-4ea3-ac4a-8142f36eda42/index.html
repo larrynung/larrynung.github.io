@@ -1,0 +1,624 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="P4Merge,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="P4Merge - Visual Merge and Diff Tools">
+<meta name="keywords" content="P4Merge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P4Merge - Visual Merge and Diff Tools">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/57047a0a-0800-4ea3-ac4a-8142f36eda42/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="P4Merge - Visual Merge and Diff Tools">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/1_thumb_1.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/image_thumb_16.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/image_thumb_17.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/Untitled%20Note%20Image_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.2_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.9_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.7_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.11_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.4_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.5_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.8_thumb.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/ScreenClip.3_thumb.jpg">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="P4Merge - Visual Merge and Diff Tools">
+<meta name="twitter:description" content="P4Merge - Visual Merge and Diff Tools">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/57047a0a-0800-4ea3-ac4a-8142f36eda42/1_thumb_1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> P4Merge - Visual Merge and Diff Tools | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                P4Merge - Visual Merge and Diff Tools
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/57047a0a-0800-4ea3-ac4a-8142f36eda42/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/57047a0a-0800-4ea3-ac4a-8142f36eda42/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p>P4Merge是PERFORCE底下用來比對與合併檔案的工具程式,跟Winmerge的功能與用途類似,但更為方便好用,且對於像筆者這樣的色弱來說,呈現的方式也更為友善 。 </p>  <p> </p>  <p>P4Merge是免費的軟體,安裝包可至PERFORCE官網下載。 </p>  <p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="1" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\1_thumb_1.jpg" width="688" height="382"> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/image_2.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\image_thumb.png" width="644" height="227"></a> </p>  <p>  </p>  <p>下載後將之點擊安裝 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/image_4.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\image_thumb_1.png" width="373" height="190"></a> </p>  <p> </p>  <p>因為P4Merge是免費的,但其它元件不是,所以安裝這邊要將其它的元件取消選取,讓其只安裝P4Merge元件 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip_thumb.jpg" width="519" height="397"></a> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/image_34.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\image_thumb_16.png" width="485" height="371"></a> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/image_36.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\image_thumb_17.png" width="483" height="371"></a> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/Untitled%20Note%20Image_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="Untitled Note Image" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\Untitled%20Note%20Image_thumb.jpg" width="483" height="368"></a> </p>  <p> </p>  <p>安裝完後將之點擊開啟 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.6_2.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.6" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.6_thumb.png" width="400" height="177"></a> </p>  <p>  </p>  <p>開啟後會看到Choose Files對話框，透過這個對話框我們可以指定是要比對還是合併，也可以指定對應處理所需要的檔案。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.2_2.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.2" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.2_thumb.png" width="487" height="240"></a> </p>  <p>  </p>  <p>設定完後會進到像下面這樣的主畫面，以檔案的比對來說， 它會切隔為左右兩個窗格，分別顯示我們要做比對的兩個檔案，左右兩邊如有差異會有高亮標記，且兩個窗格間會有輔助線輔輔助，可以清楚看到左側這塊內容對應到右側哪一塊，在比對上會比較容易。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.9_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.9" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.9_thumb.jpg" width="644" height="474"></a> </p>  <p> </p>  <p>上方工具列有工具可供比對時快速的巡覽至衝突的位置。 </p>  <p> </p>  <p>若要針對檔案內容進行修正，以修改左側開啟的檔案為例，我們可以點擊工具列上的 [Edit file in left panel] 按鈕。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.7_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.7" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.7_thumb.jpg" width="644" height="470"></a> </p>  <p>  </p>  <p>按下後下方會多出一個窗格，用以做內容的修改，預設的內容就是我們選取要編輯的檔案，比對時發現衝突的地方在這個窗格一樣會高亮顯示，在高亮的後方會有按鈕列，可供我們在編輯時快速的套用左右兩邊的內容。像是如果今天衝突的這行應該用右側窗格所對應的內容的話，可以直接點擊該行後方工具列上代表右側窗格的那個按鈕，該行內容既會被替換。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.11_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.11" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.11_thumb.jpg" width="644" height="475"></a> </p>  <p>  </p>  <p>合併的處理跟比對類似，這邊就不多做介紹。 </p>  <p> </p>  <p>最後要提醒一下，在進行比對動作前，需先注意到檔案一開始這邊是否有出現亂碼。 </p>  <p> </p>  <p>如果有發現亂碼，代表編碼這邊設定不正確，此時若去比對儲存，可能會讓檔案內容連帶變得不正確。此時需透過 [File/Character Encoding] 主選單選項去設定正確的編碼，通常是設為Unicode (UTF-8, no BOM)，設定完檔案內容應該就會恢復正常，不再有亂碼。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.4_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.4" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.4_thumb.jpg" width="489" height="345"></a>  </p>  <p> </p>  <p>另外若是比對時找出過多的衝突，可試著勾選 [File/Comparison Method/Ignore Line Ending and All White Space Differences] 主選單選項，可以忽略掉因換行與空格所造成的衝突，有助於減少要解決的衝突。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.5_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.5" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.5_thumb.jpg" width="592" height="360"></a> </p>  <p>  </p>  <p>若要修改預設就套用編碼或是忽略換行與空白，也可以透過 Preferences 對話框去做對應的設定。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.8_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.8" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.8_thumb.jpg" width="488" height="601"></a> <a href="http://files.dotblogs.com.tw/larrynung/1310/123_136E4/ScreenClip.3_2.jpg" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="ScreenClip.3" src="\images\posts\57047a0a-0800-4ea3-ac4a-8142f36eda42\ScreenClip.3_thumb.jpg" width="486" height="602"></a> </p>  <p> </p>  <h4>Link</h4>  <ul>   <li><a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="noopener">Visual Merge and Diff Tools</a></li> </ul>  <ul><p></p>
+</ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/P4Merge/" rel="tag” data-instant>#P4Merge</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/57e82e56-eb05-425b-9a25-85cd74e73804/" rel="next" title="[C#]將指定的檔案刪除並送到資源回收桶" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]將指定的檔案刪除並送到資源回收桶
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/550e1225-7163-4e1c-afef-c07a21c8876e/" rel="prev" title="Github's Pull Requests" data-instant>
+                Github's Pull Requests <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/57047a0a-0800-4ea3-ac4a-8142f36eda42/';
+      var disqus_title = "P4Merge - Visual Merge and Diff Tools";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/57047a0a-0800-4ea3-ac4a-8142f36eda42/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]如何為程式加上Windows的SendTo功能支援">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]如何為程式加上Windows的SendTo功能支援">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/d5a7723a-f9b5-4ed7-aea8-97793afadccb/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]如何為程式加上Windows的SendTo功能支援">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/d5a7723a-f9b5-4ed7-aea8-97793afadccb/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/d5a7723a-f9b5-4ed7-aea8-97793afadccb/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/d5a7723a-f9b5-4ed7-aea8-97793afadccb/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/d5a7723a-f9b5-4ed7-aea8-97793afadccb/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]如何為程式加上Windows的SendTo功能支援">
+<meta name="twitter:description" content="[C#]如何為程式加上Windows的SendTo功能支援">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/d5a7723a-f9b5-4ed7-aea8-97793afadccb/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]如何為程式加上Windows的SendTo功能支援 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]如何為程式加上Windows的SendTo功能支援
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/d5a7723a-f9b5-4ed7-aea8-97793afadccb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/d5a7723a-f9b5-4ed7-aea8-97793afadccb/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>相信大家都有看過，當我們在檔案總管上的任一檔案或是目錄上點選滑鼠右鍵，彈出的滑鼠右鍵選單中有個叫做SendTo的功能，可以將檔案送至對應的應用程式處理。要在應用程式中加上SendTo功能的支援，我們必須要先知道其實SendTo功能跟前面筆者所介紹的[C#]如何取出最近在Windows上所使用的文件檔案這篇Recent Items是類似的處理方式。它也是以在特定目錄中放入檔案捷徑來達成這樣的效果，只是SendTo功能它對應的檔案目錄是在%APPDATA%\Microsoft\Windows\SendTo這個位置。</p>  <p> </p>  <p>除了鍵入%APPDATA%\Microsoft\Windows\SendTo這個目錄位置外，我們也可以透過在執行對話框中鍵入shell:sendto跳至對應的目錄。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1301/46e43cb2128a_12DAB/image_2.png" target="_blank" rel="noopener"><img style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" border="0" alt="image" src="\images\posts\d5a7723a-f9b5-4ed7-aea8-97793afadccb\image_thumb.png" width="417" height="217"></a> </p>  <p> </p>  <p>不論用哪種方式我們都可以找到其對應的目錄。開啟對應的目錄後，我們可以發現如上面所介紹的，裡面存放的幾乎都是捷徑檔案，而且這些捷徑都是在SendTo選單可以看到的選單選項。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1301/46e43cb2128a_12DAB/image_4.png" target="_blank" rel="noopener"><img style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" border="0" alt="image" src="\images\posts\d5a7723a-f9b5-4ed7-aea8-97793afadccb\image_thumb_1.png" width="644" height="378"> </a></p>  <p> </p>  <p>因此我們要讓程式加上SendTo功能的支援，我們只要在對應的目錄中產生捷徑，像是下面這樣：</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:36360ea8-3d68-4ea7-ab07-c4b7a50c3e7d" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">        …<br>        CreateSendToShortCut(“test.lnk”, @”C:\Users\larry\Dropbox\Software\FSCapture v5.3.exe”);<br>        …<br><br>        private static void CreateShortCut(string shortCutFile, string targetPath, string description = “”)<br>        {<br>            var type = Type.GetTypeFromProgID(“WScript.Shell”);<br>            object instance = Activator.CreateInstance(type);<br>            var result = type.InvokeMember(“CreateShortCut”, BindingFlags.InvokeMethod, null, instance, new object[] { shortCutFile });<br><br>            type = result.GetType();<br>            type.InvokeMember(“TargetPath”, BindingFlags.SetProperty, null, result, new object[] { targetPath });<br>            type.InvokeMember(“Description”, BindingFlags.SetProperty, null, result, new object[] { description });<br>            type.InvokeMember(“Save”, BindingFlags.InvokeMethod, null, result, null);<br>        }<br><br>        private static void CreateSendToShortCut(string shortCutFileName, string targetPath, string description = “”)<br>        {<br>            var sendToFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.SendTo);<br>            var shortCutFile = Path.Combine(sendToFolderPath, shortCutFileName);<br>            CreateShortCut(shortCutFile, targetPath, description);<br>        }</pre></div><br><br><p> </p>
+
+<p>運行後若程式沒甚麼錯誤，我們應該在對應的目錄中會看到剛剛所建立的捷徑檔。</p>
+
+<p><img style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" border="0" alt="image" src="\images\posts\d5a7723a-f9b5-4ed7-aea8-97793afadccb\image_thumb_2.png" width="644" height="378"> </p>
+
+<p> </p>
+
+<p>SendTo選單中也會多出我們所加進去的項目。</p>
+
+<p><img style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" border="0" alt="image" src="\images\posts\d5a7723a-f9b5-4ed7-aea8-97793afadccb\image_thumb_3.png" width="622" height="278"> </p>
+
+<p> </p>
+
+<p>接著我們只要在我們的程式啟動時，依啟動的參數做些處理，像是把參數帶給已經開啟的程式處理緒，或是依照所帶入的檔案與目錄位置做些處理，這邊大家應該都很了解，筆者就不對此多做說明。</p>
+
+<p> </p>
+
+<p>若是程式是透過Wix部屬，我們也可以改利用內建的功能來建立捷徑，像是下面這樣指定在SendToFolder中加入一個捷徑：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:82560e72-8a6c-4034-baae-465ac770b695" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="xml">    …<br>    &lt;Directory Id=”TARGETDIR” Name=”SourceDir” DiskId=”1”&gt;<br>      …<br>      &lt;Directory Id=”SendToFolder” Name=”SendTo”&gt;<br>        &lt;Component Id=”SendToShortcut” Guid=”{EFA4DF70-B9D3-417D-BAE6-FA3445A6E5E2}”&gt;<br>          &lt;RegistryValue Root=”HKCU” Key=”SOFTWARE\$(var.AppCode)\SendToShortcut” Type=”string” Value=”SendToShortcut” KeyPath=”yes”/&gt;<br>          &lt;Shortcut Id=”SendToShortCut” Name=”!(loc.APPNAME)” WorkingDirectory=”INSTALLDIR” Target=”[INSTALLLOCATION]WindowsClient.exe”&gt;&lt;/Shortcut&gt;<br>        &lt;/Component&gt;<br>      &lt;/Directory&gt;<br>      …<br>    &lt;/Directory&gt;<br>    …</pre></div>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Making a Send To Shortcut </li><br><br>  <li>Customize the Windows 7 or Vista Send To Menu </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/d5c22bec-4512-4ed9-8315-86e3ce6df1d1/" rel="next" title="[IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式" data-instant>
+                <i class="fa fa-chevron-left"></i> [IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/d519bf98-9092-4f48-99da-a49329ae6e5e/" rel="prev" title="[C#]ListBox如何偵測Item的新增、插入、與刪除" data-instant>
+                [C#]ListBox如何偵測Item的新增、插入、與刪除 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/d5a7723a-f9b5-4ed7-aea8-97793afadccb/';
+      var disqus_title = "[C#]如何為程式加上Windows的SendTo功能支援";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/d5a7723a-f9b5-4ed7-aea8-97793afadccb/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

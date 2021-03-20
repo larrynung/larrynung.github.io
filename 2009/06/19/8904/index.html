@@ -1,0 +1,624 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content=".NET Resource,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具">
+<meta name="keywords" content=".NET Resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具">
+<meta property="og:url" content="http://larrynung.github.io/2009/06/19/8904/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_8.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_9.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_10.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_11.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_12.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_13.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_14.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/8904/image_thumb_15.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具">
+<meta name="twitter:description" content="[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/8904/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-06-19T17:16:22+00:00" content="2009-06-20">
+              2009-06-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/06/19/8904/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/06/19/8904/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>Introduction</h2><p>Microsoft Visual Studio Learning Pack 2.0是Microsoft為了讓學生學習程式概念與寫法所推出的Visual Studio工具外掛，這邊將對此做些簡單的介紹。</p><p> </p><h2>System Requirements</h2><p>OS: Windows Vista; Windows XP</p><p>Software: Visual Studio 2008</p><p> </p><h2>Microsoft Visual Studio Learning Pack 2.0</h2><p>Microsoft Visual Studio Learning Pack 2.0安裝完後主要會讓Visual Studio增加五項功能，分別為Sort Designer Control、Search Designer Control、Visual Declarative Designer、Assistant Class Designer、Visual Programming Flow Chart。</p><p>讓我們看一下Microsoft官網上的概述：</p><p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="1059" height="413" src="\images\posts\8904\image_thumb.png"></p><p> </p><h2>Sort Designer Control</h2><p>Sort Designer Control主要是為了讓新手了解排序的概念用，也能幫新手產生對應的排序程式碼，讓新手能在了解程式運作原理後可以回過來了解程式的寫法。</p><p>值得注意的是，Sort Designer Control、與Search Designer Control這兩個控制項在安裝完Microsoft Visual Studio Learning Pack 2.0後並不能直接使用。需手動到安裝目錄(\Program Files\Microsoft Visual Studio Learning Pack 2.0)把控制項加到工具箱。實際步驟可參考官方網站的操作說明。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_4.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="895" height="168" src="\images\posts\8904\image_thumb_1.png"></a></p><p> </p><p>把控制項設到工具箱後，使用時把控制項加到表單上運行即可。運行後執行畫面如下：</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_8.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_3.png"></a></p><p> </p><p>按下Start後，就會產生要排序的資料。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_6.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_2.png"></a></p><p> </p><p>有了要排序的資料後，在使用上可以一直按Next看排序的每個步驟。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_10.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_4.png"></a></p><p> </p><p>要直接看排序完的結果可直接按下Goto End。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_12.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_5.png"></a></p><p> </p><p>了解了運作步驟後，要產生程式參考的話。可切換到Code頁面。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_14.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_6.png"></a></p><p> </p><p>按下Generate Code即可產生對應的程式碼。產生完程式後若想要產生Visual Studio用的.VB檔，可按下Save儲存程式。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_16.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_7.png"></a></p><p> </p><h2>Search Designer Control</h2><p>Search Designer Control使用上跟Sort Designer Control相差不遠，只是用來讓新手了解搜尋的概念，在此不多做說明。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_18.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_8.png"></a> <a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_20.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8904\image_thumb_9.png"></a></p><p> </p><h2>Visual Declarative Designer</h2><p>Visual Declarative Designer是用來讓新手了解如何宣告變數用的小工具，使用時要先切換到程式碼編輯介面，並按下【工具\Visual Variable Declarative Designer】。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_22.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="305" height="145" src="\images\posts\8904\image_thumb_10.png"></a></p><p> </p><p>按下後會彈出變數宣告用的工具視窗。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_24.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="495" height="414" src="\images\posts\8904\image_thumb_11.png"></a></p><p> </p><p>藉此視窗新手可以了解變數該如何宣告。</p><p> </p><h2>Assistant Class Designer</h2><p>Assistant Class Designer是用來讓新手了解如何宣告類別用的小工具，使用時要先切換到程式碼編輯介面，並按下【工具\Assistant Class Designer】。(該功能只支援C#)</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_26.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="282" height="151" src="\images\posts\8904\image_thumb_12.png"></a></p><p> </p><p>按下後會彈出類別宣告用的工具視窗。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_28.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="666" height="494" src="\images\posts\8904\image_thumb_13.png"></a></p><p> </p><h2>Visual Programming Flow Chart</h2><p>Visual Programming Flow Chart這功能是我覺得除了新手用以外，老手拿來使用也是不錯工具。該工具能把程式用流程圖的方式顯現。使用時要先切換到程式碼編輯介面，並按下【工具\Visual Programming Flow Chart】。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_30.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="282" height="195" src="\images\posts\8904\image_thumb_14.png"></a></p><p> </p><p>按下後就會把程式用流程圖的方式顯現。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftVisualStudioLearningPack2.0_15072/image_32.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="800" height="685" src="\images\posts\8904\image_thumb_15.png"></a></p><p> </p><h2>Link</h2><ul><li><a target="_blank" href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=0ce3cbbd-7fc7-410b-8c2c-e18d1c60a6cd">Microsoft Visual Studio Learning Pack 2.0</a></li></ul><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NET-Resource/" rel="tag” data-instant>#.NET Resource</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/06/17/8856/" rel="next" title="[VB.NET]HatchBrush" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]HatchBrush
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/06/20/8906/" rel="prev" title="[.NET Resource]Microsoft Robotics Developer Studio 2008 R2 Released" data-instant>
+                [.NET Resource]Microsoft Robotics Developer Studio 2008 R2 Released <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">System Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">Microsoft Visual Studio Learning Pack 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Sort Designer Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">Search Designer Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">Visual Declarative Designer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">Assistant Class Designer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">8.</span> <span class="nav-text">Visual Programming Flow Chart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">9.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/06/19/8904/';
+      var disqus_title = "[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具";
+      var disqus_url = 'http://larrynung.github.io/2009/06/19/8904/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

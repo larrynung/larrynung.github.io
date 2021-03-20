@@ -1,0 +1,624 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗">
+<meta name="twitter:description" content="[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]如何使用TraceListener實作類似Visual Studio的輸出視窗 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]如何使用TraceListener實作類似Visual Studio的輸出視窗
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前陣子花了點時間在為開發中的產品加強除錯的功能，想要讓開發上發生的問題能直接在產品上就一目而然的看到，而不用另行開啟DebugView或是Log來看。簡單地說想要為產品加上類似是Visual Studio的輸出視窗，或者是DebugView類似的功能，能夠很即時的偵測並顯示出系統發出的Debug或是Trace訊息。為了達到這個需求，筆者用內建的TraceListener簡單的試做了一下，這篇隨手紀錄一下。</p>  <p> </p>  <p>要達到類似DebugView的效果，代表著我們必須要能擷取到Debug.WriteLine或是Trace.WriteLine的訊息，為此我們必須要建立一個TraceListener，繼承自DefaultTraceListener，並覆寫它的WriteLine方法。在覆寫的WriteLine方法中我們可以將收到的訊息做些處理，像是把它顯示到ListBox之類的。</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:614899fa-b908-47c9-85be-1a005d169244" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">    public class ListBoxLogTraceListener : DefaultTraceListener<br>    {<br>        private ListBox m_ListBox { get; set; }<br><br>        /// &lt;summary&gt;<br>        /// Initializes a new instance of the &lt;see cref=”ListBoxLogTraceListener”/&gt; class.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”listBox”&gt;The list box.&lt;/param&gt;<br>        public ListBoxLogTraceListener(ListBox listBox)<br>        {<br>            m_ListBox = listBox;<br>        }<br><br>        /// &lt;summary&gt;<br>        /// Writes the output to the OutputDebugString function and to the &lt;see cref=”M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)”/&gt; method, followed by a carriage return and line feed (\r\n).<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”message”&gt;The message to write to OutputDebugString and &lt;see cref=”M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)”/&gt;.&lt;/param&gt;<br>        /// &lt;PermissionSet&gt;<br>        ///     &lt;IPermission class=”System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089” version=”1” Unrestricted=”true”/&gt;<br>        ///     &lt;IPermission class=”System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089” version=”1” Flags=”ControlEvidence”/&gt;<br>        /// &lt;/PermissionSet&gt;<br>        public override void WriteLine(string message)<br>        {<br>            if (!m_ListBox.Visible)<br>                return;<br><br>            if (m_ListBox.InvokeRequired)<br>            {<br>                m_ListBox.BeginInvoke(new MethodInvoker(<br>                       delegate { WriteLine(message); }<br>                       ));<br>                return;<br>            }<br><br>            m_ListBox.Items.Add(string.Format(“{0}\t{1}”, DateTime.Now, message));<br>        }<br>    }</pre></div><br><br><p> </p>
+
+<p>TraceListener類別撰寫完畢，可以透過Debug.Listeners.Add或是Trace.Listeners.Add將撰寫的TraceListener類別加入，當我們程式中有用到Debug.WriteLine或是Trace.WriteLine時就會連帶觸發我們撰寫的TraceListener，藉此滿足我們想要達到的效果。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e1ed5b5b-6b49-4f17-ac9b-e977fca38b52" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">…<br>//Debug.Listeners.Add(new ListBoxLogTraceListener(listBox1));<br>Trace.Listeners.Add(new ListBoxLogTraceListener(listBox1));<br>…<br>Debug.WriteLine(“Debug msg…”);<br>…<br>Trace.WriteLine(“Trace msg…”);<br>…</pre></div>
+
+<p> </p>
+
+<p>這邊附上較為完整的測試範例：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fd661a21-431b-4932-a3a1-80c5f3368bf5" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Diagnostics;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Threading.Tasks;<br>using System.Windows.Forms;<br><br>namespace WindowsFormsApplication6<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>            //Debug.Listeners.Add(new ListBoxLogTraceListener(listBox1));<br>            Trace.Listeners.Add(new ListBoxLogTraceListener(listBox1));<br>        }<br><br>        private void button1_Click(object sender, EventArgs e)<br>        {<br>            Debug.WriteLine(“Debug msg…”);<br>        }<br><br>        private void button2_Click(object sender, EventArgs e)<br>        {<br>            Trace.WriteLine(“Trace msg…”);<br>        }<br>    }<br><br>    public class ListBoxLogTraceListener : DefaultTraceListener<br>    {<br>        private ListBox m_ListBox { get; set; }<br><br>        /// &lt;summary&gt;<br>        /// Initializes a new instance of the &lt;see cref=”ListBoxLogTraceListener”/&gt; class.<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”listBox”&gt;The list box.&lt;/param&gt;<br>        public ListBoxLogTraceListener(ListBox listBox)<br>        {<br>            m_ListBox = listBox;<br>        }<br><br>        /// &lt;summary&gt;<br>        /// Writes the output to the OutputDebugString function and to the &lt;see cref=”M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)”/&gt; method, followed by a carriage return and line feed (\r\n).<br>        /// &lt;/summary&gt;<br>        /// &lt;param name=”message”&gt;The message to write to OutputDebugString and &lt;see cref=”M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)”/&gt;.&lt;/param&gt;<br>        /// &lt;PermissionSet&gt;<br>        ///     &lt;IPermission class=”System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089” version=”1” Unrestricted=”true”/&gt;<br>        ///     &lt;IPermission class=”System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089” version=”1” Flags=”ControlEvidence”/&gt;<br>        /// &lt;/PermissionSet&gt;<br>        public override void WriteLine(string message)<br>        {<br>            if (!m_ListBox.Visible)<br>                return;<br><br>            if (m_ListBox.InvokeRequired)<br>            {<br>                m_ListBox.BeginInvoke(new MethodInvoker(<br>                       delegate { WriteLine(message); }<br>                       ));<br>                return;<br>            }<br><br>            m_ListBox.Items.Add(string.Format(“{0}\t{1}”, DateTime.Now, message));<br>        }<br>    }<br>}<br></pre></div>
+
+<p> </p>
+
+<p>運行起來我們可以看到它能偵測並顯示系統發出的Debug或是Trace訊息，在產品的除錯上會方便許多。</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\58014e43-9fa3-45fc-a5b0-defa3e5fb3e7\image_thumb.png" width="304" height="304"></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/55cddd5c-a672-458f-8ee6-1632644ac030/" rel="next" title="How to use MetaWeblogSharp" data-instant>
+                <i class="fa fa-chevron-left"></i> How to use MetaWeblogSharp
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/57e82e56-eb05-425b-9a25-85cd74e73804/" rel="prev" title="[C#]將指定的檔案刪除並送到資源回收桶" data-instant>
+                [C#]將指定的檔案刪除並送到資源回收桶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/';
+      var disqus_title = "[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/58014e43-9fa3-45fc-a5b0-defa3e5fb3e7/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="IdGen">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="IdGen - Twitter Snowflake-alike ID generator for .Net">
+<meta name="keywords" content="IdGen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IdGen - Twitter Snowflake-alike ID generator for .Net">
+<meta property="og:url" content="http://larrynung.github.io/2016/04/06/idgen-twitter-snowflake-alike-id-generator-for-net/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="IdGen - Twitter Snowflake-alike ID generator for .Net">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/IdGen/1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/IdGen/2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/IdGen/3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/IdGen/4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IdGen - Twitter Snowflake-alike ID generator for .Net">
+<meta name="twitter:description" content="IdGen - Twitter Snowflake-alike ID generator for .Net">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/IdGen/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> IdGen - Twitter Snowflake-alike ID generator for .Net | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                IdGen - Twitter Snowflake-alike ID generator for .Net
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-06T13:39:00+00:00" content="2016-04-06">
+              2016-04-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/06/idgen-twitter-snowflake-alike-id-generator-for-net/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/06/idgen-twitter-snowflake-alike-id-generator-for-net/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>IdGen 是 ID 產生器套件，可用以產生 Twitter Snowflake-alike 的 ID，具備彈性，支援許多不同的建構方式，支援調整 ID 的結構。  </p>
+<a id="more"></a> 
+<p><br></p>
+<p>IdGen 產生的 ID 預設有 64 bit，就一個 long 的大小， 由 1 bit 的正負符號， 41 bit 的 Timestamp， 10 bit 的 Generator id， 12 bit 的 Sequence 所組成。  </p>
+<img src="/images/posts/IdGen/1.png">
+<p><br></p>
+<p>使用上要先透過 NuGet 安裝 IdGen 套件。  </p>
+<img src="/images/posts/IdGen/2.png">
+<p><br></p>
+<img src="/images/posts/IdGen/3.png">
+<p><br></p>
+<p>接著引用 IdGen 命名空間，建立 IdGenerator，然後調用 CreateId() 取得單一 ID，或是調用 Take() 取得多個 ID 即可。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">using IdGen;</span><br><span class="line">...</span><br><span class="line">var generator = GetIdGenerator();</span><br><span class="line">var id = generator.CreateId();</span><br><span class="line">...</span><br><span class="line">var count = 10;</span><br><span class="line">var ids = generator.Take(count);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>IdGenerator 的建立方式有幾種，最基本的做法，我們可以透過建構子下去建構，像是帶入 Generator Id 下去建構。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var generatorID = 0;</span><br><span class="line">var generator = new IdGenerator(generatorID);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>或是帶入 EPoch 與 Mask 將 ID 的組成結構改掉，像是這邊帶入的 Mask 即是指定 45 bit 的 Timestamp， 8 bit 的 Generator Id， 10 bit 的 Sequence。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var gid = short.Parse(Dns.Resolve(Dns.GetHostName()).AddressList[0].ToString().Split(&apos;.&apos;)[3]);</span><br><span class="line">var mc = new MaskConfig(45, 8, 10);</span><br><span class="line">var generator = new IdGenerator(gid, new DateTime (1970, 1, 1), mc);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>第二種建構方式是透過 IdGenerator.CreateMachineSpecificGenerator() 取得該機器用的 Generator，這方法會用 Machine name 的 Hash code 當 Generator id 下去建構 Generator，以期讓每台機器的 Generator 能夠錯開，確保產生的 ID 不會重複。但礙於 ID 的大小，因此 Hash Code 只取了部分值，是不保險的處理方式，只能偶爾偷懶使用，實際使用上還是建議要自己處理。   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var generator = IdGenerator.CreateMachineSpecificGenerator();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>第三種建構方式是透過 IdGenerator.CreateThreadSpecificGenerator() 取得該執行緒用的 Generator，當程式只會在一台機器上執行，但會跑再多執行緒的環境下適用。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var generator = IdGenerator.CreateThreadSpecificGenerator();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>最後一種建構方式是透過 Config 建構，可在 Config 檔先做好設定。  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">"idGenSection"</span> <span class="attr">type</span>=<span class="string">"IdGen.Configuration.IdGeneratorsSection, IdGen"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">idGenSection</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">idGenerators</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">idGenerator</span> <span class="attr">name</span>=<span class="string">"foo"</span> <span class="attr">id</span>=<span class="string">"123"</span>  <span class="attr">epoch</span>=<span class="string">"2016-01-02T12:34:56"</span> <span class="attr">timestampBits</span>=<span class="string">"39"</span> <span class="attr">generatorIdBits</span>=<span class="string">"11"</span> <span class="attr">sequenceBits</span>=<span class="string">"13"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">idGenerator</span> <span class="attr">name</span>=<span class="string">"bar"</span> <span class="attr">id</span>=<span class="string">"987"</span>  <span class="attr">epoch</span>=<span class="string">"2016-02-01 01:23:00:45"</span> <span class="attr">timestampBits</span>=<span class="string">"20"</span> <span class="attr">generatorIdBits</span>=<span class="string">"21"</span> <span class="attr">sequenceBits</span>=<span class="string">"22"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">idGenerator</span> <span class="attr">name</span>=<span class="string">"baz"</span> <span class="attr">id</span>=<span class="string">"2047"</span> <span class="attr">epoch</span>=<span class="string">"2016-02-29"</span>          <span class="attr">timestampBits</span>=<span class="string">"21"</span> <span class="attr">generatorIdBits</span>=<span class="string">"21"</span> <span class="attr">sequenceBits</span>=<span class="string">"21"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">idGenerators</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">idGenSection</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>然後調用 GetFromConfig，帶入 Generator 的名稱。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var generator = IdGenerator.GetFromConfig(&quot;foo&quot;);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>最後附上完整的測試範例：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Net;</span><br><span class="line">using IdGen;</span><br><span class="line"></span><br><span class="line">namespace ConsoleApplication32</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main( string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            var localIp = short.Parse(Dns .Resolve(Dns .GetHostName()).AddressList[0].ToString().Split(&apos;.&apos;)[3]);</span><br><span class="line">            var generator = new IdGenerator(localIp);</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(generator.CreateId().ToString());</span><br><span class="line"></span><br><span class="line">            var ids = generator.Take(100);</span><br><span class="line"></span><br><span class="line">            foreach ( var id in ids)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(id.ToString());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>運行結果如下：  </p>
+<img src="/images/posts/IdGen/4.png">
+<p><br></p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/RobThree/IdGen" target="_blank" rel="noopener">RobThree/IdGen: Twitter Snowflake-alike ID generator for .Net</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/30/disruptor-workerpool/" rel="next" title="Disruptor - WorkerPool" data-instant>
+                <i class="fa fa-chevron-left"></i> Disruptor - WorkerPool
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/06/uniqueidgenerator-c-number-implementation-of-twitters-snowflake/" rel="prev" title="UniqueIdGenerator - C# implementation of Twitter's Snowflake" data-instant>
+                UniqueIdGenerator - C# implementation of Twitter's Snowflake <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2016/04/06/idgen-twitter-snowflake-alike-id-generator-for-net/';
+      var disqus_title = "IdGen - Twitter Snowflake-alike ID generator for .Net";
+      var disqus_url = 'http://larrynung.github.io/2016/04/06/idgen-twitter-snowflake-alike-id-generator-for-net/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

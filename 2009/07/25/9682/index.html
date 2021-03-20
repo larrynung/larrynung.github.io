@@ -1,0 +1,694 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][VB.NET]擴充方法 (Extension Method)">
+<meta name="keywords" content="CSharp,VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][VB.NET]擴充方法 (Extension Method)">
+<meta property="og:url" content="http://larrynung.github.io/2009/07/25/9682/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][VB.NET]擴充方法 (Extension Method)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_14.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_13.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][VB.NET]擴充方法 (Extension Method)">
+<meta name="twitter:description" content="[C#][VB.NET]擴充方法 (Extension Method)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/9682/image_thumb_14.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][VB.NET]擴充方法 (Extension Method) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][VB.NET]擴充方法 (Extension Method)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-07-25T18:10:46+00:00" content="2009-07-26">
+              2009-07-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/07/25/9682/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/07/25/9682/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2>Introduction</h2>  <p>擴充方法(Extension Method)是.NET 3.5所提供的新語法，簡單的來說它的功能就是讓開發人員將自訂的功能加入至已定義的資料型別中。可讓您撰寫可呼叫的方法，就如同是現有型別的執行個體方法一樣。不需建立新的衍生型別 (Derived Type)、重新編譯、或是修改原始型別的程式碼。</p>  <p> </p>  <h2>Support</h2>  <ul>   <li>.NET Framework 3.5 (C# 3.0或是VB.NET 9.0都有支援) </li> </ul>  <p> </p>  <h2>C#定義步驟</h2>  <ol>   <li>     <p>定義靜態類別用以包含擴充方法。</p>   </li>    <li>     <p>加入靜態方法，第一個參數會指定方法進行作業的型別，前面必須加上 this 修飾詞。</p>   </li> </ol>  <p><a href="http://files.dotblogs.com.tw/larrynung/0908/e3e68b7bcd6a_165A/image_30.png" rel="noopener" target="_blank"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_14.png" width="640" height="93"></a></p>  <p> </p>  <p><strong>程式範例      <br></strong><a href="http://files.dotblogs.com.tw/larrynung/0907/e3e68b7bcd6a_165A/image_2.png" rel="noopener" target="_blank"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb.png" width="890" height="174">  <br> </a></p>  <h2>VB.NET定義步驟</h2>  <ol>   <li>     <p>建立模組存放擴充方法</p>   </li>    <li>     <p>匯入System.Runtime.CompilerServices命名空間</p>   </li>    <li>     <pre>撰寫要加入的擴充方法以一般方式宣告方法，第一個參數的型別必須是您要擴充的資料型別、且方法前面必需加上Extension屬性。</pre><br>  </li><br></ol><br><br><pre><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_6.png" width="640" height="113"> </pre><br><br><p> </p><br><br><pre><strong>程式範例<br></strong><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_1.png" width="880" height="173">  </pre><br><br><pre> </pre><br><br><blockquote><br>  <p>在定義擴充方法上，VB.NET與C#的寫法稍微有異。像是VB.NET的擴充方法必需寫在模組內、方法前面必需加上Extension屬性。不過基本上寫擴充方法都是要用靜態函式、第一個參數是要擴充的物件類別，其實並無太大的差異。</p><br></blockquote><br><br><p> </p><br><br><h2>使用步驟</h2>
+
+<p>當幫欲擴充的類別設定完擴充方法，要使用擴充方法時只需匯入該擴充方法的命名空間，就可以像一般實體的方法一樣直接透過物件執行個體叫用。步驟如下：</p>
+
+<ol><br>  <li><br>    <p>匯入擴充方法所在的命名空間</p><br>  </li><br><br>  <li><br>    <p>透過被擴充的執行個體使用擴充方法</p><br>  </li><br></ol>
+
+<p> <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_13.png" width="640" height="93"><br><br>  <br></p>
+
+<p>簡單的使用範例如下：</p>
+
+<p><strong>C#</strong></p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_2.png" width="352" height="396"></p>
+
+<p> </p>
+
+<p><strong>VB.NET</strong></p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9682\image_thumb_4.png" width="311" height="227"></p>
+
+<p> </p>
+
+<p>擴充方法也能針對列舉型別作擴充，像是： </p>
+
+<p><strong>C#</strong></p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a7795cba-382e-44ed-8f2b-2f0a39d4aaa5" class="wlWriterEditableSmartContent"><pre name="code" class="c#">    enum Grade<br>    {<br>        APlus,<br>        A,<br>        B,<br>        C,<br>        D<br>    }<br><br>    public static class EnumExtension<br>    {<br>        public static string GetName(this Enum e)<br>        {<br>            return Enum.GetName(e.GetType(), e);<br>        }<br>    }<br><br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            Console.WriteLine(Grade.APlus.GetName());<br>        }<br>    }</pre></div>
+
+<p> </p>
+
+<p><strong>VB.NET</strong></p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:67d6060e-4124-49ab-acc7-52dcd41747f2" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Runtime.CompilerServices<br><br>Enum Grade<br>    APlus<br>    A<br>    B<br>    C<br>    D<br>End Enum<br><br>Module Module1<br>    Sub Main()<br>        Console.WriteLine(Grade.APlus.GetName)<br>    End Sub<br>End Module<br><br>Module EnumExtension<br>    &lt;Extension()&gt; _<br>    Public Function GetName(ByVal e As [Enum]) As String<br>        Return [Enum].GetName(e.GetType, e)<br>    End Function<br>End Module</pre></div>
+
+<p> </p>
+
+<p>值得注意的是，以往我們在使用一般實體方法時，若物件參考為NULL，則呼叫實體方法就會發生NullReferenceException的例外。而若叫用的是擴充方法，就算物件參考為NULL也能正常運作，就像下面這樣：</p>
+
+<p><strong>C#</strong></p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0f6970e9-9646-4267-ae1c-8bbfaa41fd7d" class="wlWriterEditableSmartContent"><pre name="code" class="c#">    public static class EnumExtension<br>    {<br>        public static bool IsNull(this string str)<br>        {<br>            return str == null;<br>        }<br>    }<br><br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            string str = null;<br>            Console.WriteLine(str.IsNull().ToString());<br>        }<br>    }</pre></div>
+
+<p> </p>
+
+<p><strong>VB.NET</strong></p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0a5d70b8-20f1-4fcc-8854-0f01641aaff1" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Runtime.CompilerServices<br><br>Module Module1<br><br>    Sub Main()<br>        Dim str As String = Nothing<br>        Console.WriteLine(str.IsNull().ToString())<br>    End Sub<br><br>End Module<br><br>Module StringExtension<br>    &lt;Extension()&gt; _<br>    Public Function IsNull(ByVal str As String) As Boolean<br>        Return str Is Nothing<br>    End Function<br>End Module</pre></div>
+
+<p>之所以會這樣是因為擴充方法是透過靜態方法所達成的，在編譯時編譯器自動會幫我們用對應的靜態方法呼叫來替換，因此在使用上不會有多餘的負擔，且就算物件參考為NULL，也可以呼叫擴充方法。</p>
+
+<p> </p>
+
+<h2>優先順序</h2>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%"><tbody><br>    <tr><br>      <td bgcolor="#ffff00" valign="top" width="100%"><br>        <p>下文摘自MSDN</p><br>      </td><br>    </tr><br>  </tbody></table>
+
+<p>當具有相同簽章的兩個擴充方法都在範圍內而且可存取時，將會叫用具有較高優先順序的擴充方法。擴充方法優先順序是根據用來將方法帶入範圍的機制所決定。下列清單從最高到最低，列出優先順序階層。</p>
+
+<ol><br>  <li><br>    <p>在目前的模組內定義的擴充方法。</p><br>  </li><br><br>  <li><br>    <p>在目前的命名空間或任何父代之資料型別內定義的擴充方法，其子命名空間的優先順序高於父代命名空間。</p><br>  </li><br><br>  <li><br>    <p>在目前檔案之型別匯入內定義的擴充方法。</p><br>  </li><br><br>  <li><br>    <p>在目前檔案之命名空間匯入內定義的擴充方法。</p><br>  </li><br><br>  <li><br>    <p>在專案層級的型別匯入內定義的擴充方法。</p><br>  </li><br><br>  <li><br>    <p>在專案層級的命名空間匯入內定義的擴充方法。</p><br>  </li><br></ol>
+
+<p>如果優先順序無法解決模稜兩可 (Ambiguity) 的問題，則可以使用完整名稱來指定您正要呼叫的方法。如果之前範例中的 Print 方法是在StringExtensions 這個模組中定義，則完整名稱為 StringExtensions.Print(example)，而不是 example.Print()。</p>
+
+<blockquote><br>  <p>簡單的說來就是當編譯器遇到方法呼叫時，會先在本身型別的方法中尋找相符項目。如果找不到相符項目，則會搜尋任何針對型別定義的擴充方法，並繫結至找到的第一個擴充方法。其搜尋的順序如上MSDN所述，當依此順序叫用到的擴充方法非所想要呼叫的話，可直接叫用該靜態方法來解決。 </p><br></blockquote>
+
+<h2> </h2>
+
+<h2>最佳作法</h2>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%"><tbody><br>    <tr><br>      <td bgcolor="#ffff00" valign="top" width="100%"><br>        <p>下文摘自MSDN</p><br>      </td><br>    </tr><br>  </tbody></table>
+
+<p>擴充方法可提供方便且功能強大的方法，讓您擴充現有的型別。不過，若要順利使用這些方法，您必須考量幾個重點。這些考量重點主要是針對類別庫的作者，但也可能影響使用擴充方法的應用程式。</p>
+
+<p>一般來說，您加入至未擁有之型別的擴充方法，會比加入至所控制之型別的擴充方法來得更不安全。在您未擁有的類別中可能會發生干擾擴充方法的情形。</p>
+
+<ul><br>  <li><br>    <p>如果存在的可存取執行個體成員都具有與呼叫端陳述式之引數相容的簽章，而沒有從引數到參數所需要的縮小轉換，則擴充方法會偏好使用執行個體方法。因此，如果將適當的執行個體方法加入至類別，您所依賴的現有擴充成員可能變成無法使用。</p><br>  </li><br><br>  <li><br>    <p>擴充方法的作者無法避免其他程式設計人員撰寫相衝突的擴充方法，而這些擴充方法的優先順序甚至可能高於原始的擴充方法。</p><br>  </li><br><br>  <li><br>    <p>您可以將擴充方法放置在自己的命名空間中，即可增進其強度。您程式庫的消費者接著就能併入或排除命名空間，或者選擇程式庫中其他不同的命名空間。</p><br>  </li><br><br>  <li><br>    <p>特別在您未擁有介面或類別時，擴充介面可能比擴充類別更不安全。介面中的變更會影響實作該介面的每個類別。因此，作者較不希望在介面中加入或變更方法。不過，如果類別實作兩個介面，而這兩個介面有簽章相同的擴充方法，就看不到任一個擴充方法。</p><br>  </li><br><br>  <li><br>    <p>擴充最特定的型別。在型別階層中，如果選取會從中衍生許多其他型別的型別，則可能會引入執行個體方法的各種層面，或者其他可能與您的擴充方法相衝突的擴充方法。<br>      <br> </p><br>  </li><br></ul>
+
+<h2>Conclusion</h2>
+
+<p>雖然擴充方法給予了我們許多的便利，但在使用上光擴充方法能讓我們做的我個人是覺得有限，畢竟無法做到為現有類別增加變數儲存額外資料。若能再來個擴充屬性、擴充事件，我想在使用上會更具變化的彈性。</p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Huan-Lin 學習筆記-C# 筆記：擴充方法 </li><br><br>  <li>Sophie: KISS.NET-何謂擴充方法 (Extension method )？ </li><br><br>  <li>MSDN Library-擴充方法 (C# 程式設計手冊) </li><br><br>  <li>MSDN Library-擴充方法 (Visual Basic) </li><br><br>  <li>MSDN Library-HOW TO：實作和呼叫自訂擴充方法 (C# 程式設計手冊) </li><br><br>  <li>MSDN Library-HOW TO：建立列舉型別的新方法 (C# 程式設計手冊) </li><br><br>  <li>MSDN Library-HOW TO：撰寫擴充方法 (VB.NET) </li><br><br>  <li>MSDN Library-HOW TO：呼叫擴充方法 (VB.NET)  </li><br><br>  <li>MSDN 教學短片-如何使用擴充方法替一個既存的資料型別加入自訂功能 (VB.NET) </li><br><br>  <li>MSDN 教學短片-如何使用擴充方法替一個既存的資料型別加入自訂功能 (C#) </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags vb-net " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/07/19/9594/" rel="next" title="[Other]寫下你對TechNet的建議，即有機會獲得Keroro軍曹4 龍勇士的逆襲電影特映會門票！" data-instant>
+                <i class="fa fa-chevron-left"></i> [Other]寫下你對TechNet的建議，即有機會獲得Keroro軍曹4 龍勇士的逆襲電影特映會門票！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/07/29/9720/" rel="prev" title="[C#]C# 4.0 選擇性參數 (Optional Parameters)" data-instant>
+                [C#]C# 4.0 選擇性參數 (Optional Parameters) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">Support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">C#定義步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">VB.NET定義步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">使用步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">優先順序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">8.</span> <span class="nav-text">最佳作法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">9.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">10.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/07/25/9682/';
+      var disqus_title = "[C#][VB.NET]擴充方法 (Extension Method)";
+      var disqus_url = 'http://larrynung.github.io/2009/07/25/9682/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

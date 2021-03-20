@@ -1,0 +1,612 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content=".NET Concept,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[.NET Concept]例外處理使用時機">
+<meta name="keywords" content=".NET Concept">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[.NET Concept]例外處理使用時機">
+<meta property="og:url" content="http://larrynung.github.io/2009/04/03/7854/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[.NET Concept]例外處理使用時機">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7854/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7854/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7854/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7854/image_thumb_5.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[.NET Concept]例外處理使用時機">
+<meta name="twitter:description" content="[.NET Concept]例外處理使用時機">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/7854/image_thumb_4.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [.NET Concept]例外處理使用時機 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [.NET Concept]例外處理使用時機
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-04-03T23:01:01+00:00" content="2009-04-04">
+              2009-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/04/03/7854/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/04/03/7854/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><br>    <img alt="image" border="0" height="203" src="\images\posts\7854\image_thumb_4.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="553"></p><br><p><br>    看到網友Bill叔寫了一連串的Try Catch的探討，這邊我也大概的整理一下我對例外處理使用時機的認知。</p><br><p><br>     </p><br><p><br>    我常會看到很多我覺得不適當的例外處理寫法，大概可列出下面幾種：</p><br><ul><br>    <li><br>        <strong>例外處理只為了秀出Exception本來包含的訊息，完全不改成自己格式就直接秀出</strong></li><br></ul><br><p><br>    像下面這種寫法秀出的資訊少到完全看不出問題點，且可能讓程式在不正常的條件下繼續執行。這樣的寫法倒不如不要使用例外處理直接讓.NET程式預設的例外視窗彈出，資訊還較為豐富，不然就是自行客制處理例外訊息的對話框，讓例外訊息對話框變成自己想要的樣子。而且通常例外所提供的訊息並不適合給使用者看，一來對於使用者並不友善，二來也多半沒有做多語的支援。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c80d45be-e5a0-4c1e-a78e-c200364807eb" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="vb" name="code"><br>Try<br>     …<br>Catch ex As Exception<br>     MsgBox(ex.Message)<br>End Try</pre><br></div><br><p><br>     </p><br><p><br>     </p><br><ul><br>    <li><br>        <strong>例外處理後又讓例外外擴</strong></li><br></ul><br><p><br>    像下面這種寫法其實倒不如不要寫例外處理，例外本身就會外擴。除非攔截例外是為了做些記錄或是處理，不然不建議攔截後外擴，大家應該都知道例外處理攔截到例外的Overhead是很大的，若是一個例外發生後被攔截後外擴，連續發生了好幾次，不難推測這個Overhead會變成本來的好幾倍。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:438b236a-e7a1-49c9-b526-683589ab3832" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="vb" name="code"><br>Try<br>     …<br>Catch ex As Exception<br>     throw ex<br>End Try</pre><br></div><br><p><br>     </p><br><p><br>     </p><br><p><br>    若是需要在例外處理中攔截例外做些處理後再外擴，也該改用throw去取代throw ex，這樣速度會比較快，也不會去變更到呼叫堆疊。</p><br><p><br>     </p><br><ul><br>    <li><br>        <strong>例外處理只為了吞掉例外</strong></li><br></ul><br><p><br>    最糟的寫法是直接用例外處理來吞掉例外，當然有時候這樣的情況會無法避免，但起碼要知道自己在做甚麼，並盡可能的避免，畢竟這樣的處理方式不夠嚴謹，且例外處理的耗費是很重的，若頻繁執行到這個區塊，效能會大幅的降低。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2c648439-b3e4-4d09-9c2b-0574f40522b8" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><br>    <pre class="vb" name="code"><br>Try<br>    …<br>Catch ex As Exception<br>End Try</pre><br></div><br><p><br>     </p><br><p><br>     </p><br><p><br>    其實就我個人而言，我在程式中是很少使用Try Catch的，因為使用了Try Catch的話，在Debug時若程式當掉，Visual Studio會自動把程式跳到Catch的位置上(目前我電腦上連Catch都不會停，完全感覺不出例外發生)，而若無法從Catch參數的資訊抓到問題點的話。自己還需要再重新Debug一次，從Try的位置一步一步的追到問題點。</p><br><p><br>     </p><br><p><br>    若不使用Try Catch的話，則當程式當掉時，Visual Studio會自動跳到出問題的程式那行，抓到問題的速度其實還比較快。</p><br><p><br>    <img alt="image" border="0" height="281" src="\images\posts\7854\image_thumb.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="741"></p><br><p><br>     </p><br><p><br>    對於例外處理的使用時機，通常我是會看說這段程式是否可能會有例外發生，該例外的彈出是否是合理的。若例外的彈出合理且該例外的彈出需要秀出對應的訊息告知使用者，此時我就會使用Try Catch。會這樣做是因為我覺得例外有兩種，一種是給User看的例外、一種是給開發員看的例外。</p><br><p><br>     </p><br><p><br>    給開發員看的例外主要是告知開發人員程式的寫法有誤，這類的例外本來就不該在執行階段發生，而是應該在開發時處理掉。那麼可能有人會問要是忘了處理乾淨呢？沒關係，例外發生時程式會彈出預設的例外視窗，讓程式員可以很快的把這錯誤給修正掉。</p><br><p><br>    <img alt="image" border="0" height="333" src="\images\posts\7854\image_thumb_3.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="443"></p><br><p><br>     </p><br><p><br>    而給User看的例外則應該要能在執行階段依照例外給予不同的指示訊息，幫助使用者排除問題。這類型的例外我才會做例外處理。</p><br><p><br>    <img alt="image" border="0" height="407" src="\images\posts\7854\image_thumb_5.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="662"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NET-Concept/" rel="tag” data-instant>#.NET Concept</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/03/29/7750/" rel="next" title="[Control][C#]WebCamPictureBox Control" data-instant>
+                <i class="fa fa-chevron-left"></i> [Control][C#]WebCamPictureBox Control
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/04/04/7867/" rel="prev" title="[.NET Concept][VB.NET]MDI子視窗放大時的注意事項" data-instant>
+                [.NET Concept][VB.NET]MDI子視窗放大時的注意事項 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/04/03/7854/';
+      var disqus_title = "[.NET Concept]例外處理使用時機";
+      var disqus_url = 'http://larrynung.github.io/2009/04/03/7854/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

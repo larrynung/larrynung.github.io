@@ -1,0 +1,635 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="PermissionController權限管理類別">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PermissionController權限管理類別">
+<meta property="og:url" content="http://larrynung.github.io/2010/11/25/19711/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="PermissionController權限管理類別">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19711/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19711/image_thumb_2.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PermissionController權限管理類別">
+<meta name="twitter:description" content="PermissionController權限管理類別">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/19711/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> PermissionController權限管理類別 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PermissionController權限管理類別
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-11-25T04:59:28+00:00" content="2010-11-25">
+              2010-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/11/25/19711/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/11/25/19711/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由於權限控管功能很常被用到，因此又重新挖出了水瓶大Enum 的設計與應用 - 簡易權限設計這篇，想辦法整理一個不需更動又能重複使用的類別出來，最後結合泛型與反射做出了權限管理類別的雛型，這邊將該類別暫定為PermissionController。</p>  <p> </p>  <p>PermissionController能透過泛型決定要拿來做權限管理的權限列舉，該列舉需經Flag Attribute修飾過，並以2的次方做為列舉值的編碼。PermissionController建構時可將初始權限帶入，這時PermissionController會做一些條件上的判斷，像是列舉是否有經Flag Attribute修飾等，並會設定最高權限供後續內部使用。</p>  <p> </p>  <p>PermissionController程式碼如下：</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c2d77246-1d29-42c6-9550-9ffd55223912" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">‘’’ &lt;summary&gt;<br>‘’’<br>‘’’ &lt;/summary&gt;<br>‘’’ &lt;typeparam name=”T”&gt;&lt;/typeparam&gt;<br>Public Class PermissionController(Of T)<br><br>#Region “Var”<br>    Private _allPermission As T<br>    Private _permission As T<br>#End Region<br><br><br>#Region “Public Property”<br>    Public Property AllPermission() As T<br>        Get<br>            Return _allPermission<br>        End Get<br>        Private Set(ByVal value As T)<br>            _allPermission = value<br>        End Set<br>    End Property<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Gets the permission.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;value&gt;The permission.&lt;/value&gt;<br>    Public Property Permission() As T<br>        Get<br>            Return _permission<br>        End Get<br>        Private Set(ByVal value As T)<br>            _permission = value<br>        End Set<br>    End Property<br><br>#End Region<br><br>#Region “Constructor”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Initializes a new instance of the &lt;see cref=”PermissionController(Of T)” /&gt; class.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    Public Sub New(ByVal permission As T)<br>        Dim permissionType As Type = GetType(T)<br><br>        If Not (permissionType.IsSubclassOf(GetType(System.Enum))) Then<br>            Throw New ArgumentException(“permissionEnum must be a enum”)<br>        End If<br><br>        If permissionType.GetCustomAttributes(GetType(FlagsAttribute), False).Length = 0 Then<br>            Throw New ArgumentException(“permissionEnum must be a flag enum”)<br>        End If<br><br>        LoadPermission(permission)<br>    End Sub<br>#End Region<br><br><br>#Region “Private Method”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Prepares all permission.<br>    ‘’’ &lt;/summary&gt;<br>    Private Sub PrepareAllPermission()<br>        Dim allPermissionValue As Integer = 0<br>        For Each value As Integer In [Enum].GetValues(Permission.<a href>GetType</a>)<br>            allPermissionValue = allPermissionValue Or value<br>        Next<br>        AllPermission = ConvertToEnum(allPermissionValue)<br>    End Sub<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Converts to value.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    ‘’’ &lt;returns&gt;&lt;/returns&gt;<br>    Private Function ConvertToValue(ByVal permission As T) As Integer<br>        Return CInt(TryCast(permission, Object))<br>    End Function<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Converts to enum.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permissionValue”&gt;The permission value.&lt;/param&gt;<br>    ‘’’ &lt;returns&gt;&lt;/returns&gt;<br>    Private Function ConvertToEnum(ByVal permissionValue As Integer) As T<br>        Return DirectCast(TryCast(permissionValue, Object), T)<br>    End Function<br>#End Region<br><br>#Region “Protected Method”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Returns a &lt;see cref=”System.String” /&gt; that represents this instance.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;returns&gt;<br>    ‘’’ A &lt;see cref=”System.String” /&gt; that represents this instance.<br>    ‘’’ &lt;/returns&gt;<br>    Public Overrides Function ToString() As String<br>        Return Me.Permission.ToString()<br>    End Function<br>#End Region<br><br><br>#Region “Public Method”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Loads the permission.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    Public Sub LoadPermission(ByVal permission As T)<br>        Me.Permission = permission<br>        PrepareAllPermission()<br>    End Sub<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Adds the permission.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    Public Sub AddPermission(ByVal permission As T)<br>        Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) Or ConvertToValue(permission))<br>    End Sub<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Removes the permission.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    Public Sub RemovePermission(ByVal permission As T)<br>        Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) And (ConvertToValue(AllPermission) Xor ConvertToValue(permission)))<br>    End Sub<br><br><br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Determines whether the specified permission contains permission.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”permission”&gt;The permission.&lt;/param&gt;<br>    ‘’’ &lt;returns&gt;<br>    ‘’’ &lt;c&gt;true&lt;/c&gt; if the specified permission contains permission; otherwise, &lt;c&gt;false&lt;/c&gt;.<br>    ‘’’ &lt;/returns&gt;<br>    Public Function ContainsPermission(ByVal permission As T) As Boolean<br>        Return (ConvertToValue(Me.Permission) And ConvertToValue(permission)) = ConvertToValue(permission)<br>    End Function<br>#End Region<br><br>End Class</pre></div><br><br><p> </p>
+
+<p>類別圖如下：</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="250" alt="image" src="\images\posts\19711\image_thumb_1.png" width="202" border="0"> </p>
+
+<p> </p>
+
+<p>裡面只有簡單的幾個方法與屬性，Permission屬性是當前的權限，AllPermission是最高權限，AddPermission是用來增加權限，ContainsPermission用來判斷是否有特定的權限，RemovePermission可移除特定權限，LoadPermission用以設定當前權限。</p>
+
+<p> </p>
+
+<p>完整的使用範例：</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e38e26b1-4534-4982-9983-91b85085784d" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Module Module1<br><br>    &lt;Flags()&gt; _<br>    Enum Permission<br>        None = 0<br>        Create = 1<br>        Read = 2<br>    End Enum<br><br>    Sub Main()<br>        Dim PermissionAgent As New PermissionController(Of Permission)(Permission.Create)<br>        Console.WriteLine(“所有權限: {0}”, PermissionAgent.AllPermission.ToString)<br>        Console.WriteLine(“當前權限: {0}”, PermissionAgent.Permission.ToString)<br>        Console.WriteLine(“是否含權限{0}: {1}”, Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))<br>        Console.WriteLine(“加入權限{0}…”, Permission.Read)<br>        PermissionAgent.AddPermission(Permission.Read)<br>        Console.WriteLine(“當前權限: {0}”, PermissionAgent.Permission.ToString)<br>        Console.WriteLine(“是否含權限{0}: {1}”, Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))<br>        Console.WriteLine(“移除權限{0}…”, Permission.Read)<br>        PermissionAgent.RemovePermission(Permission.Read)<br>        Console.WriteLine(“當前權限: {0}”, PermissionAgent.Permission.ToString)<br>        Console.WriteLine(“移除權限{0}…”, Permission.Create)<br>        PermissionAgent.RemovePermission(Permission.Create)<br>        Console.WriteLine(“當前權限: {0}”, PermissionAgent.Permission.ToString)<br>    End Sub<br><br>End Module</pre></div>
+
+<p> </p>
+
+<p>運行結果：</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="251" alt="image" src="\images\posts\19711\image_thumb_2.png" width="321" border="0"> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Enum 的設計與應用 - 簡易權限設計</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/11/24/19671/" rel="next" title=".NET 4.0 New Feature - Stream.CopyTo" data-instant>
+                <i class="fa fa-chevron-left"></i> .NET 4.0 New Feature - Stream.CopyTo
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/11/25/19746/" rel="prev" title=".NET 4.0 New Feature - System.Runtime.Caching" data-instant>
+                .NET 4.0 New Feature - System.Runtime.Caching <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/11/25/19711/';
+      var disqus_title = "PermissionController權限管理類別";
+      var disqus_url = 'http://larrynung.github.io/2010/11/25/19711/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

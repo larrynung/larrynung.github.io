@@ -1,0 +1,680 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[CodePlex]如何使用CodePlex website發佈自己的開源專案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[CodePlex]如何使用CodePlex website發佈自己的開源專案">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/e95a7708-827b-423e-a017-77cb3b56192a/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[CodePlex]如何使用CodePlex website發佈自己的開源專案">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210041_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205045_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205157_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205240_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_211347_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205746_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205422_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_205619_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210442_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210504_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210558_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210825_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[CodePlex]如何使用CodePlex website發佈自己的開源專案">
+<meta name="twitter:description" content="[CodePlex]如何使用CodePlex website發佈自己的開源專案">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/e95a7708-827b-423e-a017-77cb3b56192a/2012-06-05_210041_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [CodePlex]如何使用CodePlex website發佈自己的開源專案 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [CodePlex]如何使用CodePlex website發佈自己的開源專案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/e95a7708-827b-423e-a017-77cb3b56192a/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/e95a7708-827b-423e-a017-77cb3b56192a/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>     </p><p></p>
+<p></p><p><br>    筆者因為最近在整理了一個序列化的函式庫，對微軟的開源程式碼網站CodePlex稍稍玩了一下，這邊隨手做個紀錄。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要將自己的開源專案程式放在CodePlex上其實很簡單，先將瀏覽器連到<em>CodePlex</em> - Open Source Project Hosting網站，登入自己的帳號，這邊有提供兩種登入方式，可以用Windows Live ID登入，也可以用CodePlex去做登入。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_210041" border="0" height="215" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210041_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    登入帳號後我們可以看到下面這樣的畫面，按下Create Project，開始建立自己的CodePlex開源專案。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205045" border="0" height="351" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205045_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    在建立一個新的CodePlex Project，我們需要為這個Project起個名字，並告訴它專案的網址要用怎樣的開頭，以及要選擇用什麼來做我們Project的版本控制。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205157" border="0" height="364" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205157_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    輸入完按下CREATE按鈕建立CodePlex Project，你的CodePlex Project就建立出來了，這時Project還是尚未發布的狀態，記得30天內必需要將專案該設定的設完並發佈出去。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205240" border="0" height="377" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205240_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這邊就先讓我們把建立的專案它的細部資料給補齊，注意頁面右上方會有個Edit Project Summary &amp; Details的連結，按下去進入設定頁面。這頁面主要要補齊的是SUMMARY的部份，可以在這邊概略的介紹一下專案。另外下面的FUND設定也可以看一下，這是廣告的設置設定，可以為專案頁面右側放置廣告，為專案放置個廣告去做公益也是不錯的。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_211347" border="0" height="772" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_211347_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="594"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    設定完專案的細部資料後，我們可以開始著手編輯使用者第一眼會看到的HOME這頁，先用滑鼠點選Edit連結進入編輯狀態。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205746" border="0" height="273" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205746_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="468"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    剛進入CodePlex編輯的功能，有用過Wiki的可能會很熟悉。編輯時若需要些加些效果，像是要將描述變成黑體、斜體、或是要放程式碼進去，必需要善用右邊所提示的MARKUP GUIDE，套用對應的MARKUP GUIDE來達到我們想要的效果。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="421" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若對Wiki這種編輯方是很感冒的，CodePlex也提供Html Markup這種編輯方式，可在上方的FORMAT區域切換，編輯上就會像一般的網站一樣會有些編輯Html的小工具讓我們直接套用。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="399" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    HOME頁面除了內容可以編輯外，注意右邊還會有些資訊，像是瀏覽人數之類的，比較要注意的是右下角有個Tag的設定，這能幫助專案被搜尋與曝光，可以為專案標註上一些關鍵字。以筆者的序列化函式庫來說，就標注了序列化與解序列化這些關鍵字。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205422" border="0" height="268" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205422_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="499"></p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_205619" border="0" height="132" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205619_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="311"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    HOME頁面這邊的編輯若是都能上手，那麼後續的動作相信都不是問題了，因為這樣的編輯方式在很多頁面都是類似的，像是Document頁面的編輯也一樣，這邊就不多做介紹，你可以試著在Document頁面幫專案加上一些相關的教學文章，讓他人在使用您的專案時更為上手。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Home與Document頁面都依序設置完成，我們還必須要注意到要切換到LICENSE頁面，為專案設定它的授權。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_210442" border="0" height="233" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210442_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_210504" border="0" height="248" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210504_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    到此專案大致該有的設定都設定完了，接著要進入上Code的階段，上Code的部份這邊會依照當初選擇的版本控制方式而有不同，因為筆者選擇的是Git上Code，故這邊以Git的方式來做個簡單的介紹(不足的地方請自行參閱CodePlex Information and Discussion這篇教學)，沒裝Git的請先自行安裝妥當。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    首先我們必需要切至SOURCE CODE頁面，按下右下角的Git連結，CodePlex會彈出個小對話框，上面會顯示這個專案的Git位置、帳密提示、與教學說明的連結。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="297" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    有了Git位置後我們要先將這個專案給它Clone下來，開啟Git Bash用git clone指令就可以了，像是下面這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b9d8ac75-e5db-4e66-8399-a8808c0553f3" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c" name="code"><br>git clone <a href="https://YourCodePlexUsername@CloneUrl" target="_blank" rel="noopener">https://YourCodePlexUsername@CloneUrl</a> NameOfFolder</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    以CodePlex教學頁面上所提的例子來說，就是先將Git Bash切至桌面，並將CodePlex專案Clone下來放在MyAwesomeGitProject目錄下。下Git指令時Git Bash會詢問帳號密碼，這邊帶入自己的帳密就可以了。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="172" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="598"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Clone下來自己的專案後，我們可以直接用抓下來的專案進行編程，編程一個段落可以將Code加入索引，並將Code Commit後Push到CodePlex。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="152" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_4.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="600"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    上完的Code我們可以在SOURCE CODE頁面直接查閱，是修改什麼、有改動哪些檔案、其差異是什麼，每版的紀錄都是清清楚楚。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    專案程式開發告一段落，功能達到預期且穩定的話，我們可以將專案Release。只要切至DOWNLOADS頁面，按下Create New Release。</p><p></p>
+<p></p><p><br>      <img alt="2012-06-05_210558" border="0" height="295" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210558_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    填入這次Release是幾版，有什麼重大的功能與修正，並附上Release的檔案，以及是否是穩定版本。</p><p></p>
+<p></p><p><br>    <img alt="2012-06-05_210825" border="0" height="484" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210825_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="480"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    CodePlex上專案的流程到這邊大概簡單的介紹完畢了，整體來說CodePlex算是個還不錯也還滿完整的開放源碼網站服務，該有的功能大致上都內建了，也還滿好用的，不過Release時要自己編譯後壓縮上傳這點還是有點麻煩。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        CodePlex Information and Discussion</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/84095ada-078b-4b9e-87e5-fe33600df5f6/" rel="next" title="安裝stlinux23-sh4-python套件，讓網樂通具備運行Python的能力" data-instant>
+                <i class="fa fa-chevron-left"></i> 安裝stlinux23-sh4-python套件，讓網樂通具備運行Python的能力
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/e9b4d162-717f-4fa6-9f6d-48bdcd8ae97e/" rel="prev" title="CA1810_ Initialize reference type static fields inline" data-instant>
+                CA1810_ Initialize reference type static fields inline <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/e95a7708-827b-423e-a017-77cb3b56192a/';
+      var disqus_title = "[CodePlex]如何使用CodePlex website發佈自己的開源專案";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/e95a7708-827b-423e-a017-77cb3b56192a/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

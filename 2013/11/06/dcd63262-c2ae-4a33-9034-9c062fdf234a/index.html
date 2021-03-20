@@ -1,0 +1,703 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][VB.NET]自定義例外對話框">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][VB.NET]自定義例外對話框">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/dcd63262-c2ae-4a33-9034-9c062fdf234a/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][VB.NET]自定義例外對話框">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][VB.NET]自定義例外對話框">
+<meta name="twitter:description" content="[C#][VB.NET]自定義例外對話框">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/dcd63262-c2ae-4a33-9034-9c062fdf234a/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][VB.NET]自定義例外對話框 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][VB.NET]自定義例外對話框
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/dcd63262-c2ae-4a33-9034-9c062fdf234a/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/dcd63262-c2ae-4a33-9034-9c062fdf234a/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前在『例外處理使用時機』這篇有提到我目前很少會寫例外處理。除了在那篇提到的原因之外，還有個因素就是我會弄個自定義的例外處理視窗，讓使用者在例外發生時，可以匯出例外訊息並提供給開發人員。有了匯出的例外訊息，我們就可以很快的把未處理完的例外(指給程式員看的例外)給修正。</p>  <p>要做到自定義的例外對話框，我們需要利用Application.ThreadException事件。</p>  <p>先讓我們看一下MSDN的說明：</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0904/f597175ff4e3_132CC/image_2.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb.png" width="384" height="146"></a></p>  <p> </p>  <p>從MSDN的說明可以很清楚的看到，當執行緒發生例外，且該例外未被處理，則該事件即會觸發。</p>  <p> </p>  <p>接著就讓我們來看看如何才能利用該事件做出自定義的例外對話框。首先，我們需要設計自定義的例外對話框。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0904/f597175ff4e3_132CC/image_4.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb_1.png" width="497" height="320"></a></p>  <p> </p>  <p>接著撰寫繫上事件用的副程式。</p>  <p>VB.NET</p>  <div class="csharpcode">   <pre class="alt">    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowBugWindowOnError()</pre><br><br>  <pre>        <span class="kwrd">AddHandler</span> Application.ThreadException, <span class="kwrd">AddressOf</span> OnErrorOccur</pre><br><br>  <pre class="alt">    <span class="kwrd">End</span> Sub</pre><br></div><br><br><p> </p>
+
+
+<p>C#</p>
+
+<div class="csharpcode"><br>  <pre class="alt">    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> ShowBugWindowOnError()</pre><br><br>  <pre>    {</pre><br><br>  <pre class="alt">        Application.ThreadException += <span class="kwrd">new</span> System.Threading.ThreadExceptionEventHandler(OnErrorOccur);</pre><br><br>  <pre>    }   </pre><br></div>
+
+<p> </p>
+
+
+<p> </p>
+
+<p>最後寫上事件觸發時要執行的事件處理函式。</p>
+
+<p>VB.NET</p>
+
+<div class="csharpcode"><br>  <pre class="alt">    <span class="kwrd">Protected</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> OnErrorOccur(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> <span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> ThreadExceptionEventArgs)</pre><br><br>  <pre>        <span class="kwrd">Dim</span> errorDlg <span class="kwrd">As</span> <span class="kwrd">New</span> ExceptionDialog</pre><br><br>  <pre class="alt">        errorDlg.DetailErrorMsg_TextBox.Text = GetDetailErrorMsg(e.Exception)</pre><br><br>  <pre>        errorDlg.ShowDialog()</pre><br><br>  <pre class="alt">    <span class="kwrd">End</span> Sub</pre><br></div>
+
+<p> </p>
+
+
+
+<p>C#</p>
+
+<div class="csharpcode"><br>  <pre class="alt">    <span class="kwrd">protected</span> <span class="kwrd">static</span> <span class="kwrd">void</span> OnErrorOccur(<span class="kwrd">object</span> sender, System.Threading.ThreadExceptionEventArgs e)</pre><br><br>  <pre>    {</pre><br><br>  <pre class="alt">        ExceptionDlg errorDlg = <span class="kwrd">new</span> ExceptionDlg();</pre><br><br>  <pre>        errorDlg.DetailErrorMsg_TextBox.Text = GetDetailErrorMsg(e.Exception);</pre><br><br>  <pre class="alt">        errorDlg.ShowDialog();</pre><br><br>  <pre>    }</pre><br></div>
+
+<p> </p>
+
+
+
+<p> </p>
+
+<p>到此一個簡單的自定義例外對話框就完成了。使用上，我們只需呼叫剛寫的繫上事件用副程式即可。</p>
+
+<p>VB.NET</p>
+
+<div style="width: 693px; height: 82px; overflow: auto"><br>  <div class="csharpcode"><br>    <pre class="alt">   <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Form1_Load(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> <span class="kwrd">MyBase</span>.Load</pre><br><br>    <pre>        ExceptionDialog.ShowBugWindowOnError()</pre><br><br>    <pre class="alt">    <span class="kwrd">End</span> Sub</pre><br>  </div><br></div>
+
+<p>C#</p>
+
+<div class="csharpcode"><br>  <pre class="alt">    <span class="kwrd">private</span> <span class="kwrd">void</span> Form1_Load(<span class="kwrd">object</span> sender, EventArgs e)</pre><br><br>  <pre>    {</pre><br><br>  <pre class="alt">        ExceptionDlg.ShowBugWindowOnError();</pre><br><br>  <pre>    }</pre><br></div>
+
+<p> </p>
+
+
+
+<p> </p>
+
+<p>完整程式碼：</p>
+
+<p>VB.NET</p>
+
+<div style="width: 696px; height: 375px; overflow: auto"><br>  <div class="csharpcode"><br>    <pre class="alt"><span class="kwrd">Imports</span> System.Windows.Forms</pre><br><br>    <pre><span class="kwrd">Imports</span> System.Threading</pre><br><br>    <pre class="alt"><span class="kwrd">Imports</span> System.Text</pre><br><br>    <pre> </pre><br><br>    <pre class="alt"><span class="kwrd">Public</span> <span class="kwrd">Class</span> ExceptionDialog</pre><br><br>    <pre> </pre><br><br>    <pre class="alt"><span class="preproc">#Region</span> <span class="str">“Const”</span></pre><br><br>    <pre>    <span class="kwrd">Const</span> OpenDetailButtonText <span class="kwrd">As</span> <span class="kwrd">String</span> = <span class="str">“v 詳細資料”</span></pre><br><br>    <pre class="alt">    <span class="kwrd">Const</span> CloseDetailButtonText <span class="kwrd">As</span> <span class="kwrd">String</span> = <span class="str">“^ 詳細資料”</span></pre><br><br>    <pre><span class="preproc">#End Region</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre><span class="preproc">#Region</span> <span class="str">“Var”</span></pre><br><br>    <pre class="alt">    <span class="kwrd">Private</span> _isDetailOpened <span class="kwrd">As</span> <span class="kwrd">Boolean</span></pre><br><br>    <pre><span class="preproc">#End Region</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre><span class="preproc">#Region</span> <span class="str">“Public Shared Method”</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre class="alt">    <span class="rem">‘Author: Larry Nung</span></pre><br><br>    <pre>    <span class="rem">‘Date: 2009/4/9</span></pre><br><br>    <pre class="alt">    <span class="rem">‘Purpose: </span></pre><br><br>    <pre>    <span class="rem">‘Memo: </span></pre><br><br>    <pre class="alt">    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ Shows the bug window on error.</span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;/summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ &lt;remarks&gt;&lt;/remarks&gt;</span></pre><br><br>    <pre>    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowBugWindowOnError()</pre><br><br>    <pre class="alt">        <span class="kwrd">AddHandler</span> Application.ThreadException, <span class="kwrd">AddressOf</span> OnErrorOccur</pre><br><br>    <pre>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre class="alt"><span class="preproc">#End Region</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre><span class="preproc">#Region</span> <span class="str">“Protected Shared Method”</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre class="alt">    <span class="rem">‘Author: Larry Nung</span></pre><br><br>    <pre>    <span class="rem">‘Date: 2009/4/9</span></pre><br><br>    <pre class="alt">    <span class="rem">‘Purpose: </span></pre><br><br>    <pre>    <span class="rem">‘Memo: </span></pre><br><br>    <pre class="alt">    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ Called when [error occur].</span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;/summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ &lt;param name=”sender”&gt;The sender.&lt;/param&gt;</span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;param name=”e”&gt;The &lt;see cref=”System.Threading.ThreadExceptionEventArgs” /&gt; instance containing the event data.&lt;/param&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ &lt;remarks&gt;&lt;/remarks&gt;</span></pre><br><br>    <pre>    <span class="kwrd">Protected</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> OnErrorOccur(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> <span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> ThreadExceptionEventArgs)</pre><br><br>    <pre class="alt">        <span class="kwrd">Dim</span> errorDlg <span class="kwrd">As</span> <span class="kwrd">New</span> ExceptionDialog</pre><br><br>    <pre>        errorDlg.DetailErrorMsg_TextBox.Text = GetDetailErrorMsg(e.Exception)</pre><br><br>    <pre class="alt">        errorDlg.ShowDialog()</pre><br><br>    <pre>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre class="alt"><span class="preproc">#End Region</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre><span class="preproc">#Region</span> <span class="str">“Private Shared Method”</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre class="alt">    <span class="rem">‘Author: Larry Nung</span></pre><br><br>    <pre>    <span class="rem">‘Date: 2009/4/9</span></pre><br><br>    <pre class="alt">    <span class="rem">‘Purpose: </span></pre><br><br>    <pre>    <span class="rem">‘Memo: </span></pre><br><br>    <pre class="alt">    <span class="rem">‘<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ Gets the detail error MSG.</span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;/summary&gt;</span></pre><br><br>    <pre class="alt">    <span class="rem">‘’’ &lt;returns&gt;&lt;/returns&gt;</span></pre><br><br>    <pre>    <span class="rem">‘’’ &lt;remarks&gt;&lt;/remarks&gt;</span></pre><br><br>    <pre class="alt">    <span class="kwrd">Private</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> GetDetailErrorMsg(<span class="kwrd">ByVal</span> e <span class="kwrd">As</span> Exception) <span class="kwrd">As</span> <span class="kwrd">String</span></pre><br><br>    <pre>        <span class="kwrd">Dim</span> str <span class="kwrd">As</span> <span class="kwrd">New</span> StringBuilder</pre><br><br>    <pre class="alt">        str.AppendLine(<span class="kwrd">String</span>.Format(<span class="str">“Source: {0}”</span>, e.Source))</pre><br><br>    <pre>        str.AppendLine(<span class="kwrd">String</span>.Format(<span class="str">“Message: {0}”</span>, e.Message))</pre><br><br>    <pre class="alt">        str.AppendLine(<span class="kwrd">String</span>.Format(<span class="str">“TargetSite: {0}”</span>, e.TargetSite))</pre><br><br>    <pre>        str.AppendLine(<span class="str">“”</span>)</pre><br><br>    <pre class="alt">        str.AppendLine(<span class="str">“StackTrace: “</span>)</pre><br><br>    <pre>        str.AppendLine(e.StackTrace)</pre><br><br>    <pre class="alt">        <span class="kwrd">Return</span> str.ToString</pre><br><br>    <pre>    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><br><br>    <pre class="alt"><span class="preproc">#End Region</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt"><span class="preproc">#Region</span> <span class="str">“Event Process”</span></pre><br><br>    <pre>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> OK_Button_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> OK_Button.Click</pre><br><br>    <pre class="alt">        <span class="kwrd">Me</span>.DialogResult = System.Windows.Forms.DialogResult.OK</pre><br><br>    <pre>        <span class="kwrd">Me</span>.Close()</pre><br><br>    <pre class="alt">    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt">    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Cancel_Button_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Cancel_Button.Click</pre><br><br>    <pre>        <span class="kwrd">Me</span>.DialogResult = System.Windows.Forms.DialogResult.Cancel</pre><br><br>    <pre class="alt">        Application.<span class="kwrd">Exit</span>()</pre><br><br>    <pre>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Detail_Button_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Detail_Button.Click</pre><br><br>    <pre class="alt">        _isDetailOpened = <span class="kwrd">Not</span> _isDetailOpened</pre><br><br>    <pre>        Detail_Button.Text = <span class="kwrd">If</span>(_isDetailOpened, CloseDetailButtonText, OpenDetailButtonText)</pre><br><br>    <pre class="alt">        <span class="kwrd">Me</span>.Height = <span class="kwrd">If</span>(_isDetailOpened, <span class="kwrd">Me</span>.DetailErrorMsg_TextBox.Bottom, <span class="kwrd">Me</span>.DetailErrorMsg_TextBox.Top) + 32</pre><br><br>    <pre>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> ExceptionDialog_Load(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> <span class="kwrd">MyBase</span>.Load</pre><br><br>    <pre class="alt">        <span class="kwrd">Me</span>.Height = <span class="kwrd">Me</span>.DetailErrorMsg_TextBox.Top + 32</pre><br><br>    <pre>        <span class="kwrd">Me</span>.ErrorIcon_Label.Image = SystemIcons.<span class="kwrd">Error</span>.ToBitmap</pre><br><br>    <pre class="alt">    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><br><br>    <pre><span class="preproc">#End Region</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre><span class="kwrd">End</span> <span class="kwrd">Class</span></pre><br>  </div><br></div>
+
+<p>C#</p>
+
+<div style="width: 696px; height: 375px; overflow: auto"><br>  <div class="csharpcode"><br>    <pre class="alt"><span class="kwrd">using</span> System;</pre><br><br>    <pre><span class="kwrd">using</span> System.Collections.Generic;</pre><br><br>    <pre class="alt"><span class="kwrd">using</span> System.ComponentModel;</pre><br><br>    <pre><span class="kwrd">using</span> System.Data;</pre><br><br>    <pre class="alt"><span class="kwrd">using</span> System.Drawing;</pre><br><br>    <pre><span class="kwrd">using</span> System.Linq;</pre><br><br>    <pre class="alt"><span class="kwrd">using</span> System.Text;</pre><br><br>    <pre><span class="kwrd">using</span> System.Windows.Forms;</pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt"><span class="kwrd">namespace</span> ExceptionDlgTest</pre><br><br>    <pre>{</pre><br><br>    <pre class="alt">    <span class="kwrd">public</span> <span class="kwrd">partial</span> <span class="kwrd">class</span> ExceptionDlg : Form</pre><br><br>    <pre>    {</pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>        <span class="preproc">#region</span> Const</pre><br><br>    <pre class="alt">        <span class="kwrd">const</span> <span class="kwrd">string</span> OpenDetailButtonText = <span class="str">“v 詳細資料”</span>;</pre><br><br>    <pre>        <span class="kwrd">const</span> <span class="kwrd">string</span> CloseDetailButtonText = <span class="str">“^ 詳細資料”</span>;</pre><br><br>    <pre class="alt">        <span class="preproc">#endregion</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="preproc">#region</span> Var</pre><br><br>    <pre>        <span class="kwrd">private</span> Boolean _isDetailOpened;</pre><br><br>    <pre class="alt">        <span class="preproc">#endregion</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>        <span class="preproc">#region</span> Construction</pre><br><br>    <pre class="alt">        <span class="kwrd">public</span> ExceptionDlg()</pre><br><br>    <pre>        {</pre><br><br>    <pre class="alt">            InitializeComponent();</pre><br><br>    <pre>        }</pre><br><br>    <pre class="alt">        <span class="preproc">#endregion</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="preproc">#region</span> Public Shared Method</pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="rem">//<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre>        <span class="rem">//Author: Larry Nung</span></pre><br><br>    <pre class="alt">        <span class="rem">//Date: 2009/4/9</span></pre><br><br>    <pre>        <span class="rem">//Purpose: </span></pre><br><br>    <pre class="alt">        <span class="rem">//Memo: </span></pre><br><br>    <pre>        <span class="rem">//<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></span></pre><br><br>    <pre class="alt">        <span class="rem">/// &lt;summary&gt;</span></pre><br><br>    <pre>        <span class="rem">/// </span></pre><br><br>    <pre class="alt">        <span class="rem">/// &lt;/summary&gt;</span></pre><br><br>    <pre>        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">void</span> ShowBugWindowOnError()</pre><br><br>    <pre class="alt">        {</pre><br><br>    <pre>            Application.ThreadException += <span class="kwrd">new</span> System.Threading.ThreadExceptionEventHandler(OnErrorOccur);</pre><br><br>    <pre class="alt">        }     </pre><br><br>    <pre>        <span class="preproc">#endregion</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="preproc">#region</span> Protected Shared Method</pre><br><br>    <pre>        <span class="kwrd">protected</span> <span class="kwrd">static</span> <span class="kwrd">void</span> OnErrorOccur(<span class="kwrd">object</span> sender, System.Threading.ThreadExceptionEventArgs e)</pre><br><br>    <pre class="alt">        {</pre><br><br>    <pre>            ExceptionDlg errorDlg = <span class="kwrd">new</span> ExceptionDlg();</pre><br><br>    <pre class="alt">            errorDlg.DetailErrorMsg_TextBox.Text = GetDetailErrorMsg(e.Exception);</pre><br><br>    <pre>            errorDlg.ShowDialog();</pre><br><br>    <pre class="alt">        }</pre><br><br>    <pre>        <span class="preproc">#endregion</span></pre><br><br>    <pre class="alt"> </pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="preproc">#region</span> Private Shared Method</pre><br><br>    <pre>        <span class="kwrd">private</span> <span class="kwrd">static</span> <span class="kwrd">string</span> GetDetailErrorMsg(Exception e)</pre><br><br>    <pre class="alt">        {</pre><br><br>    <pre>            StringBuilder str = <span class="kwrd">new</span> StringBuilder();</pre><br><br>    <pre class="alt">            str.AppendLine(String.Format(<span class="str">“Source: {0}”</span>, e.Source));</pre><br><br>    <pre>            str.AppendLine(String.Format(<span class="str">“Message: {0}”</span>, e.Message));</pre><br><br>    <pre class="alt">            str.AppendLine(String.Format(<span class="str">“TargetSite: {0}”</span>, e.TargetSite));</pre><br><br>    <pre>            str.AppendLine(<span class="str">“”</span>);</pre><br><br>    <pre class="alt">            str.AppendLine(<span class="str">“StackTrace: “</span>);</pre><br><br>    <pre>            str.AppendLine(e.StackTrace);</pre><br><br>    <pre class="alt">            <span class="kwrd">return</span> str.ToString();</pre><br><br>    <pre>        }</pre><br><br>    <pre class="alt">        <span class="preproc">#endregion</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>        <span class="preproc">#region</span> Event Process</pre><br><br>    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> Cancel_Button_Click(<span class="kwrd">object</span> sender, EventArgs e)</pre><br><br>    <pre>        {</pre><br><br>    <pre class="alt">            Application.Exit();</pre><br><br>    <pre>        }</pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>        <span class="kwrd">private</span> <span class="kwrd">void</span> OK_Button_Click(<span class="kwrd">object</span> sender, EventArgs e)</pre><br><br>    <pre class="alt">        {</pre><br><br>    <pre>            <span class="kwrd">this</span>.Close();</pre><br><br>    <pre class="alt">        }</pre><br><br>    <pre> </pre><br><br>    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> Detail_Button_Click(<span class="kwrd">object</span> sender, EventArgs e)</pre><br><br>    <pre>        {</pre><br><br>    <pre class="alt">            _isDetailOpened = !_isDetailOpened;</pre><br><br>    <pre>            Detail_Button.Text = _isDetailOpened ? CloseDetailButtonText : OpenDetailButtonText;</pre><br><br>    <pre class="alt">            <span class="kwrd">this</span>.Height = _isDetailOpened ? <span class="kwrd">this</span>.DetailErrorMsg_TextBox.Bottom : <span class="kwrd">this</span>.DetailErrorMsg_TextBox.Top + 32;</pre><br><br>    <pre>        }</pre><br><br>    <pre class="alt"> </pre><br><br>    <pre>        <span class="kwrd">private</span> <span class="kwrd">void</span> ExceptionDlg_Load(<span class="kwrd">object</span> sender, EventArgs e)</pre><br><br>    <pre class="alt">        {</pre><br><br>    <pre>            <span class="kwrd">this</span>.Height = <span class="kwrd">this</span>.DetailErrorMsg_TextBox.Top + 32;</pre><br><br>    <pre class="alt">            <span class="kwrd">this</span>.ErrorIcon_Label.Image = SystemIcons.Error.ToBitmap();</pre><br><br>    <pre>        }</pre><br><br>    <pre class="alt">        <span class="preproc">#endregion</span></pre><br><br>    <pre> </pre><br><br>    <pre class="alt">     </pre><br><br>    <pre>    }</pre><br><br>    <pre class="alt">}</pre><br>  </div><br></div>
+
+<p> </p>
+
+
+
+<p> </p>
+
+<p>執行畫面如下：</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb_2.png" width="469" height="141"></p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb_3.png" width="469" height="271"></p>
+
+<p> </p>
+
+<h2>Conclusion</h2>
+
+<p>透過Application.ThreadException事件，我們可以很容易達到該篇的效果。但需注意這樣的作法只對繫上的執行緒有效，非繫上的執行緒若發生例外，將無法截取到。在實際應用上，也可依自己需求加入記錄到事件記錄簿等功能，甚至可以使用.NET預設的例外視窗來顯示，只是多加了一些自己的處理，讓使用者感覺不出差異。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4dbfe4c7-de20-4538-885f-6e8bdfd47fab" class="wlWriterSmartContent"><pre name="code" class="vb">    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load<br>        AddHandler Application.ThreadException, AddressOf Application_ThreadException<br>        …<br>    End Sub<br><br>    Private Sub Application_ThreadException(ByVal sender As Object, ByVal e As ThreadExceptionEventArgs)<br>        …<br>        Dim exceptionDlg As New ThreadExceptionDialog(e.Exception)<br>        exceptionDlg.ShowDialog()<br>    End Sub</pre></div>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb.png" width="444" height="319"> </p>
+
+<p> </p>
+
+<p>另外，若有興趣的也可以改繫上AppDomain.UnhandledException試看看。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\dcd63262-c2ae-4a33-9034-9c062fdf234a\image_thumb_4.png" width="347" height="138"> </p>
+
+<p> </p>
+
+<h2>Download</h2>
+
+<p>ExceptionDlg.zip</p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/28b5cc09-7376-43e5-aeec-0aaee81d3419/" rel="next" title="[C#]Export PowerPoint file to photos" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]Export PowerPoint file to photos
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/17813c87-3321-4d8e-be7b-eb3f15122c24/" rel="prev" title="Run application with Google App Engine Launcher" data-instant>
+                Run application with Google App Engine Launcher <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">Download</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/dcd63262-c2ae-4a33-9034-9c062fdf234a/';
+      var disqus_title = "[C#][VB.NET]自定義例外對話框";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/dcd63262-c2ae-4a33-9034-9c062fdf234a/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

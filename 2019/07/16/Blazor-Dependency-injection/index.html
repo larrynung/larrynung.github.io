@@ -1,0 +1,632 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Blazor,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Blazor component 若需要使用 Service，可透過 DI 注入。">
+<meta name="keywords" content="Blazor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blazor - Dependency injection">
+<meta property="og:url" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Blazor component 若需要使用 Service，可透過 DI 注入。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/1.png">
+<meta property="og:image" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/2.png">
+<meta property="og:image" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/3.png">
+<meta property="og:image" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blazor - Dependency injection">
+<meta name="twitter:description" content="Blazor component 若需要使用 Service，可透過 DI 注入。">
+<meta name="twitter:image" content="http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Blazor - Dependency injection | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Blazor - Dependency injection
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2019-07-16T11:12:34+00:00" content="2019-07-16">
+              2019-07-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/07/16/Blazor-Dependency-injection/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/16/Blazor-Dependency-injection/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Blazor component 若需要使用 Service，可透過 DI 注入。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>像是 Blazor 範本內就有一個 Service。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace WebApplication1.Data</span><br><span class="line">&#123;</span><br><span class="line">    public class WeatherForecastService</span><br><span class="line">    &#123;</span><br><span class="line">        private static string[] Summaries = new[]</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;Freezing&quot;, &quot;Bracing&quot;, &quot;Chilly&quot;, &quot;Cool&quot;, &quot;Mild&quot;, &quot;Warm&quot;, &quot;Balmy&quot;, &quot;Hot&quot;, &quot;Sweltering&quot;, &quot;Scorching&quot;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        public Task&lt;WeatherForecast[]&gt; GetForecastAsync(DateTime startDate)</span><br><span class="line">        &#123;</span><br><span class="line">            var rng = new Random();</span><br><span class="line">            return Task.FromResult(Enumerable.Range(1, 5).Select(index =&gt; new WeatherForecast</span><br><span class="line">            &#123;</span><br><span class="line">                Date = startDate.AddDays(index),</span><br><span class="line">                TemperatureC = rng.Next(-20, 55),</span><br><span class="line">                Summary = Summaries[rng.Next(Summaries.Length)]</span><br><span class="line">            &#125;).ToArray());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2019/07/16/Blazor-Dependency-injection/1.png">
+<p><br></p>
+<p>這個 Service 會在 Startup.ConfigureServices 這邊加入，指定為 Singleton 的 Service。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Startup</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    public void ConfigureServices(IServiceCollection services)</span><br><span class="line">    &#123;</span><br><span class="line">        services.AddSingleton&lt;WeatherForecastService&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using Microsoft.AspNetCore.Builder;</span><br><span class="line">using Microsoft.AspNetCore.Hosting;</span><br><span class="line">using Microsoft.AspNetCore.HttpsPolicy;</span><br><span class="line">using Microsoft.Extensions.Configuration;</span><br><span class="line">using Microsoft.Extensions.DependencyInjection;</span><br><span class="line">using Microsoft.Extensions.Hosting;</span><br><span class="line">using WebApplication1.Data;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace WebApplication1</span><br><span class="line">&#123;</span><br><span class="line">    public class Startup</span><br><span class="line">    &#123;</span><br><span class="line">        public Startup(IConfiguration configuration)</span><br><span class="line">        &#123;</span><br><span class="line">            Configuration = configuration;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        public IConfiguration Configuration &#123; get; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to add services to the container.</span><br><span class="line">        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940</span><br><span class="line">        public void ConfigureServices(IServiceCollection services)</span><br><span class="line">        &#123;</span><br><span class="line">            services.AddRazorPages();</span><br><span class="line">            services.AddServerSideBlazor();</span><br><span class="line">            services.AddSingleton&lt;WeatherForecastService&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</span><br><span class="line">        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)</span><br><span class="line">        &#123;</span><br><span class="line">            if (env.IsDevelopment())</span><br><span class="line">            &#123;</span><br><span class="line">                app.UseDeveloperExceptionPage();</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                app.UseExceptionHandler(&quot;/Home/Error&quot;);</span><br><span class="line">                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.</span><br><span class="line">                app.UseHsts();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            app.UseHttpsRedirection();</span><br><span class="line">            app.UseStaticFiles();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            app.UseRouting();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            app.UseEndpoints(endpoints =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                endpoints.MapBlazorHub();</span><br><span class="line">                endpoints.MapFallbackToPage(&quot;/_Host&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2019/07/16/Blazor-Dependency-injection/2.png">
+<p><br></p>
+<p>然後在 Blazor component 中透過 @inject directive 注進 Service。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@inject WeatherForecastService ForecastService</span><br><span class="line">...</span><br><span class="line">@code &#123;</span><br><span class="line">    ...</span><br><span class="line">    protected override async Task OnInitAsync()</span><br><span class="line">    &#123;</span><br><span class="line">        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">@page &quot;/fetchdata&quot;</span><br><span class="line">@using WebApplication1.Data</span><br><span class="line">@inject WeatherForecastService ForecastService</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;h1&gt;Weather forecast&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;p&gt;This component demonstrates fetching data from a service.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@if (forecasts == null)</span><br><span class="line">&#123;</span><br><span class="line">    &lt;p&gt;&lt;em&gt;Loading...&lt;/em&gt;&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    &lt;table class=&quot;table&quot;&gt;</span><br><span class="line">        &lt;thead&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th&gt;Date&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;Temp. (C)&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;Temp. (F)&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;Summary&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/thead&gt;</span><br><span class="line">        &lt;tbody&gt;</span><br><span class="line">            @foreach (var forecast in forecasts)</span><br><span class="line">            &#123;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;@forecast.Date.ToShortDateString()&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;@forecast.TemperatureC&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;@forecast.TemperatureF&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;@forecast.Summary&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/tbody&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@code &#123;</span><br><span class="line">    WeatherForecast[] forecasts;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    protected override async Task OnInitAsync()</span><br><span class="line">    &#123;</span><br><span class="line">        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2019/07/16/Blazor-Dependency-injection/3.png">
+<p><br></p>
+<p>運行後可看到 Blazor component 可以正常的從注入的 Service 取得資料做呈現。  </p>
+<img src="/2019/07/16/Blazor-Dependency-injection/4.png">
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blazor/" rel="tag” data-instant>#Blazor</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/15/Blazor-Route-to-components/" rel="next" title="Blazor - Route to components" data-instant>
+                <i class="fa fa-chevron-left"></i> Blazor - Route to components
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/Perl-Install-on-Termux/" rel="prev" title="Perl - Install on Termux" data-instant>
+                Perl - Install on Termux <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2019/07/16/Blazor-Dependency-injection/';
+      var disqus_title = "Blazor - Dependency injection";
+      var disqus_url = 'http://larrynung.github.io/2019/07/16/Blazor-Dependency-injection/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

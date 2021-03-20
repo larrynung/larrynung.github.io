@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Level Up</title>
+  
+  <subtitle>謙卑學習，持之以恆，才能不斷的Level Up</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://larrynung.github.io/"/>
+  <updated>2021-03-20T00:40:39.125Z</updated>
+  <id>http://larrynung.github.io/</id>
+  
+  <author>
+    <name>Larry Nung</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Decode JWT token with jq</title>
+    <link href="http://larrynung.github.io/2021/03/20/Decode-JWT-token-with-jq/"/>
+    <id>http://larrynung.github.io/2021/03/20/Decode-JWT-token-with-jq/</id>
+    <published>2021-03-20T00:02:06.000Z</published>
+    <updated>2021-03-20T00:40:39.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 JWT token 免不了有時會需要解碼看裡面存放的內容，在可以連到外網的環境下，很多網站工具都可以滿足我們的需求，但若是在網路比較受限的環境下，就不能依賴於外網的網站工具了。</p><a id="more"></a><p><br></p><p>這時可考慮使用 jq 命令來做 JWT token 的解碼，使用方式如下:  </p><pre><code>jq -R &apos;split(&quot;.&quot;) | .[1] | @base64d | fromjson&apos; &lt;&lt;&lt; &quot;$JWT&quot;</code></pre><p><br></p><p>像是筆者這邊拿了一組 JWT token。  </p><img src="/2021/03/20/Decode-JWT-token-with-jq/1.png"><p><br></p><p>將 JWT token 帶入指令，即可看到 JWT token 解碼後的結果。  </p><pre><code>jq -R &apos;split(&quot;.&quot;) | .[1] | @base64d | fromjson&apos; &lt;&lt;&lt; &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c&quot;</code></pre><img src="/2021/03/20/Decode-JWT-token-with-jq/2.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://gist.github.com/angelo-v/e0208a18d455e2e6ea3c40ad637aac53" target="_blank" rel="noopener">Decode a JWT via command line</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 JWT token 免不了有時會需要解碼看裡面存放的內容，在可以連到外網的環境下，很多網站工具都可以滿足我們的需求，但若是在網路比較受限的環境下，就不能依賴於外網的網站工具了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Generate self-signed certificates with dotnet dev-certs</title>
+    <link href="http://larrynung.github.io/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/"/>
+    <id>http://larrynung.github.io/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/</id>
+    <published>2021-03-10T23:26:47.000Z</published>
+    <updated>2021-03-20T00:40:39.481Z</updated>
+    
+    <content type="html"><![CDATA[<p>dotnet dev-certs 提供 https 命令可供自產 HTTPS 開發憑證。  </p><a id="more"></a><pre><code>dotnet dev-certs --help</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/1.png"><p><br></p><p>使用方式如下圖所示。  </p><pre><code>dotnet dev-certs https --help</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/2.png"><p><br></p><p>最簡單的就是不帶任何參數直接使用 dotnet dev-certs 的 https 命令去產生並安裝 HTTPS 開發憑證。  </p><pre><code>dotnet dev-certs https</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/3.png"><p><br></p><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/4.png"><p><br></p><p>產生完可以用 dotnet dev-certs 的 https 命令加帶 –check 參數確認。  </p><pre><code>dotnet dev-certs https --check</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/5.png"><p><br></p><p>狀態碼為 0 即表示成功。  </p><pre><code>echo $?</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/6.png"><p><br></p><p>若要移除安裝的 HTTPS 開發憑證，可使用 dotnet dev-certs 的 https 命令並加帶 –clean 參數。  </p><pre><code>dotnet dev-certs https --clean</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/7.png"><p><br></p><p>再次確認 HTTPS 開發憑證的安裝狀態。  </p><pre><code>dotnet dev-certs https --check</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/8.png"><p><br></p><p>這時就會拿到狀態碼 6，表示並未安裝 HTTPS 開發憑證。  </p><pre><code>echo $?</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/9.png"><p><br></p><p>如要匯出 HTTPS 開發憑證，可使用 dotnet dev-certs 的 https 命令，加帶 -ep 參數指定匯出的 HTTPS 開發憑證所要存放的檔案位置，加帶 -p 參數指定匯出的 HTTPS 開發憑證私鑰密碼。  </p><pre><code>dotnet dev-certs https -ep $file -p $password</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/10.png"><p><br></p><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/11.png"><p><br></p><p>匯出後 HTTPS 開發憑證會被放置在指定的位置。  </p><pre><code>ls $file</code></pre><img src="/2021/03/10/Generate-self-signed-certificates-with-dotnet-dev-certs/12.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://blog.miniasp.com/post/2018/08/04/Configuring-HTTPS-using-NET-Core-SDK-21" target="_blank" rel="noopener">如何使用 .NET Core 2.1 內建的 dev-certs 命令管理開發環境的自簽憑證 | The Will Will Web</a></li><li><a href="https://docs.microsoft.com/en-us/dotnet/core/additional-tools/self-signed-certificates-guide" target="_blank" rel="noopener">Generate Self-Signed Certificates Overview - .NET | Microsoft Docs</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;dotnet dev-certs 提供 https 命令可供自產 HTTPS 開發憑證。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gauth - Host Google authenticator server</title>
+    <link href="http://larrynung.github.io/2021/03/07/gauth-Host-Google-authenticator-server/"/>
+    <id>http://larrynung.github.io/2021/03/07/gauth-Host-Google-authenticator-server/</id>
+    <published>2021-03-07T23:56:59.000Z</published>
+    <updated>2021-03-20T00:40:41.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>要起 gauth 服務供二階段認證使用，可將 gauth 程式碼下載下來。  </p><a id="more"></a><pre><code>git clone https://github.com/gbraadnl/gauth.git</code></pre><img src="/2021/03/07/gauth-Host-Google-authenticator-server/1.png"><p><br></p><p>切換到 gauth 程式碼目錄。  </p><pre><code>cd gauth</code></pre><img src="/2021/03/07/gauth-Host-Google-authenticator-server/2.png"><p><br></p><p>安裝 gauth 所需的 npm 套件。  </p><pre><code>npm install</code></pre><img src="/2021/03/07/gauth-Host-Google-authenticator-server/3.png"><p><br></p><p>然後透過 node 將 gauth 服務起起來。  </p><pre><code>node server</code></pre><img src="/2021/03/07/gauth-Host-Google-authenticator-server/4.png"><p><br></p><p>服務起來後用瀏覽器連至 8080 port，即可開始使用 gauth 來做二階段認證。  </p><pre><code>http://localhost:8080/</code></pre><img src="/2021/03/07/gauth-Host-Google-authenticator-server/5.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://github.com/gbraad/gauth/" target="_blank" rel="noopener">GitHub - gbraad/gauth</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要起 gauth 服務供二階段認證使用，可將 gauth 程式碼下載下來。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="gauth" scheme="http://larrynung.github.io/tags/gauth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NuGet - Create and publish a package with dotnet CLI</title>
+    <link href="http://larrynung.github.io/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/"/>
+    <id>http://larrynung.github.io/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/</id>
+    <published>2021-02-18T00:17:51.000Z</published>
+    <updated>2021-03-20T00:40:39.989Z</updated>
+    
+    <content type="html"><![CDATA[<p>要建立 NuGet 套件，需先確認專案檔內有設計 NuGet 套件所需之資訊，像是套件識別碼、版本、作者、公司等。  </p><a id="more"></a><p><br></p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">PackageId</span>&gt;</span>AppLogger<span class="tag">&lt;/<span class="name">PackageId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">Version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Authors</span>&gt;</span>your_name<span class="tag">&lt;/<span class="name">Authors</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Company</span>&gt;</span>your_company<span class="tag">&lt;/<span class="name">Company</span>&gt;</span></span><br></pre></td></tr></table></figure><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/1.png"><p><br></p><p>然後可用 dotnet pack 命令將套件打包。  </p><pre><code>dotnet pack</code></pre><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/2.png"><p><br></p><p>或是在專案檔內加設定 GeneratePackageOnBuild，讓專案在建置時自動產生。  </p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">GeneratePackageOnBuild</span>&gt;</span>true<span class="tag">&lt;/<span class="name">GeneratePackageOnBuild</span>&gt;</span></span><br></pre></td></tr></table></figure><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/3.png"><p><br></p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/4.png"><p><br></p><p>然後確定 NuGet 帳號已註冊且取得 API key。  </p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/5.png"><p><br></p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/6.png"><p><br></p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/7.png"><p><br></p><p>再調用 dotnet nuget push，帶入 NuGet 套件檔的位置及 NuGet API key。  </p><pre><code>dotnet nuget push $package -k $key -s https://api.nuget.org/v3/index.json</code></pre><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/8.png"><p><br></p><p>NuGet 套件即會被上傳至 NuGet server 上。  </p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/9.png"><p><br></p><img src="/2021/02/18/NuGet-Create-and-publish-a-package-with-dotnet-CLI/10.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://docs.microsoft.com/zh-tw/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli" target="_blank" rel="noopener">使用 dotnet CLI 建立及發佈 NuGet 套件 | Microsoft Docs</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要建立 NuGet 套件，需先確認專案檔內有設計 NuGet 套件所需之資訊，像是套件識別碼、版本、作者、公司等。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="NuGet" scheme="http://larrynung.github.io/tags/NuGet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB - Creating a MongoDB replica set in single Docker container</title>
+    <link href="http://larrynung.github.io/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/"/>
+    <id>http://larrynung.github.io/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/</id>
+    <published>2021-01-27T23:39:17.000Z</published>
+    <updated>2021-03-20T00:40:39.909Z</updated>
+    
+    <content type="html"><![CDATA[<p>透過 Docker 去起 MongoDB replica set，多半網路上的做法都是用多個容器去做，這邊筆者考量測試與開發上的便利性，試著用一個容器去起 MongoDB replica set。  </p><a id="more"></a><p><br></p><p>Docker compose 檔如下:  </p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mongo:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mongo:4.2.2</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mongo</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"27017:27017"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"27027:27027"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"27037:27037"</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./mongodb/data:/mongodb/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./mongodb/log:/mongodb/log</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./mongodb/mongod.yml:/mongodb/mongod.yml</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="comment"># provide your credentials here</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MONGO_INITDB_ROOT_USERNAME=root</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MONGO_INITDB_ROOT_PASSWORD=pass.123</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">sh</span> <span class="string">-c</span> <span class="string">'</span></span><br><span class="line"><span class="string">      mkdir -p /mongodb/data/db1 /mongodb/data/db2 /mongodb/data/db3 /mongodb/log/db1 /mongodb/log/db2 /mongodb/log/db3 &amp;&amp;</span></span><br><span class="line"><span class="string">      mongod --config /mongodb/mongod.yml --port 27017 --dbpath /mongodb/data/db1 --logpath /mongodb/log/db1/mongod.log &amp;&amp;</span></span><br><span class="line"><span class="string">      mongod --config /mongodb/mongod.yml --port 27027 --dbpath /mongodb/data/db2 --logpath /mongodb/log/db2/mongod.log &amp;&amp;</span></span><br><span class="line"><span class="string">      mongod --config /mongodb/mongod.yml --port 27037 --dbpath /mongodb/data/db3 --logpath /mongodb/log/db3/mongod.log &amp;&amp;</span></span><br><span class="line"><span class="string">      mongo --eval '</span><span class="string">"'"</span><span class="string">'rs.initiate(&#123;_id:"rs0",members:[&#123;_id:0,host:"localhost:27017"&#125;,&#123;_id:1,host:"localhost:27027"&#125;,&#123;_id:2,host:"localhost:27037"&#125;]&#125;)'</span><span class="string">"'"</span><span class="string">' &amp;&amp;</span></span><br><span class="line"><span class="string">      tail -f /dev/null</span></span><br><span class="line"><span class="string">      '</span></span><br></pre></td></tr></table></figure><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/1.png"><p><br></p><p>將容器啟動，MongoDB replica set 沒意外的話會正常運作。</p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/2.png"><p><br></p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/3.png"><p><br></p><p>通常從最後的 initiate 訊息即可判斷是否正常，若是擔心也可連進容器再做些確認。  </p><pre><code>docker exec -it mongo mongo</code></pre><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/4.png"><p><br></p><p>像是連進去的資訊，看看是否有提示 PRIMARY/SECONDARY。  </p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/5.png"><p><br></p><p>調用 rs.conf 命令確認設定。</p><pre><code>rs.conf()</code></pre><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/6.png"><p><br></p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/7.png"><p><br></p><p>或是調用 rs.status 命令確認 replica set 的 primary/secondary 的切換、抄寫、狀態、設定都是正常的。  </p><pre><code>rs.status()</code></pre><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/8.png"><p><br></p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/9.png"><p><br></p><img src="/2021/01/27/MongoDB-Creating-a-MongoDB-replica-set-in-single-Docker-container/10.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;透過 Docker 去起 MongoDB replica set，多半網路上的做法都是用多個容器去做，這邊筆者考量測試與開發上的便利性，試著用一個容器去起 MongoDB replica set。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MongoDB" scheme="http://larrynung.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet-counters - Monitor specified process</title>
+    <link href="http://larrynung.github.io/2021/01/21/dotnet-counters-Monitor-specified-process/"/>
+    <id>http://larrynung.github.io/2021/01/21/dotnet-counters-Monitor-specified-process/</id>
+    <published>2021-01-21T01:09:50.000Z</published>
+    <updated>2021-03-20T00:40:41.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>dotnet-counters 可用來監控 .Net Core 的 Process，像是這邊筆者準備了一份簡單的程式想要觀察其 CPU 與 Memory 這些資源上的變化狀況。  </p><a id="more"></a><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/1.png"><p><br></p><p>將程式運行起來。  </p><pre><code>dotnet run</code></pre><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/2.png"><p><br></p><p>運行起來後可用 dotnet-trace 查詢 Process。  </p><pre><code>dotnet-trace ps</code></pre><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/3.png"><p><br></p><p>接著就可透過 dotnet-counters 監控指定 Process 的資源使用狀態。  </p><pre><code>dotnet-counters monitor --refresh-interval $refreshInterval -p $processId</code></pre><p><br></p><p>像是這邊剛剛查閱到了 dotnet run 起了兩個 Process，我們可以帶入 Process Id 監控。  </p><pre><code>dotnet-counters monitor --refresh-interval 1 -p 35603</code></pre><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/4.png"><p><br></p><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/5.png"><p><br></p><pre><code>dotnet-counters monitor --refresh-interval 1 -p 35608</code></pre><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/6.png"><p><br></p><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/7.png"><p><br></p><p>dotnet-counters 會將指定 Process 的資源使用狀況依照指定的時間更新，直至程式結束。  </p><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/8.png"><p><br></p><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/9.png"><p><br></p><img src="/2021/01/21/dotnet-counters-Monitor-specified-process/10.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://docs.microsoft.com/en-us/dotnet/core/diagnostics/debug-highcpu?tabs=linux" target="_blank" rel="noopener">Debug high CPU usage - .NET Core | Microsoft Docs</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;dotnet-counters 可用來監控 .Net Core 的 Process，像是這邊筆者準備了一份簡單的程式想要觀察其 CPU 與 Memory 這些資源上的變化狀況。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dotnet-counters" scheme="http://larrynung.github.io/tags/dotnet-counters/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet-counters - Install with dotnet tool</title>
+    <link href="http://larrynung.github.io/2021/01/19/dotnet-counters-Install-with-dotnet-tool/"/>
+    <id>http://larrynung.github.io/2021/01/19/dotnet-counters-Install-with-dotnet-tool/</id>
+    <published>2021-01-19T22:51:32.000Z</published>
+    <updated>2021-03-20T00:40:41.173Z</updated>
+    
+    <content type="html"><![CDATA[<p>要用 dotnet tool 安裝 dotnet-counters，可調用 d    otnet tool install 帶入 –global 參數指定安裝至全域，並在最後帶入 dotnet-counters 指定安裝 dotnet-counters 套件。     </p><a id="more"></a>                               <pre><code>dotnet tool install --global dotnet-counters</code></pre><img src="/2021/01/19/dotnet-counters-Install-with-dotnet-tool/1.png">                      <p><br></p><p>安裝後可調用 dotnet-counters 命令，帶入 –version 參數，確認安裝是否正確無誤。             </p><pre><code>dotnet-counters --version</code></pre><img src="/2021/01/19/dotnet-counters-Install-with-dotnet-tool/2.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title=" Link"></a> Link</h1><ul><li><a href="https://docs.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters" target="_blank" rel="noopener">dotnet-counters diagnostic tool - .NET CLI | Microsoft Docs</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要用 dotnet tool 安裝 dotnet-counters，可調用 d    otnet tool install 帶入 –global 參數指定安裝至全域，並在最後帶入 dotnet-counters 指定安裝 dotnet-counters 套件。     &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dotnet-counters" scheme="http://larrynung.github.io/tags/dotnet-counters/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet-trace - Install with dotnet tool</title>
+    <link href="http://larrynung.github.io/2021/01/18/dotnet-trace-Install-with-dotnet-tool/"/>
+    <id>http://larrynung.github.io/2021/01/18/dotnet-trace-Install-with-dotnet-tool/</id>
+    <published>2021-01-18T00:58:33.000Z</published>
+    <updated>2021-03-20T00:40:41.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>要用 dotnet tool 安裝 dotnet-trace，可調用 dotnet tool install 帶入 –global 參數指定安裝至全域，並在最後帶入 dotnet-trace 指定安裝<br>dotnet-trace 套件。  </p><a id="more"></a><pre><code>dotnet tool install --global dotnet-trace</code></pre><img src="/2021/01/18/dotnet-trace-Install-with-dotnet-tool/1.png"><p><br></p><p>安裝後可調用 dotnet-trace 命令，帶入 –version 參數，確認安裝是否正確無誤。  </p><pre><code>dotnet-trace --version</code></pre><img src="/2021/01/18/dotnet-trace-Install-with-dotnet-tool/2.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://docs.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace" target="_blank" rel="noopener">dotnet-trace diagnostic tool - .NET CLI | Microsoft Docs</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要用 dotnet tool 安裝 dotnet-trace，可調用 dotnet tool install 帶入 –global 參數指定安裝至全域，並在最後帶入 dotnet-trace 指定安裝&lt;br&gt;dotnet-trace 套件。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dotnet-trace" scheme="http://larrynung.github.io/tags/dotnet-trace/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HomeBrew - Error: homebrew-core is a shallow clone.</title>
+    <link href="http://larrynung.github.io/2021/01/04/HomeBrew-Error-homebrew-core-is-a-shallow-clone/"/>
+    <id>http://larrynung.github.io/2021/01/04/HomeBrew-Error-homebrew-core-is-a-shallow-clone/</id>
+    <published>2021-01-04T16:04:10.000Z</published>
+    <updated>2021-03-20T00:40:39.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 HomeBrew 如果出現 “Error: homebrew-core is a shallow clone.” 錯誤。  </p><a id="more"></a><img src="/2021/01/04/HomeBrew-Error-homebrew-core-is-a-shallow-clone/1.png"><p><br></p><p>可照著命令列的提示帶入。  </p><pre><code>git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch --unshallowgit -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask fetch --unshallow</code></pre><img src="/2021/01/04/HomeBrew-Error-homebrew-core-is-a-shallow-clone/2.png"><p><br></p><p>即可修復該問題。  </p><img src="/2021/01/04/HomeBrew-Error-homebrew-core-is-a-shallow-clone/3.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 HomeBrew 如果出現 “Error: homebrew-core is a shallow clone.” 錯誤。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="HomeBrew" scheme="http://larrynung.github.io/tags/HomeBrew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenSSL - Encryption with the OpenSSL Command-Line Interface</title>
+    <link href="http://larrynung.github.io/2021/01/01/openssl-encryption-with-the-openssl-command-line-interface/"/>
+    <id>http://larrynung.github.io/2021/01/01/openssl-encryption-with-the-openssl-command-line-interface/</id>
+    <published>2021-01-01T12:34:52.000Z</published>
+    <updated>2021-03-20T00:40:41.497Z</updated>
+    
+    <content type="html"><![CDATA[<p>要使用 OpenSSL CLI 進行加密，可先透過命令列帶入參數 -help 查閱一下 OpenSSL enc 的使用方式。  </p><a id="more"></a><pre><code>openssl enc -help</code></pre><img src="/2021/01/01/openssl-encryption-with-the-openssl-command-line-interface/1.png"><p><br></p><p>常用的參數有 -aes-256-cbc 指定使用 AES 256 CBC 加密、-base64 參數指定經過 Base64 處理、-p 參數指定印出 salt/key/iv、-k 參數指定要用來加密金鑰、-nosalt 指定加密時不加 salt。  </p><p><br></p><p>像是要將 “hello” 透過 AES 256 CBC 加密、加密金鑰用 “world”、透過 Base64 處理的話，可像下面這樣調用。  </p><pre><code>echo &quot;hello&quot; | openssl enc -aes-256-cbc -base64 -p -k world</code></pre><img src="/2021/01/01/openssl-encryption-with-the-openssl-command-line-interface/2.png"><p><br></p><p>如果不加 salt，可加帶 -nosalt 參數。  </p><pre><code>echo &quot;hello&quot; | openssl enc -aes-256-cbc -base64 -p -k world -nosalt</code></pre><img src="/2021/01/01/openssl-encryption-with-the-openssl-command-line-interface/3.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://www.jungledisk.com/blog/2018/06/04/the-developer-toolbox-encryption-decryption-with-openssl-command-line-interface/" target="_blank" rel="noopener">The Developer Toolbox: Encryption/Decryption with the OpenSSL Command-Line Interface | Jungle Disk Blog</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要使用 OpenSSL CLI 進行加密，可先透過命令列帶入參數 -help 查閱一下 OpenSSL enc 的使用方式。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenSSL" scheme="http://larrynung.github.io/tags/OpenSSL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB - Creating a MongoDB replica set using Docker</title>
+    <link href="http://larrynung.github.io/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/"/>
+    <id>http://larrynung.github.io/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/</id>
+    <published>2020-12-30T00:40:58.000Z</published>
+    <updated>2021-03-20T00:40:39.937Z</updated>
+    
+    <content type="html"><![CDATA[<p>要用 Docker 測試 MongoDB replica set 我們要先建立 Docker network。</p><a id="more"></a><pre><code>docker network ls</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/1.png"><p><br></p><pre><code>docker network create mongo-cluster</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/2.png"><p><br></p><pre><code>docker network ls</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/3.png"><p><br></p><p>然後起第一個 MongoDB 的 Docker 容器，設定使用 Docker network，並用 –replSet 參數指定 replSet 的名稱。  </p><pre><code>docker run -p 27017:27017 --name mongo1 --net mongo-cluster mongo mongod --replSet rs0</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/4.png"><p><br></p><p>接著起第二個 MongoDB 的 Docker 容器，一樣設定使&gt;    用 Docker network，且用 –replSet 參數指定 replSet 的名稱。</p><pre><code>docker run -p 27027:27017 --name mongo2 --net mongo-cluster mongo mongod --replSet rs0</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/5.png"><p><br></p><p>最後起第三個 MongoDB 的 Docker 容器，一樣設定使用 Docker network，且用 –replSet 參數指定 replSet 的名稱。</p><pre><code>docker run -p 27037:27017 --name mongo3 --net mongo-cluster mongo mongod --replSet rs0</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/6.png"><p><br></p><p>然後連進某一個容器內運行 mongo 命令。</p><pre><code>docker exec -it mongo1 mongo</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/7.png"><p><br></p><p>調用 rs.initate 命令，將三個 MongoDB instance 資料帶入，初始 MongoDB 的 replica set。<br>    rs.initiate( { _id : “rs0”,members: [{ _id: 0, host: “mongo1” },{ _id: 1, host: “mongo2” },{ _id: 2, host: “mongo3” }   ]})</p><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/8.png"><p><br></p><p>設完後可調用 rs.conf 命令確認設定。  </p><pre><code>rs.conf()</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/9.png"><p><br></p><p>並調用 rs.status 命令確認 replica set 的 primary/secondary 的切換、抄寫、狀態、設定都是正常的。</p><pre><code>rs.status()</code></pre><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/10.png"><p><br></p><img src="/2020/12/30/MongoDB-Creating-a-MongoDB-replica-set-using-Docker/11.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://www.sohamkamani.com/blog/2016/06/30/docker-mongo-replica-set/" target="_blank" rel="noopener">Creating a MongoDB replica set using Docker 🍃 - Soham’s blog</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要用 Docker 測試 MongoDB replica set 我們要先建立 Docker network。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MongoDB" scheme="http://larrynung.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>conventional-changelog-cli - Generate a changelog from git metadata</title>
+    <link href="http://larrynung.github.io/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/"/>
+    <id>http://larrynung.github.io/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/</id>
+    <published>2020-06-16T15:27:00.000Z</published>
+    <updated>2021-03-20T00:40:41.153Z</updated>
+    
+    <content type="html"><![CDATA[<p>conventional-changelog-cli 是一命令列工具，能解析 Git 符合 Angular style 的 Commit log，產生對應的 Change log。</p><a id="more"></a><p><br></p><p>使用前先透過 Npm 安裝套件至全域。  </p><pre><code>npm install -g conventional-changelog-cli</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/1.png"><p><br></p><p>即可開始使用。  </p><p><br></p><p>像是顯示 Change log 會產出的內容可帶參數 -w。</p><pre><code>conventional-changelog -p angular -i CHANGELOG.md -w -r 0</code></pre><p>要產生 Change log 可帶參數 -s。</p><pre><code>conventional-changelog -p angular -i CHANGELOG.md -s</code></pre><p><br></p><p>這邊筆者用簡單的例子稍微示範一下。  </p><p><br></p><p>首先先初始 Npm 專案設定檔，因為後面產生的 Change log 版號會要看這設定檔。  </p><pre><code>npm init</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/2.png"><p><br></p><p>接著初始專案的 Git 版控。  </p><pre><code>git init</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/3.png"><p><br></p><p>將第一版檔案加入版控。</p><pre><code>git add .</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/4.png"><p><br></p><pre><code>git commit</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/5.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/6.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/7.png"><p><br></p><p>確認上版。  </p><pre><code>git log</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/8.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/9.png"><p><br></p><p>嘗試切換專案版本至 1.0.0。  </p><pre><code>npm version 1.0.0 --allow-same-version</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/10.png"><p><br></p><p>透過 conventional-changelog 命令列工具帶入參數 -w 查閱產出的 Change log 會是怎樣。  </p><pre><code>conventional-changelog -p angular -i CHANGELOG.md -w -r 0</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/11.png"><p><br></p><p>預期產出的 Change log 應該會含有 feat 與 fix 類型的修改紀錄。  </p><p><br></p><p>如果確認無誤，改用參數 -s 實際寫入 Change log 檔案。  </p><pre><code>conventional-changelog -p angular -i CHANGELOG.md -s -r 0</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/12.png"><p><br></p><pre><code>ls</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/13.png"><p><br></p><pre><code>code CHANGELOG.md</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/14.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/15.png"><p><br></p><p>把 Change log 加入 Git 版控。</p><pre><code>git add .</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/16.png"><p><br></p><pre><code>git commit</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/17.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/18.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/19.png"><p><br></p><pre><code>git log</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/20.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/21.png"><p><br></p><p>加入專案程式。  </p><pre><code>dotnet new console -o helloworld</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/22.png"><p><br></p><p>把專案程式加入版控。  </p><pre><code>git add .</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/23.png"><p><br></p><pre><code>git commit</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/24.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/25.png"><p><br></p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/26.png"><p><br></p><p>專案版本切至 1.0.1。  </p><pre><code>npm version 1.0.1</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/27.png"><p><br></p><p>透過 conventional-changelog 命令列工具產生 Change log。  </p><pre><code>conventional-changelog -p angular -i CHANGELOG.md -s -r 0</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/28.png"><p><br></p><p>查驗產出的 Change log。</p><pre><code>code CHANGELOG.md</code></pre><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/29.png"><p><br></p><p>可看到 Change log 會含有新的修改紀錄。  </p><img src="/2020/06/16/conventional-changelog-cli-Generate-a-changelog-from-git-metadata/30.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;conventional-changelog-cli 是一命令列工具，能解析 Git 符合 Angular style 的 Commit log，產生對應的 Change log。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://larrynung.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>commitlint - Lint commit messages</title>
+    <link href="http://larrynung.github.io/2020/06/13/commitlint-Lint-commit-messages/"/>
+    <id>http://larrynung.github.io/2020/06/13/commitlint-Lint-commit-messages/</id>
+    <published>2020-06-13T14:52:26.000Z</published>
+    <updated>2021-03-20T00:40:41.145Z</updated>
+    
+    <content type="html"><![CDATA[<p>commitlint 是一檢測 commit message 的工具。</p><a id="more"></a><p><br></p><p>使用上需先全域安裝 commitlint cli。  </p><pre><code>npm install -g @commitlint/cli </code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/1.png"><p><br></p><p>加入 package.json。  </p><pre><code>npm init</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/2.png"><p><br></p><p>加入套件 @commitlint/config-conventional。  </p><pre><code>npm install -save @commitlint/config-conventional</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/3.png"><p><br></p><p>加入 commitlint 設定檔。  </p><pre><code>echo &quot;module.exports = {extends: [&apos;@commitlint/config-conventional&apos;]}&quot; &gt; commitlint.config.js</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/4.png"><p><br></p><p>準備好後可簡易的用 echo 將訊息透過 pipeline 送到 commitlint 做些測試。  </p><pre><code>echo &apos;foo: bar&apos; | commitlint</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/5.png"><p><br></p><pre><code>echo &apos;feat: bar&apos; | commitlint</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/6.png"><p><br></p><p>若要針對 git commit message 也是可以，這邊直接將當前專案加入 git 版控。  </p><pre><code>git init</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/7.png"><p><br></p><p>設定 .gitignore。  </p><pre><code>vim .gitignore</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/8.png"><p><br></p><p>將 node_modules 這些不必要版控的部分設定上去。  </p><img src="/2020/06/13/commitlint-Lint-commit-messages/9.png"><p><br></p><p>實際 commit 一個不符合規範的 commit message。    </p><pre><code>git add .</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/10.png"><p><br></p><pre><code>git commit -m &quot;foo: bar&quot;</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/11.png"><p><br></p><pre><code>git log</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/12.png"><p><br></p><p>調用 commitlint 並帶入 –from=，commitlint 會去驗證 git commit message。  </p><pre><code>commitlint --from=</code></pre><img src="/2020/06/13/commitlint-Lint-commit-messages/13.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://commitlint.js.org/#/?id=commitlint-nbsp-" target="_blank" rel="noopener">commitlint - Lint commit messages</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;commitlint 是一檢測 commit message 的工具。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://larrynung.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Commitizen - Simple commit conventions for internet citizens</title>
+    <link href="http://larrynung.github.io/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/"/>
+    <id>http://larrynung.github.io/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/</id>
+    <published>2020-06-10T23:59:27.000Z</published>
+    <updated>2021-03-20T00:40:39.085Z</updated>
+    
+    <content type="html"><![CDATA[<p>Commitizen 可輔助 git 操作人員使用 commit message 的規範。  </p><a id="more"></a><p><br></p><p>使用上先全域安裝 commitizen 命令列工具。  </p><pre><code>npm install -g commitizen</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/1.png"><p><br></p><p>這邊準備一個 git 版控的專案。  </p><pre><code>git init</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/2.png"><p><br></p><p>加入 package.json。  </p><pre><code>npm init</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/3.png"><p><br></p><p>調用命令讓專案符合 commitizen friendly。  </p><pre><code>commitizen init cz-conventional-changelog --save-dev --save-exact</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/4.png"><p><br></p><p>將修改加入版控實際做個測試。  </p><pre><code>git add .</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/5.png"><p><br></p><p>commit 時改用 git cz，會改成用互動方式輸入符合規範的 commit message。  </p><pre><code>git cz</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/6.png"><p><br></p><pre><code>git log</code></pre><img src="/2020/06/10/Commitizen-Simple-commit-conventions-for-internet-citizens/7.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="http://commitizen.github.io/cz-cli/#making-your-repo-commitizen-friendly" target="_blank" rel="noopener">Commitizen by commitizen</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Commitizen 可輔助 git 操作人員使用 commit message 的規範。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://larrynung.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git - Check commit message with git hook</title>
+    <link href="http://larrynung.github.io/2020/06/01/git-Check-commit-message-with-git-hook/"/>
+    <id>http://larrynung.github.io/2020/06/01/git-Check-commit-message-with-git-hook/</id>
+    <published>2020-06-01T23:39:13.000Z</published>
+    <updated>2021-03-20T00:40:41.313Z</updated>
+    
+    <content type="html"><![CDATA[<p>要在 git commit 時去驗證 commit message，可在 commit 的 hook 加掛驗證的處理。  </p><a id="more"></a><p><br></p><p>編輯 .git/hooks/commit-msg。</p><pre><code>vim .git/hooks/commit-msg</code></pre><img src="/2020/06/01/git-Check-commit-message-with-git-hook/1.png"><p><br></p><p>加入驗證程式後存檔離開。這邊筆者使用 <a href="htt    ps://allen-hsu.github.io/2017/07/02/git-message-template-and-githook/">如何使用 git commit template 與 git hooks     管理團隊的 git log | AllenHsu的技術手扎</a> 提供的驗證程式做了些微的調整，用以檢查 commit message 符合 Angular commit style。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Git commit hook:</span></span><br><span class="line"><span class="string"> .git/hooks/commit-msg</span></span><br><span class="line"><span class="string"> Check commit message according to angularjs guidelines:</span></span><br><span class="line"><span class="string">  * https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">valid_commit_types = [<span class="string">'feat'</span>, <span class="string">'fix'</span>, <span class="string">'docs'</span>, <span class="string">'style'</span>, <span class="string">'refactor'</span>, <span class="string">'test'</span>, <span class="string">'chore'</span>, ]</span><br><span class="line">commit_file = sys.argv[<span class="number">1</span>]</span><br><span class="line">help_address = <span class="string">'https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#'</span></span><br><span class="line"><span class="keyword">with</span> open(commit_file) <span class="keyword">as</span> commit:</span><br><span class="line">    lines = commit.readlines()</span><br><span class="line">    <span class="keyword">if</span> len(lines) == <span class="number">0</span>:</span><br><span class="line">        sys.stderr.write(<span class="string">"\nEmpty commit message\n"</span>)</span><br><span class="line">        sys.stderr.write(<span class="string">"\n - Refer commit guide: %s\n\n"</span> % help_address)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># first line</span></span><br><span class="line">    line = lines[<span class="number">0</span>]</span><br><span class="line">    m = re.search(<span class="string">'^(.*): (.*)$'</span>, line)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> m <span class="keyword">or</span> len(m.groups()) != <span class="number">2</span>:</span><br><span class="line">        sys.stderr.write(<span class="string">"\nFirst commit message line (header) does not follow format: type: message\n"</span>)</span><br><span class="line">        sys.stderr.write(<span class="string">"\n - Refer commit guide: %s\n\n"</span> % help_address)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    commit_type, commit_message = m.groups()</span><br><span class="line">    <span class="keyword">if</span> commit_type <span class="keyword">not</span> <span class="keyword">in</span> valid_commit_types:</span><br><span class="line">        sys.stderr.write(<span class="string">"\nCommit type not in valid ones: %s\n"</span> % <span class="string">", "</span>.join(valid_commit_types))</span><br><span class="line">        sys.stderr.write(<span class="string">"\n - Refer commit guide: %s\n\n"</span> % help_address)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> len(lines) &gt; <span class="number">1</span> <span class="keyword">and</span> lines[<span class="number">1</span>].strip():</span><br><span class="line">        sys.stderr.write(<span class="string">"\nSecond commit message line must be empty\n"</span>)</span><br><span class="line">        sys.stderr.write(<span class="string">"\n - Refer commit guide: %s\n\n"</span> % help_address)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> len(lines) &gt; <span class="number">2</span> <span class="keyword">and</span> <span class="keyword">not</span> lines[<span class="number">2</span>].strip():</span><br><span class="line">        sys.stderr.write(<span class="string">"\nThird commit message line (body) must not be empty\n"</span>)</span><br><span class="line">        sys.stderr.write(<span class="string">"\n - Refer commit guide: %s\n\n"</span> % help_address)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line">sys.exit(<span class="number">0</span>)</span><br></pre></td></tr></table></figure><img src="/2020/06/01/git-Check-commit-message-with-git-hook/2.png"><p><br></p><p>修改 commit-msg 的權限。</p><pre><code>chmod +x .git/hooks/commit-msg</code></pre><img src="/2020/06/01/git-Check-commit-message-with-git-hook/3.png"><p><br></p><p>然後將修改加入實際 commit 做個測試。</p><pre><code>git add .</code></pre><img src="/2020/06/01/git-Check-commit-message-with-git-hook/4.png"><p><br></p><p>可以看到 commit message 不符合規範的話會被擋下。  </p><pre><code>git commit -m &quot;foo: bar&quot;</code></pre><img src="/2020/06/01/git-Check-commit-message-with-git-hook/5.png"><p><br></p><p>只有符合規範的 commit message 可被 commit 進去。  </p><pre><code>git commit -m &quot;feat: bar&quot;</code></pre><img src="/2020/06/01/git-Check-commit-message-with-git-hook/6.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://allen-hsu.github.io/2017/07/02/git-message-template-and-githook/" target="_blank" rel="noopener">如何使用 git commit template 與 git hooks 管理團隊的 git log | AllenHsu的技術手扎</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要在 git commit 時去驗證 commit message，可在 commit 的 hook 加掛驗證的處理。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://larrynung.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git - Commit template</title>
+    <link href="http://larrynung.github.io/2020/05/28/git-Commit-template/"/>
+    <id>http://larrynung.github.io/2020/05/28/git-Commit-template/</id>
+    <published>2020-05-28T23:04:25.000Z</published>
+    <updated>2021-03-20T00:40:41.317Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果 git commit 的 message 想要有一定的規範，可為 git 設定 commit template，設定完後 template 會在 commit 時帶出範本，供編輯修改 commit message。  </p><a id="more"></a><p><br></p><p>要設定 git commit template，我們需先建立範本檔。  </p><pre><code>vim .gitmessage.txt</code></pre><img src="/2020/05/28/git-Commit-template/1.png"><p><br></p><p>設定範本檔的內容。  </p><img src="/2020/05/28/git-Commit-template/2.png"><p><br></p><p>然後將範本檔設定到設定檔中。  </p><pre><code>git config commit.template .gitmessage.txt</code></pre><img src="/2020/05/28/git-Commit-template/3.png"><p><br></p><p>設定好後 commit 時就會自動帶出設定好的範本了。  </p><pre><code>git add .</code></pre><img src="/2020/05/28/git-Commit-template/4.png"><p><br></p><pre><code>git commit</code></pre><img src="/2020/05/28/git-Commit-template/5.png"><p><br></p><img src="/2020/05/28/git-Commit-template/6.png"><p><br></p><p>這邊需特別注意一點，如果使用的是 GUI 而非命令列的話，多半範本是不支援註釋的，也就是說如果範本中有使用到註釋，都需自行刪除註釋後才能 commit，不然都會當成 commit message。  </p><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://gist.github.com/jmaxhu/8e7fb69a7dcec1b9b953" target="_blank" rel="noopener">一份建议的git commit模板</a></li><li><a href="https://ukyoappdev.blogspot.com/2018/03/git-committemplate.html" target="_blank" rel="noopener">Git 如何在Commit時加入樣板template的機制</a></li><li><a href="https://allen-hsu.github.io/2017/07/02/git-message-template-and-githook/" target="_blank" rel="noopener">如何使用 git commit template 與 git hooks 管理團隊的 git log | AllenHsu的技術手扎</a></li><li><a href="https://medium.com/dev-chill/%E4%BD%BF%E7%94%A8-git-commit-template-%E7%AE%A1%E7%90%86-git-log-cb70f95fda2f" target="_blank" rel="noopener">使用 git commit template 管理 git log - Dev Chill - Medium</a></li><li><a href="https://github.com/CodeDoesGood/business/wiki/3.-Git-Commit-Template" target="_blank" rel="noopener">3. Git Commit Template · CodeDoesGood/business Wiki</a></li><li><a href="http://pre.tir.tw/008/blog/output/git-write-a-good-commit-message-for-an-atomic-commit.html" target="_blank" rel="noopener">Git: Write a good commit message for an atomic commit · Hello, World!</a></li><li><a href="http://karma-runner.github.io/0.10/dev/git-commit-msg.html" target="_blank" rel="noopener">Karma - Git Commit Msg</a></li><li><a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit" target="_blank" rel="noopener">Git Commit Message Conventions - Google 文件</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果 git commit 的 message 想要有一定的規範，可為 git 設定 commit template，設定完後 template 會在 commit 時帶出範本，供編輯修改 commit message。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://larrynung.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pt-variable-advisor - Analyze MySQL variables and advise on possible problems</title>
+    <link href="http://larrynung.github.io/2020/03/11/pt-variable-advisor-Analyze-MySQL-variables-and-advise-on-possible-problems/"/>
+    <id>http://larrynung.github.io/2020/03/11/pt-variable-advisor-Analyze-MySQL-variables-and-advise-on-possible-problems/</id>
+    <published>2020-03-11T00:21:10.000Z</published>
+    <updated>2021-03-20T00:40:41.513Z</updated>
+    
+    <content type="html"><![CDATA[<p>pt-variable-advisor 是 Percona Toolkit 內的工具之一，能調用 MySQL/MariaDB 的 SHOW VARIABLES 命令偵測參數值，並根據 Rule 分析給予修正的建議。  </p><a id="more"></a><p><br></p><p>使用方式如下:  </p><pre><code>pt-variable-advisor [OPTIONS] [DSN]</code></pre><p><br></p><p>像是:  </p><pre><code>pt-variable-advisor h=$host,P=$port,u=$user,p=$password</code></pre><img src="/2020/03/11/pt-variable-advisor-Analyze-MySQL-variables-and-advise-on-possible-problems/1.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-variable-advisor.html" target="_blank" rel="noopener">pt-variable-advisor</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;pt-variable-advisor 是 Percona Toolkit 內的工具之一，能調用 MySQL/MariaDB 的 SHOW VARIABLES 命令偵測參數值，並根據 Rule 分析給予修正的建議。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MariaDB" scheme="http://larrynung.github.io/tags/MariaDB/"/>
+    
+      <category term="MySQL" scheme="http://larrynung.github.io/tags/MySQL/"/>
+    
+      <category term="Percona Toolkit" scheme="http://larrynung.github.io/tags/Percona-Toolkit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Percona Toolkit - Install with HomeBrew</title>
+    <link href="http://larrynung.github.io/2020/03/10/Percona-Toolkit-Install-with-HomeBrew/"/>
+    <id>http://larrynung.github.io/2020/03/10/Percona-Toolkit-Install-with-HomeBrew/</id>
+    <published>2020-03-10T00:17:07.000Z</published>
+    <updated>2021-03-20T00:40:40.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>如要在 MAC 上使用 Percona Toolkit，可透過 HomeBrew 進行安裝。  </p><a id="more"></a><pre><code>brew install percona-toolkit</code></pre><img src="/2020/03/10/Percona-Toolkit-Install-with-HomeBrew/1.png"><p><br></p><p>安裝後可調用 Percona Toolkit 命令查驗，，確認安裝無誤。  </p><pre><code>pt-variable-advisor --version</code></pre><img src="/2020/03/10/Percona-Toolkit-Install-with-HomeBrew/2.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如要在 MAC 上使用 Percona Toolkit，可透過 HomeBrew 進行安裝。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="HomeBrew" scheme="http://larrynung.github.io/tags/HomeBrew/"/>
+    
+      <category term="Percona Toolkit" scheme="http://larrynung.github.io/tags/Percona-Toolkit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker - Stop/remove all containers</title>
+    <link href="http://larrynung.github.io/2020/03/05/Docker-Stop-remove-all-containers/"/>
+    <id>http://larrynung.github.io/2020/03/05/Docker-Stop-remove-all-containers/</id>
+    <published>2020-03-05T00:37:45.000Z</published>
+    <updated>2021-03-20T00:40:39.129Z</updated>
+    
+    <content type="html"><![CDATA[<p>Docker 容器開多了沒關，要一次停掉可以用 docker ps 命令查閱所有容器，將容器資訊帶給 docker stop，一次停掉。  </p><a id="more"></a><pre><code>docker stop $(docker ps -a -q)</code></pre><img src="/2020/03/05/Docker-Stop-remove-all-containers/1.png"><p><br></p><pre><code>docker ps</code></pre><img src="/2020/03/05/Docker-Stop-remove-all-containers/2.png"><p><br></p><p>要一次殺掉可以用 docker ps 命令查閱所有容器，將容器資訊帶給 docker rm，一次殺掉。</p><pre><code>docker rm -f $(docker ps -a -q)</code></pre><img src="/2020/03/05/Docker-Stop-remove-all-containers/3.png"><p><br></p><pre><code>docker ps -a</code></pre><img src="/2020/03/05/Docker-Stop-remove-all-containers/4.png"><p><br></p><h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><ul><li><a href="https://coderwall.com/p/ewk0mq/stop-remove-all-docker-containers" target="_blank" rel="noopener">Stop / remove all Docker containers (Example)</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker 容器開多了沒關，要一次停掉可以用 docker ps 命令查閱所有容器，將容器資訊帶給 docker stop，一次停掉。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Docker， Linux" scheme="http://larrynung.github.io/tags/Docker%EF%BC%8C-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jaeger - Tracing with gRPC service</title>
+    <link href="http://larrynung.github.io/2020/02/24/Jaeger-Tracing-with-gRPC-service/"/>
+    <id>http://larrynung.github.io/2020/02/24/Jaeger-Tracing-with-gRPC-service/</id>
+    <published>2020-02-24T00:32:03.000Z</published>
+    <updated>2021-03-20T00:40:39.745Z</updated>
+    
+    <content type="html"><![CDATA[<p>要使用 Jaeger 追蹤 gRPC service 程式，可先加入 Jaeger 與 OpenTracing.Contrib.Grpc 套件。  </p><a id="more"></a><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    <span class="tag">&lt;<span class="name">PackageReference</span> <span class="attr">Include</span>=<span class="string">"Jaeger"</span> <span class="attr">Version</span>=<span class="string">"0.3.6"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">PackageReference</span> <span class="attr">Include</span>=<span class="string">"OpenTracing.Contrib.Grpc"</span> <span class="attr">Version</span>=<span class="string">"0.2.0"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/1.png"><p><br></p><p>修改 Startup.ConfigureServices，加入 Jaeger tracer、註冊 GlobalTracer、設定 gRPC 攔截器。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">services.AddGrpc(options =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    var serviceName = AppDomain.CurrentDomain.FriendlyName;</span><br><span class="line">    var tracer = new Tracer.Builder(serviceName)</span><br><span class="line">        .WithSampler(new ConstSampler(true))</span><br><span class="line">        .Build();</span><br><span class="line"></span><br><span class="line">    GlobalTracer.Register(tracer);</span><br><span class="line"></span><br><span class="line">    services.AddSingleton&lt;ITracer&gt;(tracer);</span><br><span class="line"></span><br><span class="line">    var interceptors = options.Interceptors;</span><br><span class="line">    interceptors.Add&lt;ServerTracingInterceptor&gt;(tracer);</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p><br></p><p>實際運行程式。  </p><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/2.png"><p><br></p><p>選取 Service 與 Operator 下去查詢。  </p><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/3.png"><p><br></p><p>可看到找到的 Trace，上半部可看到時間與耗時的分佈，下半部就是簡易的列表，可看出 Trace 名稱、識別碼、是什麼時間點觸發的、耗時多久、有多少 Span。  </p><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/4.png"><p><br></p><p>點選感興趣的 Trace，會進入 Trace 細部資訊頁面，會將 Trace 及其組成的 Span 以圖形的方式呈現，便於找到相對耗時的操作。  </p><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/5.png"><p><br></p><p>展開 Span 可看到 Span 的 Tag 這些細部的資訊。  </p><img src="/2020/02/24/Jaeger-Tracing-with-gRPC-service/6.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要使用 Jaeger 追蹤 gRPC service 程式，可先加入 Jaeger 與 OpenTracing.Contrib.Grpc 套件。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Jaeger" scheme="http://larrynung.github.io/tags/Jaeger/"/>
+    
+      <category term="gRPC" scheme="http://larrynung.github.io/tags/gRPC/"/>
+    
+  </entry>
+  
+</feed>

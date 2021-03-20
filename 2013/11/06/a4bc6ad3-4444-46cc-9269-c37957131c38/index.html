@@ -1,0 +1,673 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Google Plus One API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Plus One API">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/a4bc6ad3-4444-46cc-9269-c37957131c38/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Google Plus One API">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_8.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_9.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google Plus One API">
+<meta name="twitter:description" content="Google Plus One API">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/a4bc6ad3-4444-46cc-9269-c37957131c38/image_thumb_7.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Google Plus One API | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Google Plus One API
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/a4bc6ad3-4444-46cc-9269-c37957131c38/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/a4bc6ad3-4444-46cc-9269-c37957131c38/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Google近期推出了Plus One功能，類似於Facebook上的讚，你可以透過Plus One功能對你覺得喜歡的內容做個標記。詳細介紹可參閱Google的介紹影片：</p>  <p> </p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:c0bbdc24-acc8-4867-a3c7-5f724b53e117" class="wlWriterSmartContent">   <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px" id="7cd04f8a-e618-411c-8ee3-1d13d16eaa1c">     <div><embed height="350" type="application/x-shockwave-flash" width="425" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\4RyY2-ofP4g&amp;feature=player_embedded#at=11" wmode="transparent" data-cke-saved-src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\4RyY2-ofP4g&amp;feature=player_embedded#at=11"></div>   </div> </div>  <p> </p>  <p>若將這樣的功能加入到自己的網站，可透過Google Plus One API來完成。只要簡簡單單的在網站上加入JavaScript標記。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:19e43f44-9eb1-47e0-ae59-678f601dbc24" class="wlWriterSmartContent">   <pre class="js" name="code">&lt;script type=”text/javascript” src=”\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\plusone.js”&gt;&lt;/script&gt;</pre><br></div><br><br><p> </p>
+
+<p>再加入Plus One標記就可以了。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:50041a6f-5710-41c1-8d16-11b71c145a51" class="wlWriterSmartContent"><pre name="code" class="js">&lt;g:plusone size=”standard” count=”true”&gt;&lt;/g:plusone&gt;</pre></div>
+
+<p> </p>
+
+<p>所以最簡單的方法就是在網頁上加入以下的程式碼片段， 就能為網站加入Plus One的功能。 </p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9c707aa3-e830-4595-81ce-d7e346f41b46" class="wlWriterSmartContent"><br>  <pre class="js" name="code">&lt;script type=”text/javascript” src=”\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\plusone.js”&gt;&lt;/script&gt;<br>&lt;g:plusone&gt;&lt;/g:plusone&gt;</pre><br></div>
+
+<p> </p>
+
+<p>若基本的功能不足以符合網站的需求，我們就必須要為其做些細部的調整，像是在JavaScript那邊的設定可透過lang參數去指定顯示的語系，這邊設定的語系主要會影響點選Plus One按鈕後彈出的對話框語系。而parsetags屬性則是設定Plus One按鈕是要在載入網頁時載入，還是要明確的用JavaScript去控制載入的動作。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_7.png" width="578" height="230"></p>
+
+<p> </p>
+
+<p>像是下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5e12c0dc-9870-401c-afbd-9a35f5239aad" class="wlWriterSmartContent"><br>  <pre class="js" name="code">&lt;script type=”text/javascript” src=”\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\plusone.js”&gt;<br>  {lang: ‘zh-TW’, parsetags: ‘explicit’}<br>&lt;/script&gt;</pre><br></div>
+
+<p> </p>
+
+<p>而在Plus One按鈕那邊也有些參數可供細部設定，像是是否要顯示Plus One被按下的總數、所要Plus One的網址、與Plus One按鈕的大小等。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_6.png" width="578" height="338"></p>
+
+<p> </p>
+
+<p>像是：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4beff96d-1455-4513-ad96-bc0a9520e966" class="wlWriterSmartContent"><br>  <pre class="js" name="code">&lt;g:plusone size=”tall” href=”<a href="http://www.dotblogs.com.tw/larrynung&quot;&gt;&lt;/g:plusone" target="_blank" rel="noopener">http://www.dotblogs.com.tw/larrynung&quot;&gt;&lt;/g:plusone</a>&gt;</pre><br></div>
+
+<p> </p>
+
+<p>若不熟悉這邊的參數設定，Google也有提供輔助用的設定器，只要做些選項設定就可以產生對應的程式碼片段，開發人員只要將這些程式碼片段依指示放置在該放置的位置即可。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_5.png" width="587" height="484"></p>
+
+<p> </p>
+
+<p>這邊實際來為網站加入個Google Plus One功能，以點部落為例，進入設定頁面，切換至選項頁面，在簽名檔中加入Plus One的功能程式碼。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_8.png" width="550" height="484"></p>
+
+<p> </p>
+
+<p>加完後存檔，隨便開啟個文章就會看到Plus One的按鈕。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_9.png" width="644" height="482"></p>
+
+<p> </p>
+
+<p>點選後會彈出個視窗要求建立Plus One時所會顯示的個人資料，視窗的語系由JavaScript設定的lang參數所決定，該視窗會帶入預設的顯示名稱，若要自行設定可點選後方的自訂個人資料進行進一步的設定。</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_2.png" width="547" height="317"></p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\a4bc6ad3-4444-46cc-9269-c37957131c38\image_thumb_3.png" width="547" height="396"></p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>+1 button API </li><br><br>  <li>在網頁上加入 + 1 按鈕，讓您的網站脫穎而出 </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/a99d90f6-5e41-43e4-b9e2-0baf1bc3f162/" rel="next" title="[Win7]讓MSN縮小回到右下角的系統列" data-instant>
+                <i class="fa fa-chevron-left"></i> [Win7]讓MSN縮小回到右下角的系統列
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/a4b9e44e-f7fa-45b4-9d3b-1b1b3e1509e6/" rel="prev" title="Visual Studio 2013 Preview New Feature - Inline Navigate To" data-instant>
+                Visual Studio 2013 Preview New Feature - Inline Navigate To <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/a4bc6ad3-4444-46cc-9269-c37957131c38/';
+      var disqus_title = "Google Plus One API";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/a4bc6ad3-4444-46cc-9269-c37957131c38/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[VB.NET]為控制項加上顯示載入動畫的機制">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[VB.NET]為控制項加上顯示載入動畫的機制">
+<meta property="og:url" content="http://larrynung.github.io/2010/01/24/13267/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[VB.NET]為控制項加上顯示載入動畫的機制">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13267/image9_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/13267/image12_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[VB.NET]為控制項加上顯示載入動畫的機制">
+<meta name="twitter:description" content="[VB.NET]為控制項加上顯示載入動畫的機制">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/13267/image9_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [VB.NET]為控制項加上顯示載入動畫的機制 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [VB.NET]為控制項加上顯示載入動畫的機制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-01-24T01:56:23+00:00" content="2010-01-24">
+              2010-01-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/01/24/13267/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/01/24/13267/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近有個需求是當程式在做複雜的運算時，需要告知使用者程式仍然運作，而若用彈出單一Loading對話框的方式又不太適用，因此會想跟網頁一樣能在控制項上外加載入動畫。</p>  <p> </p>  <p>在找不到更好的解法前，這邊我先考慮用擴充方法來實作這樣的需求功能。主要是利用擴充方法啟動控制項的載入畫面，啟動多執行緒去更新載入動畫。程式碼如下：  <br></p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fac31510-0d26-4441-9972-e8910e278640" class="wlWriterEditableSmartContent"><pre name="code" class="vb">#Region “Imports”<br>Imports System.Runtime.CompilerServices<br>Imports System.Collections.Specialized<br>Imports System.Windows.Forms<br>Imports System.Drawing<br>Imports System.Threading<br>Imports System.Drawing.Imaging<br><br>#End Region<br><br>Public Module ControlLoadingExtension<br><br>#Region “Class”<br>    Class LoadingInfo<br>        Private _loaddingBmp As Image<br>        Private _loaddingBmpActiveFrameIdx As Integer<br>        Private _loaddingBmpDimension As FrameDimension<br>        Private _loaddingBmpFrameCount As Integer<br>        Private _displayLocation As Point<br><br>        Property LoaddingBmp As Image<br>            Get<br>                Return _loaddingBmp<br>            End Get<br>            Set(ByVal value As Image)<br>                If _loaddingBmp IsNot value Then<br>                    _loaddingBmp = value<br>                    LoaddingBmpDimension = New FrameDimension(value.FrameDimensionsList(0))<br>                    LoaddingBmpFrameCount = value.GetFrameCount(LoaddingBmpDimension)<br>                    LoaddingBmpActiveFrameIdx = 0<br>                End If<br>            End Set<br>        End Property<br><br>        Property LoaddingBmpActiveFrameIdx As Integer<br>            Get<br>                Return _loaddingBmpActiveFrameIdx<br>            End Get<br>            Set(ByVal value As Integer)<br>                _loaddingBmpActiveFrameIdx = value<br>                LoaddingBmp.SelectActiveFrame(LoaddingBmpDimension, value)<br>            End Set<br>        End Property<br><br>        Property LoaddingBmpDimension As FrameDimension<br>            Get<br>                Return _loaddingBmpDimension<br>            End Get<br>            Private Set(ByVal value As FrameDimension)<br>                _loaddingBmpDimension = value<br>            End Set<br>        End Property<br><br>        Property LoaddingBmpFrameCount As Integer<br>            Get<br>                Return _loaddingBmpFrameCount<br>            End Get<br>            Private Set(ByVal value As Integer)<br>                _loaddingBmpFrameCount = value<br>            End Set<br>        End Property<br><br>        Property DisplayLocation As Point<br>            Get<br>                Return _displayLocation<br>            End Get<br>            Set(ByVal value As Point)<br>                _displayLocation = value<br>            End Set<br>        End Property<br>    End Class<br>#End Region<br><br>#Region “Var”<br>    Private _loadingStatePool As HybridDictionary<br>    Private _updateThread As Thread<br>#End Region<br><br><br>#Region “Private Property”<br>    Private ReadOnly Property m_LoadingStatePool() As HybridDictionary<br>        Get<br>            If _loadingStatePool Is Nothing Then<br>                _loadingStatePool = New HybridDictionary<br>            End If<br>            Return _loadingStatePool<br>        End Get<br>    End Property<br><br>    Private Property m_UpdateThread As Thread<br>        Get<br>            If _updateThread Is Nothing Then<br>                _updateThread = New Thread(AddressOf ThreadingUpdatePhoto) With {.IsBackground = True}<br>            End If<br>            Return _updateThread<br>        End Get<br>        Set(ByVal value As Thread)<br>            _updateThread = value<br>        End Set<br>    End Property<br>#End Region<br><br><br>#Region “Private Method”<br>    Private Sub InvalidLoaddingBmp(ByVal ctrl As Control)<br>        Dim info As LoadingInfo = DirectCast(m_LoadingStatePool(ctrl), LoadingInfo)<br>        ctrl.Invalidate(New Rectangle(info.DisplayLocation, info.LoaddingBmp.Size))<br>    End Sub<br><br>    Private Sub BindingControlEvent(ByVal ctrl As Control)<br>        UnBindingControlEvent(ctrl)<br>        AddHandler ctrl.Paint, AddressOf Control_Paint<br>        AddHandler ctrl.HandleDestroyed, AddressOf Control_HandleDestroyed<br>        AddHandler ctrl.Resize, AddressOf Control_Resize<br>    End Sub<br><br>    Private Sub UnBindingControlEvent(ByVal ctrl As Control)<br>        RemoveHandler ctrl.Paint, AddressOf Control_Paint<br>        RemoveHandler ctrl.HandleDestroyed, AddressOf Control_HandleDestroyed<br>        RemoveHandler ctrl.Resize, AddressOf Control_Resize<br>    End Sub<br><br>    Private Function GetDisplayLocation(ByVal ctrl As Control) As Point<br>        Dim info As LoadingInfo = DirectCast(m_LoadingStatePool(ctrl), LoadingInfo)<br>        Dim bmp As Bitmap = info.LoaddingBmp<br>        Return New Point(ctrl.Width \ 2 - bmp.Width \ 2, ctrl.Height \ 2 - bmp.Height \ 2)<br>    End Function<br><br>    Private Sub AdjustDisplayLocation(ByVal ctrl As Control)<br>        Dim info As LoadingInfo = DirectCast(m_LoadingStatePool(ctrl), LoadingInfo)<br>        Dim bmp As Bitmap = info.LoaddingBmp<br>        info.DisplayLocation = GetDisplayLocation(ctrl)<br>    End Sub<br><br>    Private Sub PaintGraphic(ByVal g As Graphics, ByVal ctrl As Control)<br>        Dim info As LoadingInfo = DirectCast(m_LoadingStatePool(ctrl), LoadingInfo)<br>        Dim bmp As Bitmap = info.LoaddingBmp<br>        info.LoaddingBmpActiveFrameIdx = (info.LoaddingBmpActiveFrameIdx + 1) Mod info.LoaddingBmpFrameCount<br>        g.DrawImage(bmp, info.DisplayLocation)<br>    End Sub<br><br>    Private Sub ThreadingUpdatePhoto()<br>        While True<br>            For idx As Integer = m_LoadingStatePool.Count - 1 To 0 Step -1<br>                InvalidLoaddingBmp(DirectCast(m_LoadingStatePool.Keys(idx), Control))<br>            Next<br>            Thread.Sleep(100)<br>        End While<br>    End Sub<br>#End Region<br><br><br>#Region “Public Method”<br>    &lt;Extension()&gt; _<br>    Function IsLoadingState(ByVal ctrl As Control) As Boolean<br>        Return m_LoadingStatePool.Contains(ctrl)<br>    End Function<br><br>    &lt;Extension()&gt; _<br>    Sub ActiveLoadingState(ByVal ctrl As Control, ByVal loaddingBmp As Image)<br>        If loaddingBmp Is Nothing Then<br>            Throw New ArgumentNullException(“loaddingBmp”)<br>        End If<br>        DeActiveLoadingState(ctrl)<br>        m_LoadingStatePool.Add(ctrl, New LoadingInfo() With {.LoaddingBmp = loaddingBmp})<br>        AdjustDisplayLocation(ctrl)<br>        BindingControlEvent(ctrl)<br>        If m_LoadingStatePool.Count = 1 Then<br>            m_UpdateThread.Start()<br>        End If<br>    End Sub<br><br><br>    &lt;Extension()&gt; _<br>    Sub DeActiveLoadingState(ByVal ctrl As Control)<br>        If IsLoadingState(ctrl) Then<br>            UnBindingControlEvent(ctrl)<br>            m_LoadingStatePool.Remove(ctrl)<br>            ctrl.Invalidate()<br>        End If<br>        If m_LoadingStatePool.Count = 0 Then<br>            Try<br>                m_UpdateThread.Abort()<br>            Catch ex As Exception<br>            Finally<br>                m_UpdateThread = Nothing<br>            End Try<br>        End If<br>    End Sub<br>#End Region<br><br>#Region “Event Process”<br>    Private Sub Control_Paint(ByVal sender As Object, ByVal e As PaintEventArgs)<br>        PaintGraphic(e.Graphics, DirectCast(sender, Control))<br>    End Sub<br><br>    Private Sub Control_HandleDestroyed(ByVal sender As Object, ByVal e As EventArgs)<br>        DeActiveLoadingState(DirectCast(sender, Control))<br>    End Sub<br><br>    Private Sub Control_Resize(ByVal sender As Object, ByVal e As EventArgs)<br>        AdjustDisplayLocation(DirectCast(sender, Control))<br>    End Sub<br>#End Region<br>End Module</pre></div><br><br><p> </p>
+
+<p>範例介面如下：  <br><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\13267\image9_thumb.png" width="613" height="399"></p>
+
+<p> </p>
+
+<p>範例程式碼如下：  </p>
+
+<p><br><br><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6b2fb1b5-1a8e-470d-af12-d9c7c5f2f68b" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Public Class Form1<br>    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click<br>        For Each c As Control In Me.Controls<br>            c.ActiveLoadingState(My.Resources.ajax_loader__1_)<br>        Next<br>    End Sub<br><br>    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click<br>        For Each c As Control In Me.Controls<br>            c.DeActiveLoadingState()<br>        Next<br>    End Sub<br>End Class</pre></div><br><br></p><p> </p>
+
+<p>運行結果如下：<br>  <br><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\13267\image12_thumb.png" width="613" height="399"></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/01/23/13220/" rel="next" title="[VB.NET]Change MDI Parent BackColor" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]Change MDI Parent BackColor
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/01/24/13240/" rel="prev" title="[C#][VB.NET]FullScreen the winform" data-instant>
+                [C#][VB.NET]FullScreen the winform <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/01/24/13267/';
+      var disqus_title = "[VB.NET]為控制項加上顯示載入動畫的機制";
+      var disqus_url = 'http://larrynung.github.io/2010/01/24/13267/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

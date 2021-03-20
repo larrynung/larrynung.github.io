@@ -1,0 +1,699 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="GAE&apos;s Memcache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAE&#39;s Memcache">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="GAE&apos;s Memcache">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/image_thumb_2.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GAE&#39;s Memcache">
+<meta name="twitter:description" content="GAE&apos;s Memcache">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> GAE's Memcache | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                GAE's Memcache
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    Memcache 是高效能、分散式的記憶體物件快取系統。存放在Memcache內的資料若一段時間不訪問，或是可供快取的空間用完時，快取的內容即會過時。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    首先需先將google.appengine.ext.db import進來。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0901961e-28f5-4d60-b587-a533a8516416" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>from google.appengine.api import memcache</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要將資料存放到Memcache時，可以呼叫memcache.set方法，帶入資料的Key、Value、以及Timeout的時間 (Timeout的時間可以省略，若要指定需注意到這邊是以秒為單位)。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6b914f9b-197b-43d3-b733-f10e32f8665a" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>memcache.set(key, value, timeout)</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要將資料從Memcache讀出，可以呼叫memcache.get方法，帶入所要取出的資料鍵值。若有對應的資料存放在Memcache則會將值回傳，若無則會回傳None。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:33e493ee-71a3-4d2c-ab1b-2b01387eea6b" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>value = memcache.get(key)</pre></div></p>
+<p>if value:</p>
+<pre><code>#Data still cached
+...
+</code></pre><p>else:</p>
+<pre><code>#Data without cached
+...&lt;/pre&gt;
+</code></pre><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    除了單一值的存取外，Memcache也支援多值的存取。使用上會像下面這樣：</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7d31a0cb-9475-4e11-b412-4f303f922e3c" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>memcache.set_multi({key1: value1, key2: value2})<br>values = memcache.get_multi([key1, key2])<br>value1 = values[key1]<br>value2 = values[key2]</pre></div></p>
+<p><br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    存放改呼叫memcache.set_multi方法，用Dictionary帶入多筆Key/Value配對進去。取出資料則是改呼叫memcache.get_multi方法，用陣列帶入多筆鍵值。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    實際看個簡單的例子：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9f2e1881-c85a-4895-a4d0-24734b53d31e" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>from google.appengine.api import memcache<br>import webapp2</pre></div></p>
+<p>class MainHandler(webapp2.RequestHandler):<br>    def get(self):<br>        memcache.set(“name”, “LevelUp”)</p>
+<pre><code>value = memcache.get(&quot;name&quot;)
+
+self.response.write(value + &quot;&amp;lt;br/&amp;gt;&quot;)
+
+memcache.set_multi({&quot;name&quot;: &quot;LevelUp&quot;, &quot;url&quot;: &quot;httlp://www.dotblogs.com.tw/larrynung&quot;})
+values = memcache.get_multi([&quot;name&quot;, &quot;url&quot;])
+
+self.response.write(values[&quot;name&quot;] + &quot;&amp;lt;br/&amp;gt;&quot;)
+self.response.write(values[&quot;url&quot;] + &quot;&amp;lt;br/&amp;gt;&quot;)
+</code></pre><p>application = webapp2.WSGIApplication([<br>    (‘/‘, MainHandler)<br>    ])<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行起來會像下面這樣：</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="154" src="\images\posts\b44bf398-1a34-41e6-b71a-dcf59ccaa63f\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="327"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    再進一步將筆者GAE’s Python Datastore API這篇的範例套用Memcache，讓用GQL讀取出的資料可以存放在Memcache中，可以像下面這樣撰寫：</p><p></p>
+<p></p><h4><br>     </h4><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c45d7ea1-87f2-4c17-8f66-e0a675f5000b" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><br>    <pre class="py" name="code"><br>from google.appengine.api import memcache<br>from google.appengine.ext import db<br>import webapp2<br>import uuid</pre></div></p>
+<p>class Article(db.Model):<br>    id = db.StringProperty(required=True)<br>    name = db.StringProperty()<br>    content = db.TextProperty()</p>
+<p>class Blog(db.Model):<br>    id = db.StringProperty(required=True)<br>    name = db.StringProperty(required=True)<br>    url = db.LinkProperty(required=True)<br>    articleIDs = db.StringListProperty()</p>
+<p>class MainHandler(webapp2.RequestHandler):<br>    def get(self):<br>        self.response.write(“&lt;html&gt;&lt;body&gt;”)</p>
+<pre><code>blogs = db.GqlQuery(&quot;select * from Blog Limit 1&quot;)
+
+if not blogs or blogs.count() == 0:
+    blog = Blog(id=str(uuid.uuid1()), name=&quot;LevelUp&quot;, url=&quot;http://www.dotblogs.com.tw/larrynung&quot;)
+
+    articleID = str(uuid.uuid1())
+    Article(id=articleID, name=&quot;hello&quot;, content=&quot;hello world&quot;).put()
+
+    blog.articleIDs = [articleID]
+
+    blog.put()
+    self.response.write(&quot;Blog data saved...&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&quot;)
+    self.redirect(&quot;/&quot;)
+    return
+
+blog = memcache.get(&quot;blog&quot;)
+if blog:
+    self.response.write(&quot;Cached blog data...&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&quot;)
+else:
+    self.response.write(&quot;Blog data loading...&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&quot;)
+
+    blog = Blog.gql(&quot;Limit 1&quot;)[0]
+
+    self.response.write(&quot;Save blog data to memcache...&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&quot;)
+
+    memcache.set(&quot;blog&quot;, blog, 5)
+
+self.response.write(blog.name + &quot;&amp;lt;br/&amp;gt;&quot;)
+self.response.write(blog.url + &quot;&amp;lt;br/&amp;gt;&quot;)
+
+for articleID in blog.articleIDs:
+    article = Article.gql(&quot;where id = :1&quot;, articleID)[0]
+    self.response.write(article.name + &quot;&amp;lt;/br&amp;gt;&quot;)
+    self.response.write(article.content + &quot;&amp;lt;/br&amp;gt;&quot;)
+    self.response.write(&quot;&amp;lt;br/&amp;gt;&quot;)
+
+
+self.response.write(&quot;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&quot;)
+</code></pre><p>application = webapp2.WSGIApplication([<br>    (‘/‘, MainHandler)<br>    ])<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    第一次運行就會將資料讀出後存放進Memcache。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="222" src="\images\posts\b44bf398-1a34-41e6-b71a-dcf59ccaa63f\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="361"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    再次運行就會改由Memcache中讀取。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="187" src="\images\posts\b44bf398-1a34-41e6-b71a-dcf59ccaa63f\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="334"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        Using Memcache</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/b596ddd9-c2bd-4f31-8a6a-8b04462a06b7/" rel="next" title="[.NET Resource]透過BoxCop偵測程式是否存在Boxing與UnBoxing" data-instant>
+                <i class="fa fa-chevron-left"></i> [.NET Resource]透過BoxCop偵測程式是否存在Boxing與UnBoxing
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/b274cfc6-933e-430e-b9b9-f493523b6ae1/" rel="prev" title="error LNK1123_ failure during conversion to COFF_ file invalid or corrupt" data-instant>
+                error LNK1123_ failure during conversion to COFF_ file invalid or corrupt <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">     </span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number"></span> <span class="nav-text">    Link</span></a></li></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/';
+      var disqus_title = "GAE\'s Memcache";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/b44bf398-1a34-41e6-b71a-dcf59ccaa63f/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

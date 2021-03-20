@@ -1,0 +1,701 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Python&apos;s and_or operation">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python&#39;s and_or operation">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Python&apos;s and_or operation">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python&#39;s and_or operation">
+<meta name="twitter:description" content="Python&apos;s and_or operation">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Python's and_or operation | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python's and_or operation
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Python中除了Boolean的True以外，非空的值亦視為True，反之則視為False。所謂的空值指的就是0、空字串、空集合、空的Tuple…，所以除了False以外，0、’’、()、[]、{}…在Python中也都代表著False。</p>  <p> </p>  <p>因為有這樣的特性，Python中and/or運算變得非常的有趣。</p>  <p> </p>  <p>以and操作來說，and運算是條件都成立就成立，當一個條件不成立即可判斷整個條件不成立。所以假設and運算式中看到了False的值就會停止繼續往下判斷，而若是看到了True的值則會繼續往下判斷。</p>  <p> </p>  <p>所以像是下面這樣的例子：</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1aba90e4-2389-47e1-ac36-39d310247c5a" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘a’ and ‘b’: “, ‘a’ and ‘b’<br>print “‘’ and ‘b’: “, ‘’ and ‘b’<br>print “‘a’ and ‘’: “, ‘a’ and ‘’<br>print “‘a’ and ‘b’ and ‘c’: “, ‘a’ and ‘b’ and ‘c’      </pre></div><br><br><p> </p>
+
+<p>運行起來就會像下面這樣：</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da\image_thumb_1.png" width="385" height="192"></p>
+
+<p> </p>
+
+<p>以’a’ and ‘b’來說，因為’a’為True，所以需要繼續往下判斷，而’b’亦為True，所以直接回傳’b’。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:688a732c-3df7-4f46-a539-b222b910c4f9" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘a’ and ‘b’: “, ‘a’ and ‘b’</pre></div>
+
+<p> </p>
+
+<p>以’’ and ‘b’來說，因為’’為False，所以整個判斷式注定為不成立，不需要繼續往下判斷，故直接回傳’’。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:aaff491a-b7a2-4907-97fd-f15aad2e65d6" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘’ and ‘b’: “, ‘’ and ‘b’         </pre></div>
+
+<p> </p>
+
+<p>其它兩個以此類推。</p>
+
+<p> </p>
+
+<p>以or操作來說，or運算是條件一個成立就成立，當一個條件成立即可判斷整個條件成立。所以假設or運算式中看到了True的值就會停止繼續往下判斷，而若是看到了False的值則會繼續往下判斷。</p>
+
+<p> </p>
+
+<p>所以像是下面這樣的例子：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c0235958-f746-4304-934a-a67f664e8049" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘a’ or ‘b’: “, ‘a’ or ‘b’<br>print “‘’ or ‘b’: “, ‘’ or ‘b’<br>print “‘a’ or ‘’: “, ‘a’ or ‘’<br>print “0 or ‘’ or [] or {}: “, 0 or ‘’ or [] or {}     </pre></div>
+
+<p> </p>
+
+<p>運行起來就會像下面這樣：</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da\image_thumb_2.png" width="361" height="176"> </p>
+
+<p> </p>
+
+<p>以’a’ or ‘b’來說，因為’a’為True，所以不需要繼續往下判斷，直接回傳’a’。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:aa2b0898-ff8f-4767-930c-0a18f67636fa" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘a’ or ‘b’: “, ‘a’ or ‘b’              </pre></div>
+
+<p> </p>
+
+<p>以’’ or ‘b’來說，因為’’為False，所以需要繼續往下判斷，而’b’亦為True，所以直接回傳’b’。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5b3dfafa-1879-4153-abf7-5d1cd9e9028b" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘’ or ‘b’: “, ‘’ or ‘b’    </pre></div>
+
+<p> </p>
+
+<p>其它兩個一樣以此類推。</p>
+
+<p> </p>
+
+<p>不過雖然Python and/or運算有著這樣的特性，但是仍舊不完全等價本來的Boolean型別，所以無法直接將之與Boolean型別的True/False去做比對，以下面這個例子來說：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:46a22144-dc66-4a96-959b-e4ff0474e8e1" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “‘a’ == True: “, ‘a’ == True<br>print “‘a’ is True: “, ‘a’ is True<br>print “bool(‘a’) == True: “, bool(‘a’) == True<br>print “bool(‘a’) is True: “, bool(‘a’) is True<br>print “‘a’ == (‘a’ and ‘b’): “, ‘a’ == (‘a’ and ‘b’)<br>print “‘b’ == (‘a’ and ‘b’): “, ‘b’ == (‘a’ and ‘b’)<br>print “‘a’ == (‘a’ or ‘b’): “, ‘a’ == (‘a’ or ‘b’)<br>print “‘b’ == (‘a’ or ‘b’): “, ‘b’ == (‘a’ or ‘b’)</pre></div>
+
+<p> </p>
+
+<p>我們可以看到直接去用==運算子或是is關鍵字下去判斷是否為True是無效的，若需要類似這樣的判斷，我們會需要用內建的函式或是用特定的運算式去輔助處理。</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da\image_thumb_6.png" width="409" height="240"> </p>
+
+<p> </p>
+
+<p>最後來看一下三元運算的部分，先來看一下程式碼的部分：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a4458fd8-680e-432f-a8fb-ad24a77cd6fb" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="py">print “True and ‘TrueValue’ or ‘FalseValue’: “, True and ‘TrueValue’ or ‘FalseValue’<br>print “False and ‘TrueValue’ or ‘FalseValue’: “, False and ‘TrueValue’ or ‘FalseValue’<br>print “True and ‘’ or ‘FalseValue’: “, True and ‘’ or ‘FalseValue’<br>print “(True and [‘’] or [‘FalseValue’])[0]: “, (True and [‘’] or [‘FalseValue’])[0]</pre></div>
+
+<p> </p>
+
+<p>其運行結果為：</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da\image_thumb_4.png" width="513" height="192"> </p>
+
+<p> </p>
+
+<p>可以看到若三元運算選取的兩個值都不為空的話，我們可以簡單的用[expression] and [value1] or [value2]這樣的方式下去撰寫。因為expression與value1之間為and運算，若expression為true則會去看value1的值，而與value2之間為or運算，value1的值又不為空值，所以會直接回傳value1；若expression為false，因為[expression] and [value1]運算出來為[expression]，所以運算式等同[expression] or [value2]，故回傳value2的值。等同於我們一般看到的三元運算效果。</p>
+
+<p> </p>
+
+<p>但是這樣的寫法有個前提就是必須三元運算選取的兩個值都不為空，若是為空則整個效果就會不如預期，所以在使用時我們可以以陣列的方式下去封裝一下，以([expression] and [[value1]] or [[value2]])[0]這樣的方式下去撰寫。</p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Built-in Types</li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag” data-instant>#Python</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/" rel="next" title="Create your first android app with eclipse" data-instant>
+                <i class="fa fa-chevron-left"></i> Create your first android app with eclipse
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/5b03aeb5-cf0a-49ea-9527-9a5aa9aca58a/" rel="prev" title="Using P4Merge with SVN" data-instant>
+                Using P4Merge with SVN <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/';
+      var disqus_title = "Python\'s and_or operation";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Flutter,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆內容的元件。">
+<meta name="keywords" content="Flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter - ListView class">
+<meta property="og:url" content="http://larrynung.github.io/2018/04/20/Flutter-ListView-class/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆內容的元件。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2018/04/20/Flutter-ListView-class/1.png">
+<meta property="og:image" content="http://larrynung.github.io/2018/04/20/Flutter-ListView-class/2.png">
+<meta property="og:image" content="http://larrynung.github.io/2018/04/20/Flutter-ListView-class/3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:39.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter - ListView class">
+<meta name="twitter:description" content="Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆內容的元件。">
+<meta name="twitter:image" content="http://larrynung.github.io/2018/04/20/Flutter-ListView-class/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Flutter - ListView class | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Flutter - ListView class
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-04-20T15:27:17+00:00" content="2018-04-20">
+              2018-04-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/04/20/Flutter-ListView-class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/20/Flutter-ListView-class/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆內容的元件。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>其建構子如下：  </p>
+<pre><code>ListView({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true, List&lt;Widget&gt; children: const [] })
+ListView.builder({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, @required IndexedWidgetBuilder itemBuilder, int itemCount, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true })
+ListView.custom({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, @required SliverChildDelegate childrenDelegate })
+</code></pre><p><br></p>
+<p>屬性如下：  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">childrenDelegate</td>
+<td style="text-align:center">SliverChildDelegate</td>
+<td style="text-align:center">A delegate that provides the children for the ListView.</td>
+</tr>
+<tr>
+<td style="text-align:center">itemExtent</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">If non-null, forces the children to have the given extent in the scroll direction.</td>
+</tr>
+<tr>
+<td style="text-align:center">controller</td>
+<td style="text-align:center">ScrollController</td>
+<td style="text-align:center">An object that can be used to control the position to which this scroll view is scrolled.</td>
+</tr>
+<tr>
+<td style="text-align:center">hashCode</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">The hash code for this object.</td>
+</tr>
+<tr>
+<td style="text-align:center">key</td>
+<td style="text-align:center">Key</td>
+<td style="text-align:center">Controls how one widget replaces another widget in the tree.</td>
+</tr>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:center">EdgeInsetsGeometry</td>
+<td style="text-align:center">The amount of space by which to inset the children.</td>
+</tr>
+<tr>
+<td style="text-align:center">physics</td>
+<td style="text-align:center">ScrollPhysics</td>
+<td style="text-align:center">How the scroll view should respond to user input.</td>
+</tr>
+<tr>
+<td style="text-align:center">primary</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">Whether this is the primary scroll view associated with the parent PrimaryScrollController.</td>
+</tr>
+<tr>
+<td style="text-align:center">reverse</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">Whether the scroll view scrolls in the reading direction.</td>
+</tr>
+<tr>
+<td style="text-align:center">runtimeType</td>
+<td style="text-align:center">Type</td>
+<td style="text-align:center">A representation of the runtime type of the object.</td>
+</tr>
+<tr>
+<td style="text-align:center">scrollDirection</td>
+<td style="text-align:center">Axis</td>
+<td style="text-align:center">The axis along which the scroll view scrolls.</td>
+</tr>
+<tr>
+<td style="text-align:center">shrinkWrap</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">Whether the extent of the scroll view in the scrollDirection should be determined by the contents being viewed.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>方法如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Return Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">buildChildLayout(BuildContext context)</td>
+<td style="text-align:center">Widget</td>
+<td style="text-align:center">Subclasses should override this method to build the layout model.</td>
+</tr>
+<tr>
+<td style="text-align:center">debugFillProperties(DiagnosticPropertiesBuilder properties)</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">build(BuildContext context)</td>
+<td style="text-align:center">Widget</td>
+<td style="text-align:center">Describes the part of the user interface represented by this widget.</td>
+</tr>
+<tr>
+<td style="text-align:center">buildSlivers(BuildContext context)</td>
+<td style="text-align:center">List<widget></widget></td>
+<td style="text-align:center">Build the list of widgets to place inside the viewport.</td>
+</tr>
+<tr>
+<td style="text-align:center">buildViewport(BuildContext context, ViewportOffset offset, AxisDirection axisDirection, List<widget> slivers)</widget></td>
+<td style="text-align:center">Widget</td>
+<td style="text-align:center">Build the viewport.</td>
+</tr>
+<tr>
+<td style="text-align:center">createElement()</td>
+<td style="text-align:center">StatelessElement</td>
+<td style="text-align:center">Creates a StatelessElement to manage this widget’s location in the tree.</td>
+</tr>
+<tr>
+<td style="text-align:center">debugDescribeChildren()</td>
+<td style="text-align:center">List<diagnosticsnode></diagnosticsnode></td>
+<td style="text-align:center">Returns a list of DiagnosticsNode objects describing this node’s children.</td>
+</tr>
+<tr>
+<td style="text-align:center">getDirection(BuildContext context)</td>
+<td style="text-align:center">AxisDirection</td>
+<td style="text-align:center">Returns the AxisDirection in which the scroll view scrolls.</td>
+</tr>
+<tr>
+<td style="text-align:center">noSuchMethod(Invocation invocation)</td>
+<td style="text-align:center">dynamic</td>
+<td style="text-align:center">Invoked when a non-existent method or property is accessed.</td>
+</tr>
+<tr>
+<td style="text-align:center">toDiagnosticsNode({String name, DiagnosticsTreeStyle style })</td>
+<td style="text-align:center">DiagnosticsNode</td>
+<td style="text-align:center">Returns a debug representation of the object that is used by debugging tools and by toStringDeep.</td>
+</tr>
+<tr>
+<td style="text-align:center">toString({DiagnosticLevel minLevel: DiagnosticLevel.debug })</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">Returns a string representation of this object.</td>
+</tr>
+<tr>
+<td style="text-align:center">toStringDeep({String prefixLineOne: ‘’, String prefixOtherLines, DiagnosticLevel minLevel: DiagnosticLevel.debug })</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">Returns a string representation of this node and its descendants.</td>
+</tr>
+<tr>
+<td style="text-align:center">toStringShallow({String joiner: ‘, ‘, DiagnosticLevel minLevel: DiagnosticLevel.debug })</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">Returns a one-line detailed description of the object.</td>
+</tr>
+<tr>
+<td style="text-align:center">toStringShort()</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">A short, textual description of this widget.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>使用上可以直接建立 ListView 元件，並透過 children 屬性直接帶入 ListView 內要呈現的內容，用 padding 屬性設定內容與內容間的間隔。  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(<span class="keyword">new</span> MaterialApp(</span><br><span class="line">      home: <span class="keyword">new</span> ListView(</span><br><span class="line">    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">      <span class="keyword">new</span> Card(</span><br><span class="line">        child: <span class="keyword">const</span> Text(<span class="string">'1. one'</span>)</span><br><span class="line">      ),</span><br><span class="line">      <span class="keyword">new</span> Card(</span><br><span class="line">        child: <span class="keyword">const</span> Text(<span class="string">'2. two'</span>)</span><br><span class="line">      ),</span><br><span class="line">      <span class="keyword">new</span> Card(</span><br><span class="line">        child: <span class="keyword">const</span> Text(<span class="string">'3. three'</span>)</span><br><span class="line">      )</span><br><span class="line">    ],</span><br><span class="line">  )));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2018/04/20/Flutter-ListView-class/1.png">
+<p><br></p>
+<img src="/2018/04/20/Flutter-ListView-class/2.png">
+<p><br></p>
+<p>也可以建立 ListView.builder，設定 itemCount 屬性指定 ListView 內的內容數，並設定 itemBuilder 屬性指定 ListView 內的內容要怎樣呈現。  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(<span class="keyword">new</span> MaterialApp(</span><br><span class="line">      home: <span class="keyword">new</span> ListView.builder(</span><br><span class="line">        shrinkWrap: <span class="keyword">true</span>,</span><br><span class="line">    padding: <span class="keyword">new</span> EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">    itemCount: <span class="number">3.</span>toInt(),</span><br><span class="line">    itemBuilder: (BuildContext context, <span class="built_in">int</span> index) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Card</span><br><span class="line">      (</span><br><span class="line">        child: <span class="keyword">new</span> Text(index.toString() + <span class="string">'. Element'</span> + index.toString())</span><br><span class="line">      );</span><br><span class="line">    &#125;,</span><br><span class="line">  )));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2018/04/20/Flutter-ListView-class/3.png">
+<p><br></p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://docs.flutter.io/flutter/widgets/ListView-class.html" target="_blank" rel="noopener">ListView class - widgets library - Dart API</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flutter/" rel="tag” data-instant>#Flutter</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/16/Flutter-Card-class/" rel="next" title="Flutter - Card class" data-instant>
+                <i class="fa fa-chevron-left"></i> Flutter - Card class
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/02/Flutter-Scaffold-class/" rel="prev" title="Flutter - Scaffold class" data-instant>
+                Flutter - Scaffold class <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2018/04/20/Flutter-ListView-class/';
+      var disqus_title = "Flutter - ListView class";
+      var disqus_url = 'http://larrynung.github.io/2018/04/20/Flutter-ListView-class/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="rush 是一跨平台的命令列工具，能用來並行指定的命令。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rush - A cross-platform command-line tool for executing jobs in parallel">
+<meta property="og:url" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="rush 是一跨平台的命令列工具，能用來並行指定的命令。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/1.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/2.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/3.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.593Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rush - A cross-platform command-line tool for executing jobs in parallel">
+<meta name="twitter:description" content="rush 是一跨平台的命令列工具，能用來並行指定的命令。">
+<meta name="twitter:image" content="http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> rush - A cross-platform command-line tool for executing jobs in parallel | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                rush - A cross-platform command-line tool for executing jobs in parallel
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-06-17T03:43:46+00:00" content="2017-06-17">
+              2017-06-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>rush 是一跨平台的命令列工具，能用來並行指定的命令。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>自官網上下載下來後解壓縮即可使用。  </p>
+<img src="/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/1.png">
+<p><br></p>
+<p>其使用方式如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">rush -- a cross-platform command-line tool for executing jobs in parallel</span><br><span class="line"></span><br><span class="line">Version: 0.1.9</span><br><span class="line"></span><br><span class="line">Author: Wei Shen &lt;shenwei356@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">Homepage: https://github.com/shenwei356/rush</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">  rush [flags] [command] [args of command...]</span><br><span class="line"></span><br><span class="line">Examples:</span><br><span class="line">  1. simple run, quoting is not necessary</span><br><span class="line">      $ seq 1 10 | rush echo &#123;&#125;</span><br><span class="line">  2. keep order</span><br><span class="line">      $ seq 1 10 | rush &apos;echo &#123;&#125;&apos; -k</span><br><span class="line">  3. timeout</span><br><span class="line">      $ seq 1 | rush &apos;sleep 2; echo &#123;&#125;&apos; -t 1</span><br><span class="line">  4. retry</span><br><span class="line">      $ seq 1 | rush &apos;python script.py&apos; -r 3</span><br><span class="line">  5. dirname &amp; basename &amp; remove suffix</span><br><span class="line">      $ echo dir/file_1.txt.gz | rush &apos;echo &#123;/&#125; &#123;%&#125; &#123;^_1.txt.gz&#125;&apos;</span><br><span class="line">          dir file.txt.gz dir/file</span><br><span class="line">      6. basename without last or any extension</span><br><span class="line">          $ echo dir.d/file.txt.gz | rush &apos;echo &#123;.&#125; &#123;:&#125; &#123;%.&#125; &#123;%:&#125;&apos;</span><br><span class="line">          dir.d/file.txt dir.d/file file.txt file</span><br><span class="line">      7. job ID, combine fields and other replacement strings</span><br><span class="line">          $ echo 12 file.txt dir/s_1.fq.gz | rush &apos;echo job &#123;#&#125;: &#123;2&#125; &#123;2.&#125; &#123;3%:^_1&#125;&apos;</span><br><span class="line">          job 1: file.txt file s</span><br><span class="line">      8. capture submatch using regular expression</span><br><span class="line">          $ echo read_1.fq.gz | rush &apos;echo &#123;@(.+)_\d&#125;&apos;</span><br><span class="line">          read</span><br><span class="line">      9. custom field delimiter</span><br><span class="line">          $ echo a=b=c | rush &apos;echo &#123;1&#125; &#123;2&#125; &#123;3&#125;&apos; -d =</span><br><span class="line">          a b c</span><br><span class="line">      10. custom record delimiter</span><br><span class="line">          $ echo a=b=c | rush -D &quot;=&quot; -k &apos;echo &#123;&#125;&apos;</span><br><span class="line">          a</span><br><span class="line">          b</span><br><span class="line">          c</span><br><span class="line">          $ echo abc | rush -D &quot;&quot; -k &apos;echo &#123;&#125;&apos;</span><br><span class="line">          a</span><br><span class="line">          b</span><br><span class="line">          c</span><br><span class="line">      11. assign value to variable, like &quot;awk -v&quot;</span><br><span class="line">          $ seq 1 | rush &apos;echo Hello, &#123;fname&#125; &#123;lname&#125;!&apos; -v fname=Wei -v lname=Shen</span><br><span class="line">          Hello, Wei Shen!</span><br><span class="line">      12. preset variable (Macro)</span><br><span class="line">          # equal to: echo read_1.fq.gz | rush &apos;echo &#123;:^_1&#125; &#123;:^_1&#125;_2.fq.gz&apos;</span><br><span class="line">          $ echo read_1.fq.gz | rush -g -v p=&#123;:^_1&#125; &apos;echo &#123;p&#125; &#123;p&#125;_2.fq.gz&apos;</span><br><span class="line">          read read_2.fq.gz</span><br><span class="line">      13. save successful commands to continue in NEXT run</span><br><span class="line">          $ seq 1 3 | rush &apos;sleep &#123;&#125;; echo &#123;&#125;&apos; -c -t 2</span><br><span class="line">          [INFO] ignore cmd #1: sleep 1; echo 1</span><br><span class="line">          [ERRO] run cmd #1: sleep 2; echo 2: time out</span><br><span class="line">          [ERRO] run cmd #2: sleep 3; echo 3: time out</span><br><span class="line">    </span><br><span class="line">      More examples: https://github.com/shenwei356/rush</span><br><span class="line">    </span><br><span class="line">    Flags:</span><br><span class="line">      -v, --assign stringSlice        assign the value val to the variable var (format: var=val, val also supports replacement strings)</span><br><span class="line">      -c, --continue                  continue jobs. NOTES: 1) successful commands are saved in file (given by flag -C/--succ-cmd-file); 2) if the file does not exist, rush saves data so we can continue jobs next time; 3) if the file exists, rush ignores jobs in it and update the file</span><br><span class="line">          --dry-run                   print command but not run</span><br><span class="line">      -d, --field-delimiter string    field delimiter in records, support regular expression (default &quot;\\s+&quot;)</span><br><span class="line">      -i, --infile stringSlice        input data file, multi-values supported</span><br><span class="line">      -j, --jobs int                  run n jobs in parallel (default value depends on your device) (default 4)</span><br><span class="line">      -k, --keep-order                keep output in order of input</span><br><span class="line">      -n, --nrecords int              number of records sent to a command (default 1)</span><br><span class="line">      -o, --out-file string           out file (&quot;-&quot; for stdout) (default &quot;-&quot;)</span><br><span class="line">      -D, --record-delimiter string   record delimiter (default is &quot;\n&quot;) (default &quot;\n&quot;)</span><br><span class="line">      -J, --records-join-sep string   record separator for joining multi-records (default is &quot;\n&quot;) (default &quot;\n&quot;)</span><br><span class="line">      -r, --retries int               maximum retries (default 0)</span><br><span class="line">          --retry-interval int        retry interval (unit: second) (default 0)</span><br><span class="line">      -e, --stop-on-error             stop all processes on first error(s)</span><br><span class="line">      -C, --succ-cmd-file string      file for saving successful commands (default &quot;successful_cmds.rush&quot;)</span><br><span class="line">      -t, --timeout int               timeout of a command (unit: second, 0 for no timeout) (default 0)</span><br><span class="line">      -T, --trim string               trim white space (&quot; \t\r\n&quot;) in input (available values: &quot;l&quot; for left, &quot;r&quot; for right, &quot;lr&quot;, &quot;rl&quot;, &quot;b&quot; for both side)</span><br><span class="line">          --verbose                   print verbose information</span><br><span class="line">      -V, --version                   print version information and check for update</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>比較重要的參數有 -D、-k、-T。  </p>
+<p><br></p>
+<p>在 Windows 上使用只要用 echo 將參數透過 pipline 送進 rush，如有多個參數，rush 可用 -D 帶入分隔符號，透過 pipline 帶入 rush 的參數即會用設定的分隔符號切割帶入 rush 後面設定的命令，命令的中要使用參數的部分可用 {} 替代。  </p>
+<p><br></p>
+<p>所以如果要併發列出參出，我們可以像下面這樣調用：  </p>
+<pre><code>echo &lt;Param1&gt;&lt;Seperater&gt;&lt;Param2&gt;[...] | rush -D &quot;&lt;Seperater&gt;&quot; &quot;&lt;Command&gt;&quot;
+</code></pre><img src="/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/2.png">
+<p><br></p>
+<p>像是上圖這樣調用，rush 後面接的是 echo 命令，所以 rush 會幫我們併發列出帶入的參數，也就是併發列出 c: 與 d:，執行完成的順序並無固定。  </p>
+<p><br></p>
+<p>如果要控制完成的順序，可加帶 -k 參數。  </p>
+<pre><code>echo &lt;param1&gt;&lt;seperater&gt;&lt;param2&gt;[...] | rush -D &quot;&lt;seperater&gt;&quot; -k &quot;&lt;command&gt;&quot;
+</code></pre><img src="/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/3.png">
+<p><br></p>
+<p>這樣的工具能幫我們併發做很多事情，像是透過 Web Deploy 並行停止遠端的站台。</p>
+<pre><code>echo &lt;Site1&gt;,&lt;Site2&gt; | rush -D &quot;,&quot; -T &quot;lr&quot; &quot;msdeploy -verb:sync -source:runcommand -dest:runcommand=&apos;%windir%\system32\inetsrv\appcmd.exe stop apppool /apppool.name:{}&apos;,computerName=&lt;IPAddress&gt;,waitinterval=10000&quot;
+</code></pre><img src="/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/4.png">
+<p><br></p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="https://github.com/shenwei356/rush" target="_blank" rel="noopener">shenwei356/rush: A cross-platform command-line tool for executing jobs in parallel</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/16/Redis-on-Windows/" rel="next" title="Redis on Windows" data-instant>
+                <i class="fa fa-chevron-left"></i> Redis on Windows
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/17/PL-SQL-SQL-CODING-GUIDELINE-52-Never-assign-predefined-exception-names-to-user-defined-exceptions/" rel="prev" title="PL/SQL & SQL CODING GUIDELINE 52 - Never assign predefined exception names to user defined exceptions" data-instant>
+                PL/SQL & SQL CODING GUIDELINE 52 - Never assign predefined exception names to user defined exceptions <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/';
+      var disqus_title = "rush - A cross-platform command-line tool for executing jobs in parallel";
+      var disqus_url = 'http://larrynung.github.io/2017/06/17/rush-A-cross-platform-command-line-tool-for-executing-jobs-in-parallel/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

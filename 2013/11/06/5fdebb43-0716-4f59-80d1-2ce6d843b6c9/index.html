@@ -1,0 +1,693 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]Json.NET - A high performance Json library">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]Json.NET - A high performance Json library">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]Json.NET - A high performance Json library">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image3_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image2_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]Json.NET - A high performance Json library">
+<meta name="twitter:description" content="[C#]Json.NET - A high performance Json library">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image3_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]Json.NET - A high performance Json library | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]Json.NET - A high performance Json library
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\5fdebb43-0716-4f59-80d1-2ce6d843b6c9\image3_thumb.png" width="458" height="107"> </p>  <p> </p>  <p>Json.NET是一個高效能的Json函式庫，提供開發人員針對Json格式開發所需的功能。該函式庫具備有以下的特點：</p>  <ul>   <li>Flexible JSON serializer for converting between .NET objects and JSON </li>    <li>LINQ to JSON for manually reading and writing JSON </li>    <li>High performance, faster than .NET’s built-in JSON serializers </li>    <li>Write indented, easy to read JSON </li>    <li>Convert JSON to and from XML </li>    <li>Supports .NET 2, .NET 3.5, .NET 4, Silverlight, Windows Phone and Windows 8 Metro. </li> </ul>  <p> </p>  <p>簡單的說該函式庫提供了像是將物件序列化成Json字串、將Json字串解序列化為物件、Linq to Json、Json與Xml格式互相轉換…等功能。</p>  <p> </p>  <p>這些功能可能部分可以用現成BCL的功能下去處理，但是據Json.NET官方的資料來看，它能提供較好的效能，像是下圖的官方效能比較圖，它的的確確是比內建的DataContractJsonSerializer與JavaScriptSerializer快了好幾倍。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1204/e204d9cdf06c_131F2/image2.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\5fdebb43-0716-4f59-80d1-2ce6d843b6c9\image2_thumb.png" width="621" height="332"></a> </p>  <p> </p>  <p>Json.NET在使用前，如同一般的第三方元件，我們必須要將對應的組件加入參考，這動作可以直接透過NuGet下去完成，在Manage NuGet Packages對話框中的搜尋框輸入json.net的關鍵字，點擊Json.NET後方的install按鈕後按下ok離開即可。這邊沒安裝NuGet的也可以直接到<a href="http://json.codeplex.com/" target="_blank">Json.NET官方網站</a>下載，並將對應的組件加入參考。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1204/e204d9cdf06c_131F2/image_2.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\5fdebb43-0716-4f59-80d1-2ce6d843b6c9\image_thumb.png" width="644" height="431"> </a></p>  <p> </p>  <p>Json.NET在使用上也十分簡單，若要做物件的序列化，或是要將Json字串解序列化回物件，我們首先必須要有用來作序列化處理的物件，然後透過JsonConvert.SerializeObject與JsonConvert.DeserializeObject這兩道方法下去處理。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:19a12845-4d52-4398-b5ab-1687d4df9021" class="wlWriterSmartContent"><pre name="code" class="c#">…<br>var json = JsonConvert.SerializeObject(obj, Formatting.Indented);<br>…<br>var person = JsonConvert.DeserializeObject&lt;Person&gt;(json);<br>…</pre></div><br><br><p> </p>
+
+<p>這邊簡單的以幾個小小的程式碼片段來做些說明，假設今天我們有個Person類別，裡面有Name、NickName、Birthday、與Age這幾個成員屬性，對應到現實中，代表的就是一個人的名字、暱稱、生日、與年齡。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3c013bb9-4905-43cc-bd2f-b9a6638b50f9" class="wlWriterSmartContent"><pre name="code" class="c#">        public class Person<br>        {<br>            public String Name { get; set; }<br><br>            public String NickName { get; set; }<br><br>            public DateTime Birthday { get; set; }<br><br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p>以Person類別建立物件實體後，填入成員屬性值，再呼叫JsonConvert.SerializeObject將物件序列化為json字串。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:69e6c064-a4d9-4eef-bdd3-8ef5c62341b9" class="wlWriterSmartContent"><pre name="code" class="c#">            …<br>            DateTime date = DateTime.Now;<br><br>            Person Larry = new Person<br>            {<br>                Name = “Larry Nung”,<br>                NickName = “蹂躪”,<br>                Birthday = new DateTime(1980,4,19)<br>            };<br><br>            var json = JsonConvert.SerializeObject(Larry, Formatting.Indented);<br>            …<br>            var person = JsonConvert.DeserializeObject&lt;Person&gt;(json);<br>            …</pre></div>
+
+<p> </p>
+
+<p>運行後我們可以看到序列化出來的Json字串會像下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7e80740e-ada1-4e6f-be92-0474961f8675" class="wlWriterSmartContent"><pre name="code" class="c#">{<br>  “Name”: “Larry Nung”,<br>  “NickName”: “蹂躪”,<br>  “Birthday”: “1980-04-19T00:00:00”,<br>  “Age”: 31<br>}</pre></div>
+
+<p> </p>
+
+<p>在拿來序列化的類別未附加有什麼特別的Attribute時，預設是所有的成員屬性都會被序列化。它的效果就跟在類別前面附加[JsonObject(MemberSerialization.OptOut)]是一樣的，適合用於類別中大部分的成員屬性都想要被序列化的情境。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e452f794-e10b-49c2-99f2-17da5498d214" class="wlWriterSmartContent"><pre name="code" class="c#">        [JsonObject(MemberSerialization.OptOut)]<br>        public class Person<br>        {<br>            public String Name { get; set; }<br><br>            public String NickName { get; set; }<br><br>            public DateTime Birthday { get; set; }<br><br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p>若是部分屬性不想被序列化，像是這邊的Age成員屬性就可以透過Birthday下去推算，可以忽略不序列化，這時我們可為其加上JsonIgnoreAttribure，指定該成員屬性在序列化時忽略不處理。 </p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d890cac0-5188-4fc6-97f6-65c6ff88d956" class="wlWriterSmartContent"><pre name="code" class="c#">        [JsonObject(MemberSerialization.OptOut)]<br>        public class Person<br>        {<br>            public String Name { get; set; }<br><br>            public String NickName { get; set; }<br><br>            public DateTime Birthday { get; set; }<br><br>            [JsonIgnore]<br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p>序列化出來的Json字串就不會含有該成員屬性的部分。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:588b1f7e-27b2-4549-a816-2c6dc9a9eec7" class="wlWriterSmartContent"><pre name="code" class="c#">{<br>  “Name”: “Larry Nung”,<br>  “NickName”: “蹂躪”,<br>  “Birthday”: “1980-04-19T00:00:00”<br>}</pre></div>
+
+<p> </p>
+
+<p>那若是今天有個類別，它大部分的成員屬性我們都不想序列化時要怎麼辦？Json.NET也提供對應的設定，在類別前面附加[JsonObject(MemberSerialization.OptIn)]就可以了，這樣在序列化時就只有附加有JsonPropertyAttribute的成員屬性才會被序列化。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:bd9b811f-0ac0-48b1-a5b5-829746cdaf8f" class="wlWriterSmartContent"><pre name="code" class="c#">        [JsonObject(MemberSerialization.OptIn)]<br>        public class Person<br>        {<br>            [JsonProperty]<br>            public String Name { get; set; }<br><br>            [JsonProperty]<br>            public String NickName { get; set; }<br><br>            [JsonProperty]<br>            public DateTime Birthday { get; set; }<br><br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p>若有需要也可以直接用BCL現有的DataContractAttribute與DataMemberAttribute，Json.NET也認得這兩個Attribute，運作起來的效果是一樣的。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:020a2a70-f3fe-4787-85cf-e45ee0eac4a7" class="wlWriterSmartContent"><pre name="code" class="c#">        [DataContract]<br>        public class Person<br>        {<br>            [DataMember]<br>            public String Name { get; set; }<br><br>            [DataMember]<br>            public String NickName { get; set; }<br><br>            [DataMember]<br>            public DateTime Birthday { get; set; }<br><br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br>        }</pre></div>
+
+<p> </p>
+
+<p>除了使用對應的類別下去做序列化與解序列化的處理，Json.NET也能用內建的JObject、JProperty、與JArray動態的去處理，使用上不需要為Json產生對應的類別，用起來跟Linq to Xml很類似。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ec1ea243-d14a-4aa0-8efe-469b990748ae" class="wlWriterSmartContent"><pre name="code" class="c#">            …<br>            var Larry = new JObject(<br>                new JProperty(“Name”, “Larry Nung”),<br>                new JProperty(“NickName”, “蹂躪”)<br>                );<br><br>            json = JsonConvert.SerializeObject(Larry, Formatting.Indented);<br>            Console.WriteLine(json);<br>            …</pre></div>
+
+<p> </p>
+
+<p>這樣的動態處理方式支援Linq的查詢操作，可以撰寫類似下面的程式語法透過Linq去做些過濾。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8f40803c-f9a1-46d3-8c5d-3ebcffcf8eca" class="wlWriterSmartContent"><pre name="code" class="c#">            var dotBlog = new<br>            {<br>                Blogers = new List&lt;Person&gt;{<br>                    new Person()<br>                    {<br>                        Name = “Larry Nung”,<br>                        NickName = “蹂躪”<br>                    },<br>                    new Person()<br>                    {<br>                        Name = “Bill Chung”,<br>                        NickName = “Bill uncle”<br>                    }<br>                }<br>            };<br><br>            var linq = from item in JObject.FromObject(dotBlog)[“Blogers”]<br>                       select item;<br><br>            foreach (var item in linq)<br>            {<br>                Console.WriteLine(item.ToString());<br>            }</pre></div>
+
+<p> </p>
+
+<p>若覺得以上的Json字串處理方式太過高階，覺得無法有效的控制建置的細節的話，Json.NET也可以使用類似XmlTextWriter的方式下去組成Json字串，使用起來是會較上面的方法還要麻煩些，但能做較為細微的操作。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a255267a-a36d-4d5a-a27f-e60bdabf01fa" class="wlWriterSmartContent"><pre name="code" class="c#">            …<br>            StringBuilder sb = new StringBuilder();<br>            StringWriter sw = new StringWriter(sb);<br><br>            using (JsonWriter jsonWriter = new JsonTextWriter(sw))<br>            {<br>                jsonWriter.Formatting = Formatting.Indented;<br><br>                jsonWriter.WriteStartObject();<br>                jsonWriter.WritePropertyName(“Name”);<br>                jsonWriter.WriteValue(“Larry Nung”);<br>                jsonWriter.WritePropertyName(“NickName”);<br>                jsonWriter.WriteValue(“蹂躪”);<br>                jsonWriter.WriteEndObject();<br>            }<br>            var json = sb.ToString();<br>            Console.WriteLine(json);<br>            …</pre></div>
+
+<p> </p>
+
+<p>除了以上介紹的基本操作外，Json.NET也提供了許多其他的Attribute，像是OnSerializingAttribute、OnSerializedAttribute…等，能指定在序列化、解序列化、序列化錯誤之類的動作被觸發時所要執行的Callback方法，這邊筆者就不多做介紹了，可直接參閱Json.NET - Quick Starts &amp; API Documentation官方文件。最後附上筆者在測試用的範例程式，有興趣的可以拿來做些修改測試看看：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b76e2ccc-3a5a-4026-8865-ed145f64e50a" class="wlWriterSmartContent"><pre name="code" class="c#">using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using Newtonsoft.Json;<br>using Newtonsoft.Json.Converters;<br>using System.Runtime.Serialization;<br>using Newtonsoft.Json.Serialization;<br>using Newtonsoft.Json.Linq;<br>using System.IO;<br>using System.Collections;<br><br>namespace ConsoleApplication7<br>{<br>    class Program<br>    {<br>        [DataContract]<br>        public class Person<br>        {<br>            [DataMember]<br>            public String Name { get; set; }<br><br>            [DataMember]<br>            public String NickName { get; set; }<br><br>            [DataMember]<br>            public DateTime Birthday { get; set; }<br><br>            public int Age<br>            {<br>                get<br>                {<br>                    return (int)((DateTime.Now - Birthday).TotalDays / 365);<br>                }<br>            }<br><br>            private void ShowMessage(string eventName, StreamingContext context)<br>            {<br>                Console.WriteLine(“{0}…”, eventName);<br>                Console.WriteLine(“Context: {0}”, context.Context);<br>                Console.WriteLine(“State: {0}”, context.State);<br>                Console.WriteLine();<br>            }<br><br>            [OnSerializing]<br>            internal void OnSerializingMethod(StreamingContext context)<br>            {<br>                ShowMessage(“OnSerializingMethod”, context);<br>            }<br><br>            [OnSerialized]<br>            internal void OnSerializedMethod(StreamingContext context)<br>            {<br>                ShowMessage(“OnSerializedMethod”, context);<br>            }<br><br>            [OnDeserializing]<br>            internal void OnDeserializingMethod(StreamingContext context)<br>            {<br>                ShowMessage(“OnDeserializingMethod”, context);<br>            }<br><br>            [OnDeserialized]<br>            internal void OnDeserializedMethod(StreamingContext context)<br>            {<br>                ShowMessage(“OnDeserializedMethod”, context);<br>            }<br><br>            [OnError]<br>            internal void OnError(StreamingContext context, ErrorContext errorContext)<br>            {<br>                ShowMessage(“OnError”, context);<br>            }<br>        }<br><br>        static void Main(string[] args)<br>        {<br>            DateTime date = DateTime.Now;<br><br>            Person Larry1 = new Person<br>            {<br>                Name = “Larry Nung”,<br>                NickName = “蹂躪”,<br>                Birthday = new DateTime(1980,4,19)<br>            };<br><br>            var json = JsonConvert.SerializeObject(Larry1, Formatting.Indented);<br>            Console.WriteLine(“Serialized json string…”);<br>            Console.WriteLine(json);<br>            Console.WriteLine();<br><br>            var person = JsonConvert.DeserializeObject&lt;Person&gt;(json);<br>            Console.WriteLine(“Deserialized person name…”);<br>            Console.WriteLine(person.Name);<br><br>            var Larry2 = new JObject(<br>                new JProperty(“Name”, “Larry Nung”),<br>                new JProperty(“NickName”, “蹂躪”)<br>                );<br><br>            json = JsonConvert.SerializeObject(Larry2, Formatting.Indented);<br>            Console.WriteLine(“Serialized json string…”);<br>            Console.WriteLine(json);<br>            Console.WriteLine();<br><br><br>            var dotBlog = new<br>            {<br>                Blogers = new List&lt;Person&gt;{<br>                    new Person()<br>                    {<br>                        Name = “Larry Nung”,<br>                        NickName = “蹂躪”<br>                    },<br>                    new Person()<br>                    {<br>                        Name = “Bill Chung”,<br>                        NickName = “Bill uncle”<br>                    }<br>                }<br>            };<br><br>            var linq = from item in JObject.FromObject(dotBlog)[“Blogers”]<br>                       select item;<br><br>            foreach (var item in linq)<br>            {<br>                Console.WriteLine(item.ToString());<br>            }<br><br>            StringBuilder sb = new StringBuilder();<br>            StringWriter sw = new StringWriter(sb);<br><br>            using (JsonWriter jsonWriter = new JsonTextWriter(sw))<br>            {<br>                jsonWriter.Formatting = Formatting.Indented;<br><br>                jsonWriter.WriteStartObject();<br>                jsonWriter.WritePropertyName(“Name”);<br>                jsonWriter.WriteValue(“Larry Nung”);<br>                jsonWriter.WritePropertyName(“NickName”);<br>                jsonWriter.WriteValue(“蹂躪”);<br>                jsonWriter.WriteEndObject();<br>            }<br>            Console.WriteLine(“Serialized json string…”);<br>            Console.WriteLine(sb.ToString());<br>            Console.WriteLine();<br><br>            try<br>            {<br>                person = JsonConvert.DeserializeObject&lt;Person&gt;(@”{“”Name””: “”Larry Nung””,””NickName””: [蹂躪,拉力]}”,new JsonSerializerSettings()<br>                {<br>                    Error = (sender, e)=&gt;<br>                    {<br>                        Console.WriteLine(“Serialize error!!”);<br>                        e.ErrorContext.Handled = true;<br>                    }<br>                });<br>            }<br>            catch<br>            {<br>            }<br>        }<br>    }<br>}</pre></div>
+
+<p> </p>
+
+<p>運行結果如下：</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\5fdebb43-0716-4f59-80d1-2ce6d843b6c9\image_thumb_1.png" width="369" height="751"> </p>
+
+<p>  </p>
+
+<h2>Link</h2>
+
+<ul><br>  <li>Json.NET </li><br><br>  <li>Json.NET - Quick Starts &amp; API Documentation </li><br><br>  <li>CODE-使用JSON.NET處理動態物件屬性 </li><br></ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/01f55ecc-a9b5-4e3a-93a6-59606d12b654/" rel="next" title="[Visual Studio]使用Portable Class library樣板建立能在多個平台上重用的組件" data-instant>
+                <i class="fa fa-chevron-left"></i> [Visual Studio]使用Portable Class library樣板建立能在多個平台上重用的組件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/2faa5b0a-18f0-4013-8a63-59f0b490f9f8/" rel="prev" title="Code Converter Extension v1.1" data-instant>
+                Code Converter Extension v1.1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/';
+      var disqus_title = "[C#]Json.NET - A high performance Json library";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content=".NET 4.0 New Feature - Memory Mapped File">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 4.0 New Feature - Memory Mapped File">
+<meta property="og:url" content="http://larrynung.github.io/2010/11/11/19418/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content=".NET 4.0 New Feature - Memory Mapped File">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19418/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19418/image3_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19418/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/19418/image9_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET 4.0 New Feature - Memory Mapped File">
+<meta name="twitter:description" content=".NET 4.0 New Feature - Memory Mapped File">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/19418/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> .NET 4.0 New Feature - Memory Mapped File | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                .NET 4.0 New Feature - Memory Mapped File
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-11-11T21:50:50+00:00" content="2010-11-12">
+              2010-11-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/11/11/19418/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/11/11/19418/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>.NET Framework 在 4.0 新增了記憶體對應檔案(Memory Mapped File)功能，將以前需透過 API 才能使用的功能包在 .NET Framework 的 System.IO.MemoryMappedFiles 命名空間中，可用以編輯大小極大的檔案、減少IO的存取次數、提高檔案處理的效能、與在多個處理序中共享其內容。</p>
+<a id="more"></a>
+<p><br></p>
+<p>要使用記憶體對應檔案物件，首先要先建立記憶體對應檔案物件，須了解到記憶體對應檔案有兩種類型；</p>
+<ol>
+<li>保存的記憶體對應檔案</li>
+<li>非保存的記憶體對應檔案</li>
+</ol>
+<p><br></p>
+<p>保存的記憶體對應檔案顧名思義其記憶體對應檔案的內容會與磁碟中的檔案做對應，可將檔案內容放至記憶體對應檔案中用以處理極大的檔案，當處理完畢資料會自動回存回對應檔案。</p>
+<p><br></p>
+<p>非保存的記憶體對應檔案則沒有與磁碟中的檔案對應，其所存放的值只是記憶體中的資料，可用來作處理序間通訊(IPC)的共用記憶體，當處理完畢其記憶體對應檔案的資料會被捨棄，且會被GC回收。</p>
+<p><br></p>
+<p>使用上是透過 MemoryMappedFile 類別內含的 CreateNew、 CreateOrOpen、與 CreateFromFile 等方法來建立記憶體對應檔案物件。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CreateNew</td>
+<td style="text-align:center">建立非保存的記憶體對應檔案物件</td>
+</tr>
+<tr>
+<td style="text-align:left">CreateOrOpen</td>
+<td style="text-align:center">建立或開啟非保存的記憶體對應檔案物件</td>
+</tr>
+<tr>
+<td style="text-align:left">CreateFromFile</td>
+<td style="text-align:center">建立保存的記憶體對應檔案物件</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>若是有已建好的記憶體對應檔案，也可以透過 MemoryMappedFile 類別內含的 OpenExisting 方法將已經建立好的記憶體對應檔案物件開啟。</p>
+<p><br></p>
+<p>有了記憶體對應檔案物件後，剩下的就是透過記憶體對應檔案檢視去對其作存取的動作。一個記憶體對應檔案物件可產生多個記憶體對應檔案檢視，可設定要針對記憶體對應檔案物件整體或是部份來檢視，需特別注意到記憶體對應檔案檢視也分為兩種類型：</p>
+<ol>
+<li>資料流存取檢視</li>
+<li>隨機存取檢視</li>
+</ol>
+<p><br></p>
+<p>資料流存取檢視透過 MemoryMappedFile.CreateViewStream 建立，採循序存取的方式處理資料，適用於非保存的記憶體對應檔案。</p>
+<p><br></p>
+<p>隨機存取檢視透過 MemoryMappedFile.CreateViewAccessor 建立，採隨機存取的方式處理資料，適用於保存的記憶體對應檔案。</p>
+<p><br></p>
+<p>這邊來看個非保存的記憶體對應檔案物件的使用範例：</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Imports</span> System.IO.MemoryMappedFiles</span><br><span class="line"><span class="keyword">Imports</span> System.Collections.Specialized</span><br><span class="line"><span class="keyword">Imports</span> System.Runtime.Serialization.Formatters.<span class="keyword">Binary</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Module</span> Module1</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Sub</span> Main()</span><br><span class="line">        <span class="keyword">Const</span> capacity <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">512</span></span><br><span class="line">        <span class="keyword">Const</span> mmfKey <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"Larry"</span></span><br><span class="line">        Dim levelUpBlog As New Blog With &#123;.Title = "Level Up", .Owner = "Larry"&#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">'顯示寫入前資訊</span></span><br><span class="line">        Console.WriteLine(<span class="string">"資料寫入記憶體對應檔案前..."</span>)</span><br><span class="line">        ShowBlogInfo(levelUpBlog)</span><br><span class="line"></span><br><span class="line">        <span class="comment">'Write to memory</span></span><br><span class="line">        <span class="keyword">Using</span> mmf <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.CreateNew(mmfKey, capacity)</span><br><span class="line">            <span class="keyword">Using</span> mmvs = mmf.CreateViewStream</span><br><span class="line">                <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                bs.Serialize(mmvs, levelUpBlog)</span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'Read from memory</span></span><br><span class="line">            <span class="keyword">Using</span> existedMMF <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.OpenExisting(mmfKey)</span><br><span class="line">                <span class="keyword">Using</span> mmvs = existedMMF.CreateViewStream</span><br><span class="line">                    <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                    <span class="keyword">Dim</span> blogObj <span class="keyword">As</span> Blog = bs.Deserialize(mmvs)</span><br><span class="line"></span><br><span class="line">                    Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">                    Console.WriteLine(<span class="string">"資料從記憶體對應檔案讀出並增加文章..."</span>)</span><br><span class="line">                    ShowBlogInfo(blogObj)</span><br><span class="line"></span><br><span class="line">                    blogObj.Articles.Add(<span class="string">"文章一 初來點部落:...(略)..."</span>)</span><br><span class="line">                    mmvs.Seek(<span class="number">0</span>, IO.SeekOrigin.Begin)</span><br><span class="line">                    bs.Serialize(mmvs, blogObj)</span><br><span class="line">                <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'Read from memory</span></span><br><span class="line">            <span class="keyword">Using</span> existedMMF <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.OpenExisting(mmfKey)</span><br><span class="line">                <span class="keyword">Using</span> mmvs = existedMMF.CreateViewStream</span><br><span class="line">                    <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                    <span class="keyword">Dim</span> blogObj <span class="keyword">As</span> Blog = bs.Deserialize(mmvs)</span><br><span class="line"></span><br><span class="line">                    Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">                    Console.WriteLine(<span class="string">"資料從記憶體對應檔案讀出..."</span>)</span><br><span class="line">                    ShowBlogInfo(blogObj)</span><br><span class="line">                <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'顯示寫入後資訊</span></span><br><span class="line">            Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">            Console.WriteLine(<span class="string">"記憶體物件的資料內容..."</span>)</span><br><span class="line">            ShowBlogInfo(levelUpBlog)</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Private</span> <span class="keyword">Sub</span> ShowBlogInfo(<span class="keyword">ByVal</span> blog <span class="keyword">As</span> Blog)</span><br><span class="line">        <span class="keyword">With</span> blog</span><br><span class="line">            Console.WriteLine(<span class="string">"Title: &#123;0&#125;"</span>, .Title)</span><br><span class="line">            Console.WriteLine(<span class="string">"Owner: &#123;0&#125;"</span>, .Owner)</span><br><span class="line">            Console.WriteLine(<span class="string">"Article Count: &#123;0&#125;"</span>, .Articles.Count)</span><br><span class="line">            <span class="keyword">If</span> .Articles.Count &gt; <span class="number">0</span> <span class="keyword">Then</span></span><br><span class="line">                Console.WriteLine()</span><br><span class="line">                Console.WriteLine(<span class="string">"Article"</span>)</span><br><span class="line">                <span class="keyword">For</span> <span class="keyword">Each</span> content <span class="keyword">As</span> <span class="built_in">String</span> <span class="keyword">In</span> .Articles</span><br><span class="line">                    Console.WriteLine(content)</span><br><span class="line">                <span class="keyword">Next</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Module</span></span><br><span class="line"></span><br><span class="line">&lt;Serializable()&gt; _</span><br><span class="line"><span class="keyword">Class</span> Blog</span><br><span class="line">    <span class="keyword">Property</span> Title <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Property</span> Owner <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Property</span> Articles <span class="keyword">As</span> <span class="keyword">New</span> StringCollection</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Class</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>運行結果如下：</p>
+<p><img src="\images\posts\19418\image_thumb.png" alt="image"></p>
+<p><br></p>
+<p>可從中看到記憶體對應檔案的內容只需要彼此知道其對應的Key，就可以存取到同一個記憶體對應檔案，在處理結束後，記憶體對應檔案中的內容會被回收，所以記憶體中的變數值並不會隨之改變。</p>
+<p><br></p>
+<p>接著將上面的範例改成保存的記憶體對應檔案物件的使用範例：</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Imports</span> System.IO</span><br><span class="line"><span class="keyword">Imports</span> System.IO.MemoryMappedFiles</span><br><span class="line"><span class="keyword">Imports</span> System.Collections.Specialized</span><br><span class="line"><span class="keyword">Imports</span> System.Runtime.Serialization.Formatters.<span class="keyword">Binary</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Module</span> Module1</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Sub</span> Main()</span><br><span class="line">        <span class="keyword">Const</span> capacity <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">1024</span></span><br><span class="line">        <span class="keyword">Const</span> mmfKey <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"Larry"</span></span><br><span class="line">        <span class="keyword">Const</span> file <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"Blog.xml"</span></span><br><span class="line">        Dim levelUpBlog As New Blog With &#123;.Title = "Level Up", .Owner = "Larry"&#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">'顯示寫入前資訊</span></span><br><span class="line">        Console.WriteLine(<span class="string">"資料寫入記憶體對應檔案前..."</span>)</span><br><span class="line">        ShowBlogInfo(levelUpBlog)</span><br><span class="line"></span><br><span class="line">        <span class="comment">'Write to memory</span></span><br><span class="line">        <span class="keyword">Using</span> mmf <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.CreateFromFile(<span class="keyword">New</span> FileStream(file, FileMode.Create), mmfKey, capacity, MemoryMappedFileAccess.ReadWrite, <span class="literal">Nothing</span>, HandleInheritability.None, <span class="literal">False</span>)</span><br><span class="line">            <span class="keyword">Using</span> mmvs = mmf.CreateViewStream</span><br><span class="line">                <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                bs.Serialize(mmvs, levelUpBlog)</span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'Read from memory</span></span><br><span class="line">            <span class="keyword">Using</span> existedMMF <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.OpenExisting(mmfKey)</span><br><span class="line">                <span class="keyword">Using</span> mmvs = existedMMF.CreateViewStream</span><br><span class="line">                    <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                    <span class="keyword">Dim</span> blogObj <span class="keyword">As</span> Blog = bs.Deserialize(mmvs)</span><br><span class="line"></span><br><span class="line">                    Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">                    Console.WriteLine(<span class="string">"資料從記憶體對應檔案讀出並增加文章..."</span>)</span><br><span class="line">                    ShowBlogInfo(blogObj)</span><br><span class="line"></span><br><span class="line">                    blogObj.Articles.Add(<span class="string">"文章一 初來點部落:...(略)..."</span>)</span><br><span class="line">                    mmvs.Seek(<span class="number">0</span>, IO.SeekOrigin.Begin)</span><br><span class="line">                    bs.Serialize(mmvs, blogObj)</span><br><span class="line">                <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'Read from memory</span></span><br><span class="line">            <span class="keyword">Using</span> existedMMF <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.OpenExisting(mmfKey)</span><br><span class="line">                <span class="keyword">Using</span> mmvs = existedMMF.CreateViewStream</span><br><span class="line">                    <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">                    <span class="keyword">Dim</span> blogObj <span class="keyword">As</span> Blog = bs.Deserialize(mmvs)</span><br><span class="line"></span><br><span class="line">                    Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">                    Console.WriteLine(<span class="string">"資料從記憶體對應檔案讀出..."</span>)</span><br><span class="line">                    ShowBlogInfo(blogObj)</span><br><span class="line">                <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">'顯示寫入後資訊</span></span><br><span class="line">            Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">            Console.WriteLine(<span class="string">"記憶體物件的資料內容..."</span>)</span><br><span class="line">            ShowBlogInfo(levelUpBlog)</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">Using</span> fs <span class="keyword">As</span> <span class="keyword">New</span> FileStream(file, FileMode.Open)</span><br><span class="line">            <span class="keyword">Dim</span> bs <span class="keyword">As</span> <span class="keyword">New</span> BinaryFormatter</span><br><span class="line">            <span class="keyword">Dim</span> blogObj <span class="keyword">As</span> Blog = bs.Deserialize(fs)</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="keyword">New</span> <span class="built_in">String</span>(<span class="string">"="</span>c, <span class="number">50</span>))</span><br><span class="line">            Console.WriteLine(<span class="string">"檔案儲存的資料內容..."</span>)</span><br><span class="line">            ShowBlogInfo(blogObj)</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Private</span> <span class="keyword">Sub</span> ShowBlogInfo(<span class="keyword">ByVal</span> blog <span class="keyword">As</span> Blog)</span><br><span class="line">        <span class="keyword">With</span> blog</span><br><span class="line">            Console.WriteLine(<span class="string">"Title: &#123;0&#125;"</span>, .Title)</span><br><span class="line">            Console.WriteLine(<span class="string">"Owner: &#123;0&#125;"</span>, .Owner)</span><br><span class="line">            Console.WriteLine(<span class="string">"Article Count: &#123;0&#125;"</span>, .Articles.Count)</span><br><span class="line">            <span class="keyword">If</span> .Articles.Count &gt; <span class="number">0</span> <span class="keyword">Then</span></span><br><span class="line">                Console.WriteLine()</span><br><span class="line">                Console.WriteLine(<span class="string">"Article"</span>)</span><br><span class="line">                <span class="keyword">For</span> <span class="keyword">Each</span> content <span class="keyword">As</span> <span class="built_in">String</span> <span class="keyword">In</span> .Articles</span><br><span class="line">                    Console.WriteLine(content)</span><br><span class="line">                <span class="keyword">Next</span></span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Module</span></span><br><span class="line"></span><br><span class="line">&lt;Serializable()&gt; _</span><br><span class="line"><span class="keyword">Class</span> Blog</span><br><span class="line">    <span class="keyword">Property</span> Title <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Property</span> Owner <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Property</span> Articles <span class="keyword">As</span> <span class="keyword">New</span> StringCollection</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Class</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>運行結果如下：</p>
+<p><img src="\images\posts\19418\image3_thumb.png" alt="image"></p>
+<p><br></p>
+<p>從非保存的記憶體對應檔案物件改成保存的記憶體對應檔案物件，我們只需替換使用對應的方法產生記憶體對應檔案物件即可，程式上不需做太多的修改，從範例中我們也可以看到，在處理完畢後，對應到磁碟內的檔案也會反映我們在記憶體對應檔案物件中所做的修改。</p>
+<p><br></p>
+<p>最後再來看一下如何使用非保存的記憶體對應檔案來做不同處理序間的溝通，首先我們先設計如下介面：</p>
+<p><img src="\images\posts\19418\image6_thumb.png" alt="image"></p>
+<p><br></p>
+<p>撰寫如下程式碼：</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Imports</span> System.IO.MemoryMappedFiles</span><br><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Class</span> Form1</span><br><span class="line">    <span class="keyword">Const</span> MMF_KEY <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"MMFMsg"</span></span><br><span class="line">    <span class="keyword">Const</span> CAPACITY <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">1024</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Private</span> <span class="keyword">Sub</span> Timer1_Tick(<span class="keyword">ByVal</span> sender <span class="keyword">As</span> System.<span class="built_in">Object</span>, <span class="keyword">ByVal</span> e <span class="keyword">As</span> System.EventArgs) <span class="keyword">Handles</span> Timer1.Tick</span><br><span class="line">        <span class="keyword">Dim</span> mmf <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.CreateOrOpen(MMF_KEY, CAPACITY)</span><br><span class="line">        <span class="keyword">Using</span> mmvs = mmf.CreateViewStream()</span><br><span class="line">            <span class="keyword">Using</span> br <span class="keyword">As</span> <span class="keyword">New</span> IO.BinaryReader(mmvs)</span><br><span class="line">                tbxMonitor.<span class="keyword">Text</span> = br.ReadString</span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Private</span> <span class="keyword">Sub</span> btnSend_Click(<span class="keyword">ByVal</span> sender <span class="keyword">As</span> System.<span class="built_in">Object</span>, <span class="keyword">ByVal</span> e <span class="keyword">As</span> System.EventArgs) <span class="keyword">Handles</span> btnSend.Click</span><br><span class="line">        <span class="keyword">Dim</span> mmf <span class="keyword">As</span> MemoryMappedFile = MemoryMappedFile.CreateOrOpen(MMF_KEY, CAPACITY)</span><br><span class="line">        <span class="keyword">Using</span> mmvs = mmf.CreateViewStream()</span><br><span class="line">            <span class="keyword">Using</span> bw <span class="keyword">As</span> <span class="keyword">New</span> IO.BinaryWriter(mmvs)</span><br><span class="line">                bw.Write(tbxSend.<span class="keyword">Text</span>)</span><br><span class="line">            <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Using</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Class</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>將程式運行一次以上，並在發送區填入要發送的訊息，按下發送按鈕，就可以看到所有開啟的程式都會收到相同的訊息。</p>
+<p><img src="\images\posts\19418\image9_thumb.png" alt="image"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/11/10/19347/" rel="next" title="使用Extension Method計算漢字筆畫" data-instant>
+                <i class="fa fa-chevron-left"></i> 使用Extension Method計算漢字筆畫
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/11/16/19495/" rel="prev" title="Linq to GPU (Brahma)" data-instant>
+                Linq to GPU (Brahma) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/11/11/19418/';
+      var disqus_title = ".NET 4.0 New Feature - Memory Mapped File";
+      var disqus_url = 'http://larrynung.github.io/2010/11/11/19418/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

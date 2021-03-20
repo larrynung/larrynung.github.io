@@ -1,0 +1,647 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="T4MVC, ASP.NET, MVC">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="T4MVC - A T4 template for ASP.NET MVC">
+<meta name="keywords" content="T4MVC, ASP.NET, MVC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T4MVC - A T4 template for ASP.NET MVC">
+<meta property="og:url" content="http://larrynung.github.io/2014/07/17/t4mvc-a-t4-template-for-asp-dot-net-mvc/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="T4MVC - A T4 template for ASP.NET MVC">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/T4MVC/1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/T4MVC/2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/T4MVC/3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.645Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="T4MVC - A T4 template for ASP.NET MVC">
+<meta name="twitter:description" content="T4MVC - A T4 template for ASP.NET MVC">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/T4MVC/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> T4MVC - A T4 template for ASP.NET MVC | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                T4MVC - A T4 template for ASP.NET MVC
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2014-07-17T05:04:00+00:00" content="2014-07-17">
+              2014-07-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/07/17/t4mvc-a-t4-template-for-asp-dot-net-mvc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/07/17/t4mvc-a-t4-template-for-asp-dot-net-mvc/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>玩過 ASP.Net MVC 的應該都有注意到，在寫 ASP.Net MVC 時會用到很多 Magic String。像是在取網址位置時，會需要帶入 Controller Name 以及 Action Name。  </p>
+<a id="more"></a>
+<pre><code>@Url.Action(&quot;Home&quot;, &quot;Index&quot;)
+</code></pre><p>在設定連結時，會需要帶入連結名稱、 Controller Name 以及 Action Name。</p>
+<pre><code>@Html.ActionLink(&quot;Home&quot;, &quot;Index&quot;, &quot;Home&quot;)
+</code></pre><p>導到另外一個 Action 去處理時，又需要 Action Name。  </p>
+<pre><code>return RedirectToAction(&quot;About&quot;);
+</code></pre><p>可以看到這些叫用帶入的都是字串，而且類似的地方還有很多，所以整個 ASP.Net MVC 寫下來會發現 Magic String 充斥在程式中。這樣的問題不僅讓我們開發上無 Intellisense 可用，編寫時不是那麼便利，修改時也容易因此而有所遺漏。 </p>
+<p><br></p>
+<p>這篇要介紹的 T4MVC 就是一能解決這樣問題的 T4 範本套件。 T4MVC 透過 T4 去遍巡專案內的檔案，產生一些輔助的類別與方法的多載，巧妙的避開 Magic String 的問題。這邊可先快速的瀏覽一下 Channel 9 的相關影片，體驗一下 T4MVC 的魅力。  </p>
+<iframe src="http://channel9.msdn.com/Blogs/jongalloway/Jon-Takes-Five-with-David-Ebbo-on-T4MVC/player?h=540&w=960" style="height:540px;width:960px;" allowfullscreen frameborder="0" scrolling="no"></iframe>  
+
+<p><br></p>
+<p>使用前需先透過 NuGet 搜尋並安裝 T4MVC 套件。 </p>
+<img src="/images/posts/T4MVC/1.png">
+<p><br></p>
+<img src="/images/posts/T4MVC/2.png">
+<p><br></p>
+<p>安裝完畢專案根目錄會多出幾個檔案(若想更動檔案位置，直接搬動這幾個檔案即可)，比較重要的是用來生成程式部分的 T4 主檔，另外則是用來調整生成設定的 Setting 檔。  </p>
+<img src="/images/posts/T4MVC/3.png">
+<p><br></p>
+<p>接著我們將程式中的 Magic Sting 做些處理。像是本來在寫連結的部份，可以這樣修改：  </p>
+<pre><code>@Html.ActionLink(&quot;Home&quot;, MVC.Home.Index())
+</code></pre><p>在 View 中取用 Action 網址的部分…  </p>
+<pre><code>@Url.Action(MVC.Home.Index())
+</code></pre><p>在 Controller 要將 Action 導向…    </p>
+<pre><code>return RedirectToAction(MVC.Home.About());
+</code></pre><p>在 View 中使用 Form Action…     </p>
+<pre><code>@Html.BeginForm(MVC.Home.Index(Model.Id), FormMethod.Post)
+</code></pre><p>在 Action 回傳指定的 View…   </p>
+<pre><code>return View(Views.About);
+</code></pre><p>在 View 中顯示 Partial View…    </p>
+<pre><code>@{Html.RenderPartial(MVC.Dinners.Views.DinnerForm);}
+</code></pre><p>在 View 中引用 JavaScript…   </p>
+<pre><code>&lt;script src = &quot; @Links.Scripts.jquery_validate_js &quot; type = &quot;text/javascript&quot; &gt;&lt;/script&gt;
+</code></pre><p>在 View 中載入圖片…     </p>
+<pre><code>&lt;img src = &quot;@Links.Content.install.images.bg_gif &quot; &gt;
+</code></pre><p>更為詳細的使用介紹請參閱 <a href="http://t4mvc.codeplex.com/" target="_blank" rel="noopener">T4MVC - Home</a>。</p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul>
+<li><a href="http://t4mvc.codeplex.com/" target="_blank" rel="noopener">T4MVC - Home</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/T4/" rel="tag” data-instant>#T4</a>
+          
+            <a href=" tags t4mvc " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/07/07/web-dot-config-transformation-transform-on-build/" rel="next" title="Web.Config Transformation - Transform on build" data-instant>
+                <i class="fa fa-chevron-left"></i> Web.Config Transformation - Transform on build
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/07/20/c-number-6-dot-0-auto-property-initializers/" rel="prev" title="C# 6.0 - Auto-property initializers" data-instant>
+                C# 6.0 - Auto-property initializers <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2014/07/17/t4mvc-a-t4-template-for-asp-dot-net-mvc/';
+      var disqus_title = "T4MVC - A T4 template for ASP.NET MVC";
+      var disqus_url = 'http://larrynung.github.io/2014/07/17/t4mvc-a-t4-template-for-asp-dot-net-mvc/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約">
+<meta property="og:url" content="http://larrynung.github.io/2010/08/31/17516/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/17516/clip_image002_2.jpg">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/17516/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約">
+<meta name="twitter:description" content=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/17516/clip_image002_2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> .NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                .NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-08-31T02:44:14+00:00" content="2010-08-31">
+              2010-08-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/08/31/17516/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/08/31/17516/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p> </p>  <p>程式碼合約內定義許多方便的合約，供開發人員能對開發的程式做些驗證，其中最重要用的也最多的莫過於下面三個合約：</p>  <ol>   <li>前置條件(Preconditions)</li>    <li>後置條件(Postconditions)</li>    <li>物件非變異(Object Invariants)</li> </ol>  <p> </p>  <h3>前置條件(Preconditions)</h3>  <p>前置條件合約主要是用來驗證進入方法或是屬性時所必須滿足的需求條件，多用來判斷帶入方法或是屬性的參數值是否符合預期。使用上透過Contract.Requires方法表示，帶入所要驗證的條件就可以了。</p>  <p> </p>  <p>像是若要限定帶入方法或屬性的參數x不可為空引用，可以如下撰寫：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:61eff113-3522-4718-a4a3-add3e50354c1" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.Requires(x != null ); </pre></div>  <p> </p>  <p>前置條件合約除了可以帶入驗證條件外，Contract.Requires方法也具備其它多載方法，可附加帶入驗證失敗時所要顯示的訊息，或是透過泛型方法指定當驗證失敗所要丟出的例外(若未特別指定，預設是丟出ContractException例外)。</p>  <p> </p>  <p>像是若要限定帶入方法或屬性的參數x不可為空引用，否則丟出ArguementNullException例外，並顯示x is null的訊息，可以如下撰寫：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:32d0dc0e-9bb0-4dcd-912f-899e3e0e5a75" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.Requires&lt;ArgumentNullException&gt;(x != null, “x is null”); </pre></div>  <p> </p>  <p>若程式中含有先前已撰寫的if-than-throw參數判斷，Code Contract也提供了Contract.EndContractBlock方法，可將其加在舊有的if-than-throw參數判斷後面，如此Code Contract即會將舊有的if-than-throw參數判斷視為前置條件合約處理。像是：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:283d95ca-be17-4b15-bf45-bfae7c2ec0af" class="wlWriterSmartContent"><pre name="code" class="c#"><br>if(x == null) throw new ArguementNullException();<br>Contract.EndContractBlock(); </pre></div>  <p> </p>  <h3>後置條件(Postconditions)</h3>  <p>後置條件合約主要是用來驗證當跳離方法或屬性時所需滿足的需求條件，依用途不同可分為標準後置條件(Normal Postconditions) 、例外後置條件(Exceptional Postconditions)、與特殊後置條件(Special Methods within Postconditions)三種。</p>  <p> </p>  <p>標準後置條件是用來驗證方法或屬性正常中止時所需滿足的需求條件，使用上透過 Contract.Ensures 方法表示，帶入所要驗證的條件就可以了。</p>  <p> </p>  <p>像是若要限定方法或屬性正常離開時，其成員變數F的值必須要大於零，可以如下撰寫：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:114725b4-64cd-4208-a8b5-98ccdb0e6b8c" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.Ensures( this .F &gt; 0 );</pre></div>  <p> </p>  <p>例外後置條件是用來驗證方法或屬性在擲回特定例外狀況時所需滿足的需求條件，使用上透過Contract.EnsuresOnThrow 方法表示，像是：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:91fdaa92-69bd-46f7-b49f-e9b2f1ea938a" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.EnsuresOnThrow&lt;T&gt;( this.F &gt; 0 );</pre></div>  <p> </p>  <p>特殊後置條件則是指方法傳回值、前置狀態值、與輸出參數這三種輔助後置條件用的語法。</p>  <p>特殊後置條件中的方法傳回值指的是呼叫方法時其所要回傳給呼叫端的返回值，在無傳回值的副程式中無法使用，使用上透過Contract. Result&lt;T&gt;表示。像是：</p><p> </p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2a566603-c165-438c-92af-1ee5450daf9c" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.Ensures(0 &lt; Contract.Result&lt;int&gt;());</pre></div>    <p> </p>    <p>而特殊後置條件中的前置狀態值所要表示的是一開始進入方法或屬性的值 ，可用 Contract.OldValue&lt;T&gt;(T t) 表示 。像是：</p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8e5a6985-0343-429b-9e77-5e1a84ba1762" class="wlWriterSmartContent"><pre name="code" class="c#"><br>void IArray.Insert(int index, Object value){<br>    Contract.Requires(index &gt;= 0);<br>    Contract.Requires(index &lt;= ((IArray)this).Count);<br>    Contract.Ensures(((IArray)this).Count == Contract.OldValue(((IArray)this).Count) + 1);<br>}<br></pre></div>    <p> </p>    <p>這段範例程式清楚的帶出了前置狀態值的用法，使用陣列個數前置狀態值跟目前的陣列個數去比對，看看兩者之間的個數是否差距一，以確保陣列元素真的有加入陣列之中。</p>    <p>需特別注意的是前置狀態值語法在使用上有些限制存在，像是前置狀態值不得參考方法的傳回值與用傳址方式帶入的參數：</p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e3342976-bd37-4722-b051-967c5b3cb8c6" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract.OldValue(Contract.Result&lt;int&gt;() + x) // ERROR </pre></div>    <p> </p>    <p>如數量詞範圍相依於方法傳回值，前置狀態值也不得相依於數量詞的繫結變數：                               </p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f0420323-c96f-4d54-a5d3-8f73b926fdb1" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract. ForAll (0,Contract. Result&lt;int&gt;(),i =&gt; Contract.OldValue(xs[i]) &gt; 3 ); // ERROR </pre></div>    <p> </p>    <p>還有就是前置狀態值除非是當方法呼叫的索引子或引數使用，否則不得在 ForAll 或 Exists 呼叫中參考匿名委派的參數：                               </p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1a13b3b2-a9f5-4306-a10e-2217246ed930" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Contract. ForAll (0, xs .Length, i =&gt; Contract.OldValue(xs[i]) &gt; 3); // OK<br>Contract. ForAll (0, xs .Length, i =&gt; Contract.OldValue(i) &gt; 3 ); // ERROR </pre></div>    <p>                               </p>    <p>另外如果前置狀態值的值相依於匿名委派的任何參數，除非此匿名委派是 ForAll 或 Exists 方法的引數，否則前置狀態值不得出現在匿名委派的主體中：</p>    <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0dd356df-102f-4d81-90ce-fc06308ae2cb" class="wlWriterSmartContent"><pre name="code" class="c#"><br>Method( … (T t) =&gt; Contract.OldValue(… t …) … ); // ERROR</pre></div>    <p> </p>    <p>至於特殊後置條件中的輸出參數，則是用來表示以傳址方式傳遞的方法參數，可用 Contract.ValueAtReturn&lt;T&gt;(out T t) 表示。像是：</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:562fd2ce-51b6-4bfd-9a71-7268aee1125f" class="wlWriterSmartContent"><pre name="code" class="c#"><br>public void OutParam(out int x) {<br>    Contract.Ensures(Contract.ValueAtReturn(out x) == 3);<br>    x = 3;<br>}</pre></div>      <p> </p>      <h3>物件非變異(Object Invariants)</h3>      <p>物件非變異是用來描述類別執行個體總是需要滿足的不變條件，使用上只要在方法上附加ContractInvariantMethodAttribute 屬性標記，並在方法中使用Contract .Invariant方法做一連串的驗證即可。值得注意的是該方法內只能包含Invariant契约，不得包含任何其它程式碼。</p>      <p> </p>      <p>舉個例子來看，若是我們需要撰寫個合約限制MyProperty永遠不得小於零，可以如下撰寫：</p>      <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:146ea633-8ab6-40cb-b8fb-acf8794d8fac" class="wlWriterSmartContent"><pre name="code" class="c#"><br>public int MyProperty { get; set; }   <p></p>
+<p>[ContractInvariantMethod]<br>void ObjectInvariant()<br>{<br>    Contract.Invariant(MyProperty &gt;= 0);<br>}<br>public int MyProperty { get; set; }</p>
+<p>[ContractInvariantMethod]<br>void ObjectInvariant()<br>{<br>    Contract.Invariant(MyProperty &gt;= 0);<br>}</p></pre></div>      <p> </p>      <p>這邊我們來反組譯了解一下其運作原理，反組譯後可發現Code Contract偷偷的幫我們在裡面造了兩個私有欄位&lt;MyProperty&gt;k_backingField與$evaluatingInvariant$。</p>      <p><img alt src="\images\posts\17516\clip_image002_2.jpg"></p>      <p> </p>      <p>此外，Code Contract也偷偷的幫我們把跟該屬性相關的物件非變異合約條件給放入屬性內，藉此達到物件非變異合約所要實現的功能。</p>      <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d3b1d68f-57f2-40ab-b2bb-09cc510113e5" class="wlWriterSmartContent"><pre name="code" class="c#"><br>public int MyProperty<br>{<br>    [CompilerGenerated]<br>    get<br>    {<br>        int Contract.Result = this.&lt;MyProperty&gt;k__BackingField;<br>        if (!this.$evaluatingInvariant$)<br>        {<br>            __ContractsRuntime.Ensures(Contract.Result &gt;= 0, null, “MyProperty &gt;= 0”);<br>        }<br>        return Contract.Result;<br>    }<p></p>
+<pre><code>[CompilerGenerated]
+set
+{
+    if (!this.$evaluatingInvariant$)
+    {
+        __ContractsRuntime.Requires(value &amp;gt;= 0, null, &quot;MyProperty &amp;gt;= 0&quot;);
+    }
+    this.&amp;lt;MyProperty&amp;gt;k__BackingField = value;
+    if (!this.$evaluatingInvariant$)
+    {
+    }
+    this.$InvariantMethod$();
+}
+</code></pre><p>}<br></p></pre></div>      <p> </p>      <p>到此整個物件非變異合約的運作概念， 想必應該都非常清楚了。這邊額外再帶出一個很有趣的現象，假設今天再為上面的範例程式加一個未使用到的屬性MyProperty1：</p>      <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ce41b241-0dfc-46b8-83e7-dcd50144feb3" class="wlWriterSmartContent"><pre name="code" class="c#"><br>public int MyProperty { get; set; }<br>public int MyProperty1 { get; set; }  <p></p>
+<p>[ContractInvariantMethod]<br>void ObjectInvariant()<br>{<br>    Contract.Invariant(MyProperty &gt;= 0);<br>}</p></pre></div>      <p> </p>      <p>反組譯後可看到有趣的現象，沒用來設定物件非變異的屬性也被加入了對應的私有欄位&lt;MyProperty1&gt;k_backingField。</p>      <p><code><img alt src="\images\posts\17516\image_thumb.png"> </code></p>      <p> </p>      <p>再看屬性內部的程式，可以發現屬性內部的程式碼也都被調整了，這表示不論屬性是否有用以設定物件非變易，所有屬性都會隨之調整。可以想見當一個類別有很多屬性時，會為所有屬性都增加對應的私有欄位，與做對應屬性程式碼的調整，額外增加的成本以目前的Code Contract來看是有點多的，希望以後這部份能再加以調整優化。</p>      <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a3391b25-90bb-4276-a420-d059ba921943" class="wlWriterSmartContent"><pre name="code" class="c#"><br>public int MyProperty1<br>{<br>    [CompilerGenerated]<br>    get<br>    {<br>        int Contract.Result = this.&lt;MyProperty1&gt;k__BackingField;<br>        if (!this.$evaluatingInvariant$)<br>        {<br>        }<br>        return Contract.Result;<br>    }<p></p>
+<pre><code>[CompilerGenerated]
+set
+{
+    this.&amp;lt;MyProperty1&amp;gt;k__BackingField = value;
+    if (!this.$evaluatingInvariant$)
+    {
+    }
+    this.$InvariantMethod$();
+}
+</code></pre><p>}<br></p></pre></div><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/08/09/17091/" rel="next" title="[Software]使用GooCalSync同步Google與Notes日曆" data-instant>
+                <i class="fa fa-chevron-left"></i> [Software]使用GooCalSync同步Google與Notes日曆
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/09/19/17802/" rel="prev" title=".NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.Assert & Contract.Assume" data-instant>
+                .NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.Assert & Contract.Assume <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">前置條件(Preconditions)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">後置條件(Postconditions)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">物件非變異(Object Invariants)</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/08/31/17516/';
+      var disqus_title = ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約";
+      var disqus_url = 'http://larrynung.github.io/2010/08/31/17516/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

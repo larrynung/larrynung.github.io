@@ -1,0 +1,636 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Alias Be Gone - A C# alias to .NET CLR type replacer extension">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alias Be Gone - A C# alias to .NET CLR type replacer extension">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/4f45e11a-1310-411b-84fd-ed2efe4f66a8/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Alias Be Gone - A C# alias to .NET CLR type replacer extension">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/201383117413407.gif">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/201383117447407.gif">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Alias Be Gone - A C# alias to .NET CLR type replacer extension">
+<meta name="twitter:description" content="Alias Be Gone - A C# alias to .NET CLR type replacer extension">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/4f45e11a-1310-411b-84fd-ed2efe4f66a8/image_thumb_5.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Alias Be Gone - A C# alias to .NET CLR type replacer extension | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Alias Be Gone - A C# alias to .NET CLR type replacer extension
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/4f45e11a-1310-411b-84fd-ed2efe4f66a8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/4f45e11a-1310-411b-84fd-ed2efe4f66a8/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    .NET開發者應該都知道.NET中的基本型別大致都有其對應的別名，像是string對應到System.String、bool對應到Boolean…等。使用別名我們不須特別引用命名空間就可以直接使用，少了些限制也多了些彈性。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    但過多的彈性就是導致在程式中很容易會有混用的情形，而且以下面這個簡單的程式為例，我們可以看到有的地方用Boolean、有的地方用bool，程式碼不怎麼好看，而Visual Studio這邊別名所使用的顏色還是跟.NET關鍵字是一樣的，代表著Visual Studio將別名視為關鍵字。若您不能接受這樣的狀況，可以使用Alias Be Gone Extension去將別名轉成對應的.NET CLR型別。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="115" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb_5.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="226"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Alias Be Gone可透過Visual Studio內建的擴充功能和更新對話框進行下載安裝。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="411" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    安裝後開啟要去除別名的程式碼，按下熱鍵(Ctrl+K, Ctrl+J)，或是透過點擊[編輯/Alias be gone]工具列選單選項進行去除別名的動作：</p><p></p>
+<p></p><p><br>    <img border="0" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\201383117413407.gif"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    在Visual Studio 2013 Preview這邊，Alias Be Gone只支援單檔去除別名的動作，若是Visual Studio 2013 Preview以前，我們可以透過方案總管多選後再次觸發Alias be gone功能，進行多檔去除別名的動作。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    除了事後的去除別名功能，Alias be gone也提供了對應的程式碼片段，讓我們在一開始就避開別名的使用。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    程式碼片段必須先透過點擊[編輯/Install snippets]工具列選單選項進行安裝。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="320" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="405"></p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="228" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="443"></p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="146" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb_3.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="203"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    安裝完後本來的別名會被程式碼片段取代，輸入別名後按兩下Tab，就會自動變為對應的型別。</p><p></p>
+<p></p><p><br>    <img border="0" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\201383117447407.gif"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    最後一提，安裝的程式碼片段若有需要必須透過點擊[編輯/Uninstall snippets]工具列選單選項進行移除，只單純移除Alias be gone是不會連帶移除程式碼片段的。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="330" src="\images\posts\4f45e11a-1310-411b-84fd-ed2efe4f66a8\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="365"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        Alias Be Gone</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/6923cac3-a47d-4e20-9681-b9f466312e66/" rel="next" title="Regionerate - Code Layouts in a Snap" data-instant>
+                <i class="fa fa-chevron-left"></i> Regionerate - Code Layouts in a Snap
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/4f206954-76cd-41f9-95d2-3bc4f0ae2f86/" rel="prev" title="[Performance][C#]ToString V.S Enum.GetName" data-instant>
+                [Performance][C#]ToString V.S Enum.GetName <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/4f45e11a-1310-411b-84fd-ed2efe4f66a8/';
+      var disqus_title = "Alias Be Gone - A C# alias to .NET CLR type replacer extension";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/4f45e11a-1310-411b-84fd-ed2efe4f66a8/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

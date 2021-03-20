@@ -1,0 +1,649 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[IronPython]IronPython開發環境的安裝與設定">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[IronPython]IronPython開發環境的安裝與設定">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[IronPython]IronPython開發環境的安裝與設定">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/ScreenClip_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/ScreenClip(1)_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/ScreenClip(2)_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/ScreenClip(3)_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[IronPython]IronPython開發環境的安裝與設定">
+<meta name="twitter:description" content="[IronPython]IronPython開發環境的安裝與設定">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/image_thumb_3.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [IronPython]IronPython開發環境的安裝與設定 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [IronPython]IronPython開發環境的安裝與設定
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    身為以程式開發為樂的程式開發人員，在蛇年玩蛇也是一件很合理的事。但是玩蛇也是要準備好工具的，而筆者的.NET背景又比其他語言濃厚，幾經思量最後還是選擇了IronPython，因為它可以同時使用.NET Framework與Python兩邊的類別庫，不論是用來慢慢熟悉Python語法，或是用來搭配.NET這邊的開發都會比較容易。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    IronPython在官網下載後安裝，會看到程式集內會多兩個IronPython Console。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="401" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\image_thumb_3.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="482"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    透過這兩個IronPython Console，我們可以在裡面撰寫並測試IronPython。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="447" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="681"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    除此之外IronPython運行所需要的元件也都隨著安裝進去了，所以我們也可以將程式寫到附檔名為.py的檔案之中，再透過Ipy下去運行。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="476" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    準備IronPython的開發環境就是那麼簡單。但這樣的開發環境對於熟悉.NET的開發人員還是不太夠，捨棄地表最強的編譯環境改用記事本總是有種自廢武功的感覺。因此這邊我們可以為Visual Studio加掛Python Tools for Visual Studio，讓我們可以透過Visual Studio來進行Python的開發與除錯。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    Python Tools for Visual Studio安裝完後，開啟Visual Studio可以發現在Other Languages下多了Python，裡面有個Python Application的專案樣板可以使用。透過這個樣板建立一個專案，我們就可以進行Python的開發。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="411" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    專案建立後，預設會有個Hello world的Python code，這邊我們就直接用這Code來做測試，按下F5運行。運行後可以發現開發環境的設定還不夠周全，會彈出像下面這樣的錯誤對話框。</p><p></p>
+<p></p><p><br>    <img alt="ScreenClip" border="0" height="206" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\ScreenClip_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="495"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    這是因為Python Tools for Visual Studio不知道Python Interpreter在哪邊所致。這邊只要開啟Options對話框，切到Python Tools下的Interpreter Options，然後按下右側的Add Interpreter，設定Interpreter的名稱。</p><p></p>
+<p></p><p><br>    <img alt="ScreenClip(1)" border="0" height="373" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\ScreenClip(1)_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    以及Interpreter所在的位置就可以了。</p><p></p>
+<p></p><p><br>    <img alt="ScreenClip(2)" border="0" height="373" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\ScreenClip(2)_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    順帶一提，這邊可能需要切換到Python Tools下的Advanced，額外勾選”Wait for input when process exits normally”這個選項，不然運行Python時主控台視窗可能會一閃而過。</p><p></p>
+<p></p><p><br>    <img alt="ScreenClip(3)" border="0" height="373" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\ScreenClip(3)_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    都設定好後再次按下F5運行，就可以看到正常的將Python運行起來了。</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="458" src="\images\posts\2609e52d-f56a-4da4-83d0-b0b5c9bcfd99\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        IronPython</li><br>    <li><br>        IronPython</li><br>    <li><br>        Python Tools for Visual Studio</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag” data-instant>#Python</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/0edc4d5e-da98-40f0-8cb5-a9de9b74dc4e/" rel="next" title="[C#]Json.NET - Reducing Serialized JSON Size" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]Json.NET - Reducing Serialized JSON Size
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/2605c43b-fd1e-4084-ad55-0b95710c5716/" rel="prev" title="[Visual Studio]Visual Studio 2011 Preview File preview's Issue" data-instant>
+                [Visual Studio]Visual Studio 2011 Preview File preview's Issue <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/';
+      var disqus_title = "[IronPython]IronPython開發環境的安裝與設定";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Create your first android app with eclipse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create your first android app with eclipse">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Create your first android app with eclipse">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image16_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image19_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image22_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image28_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image25_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image31_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image34_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image37_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image40_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image43_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image_thumb_17.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image49_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image55_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image58_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image61_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image67_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image70_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image64_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image_thumb_19.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image91_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Create your first android app with eclipse">
+<meta name="twitter:description" content="Create your first android app with eclipse">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/412ed3f9-1df8-4bff-9f43-5197aa984265/image16_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Create your first android app with eclipse | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Create your first android app with eclipse
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前面筆者在Prepare android development environment with ADT(Android Developer Tools) Bundle for Windows這篇介紹了一下Android開發環境的建立，接著來看要怎樣建立我們的第一支Android App。</p>  <p> </p>  <p>首先要先將eclipse開啟…</p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image16.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image16_thumb.png" width="454" height="275"></a></p>  <p> </p>  <p>開啟後會詢問工作目錄的位置，也就是我們的Android App專案要存放的位置。決定好工作目錄的位置後，按下OK按鈕繼續。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image19.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image19_thumb.png" width="572" height="265"></a></p>  <p> </p>  <p>會詢問一下是否要將使用的統計資訊回傳給Google，這邊視自己的需求選取後按下Finish按鈕。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image22.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image22_thumb.png" width="558" height="400"></a></p>  <p> </p>  <p>eclipse主畫面會開啟…</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image28.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image28_thumb.png" width="644" height="409"></a></p>  <p> </p>  <p>點選[File/New/Android Application Project]選單選項，開始建立Android專案。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image25.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image25_thumb.png" width="579" height="492"></a></p>  <p> </p>  <p>在彈出的New Android Application對話框中，我們可以設定這個Application的名稱、專案的名稱、組件的名稱、以及支援的SDK…等。設定好後按下[Next&gt;]按鈕繼續。 </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image31.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image31_thumb.png" width="575" height="493"></a></p>  <p> </p> 接著要決定這個Application是否要有Activity、是否要有custim launcher icon、以及工作目錄位置…等等。設定好後一樣按下[Next&gt;]按鈕繼續。   <br>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image34.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image34_thumb.png" width="577" height="495"></a></p>  <p> </p>  <p>這邊如果剛剛有勾選Create custom launcher icon的話，會開始進行custom launcher icon的設置。內建有使用現有圖片的方式…</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image37.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image37_thumb.png" width="607" height="535"></a></p>  <p> </p>  <p>使用系統提供的圖示…</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image40.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image40_thumb.png" width="606" height="535"></a></p>  <p> </p>  <p>或是透過自行輸入文字的方式來建立custom launcher icon。提供簡易的設定像是前景色、背景色、按鈕形狀、縮放方式…等等，開發人員能很容易的產生custom launcher icon。按下[Next&gt;]按鈕繼續。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image43.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image43_thumb.png" width="606" height="535"></a></p>  <p> </p>  <p>如果剛剛有勾選Create activity，會出現Create Activity的設置頁面。這邊選取你想要建立的Activity樣板，按下[Next&gt;]按鈕繼續。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image_36.png" target="_blank" rel="noopener"><img style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image_thumb_17.png" width="607" height="535"></a></p>  <p> </p>  <p>設定Activity的名稱…等細部資訊後，按下[Finish]按鈕結束新專案的建立動作。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image49.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image49_thumb.png" width="609" height="535"></a></p>  <p> </p>  <p>回到eclipse主頁面，剛新建的專案已經載入。不過第一次使用時可能會像下面這樣一些視窗是隱藏的，只看的到歡迎頁面，這時可以按下Restore按鈕。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image55.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image55_thumb.png" width="644" height="270"></a></p>  <p> </p>  <p>隱藏的視窗就會還原，畫面會變得下面這樣，可以看到工具箱、設計界面、專案內容、元件屬性…等視窗，設計界面中也已有最基本的HelloWorld程式。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image58.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image58_thumb.png" width="644" height="385"></a></p>  <p> </p>  <p>這邊我們可以選取[Run/Run Configurations…]選單選項。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image_40.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image_thumb_4.png" width="404" height="225"></a> </p>  <p> </p>  <p>開啟Run Configuratios對話框，選取左側的Android Application。</p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image61.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image61_thumb.png" width="603" height="484"></a></p>  <p> </p>  <p>切到第一個New_configuration節點，然後點選右側的[Browse…]按鈕。</p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image70.png" target="_blank" rel="noopener"></a><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image67.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image67_thumb.png" width="644" height="431"></a></p>  <p> </p>  <p>設定目前要運行的專案。</p>   <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image70.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image70_thumb.png" width="644" height="430"></a></p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image64.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image64_thumb.png" width="644" height="431"></a></p>  <p> </p>  <p>然後切至Target頁面，決定是要指定特定的AVD來運行、所有相容的AVD或裝置、或者是每次運行前詢問 (AVD的設定可參閱筆者<a href="http://www.dotblogs.com.tw/larrynung/archive/2013/07/27/112558.aspx" target="_blank" rel="noopener">Managing AVDs with AVD Manager</a>這篇)。設定完後按下[Apply]按鈕套用，並點選[Run]按鈕實際的將程式運行起來。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image_58.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image_thumb_19.png" width="644" height="430"></a> </p>  <p> </p>  <p>模擬器會開始啟動，模擬器啟動完成Application也回開始佈署到模擬器上面，佈署完成Application就會運行起來，運行的畫面會像下面這樣：</p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1307/49fa330dbfc6_D048/image91.png" target="_blank" rel="noopener"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\412ed3f9-1df8-4bff-9f43-5197aa984265\image91_thumb.png" width="626" height="493"></a></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/60a233e2-1b42-436c-a55d-64a0b5f70f65/" rel="next" title="GAE's Mail Python API" data-instant>
+                <i class="fa fa-chevron-left"></i> GAE's Mail Python API
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/5e0b8fb2-ce84-43b7-b7d6-8b87a8bfb8da/" rel="prev" title="Python's and_or operation" data-instant>
+                Python's and_or operation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/';
+      var disqus_title = "Create your first android app with eclipse";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/412ed3f9-1df8-4bff-9f43-5197aa984265/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

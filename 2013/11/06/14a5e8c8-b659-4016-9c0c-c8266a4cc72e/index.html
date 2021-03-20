@@ -1,0 +1,605 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[IE8白皮書]自動損毀修復(ACR)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[IE8白皮書]自動損毀修復(ACR)">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[IE8白皮書]自動損毀修復(ACR)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[IE8白皮書]自動損毀修復(ACR)">
+<meta name="twitter:description" content="[IE8白皮書]自動損毀修復(ACR)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [IE8白皮書]自動損毀修復(ACR) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [IE8白皮書]自動損毀修復(ACR)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>概述</h2>  <p>自動損毀修復(ACR) 是IE8的特色之一，該功能可以防止因瀏覽器當機所造成的工作流失與生產力的降低 。 自動損毀修復為IE提供了新的復原機制, 像是分頁修復(tab recovery),可有效降低使用者瀏覽網頁被中斷的機率。</p>  <p>使用者透過瀏覽器可以做很多的工作。像是: </p>  <p><strong>創作類工作</strong></p>  <p>創作類工作涉及寫作或是創作。 創作是很難的工作;且是時間密集的工作，若是不幸資料流失，將令人非常的頭痛。 創作類的工作有: </p>  <ul>   <li>電子郵件訊息 </li>    <li>部落格文章 </li>    <li>學術課件（留言板，書面轉讓，等等。 ） </li> </ul>  <p> </p>  <p><strong>具前後關聯性的工作</strong></p>  <p>雖然這類工作當發生工作流失時並不會令人非常的頭痛，但仍是令人相當沮喪的。 這類工作有: </p>  <ul>   <li>資訊搜尋與取得 </li>    <li>購物車 </li>    <li>登入Session （銀行，電子郵件，等等。 ） </li>    <li>分頁設定與載入的網址 </li>    <li>瀏覽紀錄 </li> </ul>  <p>自動損毀修復能防止在做具前後關聯與創作類工作時，因當機或非預期的應用程式關閉所造成的資料流失。</p>  <p> </p>  <h2>自動損毀修復(ACR)功能詳述</h2>  <p>下面將分別對於自動損毀修復的架構與使用者介面做一些探討。</p>  <p><strong>架構</strong></p>  <p>如下圖所示，自動損毀修復在架構上使用獨立的處理序，與介面框架獨立開來。</p>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\14a5e8c8-b659-4016-9c0c-c8266a4cc72e\image_thumb.png" width="706" height="588"> </p>  <p>IE超過70%的當機通常是由擴充元件所造成，像是ActiveX® controls, Browser Helper Objects (BHOs), 與工具列。因此藉由把擴充的程式碼獨立到分頁處理序，我們可以保護整個瀏覽器，並把很多的錯誤給限制在分頁處理序中。</p>  <p>自動損毀修復扮演著資料記錄器的角色，可以備份分頁處理序內存在的必要資訊，包括：</p>  <ul>   <li>瀏覽記錄 </li>    <li>分頁設定(分頁網址與分頁順序) </li> </ul>  <p>下圖為自動損毀修復的高階架構示意圖：</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0904/IE8AutomaticCrashRecovery_1458F/image_4.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\14a5e8c8-b659-4016-9c0c-c8266a4cc72e\image_thumb_1.png" width="695" height="426"></a> </p>  <p>當整個瀏覽器損毀，或是非預期的系統關閉，persistent backing store可使瀏覽器回復到先前的瀏覽狀態。</p>  <p> </p>  <h2>使用者介面</h2>  <p>自動損毀修復具有下列功能：</p>  <p><strong>分頁修復</strong></p>  <p>如下圖所示，當損毀被成功的修復，IE會在分頁上顯示氣泡對話框來通知使用者。<a href="http://files.dotblogs.com.tw/larrynung/0904/IE8AutomaticCrashRecovery_1458F/image_6.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\14a5e8c8-b659-4016-9c0c-c8266a4cc72e\image_thumb_2.png" width="826" height="255"></a> </p>  <p><strong>框架修復</strong></p>  <p>當非預期的關閉發生，像是突發性的斷電，如下圖所示，IE可修復這類的問題。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0904/IE8AutomaticCrashRecovery_1458F/image_8.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\14a5e8c8-b659-4016-9c0c-c8266a4cc72e\image_thumb_3.png" width="879" height="401"></a></p>  <p> </p>  <h2>程式範例 </h2>  <p>許多網頁並不需要修改程式就能夠正確的修復。</p>  <p>然而，當分頁修復與框架修復發生，IE將重新瀏覽目前頁面。AJAX網站動態注入的形式應當使用IE書籤頁面狀態功能，以確保當前頁面狀態能正確的恢復。</p>  <p>AJAX Navigation for Bookmarking Page State in the Browser </p>  <p>In IE8 Standards Mode, Internet Explorer treats changes in window.location.hash like navigations and saves the previous document URL. The following actions occur as a result:   </p>  <ul>   <ul>    <li>     <p>The previous URL, which might be from the previous hash fragment, is updated in the address bar, the back button, and other browser components. </p>   </li>    <li>     <p>A click sound is played just as in a traditional navigation scenario. </p>   </li>    <li>     <p>新的hashChanged事件被觸發. </p>   </li> </ul>  <p>Internet Explorer also saves the hash URL fragment before navigating away from the page. </p>  <p>下面程式碼片段介紹如何設定事件處理程序與雜湊物件去觸發瀏覽器更新它的元件：</p>  <p>// 1. 附加事件處理程序到新的onhashchange事件. </p>  <p>onhashchange = hashchange;  </p>  <p>// 2. 設定雜湊物件.  </p>  <p>window.location.hash = “Fragment_added_to_URL”;</p><p></p>
+</ul>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/4066d006-7d5c-4080-9dd8-fbe285bc438d/" rel="next" title="Use ResourceDictionary to do multi-language in WPF" data-instant>
+                <i class="fa fa-chevron-left"></i> Use ResourceDictionary to do multi-language in WPF
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/1df380c3-5586-47f8-bb7f-5d78f19b0f00/" rel="prev" title="Visual Studio 2013 RC New Feature - Method return value inspection" data-instant>
+                Visual Studio 2013 RC New Feature - Method return value inspection <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">自動損毀修復(ACR)功能詳述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">使用者介面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">程式範例 </span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/';
+      var disqus_title = "[IE8白皮書]自動損毀修復(ACR)";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

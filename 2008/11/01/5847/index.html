@@ -1,0 +1,608 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][VB.NET].NET捷徑(ShortCut)控制">
+<meta name="keywords" content="CSharp,VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][VB.NET].NET捷徑(ShortCut)控制">
+<meta property="og:url" content="http://larrynung.github.io/2008/11/01/5847/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][VB.NET].NET捷徑(ShortCut)控制">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5847/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5847/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5847/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5847/image_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][VB.NET].NET捷徑(ShortCut)控制">
+<meta name="twitter:description" content="[C#][VB.NET].NET捷徑(ShortCut)控制">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/5847/image_thumb_3.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][VB.NET].NET捷徑(ShortCut)控制 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][VB.NET].NET捷徑(ShortCut)控制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2008-11-01T17:53:03+00:00" content="2008-11-02">
+              2008-11-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2008/11/01/5847/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2008/11/01/5847/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>Abstract</h2><ul><li>Component</li><li>ShortCut Type</li><li>Control Method</li><li>Text Edit Control Method</li><li>Windows Script Host Method Control Method</li><li>Shell.Application Control Method</li><li>Reference</li><li>Download</li></ul><p> </p><h2>Component</h2><p>一般來說，ShortCut主要是由下面幾個元素所構成：</p><ol><li>Target</li><li>Working directory</li><li>HotKey</li><li>Running style</li><li>Description</li><li>Icon</li></ol><p>  <font color="#000000"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="371" height="477" src="\images\posts\5847\image_thumb_3.png"></font></p><p> </p><h2>ShortCut Type</h2><ol><li><strong>Url ShortCut</strong>-Like browser ‘s shortcut,which extention file name is “url”.</li><li><strong>Application ShortCut</strong>-Normal application shortcut,which extention file name is “lnk”.</li></ol><p> </p><p> </p><h2>Control Method</h2><ol><li><strong>Text Edit</strong>-Use to control the shortcut like browser use for.</li><li><strong>Windows Script Host (WSH)</strong></li><li><strong>Shell.Application</strong></li><li><strong>API</strong></li></ol><p> </p><h2>Text Edit Control Method</h2><p>依照下圖格式範本建立副檔名為”url”的文字檔即可，這類型的捷徑控制只是一般的文字檔處理。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/ShortCut_A9A/image_6.png" target="_blank" rel="noopener"><font color="#000000"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="573" height="234" src="\images\posts\5847\image_thumb_1.png"></font></a></p><p> </p><p>若是要造Application類型的捷徑，則如下圖把”URL=http://…” 改成”URL=file:///…”即可。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/ShortCut_A9A/image_8.png" target="_blank" rel="noopener"><font color="#000000"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="572" height="233" src="\images\posts\5847\image_thumb_2.png"></font></a></p><p> </p><p>範例程式可參考 <a target="_blank" href="http://www.sorrowman.org/c-sharp-programmer/url-link-to-desktop.html"><font color="#000000">C# - Creating URL shortcut to desktop</font> 。當然你也可以不使用該範例的方法，而改透過Win32 Api去用存取Ini檔的方式來控制此種捷徑格式。</a></p><p> </p><p> </p><p> </p><h2>Windows Script Host Method Control Method</h2><p>對於VB.NET的開發員來說。欲使用WSH，首先要利用CreateObject(“WScript.Shell”)建造WshShell物件。</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9ef8532f-49a3-47ac-81b1-bb1917ce61d8" class="wlWriterSmartContent"><pre class="vb" name="code"><br>Dim objWS As Object = CreateObject(“WScript.Shell”)</pre></div><p> </p><p> </p><p> </p><p>接著使用WshShell物件的CreateShortCut回傳的物件及其方法、屬性去控制捷徑。以建造捷徑為例，只要用CreateShortCut取得物件後，把要設定的值設定給對應的屬性後，呼叫該物件的Save方法即可。</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:42f3b654-1414-4290-bb10-7fbf883fed10" class="wlWriterSmartContent"><pre class="vb" name="code"><br>With objWS.CreateShortCut(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; “\” &amp; Replace(strEXE, “.EXE”, “.LNK”, 1, , 1))<br>    .TargetPath = objWS.ExpandEnvironmentStrings(strFolder &amp; “\” &amp; strEXE)<br>    .WorkingDirectory = strFolder<br>    .Description = strDesc<br>    .WindowStyle = 4<br>    .IconLocation = objWS.ExpandEnvironmentStrings(strFolder &amp; “\” &amp; strEXE &amp; “,0”)<br>    .Save()<br>End With</pre></div><p> </p><p> </p><p> </p><p>值得一提的是，雖然該WshShell物件的方法名稱為CreateShortCut。但是並不表示它只能用來建立捷徑，它也能用來讀取捷徑的設定。讀取時先用CreateShortCut取得物件後，直接從該物件對應的屬性去取出設定即可。</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:45b65605-f8b0-48c9-839a-d2275c19a2e6" class="wlWriterSmartContent"><pre class="vb" name="code"><br>With objWS.CreateShortCut(lnkFile)<br>    Return .TargetPath<br>End With</pre></div><p> </p><p> </p><p> </p><p>P.S.C#的開發員請參考 [C#]用2种方法创建快捷方式.(Visual Studio .Net 2005)</p><p> </p><h2>Shell.Application Control Method</h2><p>欲使用此方法控制捷徑，如下圖所示，首先要加入Com參考”Microsoft Shell Controls And Automation”。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/ShortCut_A9A/image_2.png" target="_blank" rel="noopener"><font color="#000000"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="506" height="368" src="\images\posts\5847\image_thumb.png"></font></a></p><p> </p><p>加入參考後匯入Shell32命名空間，建立Shell物件實體，並利用Shell物件實體方法帶入檔案路徑與檔名去取得ShellLinkObject物件。</p><p>VB.NET</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:edf61399-ae8d-4b6b-a781-3c2ef0872b28" class="wlWriterSmartContent"><pre class="vb" name="code"><br>Dim s As New Shell<br>Return s.NameSpace(My.Computer.FileSystem.GetParentPath(file)).ParseName(My.Computer.FileSystem.GetName(file)).GetLink</pre></div><p> </p><p>C#</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:cda1d913-8488-4a8a-b75f-4e2234eb4fc4" class="wlWriterSmartContent"><pre class="c#" name="code"><br>Shell s = new Shell();<br>return (ShellLinkObject)s.NameSpace(Path.GetDirectoryName(lnkFile)).ParseName(Path.GetFileName(lnkFile)).GetLink;</pre></div><p> </p><p>再透過ShellLinkObject物件的屬性與方法即可對捷徑進行控制。</p><p>VB.NET</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b9b9e6d8-5342-4eb9-b3c6-47ea0a2b195a" class="wlWriterSmartContent"><pre class="vb" name="code"><br>Function GetLnkArguments(ByVal shortCutFile As String) As String<br>    Return GetLnkObj(shortCutFile).Arguments<br>End Function<p></p>
+<p>Function GetLnkWorkingDirectory(ByVal shortCutFile As String) As String<br>    Return GetLnkObj(shortCutFile).WorkingDirectory<br>End Function</p>
+<p>Function GetLnkPath(ByVal shortCutFile As String) As String<br>    Return GetLnkObj(shortCutFile).Path<br>End Function<br></p></pre></div><p> </p><p>C#</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:176347d2-33ab-489b-b1f3-3f9341269ccf" class="wlWriterSmartContent"><pre class="c#" name="code"><br>private String GetLnkArguments(string shortCutFile)<br>{<br>    return GetLnkObj(shortCutFile).Arguments;<br>}<p></p>
+<p>private String GetLnkWorkingDirectory(string shortCutFile)<br>{<br>    return GetLnkObj(shortCutFile).WorkingDirectory;<br>}</p>
+<p>private String GetLnkPath(string shortCutFile)<br>{<br>    return GetLnkObj(shortCutFile).Path;<br>}</p></pre></div><p> </p><p> </p><p>這邊須注意的是，使用此方法建立捷徑時，若捷徑檔不存在於指定位置，則須先建立個空的捷徑檔案，才可取得ShellLinkObject物件。</p><p>VB.NET</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9aa00169-d75f-43cf-bb07-a5a70f18e959" class="wlWriterSmartContent"><pre class="vb" name="code"><br>If Not My.Computer.FileSystem.FileExists(shortCutFile) Then<br>    File.Create(shortCutFile).Close()<br>End If</pre></div><p> </p><p>C#</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4c27cf5b-37d9-47d5-8cd5-03ac3aefe9a6" class="wlWriterSmartContent"><pre class="c#" name="code"><br>if (!My.Computer.FileSystem.FileExists(shortCutFile))<br>{<br>    File.Create(shortCutFile).Close();<br>}</pre></div><p> </p><p> </p><p>取得ShellLinkObject物件後，捷徑的建立與寫入也就只是設定對應的屬性值後呼叫Save方法。</p><p>VB.NET</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d78477df-efcb-4ba3-8f65-2a3f0f6cb22e" class="wlWriterSmartContent"><pre class="vb" name="code"><br>lnkObj = GetLnkObj(shortCutFile)<br>With lnkObj<br>    .Arguments = arguments<br>    .Description = description<br>    .Path = path<br>    .WorkingDirectory = workingDirectory<br>    .ShowCommand = showCommand<br>    .Save()<br>End With</pre></div><p> </p><p>C#</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:89ee4a5a-0877-4a6e-a74e-505a85b22862" class="wlWriterSmartContent"><pre class="c#" name="code"><br>lnkObj = GetLnkObj(shortCutFile);<br>lnkObj.Arguments = arguments;<br>lnkObj.Description = description;<br>lnkObj.Path = path;<br>lnkObj.WorkingDirectory = workingDirectory;<br>lnkObj.ShowCommand = (int)showCommand;<br>lnkObj.Save(null);<br></pre></div><p> </p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" class="wlWriterSmartContent"><h2>Reference</h2></div><p> </p><ol><li><font color="#000000">C# - Creating URL shortcut to desktop</font></li><li><a target="_blank" href="http://forums.microsoft.com/MSDN-CHT/ShowPost.aspx?PostID=713548&amp;SiteID=14"><font color="#000000">微軟技術社群討論區-請問如何建立桌面捷徑和網頁捷徑?</font></a></li><li><a target="_blank" href="http://blog.blueshop.com.tw/HammerChou/archive/2006/06/18/29111.aspx"><font color="#000000">強力鎯頭 の VB 部落-如何寫程式建立桌面捷徑 ( Shortcut )</font></a></li><li><a target="_blank" href="http://www.codeproject.com/KB/dotnet/shelllink.aspx"><font color="#000000">Code Project-Creating Shell Links (Shortcuts) in .NET Programs Using WSH</font></a></li><li><a target="_blank" href="http://www.chinadforce.com/viewthread.php?tid=941624&amp;highlight=">[C#]用2种方法创建快捷方式.(Visual Studio .Net 2005)</a></li></ol><p> </p><h2>Download</h2><p> <a href="http://Files.Dotblogs.com.tw/larrynung/0901/200912612193547.rar" target="_blank" rel="noopener">ShortCut.rar</a></p><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+            <a href=" tags vb-net " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2008/11/08/5926/" rel="prev" title="[.NET Resource].NET Runtime Debug Tool - Crack.NET" data-instant>
+                [.NET Resource].NET Runtime Debug Tool - Crack.NET <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">ShortCut Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Control Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">Text Edit Control Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">Windows Script Host Method Control Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">Shell.Application Control Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">9.</span> <span class="nav-text">Download</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2008/11/01/5847/';
+      var disqus_title = "[C#][VB.NET].NET捷徑(ShortCut)控制";
+      var disqus_url = 'http://larrynung.github.io/2008/11/01/5847/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

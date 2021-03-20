@@ -1,0 +1,652 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源.">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#]Effective C# 條款十五：利用using和try&#x2F;finally語句來清理資源.">
+<meta property="og:url" content="http://larrynung.github.io/2011/02/08/21292/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#]Effective C# 條款十五：利用using和try&#x2F;finally語句來清理資源.">
+<meta name="twitter:description" content="[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#]Effective C# 條款十五：利用using和try/finally語句來清理資源. | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#]Effective C# 條款十五：利用using和try/finally語句來清理資源.
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2011-02-08T19:33:58+00:00" content="2011-02-09">
+              2011-02-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/02/08/21292/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/02/08/21292/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    非拖管資源故名思義該資源是非拖管的，跟一般的托管資源不同的是，這些非拖管資源在建立後必須自行去作釋放的動作，不然會產生資源洩漏。為解決這樣的問題，在.NET BCL提供IDisposable介面，提供.NET程式非拖管資源釋放的標準做法，藉由呼叫該介面的Dispose()方法，我們可以對非拖管的系統資源進行釋放的動作。在一般狀況下，這樣的釋放動作應由使用者自行叫用，也就是說當在程式中使用實作有IDisposable介面的類別時，需記得自行呼叫Dispose()方法去釋放資源。若忘了呼叫在釋放的動作，在標準的IDisposable介面實作上也提供了額外的保險措施，會在IDisposable介面實作時為解構子加入Dispose()方法的調用。因此若使用者忘了自行呼叫Dispose()方法釋放資源，在物件解構時仍會將資源給釋放掉。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    雖然IDisposable介面標準的實作會加入保險措施，但是若使用的是第三方元件或是別的來源取得的程式，我們並不能保證撰寫的人會遵循應有的規則，因此我們使用到的是有可能沒有保險措施的類別。就算有加入保險措施，透過解構子去釋放物件存留在記憶體中的時間也會比較長，因此最好還是盡可能的自行手動釋放。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    但若很單純的直接呼叫Dispose()方法釋放資源，其實也是有些問題存在，像是下面這個例子雖然在程式的後面有自行呼叫Dispose()方法釋放資源，但若運行到cmd.ExecuteNonQuery()這行，在執行SQL語法時發生了例外，則後面的Dispose()方法將永遠不會被調用到。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f351b790-8fb5-482c-a8df-3da32a501192" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public void ExecuteCommand(string connString, string CommandString)<br>        {<br>            SqlConnection conn = new SqlConnection(connString);<br>            SqlCommand cmd = new SqlCommand(CommandString, conn);</pre></div></p>
+<pre><code>    conn.Open();
+    cmd.ExecuteNonQuery();
+
+    cmd.Dispose();
+    conn.Dispose();
+}&lt;/pre&gt;
+</code></pre><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    .NET語言的設計者為此提供了using與try/finally兩種語法，開發人員可藉由這兩種語法來避開這類問題。以上面的例子來看，用using語法可改寫為這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:32321914-6b10-4d6c-a349-4b650735c010" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public void ExecuteCommand(string connString, string CommandString)<br>        {<br>            using (SqlConnection conn = new SqlConnection(connString))<br>            {<br>                using (SqlCommand cmd = new SqlCommand(CommandString, conn))<br>                {<br>                    conn.Open();<br>                    cmd.ExecuteNonQuery();<br>                }<br>            }<br>        }</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    也可以用try/finally語法去改寫：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b7d36304-b0b9-4bbe-aa04-8142acb75fc1" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public void ExecuteCommand(string connString, string CommandString)<br>        {<br>            SqlConnection conn = null;<br>            SqlCommand cmd = null;<br>            try<br>            {<br>                conn = new SqlConnection(connString);<br>                cmd = new SqlCommand(CommandString, conn);</pre></div></p>
+<pre><code>        conn.Open();
+        cmd.ExecuteNonQuery();
+    }
+    finally
+    {
+        if (cmd != null)
+            cmd.Dispose();
+
+        if (conn != null)
+            conn.Dispose();
+    }
+}&lt;/pre&gt;
+</code></pre><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    using適用於只有少數物件需要釋放的情況，try/finally語法則適用於多個物件需要釋放的情況。這兩種語法是等價的，在編譯時編譯器會將using改為try/finally的寫法，故這兩種寫法皆可確保資源能有效的被釋放。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若遇有不確定是否實作有IDisposable介面的情形時，可用as輔助using語法來作釋放的動作。像是：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f61868f2-6ea9-45ea-b4a0-c68f11f47307" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    Object obj = GetObject();<br>            using (obj as IDisposable)<br>            {<br>                …<br>            }</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    利用as輔助當類別未實作IDisposable介面時，等同撰寫using (null)這樣的語句，只是不會作任何動作；若類別有時作IDisposable介面，則資源會被using語法給釋放。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若是類別含有Close()方法且實作有IDisposable介面，優先叫用Dispose()方法，因為叫用Close()方法物件仍會存留在終結佇列中，而若是呼叫Dispose()方法，除了會去作Close()方法的動作，也會在裡面叫用GC.SuppressFinalize()方法去停止終結操作。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    另外ㄧ提，在呼叫Dispose()方法並不會將物件至記憶體中回收，只是會去釋放物件的非拖管資源，故當我們呼叫Dispose()方法釋放時，需確保物件不會再被使用，不然可能會出現難以偵測的問題。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        《Effective C#》Item 15：利用using和try-finally来释放资源</li><br>    <li><br>        IDisposable 介面</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/02/08/21281/" rel="next" title="[C#]Effective C# 條款十四：利用建構子鏈" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]Effective C# 條款十四：利用建構子鏈
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/02/08/21298/" rel="prev" title="IEnumerable &amp; IEnumerator介面的實作" data-instant>
+                IEnumerable &amp; IEnumerator介面的實作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2011/02/08/21292/';
+      var disqus_title = "[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源.";
+      var disqus_url = 'http://larrynung.github.io/2011/02/08/21292/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

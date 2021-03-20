@@ -1,0 +1,732 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Ansible,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。">
+<meta name="keywords" content="Ansible">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ansible - Inventory">
+<meta property="og:url" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/1.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/2.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/3.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/4.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/5.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/6.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/7.png">
+<meta property="og:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/8.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ansible - Inventory">
+<meta name="twitter:description" content="Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。">
+<meta name="twitter:image" content="http://larrynung.github.io/2017/05/22/Ansible-Inventory/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Ansible - Inventory | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ansible - Inventory
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-22T15:44:35+00:00" content="2017-05-22">
+              2017-05-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/22/Ansible-Inventory/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/22/Ansible-Inventory/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。  </p>
+<a id="more"></a>
+<p><br></p>
+<p>最簡單的設置方式就是直接將要被管理的主機 IP 逐一寫入。  </p>
+<img src="/2017/05/22/Ansible-Inventory/1.png">
+<p><br></p>
+<p>Ansible 就可以透過 Inventory 找到要控制的機器做對應的操控。  </p>
+<img src="/2017/05/22/Ansible-Inventory/2.png">
+<p><br></p>
+<p>若有多台相近 IP 或相近網址的主機，Inventory 也可以用中括號來設定範圍值，便於設定與後續的管理。  </p>
+<img src="/2017/05/22/Ansible-Inventory/3.png">
+<p><br></p>
+<img src="/2017/05/22/Ansible-Inventory/4.png">
+<p><br></p>
+<p>在比較複雜的環境下，為了佈署上的方便，我們也可以在 Inventory 中將機器做群組。  </p>
+<img src="/2017/05/22/Ansible-Inventory/5.png">
+<p><br></p>
+<p>這樣可針對不同群組套用不同的佈署策略。  </p>
+<img src="/2017/05/22/Ansible-Inventory/6.png">
+<p><br></p>
+<p>此外， Inventory 也支援一些可以設定的參數，可參閱下表。  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Parameter</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ansible_connection</td>
+<td style="text-align:center">Connection type to the host. This can be the name of any of ansible’s connection plugins. SSH protocol types are smart, ssh or paramiko. The default is smart. Non-SSH based types are described in the next section.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_host</td>
+<td style="text-align:center">The name of the host to connect to, if different from the alias you wish to give to it.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_port</td>
+<td style="text-align:center">The ssh port number, if not 22</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_user</td>
+<td style="text-align:center">The default ssh user name to use.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_pass</td>
+<td style="text-align:center">The ssh password to use (never store this variable in plain text; always use a vault. See Variables and Vaults)</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_private_key_file</td>
+<td style="text-align:center">Private key file used by ssh. Useful if using multiple keys and you don’t want to use SSH agent.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_common_args</td>
+<td style="text-align:center">This setting is always appended to the default command line for sftp, scp, and ssh. Useful to configure a ProxyCommand for a certain host (or group).</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_sftp_extra_args</td>
+<td style="text-align:center">This setting is always appended to the default sftp command line.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_scp_extra_args</td>
+<td style="text-align:center">This setting is always appended to the default scp command line.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_extra_args</td>
+<td style="text-align:center">This setting is always appended to the default ssh command line.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_pipelining</td>
+<td style="text-align:center">Determines whether or not to use SSH pipelining. This can override the pipelining setting in ansible.cfg.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_ssh_executable</td>
+<td style="text-align:center">This setting overrides the default behavior to use the system ssh. This can override the ssh_executable setting in ansible.cfg.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_become</td>
+<td style="text-align:center">Equivalent to ansible_sudo or ansible_su, allows to force privilege escalation</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_become_method</td>
+<td style="text-align:center">Allows to set privilege escalation method</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_become_user</td>
+<td style="text-align:center">Equivalent to ansible_sudo_user or ansible_su_user, allows to set the user you become through privilege escalation</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_become_pass</td>
+<td style="text-align:center">Equivalent to ansible_sudo_pass or ansible_su_pass, allows you to set the privilege escalation password (never store this variable in plain text; always use a vault. See Variables and Vaults)</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_shell_type</td>
+<td style="text-align:center">The shell type of the target system. You should not use this setting unless you have set the ansible_shell_executable to a non-Bourne (sh) compatible shell. By default commands are formatted using sh-style syntax. Setting this to csh or fish will cause commands executed on target systems to follow those shell’s syntax instead.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_python_interpreter</td>
+<td style="text-align:center">The target host python path. This is useful for systems with more than one Python or not located at /usr/bin/python such as *BSD, or where /usr/bin/python is not a 2.X series Python. We do not use the /usr/bin/env mechanism as that requires the remote user’s path to be set right and also assumes the python executable is named python, where the executable might be named something like python2.6.</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_shell_executable</td>
+<td style="text-align:center">This sets the shell the ansible controller will use on the target machine, overrides executable in ansible.cfg which defaults to /bin/sh. You should really only change it if is not possible to use /bin/sh (i.e. /bin/sh is not installed on the target machine or cannot be run from sudo.).</td>
+</tr>
+<tr>
+<td style="text-align:center">ansible_docker_extra_args</td>
+<td style="text-align:center">Could be a string with any additional arguments understood by Docker, which are not command specific. This parameter is mainly used to configure a remote Docker daemon to use.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>像是這邊筆者設定了 localhost 至 Inventory，但因為 localhost 不需要走 ssh，所以這邊將 ansible_connection 設為 local。  </p>
+<img src="/2017/05/22/Ansible-Inventory/7.png">
+<p><br></p>
+<img src="/2017/05/22/Ansible-Inventory/8.png">
+<p><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ansible/" rel="tag” data-instant>#Ansible</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/21/Vue-js-Event-Handling/" rel="next" title="Vue.js - Event Handling" data-instant>
+                <i class="fa fa-chevron-left"></i> Vue.js - Event Handling
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/Ansible-Offline-docs-with-ansible-doc/" rel="prev" title="Ansible - Offline docs with ansible-doc" data-instant>
+                Ansible - Offline docs with ansible-doc <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2017/05/22/Ansible-Inventory/';
+      var disqus_title = "Ansible - Inventory";
+      var disqus_url = 'http://larrynung.github.io/2017/05/22/Ansible-Inventory/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

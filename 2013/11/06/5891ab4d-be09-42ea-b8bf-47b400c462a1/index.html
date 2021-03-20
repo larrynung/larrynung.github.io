@@ -1,0 +1,678 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/5891ab4d-be09-42ea-b8bf-47b400c462a1/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5891ab4d-be09-42ea-b8bf-47b400c462a1/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/5891ab4d-be09-42ea-b8bf-47b400c462a1/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)">
+<meta name="twitter:description" content="[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/5891ab4d-be09-42ea-b8bf-47b400c462a1/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [C#][JavaScript]WinForm與WebPage的JavaScript互通(一) | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [C#][JavaScript]WinForm與WebPage的JavaScript互通(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/5891ab4d-be09-42ea-b8bf-47b400c462a1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/5891ab4d-be09-42ea-b8bf-47b400c462a1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p><br>    有時候我們在開發時會將網頁嵌入WinForm程式之中，把網頁跟WinForm程式做個整合，最常見的就是登入或註冊時將動作導給網頁來做。也有某些程式是把整個WebPage給嵌入，WinForm只是做一個殼，程式的畫面與邏輯完全都是用WebPage的，最多針對一些細節下去調整或做些輔助功能，這樣程式就能很快的導入各個平台使用。這樣的開發方式以後會越來越常碰到，因為網頁的功能越來越強大，尤其是HTML5技術成熟後更是如此。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    要以上面的方式下去開發，我們必需對WinForm程式與WebPage之間的交互處理很熟悉才行。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若整個程式核心仍在WinForm，只有部份整合WebPage，可能是在做Social network的OAUTH認證，像這類的處理通常不需太緊密的交互，WinForm程式只需要去監控當前頁面的網址去做些對應的處理，WinForm需要的WebPage資料通常會透過網址的參數或是另外的Restful API取得。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若是整個核心跟界面幾乎都在WebPage的話，WinForm與WebPage就必需要較為緊密的交互，像是WinForm有時必需主動觸發WebPage做事，或是WebPage主動觸發WinForm做事。</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    以WinForm主動觸發WebPage做事來說，WebBrowser內的Document具有現成的方法名為InvokeScript，就可以很簡單的觸發WebPage內的JavaScript，像是:</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:096243db-cb57-40c6-8a20-4cfb7d9f7cd0" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>webBrowser1.Document.InvokeScript(“scriptFuncName”);</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    實際的使用情境上會像下面這樣：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fcab69f8-c142-40ed-a30c-98d5d4fd1bd4" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Windows.Forms;</pre></div></p>
+<p>namespace WindowsFormsApplication3<br>{<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }</p>
+<pre><code>    private void Form1_Load(object sender, EventArgs e)
+    {
+        webBrowser1.DocumentText = @&quot;&amp;lt;script&amp;gt;function ShowAlert(alertMessage) {alert (alertMessage);}&amp;lt;/script&amp;gt;&quot;;            
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        webBrowser1.Document.InvokeScript(&quot;ShowAlert&quot;, new object[] { &quot;alert message...&quot; });
+    }
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>    <img alt="image" border="0" height="304" src="\images\posts\5891ab4d-be09-42ea-b8bf-47b400c462a1\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="304"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    若是要以WebPage主動觸發WinForm做事就比較麻煩些。大概需要四個主要的步驟：</p><p></p>
+<p></p><p><br>    1.Set PermissionSet and ComVisibleAttribute attribute<br><br>    2.Add C# function call by web<br><br>    3.Set WebBrowser.ObjectForScripting <br><br>    4.JS use window.external to call C# function</p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    第一步必須在WebBrowser所在表單類別加上PremissionSet與ComVisible屬性。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7f9123db-f806-430d-a655-6328895217f7" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>[PermissionSet(SecurityAction.Demand, Name = “FullTrust”)]<br>[ComVisible(true)]<br>public partial class Form1 : Form<br>{<br>    …<br>}</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    第二步必須在WebBrowser所在表單類別中準備個Public Function，給WebPage調用用。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:58a8dca5-3d73-4402-b129-43c607bcaf32" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    [PermissionSet(SecurityAction.Demand, Name = “FullTrust”)]<br>    [ComVisible(true)]<br>    public partial class Form1 : Form<br>    {<br>        …<br>        public void OnWebPageReady()<br>        {<br>            webBrowser1.Document.InvokeScript(“ShowAlert”, new object[] { “WebPage Ready…” });<br>        }<br>        …<br>    }</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    第三步設定WebBrowser的ObjectForScripting屬性，以這邊的例子來說是設定WebBrowser所在表單類別。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4153541a-2de5-4e5f-a6ad-4e29513d712a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    [PermissionSet(SecurityAction.Demand, Name = “FullTrust”)]<br>    [ComVisible(true)]<br>    public partial class Form1 : Form<br>    {<br>        …<br>        private void Form1_Load(object sender, EventArgs e)<br>        {<br>            webBrowser1.ObjectForScripting = this;<br>        }<br>        …<br>    }</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    第四步是WebPage中的JavaScript必須透過window.external去叫用WinForm中的方法。</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c66d5a63-0893-4a54-bca3-79b727591d72" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    [PermissionSet(SecurityAction.Demand, Name = “FullTrust”)]<br>    [ComVisible(true)]<br>    public partial class Form1 : Form<br>    {<br>        …<br>        private void Form1_Load(object sender, EventArgs e)<br>        {<br>            webBrowser1.ObjectForScripting = this;<br>            webBrowser1.DocumentText = @”&lt;script&gt;function ShowAlert(alertMessage) {alert (alertMessage);}<br>            window.external.OnWebPageReady();&lt;/script&gt;”;<br>        }<br>        …<br>    }</pre><br></div></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    完整的實作範例如下：</p><p></p>
+<p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b8c65347-dbd9-480b-be4d-e7f153d8c52f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Windows.Forms;<br>using System.Runtime.InteropServices;<br>using System.Security.Permissions;</pre></div></p>
+<p>namespace WindowsFormsApplication3<br>{<br>    [PermissionSet(SecurityAction.Demand, Name = “FullTrust”)]<br>    [ComVisible(true)]<br>    public partial class Form1 : Form<br>    {<br>        public Form1()<br>        {<br>            InitializeComponent();<br>        }</p>
+<pre><code>    private void Form1_Load(object sender, EventArgs e)
+    {
+        webBrowser1.ObjectForScripting = this;
+        webBrowser1.DocumentText = @&quot;&amp;lt;script&amp;gt;function ShowAlert(alertMessage) {alert (alertMessage);}
+        window.external.OnWebPageReady();&amp;lt;/script&amp;gt;&quot;;            
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        webBrowser1.Document.InvokeScript(&quot;ShowAlert&quot;, new object[] { &quot;alert message...&quot; });
+    }
+
+    public void OnWebPageReady()
+    {
+        webBrowser1.Document.InvokeScript(&quot;ShowAlert&quot;, new object[] { &quot;WebPage Ready...&quot; });
+    }
+}
+</code></pre><p>}<br></p>
+<p></p><p><br>     </p><p></p>
+<p></p><p><br>    運行結果如下：</p><p></p>
+<p></p><p><br>    <img alt="image" border="0" height="304" src="\images\posts\5891ab4d-be09-42ea-b8bf-47b400c462a1\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="304"></p><p></p>
+<p></p><p><br>     </p><p></p>
+<p></p><h2><br>    Link</h2><p></p>
+<ul><br>    <li><br>        HtmlDocument.InvokeScript 方法 (String)</li><br>    <li><br>        HtmlDocument.InvokeScript 方法 (String, Object())</li><br>    <li><br>        Calling JavaScript in a WebBrowser control from C#</li><br>    <li><br>        Using WebBrowser.Document.InvokeScript() to mess around with foreign JavaScript</li><br>    <li><br>        VB.NET/C# and JavaScript communication</li><br>    <li><br>        Calling JavaScript</li><br>    <li><br>        [C#]讓Webbrowser中的js直接呼叫Winform的function</li><br>    <li><br>        WebBrowser.ObjectForScripting Property</li><br>    <li><br>        WinForm透過WebBrowser與JavaScript溝通</li><br>    <li><br>        JavaScript extensions: window.external</li><br>    <li><br>        Calling JavaScript in a WebBrowser control from C#</li><br>    <li><br>        C# - vertical bandobject with WebBrowser control in it -&gt; Calling C# from JavaScript</li><br>    <li><br>        C# winform與Javascript的相互調用</li><br></ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/215be52c-0523-43e8-9517-ce735f0ffe3d/" rel="next" title="[C#]使用InternetGetConnectedState API偵測目前電腦網路的連線狀態" data-instant>
+                <i class="fa fa-chevron-left"></i> [C#]使用InternetGetConnectedState API偵測目前電腦網路的連線狀態
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/514959b2-f22f-485b-b028-ff46ef3b648e/" rel="prev" title="如何在MAC上設定與切換輸入法" data-instant>
+                如何在MAC上設定與切換輸入法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">    Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/5891ab4d-be09-42ea-b8bf-47b400c462a1/';
+      var disqus_title = "[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/5891ab4d-be09-42ea-b8bf-47b400c462a1/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

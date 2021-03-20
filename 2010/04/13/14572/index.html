@@ -1,0 +1,618 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[VB.NET]比對兩個目錄中不同的檔案">
+<meta name="keywords" content="VB.NET">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[VB.NET]比對兩個目錄中不同的檔案">
+<meta property="og:url" content="http://larrynung.github.io/2010/04/13/14572/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[VB.NET]比對兩個目錄中不同的檔案">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/14572/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[VB.NET]比對兩個目錄中不同的檔案">
+<meta name="twitter:description" content="[VB.NET]比對兩個目錄中不同的檔案">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/14572/image_thumb_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [VB.NET]比對兩個目錄中不同的檔案 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [VB.NET]比對兩個目錄中不同的檔案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2010-04-13T03:35:46+00:00" content="2010-04-13">
+              2010-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2010/04/13/14572/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2010/04/13/14572/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>這陣子回論壇問題時，試著使用交集的方式寫了比對檔案的函式，整理紀錄如下：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:97656f56-4e75-4198-aff8-c2e2529d8a44" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">Imports System.IO<br>Imports System.Runtime.CompilerServices<br><br>Module DirectoryInfoExtension<br>    &lt;Extension()&gt; _<br>    Function GetDifferentFileList(ByVal sourceDirectoryInfo As DirectoryInfo, ByVal targetDirectoryInfo As DirectoryInfo, Optional ByVal searchPattern As String = “<em>.</em>“, Optional ByVal searchOption As SearchOption = SearchOption.TopDirectoryOnly) As FileInfo()<br>        If sourceDirectoryInfo Is Nothing Then<br>            Throw New ArgumentNullException(“sourceDirectoryInfo”)<br>        End If<br>        If targetDirectoryInfo Is Nothing Then<br>            Throw New ArgumentNullException(“targetDirectoryInfo”)<br>        End If<br>        If targetDirectoryInfo.FullName = sourceDirectoryInfo.FullName Then<br>            Return New FileInfo() {}<br>        End If<br>        Dim sourceFiles = sourceDirectoryInfo.GetFiles(searchPattern, searchOption)<br>        Dim destFiles = targetDirectoryInfo.GetFiles(searchPattern, searchOption)<br>        Dim intersectFiles = sourceFiles.Except(destFiles, New FileInfoEqualityComparer(sourceDirectoryInfo.FullName, targetDirectoryInfo.FullName))<br>        Return intersectFiles.ToArray<br>    End Function<br>End Module<br><br>Class FileInfoEqualityComparer<br>    Implements IEqualityComparer(Of FileInfo)<br><br>#Region “Var”<br>    Private _sourcePath As String<br>    Private _targetPath As String<br>    Private _replacePathList() As String<br>#End Region<br><br>#Region “Private Property”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Gets or sets the m_source path.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;value&gt;The m_source path.&lt;/value&gt;<br>    Private Property m_SourcePath() As String<br>        Get<br>            Return _sourcePath<br>        End Get<br>        Set(ByVal value As String)<br>            _sourcePath = value<br>        End Set<br>    End Property<br><br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Gets or sets the m_target path.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;value&gt;The m_target path.&lt;/value&gt;<br>    Private Property m_TargetPath() As String<br>        Get<br>            Return _targetPath<br>        End Get<br>        Set(ByVal value As String)<br>            _targetPath = value<br>        End Set<br>    End Property<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Gets or sets the m_replace path list.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;value&gt;The m_replace path list.&lt;/value&gt;<br>    Private Property m_replacePathList() As String()<br>        Get<br>            Return _replacePathList<br>        End Get<br>        Set(ByVal value As String())<br>            _replacePathList = value<br>        End Set<br>    End Property<br>#End Region<br><br>#Region “Constructor”<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Initializes a new instance of the &lt;see cref=”FileInfoEqualityComparer” /&gt; class.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”sourcePath”&gt;The source path.&lt;/param&gt;<br>    ‘’’ &lt;param name=”targetPath”&gt;The target path.&lt;/param&gt;<br>    Sub New(ByVal sourcePath As String, ByVal targetPath As String)<br>        With Me<br>            .m_SourcePath = sourcePath<br>            .m_TargetPath = targetPath<br>            InitReplacePathList()<br>        End With<br>    End Sub<br>#End Region<br><br>#Region “Private Method”<br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Inits the replace path list.<br>    ‘’’ &lt;/summary&gt;<br>    Private Sub InitReplacePathList()<br>        m_replacePathList = New String() {m_SourcePath, m_TargetPath}<br>        If m_SourcePath &lt; m_TargetPath Then<br>            m_replacePathList = m_replacePathList.Reverse().ToArray<br>        End If<br>    End Sub<br><br>    ‘’’ &lt;summary&gt;<br>    ‘’’ Gets the relatived path.<br>    ‘’’ &lt;/summary&gt;<br>    ‘’’ &lt;param name=”path”&gt;The path.&lt;/param&gt;<br>    ‘’’ &lt;returns&gt;&lt;/returns&gt;<br>    Private Function GetRelativedPath(ByVal path As String) As String<br>        If String.IsNullOrEmpty(path) Then<br>            Throw New ArgumentNullException(“path”)<br>        End If<br><br>        For Each p In m_replacePathList<br>            path = path.Replace(p, “”)<br>        Next<br>        Return path<br>    End Function<br>#End Region<br><br>    Public Function Equals1(ByVal x As System.IO.FileInfo, ByVal y As System.IO.FileInfo) As Boolean Implements System.Collections.Generic.IEqualityComparer(Of System.IO.FileInfo).Equals<br>        Return GetRelativedPath(x.FullName) = GetRelativedPath(y.FullName) AndAlso x.Length = y.Length AndAlso x.LastWriteTime = y.LastWriteTime<br>    End Function<br><br>    Public Function GetHashCode1(ByVal obj As System.IO.FileInfo) As Integer Implements System.Collections.Generic.IEqualityComparer(Of System.IO.FileInfo).GetHashCode<br>        Return (GetRelativedPath(obj.FullName) &amp; obj.Length.ToString &amp; obj.LastWriteTime.ToShortDateString).GetHashCode<br>    End Function<br>End Class<br></pre></div><br><br><p> </p>
+
+<p>使用範例如下：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:230680e6-4aa7-4c28-975f-b8ea4f78a303" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">Imports System.IO<br><br>Public Class Form1<br><br>    Private Sub btnSource_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSource.Click<br>        If FolderBrowserDialog1.ShowDialog Then<br>            tbxSource.Text = FolderBrowserDialog1.SelectedPath<br>            Dim source As New DirectoryInfo(tbxSource.Text)<br>            lbxSource.DisplayMember = “FullName”<br>            lbxSource.Items.AddRange(source.GetFiles())<br>        End If<br>    End Sub<br><br>    Private Sub btnTarget_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTarget.Click<br>        If FolderBrowserDialog1.ShowDialog Then<br>            tbxTarget.Text = FolderBrowserDialog1.SelectedPath<br>            Dim target As New DirectoryInfo(tbxTarget.Text)<br>            lbxTarget.DisplayMember = “FullName”<br>            lbxTarget.Items.AddRange(target.GetFiles())<br>        End If<br>    End Sub<br><br>    Private Sub btnGO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGO.Click<br>        Dim source As New DirectoryInfo(tbxSource.Text)<br>        Dim target As New DirectoryInfo(tbxTarget.Text)<br>        lbxDifferent.DisplayMember = “FullName”<br>        lbxDifferent.Items.AddRange(source.GetDifferentFileList(target))<br>    End Sub<br>End Class<br></pre></div>
+
+<p> </p>
+
+<p>運行結果</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\14572\image_thumb_1.png" width="457" height="329"></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/04/09/14497/" rel="next" title="[VB.NET]VB 10.0 Implied Line Continuation" data-instant>
+                <i class="fa fa-chevron-left"></i> [VB.NET]VB 10.0 Implied Line Continuation
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2010/04/16/14622/" rel="prev" title="[Extension Method][VB.NET]使用擴充方法過濾出組件內的特定類別" data-instant>
+                [Extension Method][VB.NET]使用擴充方法過濾出組件內的特定類別 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2010/04/13/14572/';
+      var disqus_title = "[VB.NET]比對兩個目錄中不同的檔案";
+      var disqus_url = 'http://larrynung.github.io/2010/04/13/14572/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

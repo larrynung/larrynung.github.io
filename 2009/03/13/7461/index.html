@@ -1,0 +1,609 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="VB.NET,Performance,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[Performance][VB.NET].NET空字串判斷徹底研究">
+<meta name="keywords" content="VB.NET,Performance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Performance][VB.NET].NET空字串判斷徹底研究">
+<meta property="og:url" content="http://larrynung.github.io/2009/03/13/7461/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[Performance][VB.NET].NET空字串判斷徹底研究">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image1_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image4_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image8_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image_thumb_5.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/7461/image12_thumb.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Performance][VB.NET].NET空字串判斷徹底研究">
+<meta name="twitter:description" content="[Performance][VB.NET].NET空字串判斷徹底研究">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/7461/image1_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [Performance][VB.NET].NET空字串判斷徹底研究 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Performance][VB.NET].NET空字串判斷徹底研究
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2009-03-13T00:49:01+00:00" content="2009-03-13">
+              2009-03-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2009/03/13/7461/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2009/03/13/7461/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="640" height="215" src="\images\posts\7461\image1_thumb.png"></p><p>.NET下的空字串判斷整體來說大概可分為下列幾種方法：</p><ol><li>用 is Nothing 判斷。e.x. If str Is Nothing</li><li>用 = Nothing 判斷(類別中只有字串可以用 = Nothing 來判斷)。e.x. If str = Nothing</li><li>用 = “” 判斷。e.x. If str = “”</li><li>用 = String.Empty 判斷。e.x. If str = String.Empty</li><li>用 Is String.Empty 判斷。e.x. If str Is String.Empty</li><li>用 String.IsNullOrEmpty(str) 判斷。e.x. If String.IsNullOrEmpty(str)</li><li>用 String.Length = 0 判斷。e.x. If str.Length = 0</li></ol><p> </p><p>上述所列出的空字串判斷方法，其所跑出的效果不盡相同，為了看出其差異性，這邊撰寫了簡單的測試程式如下：</p><div style="width: 721px; height: 317px; overflow: auto"><div class="csharpcode"><pre class="alt"><br>    <span class="kwrd">Sub</span> Main()</pre><pre><br>        <span class="kwrd">Dim</span> testStrings() <span class="kwrd">As</span> <span class="kwrd">String</span> = <span class="kwrd">New</span> <span class="kwrd">String</span>() {<span class="kwrd">Nothing</span>, <span class="str">“”</span>, <span class="kwrd">String</span>.Empty}</pre><pre class="alt"><br>        <span class="kwrd">For</span> <span class="kwrd">Each</span> str <span class="kwrd">As</span> <span class="kwrd">String</span> <span class="kwrd">In</span> testStrings</pre><pre><br>            TestString(str)</pre><pre class="alt"><br>            Console.WriteLine(<span class="str">“=======================”</span>)</pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span>    </pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> TestString(<span class="kwrd">ByVal</span> str <span class="kwrd">As</span> <span class="kwrd">String</span>)</pre><pre><br>        <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">Nothing</span> <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str Is Nothing”</span>)</pre><pre class="alt"><br>        <span class="kwrd">If</span> str = <span class="kwrd">Nothing</span> <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str = Nothing”</span>)</pre><pre><br>        <span class="kwrd">If</span> str = <span class="str">“”</span> <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str = “</span><span class="str">“”</span><span class="str">“”</span>)</pre><pre class="alt"><br>        <span class="kwrd">If</span> str = <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str = String.Empty”</span>)</pre><pre><br>        <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str Is String.Empty”</span>)</pre><pre class="alt"><br>        <span class="kwrd">If</span> <span class="kwrd">String</span>.IsNullOrEmpty(str) <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“String.IsNullOrEmpty(str)”</span>)</pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">Try</span></pre><pre><br>            <span class="kwrd">If</span> str.Length = 0 <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str.Length = 0”</span>)</pre><pre class="alt"><br>        <span class="kwrd">Catch</span> ex <span class="kwrd">As</span> Exception</pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">End</span> <span class="kwrd">Try</span></pre><pre><br>    <span class="kwrd">End</span> Sub</pre></div></div><p> </p><p>執行結果如下圖所示：</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="429" src="\images\posts\7461\image_thumb.png"></p><p> </p><p>由上圖可知， “” 與 String.Empty 結果是一樣的。比較有趣的是，當字串值是””與String.Empty時， str is Nothing 是不會成立的，但是 str = Nothing 卻會成立。而當字串參考是 Nothing 時，str is string.Empty 不成立、 str = string.Empty 成立。這是因為當使用=運算子判斷時，Nothing 、 “” 與 String.Empty 是被視為一樣的，才會造成此有趣的現象。</p><p> </p><p>接著我們來比較一下空字串判斷的執行速度，同樣的我們須撰寫如下測試程式：</p><div style="width: 720px; height: 234px; overflow: auto"><div class="csharpcode"><pre class="alt"><br>  <span class="kwrd">Sub</span> Main()</pre><pre><br>        <span class="kwrd">Dim</span> testStrings() <span class="kwrd">As</span> <span class="kwrd">String</span> = <span class="kwrd">New</span> <span class="kwrd">String</span>() {<span class="kwrd">Nothing</span>, <span class="str">“”</span>, <span class="kwrd">String</span>.Empty}</pre><pre class="alt"><br>        <span class="kwrd">For</span> <span class="kwrd">Each</span> str <span class="kwrd">As</span> <span class="kwrd">String</span> <span class="kwrd">In</span> testStrings</pre><pre><br>            TestStringSpeed(str, 10000000)</pre><pre class="alt"><br>            Console.WriteLine(<span class="str">“=======================”</span>)</pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> TestStringSpeed(<span class="kwrd">ByVal</span> str <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> count <span class="kwrd">As</span> <span class="kwrd">Integer</span>)</pre><pre><br>        <span class="kwrd">Dim</span> n <span class="kwrd">As</span> <span class="kwrd">Integer</span> = count</pre><pre class="alt"><br>        <span class="kwrd">Dim</span> sw <span class="kwrd">As</span> <span class="kwrd">New</span> Stopwatch</pre><pre><br>        Console.WriteLine(<span class="str">“str Is Nothing”</span>)</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>        Console.WriteLine(<span class="str">“str = Nothing”</span>)</pre><pre class="alt"><br>        sw.Reset()</pre><pre><br>        sw.Start()</pre><pre class="alt"><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>            <span class="kwrd">If</span> str = <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre class="alt"><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre><br> </pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“str = “</span><span class="str">“”</span><span class="str">“”</span>)</pre><pre><br>        sw.Reset()</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str = <span class="str">“”</span> <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>        Console.WriteLine(<span class="str">“str = String.Empty”</span>)</pre><pre class="alt"><br>        sw.Reset()</pre><pre><br>        sw.Start()</pre><pre class="alt"><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>            <span class="kwrd">If</span> str = <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span></pre><pre class="alt"><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre><br> </pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“str Is String.Empty”</span>)</pre><pre><br>        sw.Reset()</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>        Console.WriteLine(<span class="str">“String.IsNullOrEmpty(str)”</span>)</pre><pre class="alt"><br>        sw.Reset()</pre><pre><br>        sw.Start()</pre><pre class="alt"><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>            <span class="kwrd">If</span> <span class="kwrd">String</span>.IsNullOrEmpty(str) <span class="kwrd">Then</span></pre><pre class="alt"><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">Try</span></pre><pre><br>            Console.WriteLine(<span class="str">“str.Length = 0”</span>)</pre><pre class="alt"><br>            sw.Reset()</pre><pre><br>            sw.Start()</pre><pre class="alt"><br>            <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>                <span class="kwrd">If</span> str.Length = 0 <span class="kwrd">Then</span></pre><pre class="alt"><br> </pre><pre><br>                <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>            <span class="kwrd">Next</span></pre><pre><br>            Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br>        <span class="kwrd">Catch</span> ex <span class="kwrd">As</span> Exception</pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">End</span> <span class="kwrd">Try</span></pre><pre><br>    <span class="kwrd">End</span> Sub</pre></div></div><p> </p><p><style type="text/css">&lt;![CDATA[<br><br><br><br><br>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }]]&gt;</style></p><p> </p><p>執行結果如下：</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="522" height="484" src="\images\posts\7461\image4_thumb.png"></p><p>從上圖可看出幾個現象</p><ol><li>用String.IsNullOrEmpty同時判斷Nothing與空字串會比只判斷是否為 Nothing 或為空還慢</li><li>當字串不為 Nothing 時要判斷字串是否為空的話，用Is String.Empty去判斷最快(文件上通常是說String.Length = 0最快)</li></ol><p> </p><p>接著再看個實驗來看當同時判斷Nothing與空字串的情況，測試程式如下：</p><div style="width: 748px; height: 320px; overflow: auto"><div class="csharpcode"><pre class="alt"><br>   <span class="kwrd">Sub</span> Main()</pre><pre><br>        <span class="kwrd">Dim</span> testStrings() <span class="kwrd">As</span> <span class="kwrd">String</span> = <span class="kwrd">New</span> <span class="kwrd">String</span>() {<span class="kwrd">Nothing</span>, <span class="str">“”</span>, <span class="kwrd">String</span>.Empty}</pre><pre class="alt"><br>        <span class="kwrd">For</span> <span class="kwrd">Each</span> str <span class="kwrd">As</span> <span class="kwrd">String</span> <span class="kwrd">In</span> testStrings</pre><pre><br>            <span class="rem">‘TestString(str)</span></pre><pre class="alt"><br>            TestStringSpeed(str, 10000000)</pre><pre><br>            Console.WriteLine(<span class="str">“=======================”</span>)</pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt"><br> </pre><pre><br> </pre><pre class="alt"><br>    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> TestStringSpeed(<span class="kwrd">ByVal</span> str <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> count <span class="kwrd">As</span> <span class="kwrd">Integer</span>)</pre><pre><br>        <span class="kwrd">Dim</span> n <span class="kwrd">As</span> <span class="kwrd">Integer</span> = count</pre><pre class="alt"><br>        <span class="kwrd">Dim</span> sw <span class="kwrd">As</span> <span class="kwrd">New</span> Stopwatch</pre><pre><br>        Console.WriteLine(<span class="str">“str Is Nothing &amp; Is String.Empty”</span>)</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">Else</span></pre><pre class="alt"><br>                <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span></pre><pre><br>                <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>        Console.WriteLine(<span class="str">“str Is Nothing &amp; Is String.Empty”</span>)</pre><pre class="alt"><br>        sw.Reset()</pre><pre><br>        sw.Start()</pre><pre class="alt"><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>            <span class="kwrd">If</span> str <span class="kwrd">Is</span> <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre class="alt"><br>            <span class="kwrd">Else</span></pre><pre><br>                <span class="kwrd">If</span> str.Length = 0 <span class="kwrd">Then</span></pre><pre class="alt"><br>                <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br> </pre><pre class="alt"><br>        <span class="kwrd">If</span> str = <span class="kwrd">Nothing</span> <span class="kwrd">Then</span> Console.WriteLine(<span class="str">“str = Nothing”</span>)</pre><pre><br>        sw.Reset()</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str = <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>        Console.WriteLine(<span class="str">“str = “</span><span class="str">“”</span><span class="str">“”</span>)</pre><pre class="alt"><br>        sw.Reset()</pre><pre><br>        sw.Start()</pre><pre class="alt"><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre><br>            <span class="kwrd">If</span> str = <span class="str">“”</span> <span class="kwrd">Then</span></pre><pre class="alt"><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre><br>        <span class="kwrd">Next</span></pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre><br> </pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“str = String.Empty”</span>)</pre><pre><br>        sw.Reset()</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> str = <span class="kwrd">String</span>.Empty <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br> </pre><pre class="alt"><br>        Console.WriteLine(<span class="str">“String.IsNullOrEmpty(str)”</span>)</pre><pre><br>        sw.Reset()</pre><pre class="alt"><br>        sw.Start()</pre><pre><br>        <span class="kwrd">For</span> i <span class="kwrd">As</span> <span class="kwrd">Integer</span> = 1 <span class="kwrd">To</span> n</pre><pre class="alt"><br>            <span class="kwrd">If</span> <span class="kwrd">String</span>.IsNullOrEmpty(str) <span class="kwrd">Then</span></pre><pre><br>            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt"><br>        <span class="kwrd">Next</span></pre><pre><br>        Console.WriteLine(<span class="str">“花費時間: “</span> &amp; sw.ElapsedMilliseconds)</pre><pre class="alt"><br> </pre><pre><br>       </pre><pre class="alt"><br>    <span class="kwrd">End</span> Sub</pre></div></div><p> </p><p>執行結果如下：</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="620" height="484" src="\images\posts\7461\image8_thumb.png"> </p><p>可以看出 String.IsNullOrEmpty 函式的效能與自行混用 str Is Nothing 與 Is String.Empty 判斷方法來達到相同目的的效能差不多。<a href="http://files.dotblogs.com.tw/larrynung/0903/be8824870650_1256F/image_12.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="490" height="651" src="\images\posts\7461\image_thumb_5.png"></a></p><p>經過以上三個實驗，對於字串為空的判斷相信已有相當的了解，若能清楚分辨其功用與使用的時機，多少都能增進程式的效能。像是使用上若只需判斷Nothing或為空的話，應避免誤用會同時判斷的方法(如下例)，就可以避免不必要的OverHead。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0903/be8824870650_1256F/image12.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="595" height="228" src="\images\posts\7461\image12_thumb.png"></a></p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VB-NET/" rel="tag” data-instant>#VB.NET</a>
+          
+            <a href=" tags performance " post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2009/03/10/7424/" rel="next" title="[Performance][VB.NET]If V.S IIf" data-instant>
+                <i class="fa fa-chevron-left"></i> [Performance][VB.NET]If V.S IIf
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2009/03/21/7625/" rel="prev" title="[C#][VB.NET]自定義.NET WindowForm表單介面(二)" data-instant>
+                [C#][VB.NET]自定義.NET WindowForm表單介面(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2009/03/13/7461/';
+      var disqus_title = "[Performance][VB.NET].NET空字串判斷徹底研究";
+      var disqus_url = 'http://larrynung.github.io/2009/03/13/7461/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

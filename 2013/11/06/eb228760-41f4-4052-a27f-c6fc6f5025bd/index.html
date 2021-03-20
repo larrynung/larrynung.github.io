@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="[Software]Microsoft Script Explorer for Windows PowerShell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Software]Microsoft Script Explorer for Windows PowerShell">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/eb228760-41f4-4052-a27f-c6fc6f5025bd/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="[Software]Microsoft Script Explorer for Windows PowerShell">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb_7.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb_6.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb_4.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Software]Microsoft Script Explorer for Windows PowerShell">
+<meta name="twitter:description" content="[Software]Microsoft Script Explorer for Windows PowerShell">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/eb228760-41f4-4052-a27f-c6fc6f5025bd/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> [Software]Microsoft Script Explorer for Windows PowerShell | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Software]Microsoft Script Explorer for Windows PowerShell
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/eb228760-41f4-4052-a27f-c6fc6f5025bd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/eb228760-41f4-4052-a27f-c6fc6f5025bd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p>微軟最近釋出Microsoft Script Explorer for Windows PowerShell，目前只釋出到Beta版。這工具對於想學PowerShell或是有需要找相關範例來修改的人來說是一大福音，它提供了一個簡易的界面允許使用者去使用TechNet Script Center、PoshCode、 Network file systems、Bing Search、與本地的PowerShell資源。</p>  <p> </p>  <p>程式的部份可至Microsoft Script Explorer for Windows PowerShell (pre-release) 下載來安裝，運行後會看到像下面這樣的畫面。讓我們看到圖片的左上角，Microsoft Script Explorer for Windows PowerShell主要的功能就只有Search、Browse Categories、與Explore Community Resources這三種。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_2.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb.png" width="644" height="442"></a> </p>  <p> </p>  <p>以Search來說，它可以搜尋上面所提到的TechNet Script Center、PoshCode、 Network file systems、Bing Search、與本地的PowerShell資源，只要帶入關鍵字並選取所想要搜尋的資源、來源、與想要查詢的領域，搜尋的結果就會出現在程式的右半部，右上的區域會顯示出搜尋到的結果，以條列式的方式呈現，會帶出基本的描述，可以透過這些描述找尋我們想要的PowerShell。當找到想要的PowerShell，選取後右下的區域會顯示該PowerShell細部的資訊，像是作者是誰、發佈的日期、實際的網站位置、與其它更為詳細的描述。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_16.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb_7.png" width="644" height="439"></a> </p>  <p> </p>  <p>往下捲動還可以看到有完整的PowerShell內容，以及Save與Copy兩個按鈕供使用者下載該PowerShell到本地端或是直接複製至剪貼簿，Microsoft Script Explorer for Windows PowerShell不允許使用者直接透過該工具執行。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_17.png" target="_blank" rel="noopener"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb_3.png" width="644" height="438"></a> </p>  <p> </p>  <p>若不知道PowerShell的下載路徑設定，可至Options中去查閱或修改。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_14.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb_6.png" width="644" height="438"></a> </p>  <p> </p>  <p>至於Browse Categories功能則是將TechNet Script Center上面的PowerShell資源給整合，以Categories的方式呈現讓使用者瀏覽，使用上跟Search功能沒什麼差異。若想針對主題下去逐步學習，相信是不錯的選擇。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_4.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb_1.png" width="644" height="438"></a> </p>  <p> </p>  <p>而Explore Community Resources功能則是整合TechNet wiki上的內容。比較偏向一般性的介紹。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1203/SoftwareMicrosoftScriptExplorerforWindow_B1C8/image_10.png" target="_blank" rel="noopener"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\eb228760-41f4-4052-a27f-c6fc6f5025bd\image_thumb_4.png" width="644" height="438"></a> </p>  <p> </p>  <h2>Link</h2>  <ul>   <li><a href="http://www.infoq.com/cn/news/2012/03/Script-Explorer;jsessionid=E0F78F3ED8E0A3009D2E7C84FCB79253" target="_blank">Windows PowerShell脚本管理器Beta版发布</a> </li>    <li><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=29101" target="_blank">Microsoft Script Explorer for Windows PowerShell (pre-release)</a> </li>    <li><a href="http://social.technet.microsoft.com/wiki/contents/articles/8051.deploying-microsoft-script-explorer-for-windows-powershell.aspx" target="_blank">Deploying Microsoft Script Explorer for Windows PowerShell</a> </li>    <li><a href="http://social.technet.microsoft.com/wiki/contents/articles/8056.microsoft-script-explorer-for-windows-powershell-user-guide.aspx" target="_blank">Microsoft Script Explorer for Windows PowerShell User Guide </a></li> </ul><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/ed59d238-a56e-4420-91bd-ab505410bfdf/" rel="next" title="[網樂通改機][sh4twbox]如何使用shpkg去做套件的安裝與管理" data-instant>
+                <i class="fa fa-chevron-left"></i> [網樂通改機][sh4twbox]如何使用shpkg去做套件的安裝與管理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/e98e76e7-ff6d-4cda-9db0-641fb55891e1/" rel="prev" title="[C#]DropBox開發系列 - 使用DropNet進行DropBox的二次登入" data-instant>
+                [C#]DropBox開發系列 - 使用DropNet進行DropBox的二次登入 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/eb228760-41f4-4052-a27f-c6fc6f5025bd/';
+      var disqus_title = "[Software]Microsoft Script Explorer for Windows PowerShell";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/eb228760-41f4-4052-a27f-c6fc6f5025bd/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

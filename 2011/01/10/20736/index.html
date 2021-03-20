@@ -1,0 +1,611 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="CSharp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="使用反射(Reflection)實現應用程式擴充元件機制">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用反射(Reflection)實現應用程式擴充元件機制">
+<meta property="og:url" content="http://larrynung.github.io/2011/01/10/20736/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="使用反射(Reflection)實現應用程式擴充元件機制">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/20736/image6_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/20736/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/20736/image_thumb_1.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:38.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用反射(Reflection)實現應用程式擴充元件機制">
+<meta name="twitter:description" content="使用反射(Reflection)實現應用程式擴充元件機制">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/20736/image6_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 使用反射(Reflection)實現應用程式擴充元件機制 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用反射(Reflection)實現應用程式擴充元件機制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2011-01-10T18:42:52+00:00" content="2011-01-11">
+              2011-01-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2011/01/10/20736/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2011/01/10/20736/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><br>    身為程式開發人員不能避免的時常會需要因應客戶的需求下去為元件做些客制或擴充，有些應用程式為了讓程式便於處理這部分的需求會為應用程式加上擴充的機制，這樣的擴充機制能讓應用程式很輕鬆的達到大部分的擴充需求，也能將此機制開出讓有此需求的用戶能自行依自己處理擴充的動作。實作應用程式擴充元件機制在.NET有許多的作法，這邊將介紹如何透過反射(Reflection)技術來實作這樣的機制。</p><br><p><br>     </p><br><p><br>    要使用反射來實作應用程式擴充元件機制，首先必須了解的是透過反射機制能讓我們動態的在執行階段了解整個組件的構成，組件裡有哪些參考，組件裡有哪些類別，類別裡有哪些方法、屬性、建構子…等，且能夠動態的依據需求建立物件實體、取得設定物件屬性、呼叫物件的方法。故整個擴充元件機制其實就只是透過反射去找出能使用的擴充元件類別，將找到的擴充元件類別動態建立出物件實體，依據需求可能再運行必要的方法或設定些必要的屬性。在實作擴充元件機制時多半我會依照需求下去定義擴充元件必須實作的介面，甚至依需要會在建立個被擴充的宿主介面傳入擴充元件介面讓擴充元件介面取得宿主資訊，再透過反射去找尋組件中有哪些類別是實作擴充元件介面，建立其物件實體做擴充。基本上使用反射來實作應用程式擴充元件機制就是依上面所述的下去做就可以了，只是介面的部分需要依個人需求自行下去設計。</p><br><p><br>     </p><br><p><br>    這邊來看個實作範例，範例程式可至larrynung / ReflectionPluginDemo下載。該範例由三個專案構成，PlugIn.Core主要為擴充元件機制所需要的介面與基礎控制；PlugIn.Host為主要的運行介面，也是主要要被擴充的專案；PlugIn.Module為擴充元件專案，放置要用來擴充的擴充元件。</p><br><p><br>    <img alt="image" border="0" height="337" src="\images\posts\20736\image6_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="227"></p><br><p><br>     </p><br><p><br>    在PlugIn.Core專案中，首先會定義宿主介面：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d5979736-6d7b-4bef-a379-3d0cfea1ea73" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public interface IHost<br>    {<br>        PlugInController PlugInAgent { get; }<br>    }</pre><br></div><br><p><br>     </p><br><p><br>    這邊的範例中，我在宿主介面裡面放入了用來控制擴充元件的處理類別PlugInController，會利用反射機制找尋組件中的擴充元件類別，動態將擴充元件類別建立物件實體，並把宿主物件參考指派給擴充元件物件實體：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:09e4e4ab-a8bd-4f4c-9027-dd094f61f42c" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public class PlugInController<br>    {<br>        private IHost _host;<br><br>        public IHost Host<br>        {<br>            get<br>            {<br>                return _host;<br>            }<br>            set<br>            {<br>                _host = value;<br>            }<br>        }<br><br>        public PlugInController(IHost host)<br>        {<br>            this.Host = host;<br>        }<br><br>        IModule GetModule(Assembly asm, string fullTypeName)<br>        {<br>            Type t = asm.GetType(fullTypeName);<br>            IModule module = null;<br>            if (!(t.IsNotPublic || t.IsAbstract))<br>            {<br>                object objInterface = t.GetInterface(“IModule”, true);<br><br>                if (objInterface != null)<br>                {<br>                    module = asm.CreateInstance(t.FullName) as IModule;<br>                    module.Host = Host;<br>                    return module;<br>                }<br>            }<br>            return null;<br>        }<br><br>        IModule GetModule(Assembly asm, Type moduleType)<br>        {<br>            return GetModule(asm, moduleType.FullName);<br>        }<br><br>        public IModule[] GetModules(Assembly asm)<br>        {<br>            List&lt;IModule&gt; modules = new List&lt;IModule&gt;();<br>            IModule module = null;<br>            foreach (Type t in asm.GetTypes())<br>            {<br>                module = GetModule(asm, t);<br><br>                if (module != null)<br>                    modules.Add(module);<br>            }<br>            return modules.ToArray ();<br>        }<br><br>        public IModule[] GetModules(string assemblyFile)<br>        {<br>            if (!File.Exists(assemblyFile))<br>                throw new FileNotFoundException();<br>            return GetModules(Assembly.LoadFile(assemblyFile));<br>        }<br><br>        public IModule[] GetModulesFromDirectory(string directoryPath)<br>        {<br>            List&lt;IModule&gt; modules = new List&lt;IModule&gt;();<br>            foreach (string file in Directory.GetFiles(directoryPath,”*.dll”))<br>                modules.AddRange (GetModules(file));<br>            return modules.ToArray ();<br>        }<br>    }</pre><br></div><br><p><br>     </p><br><p><br>    在擴充元件介面的定義上，這邊我是簡單的設定了擴充原件的名稱、宿主的物件參考、與擴充元件所要運行的動作：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:528401dc-ee15-4ce7-be76-853e6a549818" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public interface IModule<br>    {<br>        String Name { get; }<br>        IHost Host { get; set; }<br>        void Execute();<br>    }</pre><br></div><br><p><br>     </p><br><p><br>    介面定義好以後，PlugIn.Module專案會實作一個簡單的擴充元件SubModule，這個擴充元件只是一個簡單的視窗表單，運行後會被當為宿主的MDI子視窗：</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:340a5a9f-9a0f-4826-8f51-44ae8dc75235" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public class SubModule:IModule<br>    {<br>        private Form _view;<br>        private IHost _host;<br><br>        protected Form m_View<br>        {<br>            get<br>            {<br>                if (_view == null)<br>                    _view = new MainForm() { MdiParent = Host as Form };<br>                return _view;<br>            }<br>        }<br><br><br>        #region IModule 成員<br><br>        public string Name<br>        {<br>            get<br>            {<br>                return “SubModule”;<br>            }<br>        }<br><br>        public IHost Host<br>        {<br>            get<br>            {<br>                return _host;<br>            }<br>            set<br>            {<br>                _host = value;<br>            }<br>        }<br><br>        public  void Execute()<br>        {<br>            m_View.Show();<br>        }<br><br>        #endregion<br>    }</pre><br></div><br><p><br>     </p><br><p><br>    接著在PlugIn.Host專案中，宿主類別會將當前目錄下所有的擴充元件名稱放置功能選單中的模組選單，並允許使用者點選特定模組運行。</p><br><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e8d91bad-9481-4211-83a0-f7f36bc852b4" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"><br>    <pre class="c#" name="code"><br>    public partial class MainForm : Form, IHost<br>    {<br>        public MainForm()<br>        {<br>            InitializeComponent();<br>            foreach (IModule module in PlugInAgent.GetModulesFromDirectory(Environment.CurrentDirectory))<br>                模組MToolStripMenuItem.DropDownItems.Add(module.Name,null,Module_Click).Tag = module;<br>        }<br><br>        void Module_Click(object sender, EventArgs e)<br>        {<br>            ((sender as ToolStripMenuItem).Tag as IModule).Execute();<br>        }<br><br>       …<br><br>        #region IHost 成員<br><br>        private PlugInController _plugInAgent;<br><br>        public PlugInController PlugInAgent<br>        {<br>            get<br>            {<br>                if (_plugInAgent == null)<br>                    _plugInAgent = new PlugInController(this);<br>                return _plugInAgent;<br>            }<br>        }<br><br>        #endregion<br>    }</pre><br></div><br><p><br>     </p><br><p><br>    運行結果如下：</p><br><p><br>    <img alt="image" border="0" height="382" src="\images\posts\20736\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="541"></p><br><p><br>     <img alt="image" border="0" height="382" src="\images\posts\20736\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="541"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag” data-instant>#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class=" post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/01/05/20617/" rel="next" title=".Net 4.0 New Feature - SortedSet" data-instant>
+                <i class="fa fa-chevron-left"></i> .Net 4.0 New Feature - SortedSet
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/01/13/20778/" rel="prev" title=".NET 4.0 New Feature - System.Device.Location" data-instant>
+                .NET 4.0 New Feature - System.Device.Location <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </a></div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2011/01/10/20736/';
+      var disqus_title = "使用反射(Reflection)實現應用程式擴充元件機制";
+      var disqus_url = 'http://larrynung.github.io/2011/01/10/20736/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>

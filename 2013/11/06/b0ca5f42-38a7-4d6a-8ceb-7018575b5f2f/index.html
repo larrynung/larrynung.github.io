@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Level Up" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="停用Debug.Assert警示對話框與啟用訊息記錄">
+<meta property="og:type" content="article">
+<meta property="og:title" content="停用Debug.Assert警示對話框與啟用訊息記錄">
+<meta property="og:url" content="http://larrynung.github.io/2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/index.html">
+<meta property="og:site_name" content="Level Up">
+<meta property="og:description" content="停用Debug.Assert警示對話框與啟用訊息記錄">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_3.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_1.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_2.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_4.png">
+<meta property="og:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_5.png">
+<meta property="og:updated_time" content="2021-03-20T00:40:41.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="停用Debug.Assert警示對話框與啟用訊息記錄">
+<meta name="twitter:description" content="停用Debug.Assert警示對話框與啟用訊息記錄">
+<meta name="twitter:image" content="http://larrynung.github.io/images/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/image_thumb_3.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 停用Debug.Assert警示對話框與啟用訊息記錄 | Level Up </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33537523-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Level Up</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">謙卑學習，持之以恆，才能不斷的Level Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                停用Debug.Assert警示對話框與啟用訊息記錄
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-11-06T04:00:00+00:00" content="2013-11-06">
+              2013-11-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><p>據Disable System.Diagnostics.Debug.Assert dialogs這篇文章所提，有時我們會有需要將System.Diagnostics.Debug.Assert產生的對話框給停止使用，像是讓電腦自動運行整合測試時，若因為程式中有加入System.Diagnostics.Debug.Assert的判斷，像是：</p>  <p> </p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b3b522f7-31e6-4c07-bf03-7374d19fa30b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb"><br>System.Diagnostics.Debug.Assert(False)</pre></div>  <p> </p>  <p> </p>  <p>在自動運行整合測試時就會因為跳出System.Diagnostics.Debug.Assert對話框而讓整個流程給卡住，待使用者按下對話框的按鈕才可繼續往下測試。</p>  <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="429" alt="image" width="639" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb_3.png"></p>  <p> </p>  <p>要將System.Diagnostics.Debug.Assert對話框給停止動作，我們可以為程式專案或是測試專案加上應用程式組態檔。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/System.Diagnostics.Debug.Assert_AA39/image_4.png" target="_blank" rel="noopener"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="364" alt="image" width="644" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb_1.png"></a></p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/System.Diagnostics.Debug.Assert_AA39/image_6.png" target="_blank" rel="noopener"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="146" alt="image" width="178" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb_2.png"></a></p>  <p> </p>  <p>加入應用程式組態檔後，開啟加入的應用程式組態檔，為其添加assert Xml元素標籤，並設定assertuienabled屬性值為false即可。</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:26c066b9-b938-414a-95c0-36e81cf58361" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="xml"><br>&lt;assert assertuienabled=”false” /&gt;</pre></div>  <p> </p>  <p>像是：</p>  <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="475" alt="image" width="503" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb.png"></p>  <p> </p>  <p>加完後再次運行就會發現System.Diagnostics.Debug.Assert對話框不會再跳出了。</p>  <p> </p>  <p>除了關閉System.Diagnostics.Debug.Assert對話框的警示外，您也可以為其添加訊息記錄，透過assert Xml元素的logfilename屬性，為其指定訊息記錄存放位置即可。</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2fd27dff-e156-4540-be3c-699405716632" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="xml"><br>&lt;assert assertuienabled=”false” logfilename=”c:\log.txt” /&gt;</pre></div>  <p> </p>  <p>像是：</p>  <p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="471" alt="image" width="497" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb_4.png"></p>  <p> </p>  <p>設完運行，即可在指定的位置找到訊息記錄檔，其格式如下：</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1008/System.Diagnostics.Debug.Assert_AA39/image_12.png" target="_blank" rel="noopener"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="329" alt="image" width="562" border="0" src="\images\posts\b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f\image_thumb_5.png"></a></p>  <p> </p>  <h2>Link</h2>  <ul>   <li><h4><a target="_blank" href="http://blog.benhall.me.uk/2008/05/disable-systemdiagnosticsdebugassert.html">Disable System.Diagnostics.Debug.Assert dialogs</a></h4></li>    <li><h4><a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/system.diagnostics.debug.assert(VS.80).aspx">Debug.Assert 方法</a></h4></li>    <li><h4><a target="_blank" href="http://msdn.microsoft.com/en-us/library/ty5e4c4h.aspx">&lt;assert&gt; Element</a></h4></li> </ul><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/11/06/b14e4611-6b8d-4cf9-a3e9-32bc15406b65/" rel="next" title="[網樂通改機]網樂通硬改，用高效的USB碟替換內建的8G Dom" data-instant>
+                <i class="fa fa-chevron-left"></i> [網樂通改機]網樂通硬改，用高效的USB碟替換內建的8G Dom
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/06/7012fd7d-7761-4be2-830d-ad1dba493b87/" rel="prev" title="[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介" data-instant>
+                [C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Larry Nung">
+          <p class="site-author-name" itemprop="name">Larry Nung</p>
+          <p class="site-description motion-element" itemprop="description">Level Up Blog (http://larrynung.github.io)</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1635</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">218</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/larrynung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/larrynung" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/larrynung" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.slideshare.net/larrynung" target="_blank" title="SlideShare">
+                  
+                    <i class="fa fa-fw fa-slideshare"></i>
+                  
+                  SlideShare
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Link</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.1.</span> <span class="nav-text">Disable System.Diagnostics.Debug.Assert dialogs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.2.</span> <span class="nav-text">Debug.Assert 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.3.</span> <span class="nav-text">&lt;assert&gt; Element</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Nung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <script>
+  var config = {
+    search_path : "search.xml",
+    root : "/"
+  };
+  var element = document.createElement("script");
+  element.src = "/bundle/all.min.js?v=5.0.1";
+  document.body.appendChild(element);
+  </script>
+
+  
+  
+
+  
+
+  
+
+
+
+  
+
+    <script type="text/javascript" data-no-instant>
+      var disqus_shortname = 'larrynung';
+      var disqus_identifier = '2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/';
+      var disqus_title = "停用Debug.Assert警示對話框與啟用訊息記錄";
+      var disqus_url = 'http://larrynung.github.io/2013/11/06/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+  
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+
+</body>
+</html>
