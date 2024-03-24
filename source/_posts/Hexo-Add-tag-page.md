@@ -8,7 +8,7 @@ tags: Hexo
 
 <!-- More -->
 
-    hexo n page categories
+    hexo n page tags
 
 {% asset_img 1.png %}
 
