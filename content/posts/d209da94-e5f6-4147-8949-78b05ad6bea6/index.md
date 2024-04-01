@@ -1,0 +1,142 @@
+---
+title: "Recursive ContainerFromItem"
+date: "2013-11-06 12:00:00"
+description: "Recursive ContainerFromItem"
+tags: [CSharp]
+---
+
+<p>
+	在使用WPF的TreeView時，透過ItemContainerGenerator.ContainerFromItem找尋特定的TreeViewItem，只能找到第一層的節點。第二層以後的節點必須要透過遞迴下去找尋，像是下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5293f949-6f44-4528-9c8c-9ba443ed5b3b" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="c#" name="code">
+	public DependencyObject ContainerFromItemItems(Control itemsControl, object value)
+	{
+		var dp = itemsControl.ItemContainerGenerator.ContainerFromItem(value);
+
+		if (dp != null)
+			return dp;
+
+		foreach (var item in itemsControl.Items)
+		{
+			var currentTreeViewItem = itemsControl.ItemContainerGenerator.ContainerFromItem(item);
+
+			var childDp = ContainerFromItem(currentTreeViewItem as ItemsControl, value);
+
+			if (childDp != null)
+				return childDp;
+		}
+		return null;
+	}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	為方便後續使用，這邊筆者稍微整理了一些擴充方法，有需要的自行取用：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:49b200e1-fdd7-44e4-beed-1a63e3a38ffd" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="c#" name="code">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+
+public static class ItemsControlExtension
+{
+	public static DependencyObject ContainerFromItem(this ItemsControl itemsControl, object value)
+	{
+		var dp = itemsControl.ItemContainerGenerator.ContainerFromItem(value);
+
+		if (dp != null)
+			return dp;
+
+		foreach (var item in itemsControl.Items)
+		{
+			var currentTreeViewItem = itemsControl.ItemContainerGenerator.ContainerFromItem(item);
+
+			var childDp = ContainerFromItem(currentTreeViewItem as ItemsControl, value);
+
+			if (childDp != null)
+				return childDp;
+		}
+		return null;
+	}
+
+	public static T ContainerFromItem&lt;T&gt;(this ItemsControl itemsControl, object value) where T : class
+	{
+		return ContainerFromItem(itemsControl, value) as T;
+	}
+}
+</pre>
+</div>
+<p>
+	 </p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4e91d9d1-d7af-4888-bad7-02314a9179d8" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="c#" name="code">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls.Primitives;
+
+public static class SelectorExtension
+{
+	public static DependencyObject ContainerFromSelectedItem(Selector selector)
+	{
+		var selectedItem = selector.SelectedItem;
+
+		if (selectedItem == null)
+			return null;
+
+		return selector.ContainerFromItem(selectedItem);
+	}
+
+	public static T ContainerFromSelectedItem&lt;T&gt;(Selector selector) where T : class
+	{
+		return ContainerFromSelectedItem(selector) as T;
+	}
+}
+</pre>
+</div>
+<p>
+	 </p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9665e99b-2798-4db6-b3fd-a6c3c178c9e6" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="c#" name="code">
+using System.Windows;
+using System.Windows.Controls;
+
+public static class TreeViewExtension
+{
+	public static void ClearSelection(this TreeView treeview)
+	{
+		var selectedItem = ContainerFromSelectedItem&lt;TreeViewItem&gt;(treeview);
+
+		if (selectedItem == null) return;
+
+		selectedItem.IsSelected = false;
+
+	}
+
+	public static DependencyObject ContainerFromSelectedItem(this TreeView treeview)
+	{
+		var selectedItem = treeview.SelectedItem;
+
+		if (selectedItem == null)
+			return null;
+
+		return treeview.ContainerFromItem(selectedItem);
+	}
+
+	public static T ContainerFromSelectedItem&lt;T&gt;(this TreeView treeview) where T : class
+	{
+		return ContainerFromSelectedItem(treeview) as T;
+	}
+}</pre>
+</div>
+<p>
+	 </p>

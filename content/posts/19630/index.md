@@ -1,0 +1,94 @@
+---
+title: ".NET 4.0 New Feature - String.Join"
+date: "2010-11-22 08:08:33"
+description: ".NET 4.0 New Feature - String.Join"
+tags: [CSharp]
+---
+
+<p>.NET Framework 4.0新增了三個String.Join的多載函式Join(String, IEnumerable&lt;String&gt;)</a>、<a href="http://msdn.microsoft.com/zh-tw/library/dd992421.aspx" target="_blank">Join&lt;T&gt;(String, IEnumerable&lt;T&gt;)</a>、與<a href="http://msdn.microsoft.com/zh-tw/library/dd988350.aspx" target="_blank">Join(String, Object[])</a>。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1011/.NET4.0NewFeatureString.Join_10FED/image_2.png"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="282" alt="image" src="\images\posts\19630\image_thumb.png" width="455" border="0" /></p>  <p> </p>  <p>這三個多載函式可以看出，我們可傳入Object[]、IEnumerable&lt;T&gt;這三種新的型態，不需再將List&lt;String&gt;、StringCollection等型態的資料塞成String[]就可以使用，也能在陣列中放入不同的型態，不需先將集合元素轉成字串，這部份在4.0(含)以後.NET Framework會幫我們做掉了。</p>  <p> </p>  <p>完整的使用範例如下：</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:99ea9bb6-c682-4142-926d-d61fcc62131b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">using System;
+using System.Collections.Generic;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String[] stringCollection = { "123", "456", "789" };
+            int[] intCollection = { 123, 456, 789 };
+            Object[] objCollection = { 123, "456", 789.0f };
+            float[] floatCollection = { 123.0f, 456.0f, 789.0f };
+
+            ShowValue&lt;String&gt;("stringCollection", stringCollection);
+            ShowValue&lt;int&gt;("intCollection", intCollection);
+            ShowValue&lt;Object&gt;("objCollection", objCollection);
+            ShowValue&lt;float&gt;("floatCollection", floatCollection);
+        }
+
+        static void ShowValue&lt;T&gt;(string title, IEnumerable&lt;T&gt; values)
+        {
+            Console.WriteLine("{0}: {1}", title, string.Join(",", values));
+        }
+    }
+}</pre></div>
+
+<p> </p>
+
+<p>運行結果如下：</p>
+
+<p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="171" alt="image" src="\images\posts\19630\image_thumb_1.png" width="393" border="0" /></p>
+
+<p> </p>
+
+<p>也可以整理成IEnumerable&lt;T&gt;的擴充方法使用。</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:881b9d8b-0f34-486f-89c8-621cec7005d3" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">    public static class IEnumerableExtension
+    {
+        public static string Join&lt;T&gt;(this IEnumerable&lt;T&gt; obj, string seperator)
+        {
+            return string.Join(seperator, obj);
+        }
+    }</pre></div>
+
+<p> </p>
+
+<p>這邊將上面的範例改為擴充方法的版本：</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:26b2cbc0-5d38-44b8-ada8-a65931557e5e" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">using System;
+using System.Collections.Generic;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String[] stringCollection = { "123", "456", "789" };
+            int[] intCollection = { 123, 456, 789 };
+            Object[] objCollection = { 123, "456", 789.0f };
+            float[] floatCollection = { 123.0f, 456.0f, 789.0f };
+
+            Console.WriteLine("{0}: {1}", "stringCollection", stringCollection.Join(","));
+            Console.WriteLine("{0}: {1}", "intCollection", intCollection.Join(","));
+            Console.WriteLine("{0}: {1}", "objCollection", objCollection.Join(","));
+            Console.WriteLine("{0}: {1}", "floatCollection", floatCollection.Join(","));
+        }
+    }
+
+    public static class IEnumerableExtension
+    {
+        public static string Join&lt;T&gt;(this IEnumerable&lt;T&gt; obj, string seperator)
+        {
+            return string.Join(seperator, obj);
+        }
+    }
+}
+</pre></div>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul>
+  <li>String.Join 方法 </li>
+</ul>

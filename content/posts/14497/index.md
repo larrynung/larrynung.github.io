@@ -1,0 +1,31 @@
+---
+title: "[VB.NET]VB 10.0 Implied Line Continuation"
+date: "2010-04-10 01:53:41"
+description: "[VB.NET]VB 10.0 Implied Line Continuation"
+tags: [VB.NET]
+---
+
+<p>VB.NET是line-oriented語言，與C#不同的是，在撰寫VB.NET時，不需使用像是";"的終止符號。撰寫的指令幾乎都是一行寫完，若要換行，可使用串接字元「_」，明確告知系統程式碼有斷行。</p>  <p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\14497\image_thumb_4.png" width="516" height="392" /></a> </p>  <p> </p>  <p>但當程式一多，串接字串這樣加上去，整個程式就變得很亂，若未加上串接字元，編譯器又會偵測到錯誤，儘管該程式不會讓編譯器造成混淆，仍舊強制要加上串接字元。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1004/VB.NETImpliedLineContinuation_12353/image_8.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\14497\image_thumb_3.png" width="516" height="392" /></a> </p>  <p> </p>  <p>在VB.NET 10.0中，在某些條件下，串接字元可以忽略不寫。像是下面這樣：</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1004/VB.NETImpliedLineContinuation_12353/image_12.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\14497\image_thumb_5.png" width="536" height="444" /> </p>  <p />  <p />  <p />  <p />  <p> </p>  <p>但若會是斷行的方式會讓編譯器造成混淆，則仍舊需要使用串接字元，不然編譯器將會告知錯誤。</p>  <p> </p>  <p>像是下面這段程式在From關鍵字之前就斷行，就會讓編譯器以為第一行程式是宣告集合物件，而第二行是呼叫From函式。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1ed7aa71-c07c-475a-944c-e0b6451affd7" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">        Dim list As New List(Of Integer)
+        From{1, 2, 3, 4, 5}</pre></div>
+
+<p> </p>
+
+<p>又或著像下面這樣，造成編譯器無法判斷End與Sub是函式、End Sub、或是新的Sub副程式。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:33a992a6-3e10-4590-8e46-f08da25d6f0f" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">Sub Main()
+End
+Sub</pre></div>
+
+<p> </p>
+
+<p>更多更詳細的例子可參閱Implicit Line Continuation in VB 10 (Tyler Whitney)。</p>
+
+<p> </p>
+
+<p />
+
+<h2>Link</h2>
+
+<ul>
+  <li>Implicit Line Continuation in VB 10 (Tyler Whitney) </li>
+</ul>

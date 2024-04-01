@@ -1,0 +1,61 @@
+---
+title: "VC.NET Natived Property"
+date: "2009-09-16 09:04:35"
+description: "VC.NET Natived Property"
+tags: [C++]
+---
+
+<p>
+	在VC.NET Natived類別中，若需要撰寫屬性，我們可以透過__declspec關鍵字來達到我們的需求。</p>
+<p>
+	使用__declspec關鍵字來建立屬性跟一般的.NET的語言一樣，都需要get區塊與set區塊。因此我們必須撰寫get區塊與set區塊的方法，並用__declspec關鍵字把其與欲作為屬性的變數設上關聯。就像：</p>
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f9208f94-2ef3-4761-8c50-acc7a2086c87" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#:nocontrols" name="code">
+private:
+	bool _isRunning;
+public:
+	__declspec(property(get=GetRunning,put=SetRunning))
+		bool m_bIsRunning;
+public:
+	void SetRunning(bool value){
+		_isRunning=value;
+	}
+	bool GetRunning(){
+		return _isRunning;
+	}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	以這個例子來說，當我們對m_bIsRunning做設定時，會呼叫SetRunning方法；而當我們對m_bIsRunning做讀取時，則會呼叫GetRunning方法。</p>
+<p>
+	 </p>
+<h2>
+	完整範例</h2>
+<p>
+	 </p>
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:29000abe-e975-4ad1-9b34-b9d8e3be1552" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c:nocontrols" name="code">
+class TestObj
+{
+private:
+	bool _isRunning;
+public:
+	__declspec(property(get=GetRunning,put=SetRunning))
+		bool m_bIsRunning;
+public:
+	void SetRunning(bool value){
+		_isRunning=value;
+	}
+	bool GetRunning(){
+		return _isRunning;
+	}
+};
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	TestObj obj;
+	obj.m_bIsRunning = true;
+	return 0;
+}</pre>
+</div>

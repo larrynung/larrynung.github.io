@@ -1,0 +1,206 @@
+---
+title: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
+date: "2009-05-22 09:37:21"
+description: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
+tags: [CSharp,VB.NET]
+---
+
+<p>.NET程式的記憶體用量一直以來都是程式設計師所關注的焦點。因為.NET程式必需載入.NET Framework的關係，記憶體用量動輒就至少10MB以上。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="507" height="429" src="\images\posts\8522\image_thumb.png" /></a></p><p> </p><p>對於觀察敏銳的人來說，相信應該都有注意到某個奇特的現象，那就是當我們把程式視窗縮小至工具列時，記憶體就會驟減。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/170e43632c67.NET_13DBE/image_4.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="507" height="429" src="\images\posts\8522\image_thumb_1.png" /></p><p> </p><p>這現象好像是因為作業系統會把虛擬內存轉為物理內存的關係。大多數觀察到這現象的人都會利用把應用程式縮小來壓縮程式的記憶體用量。但這樣做起來有點笨拙，站在使用者的觀點來看也是怪怪的，甚至會造成使用者使用上的不便。</p><p>其實同樣的效果，我們也可以透過SetProcessWorkingSetSize API來達到。</p><p> </p><p><strong>API宣告方式</strong></p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Private</span> <span class="kwrd">Declare</span> <span class="kwrd">Auto</span> <span class="kwrd">Function</span> SetProcessWorkingSetSize <span class="kwrd">Lib</span> <span class="str">"kernel32.dll"</span> _</pre><pre>
+(<span class="kwrd">ByVal</span> procHandle <span class="kwrd">As</span> IntPtr, <span class="kwrd">ByVal</span> min <span class="kwrd">As</span> Int32, <span class="kwrd">ByVal</span> max <span class="kwrd">As</span> Int32) <span class="kwrd">As</span> Boolean</pre></div><p /><style type="text/css"><![CDATA[
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p>C#</p><div class="csharpcode"><pre class="alt">
+[DllImport (<span class="str">"kernel32.dll"</span>)]</pre><pre><span class="kwrd">static</span> <span class="kwrd">extern</span> Boolean SetProcessWorkingSetSize(IntPtr procHandle, Int32 min, Int32 max) ; </pre></div><p /><style type="text/css"><![CDATA[
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p><strong>使用方式</strong></p><div class="csharpcode">VB.NET <pre class="alt">
+SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)</pre></div><p /><style type="text/css"><![CDATA[
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p>C#</p><div class="csharpcode"><pre class="alt">
+SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1);</pre></div><p /><style type="text/css"><![CDATA[
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><h2>範例程式</h2><p><strong>範例界面</strong></p><p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="208" height="116" src="\images\posts\8522\image17_thumb.png" /></p><p> </p><p><strong>範例程式碼</strong></p><p>VB.NET</p><div style="width: 615px; height: 361px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Public</span> <span class="kwrd">Class</span> Form1</pre><pre>
+ </pre><pre class="alt"><span class="preproc">#Region</span> <span class="str">"Declare"</span></pre><pre>
+    <span class="kwrd">Private</span> <span class="kwrd">Declare</span> <span class="kwrd">Auto</span> <span class="kwrd">Function</span> SetProcessWorkingSetSize <span class="kwrd">Lib</span> <span class="str">"kernel32.dll"</span> (<span class="kwrd">ByVal</span> procHandle <span class="kwrd">As</span> IntPtr, <span class="kwrd">ByVal</span> min <span class="kwrd">As</span> Int32, <span class="kwrd">ByVal</span> max <span class="kwrd">As</span> Int32) <span class="kwrd">As</span> <span class="kwrd">Boolean</span></pre><pre class="alt"><span class="preproc">#End Region</span></pre><pre>
+ </pre><pre class="alt">
+  </pre><pre><span class="preproc">#Region</span> <span class="str">"Private Method"</span></pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> CompressMemory()</pre><pre>
+        SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><span class="preproc">#End Region</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt"><span class="preproc">#Region</span> <span class="str">"Event Process"</span></pre><pre>
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button1_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button1.Click</pre><pre class="alt">
+        CompressMemory()</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt"><span class="preproc">#End Region</span></pre><pre><span class="kwrd">End</span> <span class="kwrd">Class</span></pre></div></div><p /><style type="text/css"><![CDATA[
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p>C#</p><div style="width: 617px; height: 369px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">using</span> System;</pre><pre><span class="kwrd">using</span> System.Collections.Generic;</pre><pre class="alt"><span class="kwrd">using</span> System.ComponentModel;</pre><pre><span class="kwrd">using</span> System.Data;</pre><pre class="alt"><span class="kwrd">using</span> System.Drawing;</pre><pre><span class="kwrd">using</span> System.Linq;</pre><pre class="alt"><span class="kwrd">using</span> System.Text;</pre><pre><span class="kwrd">using</span> System.Windows.Forms;</pre><pre class="alt"><span class="kwrd">using</span> System.Runtime.InteropServices;</pre><pre><span class="kwrd">using</span> System.Diagnostics;</pre><pre class="alt">
+ </pre><pre><span class="kwrd">namespace</span> WindowsFormsApplication1</pre><pre class="alt">
+{</pre><pre>
+    <span class="kwrd">public</span> <span class="kwrd">partial</span> <span class="kwrd">class</span> Form1 : Form</pre><pre class="alt">
+    {</pre><pre>
+        [DllImport (<span class="str">"kernel32.dll"</span>)]</pre><pre class="alt">
+        <span class="kwrd">static</span> <span class="kwrd">extern</span> Boolean SetProcessWorkingSetSize(IntPtr procHandle, Int32 min, Int32 max) ; </pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">public</span> Form1()</pre><pre>
+        {</pre><pre class="alt">
+            InitializeComponent();</pre><pre>
+        }</pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">private</span> <span class="kwrd">void</span> CompressMemory()</pre><pre class="alt">
+        {</pre><pre>
+            SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1);</pre><pre class="alt">
+        }</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">private</span> <span class="kwrd">void</span> button1_Click(<span class="kwrd">object</span> sender, EventArgs e)</pre><pre>
+        {</pre><pre class="alt">
+            CompressMemory();</pre><pre>
+        }</pre><pre class="alt">
+    }</pre><pre>
+}</pre></div></div><p /><style type="text/css"><![CDATA[
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style>

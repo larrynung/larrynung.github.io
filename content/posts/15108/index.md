@@ -1,0 +1,13 @@
+---
+title: "[VB.NET]處理MDI子表單清單無法即時更新的問題"
+date: "2010-05-09 11:09:12"
+description: "[VB.NET]處理MDI子表單清單無法即時更新的問題"
+tags: [VB.NET]
+---
+
+<p>在做MDI程式時，若有使用到MDI子表單清單的功能，需特別留意當子表單標題被更動時，MDI子表單清單不會即時的更新。</p>  <p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" width="463" height="382" src="\images\posts\15108\image_thumb.png" /></a></p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/1005/VB.NETMDI_13F73/image_4.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" width="463" height="382" src="\images\posts\15108\image_thumb_1.png" /></a></p>  <p> </p>  <p>而是要將子視窗切換該子表單清單才會更新。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1005/VB.NETMDI_13F73/image_8.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" width="463" height="382" src="\images\posts\15108\image_thumb_3.png" /></p>  <p> </p>  <p>若要修正這個問題，可在WindowsMenu.DropDownOpening事件，呼叫ActivateMdiChild保護方法，像是下面這樣：</p><p /><pre class="VB.NET" name="code" rows="25" cols="70">
+    Private Sub WindowsMenu_DropDownOpening(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WindowsMenu.DropDownOpening
+        Dim childForm As Form = ActiveMdiChild
+        ActivateMdiChild(Nothing)
+        ActivateMdiChild(childForm )
+    End Sub</pre>

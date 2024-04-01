@@ -1,0 +1,60 @@
+---
+title: "[網樂通改機]讓網樂通突破限制，使用256MB的記憶體"
+date: "2013-11-06 12:00:00"
+description: "[網樂通改機]讓網樂通突破限制，使用256MB的記憶體"
+---
+
+<p>
+	網樂通內建256MB的記憶體，但是預設只用了128MB。要突破這個限制，我們必需下載uboot再次刷機更新。</p>
+<p>
+	 </p>
+<p>
+	這邊可至sh4twbox下載uboot。</p>
+<p>
+	<img alt="image" border="0" height="504" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="580" /></p>
+<p>
+	<img alt="image" border="0" height="401" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image3_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	再下載Win32 disk imager</a>將uboot寫到USB碟。需將下載的uboot先行解開，解開後會看到附檔名為dd的檔，這檔案需透過<a href="http://sourceforge.net/projects/win32diskimager/" target="_blank">Win32 disk imager將它寫到usb中。</p>
+<p>
+	<img alt="image" border="0" height="207" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image6_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="403" /></p>
+<p>
+	 </p>
+<p>
+	要寫入時記得Select a disk image對話框的副檔名需選*.*，這樣才看的到我們欲寫的資料。</p>
+<p>
+	<img alt="image" border="0" height="457" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image9_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="609" /></p>
+<p>
+	 </p>
+<p>
+	選取好後按下write進行寫入。</p>
+<p>
+	<img alt="image" border="0" height="207" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image18_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="403" /></p>
+<p>
+	<img alt="image" border="0" height="206" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image12_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="403" /></p>
+<p>
+	<img alt="image" border="0" height="207" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image15_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="403" /></p>
+<p>
+	<img alt="image" border="0" height="206" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image21_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="403" /></p>
+<p>
+	 </p>
+<p>
+	寫入後usb會無法透過windows進行瀏覽，甚至是會提示要格式化磁碟機，這是正常的現象，忽略它就好。</p>
+<p>
+	<img alt="image" border="0" height="150" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image_thumb_9.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="351" /></p>
+<p>
+	 </p>
+<p>
+	將準備好的USB插入斷電的網樂通，一邊用戳著reset按鈕一邊通電，通電後會看到網樂通前端的燈會短閃個三下後長亮，完成更新的動作。</p>
+<p>
+	 </p>
+<p>
+	這邊注意在更新時網樂通不需要接到螢幕，因為螢幕畫面跟一開始刷sh4twbox一樣，會一直是網樂通的logo，所以看螢幕也沒有用，照著上面操作就好。</p>
+<p>
+	 </p>
+<p>
+	更新完uboot後再次連進網樂通，呼叫命令free，可以看到此時網樂通已經突破128MB的限制，可以用到256MB的記憶體空間。</p>
+<p>
+	 <img alt="image" border="0" height="245" src="\images\postse9f57-2b28-4c74-b12a-3dd8bc412d95\image_thumb_8.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>

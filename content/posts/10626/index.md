@@ -1,0 +1,66 @@
+---
+title: "C++/CLI索引子"
+date: "2009-09-15 09:02:41"
+description: "C++/CLI索引子"
+tags: [C++]
+---
+
+<p>
+	C++/CLI在撰寫索引子時，寫法跟屬性大同小異。不同的是，索引子須使用default關鍵字取代屬性名稱。就像：</p>
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6d097ad9-5030-4720-a1ae-bd3af37c6c92" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c:nocontrols" name="code">
+	property int default[int]
+	{
+		int get(int idx)
+		{
+			return _ary[idx];
+		}
+		void set(int idx,int value)
+		{			
+			_ary[idx]=value;
+		}
+	}</pre>
+</div>
+<p>
+	 </p>
+<h2>
+	完整範例</h2>
+<p>
+	 </p>
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7c3ab4b1-478c-4606-b3d5-c1f178157024" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c:nocontrols" name="code">
+ref class ArrayClass
+{
+private:
+	int* _ary;
+public:
+	property int default[int]
+	{
+		int get(int idx)
+		{
+			return _ary[idx];
+		}
+		void set(int idx,int value)
+		{			
+			_ary[idx]=value;
+		}
+	}
+public:
+	ArrayClass()
+	{
+		_ary = new int[1024];
+	}
+};
+
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	ArrayClass a;
+	for (int i=0;i&lt;1024;++i){
+		a[i]=i;
+	}	
+	return 0;
+}
+</pre>
+</div>

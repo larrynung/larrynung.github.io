@@ -1,0 +1,64 @@
+---
+title: "Use pistachio to find out unused xaml resource"
+date: "2013-11-06 12:00:00"
+description: "Use pistachio to find out unused xaml resource"
+---
+
+<p>
+	程式開發時，程式架構常常會隨著開發做些調整，若開發的是WPF程式，這樣的動作很容易造成已經不用的resource殘留在xaml code中。這些resource多半開發者也搞不太清楚到底是不是還有用到，以至於不敢貿然的將之刪除，可能這些殘留的resource就這樣一直與程式共生。不僅增加程式閱讀上的難度，無形中也增加了不必要的耗費</p>
+<p>
+	 </p>
+<p>
+	透過Pistachio</a>這套小工具，開發人員可以很輕易的找出這些殘留的resource。 程式請至<a href="http://www.granthinkson.com/2007/11/08/announcing-pistachio-wpf-resource-visualizer/" target="_blank">Pistachio這邊下載，下載後解壓縮即可雙擊執行檔運行使用。</p>
+<p>
+	 </p>
+<p>
+	Pistachio程式運行後畫面會像下面這樣，點選右側的Select Project(.csproj)。</p>
+<p>
+	<img alt="image" border="0" height="461" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	Pistachio會彈出開啟對話框讓我們挑選想要偵測的專案檔。 選定專案檔後按下開啟按鈕繼續。</p>
+<p>
+	<img alt="image" border="0" height="459" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	此時Pistachio</a>會開始進行專案的載入動作，載入的同時下方的進度列會開始由左往右跑，下方也會有載入的進度。如果到這邊畫面還是跟一開始一樣，進度列也沒運行，什麼動作也沒有的話，請檢查載入的專案是否可以成功建置，如果載入的專案裡面的XAML是壞的的話，<a href="http://www.granthinkson.com/2007/11/08/announcing-pistachio-wpf-resource-visualizer/" target="_blank">Pistachio在這邊會像什麼也沒發生一樣。</p>
+<p>
+	<img alt="image" border="0" height="461" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	專案載入完成後畫面會變得像下面這樣。</p>
+<p>
+	<img alt="image" border="0" height="462" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb_3.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	Pistachio主頁面的上方主要是做xaml檔的選取，這邊xaml檔圖示上面會有個數字表示著裡面含有的resource數，圖示右下會顯示總resource數，以及有在使用的resource數。所以在使用時我們關注的只有resource數不為0的，以及被使用的resource數不等於總resource數的xaml檔。</p>
+<p>
+	 </p>
+<p>
+	以筆者的例子來說，App.xaml的總resource數為10，但是被使用的resource數為7，有很大的機會有殘留未用的resource。所以這邊筆者將Pistachio切至App.xaml，下方就會顯示出對應的resource。這邊我們關注的是未被使用的resource，所以請用滑鼠點選一下IsUsed的欄位，讓下方的資料依照IsUsed欄位下去排序。</p>
+<p>
+	<img alt="image" border="0" height="461" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb_5.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	排序後我們可以很清楚的看到Pistachio</a>幫我們找到哪些未被使用的resource。不過這邊筆者還是建議找到未被使用的resource後要再依照resource的KeyName做一下搜尋確認的動作，因為<a href="http://www.granthinkson.com/2007/11/08/announcing-pistachio-wpf-resource-visualizer/" target="_blank">Pistachio</a>他找到的未使用resource是有可能誤判的，像是如果wpf的setter是針對某特定element type下去設定，<a href="http://www.granthinkson.com/2007/11/08/announcing-pistachio-wpf-resource-visualizer/" target="_blank">Pistachio就可能會誤判(向上圖DefaultColor下面兩個resource就是針對所有image與button下去套用，這邊就被當成是unused resource)。</p>
+<p>
+	 </p>
+<p>
+	最後一提，除了找尋未使用的resource外，若是對resource到底用在哪邊感到興趣，也可以點選resource前面的"&gt;"將resource展開，展開後resource用在哪幾個xaml檔都可一目了然的看到。</p>
+<p>
+	<img alt="image" border="0" height="460" src="\images\posts\796c9c3e-35f6-42f6-a0b0-3d438be992c9\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Announcing Pistachio – “WPF Resource Visualizer”</li>
+</ul>

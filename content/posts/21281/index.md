@@ -1,0 +1,134 @@
+---
+title: "[C#]Effective C# 條款十四：利用建構子鏈"
+date: "2011-02-08 10:42:22"
+description: "[C#]Effective C# 條款十四：利用建構子鏈"
+tags: [CSharp]
+---
+
+<p>
+	在撰寫程式時，為了方便類別的使用，無法避免的有時我們會為類別加上不同的建構子，若其中有相同的初始動作，我們可以有以下三種作法：</p>
+<ol>
+	<li>
+		為所有建構子撰寫重複代碼</li>
+	<li>
+		將相同的代碼提出為私有成員方法</li>
+	<li>
+		利用建構子鏈</li>
+</ol>
+<p>
+	 </p>
+<p>
+	其中為所有建構子撰寫重複代碼應該不用說大家都知道是最差的作法，重複的代碼不易維護，可讀性也因此降低，當類別成員變動或是增加其它建構子時，程式容易隨著修改而出錯。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:76d35e37-f7b6-48f8-b6fb-13f79244a259" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	class Person
+    {
+        public enum SexType
+        {
+            Boy,
+            Girl
+        }
+
+        public string FirstName { get; set; }
+        public string  LastName { get; set; }
+        public SexType  Sex { get; set; }
+        public int Age { get; set; }
+        public string Common { get; set; }
+
+        public Person(string firstName , string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+
+        public Person(string firstName, string lastName,int age)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+        }
+    }</pre>
+</div>
+<p>
+	 </p>
+<p>
+	而若是將相同的代碼提出為私有成員方法在每個建構子中呼叫，這樣可以解決重複代碼的問題，在維護性與可讀性上也很不錯。</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a8c30588-9300-47c1-a856-48751c188016" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	class Person
+    {
+        ...
+
+        public Person(string firstName, string lastName)
+        {
+            Init(firstName, lastName, 0);
+        }
+
+        public Person(string firstName, string lastName, int age)
+        {
+            Init(firstName, lastName, age);
+        }
+
+        private void Init(string firstName, string lastName, int age)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+        }
+    }</pre>
+</div>
+<p>
+	 </p>
+<p>
+	這方法看起來是很優，但是仍會存在兩個問題，一個是產生的代碼效率較低，因為編輯器會為每個建構子添加變數初始器與調用基類的建構子，編譯器不會幫我們將重複的代碼取出，因此我們透過反組譯可以看到兩個建構子都會調用基類的建構子。</p>
+<p>
+	<img alt="image" border="0" height="251" src="\images\posts\21281\image4_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="237" src="\images\posts\21281\image8_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	除此之外，採用這樣的作法也無法初始唯讀的成員變數，因為唯獨的成員變數只有建構子與變數初始器可以做初始的動作。</p>
+<p>
+	 </p>
+<p>
+	比較好的作法是採用建構子鏈來處理這樣的需求，使用建構子鏈可以將建構子串連，以共用建構子中的代碼，另外還可以產生較為高效程式碼、可初始唯讀的成員變數、避免程式碼重複、增加可讀性與可維護性。像是上面的程式就可改寫為如下這般：</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2a19cff2-e7bc-4ab3-a4a1-d7a1cd00710f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	class Person
+    {
+       ...
+
+        public Person(string firstName, string lastName)
+            : this(firstName, lastName, 0)
+        {
+        }
+
+        public Person(string firstName, string lastName, int age)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+        }
+    }</pre>
+</div>
+<p>
+	 </p>
+<p>
+	將編譯出來的組件反組譯來看，我們可以發現重複的基類建構子調用會在編譯時被編譯器拿掉，故產生的程式碼是較為高效的。</p>
+<p>
+	<img alt="image" border="0" height="211" src="\images\posts\21281\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="318" src="\images\posts\21281\image13_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		《Effective C#》Item 14：使用构造函数初始化语句</li>
+</ul>

@@ -1,0 +1,78 @@
+---
+title: "[VB.NET]ASCII String與Hex String的互轉"
+date: "2010-01-06 09:26:50"
+description: "[VB.NET]ASCII String與Hex String的互轉"
+tags: [VB.NET]
+---
+
+<p>ASCII要轉Hex，可透過ToString函式帶入"X2"，或是用Hex函式。因此ASCII String轉Hex String可寫成：   <br />    </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1f62d0b3-9035-4a2f-a121-49e0b6c0365c" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">    Public Function AsciiStringToHexString(ByVal asciiString As String) As String
+        Dim ascii() As Byte = System.Text.Encoding.Default.GetBytes(asciiString)
+        Dim count As Integer = ascii.Length
+        Dim hexArray(count - 1) As String
+        For idx As Integer = 0 To count - 1
+            hexArray(idx) = ascii(idx).ToString("x2")
+        Next
+        Return String.Join(" ", hexArray)
+    End Function</pre></div>
+
+
+<p> </p>
+
+<p>而Hex要轉ASCII，可在前面帶入"&amp;h"字串，轉成int後再轉為char。因此Hex String轉ASCII String可寫成:
+  <br />
+
+  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ad63f1f3-6efc-4878-b060-64b583209ec0" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">    Public Function HexStringToAsciiString(ByVal hexString As String) As String 
+        Dim array() As String = hexString.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries) 
+        For idx As Integer = 0 To array.Length - 1 
+            array(idx) = Chr(CInt(String.Format("&amp;h{0}", array(idx)))) 
+        Next 
+        Return String.Join(String.Empty, array) 
+    End Function</pre></div>
+
+
+<p> </p>
+
+<h2>程式範例</h2>
+
+<p>範例介面</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\12874\image_thumb.png" width="304" height="113" /> </p>
+
+<p> </p>
+
+<p>完整範例如下：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:dec64d71-3f2e-4e44-9955-c103231fd93f" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">Public Class Form1
+
+    Public Function AsciiStringToHexString(ByVal asciiString As String) As String
+        Dim ascii() As Byte = System.Text.Encoding.Default.GetBytes(asciiString)
+        Dim count As Integer = ascii.Length
+        Dim hexArray(count - 1) As String
+        For idx As Integer = 0 To count - 1
+            hexArray(idx) = ascii(idx).ToString("x2")
+        Next
+        Return String.Join(" ", hexArray)
+    End Function
+
+
+    Public Function HexStringToAsciiString(ByVal hexString As String) As String
+        Dim array() As String = hexString.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries)
+        For idx As Integer = 0 To array.Length - 1
+            array(idx) = Chr(CInt(String.Format("&amp;h{0}", array(idx))))
+        Next
+        Return String.Join(String.Empty, array)
+    End Function
+
+
+    Private Sub tbxASCII_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbxASCII.TextChanged
+        If Me.ActiveControl Is sender Then
+            tbxHex.Text = AsciiStringToHexString(tbxASCII.Text)
+        End If
+    End Sub
+
+    Private Sub tbxHex_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbxHex.TextChanged
+        If Me.ActiveControl Is sender Then
+            tbxASCII.Text = HexStringToAsciiString(tbxHex.Text)
+        End If
+    End Sub
+End Class</pre></div>

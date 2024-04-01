@@ -1,0 +1,12 @@
+---
+title: "[Library][VB.NET]MyDataBase Library"
+date: "2009-03-28 01:14:21"
+description: "[Library][VB.NET]MyDataBase Library"
+tags: [VB.NET]
+---
+
+<p>越來越懶，乾脆濫芋充數的把之前寫的爛Code丟上來，這篇所介紹的MyDataBase是當初剛學VB.NET時試著拿MVP董大偉的書裡範例改的，主要是為了方便用來對資料庫做些控制的。由於當初剛學VB.NET，程式沒有寫的很好，也無提出介面與抽象層方便使用，因此把Code也丟上來讓有需要的自行修改，希望大家別太苛求。</p><p>該Library基本上可控制的資料庫有Access、MySql、與Sql，由下圖命名空間應該很容易知道何時該使用哪個類別。</p><p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="174" height="132" src="\images\posts\7740\image_thumb_3.png" /></p><p>使用上最主要只有兩個函式，一個是GetDataTable，主要是用來取得資料表，使用上只要傳入Sql查詢語法就可取得查詢後的資料表。第二個函式是Execute，是用來執行不會回傳資料的Sql語法用，像是Sql的新增、刪除、修改語法就是要用Execute函式呼叫，使用上也是只要傳入Sql語法即可。</p><p>簡單的使用範例如下：</p><div style="width: 720px; height: 94px; overflow: auto"><div class="csharpcode"><pre class="alt">
+   <span class="kwrd">Dim</span> db <span class="kwrd">As</span> <span class="kwrd">New</span> MyDatabase.UseDB.SqlDB(<span class="str">"NORTHWND.MDF"</span>)</pre><pre>
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button1_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button1.Click</pre><pre class="alt">
+        <span class="kwrd">Me</span>.DataGridView1.DataSource = db.GetDataTable(<span class="str">"Select * from Orders"</span>)</pre><pre>
+    <span class="kwrd">End</span> Sub</pre></div></div><p> </p><p>執行結果如下：</p><p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="536" height="391" src="\images\posts\7740\image_thumb.png" /></a></p><p> </p><h2>Download</h2><p><a href="http://Files.Dotblogs.com.tw/larrynung/0903/200932995349182.zip">MyDataBase.zip</p>

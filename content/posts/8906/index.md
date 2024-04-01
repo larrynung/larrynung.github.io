@@ -1,0 +1,8 @@
+---
+title: "[.NET Resource]Microsoft Robotics Developer Studio 2008 R2 Released"
+date: "2009-06-20 11:09:46"
+description: "[.NET Resource]Microsoft Robotics Developer Studio 2008 R2 Released"
+tags: [.NET Resource]
+---
+
+<p>Microsoft Robotics Developer Studio 2008 R2 已經釋出，有需要的自行取用。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="468" src="\images\posts\8906\image_thumb.png" /></a></p><p><a href="http://files.dotblogs.com.tw/larrynung/0906/MicrosoftrRoboticsDeveloperStudio2008R2_32EA/image_4.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="637" height="484" src="\images\posts\8906\image_thumb_1.png" /></a></p><p> </p><h2>Link</h2><ul><li><a target="_blank" href="http://blogs.msdn.com/msroboticsstudio/archive/2009/06/18/microsoft-robotics-developer-studio-2008-r2-released.aspx">Microsoft Robotics Blog - Microsoft Robotics Developer Studio 2008 R2</a></li><li><a target="_blank" href="http://www.microsoft.com/robotics/">Microsoft Robotics Developer Studio Home Page</a></li><li><a target="_blank" href="http://msdn.microsoft.com/en-us/robotics/default.aspx">MSDN - Microsoft Robotics</a></li><li><a target="_blank" href="http://msdn.microsoft.com/en-us/robotics/aa731520.aspx">MSDN - Microsoft Robotics Downloads</a></li><li><a target="_blank" href="http://msdn.microsoft.com/en-us/library/bb881626.aspx">MSDN - Microsoft Robotics Library</a></li><li><a target="_blank" href="http://channel9.msdn.com/posts/LarryLarsen/Robotics-Developer-Studio-2008-R2-Available/">Channel 9 - Robotics Developer Studio 2008 R2 Available</li></ul>

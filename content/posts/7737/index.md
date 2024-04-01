@@ -1,0 +1,215 @@
+---
+title: "[Performance][C#]List V.S SortedList"
+date: "2009-03-27 11:51:26"
+description: "[Performance][C#]List V.S SortedList"
+tags: [Performance,CSharp]
+---
+
+<p>之前有看到網路文章介紹SortedList類別，該類別使用方式類似HashTable，也是由Key跟Value所組成的字典類別，而與其它字典類別最大的差異就在於SortedList類別會自動排序。</p>  <p> </p>  <p>但我實在很難想到這種Key跟Value的組合有啥排序的必要性，因為通常這種字典類別都是直接把Key帶入用以取得Value。而這種用法實在沒排序之必要性，除非要列出所有的配對資料。</p>  <p> </p>  <p>而我想應該也有滿多的人是直接把SortedList當作會自動排序的List用而已吧。這篇主要就是針對"把SortedList當作會自動排序的List用"的作法來做一些比較與探討。</p>  <p> </p>  <p>廢話不多說，直接看例子： </p>  <div style="width: 646px; height: 258px; overflow: auto">   <div class="csharpcode">     <pre class="alt"><span class="kwrd">using</span> System;</pre>
+
+    <pre><span class="kwrd">using</span> System.Collections.Generic;</pre>
+
+    <pre class="alt"><span class="kwrd">using</span> System.ComponentModel;</pre>
+
+    <pre><span class="kwrd">using</span> System.Data;</pre>
+
+    <pre class="alt"><span class="kwrd">using</span> System.Drawing;</pre>
+
+    <pre><span class="kwrd">using</span> System.Linq;</pre>
+
+    <pre class="alt"><span class="kwrd">using</span> System.Text;</pre>
+
+    <pre><span class="kwrd">using</span> System.Windows.Forms;</pre>
+
+    <pre class="alt"><span class="kwrd">using</span> System.Collections;</pre>
+
+    <pre><span class="kwrd">using</span> System.Diagnostics;</pre>
+
+    <pre class="alt"> </pre>
+
+    <pre><span class="kwrd">namespace</span> HashTableVSSortedList</pre>
+
+    <pre class="alt">{</pre>
+
+    <pre>    <span class="kwrd">public</span> <span class="kwrd">partial</span> <span class="kwrd">class</span> Form1 : Form</pre>
+
+    <pre class="alt">    {</pre>
+
+    <pre>        <span class="kwrd">public</span> Form1()</pre>
+
+    <pre class="alt">        {</pre>
+
+    <pre>            InitializeComponent();</pre>
+
+    <pre class="alt">        }</pre>
+
+    <pre> </pre>
+
+    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> button1_Click(<span class="kwrd">object</span> sender, EventArgs e)</pre>
+
+    <pre>        {</pre>
+
+    <pre class="alt">            button1.Enabled = <span class="kwrd">false</span>;</pre>
+
+    <pre>            GoTest();</pre>
+
+    <pre class="alt">            button1.Enabled = <span class="kwrd">true</span>;</pre>
+
+    <pre>            MessageBox.Show(<span class="str">"Ok"</span>);</pre>
+
+    <pre class="alt">        }</pre>
+
+    <pre> </pre>
+
+    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> GoTest()</pre>
+
+    <pre>        {</pre>
+
+    <pre class="alt">            <span class="kwrd">this</span>.textBox1.Clear();</pre>
+
+    <pre>            Test(1000);</pre>
+
+    <pre class="alt">            Test(10000);</pre>
+
+    <pre>            Test(100000);</pre>
+
+    <pre class="alt">        }</pre>
+
+    <pre> </pre>
+
+    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> Test(<span class="kwrd">int</span> testTimes)</pre>
+
+    <pre>        {</pre>
+
+    <pre class="alt">            <span class="kwrd">this</span>.textBox1.Text += <span class="kwrd">string</span>.Format(<span class="str">"=================================
+測試 {0} 筆
+=================================
+"</span>, testTimes);</pre>
+
+    <pre>            ListTest(testTimes);</pre>
+
+    <pre class="alt">            SortedListTest(testTimes);</pre>
+
+    <pre>            Application.DoEvents();</pre>
+
+    <pre class="alt">        }</pre>
+
+    <pre> </pre>
+
+    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> ListTest(<span class="kwrd">int</span> testTimes)</pre>
+
+    <pre>        {</pre>
+
+    <pre class="alt">            Stopwatch sw = <span class="kwrd">new</span> Stopwatch();</pre>
+
+    <pre>            sw.Start();</pre>
+
+    <pre class="alt">            List&lt;<span class="kwrd">string</span>&gt; lt = <span class="kwrd">new</span> List&lt;<span class="kwrd">string</span>&gt;();</pre>
+
+    <pre>            <span class="kwrd">for</span> (<span class="kwrd">int</span> i = 0; i &lt; testTimes; i++)</pre>
+
+    <pre class="alt">            {</pre>
+
+    <pre>                lt.Add(i.ToString());</pre>
+
+    <pre class="alt">                <span class="rem">//lt.Sort();</span></pre>
+
+    <pre>            }</pre>
+
+    <pre class="alt">            lt.Sort();</pre>
+
+    <pre>            OutputResult(<span class="str">"List"</span>, sw.ElapsedMilliseconds);</pre>
+
+    <pre class="alt">        }</pre>
+
+    <pre> </pre>
+
+    <pre class="alt">        <span class="kwrd">private</span> <span class="kwrd">void</span> SortedListTest(<span class="kwrd">int</span> testTimes)</pre>
+
+    <pre>        {</pre>
+
+    <pre class="alt">            Stopwatch sw = <span class="kwrd">new</span> Stopwatch();</pre>
+
+    <pre>            sw.Start();</pre>
+
+    <pre class="alt">            SortedList&lt;<span class="kwrd">string</span>, <span class="kwrd">string</span>&gt; st = <span class="kwrd">new</span> SortedList&lt;<span class="kwrd">string</span>, <span class="kwrd">string</span>&gt;();</pre>
+
+    <pre>            <span class="kwrd">for</span> (<span class="kwrd">int</span> i = 0; i &lt; testTimes; i++)</pre>
+
+    <pre class="alt">            {</pre>
+
+    <pre>                <span class="kwrd">string</span> tmp = i.ToString();</pre>
+
+    <pre class="alt">                st.Add(tmp, tmp);</pre>
+
+    <pre>            }</pre>
+
+    <pre class="alt">            OutputResult(<span class="str">"SortedList"</span>, sw.ElapsedMilliseconds);</pre>
+
+    <pre>        }</pre>
+
+    <pre class="alt"> </pre>
+
+    <pre>        <span class="kwrd">private</span> <span class="kwrd">void</span> OutputResult(<span class="kwrd">string</span> title, <span class="kwrd">long</span> elapsedMilliseconds)</pre>
+
+    <pre class="alt">        {</pre>
+
+    <pre>            <span class="kwrd">this</span>.textBox1.Text += <span class="kwrd">string</span>.Format(<span class="str">"{0}: {1} ms
+"</span>, title, elapsedMilliseconds);</pre>
+
+    <pre class="alt">            Application.DoEvents();</pre>
+
+    <pre>        }</pre>
+
+    <pre class="alt"> </pre>
+
+    <pre>    }</pre>
+
+    <pre class="alt">}</pre>
+  </div>
+</div>
+
+<p> </p>
+
+
+<p> </p>
+
+<p>執行後的結果如下：</p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\7737\image_thumb_1.png" width="304" height="299" /></p>
+
+<p> </p>
+
+<p>統計一下測試資料</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\7737\image_thumb.png" width="487" height="295" /> </p>
+
+<p> </p>
+
+<p>由執行的結果我們可以看出，若程式的需求非每插入一筆就要排序好資料的話，在筆數少的情況下，用SortedList來作效率會較高，筆數高的話則把資料全部插入List後再用Sort排序反而有更好的效率。若程式的需是每插入一筆就要排序好資料的話(有興趣的可把上面範例的ListTest中Sort改為用迴圈內的)，不論筆數多寡都是用SortedList來作效率最好。</p>
+
+<table border="1" cellspacing="0" cellpadding="2" width="557"><tbody>
+    <tr>
+      <td valign="top" width="91"> </td>
+
+      <td valign="top" width="233">非每插入一筆就要排序好</td>
+
+      <td valign="top" width="229">每插入一筆就要排序好</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="93">筆數少</td>
+
+      <td valign="top" width="233">SortedList</td>
+
+      <td valign="top" width="229">SortedList</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="95">筆數多</td>
+
+      <td valign="top" width="233">List+Sort</td>
+
+      <td valign="top" width="229">SortedList</td>
+    </tr>
+  </tbody></table>

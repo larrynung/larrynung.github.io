@@ -1,0 +1,106 @@
+---
+title: "Bitbuck~Free source code hosting"
+date: "2013-11-06 12:00:00"
+description: "Bitbuck~Free source code hosting"
+---
+
+<p>
+	Bitbuck</a>是一類似<a href="https://github.com/" target="_blank">GitHub</a>的source code hosting服務，跟<a href="https://github.com/" target="_blank">GitHub</a>最大的不同是<a href="https://bitbucket.org/" target="_blank">Bitbuck</a>可以建立無限制的私有專案，而在<a href="https://github.com/" target="_blank">GitHub</a>中是免費使用者只能建立公有專案，要建置私有專案就必須要付費。<a href="https://bitbucket.org/" target="_blank">Bitbuck</a>隨然允許建立私有專案，但也是有限制的，每個專案的成員數必需要小於五位，但對於一般個人使用來說應該是相當的夠用。另外就是網路上有人說速度上會比<a href="https://github.com/" target="_blank">GitHub稍微慢了一些，但這邊以筆者來說是感覺不太出來，最起碼筆者還能接受。</p>
+<p>
+	 </p>
+<p>
+	Bitbuck使用前需先在首頁Sign up。</p>
+<p>
+	<img alt="image" border="0" height="458" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	     </p>
+<p>
+	可以建立Bitbuck的帳號，或是直接以Facebook這些社群服務去連接。</p>
+<p>
+	<img alt="image" border="0" height="386" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image3_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	    </p>
+<p>
+	註冊登入後會進到Dashboard，可在這邊建立 Repository或是從現有的Repository匯入，因為筆者有用CodePlex，所以這邊從現有的Repository匯入下去示範 。</p>
+<p>
+	<img alt="image" border="0" height="408" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image6_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	因為筆者的CodePlex都是用git的，而Bitbuck的CodePlex source類型只支援Subversion或是Mercurial，在這source type並不支援git。</p>
+<p>
+	<img alt="image" border="0" height="406" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image9_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	     </p>
+<p>
+	所以這邊不要選CodePlex source，而是要選git source，並輸入CodePlex專案的git位置，Bitbuck會自動從CodePlex帶入下面的資訊，我們只要特別注意資料是正確帶入、調整一下Description(匯入時格式可能會跑掉)、以及決定這個Repository是要公開還是要私人存取，都設定完後按下下方的Import repository進行匯入的動作。</p>
+<p>
+	<img alt="image" border="0" height="383" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image12_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	進行匯入時，匯入的進度會在界面上清楚的呈現。</p>
+<p>
+	<img alt="image" border="0" height="400" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image15_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	匯入完後，專案的頁面就建立完成了。頁面說明、程式碼、分支、Commit紀錄，以及tag...等都正確的匯入。</p>
+<p>
+	<img alt="image" border="0" height="414" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image18_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="396" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image21_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="407" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image24_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 <img alt="image" border="0" height="381" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image2_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="308" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image5%5B1%5D_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 <img alt="image" border="0" height="292" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image8%5B1%5D_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	     </p>
+<p>
+	這邊我們實際將Repository從Bitbuck</a> clone下來看看，在<a href="https://bitbucket.org/" target="_blank">Bitbuck專案首頁我們可以看到右側有這個專案的git位置，有HTTPS或是SSH兩種可供選擇。</p>
+<p>
+	<img alt="image" border="0" height="171" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image_thumb_1.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="326" /></p>
+<p>
+	     </p>
+<p>
+	筆者使用HTTPS下去示範，開啟Git Shell後呼叫命令"git clone [Repository Url]"。</p>
+<p>
+	<img alt="image" border="0" height="140" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image_thumb_2.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="630" /></p>
+<p>
+	     </p>
+<p>
+	就可以將指定的Repository整個抓下來。</p>
+<p>
+	<img alt="image" border="0" height="418" src="\images\posts31b12af-205d-4762-be73-82fcf2d0a51f\image_thumb_3.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	抓下來後，剩下的就是一般的git操作了，相信有玩過git的都不成問題，而且也非Bitbuck的範疇，故這邊就不多做說明。</p>
+<p>
+	     </p>
+<h2>
+	Link</h2>
+<div>
+	<ul>
+		<li>
+			<p>
+				Free source code hosting for Git and Mercurial by Bitbucket</p>
+		</li>
+		<li>
+			<p>
+				使用BitBucket來管理你的程式碼</p>
+		</li>
+		<li>
+			<p>
+				bitbucket和github的簡單比較</p>
+		</li>
+		<li>
+			<p>
+				Bitbucket 開始支援 Git Repository</p>
+		</li>
+	</ul>
+</div>
+<p>
+	 </p>

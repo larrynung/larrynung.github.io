@@ -1,0 +1,7 @@
+baseURL = 'https://larrynung.github.io/'
+languageCode = 'en-us'
+title = 'Level Up'
+theme = 'ananke'
+
+[permalinks]
+  posts = '/:year/:month/:day/:title/'

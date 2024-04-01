@@ -1,0 +1,8 @@
+---
+title: "[.NET Resource]Visual Studio 2010 and .NET Framework 4 Training Kit"
+date: "2009-06-09 05:08:31"
+description: "[.NET Resource]Visual Studio 2010 and .NET Framework 4 Training Kit"
+tags: [.NET Resource]
+---
+
+<h2> <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="391" src="\images\posts\8750\image_thumb_1.png" /></a></h2><h2>Overview</h2><p><a name="Description"></a>The Visual Studio 2010 and .NET Framework 4 Training Kit includes presentations, hands-on labs, and demos. This content is designed to help you learn how to utilize the Visual Studio 2010 features and a variety of framework technologies including:</p><ul><li>C# 4.0</li><li>Visual Basic 10</li><li>F#</li><li>Parallel Extensions</li><li>Windows Communication Foundation</li><li>Windows Workflow</li><li>Windows Presentation Foundation</li><li>ASP.NET 4</li><li>Entity Framework</li><li>ADO.NET Data Services</li><li>Managed Extensibility Framework</li><li>Visual Studio Team System</li></ul><p>This version of the Training Kit works with Visual Studio 2010 Beta 1 and .NET Framework 4 Beta 1.</p><p> </p><h2>Link</h2><ul><li><a target="_blank" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=752CB725-969B-4732-A383-ED5740F02E93&amp;displaylang=en">Visual Studio 2010 and .NET Framework 4 Training Kit - May Preview</li></ul>

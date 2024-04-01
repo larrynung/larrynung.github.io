@@ -1,0 +1,29 @@
+---
+title: "[VB.NET]Win32 Color lt;=gt; .NET Color"
+date: "2010-05-26 10:05:38"
+description: "[VB.NET]Win32 Color &lt;=&gt; .NET Color"
+tags: [VB.NET]
+---
+
+<p>要做Win32 Color與.NET Color的互轉，可以自行轉換，也可以透過.NET Framework內建的ColorTranslator類別來做轉換。</p>  <p> </p>  <p>若要自行轉換，首先必須了解到兩者在格式上的差異。Win32 Color在格式上儲存的順序為BGR，而.NET Color在格式上儲存順序則為RGB，依此調換儲存內容的順序即可做出兩者的轉換。</p>  <p> </p>  <p>因此，.NET Color =&gt; Win32 Color可以像下面這般實作：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5b884ec3-8f32-44e7-aaa2-bcc5670c3a84" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Public Function GetColorFromWin32Color(ByVal win32Color As Integer) As Color
+        Dim r As Integer = win32Color And &amp;HFF
+        Dim g As Integer = (win32Color &gt;&gt; 8) And &amp;HFF
+        Dim b As Integer = (win32Color &gt;&gt; 16) And &amp;HFF
+        Return Color.FromArgb(r, g, b)
+    End Function</pre></div>
+
+<p> </p>
+
+<p>Win32 Color =&gt; .NET Color則可以如下這般實作：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f91f3f5e-1058-4996-ae46-293d3288fe6f" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Public Function GetWin32ColorFromColor(ByVal color As Color) As Integer
+        Return (CInt(color.B) &lt;&lt; 16) Or (CInt(color.G) &lt;&lt; 8) Or color.R
+    End Function</pre></div>
+
+<p> </p>
+
+<p>而若要使用.NET Framework內建的ColorTranslator類別來做轉換，可參閱MSDN文件中ColorTranslator.FromWin32 方法</a>與<a href="http://msdn.microsoft.com/zh-tw/library/system.drawing.colortranslator.towin32(v=VS.80).aspx" target="_blank">ColorTranslator.ToWin32 方法，直接帶入所需的參數呼叫函式即可。像是下面這樣：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:eb7ab98b-ede7-45cf-b685-b8b5898050ed" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Dim color As Color = Drawing.Color.White
+Dim win32Color As Integer = ColorTranslator.ToWin32(color)
+color = ColorTranslator.FromWin32(win32Color)</pre></div>

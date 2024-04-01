@@ -1,0 +1,86 @@
+---
+title: "[IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式"
+date: "2013-11-06 12:00:00"
+description: "[IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式"
+---
+
+<p>
+	跟Android一樣，為了讓開發人員便於將現有的Web程式放到軟體市集，Intel提供了AppUp (TM) encapsulator beta</a>這個線上工具，開發人員可藉由<a href="http://appdeveloper.intel.com/en-us/encapsulator-beta" target="_blank">AppUp (TM) encapsulator beta將現有的網站、Flash、或是JavaScript所寫成的程式封裝成類似原生的應用程式。</p>
+<p>
+	 </p>
+<p>
+	使用AppUp (TM) encapsulator beta</a>去封裝Web應用程式，我們必須要將Web應用程式用Zip打包，Zip包裡面最起碼必須包含index.html與icon.png兩個檔案，需特別注意到這兩個檔名必須為小寫，<a href="http://appdeveloper.intel.com/en-us/encapsulator-beta" target="_blank">AppUp (TM) encapsulator beta才會接受該Zip檔，而圖檔部分大小需為128x128。</p>
+<p>
+	<img alt="image" border="0" height="87" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb_11.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="626" /></p>
+<p>
+	 </p>
+<p>
+	這邊我撰寫了一個簡單的小網頁，用IFrame標籤將我的Blog嵌進去，將之存檔成index.html，並與icon.png一同壓成Zip包，這樣就完成了封裝前的打包動作。</p>
+<p>
+	<img alt="image" border="0" height="238" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb_10.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="688" /></p>
+<p>
+	 </p>
+<p>
+	接著上AppUp (TM) encapsulator beta，切到[Make your app]頁籤，填入組織名稱、應用程式名稱、應用程式描述、應用程式檔名、檔案版本、與選取要封裝的Web應用程式，也就是剛剛所打包好的Zip檔。這邊填寫上有問題的話，可點選問號圖示按鈕，會帶出細部的說明。應用程式GUID部份為選填選項，能自動判別是否填寫，是否需要為封裝後的程式加入Intel AppUp應用程式的認證功能。若不填寫，包出的應用程式會不具Intel AppUp應用程式的認證功能，自然也不能上傳至Intel AppUp。所以GUID部分必須確實帶入應用程式的GUID，可透過點擊[App GUID for MeeGo]後方的id圖示，取得應用程式的GUID。</p>
+<p>
+	<img alt="image" border="0" height="415" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image9_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	若想調整封裝後的應用程式大小，或是可否讓使用者調整大小等設定，可在[Additional app settings]中設定。</p>
+<p>
+	<img alt="image" border="0" height="415" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image6_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	都設定妥當後，點選下方的[Make it]按鈕，再切換至[Check status and download]頁面，等待應用程式封裝完成。封裝完成後會有Windows與MeeGo兩種版本的下載連結，點選下載下來就可以進行安裝測試了。這邊需要注意的是，這個服務跟很多免費檔案空間一樣，所產生的下載連結有時間限制，故必須要在時間內下載下來，過時的話就必須要重來整個流程。</p>
+<p>
+	<img alt="image" border="0" height="415" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image12_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	下載檔案實相信大家都會發現到檔案大小明顯變大，起碼變得有10MB以上，據個人推測這是因為該封裝器強調他能支援HTML5，故必須將瀏覽器內建在其中，不然使用預設瀏覽器引擎，就必須要使用者安裝有支援HTML5的瀏覽器。</p>
+<p>
+	<img alt="image" border="0" height="97" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb_12.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="361" /></p>
+<p>
+	 </p>
+<p>
+	這邊若是封裝時未輸入GUID，則下載下來後可安裝測試。</p>
+<p>
+	<img alt="image" border="0" height="336" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image18_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	安裝後運行就可以看到像下面的樣子，這就是封裝完後的程式樣貌。很明顯的就是隻嵌有瀏覽器的應用程式。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image21_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618" /></p>
+<p>
+	<img alt="image" border="0" height="94" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image27_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="200" /></p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image24_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618" /></p>
+<p>
+	 </p>
+<p>
+	測完後，我們必須要跑一般的應用程式上傳流程，將封裝好的應用程式上傳，整個發佈動作才算完成。</p>
+<p>
+	 </p>
+<p>
+	另外一提，若想要測試封裝後的Web應用程式，封裝時GUID那邊也可改帶入測試用的GUID，也就是"0x11111111, 0x11111111, 0x11111111, 0x11111111"，封裝後下載安裝，運行前開啟Intel AppUp Software Debugger。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="354" /></p>
+<p>
+	<img alt="image" border="0" height="402" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="514" /></p>
+<p>
+	 </p>
+<p>
+	運行應用程式時就會看到應用程式認證的資訊了 。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\d5c22bec-4512-4ed9-8315-86e3ce6df1d1\image_thumb_5.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="618" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		AppUp (TM) encapsulator beta. Transform web apps into Intel AppUp(SM) center apps</li>
+</ul>

@@ -1,0 +1,83 @@
+---
+title: ".NET 4.0 New Feature - BigInteger"
+date: "2010-10-27 09:49:40"
+description: ".NET 4.0 New Feature - BigInteger"
+tags: [VB.NET]
+---
+
+<p>先前在[C#]BigInteger</a>這篇介紹過在3.5的Framework中，內藏有BigInteger型別可以使用，但在3.5中由於並未開出，所以得透過反射的方式把藏在內部的型別拿來使用，而在.NET 4.0推出後，我們不需兜一大圈就可以直接使用這樣的型別。</p>  <p> </p>  <p>BigInteger為無上下限的任意整數 ，其可容納的值無限制，理論上只要記憶體能夠負荷，BigInteger想設定多大就可多大。</p>  <p> </p>  <p>使用上需先加入參考System.Numerics.dll，並匯入System.Numerics命名空間。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1010/.NET4.0NewFeatureBigInteger_12748/image_2.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="372" alt="image" src="\images\posts\18628\image_thumb.png" width="644" border="0" /> </p>  <p> </p>  <p>加入了參考與命名空間後，我們就可以開始來使用BigInteger型別了。首先，我們必需建立BigInteger型別變數。</p>  <p> </p>  <p>BigInteger型別變數有兩種建立方式，一種是透過BigInteger的建構子將數值帶入使用。</p>  <p>   </p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:96e6889b-781c-4338-baad-483de23d6048" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim bigInt As New BigInteger(Long.MaxValue) </pre></div>
+
+
+<p> </p>
+
+<p>一種則是先宣告出BigInteger變數，在將值塞入後使用。</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c5bf172b-57fa-4aa5-9205-68b193b87296" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim bigInt As BigInteger 
+bigInt = Long.MaxValue</pre></div>
+
+<p> </p>
+
+<p>跟其它數值型別一樣，BigInteger型別具有加、減、乘、除...等基本的數學運算、數值比較、位元運算等能力。除此之外，BigInteger型別還具有許多其它數值型別所沒有的功能，像是取得兩個BigInteger的最小公因數、取Log、取餘數等等，功能十分的豐富，這邊就不一一列出了，有興趣可自行參閱BigInteger 成員。</p>
+
+<p> </p>
+
+<p>另外在使用BigInteger型別時，我們必需注意到BigInteger型別是一種不變的型別，這邊來看一下MSDN的範例：</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a8f3d26d-ed09-41e4-86f0-7be642c18f8c" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim number As BigInteger = BigInteger.Multiply(Int64.MaxValue, 3)
+number += 1
+Console.WriteLine(number)</pre></div>
+
+<p> </p>
+
+<p>由範例看來感覺很像BigInteger型別可以修改現有物件的值，但其實它在內部的運作跟String這種常數類別有點類似，是透過建立新的物件的方式去做的，因此在頻繁的操作下會有與String發生類似的效能問題。這邊一樣來看一下MSDN的範例：</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:16aeb461-c8e4-43ce-9064-77b77b6e38ad" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">        Dim number As BigInteger = Int64.MaxValue ^ 5
+        Dim repetitions As Integer = 1000000
+        Dim sw As Stopwatch = Stopwatch.StartNew
+        ' Perform some repetitive operation 1 million times.
+        For ctr As Integer = 0 To repetitions
+            ' The following code executes if the operation succeeds.
+            number += 1
+        Next
+        Console.WriteLine(sw.ElapsedMilliseconds)</pre></div>
+
+<p> </p>
+
+<p>像這樣的程式頻繁的在迴圈內對BigInteger做運算，花費時間約149ms。</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="107" alt="image" src="\images\posts\18628\image_thumb_1.png" width="345" border="0" /> </p>
+
+<p> </p>
+
+<p>若我們將上述範例改用中繼變數去做運算，最後再回存回BigInteger：
+  <br />
+
+  </p><div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b5870566-530e-412f-9db6-0ecbeb23b0be" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">        Dim number As BigInteger = Int64.MaxValue ^ 5
+        Dim repetitions As Integer = 1000000
+        Dim actualRepetitions As Integer = 0
+        Dim sw As Stopwatch = Stopwatch.StartNew
+        ' Perform some repetitive operation 1 million times.
+        For ctr As Integer = 0 To repetitions
+            ' The following code executes if the operation succeeds.
+            actualRepetitions += 1
+        Next
+        number += actualRepetitions
+        Console.WriteLine(sw.ElapsedMilliseconds)</pre></div>
+
+
+<p>
+  <br />  時間上的耗費就會降至2ms</p>
+
+<p> <img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="107" alt="image" src="\images\posts\18628\image_thumb_2.png" width="305" border="0" /> </p>
+
+<p> </p>
+
+<h2> Link</h2>
+
+<ul>
+  <li>BigInteger 結構</li>
+
+  <li>BigInteger 成員</li>
+
+  <li>[C#]BigInteger</li>
+</ul>

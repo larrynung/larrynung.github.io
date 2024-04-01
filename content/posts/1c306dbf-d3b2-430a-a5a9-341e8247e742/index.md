@@ -1,0 +1,76 @@
+---
+title: "Hello, Tkinter"
+date: "2013-11-06 12:00:00"
+description: "Hello, Tkinter"
+tags: [Python]
+---
+
+<p>
+	Tkinter是Python的GUI套件，骨子裡為Tcl/TK的封裝，因此透過Tkinter撰寫UI，我們可以讓程式在不同的平台上運行。</p>
+<p>
+	 </p>
+<p>
+	Tkinter使用前我們可以先將Tkinter package import，並呼叫Tkinter._test方法，驗證一下開發環境。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:81f16de2-e99c-4a43-91b4-7c14aaa47ea9" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+import Tkinter 
+
+Tkinter._test()</pre>
+</div>
+<p>
+	 </p>
+<p>
+	若開發環境是OK的，我們應該可以看到像下面這樣的視窗介面。</p>
+<p>
+	<img alt="image" border="0" height="131" src="\images\posts\1c306dbf-d3b2-430a-a5a9-341e8247e742\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="169" /></p>
+<p>
+	 </p>
+<p>
+	開發環境OK後，可以開始撰寫UI程式的部分。</p>
+<p>
+	 </p>
+<p>
+	透過Tkinter進行程式的撰寫，大概要follow下面這樣的架構。首先要將Tkinter package import進來，import進來後宣告並設定TK物件(可以想成我們一般所說的視窗)，TK物件宣告完成後接著進其他控制項的宣告與設定，用控制項兜出我們想要的視窗樣子，最後呼叫TK物件的mainloop方法啟動訊息迴圈就可以了。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:90a02762-a74e-45a7-9a0b-4ae17231d274" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+from Tkinter import *
+
+form = Tk()
+...
+form.mainloop()</pre>
+</div>
+<p>
+	 </p>
+<p>
+	以一個簡單的HelloWorld範例程式來說，程式實際寫起來會像下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3a512d7e-92df-490f-ad80-487dea7d942a" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+from Tkinter import *
+
+form = Tk()
+form.title("HelloWorld Demo")
+form.geometry("300x200")
+
+lbl = Label(form, text="Hello, world!")
+lbl.pack()
+
+form.mainloop()</pre>
+</div>
+<p>
+	 </p>
+<p>
+	可以看到這邊如上面所述，會先將Tkinter package import，然後宣告TK物件，設定視窗的標題為"HelloWorld Demo"、視窗的大小為300x200，接著這邊宣告了一個Label控制項，裡面顯示著"Hello,world!"字樣，會內嵌在視窗裡面，最後呼叫TK.mainloop啟動訊息迴圈。</p>
+<p>
+	 </p>
+<p>
+	所以這個HelloWorld範例程式運行起來會像下面這樣：</p>
+<p>
+	<img alt="image" border="0" height="243" src="\images\posts\1c306dbf-d3b2-430a-a5a9-341e8247e742\image_thumb_5.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="320" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Hello, Tkinter</li>
+</ul>

@@ -1,0 +1,95 @@
+---
+title: "[Control][C#]WebCamPictureBox Control"
+date: "2009-03-29 11:08:51"
+description: "[Control][C#]WebCamPictureBox Control"
+tags: [Control,CSharp]
+---
+
+<p>
+	WebCamPictureBox 是我很久以前拿在討論區看到的範例所改的控制項，不過範例我找不到了，有找到的麻煩通知我一下。主要功能是結合WebCam與PictureBox，透過該控制項能輕鬆的控制WebCam (附檔含控制項程式碼與使用範例)。</p>
+<p>
+	 </p>
+<p>
+	主要功能如下：</p>
+<p>
+	<img alt="image" border="0" height="420" src="\images\posts\7750\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="533" /></p>
+<p>
+	 </p>
+<p>
+	<strong>測試WebCam連線狀態</strong></p>
+<div class="csharpcode">
+	<div class="csharpcode">
+		<pre class="alt">
+            <span class="kwrd">if</span> (<span class="kwrd">this</span>.webCamPictureBox1.TestConnect())</pre>
+		<pre>
+            {</pre>
+		<pre class="alt">
+                MessageBox.Show(<span class="str">"WebCam connect state is ok"</span>);</pre>
+		<pre>
+            }</pre>
+		<pre class="alt">
+            <span class="kwrd">else</span></pre>
+		<pre>
+            {</pre>
+		<pre class="alt">
+                MessageBox.Show(<span class="str">"WebCam connect state is error"</span>);</pre>
+		<pre>
+            }</pre>
+	</div>
+	<style type="text/css"><![CDATA[
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style>
+</div>
+<p>
+	<strong>啟動WebCam</strong></p>
+<div class="csharpcode">
+	<pre class="alt">
+<span class="kwrd">this</span>.webCamPictureBox1.Start();</pre>
+</div>
+<div class="csharpcode">
+	 </div>
+<p>
+	<strong>停止WebCam</strong></p>
+<div class="csharpcode">
+	<pre class="alt">
+<span class="kwrd">this</span>.webCamPictureBox1.Stop();</pre>
+</div>
+<div class="csharpcode">
+	 </div>
+<p>
+	<strong>判斷WebCam是否啟動</strong></p>
+<div class="csharpcode">
+	<div class="csharpcode">
+		<pre class="alt">
+<span class="kwrd">this</span>.toolStripStatusLabel2.Text = <span class="kwrd">this</span>.webCamPictureBox1 .IsStarted?<span class="str">"Start"</span>:<span class="str">"Stop"</span>;</pre>
+	</div>
+</div>
+<h2>
+	 </h2>
+<h2>
+	CodePlex</h2>
+<p>
+	WebCamPictureBox</p>

@@ -1,0 +1,55 @@
+---
+title: "[C#]阿拉伯數字轉國字"
+date: "2009-11-03 06:02:00"
+description: "[C#]阿拉伯數字轉國字"
+tags: [CSharp]
+---
+
+<p>看到Rico的[C#][WinForm]如何將數字轉為國字</a>又手癢了一下，也試著寫了一段程式，隨手記錄一下。</p>  <p> </p>  <p>基本上要作數字轉國字，大致上有兩種方法：</p>  <ul>   <li>用現成的函式庫，像是<a href="http://www.microsoft.com/downloads/details.aspx?displaylang=zh-tw&amp;FamilyID=7d1df9ce-4aee-467f-996e-bec826c5daa2" target="_blank">Microsoft Visual Studio International Feature Pack。 </li>    <li>土法煉鋼自己做 </li> </ul>  <p> </p>  <p>下方為我寫的土法煉鋼程式：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:300f02f8-be28-4ad4-ace2-41724cb62cfc" class="wlWriterEditableSmartContent"><pre name="code" class="c#">        static string GetChineseNumber(int number)
+        {
+            string[] chineseNumber = { "零", "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+            string[] unit = { "", "十", "百", "千", "萬", "十萬", "百萬", "千萬", "億", "十億", "百億", "千億", "兆", "十兆", "百兆", "千兆" };
+            StringBuilder ret = new StringBuilder();
+            string inputNumber = number.ToString();
+            int idx = inputNumber.Length;
+            bool needAppendZero = false;
+            foreach (char c in inputNumber)
+            {
+                idx--;
+                if (c &gt; '0')
+                {
+                    if (needAppendZero)
+                    {
+                        ret.Append(chineseNumber[0]);
+                        needAppendZero = false;
+                    }
+                    ret.Append(chineseNumber[(int)(c - '0')] + unit[idx]);
+                }
+                else
+                    needAppendZero = true;
+            }
+            return ret.Length == 0 ? chineseNumber[0] : ret.ToString ();
+        }</pre></div>
+
+<p> </p>
+
+<p>使用範例：</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:813b70e2-5345-4214-9b8e-c4884d02c56c" class="wlWriterSmartContent">
+  <pre class="c#:nocontrols" name="code">            for (int num = 0; num &lt; 100; num++)
+                Console.WriteLine(GetChineseNumber(num));</pre>
+</div>
+
+<p> </p>
+
+<p>執行結果：</p>
+
+<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\11396\image_thumb.png" width="681" height="446" /> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul>
+  <li>[C#][WinForm]如何將數字轉為國字 </li>
+</ul>

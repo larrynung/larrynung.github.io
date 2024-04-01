@@ -1,0 +1,149 @@
+---
+title: "[C#][VB.NET]最大公因數 amp; 最小公倍數"
+date: "2010-12-07 12:49:24"
+description: "[C#][VB.NET]最大公因數 &amp; 最小公倍數"
+tags: [CSharp,VB.NET]
+---
+
+<p />  <p>翻閱程式發現以前在處理合併儲存格時，為該功能撰寫了最大公因數與最小公倍數的處理，這邊稍微整理記錄一下。</p>  <p> </p>  <p>最大公因數的取法為使用遞迴去實作輾轉相除法</a>，最小公倍數則是利用最大公因數與下面公式來計算：</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1012/CVB.NET_B442/image_4.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="25" alt="image" src="\images\posts\19962\image_thumb_1.png" width="244" border="0" /></a> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1012/CVB.NET_B442/image_6.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="51" alt="image" src="\images\posts\19962\image_thumb_2.png" width="212" border="0" /> </p>  <p> </p>  <h2>程式碼</h2>  <p>C#</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:76b8e556-34aa-4f41-8a78-3375cfd6b663" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">        private int GCD(int num1, int num2)
+        {
+            int min = 0;
+            int max = 0;
+            int maxModMin = 0;
+            min = Math.Min(num1, num2);
+            max = Math.Max(num1, num2);
+            maxModMin = max % min;
+            return maxModMin &gt; 0 ? GCD(min, maxModMin) : min;
+        }
+
+        private int LCM(int num1, int num2)
+        {
+            return num1 * num2 / GCD(num1, num2);
+        }</pre></div>
+
+<p> </p>
+
+<p>VB.NET</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2fea0eb9-a9d6-4c87-bae2-a8a5c97d2216" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">    Private Function GCD(ByVal num1 As Integer, ByVal num2 As Integer) As Integer
+        Dim min, max, maxModMin As Integer
+        min = Math.Min(num1, num2)
+        max = Math.Max(num1, num2)
+        maxModMin = max Mod min
+        Return If(maxModMin &gt; 0, gcd(min, maxModMin), min)
+    End Function
+
+    Private Function LCM(ByVal num1 As Integer, ByVal num2 As Integer) As Integer
+        Return num1 * num2 / GCD(num1, num2)
+    End Function</pre></div>
+
+<p> </p>
+
+<h2>完整範例</h2>
+
+<p>C#</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0a87c928-02fa-4e87-804b-0d7924108f8b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        private static int GCD(int num1, int num2)
+        {
+            int min = 0;
+            int max = 0;
+            int maxModMin = 0;
+            min = Math.Min(num1, num2);
+            max = Math.Max(num1, num2);
+            maxModMin = max % min;
+            return maxModMin &gt; 0 ? GCD(min, maxModMin) : min;
+        }
+
+        private static int LCM(int num1, int num2)
+        {
+            return num1 * num2 / GCD(num1, num2);
+        }
+
+        static void Main(string[] args)
+        {
+            const int EXAMPLE_COUNT = 5;
+            const int MIN_RANDOM_VALUE = 2;
+            const int MAX_RANDOM_VALUE = 50;
+
+            int num1, num2;
+            Random ran = new Random();
+
+            Console.WriteLine("GCD...");
+            for (int i = 0; i &lt; EXAMPLE_COUNT; ++i)
+            {
+                num1 = ran.Next(MIN_RANDOM_VALUE,MAX_RANDOM_VALUE);
+                num2 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
+                Console.WriteLine("GCD({0},{1}) = {2}", num1, num2, GCD(num1, num2).ToString());
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("LCM...");
+            for (int i = 0; i &lt; EXAMPLE_COUNT; ++i)
+            {
+                num1 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
+                num2 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
+                Console.WriteLine("LCM({0},{1}) = {2}", num1, num2, LCM(num1, num2).ToString());
+            }
+        }
+    }
+}</pre></div>
+
+<p> </p>
+
+<p>VB.NET</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8d754c01-bccd-44f4-8e0d-a26e6d6fd150" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Module Module1
+
+
+    Private Function GCD(ByVal num1 As Integer, ByVal num2 As Integer) As Integer
+        Dim min, max, maxModMin As Integer
+        min = Math.Min(num1, num2)
+        max = Math.Max(num1, num2)
+        maxModMin = max Mod min
+        Return If(maxModMin &gt; 0, gcd(min, maxModMin), min)
+    End Function
+
+    Private Function LCM(ByVal num1 As Integer, ByVal num2 As Integer) As Integer
+        Return num1 * num2 / GCD(num1, num2)
+    End Function
+
+    Sub Main()
+        Const EXAMPLE_COUNT As Integer = 5
+        Const MIN_RANDOM_VALUE As Integer = 2
+        Const MAX_RANDOM_VALUE As Integer = 50
+
+        Dim num1 As Integer, num2 As Integer
+        Dim ran As New Random()
+
+        Console.WriteLine("GCD...")
+        For i As Integer = 0 To EXAMPLE_COUNT - 1
+            num1 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE)
+            num2 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE)
+            Console.WriteLine("GCD({0},{1}) = {2}", num1, num2, GCD(num1, num2).ToString())
+        Next
+
+        Console.WriteLine()
+        Console.WriteLine("LCM...")
+        For i As Integer = 0 To EXAMPLE_COUNT - 1
+            num1 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE)
+            num2 = ran.Next(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE)
+            Console.WriteLine("LCM({0},{1}) = {2}", num1, num2, LCM(num1, num2).ToString())
+        Next
+    End Sub
+
+End Module</pre></div>
+
+<p> </p>
+
+<p>運行結果如下：</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="299" alt="image" src="\images\posts\19962\image_thumb.png" width="305" border="0" /></p>

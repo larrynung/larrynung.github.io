@@ -1,0 +1,226 @@
+---
+title: "[VB.NET]使用mouse_event API 來操控滑鼠動作"
+date: "2010-05-21 12:07:12"
+description: "[VB.NET]使用mouse_event API 來操控滑鼠動作"
+tags: [VB.NET]
+---
+
+<p>函式原型</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d292d25f-d439-45a7-bfb2-84b2b470c5e4" class="wlWriterEditableSmartContent"><pre name="code" class="c">VOID WINAPI mouse_event(
+  __in  DWORD dwFlags,
+  __in  DWORD dx,
+  __in  DWORD dy,
+  __in  DWORD dwData,
+  __in  ULONG_PTR dwExtraInfo
+);</pre></div>
+
+<p> </p>
+
+<p>參數</p>
+
+<table border="1" cellspacing="0" cellpadding="2" width="497"><tbody>
+    <tr>
+      <td valign="top" width="91">參數名稱</td>
+
+      <td valign="top" width="404">說明</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="91"><em>dwFlags</em></td>
+
+      <td valign="top" width="404">指示滑鼠動作</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="91">dx</td>
+
+      <td valign="top" width="404">x座標 (dwFlags有設MOUSEEVENTF_ABSOLUTE時，該座標為絕對座標)</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="91">dy</td>
+
+      <td valign="top" width="404">y座標 (dwFlags有設MOUSEEVENTF_ABSOLUTE時，該座標為絕對座標)</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="91">dwData</td>
+
+      <td valign="top" width="404">dwFlags為MOUSEEVENTF_HWHEEL時，該值代表捲軸捲動的量。
+        <br />
+
+        <br />dwFlags為MOUSEEVENTF_XDOWN或MOUSEEVENTF_XUP時，該值可為XBUTTON1 (&amp;H0001)或XBUTTON2 (&amp;H0002)。
+
+        <br />
+
+        <br />當dwFlags不為MOUSEEVENTF_HWHEEL、
+
+        <br />MOUSEEVENTF_XDOWN或MOUSEEVENTF_XUP，該值為0。</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="91">dwExtraInfo</td>
+
+      <td valign="top" width="404">An additional value associated with the mouse event. An application calls <strong>GetMessageExtraInfo</strong> to obtain this extra information.</td>
+    </tr>
+  </tbody></table>
+
+<p> </p>
+
+<p>API宣告</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:57cc662a-2b22-4ec5-bcb6-2bce068fda5c" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Declare Sub mouse_event Lib "user32" Alias "mouse_event" (ByVal dwFlags As Integer, ByVal dx As Integer, ByVal dy As Integer, ByVal dwData As Integer, ByVal dwExtraInfo As Integer)</pre></div>
+
+<p> </p>
+
+<p>簡易使用類別整理如下</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:dcd33e4a-17d5-4356-a2c5-eecc066f060d" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Public Class MouseControler
+
+    Private Declare Function mouse_event Lib "user32.dll" Alias "mouse_event" (ByVal dwFlags As MouseEvent, ByVal dX As Int32, ByVal dY As Int32, ByVal dwData As Int32, ByVal dwExtraInfo As Int32) As Boolean
+
+    &lt;Flags()&gt; _
+    Enum MouseEvent
+        None
+        AbsoluteLocation = &amp;H8000
+        LeftButtonDown = &amp;H2
+        LeftButtonUp = &amp;H4
+        Move = &amp;H1
+        MiddleButtonDown = &amp;H20
+        MiddleButtonUp = &amp;H40
+        RightButtonDown = &amp;H8
+        RightButtonUp = &amp;H10
+        Wheel = &amp;H800
+        WheelDelta = 120
+        XButtonDown = &amp;H100
+        XButtonUp = &amp;H200
+    End Enum
+
+#Region "Public Shared Method"
+    Public Shared Sub LeftButtonDown()
+        LeftButtonDown(0, 0, False)
+    End Sub
+
+    Public Shared Sub LeftButtonDown(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.LeftButtonDown Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+    Public Shared Sub LeftButtonUp()
+        LeftButtonUp(0, 0, False)
+    End Sub
+
+    Public Shared Sub LeftButtonUp(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.LeftButtonUp Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+    Public Shared Sub LeftButtonClick()
+        LeftButtonClick(0, 0, False)
+    End Sub
+
+    Public Shared Sub LeftButtonClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        LeftButtonDown(x, y, absolateLocation)
+        LeftButtonUp(x, y, absolateLocation)
+    End Sub
+
+    Public Shared Sub LeftButtonDoubleClick()
+        LeftButtonDoubleClick(0, 0, False)
+    End Sub
+
+    Public Shared Sub LeftButtonDoubleClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        LeftButtonClick(x, y, absolateLocation)
+        LeftButtonClick(x, y, absolateLocation)
+    End Sub
+
+    Public Shared Sub MiddleButtonDown()
+        MiddleButtonDown(0, 0, False)
+    End Sub
+
+    Public Shared Sub MiddleButtonDown(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.MiddleButtonDown Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+
+    Public Shared Sub MiddleButtonUp()
+        MiddleButtonUp(0, 0, False)
+    End Sub
+
+    Public Shared Sub MiddleButtonUp(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.MiddleButtonUp Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+    Public Shared Sub MiddleButtonClick()
+        MiddleButtonClick(0, 0, False)
+    End Sub
+
+    Public Shared Sub MiddleButtonClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        MiddleButtonDown(x, y, absolateLocation)
+        MiddleButtonUp(x, y, absolateLocation)
+    End Sub
+
+
+    Public Shared Sub MiddleButtonDoubleClick()
+        MiddleButtonDoubleClick(0, 0, False)
+    End Sub
+
+    Public Shared Sub MiddleButtonDoubleClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        MiddleButtonClick(x, y, absolateLocation)
+        MiddleButtonClick(x, y, absolateLocation)
+    End Sub
+
+    Public Shared Sub RightButtonDown()
+        RightButtonDown(0, 0, False)
+    End Sub
+
+    Public Shared Sub RightButtonDown(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.RightButtonDown Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+    Public Shared Sub RightButtonUp()
+        RightButtonUp(0, 0, False)
+    End Sub
+
+    Public Shared Sub RightButtonUp(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        mouse_event(MouseEvent.RightButtonUp Or If(absolateLocation, MouseEvent.AbsoluteLocation, MouseEvent.None), x, y, 0, 0)
+    End Sub
+
+
+    Public Shared Sub RightButtonClick()
+        RightButtonClick(0, 0, False)
+    End Sub
+
+
+    Public Shared Sub RightButtonClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        RightButtonDown(x, y, absolateLocation)
+        RightButtonUp(x, y, absolateLocation)
+    End Sub
+
+
+    Public Shared Sub RightButtonDoubleClick()
+        RightButtonDoubleClick(0, 0, False)
+    End Sub
+
+    Public Shared Sub RightButtonDoubleClick(ByVal x As Integer, ByVal y As Integer, Optional ByVal absolateLocation As Boolean = True)
+        RightButtonClick(x, y, absolateLocation)
+        RightButtonClick(x, y, absolateLocation)
+    End Sub
+
+    Public Shared Sub Wheel(ByVal scrollValue As Integer)
+        mouse_event(MouseEvent.Wheel, 0, 0, scrollValue, 0)
+    End Sub
+
+#End Region
+
+End Class</pre></div>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul>
+  <li>mouse_event Function</li>
+
+  <li>pinvoke.net: mouse_event (user32)</li>
+
+  <li>用Mouse_event（）来控制鼠标操作</li>
+
+  <li>Simulate a mouse click in a program</li>
+</ul>

@@ -1,0 +1,76 @@
+---
+title: "[Linq]Linq程式逐步執行與偵錯"
+date: "2010-04-18 12:18:57"
+description: "[Linq]Linq程式逐步執行與偵錯"
+tags: [VB.NET, CSharp, Linq]
+---
+
+<p>若是使用C#要對Linq程式做逐步的執行與偵錯，我們可以直接透過Step (F11)逐步執行。</p>  <p> </p>  <p>舉個例子來說，假設今天想要對下列Linq程式做逐步執行。</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ff579ee9-d555-48a5-aacb-6354adb7a56a" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">        static void Main(string[] args)
+        {
+            int[] items = Enumerable.Range(1, 10).ToArray();
+            var linq = from item in items
+                       where (item % 2) == 0
+                       select new { Name = "Item", Value = item };
+
+            foreach (var item in linq)
+            {
+                Console.WriteLine(item);
+            }
+        }</pre></div>
+
+<p> </p>
+
+<p>我們可把中斷點設在迴圈上方，運行後會中斷在中斷點的位置上。</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="201" alt="image" src="\images\posts\14659\image_thumb_3.png" width="476" border="0" /></p>
+
+<p> </p>
+
+<p>此時透過按下Step (F11) 就可以發現執行位置跑到了Linq陳述式上方，此時我們就可以透過Visual Studio監看到Linq陳述式的值了。</p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="197" alt="image" src="\images\posts\14659\image_thumb.png" width="451" border="0" /> </p>
+
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="198" alt="image" src="\images\posts\14659\image_thumb_1.png" width="452" border="0" /> </p>
+
+<p> </p>
+
+<p>而若是要使用VB.NET對Linq程式做逐步的執行與偵錯，相較之下會比C#來的麻煩。主要可分為三個步驟：</p>
+
+<ol>
+  <li>使用函式來取代部分Linq陳述式 </li>
+
+  <li>使用迴圈讀取Linq內的元素 </li>
+
+  <li>中斷點設在函式中做逐步偵錯的動作 </li>
+</ol>
+
+<p><img title="image" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="82" alt="image" src="\images\posts\14659\image_thumb.png" width="417" border="0" />  </p>
+
+<p> </p>
+
+<p>舉個例子來說，假設今天想要對下列Linq程式做逐步執行。</p>
+
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fef013ef-24ea-4fb6-9abd-f128ee46ba72" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
+  <pre class="vb" name="code">    Sub Main()
+        Dim items() As Integer = Enumerable.Range(1, 10).ToArray
+        Dim linq = From item In items Where item Mod 2 = 0 Select New With {.Name = "Item", .Value = item}
+
+        For Each item In linq
+            Console.WriteLine(item)
+        Next
+    End Sub</pre>
+</div>
+
+<p> </p>
+
+<p>把Linq部分陳述式改用函式替代，當程式跑到迴圈時，就可以在該函式中除錯。</p>
+
+<p><img title="image" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="231" alt="image" src="\images\posts\14659\image_thumb_3.png" width="522" border="0" /> </p>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul>
+  <li>逐步執行和 LINQ </li>
+</ul>

@@ -1,0 +1,8 @@
+---
+title: "[.NET Concept].NET Framework 4.0 Poster"
+date: "2009-08-22 05:39:20"
+description: "[.NET Concept].NET Framework 4.0 Poster"
+tags: [.NET Concept]
+---
+
+<p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" width="504" height="264" src="\images\posts\10183\image_thumb_1.png" /></a></p><p>.NET Framework 4.0 Poster有兩種版本。一種是<a target="_blank" href="http://tinyurl.com/DotNetFramework4PosterDeepZoom">DeepZoom version</a>，可以使用滑鼠滾輪或是透過按下按鈕去控制可視範圍與縮放。一種是<a target="_blank" href="http://tinyurl.com/PDC2008-NETFX4PDF">PDF version</a>，可下載下來自行透過PDF Reader瀏覽。</p><p> </p><h2>Link</h2><ul><li><a target="_blank" href="http://tinyurl.com/DotNetFramework4PosterDeepZoom">The DeepZoom version</a></li><li><a target="_blank" href="http://tinyurl.com/PDC2008-NETFX4PDF">.NET Framework 4 Poster PDF</li></ul>

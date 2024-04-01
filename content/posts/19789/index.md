@@ -1,0 +1,59 @@
+---
+title: ".NET 4.0 New Feature - Environment.FailFast"
+date: "2010-11-29 09:37:09"
+description: ".NET 4.0 New Feature - Environment.FailFast"
+tags: [CSharp]
+---
+
+<p>
+	.NET 4.0中新增FailFast(String, Exception)多載方法，該多載方法主要是在應用程式損壞無法修復且執行try...catch...finally將會損壞程式資源下使用 ，可將訊息和例外狀況資訊寫入至 Windows 應用程式事件記錄檔後終止處理序,不會執行到try...catch...finally區塊。</p>
+<p>
+	 </p>
+<p>
+	實際看個使用上的例子，假設今天我們的程式發生了例外，且該例外我們無法將它修復，我們可以像下面這樣撰寫：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fb2363d8-2c54-42ef-a26e-12adddd01313" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	using System;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Environment.FailFast("A castrophic failure has occured.", new DivideByZeroException ());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("catch...");
+            }
+            finally
+            {
+                Console.WriteLine("finally...");
+            }
+        }
+    }
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行後程式會強迫終止，catch與finally區塊也不會運行到，運行後我們開啟事件檢視器，打開應用程式的事件，我們可以看到剛剛的運行讓我們多了兩筆事件，一個事件會告知發生的問題、堆疊、與寫入的訊息。</p>
+<p>
+	<img alt="image" border="0" height="454" src="\images\posts\19789\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="408" /></p>
+<p>
+	 </p>
+<p>
+	一個事件則是會有例外的資訊。</p>
+<p>
+	<img alt="image" border="0" height="454" src="\images\posts\19789\image3_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="408" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Environment.FailFast 方法 (String, Exception)</li>
+</ul>

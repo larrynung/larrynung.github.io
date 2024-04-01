@@ -1,0 +1,57 @@
+---
+title: "[Web][.NET Resourec]使用compilify.net在網站上撰寫簡易的C#程式"
+date: "2013-11-06 12:00:00"
+description: "[Web][.NET Resourec]使用compilify.net在網站上撰寫簡易的C#程式"
+tags: [CSharp]
+---
+
+<p> compilify.net是一個可以線上撰寫C#程式的網站，使用上十分簡單，網站主要分為三個區塊，左邊是用來做些定義的，右邊是要執行的動作，下方是執行後的結果。實際來看一下網站預設的程式，它在左邊定義區塊定義了一個Person類別，內含有Greet成員方法，右邊執行區塊宣告了一個Person物件並叫用Greet後將結果回傳。</p>  <p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image6_thumb.png" width="644" height="462" /></a> </p>  <p> </p>  <p>若沒有需要事先定義的程式，也可以直接撰寫執行部份的程式碼。這邊可以看到它連區域型別推斷都已經實作進去了。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1204/compilify.net_AF91/image_12.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image_thumb_5.png" width="577" height="484" /></a> </p>  <p> </p>  <p>不過像是Linq或是async這些語法就還未被實作進去。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1204/compilify.net_AF91/image_10.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image_thumb_4.png" width="577" height="484" /> </p>  <p> </p>  <p>這邊筆者試著用複雜一點的例子來測試一下，寫了一個測試空字串的程式碼片段：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:76472285-2e79-40f1-9aef-05e80b42c893" class="wlWriterSmartContent"><pre name="code" class="c#">using System.Diagnostics;
+private static string TestEmptyString(int count)
+{
+    String test;
+    Stopwatch sw = Stopwatch.StartNew();
+    for (int idx = 0; idx &lt; count; ++idx)
+    {
+        test = "";
+    }
+    sw.Stop();
+    return "EmptyString: " + sw.ElapsedMilliseconds.ToString();
+}</pre></div>
+
+<p> </p>
+
+<p>實際運行測試時，帶入1000000當作參數下去測試。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:621d0110-ce51-45e6-9e9b-4329346099fb" class="wlWriterSmartContent"><pre name="code" class="c#">return TestEmptyString(1000000);</pre></div>
+
+<p> </p>
+
+<p>運行後整個運作都還算良好，整個看起來完成度還算不錯，在寫些小程式時還滿好用的。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image9_thumb.png" width="644" height="462" /> </p>
+
+<p> </p>
+
+<p>另外它也具備存檔功能，按下上方的Save後，仔細注意網站的網址會變換，這個網址就是儲存後的網址，複製這段網址給別人，別人就可以看到你在上面所輸入的程式，可以直接運行看到運行結果，雖然不知道儲存能保留多久，但是這樣的功能對於類似在論壇上回覆這種遠距離的指導程式時，感覺特別好用。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image_thumb_6.png" width="615" height="484" /> </p>
+
+<p> </p>
+
+<p>這個服務整個測下來感覺還不錯用，美中不足的是沒有intellisense，也不能除錯，Console.WriteLine、Debug.WriteLine、Trace.WriteLine這些輸出輔助訊息的方法都無效，整個除錯上變得困難許多，從例外中也不好找到問題所在。</p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�426d-f115-49a5-92b4-3bd275ef7825\image3_thumb.png" width="644" height="462" /> </p>
+
+<p> </p>
+
+<h2> Link</h2>
+
+<ul>
+  <li>compilify.net alpha</li>
+
+  <li>Compilify——讓你在瀏覽器中編譯.NET代碼</li>
+
+  <li>Compile .NET in your browser using Compilify by Justin Rusbatch</li>
+
+  <li>Compilify / Compilify</li>
+</ul>

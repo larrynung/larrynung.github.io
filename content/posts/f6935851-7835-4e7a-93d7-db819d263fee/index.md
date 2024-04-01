@@ -1,0 +1,379 @@
+---
+title: "[C++]使用GetAdaptersAddresses API取得本地IP"
+date: "2013-11-06 12:00:00"
+description: "[C++]使用GetAdaptersAddresses API取得本地IP"
+---
+
+<p>
+	最近有個需求必須在C++中取得本地的IP，包括IPv6與IPv4兩種的IP，查來查去就只有GetAdaptersAddresses API比較合用，但是使用上卻不是很容易，這篇將之稍做整理。</p>
+<p>
+	 </p>
+<p>
+	GetAdaptersAddresses API在使用時必須先將相關的函式庫與標頭擋設定好，必須設定靜態函式庫Iphlpapi.lib與Iphlpapi.h標頭擋，像是下面這樣，靜態函式庫若有需要也可以透過專案屬性設定。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4ae800ef-dc29-4e53-a9ad-b5a59e5ef4c7" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+...
+#include &lt;iphlpapi.h&gt;
+...
+#pragma comment(lib, "IPHLPAPI.lib")</pre>
+</div>
+<p>
+	 </p>
+<p>
+	準備動作設定完成就可以使用GetAdaptersAddresses API了，但在使用前我們必須對GetAdaptersAddresses API的參數做些深入的了解，才會知道我們必須帶入哪些參數，這可以直接查閱API的函式原型：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7f666289-e646-4c7c-a9c5-81a415afb78f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+ULONG WINAPI GetAdaptersAddresses(
+  __in     ULONG Family,
+  __in     ULONG Flags,
+  __in     PVOID Reserved,
+  __inout  PIP_ADAPTER_ADDRESSES AdapterAddresses,
+  __inout  PULONG SizePointer
+);</pre>
+</div>
+<p>
+	 </p>
+<p>
+	從函式原型中我們可以看出，GetAdaptersAddresses API必須帶入五個參數，前兩個參數是我們要設定的Flag，是要IPv4還是IPv6?是不是某些裝置要被忽略?或是提供一些相關的設定，第三個參數是系統保留的參數，固定帶NULL就可以了，第四個參數是問回來的網卡資訊，是我們主要要看的部分，而最後一個參數是空間大小，會回傳告知我們必須提供多少的記憶體空間。</p>
+<p>
+	 </p>
+<p>
+	第一個參數是用來決定感興趣的是IPv4還是IPv6的資訊，它能接受的Flag有下表列的這些，若帶入的是AF_UNSPEC代表IPv4跟IPv6都想要知道，帶入AF_INET代表只對IPv4感興趣，而帶入AF_INET6則是想查閱的只有IPv6。</p>
+<table border="1" cellpadding="2" cellspacing="0" width="497">
+	<tbody>
+		<tr>
+			<td valign="top" width="136">
+				 </td>
+			<td valign="top" width="58">
+				Value</td>
+			<td valign="top" width="301">
+				Meaning</td>
+		</tr>
+		<tr>
+			<td valign="top" width="136">
+				AF_UNSPEC</td>
+			<td valign="top" width="62">
+				0</td>
+			<td valign="top" width="301">
+				Return both IPv4 and IPv6 addresses associated with adapters with IPv4 or IPv6 enabled.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="135">
+				AF_INET</td>
+			<td valign="top" width="65">
+				2</td>
+			<td valign="top" width="301">
+				Return only IPv4 addresses associated with adapters with IPv4 enabled.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="134">
+				AF_INET6</td>
+			<td valign="top" width="67">
+				23</td>
+			<td valign="top" width="301">
+				Return only IPv6 addresses associated with adapters with IPv6 enabled.</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	 </p>
+<p>
+	第二個參數可設定某些裝置要被忽略，或是提供一些相關的設定，像是可以設定忽略DNS Server的資訊等等，這邊不多做介紹，可直接參閱下表：</p>
+<table border="1" cellpadding="2" cellspacing="0" width="548">
+	<tbody>
+		<tr>
+			<td valign="top" width="292">
+				 </td>
+			<td valign="top" width="49">
+				Value</td>
+			<td valign="top" width="205">
+				Meaning</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_SKIP_UNICAST</td>
+			<td valign="top" width="49">
+				0x0001</td>
+			<td valign="top" width="205">
+				Do not return unicast addresses.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_SKIP_ANYCAST</td>
+			<td valign="top" width="49">
+				0x0002</td>
+			<td valign="top" width="205">
+				Do not return IPv6 anycast addresses.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_SKIP_MULTICAST</td>
+			<td valign="top" width="49">
+				0x0004</td>
+			<td valign="top" width="205">
+				Do not return multicast addresses.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_SKIP_DNS_SERVER</td>
+			<td valign="top" width="49">
+				0x0008</td>
+			<td valign="top" width="205">
+				Do not return addresses of DNS servers.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_PREFIX</td>
+			<td valign="top" width="49">
+				0x0010</td>
+			<td valign="top" width="205">
+				<p>
+					Return a list of IP address prefixes on this adapter. When this flag is set, IP address prefixes are returned for both IPv6 and IPv4 addresses.</p>
+				<p>
+					This flag is supported on Windows XP with SP1 and later.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_SKIP_FRIENDLY_NAME</td>
+			<td valign="top" width="49">
+				0x0020</td>
+			<td valign="top" width="205">
+				Do not return the adapter friendly name.</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_WINS_INFO</td>
+			<td valign="top" width="49">
+				0x0040</td>
+			<td valign="top" width="205">
+				<p>
+					Return addresses of Windows Internet Name Service (WINS) servers.</p>
+				<p>
+					This flag is supported on Windows Vista and later.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_GATEWAYS</td>
+			<td valign="top" width="49">
+				0x0080</td>
+			<td valign="top" width="205">
+				<p>
+					Return the addresses of default gateways.</p>
+				<p>
+					This flag is supported on Windows Vista and later.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_ALL_INTERFACES</td>
+			<td valign="top" width="49">
+				0x0100</td>
+			<td valign="top" width="205">
+				<p>
+					Return addresses for all NDIS interfaces.</p>
+				<p>
+					This flag is supported on Windows Vista and later.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_ALL_COMPARTMENTS</td>
+			<td valign="top" width="49">
+				0x0200</td>
+			<td valign="top" width="205">
+				<p>
+					Return addresses in all routing compartments.</p>
+				<p>
+					This flag is not currently supported and reserved for future use.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="292">
+				GAA_FLAG_INCLUDE_TUNNEL_BINDINGORDER</td>
+			<td valign="top" width="49">
+				0x0400</td>
+			<td valign="top" width="205">
+				Return the adapter addresses sorted in tunnel binding order. This flag is supported on Windows Vista and later.</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	 </p>
+<p>
+	在使用上通常習慣會呼叫兩次GetAdaptersAddresses API，第一次呼叫時會先將第四個參數帶NULL值，因為這次的叫用主要是要取得要多少的空間才夠存放網卡資訊，像下面這樣叫用需要的記憶體空間大小就會寫到最後一個參數。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1e3ee37e-1194-4c81-9f3a-90eb4ff21a22" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+ULONG outBufLen = 0;  
+
+GetAdaptersAddresses(AF_UNSPEC, 0, NULL, NULL, &amp;outBufLen);  </pre>
+</div>
+<p>
+	 </p>
+<p>
+	取得了所需的空間大小後，透過malloc指派足夠的記憶體，再次叫用GetAdaptersAddresses API取得網卡資訊：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e7787094-23c5-4f17-9713-1681fa1cd640" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+PIP_ADAPTER_ADDRESSES pAddresses = (IP_ADAPTER_ADDRESSES*) malloc(outBufLen);  
+
+GetAdaptersAddresses(AF_UNSPEC, GAA_FLAG_SKIP_ANYCAST, NULL, pAddresses, &amp;outBufLen);</pre>
+</div>
+<p>
+	 </p>
+<p>
+	取得了網卡資訊後，網卡資訊會是IP_ADAPTER_ADDRESSES structure</a>的型態，以Linked List的方式存放，因此在取用時必須遍尋Linked List每個元素，取出我們需要的IP位置，其中比較麻煩的就是IP位置是以<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms740507(v=vs.85).aspx" target="_blank">SOCKET_ADDRESS structure型態存放，要透過inet_ntop function轉換為字串，程式寫起來就像下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e07fd600-ffd9-445e-a232-d34eab267d32" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+	...
+	char buff[100];  
+	DWORD bufflen=100;  
+	PIP_ADAPTER_ADDRESSES pCurrAddresses	= NULL;
+	PIP_ADAPTER_UNICAST_ADDRESS pUnicast	= NULL;
+	LPSOCKADDR addr							= NULL;
+
+	pCurrAddresses = pAddresses;
+	while (pCurrAddresses) 
+	{
+		if(pCurrAddresses-&gt;OperStatus != IfOperStatusUp)
+		{
+			pCurrAddresses = pCurrAddresses-&gt;Next;
+			continue;
+		}
+
+		pUnicast = pCurrAddresses-&gt;FirstUnicastAddress;
+		while (pUnicast)
+		{				
+			addr = pUnicast-&gt;Address.lpSockaddr;
+			ZeroMemory(buff, bufflen);
+			if (addr-&gt;sa_family == AF_INET6)  
+			{
+				sockaddr_in6 *sa_in6 = (sockaddr_in6 *)addr; 
+				inet_ntop(AF_INET6, &amp;(sa_in6-&gt;sin6_addr), buff, bufflen);
+			}else
+			{
+				sockaddr_in  *sa_in = (sockaddr_in *)addr; 
+				inet_ntop(AF_INET, &amp;(sa_in-&gt;sin_addr), buff, bufflen);
+			}
+			localIPs.push_back(buff);
+			pUnicast = pUnicast-&gt;Next;
+		}
+
+		pCurrAddresses = pCurrAddresses-&gt;Next;
+	}
+
+	free(pAddresses);  
+	...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	最後附上完整的範例：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:90e859d6-738f-4ca4-974d-aa2e6cfbc3c6" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+// Test_LocalIPs.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include &lt;winsock2.h&gt;
+#include &lt;WS2tcpip.h&gt;  
+#include &lt;iphlpapi.h&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+
+// Link with Iphlpapi.lib
+#pragma comment(lib, "Ws2_32.lib")
+#pragma comment(lib, "IPHLPAPI.lib")
+
+using namespace std;
+
+vector&lt;string&gt; GetLocalIPs()
+{
+	vector&lt;string&gt; localIPs;
+	PIP_ADAPTER_ADDRESSES pAddresses = NULL;   
+	ULONG outBufLen = 0;  
+
+	GetAdaptersAddresses(AF_UNSPEC, 0, NULL, pAddresses, &amp;outBufLen);  
+
+	pAddresses = (IP_ADAPTER_ADDRESSES*) malloc(outBufLen);  
+
+	if (GetAdaptersAddresses(AF_UNSPEC, GAA_FLAG_SKIP_ANYCAST, NULL, pAddresses, &amp;outBufLen) != NO_ERROR) 
+	{
+		free(pAddresses);  
+		return localIPs;
+	}
+
+	char buff[100];  
+	DWORD bufflen=100;  
+	PIP_ADAPTER_ADDRESSES pCurrAddresses	= NULL;
+	PIP_ADAPTER_UNICAST_ADDRESS pUnicast	= NULL;
+	LPSOCKADDR addr							= NULL;
+
+	pCurrAddresses = pAddresses;
+	while (pCurrAddresses) 
+	{
+		if(pCurrAddresses-&gt;OperStatus != IfOperStatusUp)
+		{
+			pCurrAddresses = pCurrAddresses-&gt;Next;
+			continue;
+		}
+
+		pUnicast = pCurrAddresses-&gt;FirstUnicastAddress;
+		while (pUnicast)
+		{				
+			addr = pUnicast-&gt;Address.lpSockaddr;
+			ZeroMemory(buff, bufflen);
+			if (addr-&gt;sa_family == AF_INET6)  
+			{
+				sockaddr_in6 *sa_in6 = (sockaddr_in6 *)addr; 
+				inet_ntop(AF_INET6, &amp;(sa_in6-&gt;sin6_addr), buff, bufflen);
+			}else
+			{
+				sockaddr_in  *sa_in = (sockaddr_in *)addr; 
+				inet_ntop(AF_INET, &amp;(sa_in-&gt;sin_addr), buff, bufflen);
+			}
+			localIPs.push_back(buff);
+			pUnicast = pUnicast-&gt;Next;
+		}
+
+		pCurrAddresses = pCurrAddresses-&gt;Next;
+	}
+
+	free(pAddresses);  
+	return localIPs;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	vector&lt;string&gt; localIPs = GetLocalIPs();
+	for_each (localIPs.begin(), localIPs.end(), [&amp;](string ip)
+	{
+		char szTmp[255];
+		sprintf(szTmp, "%s
+", ip.c_str());
+		printf(szTmp);
+	});
+	return 0;
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行後可得到像下面這樣的結果：</p>
+<p>
+	<img alt="image" border="0" height="223" src="\images\posts6935851-7835-4e7a-93d7-db819d263fee\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="425" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		GetAdaptersAddresses function</li>
+	<li>
+		IP_ADAPTER_ADDRESSES structure</li>
+	<li>
+		IP_ADAPTER_UNICAST_ADDRESS structure</li>
+	<li>
+		SOCKET_ADDRESS structure</li>
+</ul>

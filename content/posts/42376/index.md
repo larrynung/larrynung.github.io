@@ -1,0 +1,83 @@
+---
+title: "[C++]C++ Create GUID"
+date: "2011-10-13 01:24:27"
+description: "[C++]C++ Create GUID"
+tags: [C++]
+---
+
+<p>
+	在C++中若有建立GUID的需求，可先建立GUID的物件實體，透過CoCreateGuid API填寫GUID到GUID的物件實體，再透過UuidToString API將GUID轉為字元陣列，像是下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ca2173d0-6809-46e6-9113-c958fc9e30bc" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+wstring GetGUID()
+{
+	_TUCHAR *guidStr = NULL;
+
+	GUID *pguid = new GUID;
+
+	CoCreateGuid(pguid); 
+
+	// Convert the GUID to a string
+	UuidToString(pguid, (RPC_WSTR*)&amp;guidStr);
+	delete pguid;
+	return wstring(guidStr);
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	完整的範例如下：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:84b1ae06-e14a-462a-b155-256ec2c80287" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+// ConsoleApplication5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include &lt;objbase.h&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+wstring GetGUID()
+{
+	_TUCHAR *guidStr = NULL;
+
+	GUID *pguid = new GUID;
+
+	CoCreateGuid(pguid); 
+
+	// Convert the GUID to a string
+	UuidToString(pguid, (RPC_WSTR*)&amp;guidStr);
+	delete pguid;
+	return wstring(guidStr);
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	wstring guid = GetGUID();
+	wprintf(guid.c_str());
+	return 0;
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行起來會像下面這樣：</p>
+<p>
+	<img alt="image" border="0" height="159" src="\images\posts\42376\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="529" /></p>
+<p>
+	 </p>
+<p>
+	若建置時Link不過，可以檢查一下Additional Dependencies設定，需確保Rpcrt4.lib與Ole32.lib有設定在裡面，詳細的可參閱MSDN說明。</p>
+<p>
+	<img alt="image" border="0" height="439" src="\images\posts\42376\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		CoCreateGuid function</li>
+	<li>
+		UuidToString function</li>
+</ul>
