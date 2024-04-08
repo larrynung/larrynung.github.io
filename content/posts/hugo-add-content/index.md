@@ -1,5 +1,5 @@
 +++
-title = 'Hugo Add Content'
+title = 'Hugo - Add Content'
 date = 2024-04-08T22:54:27+08:00
 tags = ['Hugo']
 +++
