@@ -1,7 +1,7 @@
 +++
 title = 'Hugo - Install Hugo on MacOS'
 date = 2024-04-06T22:59:20+08:00
-tags = [Hugo, Homebrew]
+tags = ['Hugo', 'Homebrew']
 +++
 
 Hugo 在 MacOS 下可直接透過 Homebrew 安裝。
