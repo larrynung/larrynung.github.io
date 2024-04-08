@@ -49,3 +49,8 @@ Hugo 裝完後，首先需要先建立站台。
 透過瀏覽器瀏覽 http://localhost:1313/ 即可看到 Hugo 站台運行後的樣子。
 
 ![7.png](7.png)
+
+
+Link
+====
+* [Quick start | Hugo](https://gohugo.io/getting-started/quick-start/)
