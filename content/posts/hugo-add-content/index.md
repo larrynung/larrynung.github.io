@@ -30,7 +30,7 @@ Hugo 站台建立完後可以開始為站台加入文章，透過 Hugo 的 new c
 ![5.png](5.png)
 
 
-透過瀏覽器瀏覽 http://localhost:1313/ 即可看到 Hugo 站台運行後 Hugo 文章的呈現。
+透過瀏覽器瀏覽 http://localhost:1313/ 即可看到 Hugo 站台運行後的樣子，Hugo 站台內會有剛撰寫的 Hugo 文章。
 
 ![6.png](6.png)
 
