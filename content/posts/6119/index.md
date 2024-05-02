@@ -1,8 +1,0 @@
----
-title: "[Other]quot;無法開啟此封裝quot; 微軟的Bug?!"
-date: "2008-11-28 09:31:57"
-description: "[Other]&quot;無法開啟此封裝&quot; 微軟的Bug?!"
-tags: [Other]
----
-
-<p>      這幾天剛殺了一台VAIO，由於公司無線網路只能用XP。因此把作業系統從Vista降回XP。沒想到這看似簡單的小動作卻讓我重灌了5~6次。</p><p>      這5~6次的重灌，每次灌完XP後要灌某些程式總是會彈出 "無法開啟此封裝。請確認是否為正常的Windows Installer封裝。" 對話框，試了很多方法像是重灌WindowsInstaller、用Cmd下"msiexec.exe /unregister"、檢查帳號與修改登錄檔的權限...等等，就是無法搞定。且每次重灌後該問題必會發生。而我同事用一樣的OS用一樣的Driver也都不會有我這種問題。最後切到Administrator測試無此問題，又新建個"test"帳號也無此問題，我才發現問題出在我的使用者帳號太特殊導致。因為我重灌5~6次用的帳號都是 "o`.'o"。後來重灌第7次時換個正常點的帳號就無此問題了。</p><p>      雖然找到了問題，但如果是帳號內含會出問題的特殊字元導致的話，OS不就應該在我建立帳號的時候擋掉嗎？怎麼還讓人建立帳號呢？害我為了這個問題搞了好久。So...這個故事告訴我們，使用Window不要用太特殊的帳號。</p><p>      後記:回到家中用家裡電腦建立個新的"o`.'o"帳號，卻無此問題發生。該問題可能只會發生在剛灌好XP時，XP強迫使用者建立的第一個帳號。</p><p> </p><h2><strong>相關連結</strong></h2><p>網路上的解決方法</p><ul><li>MyChat 數位男女-windows installer 錯誤</a></li><li><a target="_blank" href="http://hz-studio.com/hz/2007/07/-windows-installer.html">筆記: 解決無法使用Windows Installer的方法</a></li><li><a target="_blank" href="http://garywlee.blogspot.com/2007/03/windows-installer.html">Gary Blah! Blah! Blah!-Windows Installer死掉了嗎？</a></li><li><a target="_blank" href="http://www.ii.gov.cn/news/zsyd/2006227100041.htm">关于windows installer出错的解决方案</a></li></ul><p>WindowsInstaller</p><ul><li><a target="_blank" href="http://www.microsoft.com/downloads/details.aspx?displaylang=zh-tw&amp;FamilyID=889482fc-5f56-4a38-b838-de776fd4138c">WindowsInstaller 3.1</a></li><li><a target="_blank" href="http://www.microsoft.com/downloads/details.aspx?familyid=5A58B56F-60B6-4412-95B9-54D056D6F9F4&amp;displaylang=zh-tw">WindowsInstaller 4.5</li></ul>

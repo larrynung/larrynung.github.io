@@ -1,8 +1,0 @@
----
-title: "[Other]襯線體(serif) V.S 無襯線體(sans serif)"
-date: "2009-12-23 09:59:28"
-description: "[Other]襯線體(serif) V.S 無襯線體(sans serif)"
-tags: [Other]
----
-
-<p />  <p>字體依襯線的有無，可區分為有襯線體與無襯線體。所謂的襯線，指的是字形筆畫末端的裝飾細節部分。就像Wiki上面的圖所描述的：</p>  <p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12633\image_thumb.png" width="340" height="194" /></a>  </p>  <p> </p>  <h2>襯線體 V.S 無襯線體</h2>  <p><a href="http://files.dotblogs.com.tw/larrynung/0912/OtherV.S_13954/image_6.png" rel="lightbox"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\12633\image_thumb_2.png" width="644" height="428" /></a>  </p>  <p> </p>  <h2>Link</h2>  <ul>   <li><a href="http://zh.wikipedia.org/zh-tw/%E8%A1%AC%E7%BA%BF%E4%BD%93" target="_blank">襯線體-Wiki</a> </li>    <li><a href="http://zh.wikipedia.org/zh-tw/%E6%97%A0%E8%A1%AC%E7%BA%BF%E4%BD%93" target="_blank">無襯線體-Wiki</a> </li>    <li><a href="http://tdesign.tw/serif/" target="_blank">[字體]襯線？無襯線？，serif and sans-serif</a> </li>    <li><a href="http://jaichang2008.pixnet.net/blog/post/22688877" target="_blank">為您的網站選個好字型 </li> </ul>

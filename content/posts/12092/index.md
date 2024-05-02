@@ -1,8 +1,0 @@
----
-title: "[Other]Office 2007 一次搞定包"
-date: "2009-11-21 12:50:16"
-description: "[Other]Office 2007 一次搞定包"
-tags: [Other]
----
-
-<p>今天看到微軟釋出的好東西「Office 2007 一次搞定包</a>」。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0911/Office2007_4A8/image_2.png" rel="lightbox"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\12092\image_thumb.png" width="644" height="379" /></a></p>  <p> </p>  <p>說穿了其實就是ㄧ些Office2007的資源，像是範本、教學、相容性套件、密技等等。這邊微軟通通幫你整理的好好的。</p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/0911/Office2007_4A8/image_4.png" rel="lightbox"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\12092\image_thumb_1.png" width="631" height="484" /></a> </p>  <p> </p>  <p>有興趣的可以到官方網站下載檔案，或是填寫申請表取得光碟。</p>  <p> </p>  <h2>Link</h2>  <ul>   <li><a href="http://www.microsoft.com/taiwan/promo/officeonestop/default.htm" target="_blank">Office 2007 一次搞定包</li> </ul>

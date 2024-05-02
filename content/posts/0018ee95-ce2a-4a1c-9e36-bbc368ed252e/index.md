@@ -1,8 +1,0 @@
----
-title: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
-date: "2013-11-06 12:00:00"
-description: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
-tags: [CSharp]
----
-
-<p>要使用DropNet取得DropBox帳戶的資訊，我們可以在做完DropBox認證後叫用DropNetClient.AccountInfo函式，該函式會回傳DropNet.Models.AccountInfo物件，我們可以從物件中取得像是使用者名稱、使用者ID、使用者從哪個國家來的、可以使用的Quota有多少、以及邀請別人加入的專屬註冊位置。</p>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts8ee95-ce2a-4a1c-9e36-bbc368ed252e\image_thumb_1.png" width="620" height="199" /></a></p>  <p> </p>  <p>Quota的部份比較要注意，其值是以Byte為單位，quota是整個DropBox可以使用的總量，shared是分享目錄佔用的大小，normal則是除了分享目錄外其它檔案與目錄所佔用的大小。更精確的定義可以查閱<a href="https://www.dropbox.com/developers/reference/api" target="_blank">/account/info</a>這個Dropbox API。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1208/95ade3da0caf_C192/image_6.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts8ee95-ce2a-4a1c-9e36-bbc368ed252e\image_thumb_2.png" width="631" height="219" /> </p>  <p> </p>  <p>最後一提，依筆者個人的經驗若是將這些Quota值跟Dropbox目錄做比對是怎樣也對不起來，會有一點點的差距。</p>

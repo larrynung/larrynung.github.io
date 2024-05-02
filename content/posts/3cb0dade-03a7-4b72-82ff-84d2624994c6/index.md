@@ -1,7 +1,0 @@
----
-title: "Process Pro Extension v1.3"
-date: "2013-11-06 12:00:00"
-description: "Process Pro Extension v1.3"
----
-
-<p>Process Pro Extension</a> v1.3 Change log：</p>  <ul>   <li>Apply async binding</li>    <li>Adjust UI layout</li>    <li>Quick attach support</li>    <li>Save filter's keyword</li> </ul>  <p> </p>  <h3>Apply async binding</h3>  <p>之前程式在啟動時有些卡卡的，這版改用async binding方式去繫結Process資料，嘗試去改善這問題。</p>  <p> </p>  <h3>Adjust UI layout</h3>  <p>之前的UI因為功能列上的功能有的會跟選取的Process有關，有的則是跟下方選取的Process無關，會有讓人不知所措的感覺，這版針對這下去做了一下調整，將兩類功能做個區隔。</p>  <p> </p>  <h3>Quick attach support</h3>  <p>網頁開發人員常需要Attach IIS，這版提供簡易的快速Attach方式。</p>  <p> </p>  <h3>Save filter's keyword</h3>  <p>過濾的字串這版可以會用設定檔將它保存起來，下次啟動時自動帶入，減少重複鍵入相同的關鍵字。</p>  <p> </p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1305/ProcessProExtensionv1.3_B3C4/image_4.png"><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\3cb0dade-03a7-4b72-82ff-84d2624994c6\image_thumb_1.png" width="644" height="447" /></p>

@@ -1,8 +1,0 @@
----
-title: "[.NET Concept]MDI子視窗放大時的注意事項(二)"
-date: "2009-04-06 12:05:08"
-description: "[.NET Concept]MDI子視窗放大時的注意事項(二)"
-tags: [.NET Concept]
----
-
-<p>不知道大家有沒有碰過當把MDI子表單放大時，Menu選單會變得如下圖一樣怪怪的現象。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\7874\image_thumb.png" /></a></p><p> </p><p>會發生如上圖這樣的現象，其實是因為Form.MainMenuStrip屬性沒設定所造成的。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0904/MDI_174C/image_6.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="285" height="155" src="\images\posts\7874\image_thumb_2.png" /></a></p><p> </p><p><a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/system.windows.forms.form.mainmenustrip(VS.80).aspx">MSDN</a>上對該屬性的說明如下：</p><p><a href="http://files.dotblogs.com.tw/larrynung/0904/MDI_174C/image4.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="293" height="99" src="\images\posts\7874\image4_thumb.png" /></p><p> </p><p>可能很都人在開發時都不知道，也從沒設定過這個屬性，這多半是因為在Visual Studio中，當把選單元件放到表單時，Visual Studio會很聰明的幫我們把Form.MainMenuStrip這個屬性給設定上去的緣故。因此在一般的情況下我們是不需要額外做此設定的。</p><p>但是這並不代表這個問題就不會發生，也不代表我們不需要注意這點。因為只要當你不是第一次加入選單，Visual Studio就不會幫你設定該屬性了。</p><p> </p><h2>問題重現步驟</h2><p>若有興趣重現該問題，可照下列操作步驟：</p><p><strong>Step1:在MDI主表單放入MenuStrip與ToolStrip</strong></p><p>此時若切到主表單的屬性視窗，可看到MainMenuStrip已被自動設定。執行後子表單的放大動作正常。</p><p> </p><p><strong>Step2:把MenuStrip殺掉</strong></p><p>此時若切到主表單的屬性視窗，可看到MainMenuStrip已被清空。</p><p> </p><p><strong>Step3:加入MenuStrip</strong></p><p>此時若切到主表單的屬性視窗，可看到MainMenuStrip仍保持清空狀態。執行後放大子表單就會看到該問題發生。</p>

@@ -1,8 +1,0 @@
----
-title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Enhanced multi-monitor support"
-date: "2011-09-20 12:55:33"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Enhanced multi-monitor support"
-tags: [Visual Studio]
----
-
-<p>多螢幕開發已經試種趨勢，Visual Studio 2010時微軟就已針對多螢幕支援方面做了一些改進，在Visual Studio 2011 Preview New Feature在這部分又做了一些調整。Visual Studio 2011 Preview New Feature跟Visual Studio 2010一樣，能將編輯視窗與Tool Window脫離主視窗後合併放置另外一個螢幕，但卻保有Tool Window的釘選/隱藏功能。另外新版開發環境的方案總管能多重開啟，能讓每個螢幕看起來都有一個完整的開發環境。 </p>  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\36863\image_thumb.png" width="644" height="368" /></a></p>  <p> </p>  <p>此外Visual Studio 2011 Preview也提供了File Preview功能，該功能能認方案總管最後附著的編輯區，因此每個螢幕的編輯區附著上方案總管後，皆能夠有各自的File Preview，相當的好用。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1109/VisualStudioVisualStudio2011PreviewNewFe_B5D7/image_4.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\36863\image_thumb_1.png" width="644" height="396" /> </p>  <p> </p>  <p>若是要將視窗還原，可以在視窗上面按下Ctrl按鍵，並用滑鼠連點。這個功能能將視窗還原到上次的位置，若本來視窗是從主視窗拉出，能夠過此動作將整個視窗快速的放回主視窗本來的位置。</p>
