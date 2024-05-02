@@ -1,0 +1,123 @@
+---
+title: "Tkinter's grid geometry manage"
+date: "2013-11-06 12:00:00"
+description: "Tkinter's grid geometry manage"
+tags: [Python]
+---
+
+<p>
+	Tkinter在做版面配置有三種方式，grid是其中一種。</p>
+<p>
+	 </p>
+<p>
+	使用grid來做版面配置，我們可以指定元件的要放在哪一行、哪一列、占用幾行、占用幾列...等。</p>
+<p>
+	 </p>
+<p>
+	grid方法可以接受column、columnspan、row 、rowspan 、padx、pady、ipadx、ipady、sticky...等參數。</p>
+<p>
+	 </p>
+<p>
+	column、columnspan、row 、rowspan用來設定元件要放在Grid的哪行哪列，以及要占用的行列數。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:bdc0246f-eff4-4856-bcf8-2dc99ae177f4" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+...
+Entry(form).grid(row=0, column=0)
+Entry(form).grid(row=0, column=1, rowspan=2)
+Entry(form).grid(row=1, column=0)
+Entry(form).grid(row=2, column=0, columnspan=2)
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	sticky可設定元件要怎樣對齊，若是要靠左對齊可以設定W、靠右對齊可以設定E、靠上對齊設定N、靠下對齊設定S。要讓元件左右伸展，可設定WE；要讓元件上下左右都可以伸展，則設定NEWS。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3ecf4e90-ee57-4b3e-b684-4be037de1544" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+...
+Entry(form).grid(row=0, sticky=W+E)
+Entry(form).grid(row=1, sticky="WE")
+Entry(form).grid(row=2, sticky="NEWS")
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	padx、pady、ipadx、ipady跟我們一般認知的margin與padding沒什麼兩樣，一個是外部的邊界，一個是內部的邊界(也可參閱筆者Tkinter's pack geometry manager這篇的說明)。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ecd0d2e8-13a7-4219-8783-aea1fc8a466d" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+...
+Button(form, text="GO").grid(row=2, column=0, columnspan=2, padx=5, pady=5, sticky=W+E+S+N)
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	grid在使用上可以不用是先宣告行列數，只要呼叫grid時帶入行列，Tkinter就會自動幫我們長出。預設長出的欄位是不具縮放功能的，因此我們在調整視窗時，欄位是不會跟著縮放的。如要進行欄位縮放的調整，我們可以透過TK.columnconfigure與TK.rowconfigure這兩個方法下去設定，帶入對應的行列數以及weight值就可以了，weight值為1代表可進行縮放，反之則否。</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:102bf032-b0b3-4f7b-9238-85d64934a1f7" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+...
+form = Tk()
+...
+form.columnconfigure(0, weight=0)
+form.columnconfigure(1, weight=1)
+form.rowconfigure(0, weight=0)
+form.rowconfigure(1, weight=0)
+form.rowconfigure(2, weight=1)
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	最後附上完整的測試範例：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a0ab88bb-3179-4f14-be8e-7586592abdcb" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+from Tkinter import *
+    
+form = Tk()
+
+form.columnconfigure(0, weight=0)
+form.columnconfigure(1, weight=1)
+form.rowconfigure(0, weight=0)
+form.rowconfigure(1, weight=0)
+form.rowconfigure(2, weight=1)
+
+
+Label(form, text="First").grid(row=0, sticky=W)
+Label(form, text="Second").grid(row=1, sticky=W)
+
+Entry(form).grid(row=0, column=1, sticky=W+E)
+Entry(form).grid(row=1, column=1, sticky=W+E)
+
+Button(form, text="GO").grid(row=2, column=0, columnspan=2, padx=5, pady=5, sticky=W+E+S+N)
+
+form.mainloop()</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行的結果如下：</p>
+<p>
+	<img alt="image" border="0" height="121" src="\images\posts\41f12d29-128f-4377-a12b-daa9fdf1a35d\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="213" /></p>
+<p>
+	 </p>
+<p>
+	前面Label顯示的字樣會靠左對其，右側輸入框的寬度會填滿剩下的空間。下方的按鈕四周會留個5單位，且會占滿下方剩餘的空間。</p>
+<p>
+	<img alt="image" border="0" height="216" src="\images\posts\41f12d29-128f-4377-a12b-daa9fdf1a35d\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="296" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Layout Managers / Geometry Manager</li>
+	<li>
+		The Tkinter Grid Geometry Manager</li>
+	<li>
+		Grid layout manager demonstration.</li>
+	<li>
+		Tkinter Geometry Managers</li>
+</ul>

@@ -1,0 +1,42 @@
+---
+title: "[Visual Studio][C++]使用/showIncludes編譯器選項查閱Header Include的狀況"
+date: "2011-11-05 11:21:59"
+description: "[Visual Studio][C++]使用/showIncludes編譯器選項查閱Header Include的狀況"
+tags: [Visual Studio,C++]
+---
+
+<p>
+	C++程式寫到後面，程式越寫越大，開發人員常會無法掌握每個Header實際Include的狀態，一不小心就會發生Redefine之類的錯誤。這時候我們可以開啟Visual Studio，打開專案屬性設定對話框，切至[Configuratio Properties / C/C++ / Advanced]頁面，將[Show Includes]選項設為Yes (/showIncludes)。</p>
+<p>
+	<img alt="image" border="0" height="458" src="\images\posts\52278\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	設定完後編譯，輸出視窗就會在編譯時顯示Header Include的狀態，像是下面這樣：</p>
+<p>
+	<img alt="image" border="0" height="326" src="\images\posts\52278\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	需注意到的是，顯示出來的Header Include狀態，若巢狀Include則會在前面空一個空格，像是下面這個顯示的就是afxwin.h內有Include afx.h，afx.h內又有Include new.h。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7e8b65b9-ebd9-4136-84e1-076fd3265226" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+1&gt;  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VCtlmfc\includefxwin.h
+1&gt;  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 11.0\VCtlmfc\includefx.h
+1&gt;  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include
+ew.h</pre>
+</div>
+<p>
+	 </p>
+<p>
+	這個簡易的內建功能雖然不是很強大，但是對於在不裝額外工具去了解或是調整Header Include的順序，甚至是解決Redefine之類的問題，還滿實用的。</p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		/showIncludes (列示包含檔)</li>
+	<li>
+		VC++ Tip: Show Includes</li>
+</ul>

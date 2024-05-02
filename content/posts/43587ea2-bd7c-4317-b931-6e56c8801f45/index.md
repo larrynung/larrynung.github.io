@@ -1,0 +1,387 @@
+---
+title: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
+date: "2013-11-06 12:00:00"
+description: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
+tags: [CSharp]
+---
+
+<p>有使用過.NET程式做視窗訊息的接收的應該都會知道，好像沒有比較直接的方法去設定視窗的ClassName。就算去覆寫Form.CreateParams也不太行，若是指定的ClassName沒有註冊過，運行起來會丟出例外。</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f834c729-47c2-4fa9-a02c-1222d59288e7" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                base.CreateParams.ClassName = "test";
+                return base.CreateParams;
+            }
+        }
+    }</pre></div>
+
+<p> </p>
+
+<p>若是指定的是有註冊過的ClassName，像是Button之類的。</p>
+
+<p>
+  </p><div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:23d94ce2-6fc3-4ffa-a273-d32833e5d9d3" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">        ...
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                base.CreateParams.ClassName = "Button";
+                return base.CreateParams;
+            }
+        }
+        ...</pre></div>
+
+
+<p> </p>
+
+<p>運行起來視窗的ClassName也是不太對勁。</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\43587ea2-bd7c-4317-b931-6e56c8801f45\image_thumb_1.png" width="644" height="408" /> </p>
+
+<p> </p>
+
+<p>因此在.NET程式中做視窗訊息的傳送，多半都還是使用視窗標題去找尋視窗的Handle，這樣就衍生出視窗標題會有重覆、或是要隱藏接收訊息的視窗、隱藏的視窗會閃爍或突然出現之類的問題。</p>
+
+<p> </p>
+
+<p>為了解決這樣的問題我們得使用比較低階的方法，去跟作業系統註冊視窗的名稱，然後建立視窗出來。這邊筆者稍微整理了一個簡單的MessageReceiver類別以方便使用：</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a110bacd-ed84-4248-9332-f6ae17fc675e" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">	public class MessageReceiver : IDisposable
+    {
+        #region Struct
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        struct WNDCLASS
+        {
+            public uint style;
+            public WndProcDelegate lpfnWndProc;
+            public int cbClsExtra;
+            public int cbWndExtra;
+            public IntPtr hInstance;
+            public IntPtr hIcon;
+            public IntPtr hCursor;
+            public IntPtr hbrBackground;
+            [MarshalAs(UnmanagedType.LPWStr)]
+            public string lpszMenuName;
+            [MarshalAs(UnmanagedType.LPWStr)]
+            public string lpszClassName;
+        }
+        #endregion
+
+
+        #region Delegate
+        delegate IntPtr WndProcDelegate(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam); 
+        #endregion
+
+
+        #region DllImport
+        /// &lt;summary&gt;
+        /// Registers the class W.
+        /// &lt;/summary&gt;
+        /// &lt;param name="lpWndClass"&gt;The lp WND class.&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern UInt16 RegisterClassW(
+            [In] ref WNDCLASS lpWndClass
+        );
+
+        /// &lt;summary&gt;
+        /// Creates the window ex W.
+        /// &lt;/summary&gt;
+        /// &lt;param name="dwExStyle"&gt;The dw ex style.&lt;/param&gt;
+        /// &lt;param name="lpClassName"&gt;Name of the lp class.&lt;/param&gt;
+        /// &lt;param name="lpWindowName"&gt;Name of the lp window.&lt;/param&gt;
+        /// &lt;param name="dwStyle"&gt;The dw style.&lt;/param&gt;
+        /// &lt;param name="x"&gt;The x.&lt;/param&gt;
+        /// &lt;param name="y"&gt;The y.&lt;/param&gt;
+        /// &lt;param name="nWidth"&gt;Width of the n.&lt;/param&gt;
+        /// &lt;param name="nHeight"&gt;Height of the n.&lt;/param&gt;
+        /// &lt;param name="hWndParent"&gt;The h WND parent.&lt;/param&gt;
+        /// &lt;param name="hMenu"&gt;The h menu.&lt;/param&gt;
+        /// &lt;param name="hInstance"&gt;The h instance.&lt;/param&gt;
+        /// &lt;param name="lpParam"&gt;The lp param.&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr CreateWindowExW(
+           UInt32 dwExStyle,
+           [MarshalAs(UnmanagedType.LPWStr)]
+       string lpClassName,
+           [MarshalAs(UnmanagedType.LPWStr)]
+       string lpWindowName,
+           UInt32 dwStyle,
+           Int32 x,
+           Int32 y,
+           Int32 nWidth,
+           Int32 nHeight,
+           IntPtr hWndParent,
+           IntPtr hMenu,
+           IntPtr hInstance,
+           IntPtr lpParam
+        );
+
+        /// &lt;summary&gt;
+        /// Defs the window proc W.
+        /// &lt;/summary&gt;
+        /// &lt;param name="hWnd"&gt;The h WND.&lt;/param&gt;
+        /// &lt;param name="msg"&gt;The MSG.&lt;/param&gt;
+        /// &lt;param name="wParam"&gt;The w param.&lt;/param&gt;
+        /// &lt;param name="lParam"&gt;The l param.&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr DefWindowProcW(
+            IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam
+        );
+
+        /// &lt;summary&gt;
+        /// Destroys the window.
+        /// &lt;/summary&gt;
+        /// &lt;param name="hWnd"&gt;The h WND.&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool DestroyWindow(
+            IntPtr hWnd
+        );
+        #endregion
+
+
+        #region Const
+        private const int ERROR_CLASS_ALREADY_EXISTS = 1410; 
+        #endregion
+
+
+        #region Static Var
+        private static Dictionary&lt;IntPtr, MessageReceiver&gt; _receiverPool;
+        #endregion
+
+
+        #region Private Static Property
+        /// &lt;summary&gt;
+        /// Gets the m_ receiver pool.
+        /// &lt;/summary&gt;
+        /// &lt;value&gt;
+        /// The m_ receiver pool.
+        /// &lt;/value&gt;
+        public static Dictionary&lt;IntPtr, MessageReceiver&gt; m_ReceiverPool 
+        {
+            get
+            {
+                return _receiverPool ?? (_receiverPool = new Dictionary&lt;IntPtr, MessageReceiver&gt;());
+            }
+        }
+        #endregion
+
+
+        #region Private Property
+        /// &lt;summary&gt;
+        /// Gets or sets a value indicating whether [m_ disposed].
+        /// &lt;/summary&gt;
+        /// &lt;value&gt;
+        ///   &lt;c&gt;true&lt;/c&gt; if [m_ disposed]; otherwise, &lt;c&gt;false&lt;/c&gt;.
+        /// &lt;/value&gt;
+        private bool m_Disposed { get; set; }
+
+        /// &lt;summary&gt;
+        /// Gets or sets the M_HWND.
+        /// &lt;/summary&gt;
+        /// &lt;value&gt;
+        /// The M_HWND.
+        /// &lt;/value&gt;
+        private IntPtr m_Hwnd { get; set; }
+        #endregion
+
+        #region Event
+        public event EventHandler&lt;MessageEventArgs&gt; WndProc; 
+        #endregion
+
+
+        #region Constructor
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the &lt;see cref="MessageReceiver" /&gt; class.
+        /// &lt;/summary&gt;
+        /// &lt;param name="className"&gt;Name of the class.&lt;/param&gt;
+        /// &lt;param name="title"&gt;The title.&lt;/param&gt;
+        /// &lt;exception cref="System.Exception"&gt;Could not register window class&lt;/exception&gt;
+        public MessageReceiver(string className, string title)
+        {
+            if (string.IsNullOrEmpty(className))
+                className = Guid.NewGuid().ToString();
+
+            // Create WNDCLASS
+            var wndClass = new WNDCLASS() 
+            {
+                lpszClassName = className,
+                lpfnWndProc = CustomWndProc
+            };
+
+
+            UInt16 class_atom = RegisterClassW(ref wndClass);
+
+            int last_error = Marshal.GetLastWin32Error();
+
+            if (class_atom == 0 &amp;&amp; last_error != ERROR_CLASS_ALREADY_EXISTS)
+            {
+                throw new System.Exception("Could not register window class");
+            }
+
+            // Create window
+            m_Hwnd = CreateWindowExW(
+                0,
+                className,
+                title,
+                0,
+                0,
+                0,
+                0,
+                0,
+                IntPtr.Zero,
+                IntPtr.Zero,
+                IntPtr.Zero,
+                IntPtr.Zero
+            );
+
+            if (m_Hwnd == IntPtr.Zero)
+                return;
+
+            m_ReceiverPool[m_Hwnd] = this;
+        }
+        #endregion
+
+
+        #region Private Static Method
+        /// &lt;summary&gt;
+        /// Customs the WND proc.
+        /// &lt;/summary&gt;
+        /// &lt;param name="hWnd"&gt;The h WND.&lt;/param&gt;
+        /// &lt;param name="msg"&gt;The MSG.&lt;/param&gt;
+        /// &lt;param name="wParam"&gt;The w param.&lt;/param&gt;
+        /// &lt;param name="lParam"&gt;The l param.&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        private static IntPtr CustomWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        {
+            if (m_ReceiverPool.ContainsKey(hWnd))
+                m_ReceiverPool[hWnd].OnWndProc(new MessageEventArgs(msg, wParam, lParam));
+
+            return DefWindowProcW(hWnd, msg, wParam, lParam);
+        }
+        #endregion
+
+
+        #region Private Method
+        private void Dispose(bool disposing)
+        {
+            if (!m_Disposed)
+            {
+                if (disposing)
+                {
+                    // Dispose managed resources
+                }
+
+                // Dispose unmanaged resources
+                if (m_Hwnd != IntPtr.Zero)
+                {
+                    m_ReceiverPool.Remove(m_Hwnd);
+                    DestroyWindow(m_Hwnd);
+                    m_Hwnd = IntPtr.Zero;
+                }
+                m_Disposed = true;
+            }
+        }
+        #endregion
+
+
+        #region Protected Method
+        /// &lt;summary&gt;
+        /// Raises the &lt;see cref="E:WndProc" /&gt; event.
+        /// &lt;/summary&gt;
+        /// &lt;param name="e"&gt;The &lt;see cref="MessageEventArgs" /&gt; instance containing the event data.&lt;/param&gt;
+        protected void OnWndProc(MessageEventArgs e)
+        {
+            if (WndProc == null)
+                return;
+            WndProc(this, e);
+        }
+        #endregion
+
+
+        #region Public Method
+        /// &lt;summary&gt;
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// &lt;/summary&gt;
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
+	}</pre></div>
+
+<p> </p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:be694e66-5164-405f-872c-837d7b2d0bd8" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">    public class MessageEventArgs : EventArgs
+    {
+        #region Property
+        public uint Message { get; set; }
+        public IntPtr wParam { get; set; }
+        public IntPtr lParam { get; set; }
+        #endregion
+
+        #region Constructor
+        public MessageEventArgs(uint message, IntPtr wparam, IntPtr lparam)
+        {
+            Message = message;
+            wParam = wparam;
+            lParam = lparam;
+        }
+        #endregion
+    }</pre></div>
+
+<p> </p>
+
+<p>使用上就只要帶入視窗標題與視窗的ClassName去建立出物件實體，然後繫結事件下去處理就可以了，像是下面這段程式碼，筆者建立了MessageReceiver類別，並用FindWindow透過ClassName找尋出MessageReceiver，然後發送個簡單的訊息給它。</p>
+
+<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:62eddeb0-d105-46a2-ac0d-bb6c2f44b1cf" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">    public partial class Form1 : Form
+    {
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+
+        MessageReceiver m_receiver = new MessageReceiver("testClassName", "testWindowName");
+        public Form1()
+        {
+            InitializeComponent();
+
+            m_receiver.WndProc += m_receiver_WndProc;
+        }
+
+        void m_receiver_WndProc(object sender, MessageEventArgs e)
+        {
+            if ((int)e.Message == 0x401)
+            {
+                listBox1.Items.Add("Received Message: 0x401");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var handle = FindWindow("testClassName", null);
+
+            if (handle == IntPtr.Zero)
+                return;
+
+            SendMessage(handle, 0x401, IntPtr.Zero, IntPtr.Zero);
+        }
+    }</pre></div>
+
+<p> </p>
+
+<p>運行起來可以看到我們可以透過指定ClassName的方式去傳送訊息了。</p>
+
+<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\43587ea2-bd7c-4317-b931-6e56c8801f45\image_thumb.png" width="359" height="248" /></p>

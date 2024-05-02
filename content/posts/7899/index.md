@@ -1,0 +1,73 @@
+---
+title: "[Design Pattern]Strategy模式"
+date: "2009-04-07 12:50:05"
+description: "[Design Pattern]Strategy模式"
+tags: [Design Pattern]
+---
+
+<h2>
+	<img alt="image" border="0" height="205" src="\images\posts\7899\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="424" /></h2>
+<h2>
+	字面意思</h2>
+<p>
+	strategy [ˈstrætidʒi]</p>
+<p>
+	n.戰略，策略</p>
+<p>
+	 </p>
+<h2>
+	意圖</h2>
+<ul>
+	<li>
+		根據情況的不同，採用不同的演算法則。</li>
+	<li>
+		使演算法可獨立於使用它的客戶而變化。</li>
+	<li>
+		定義一系列的演算法，把它們一個個封裝起來，並使它們可相互替換。</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	口訣</h2>
+<p>
+	把演算法則整個換掉。</p>
+<p>
+	 </p>
+<h2>
+	問題</h2>
+<p>
+	需要依客戶或是數據的不同採用不同的演算法則。</p>
+<p>
+	 </p>
+<h2>
+	效果</h2>
+<ul>
+	<li>
+		定義了一系列的演算法則。</li>
+	<li>
+		可不使用Switch或判斷陳述式。</li>
+	<li>
+		必須以相同的方式叫用所有的演算法。</li>
+	<li>
+		必須擁有相同的接口。</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	實現方法</h2>
+<ol>
+	<li>
+		定義一個抽象類。</li>
+	<li>
+		每個繼承該抽象類的子類別需按需求實現演算法。</li>
+</ol>
+<p>
+	 </p>
+<h2>
+	相關連結</h2>
+<ul>
+	<li>
+		Wiki-Strategy Pattern</li>
+</ul>
+<p>
+	 <img alt="image" border="0" height="531" src="\images\posts\7899\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="537" /></p>

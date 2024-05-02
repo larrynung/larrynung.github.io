@@ -1,0 +1,62 @@
+---
+title: ".NET 4.0 New Feature - String.Concat"
+date: "2010-11-23 12:26:01"
+description: ".NET 4.0 New Feature - String.Concat"
+tags: [CSharp]
+---
+
+<p>
+	.NET Framework 4.0新增了兩個String.Concat的多載函式Concat&lt;T&gt;(IEnumerable&lt;T&gt;)</a>、與<a href="http://msdn.microsoft.com/zh-tw/library/dd784338.aspx" target="_blank">Concat(IEnumerable&lt;String&gt;)。</p>
+<p>
+	<img alt="image" border="0" height="553" src="\images\posts\19652\image_thumb.png" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" width="454" /></p>
+<p>
+	 </p>
+<p>
+	這兩個新的多載函式跟String.Join的新多載函式類似，能幫我們串連IEnumerable集合中的元素，不必預先將元素轉換為字串後再處理，同時也支援更多的集合類型。</p>
+<p>
+	 </p>
+<p>
+	完整範例如下：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c7fc84c9-aa60-4643-80cb-2f40067b7071" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
+	<pre class="c#" name="code">
+	using System;
+using System.Collections.Generic;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String[] stringCollection = { "123", "456", "789" };
+            int[] intCollection = { 123, 456, 789 };
+            Object[] objCollection = { 123, "456", 789.0f };
+            float[] floatCollection = { 123.0f, 456.0f, 789.0f };
+
+            ShowValue&lt;String&gt;("stringCollection", stringCollection);
+            ShowValue&lt;int&gt;("intCollection", intCollection);
+            ShowValue&lt;Object&gt;("objCollection", objCollection);
+            ShowValue&lt;float&gt;("floatCollection", floatCollection);
+        }
+
+        static void ShowValue&lt;T&gt;(string title, IEnumerable&lt;T&gt; values)
+        {
+            Console.WriteLine("{0}: {1}", title, string.Concat&lt;T&gt;(values));
+        }
+    }
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行結果如下：</p>
+<p>
+	<img alt="image" border="0" height="155" src="\images\posts\19652\image_thumb_1.png" style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" width="321" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		String.Concat 方法</li>
+</ul>

@@ -1,0 +1,53 @@
+---
+title: "[Web]tryGit - 簡易又實用的Git免費教學課程"
+date: "2013-11-06 12:00:00"
+description: "[Web]tryGit - 簡易又實用的Git免費教學課程"
+tags: [Git]
+---
+
+<p>
+	今天筆者在網路上看到tryGit這個Git的免費教學課程，試玩了一下覺得十分的實用，簡單對此做個紀錄與介紹，希望能讓更多有心學習Git的同好。</p>
+<p>
+	 </p>
+<p>
+	tryGit這個免費教學課程它的課程內容與介紹如下，課程內容大概是教Init、Commit、Diff、Merge、Remote這些指令，以及GitHub的使用。怎樣開始使用Git、怎樣送交、檢查差異、以及合併分支，在這個教學課程都有介紹到，上完大致上就能用Git做基本的版控了。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="506" /></p>
+<p>
+	 </p>
+<p>
+	它的課程呈現十分的有趣，上面會看到一排貓咪，每個貓咪代表一個課程，可由上方那排得知目前課程的進度。然後貓咪列下面是課程的內容，它會說明現在這堂課要做些什麼，再下來是我們這堂課要學的指令(這邊指的是圖中的git init按鈕)，指令下方的大框框是Git指令輸入框，我們可在這帶入我們要輸入的Git命令，就跟Git中的Git Bash一樣(不是很了的把它想成Git的主控台或是命令列模式就好了)，最下面的框框則是用來表示儲存空間，可從這邊看到我們的儲存空間內有什麼樣的資料。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb_2.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="630" /></p>
+<p>
+	 </p>
+<p>
+	以1.1這個課程為例，它的目的在於教我們怎樣開始使用Git控管，首先我們必需要下git init的指令做些初始的動作，因此這邊在中間這個框框中輸入git init，懶得輸入的也可以直接點選上方的指令按鈕，指令輸入後按下Enter繼續。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb_3.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="630" /></p>
+<p>
+	 </p>
+<p>
+	按下Enter後我們可以看到課程進入了1.2，注意到這邊最下面的檔案儲存區的框框，我們可以看到多個名為.git的目錄，這就是Git版控它存放資料的目錄，所以透過1.1這個課程我們知道了git init指令可以幫我們初始Git版控，並在儲存區放一個.git目錄，用以存放版控的資料。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb_4.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="630" /></p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb_5.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="630" /></p>
+<p>
+	 </p>
+<p>
+	回到課程1.2，這個課程在於教我們怎樣檢查當下是否有檔案有變動需要送交，指令是git statua，這邊一樣鍵入指令後按下Enter。若是有檔案有變動就會在git status指令的回應中看到，你也可以試著鍵入與這課程無關的Git指令，可以看到它都能正確的Work，可見它內部一定是有個虛擬的環境在背後運作。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts1810d6f-04a3-4df9-a5d5-71f814e82de7\image_thumb_6.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="630" /></p>
+<p>
+	 </p>
+<p>
+	介紹到這邊，相信大家應該都大概了解它的介面組成，也都會操作tryGit了，只要照著提示操作，注意它回應的訊息與檔案儲存區的變化，相信你也能在15分鐘學會Git的基本操作。</p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		tryGit</li>
+</ul>

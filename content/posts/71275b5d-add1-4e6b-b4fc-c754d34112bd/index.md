@@ -1,0 +1,46 @@
+---
+title: "Run guestbook sample Google App Engine Launcher built-in"
+date: "2013-11-06 12:00:00"
+description: "Run guestbook sample Google App Engine Launcher built-in"
+---
+
+<p>
+	Google App Engine Launcher內建有幾個範例，在剛入門時可以跑起來玩玩。</p>
+<p>
+	 </p>
+<p>
+	以內建的留言版範例來說，我們可在Google App Engine Launcher開啟後，透過滑鼠點擊選取[Help/Demos/Python/guestbook]選單選項</p>
+<p>
+	<img alt="Image(35)" border="0" height="412" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\Image(35)_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="578" /></p>
+<p>
+	 </p>
+<p>
+	點選後會彈出對話框提示該範例程式會存放到我的文件下，點選確定按鈕繼續。</p>
+<p>
+	<img alt="Image(36)" border="0" height="412" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\Image(36)_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="579" /></p>
+<p>
+	 </p>
+<p>
+	回到Google App Engine Launcher主頁面後，下方的清單中會多出剛加入的guestbook項目。</p>
+<p>
+	<img alt="image" border="0" height="460" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\image_thumb_3.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	用檔案總管看一下剛剛下載的位置，可以看到Google App Engine Application最重要的app.yaml以及python程式主檔都會放在裡面。</p>
+<p>
+	<img alt="Image(41)" border="0" height="170" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\Image(41)_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="435" /></p>
+<p>
+	 </p>
+<p>
+	而這個程式也很簡單，分了MainPage與GurestBook兩個類別，MainPage負責畫面的呈現，會先將所有的留言從資料庫中撈出呈現，在去呈現發表留言所需要的表單，而GurestBook這邊則是負責留言的動作，兩個類別分別由router導到不同的位置。有興趣後續可以私下打開python主檔來仔細研究程式是如何撰寫的。</p>
+<p>
+	<img alt="image" border="0" height="582" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="660" /></p>
+<p>
+	 </p>
+<p>
+	回到主題，在這邊我們只是要稍微的把玩一下內建的範例，所以接著請參閱Run application with Google App Engine Launcher這篇將Application運行起來 ，可以看到運行起來就是很精簡的留言板程式，也確實可以讓我們進行留言的動作。</p>
+<p>
+	<img alt="Image(39)" border="0" height="159" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\Image(39)_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="473" /></p>
+<p>
+	<img alt="Image(40)" border="0" height="215" src="\images\posts\71275b5d-add1-4e6b-b4fc-c754d34112bd\Image(40)_thumb.png" style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-top-width: 0px" width="490" /></p>

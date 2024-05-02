@@ -1,0 +1,59 @@
+---
+title: "[VB.NET]Change MDI Parent BackColor"
+date: "2010-01-23 12:27:55"
+description: "[VB.NET]Change MDI Parent BackColor"
+tags: [VB.NET]
+---
+
+<p>最近在調整MDI背景顏色時，發現MDI的背景顏色不能直接設定。直接設定的話會像下圖一樣，會看不到預期的結果。</p>  <p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\13220\image_thumb.png" width="644" height="356" /></a> </p>  <p> </p>  <p>其實這是因為WinForm在設定了IsMdiContainer屬性後，WinForm上面會自動添加一個MdiClient控制項在上面。這個控制項是MDI子表單的容器，能放置MDI子表單。而WinForm的BackColor在改變時並未跟著調整MdiClient.BackColor才會有這樣的現象。</p>  <p> </p>  <p>有興趣的可以試著拖曳一下Visual Studio內部的視窗，會有機會在更新表單時看到一會表單的背景顏色。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1001/2d7ea05614f0_A510/image_4.png" rel="lightbox"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\13220\image_thumb_1.png" width="602" height="484" /> </p>  <p> </p>  <p>要解決這樣的問題，我們可以把WinForm表單內的MdiClient的背景顏色跟著WinForm.BackColor調整。</p>  <p> </p>  <p>像是可以用迴圈找尋MdiClient後調整    <br /></p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:87416581-192b-467a-bf9b-578ef8540e0e" class="wlWriterSmartContent">   <pre class="vb:nocontrols" name="code">Public Class Form1
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        SetMdiBackColor()
+    End Sub
+
+    Private Sub SetMdiBackColor()
+        For Each c As Control In Me.Controls
+            If TypeOf c Is MdiClient Then
+                c.BackColor = Me.BackColor
+                Exit For
+            End If
+        Next
+    End Sub
+End Class</pre>
+</div>
+
+<p> </p>
+
+<p>也可以直接跟改最後一個控制項的背景顏色(這是因為MdiClient會是第一個被加進去的控制項的原因) 
+  <br /></p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:030609b3-de19-4425-929e-9f81c68b425f" class="wlWriterSmartContent">
+  <pre class="vb:nocontrols" name="code">Public Class Form1
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        SetMdiBackColor()
+    End Sub
+
+    Private Sub SetMdiBackColor()
+        Me.Controls(Me.Controls.Count - 1).BackColor = Me.BackColor
+    End Sub
+End Class</pre>
+</div>
+
+<p> </p>
+
+<p>當然，最好可以把表單的BackColor與MdiClient的BackColor給繫在一起。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d304be5d-cbf1-409c-9dc7-a6835cf9ee6a" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Controls(Controls.Count - 1).DataBindings.Add("BackColor", Me, "BackColor")</pre></div>
+
+<p> </p>
+
+<h2>Link</h2>
+
+<ul>
+  <li>MdiClient 類別 </li>
+
+  <li>如何變更在 Visual Basic.NET 或 Visual Basic 2005 中的 MDI 父表單的背景色彩 </li>
+
+  <li>MDI Container BackColor </li>
+
+  <li>MDI Form BackColor (Client Area) </li>
+</ul>

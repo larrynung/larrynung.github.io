@@ -1,0 +1,28 @@
+---
+title: "[Visual Studio]當建置發生quot;Object reference not set to an instance of an object in resx resource filequot;錯誤時的解決方案"
+date: "2013-11-06 12:00:00"
+description: "[Visual Studio]當建置發生&quot;Object reference not set to an instance of an object in resx resource file&quot;錯誤時的解決方案"
+---
+
+<p>
+	今天在建置專案時專案程式突然過不了建置，出現"Object reference not set to an instance of an object in resx resource file"這個奇怪的錯誤訊息。當下我對這狀況十分不解，Object reference not set的錯誤訊息看起來就像是NullReference這類的錯誤，但是為什麼是指向resource檔呢？而這邊我也沒有對資源檔做過什麼特別的動作，只是開過這個資源檔確認了一下程式的icon是否設對而已。</p>
+<p>
+	<img alt="image" border="0" height="93" src="\images\posts22a096c-e113-4869-8853-a72b02543fd0\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="617" /></p>
+<p>
+	 </p>
+<p>
+	查閱了一下網路資料發現Object reference not set to an instance of an object in resx resource file這篇的作者碰到跟我一樣的狀況，照他的方法檢查了一下資源檔，看到怪怪的地方就是我之前開起來查閱的icon檔不知何故變成了4.0的組件，而我們的專案程式只有用到.NET 3.5而已，這邊怎麼看都是不太對勁，索性將之修正為2.0的組件，建置動作就正常了。</p>
+<p>
+	<img alt="image" border="0" height="128" src="\images\posts22a096c-e113-4869-8853-a72b02543fd0\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="532" /></p>
+<p>
+	 </p>
+<p>
+	問題解決後再次回來看錯誤訊息，終於對於Object reference not set這段描述有了些感覺，原來它指的是資源檔中設定的資源所對應會用到的組件參考找不到。</p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Object reference not set to an instance of an object in resx resource file</li>
+</ul>

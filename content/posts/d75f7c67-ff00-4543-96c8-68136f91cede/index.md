@@ -1,0 +1,106 @@
+---
+title: "VC.NET Natived Event"
+date: "2013-11-06 12:00:00"
+description: "VC.NET Natived Event"
+---
+
+<h2>
+	事件宣告</h2>
+<p>
+	__event void EventName();</p>
+<p>
+	 </p>
+<h2>
+	事件繫結</h2>
+<p>
+	__hook(&amp;事件來源類別::EventName,事件來源物件指標,&amp;處理事件的類別::HandleMethod);</p>
+<p>
+	 </p>
+<h2>
+	移除繫結</h2>
+<p>
+	__unhook(&amp;事件來源類別::EventName,事件來源物件指標,&amp;處理事件的類別::HandleMethod);</p>
+<p>
+	 </p>
+<h2>
+	事件觸發</h2>
+<p>
+	__raise EventName();</p>
+<p>
+	 </p>
+<h2>
+	範例</h2>
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:95509f6e-2cbf-4150-a786-c64ddd9be28f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c:nocontrols" name="code">
+// TestNativedEvent.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+class TestObj
+{
+public:
+	__event void Executed();
+
+protected:
+	void OnExecuted()
+	{
+		printf("Executed
+");
+	}
+
+public:
+	void Execute()
+	{
+		__raise Executed();
+	}
+
+	void BindingEvent(){
+		__hook(&amp;TestObj::Executed,this,&amp;TestObj::OnExecuted);
+	}
+
+	void UnBindingEvent(){
+		__unhook(&amp;TestObj::Executed,this,&amp;TestObj::OnExecuted);
+	}
+
+
+};
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	TestObj obj;
+	obj.BindingEvent();
+	obj.Execute ();
+	return 0;
+}</pre>
+</div>
+<h2>
+	<br />
+	注意事項</h2>
+<p>
+	若在使用上出現AccessViolationException例外，可參閱 KB811193 - 注意： 您會收到 「 0xC0000005 「 原生的事件引發或 unhooked 時的錯誤代碼。</p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Event Handling</li>
+	<li>
+		Event Handling in Native C++</li>
+	<li>
+		event_source</li>
+	<li>
+		event_receiver</li>
+	<li>
+		__event</li>
+	<li>
+		__raise</li>
+	<li>
+		__hook</li>
+	<li>
+		__unhook</li>
+	<li>
+		KB811193 - 注意： 您會收到 「 0xC0000005 「 原生的事件引發或 unhooked 時的錯誤代碼</li>
+</ul>

@@ -1,0 +1,8 @@
+---
+title: "[Design Pattern]Singleton模式"
+date: "2009-04-24 12:41:59"
+description: "[Design Pattern]Singleton模式"
+tags: [Design Pattern]
+---
+
+<h2><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\8159\image_thumb_1.png" width="434" height="205" /></a> </h2>  <h2>字面意思</h2>  <p>Singleton [ˈsɪŋgḷtən]</p>  <p>n.獨生子，獨身，單件</p>  <p> </p>  <h2>意圖</h2>  <ul>   <li>保證一個類別只有一個物件實體。 </li>    <li>希望所有物件使用該物件相同的物件參考，且無需將物件參考傳遞給他們。 </li> </ul>  <p> </p>  <h2>口訣</h2>  <p>單一的執行個體</p>  <p> </p>  <h2>問題</h2>  <p>幾個不同的物件需要引用同一物件，且希望確保這類型的物件數不超過一個。</p>  <p> </p>  <h2>效果</h2>  <p>使用上無需操心是否已存在Singleton物件實體。這是由Singleton自己控制的。</p>  <p> </p>  <h2>實現方法</h2>  <ol>   <li>添加一個類別的私有靜態成員變數，初值為NULL。 </li>    <li>添加一個公有的靜態方法，當成員變數值為NULL時建立物件實體並回傳。 </li>    <li>將建構子設為保護或私有，防止直接建立該類別的物件實體。 </li> </ol>  <p> </p>  <h2>示意圖</h2>  <p> <a href="http://files.dotblogs.com.tw/larrynung/0904/DesignPatternSingleton_11630/image_2.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\8159\image_thumb.png" width="211" height="174" /></a> </p>  <p> <a href="http://files.dotblogs.com.tw/larrynung/0904/DesignPatternSingleton_11630/image_6.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\8159\image_thumb_2.png" width="584" height="488" /></p>

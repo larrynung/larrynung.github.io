@@ -1,0 +1,24 @@
+---
+title: "[Win8]使用Win8輕鬆的將使用畫面截圖存檔"
+date: "2013-11-06 12:00:00"
+description: "[Win8]使用Win8輕鬆的將使用畫面截圖存檔"
+---
+
+<p>
+	以往我們要截取使用畫面，我們必須按下Print Screen鍵，然後再小畫家貼上後存檔，或是直接使用其它抓圖軟體來做。在Win8中我們可以不用那麼麻煩了，系統內建直接截圖後存檔的功能，只要按下熱鍵Win + Print Screen，螢幕會稍微黑一下。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\1c0f2988-262f-4850-816c-265c413d61c2\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="640" /></p>
+<p>
+	 </p>
+<p>
+	黑完後表示圖片截取存檔的動作已經完成，我們可以將檔案總管切換到[媒體櫃\圖片]，可以看到會多個[螢幕截取畫面]的目錄。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\1c0f2988-262f-4850-816c-265c413d61c2\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="638" /></p>
+<p>
+	 </p>
+<p>
+	剛剛抓取的圖片就會被作業系統放在裡面，並以螢幕截取畫面作命名。<img alt="image" border="0" height="484" src="\images\posts\1c0f2988-262f-4850-816c-265c413d61c2\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="641" /></p>
+<p>
+	 </p>
+<p>
+	雖然只是小小的功能，但是這個貼心的功能十分的實用，臨時去一台沒有安裝截圖軟體的電腦上，我們也可以很輕鬆快速的將使用者畫面給截取回來。</p>

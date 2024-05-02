@@ -1,0 +1,84 @@
+---
+title: "[VB.NET]用MyDataBase更新DataGridView上變動的資料"
+date: "2009-06-11 12:39:37"
+description: "[VB.NET]用MyDataBase更新DataGridView上變動的資料"
+tags: [VB.NET]
+---
+
+<p> </p><h2>Introduction</h2><p>這陣子碰到許多網友再問如何用Update更新資料到資料庫。為回答網友的提問，用MyDataBase偷懶的寫了一個範例程式。主要功能是把DataGridView上更動的資料寫回資料庫。在此隨手記錄一下。</p><p> </p><p>欲看Update的寫法可參考MyDataBase原始碼。需注意的是，MyDataBase內部所用的Command是用自動產生的，在效能上會較直接指定Command來得差，參考看看就好。</p><p> </p><h2>範例</h2><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="662" height="347" src="\images\posts\8783\image_thumb.png" /></p><p> </p><p>VB.NET</p><p /><style type="text/css"><![CDATA[
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><div style="width: 657px; height: 333px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Public</span> <span class="kwrd">Class</span> Form1</pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Dim</span> dbA <span class="kwrd">As</span> <span class="kwrd">New</span> UseDB.AccessDB(<span class="str">"A.mdb"</span>)</pre><pre>
+    <span class="kwrd">Dim</span> dbB <span class="kwrd">As</span> <span class="kwrd">New</span> UseDB.AccessDB(<span class="str">"B.mdb"</span>)</pre><pre class="alt">
+ </pre><pre>
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Form1_Load(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> <span class="kwrd">MyBase</span>.Load</pre><pre class="alt">
+        LoadADB()</pre><pre>
+        LoadBDB()</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button2_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button2.Click</pre><pre>
+        WriteToDB(dbA)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button3_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button3.Click</pre><pre>
+        LoadADB()</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button1_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button1.Click</pre><pre>
+        WriteToDB(dbB)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> Button4_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> Button4.Click</pre><pre>
+        LoadBDB()</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> LoadADB()</pre><pre>
+        <span class="kwrd">Me</span>.DataGridView1.DataSource = dbA.GetDataTable(<span class="str">"Select * from test"</span>)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> LoadBDB()</pre><pre>
+        <span class="kwrd">Me</span>.DataGridView2.DataSource = dbB.GetDataTable(<span class="str">"Select * from test"</span>)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> WriteToDB(<span class="kwrd">ByVal</span> db <span class="kwrd">As</span> UseDB.AccessDB)</pre><pre>
+        <span class="kwrd">Dim</span> table <span class="kwrd">As</span> DataTable = <span class="kwrd">DirectCast</span>(<span class="kwrd">Me</span>.DataGridView1.DataSource, DataTable)</pre><pre class="alt">
+        <span class="kwrd">Dim</span> changeTable <span class="kwrd">As</span> DataTable = table.GetChanges</pre><pre>
+        <span class="kwrd">If</span> changeTable <span class="kwrd">Is</span> <span class="kwrd">Nothing</span> <span class="kwrd">Then</span></pre><pre class="alt">
+            MsgBox(<span class="str">"Without Change"</span>)</pre><pre>
+            <span class="kwrd">Return</span></pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre>
+        db.WriteDataFromDataTable(changeTable, <span class="str">"Test"</span>)</pre><pre class="alt">
+        table.AcceptChanges()</pre><pre>
+        <span class="kwrd">If</span> db <span class="kwrd">Is</span> dbA <span class="kwrd">Then</span></pre><pre class="alt">
+            LoadADB()</pre><pre>
+        <span class="kwrd">Else</span></pre><pre class="alt">
+            LoadBDB()</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre><span class="kwrd">End</span> <span class="kwrd">Class</span></pre></div></div>

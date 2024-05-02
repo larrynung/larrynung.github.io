@@ -1,0 +1,41 @@
+---
+title: "[WPF]WPF使用Windows Form控制項"
+date: "2009-04-09 12:29:05"
+description: "[WPF]WPF使用Windows Form控制項"
+tags: [WPF]
+---
+
+<p>
+	欲在WPF中使用Windows Form控制項，我們可以使用WindowsFormsHost控制項來達成此需求。</p>
+<p>
+	<strong>Step1.放入WindowsFormsHost控制項</strong></p>
+<p>
+	<img alt="image" border="0" height="89" src="\images\posts\7929\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="210" /></p>
+<p>
+	 </p>
+<p>
+	放入控制項後可看到如下畫面：</p>
+<p>
+	<img alt="image" border="0" height="321" src="\images\posts\7929\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="322" /></p>
+<p>
+	 </p>
+<p>
+	<strong>Step2.加入System.Windows.Forms參考</strong></p>
+<p>
+	<img alt="image" border="0" height="368" src="\images\posts\7929\image_thumb_2.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="506" /></p>
+<p>
+	 </p>
+<p>
+	<strong>Step3.在XAML文件中加入命名空間</strong></p>
+<p>
+	<img alt="image" border="0" height="75" src="\images\posts\7929\image_thumb_3.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="535" /></p>
+<p>
+	 </p>
+<p>
+	<strong>Step4.在XAML文件中加入Windows Forms控制項</strong></p>
+<p>
+	<img alt="image" border="0" height="69" src="\images\posts\7929\image_thumb_4.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="656" /></p>
+<p>
+	 </p>
+<p>
+	<img alt="image" border="0" height="274" src="\images\posts\7929\image_thumb_5.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="454" /></p>

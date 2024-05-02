@@ -1,0 +1,61 @@
+---
+title: "[WPF]Windows Form程式使用WPF控制項"
+date: "2009-04-08 12:34:45"
+description: "[WPF]Windows Form程式使用WPF控制項"
+tags: [WPF]
+---
+
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	<img alt="image" border="0" height="161" src="\images\posts\7916\image_thumb_9.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="451" /></p>
+<p>
+	在Windows Form程式中若欲使用WPF，我們可以很簡單的透過ElementHost控制項來達成。</p>
+<p>
+	 </p>
+<h2>
+	步驟</h2>
+<p>
+	操作步驟如下：</p>
+<p>
+	<strong>Step1.加入WPF控制項到方案</strong></p>
+<p>
+	<img alt="image" border="0" height="315" src="\images\posts\7916\image_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="217" /></p>
+<p>
+	 </p>
+<p>
+	<strong>Step2.加入ElementHost控制項到表單</strong></p>
+<p>
+	<img alt="image" border="0" height="77" src="\images\posts\7916\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="206" /></p>
+<p>
+	<img alt="image" border="0" height="345" src="\images\posts\7916\image_thumb_2.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="327" /></p>
+<p>
+	 </p>
+<p>
+	<strong>Step3.建置專案</strong></p>
+<p>
+	 </p>
+<p>
+	<strong>Step4.設定ElementHost控制項的裝載內容為Step1中加的WPF控制項</strong></p>
+<p>
+	可以直接透過控制項的智慧標籤來設定。</p>
+<p>
+	<img alt="image" border="0" height="348" src="\images\posts\7916\image_thumb_4.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="470" /></p>
+<p>
+	 </p>
+<p>
+	或是透過ElementHost控制項的Child屬性設定。</p>
+<p>
+	<img alt="image" border="0" height="339" src="\images\posts\7916\image_thumb_5.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="330" /></p>
+<p>
+	 </p>
+<p>
+	設定完後即可看到效果。</p>
+<p>
+	<img alt="image" border="0" height="345" src="\images\posts\7916\image_thumb_6.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="329" /></p>
+<p>
+	 </p>
+<p>
+	<img alt="image" border="0" height="321" src="\images\posts\7916\image_thumb_3.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="473" /></p>

@@ -1,0 +1,1221 @@
+---
+title: "[C#][VB.NET]Isolated Storage 隔離儲存區"
+date: "2009-04-22 09:03:59"
+description: "[C#][VB.NET]Isolated Storage 隔離儲存區"
+tags: [CSharp,VB.NET]
+---
+
+<h2>Abstract</h2><ul><li>Namespace</li><li>Assemble</li><li>功能</li><li>重要類別</li><li>隔離類型</li><li>儲存位置</li><li>使用時機</li><li>不該使用時機</li><li>取得隔離儲存區</li><li>刪除隔離儲存區</li><li>建立目錄</li><li>尋找目錄</li><li>尋找檔案</li><li>刪除目錄</li><li>刪除檔案</li><li>寫入檔案</li><li>讀取檔案</li></ul><p> </p><h2>Namespace</h2><p>System.IO.IsolatedStorage</p><p> </p><h2>Assemble</h2><p>mscorlib (在 mscorlib.dll)</p><p> </p><h2>功能</h2><p>隔離儲存區 (Isolated Storage) 為資料儲存機制，藉著定義標準化方式，將程式碼與儲存的資料產生關聯，以提供隔離和安全。標準化也提供其他利益。</p><p>轉載自MSDN，詳細內容請參考『隔離儲存區</a>』與『<a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/3ak841sy(VS.80).aspx">隔離儲存區的簡介</a>』。</p><p> </p><h2>重要類別</h2><ul><li><strong>IsolatedStorageFile :</strong> 提供隔體儲存區大部分的必要功能，可取得、刪除和管理隔離儲存區。</li><li><strong>IsolatedStorageFileStream :</strong> 處理存放區的檔案讀取和寫入。</li><li><strong>IsolatedStorageScope :</strong> 能夠建立和選取適當隔離類型的存放區。</li></ul><p> </p><h2>隔離類型 </h2><p> </p><p> </p><p /><li><p>依據使用者和組件的隔離</p></li><li><p>依據使用者、定義域和組件的隔離</p><p><a href="http://files.dotblogs.com.tw/larrynung/0904/IsolatedStorage_148A8/image_2.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="504" height="223" src="\images\posts\8128\image_thumb.png" /></a></p><p>轉載自MSDN，詳細內容請參考『<a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/eh5d60e1(VS.80).aspx">隔離的類型</a>』。</p><p> </p><h2>儲存位置</h2><table border="0" cellspacing="0" cellpadding="2" width="614"><tbody><tr><td valign="top" width="202"><p>作業系統</p></td><td valign="top" width="409"><p>檔案系統中的位置</p></td></tr><tr><td valign="top" width="202"><p>Windows 98、Windows Me - 未啟用使用者設定檔</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMROOT&gt;\Application Data</p><p>非漫遊存放區 = WINDOWS\Local Settings\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows 98、Windows Me - 已啟用使用者設定檔</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Application Data</p><p>非漫遊存放區 = Windows\Local Settings\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows NT 4.0</p></td><td valign="top" width="409"><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows NT 4.0 - Service Pack 4</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Application Data</p><p>非漫遊存放區 =</p><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Local Settings\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows 2000、Windows XP、Windows Server 2003 - 從 NT 4.0 升級</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Application Data</p><p>非漫遊存放區 =</p><p>&lt;SYSTEMROOT&gt;\Profiles\&lt;user&gt;\Local Settings\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows 2000 - 全新安裝 (以及自 Windows 98 和 NT 3.51 升級)</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMDRIVE&gt;\Documents and Settings\&lt;user&gt;\Application Data</p><p>非漫遊存放區 =</p><p>&lt;SYSTEMDRIVE&gt;\Documents and Settings\&lt;user&gt;\Local Settings\Application Data</p></td></tr><tr><td valign="top" width="202"><p>Windows XP、Windows Server 2003 - 全新安裝 (以及自 Windows 2000 和 Windows 98 升級)</p></td><td valign="top" width="409"><p>啟用漫遊的存放區 =</p><p>&lt;SYSTEMDRIVE&gt;\Documents and Settings\&lt;user&gt;\Application Data</p><p>非漫遊存放區 =</p><p>&lt;SYSTEMDRIVE&gt;\Documents and Settings\&lt;user&gt;\Local Settings\Application Data</p></td></tr></tbody></table><p>轉載自MSDN，詳細內容請參考『<a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/3ak841sy(VS.80).aspx">隔離儲存區的簡介</a>』。</p><p> </p><h2>使用時機</h2><ol><li>下載的控制項。從網際網路下載的 Managed 程式碼控制項不允許透過一般 I/O 類別寫入硬碟，但它們可以使用隔離儲存區保存 (Persist) 使用者的設定值和應用程式狀態。</li><li><p>永續性 Web 應用程式儲存區。Web 應用程式也會防止 I/O 類別的使用。這些程式可以使用隔離儲存區做為與下載元件相同的用途。</p></li><li><p>共用的元件儲存區。應用程式之間共用的元件可以使用隔離儲存區以提供對資料存放區的控制存取。</p></li><li><p>伺服器儲存區。伺服器應用程式可以使用隔離儲存區，提供個別存放區給向應用程式產生要求的大量使用者。因為隔離儲存區一直根據使用者來分離，伺服器必須模擬提出要求的使用者。在這個狀況中，資料是根據主體的識別 (應用程式用以區別其使用者的相同識別) 來隔離。</p></li><li><p>漫遊。應用程式也可以根據漫遊使用者設定檔來使用隔離儲存區。這允許使用者的隔離存放區隨著設定檔而漫遊。</p></li></ol><p>轉載自MSDN，詳細內容請參考『<a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/kbcw921f(VS.80).aspx">隔離儲存區的案例</a>』。</p><p> </p><h2>不該使用時機</h2><ol><li>因為隔離儲存區不能防範高度受信任程式碼、Unmanaged 程式碼或電腦的信任使用者，隔離儲存區不應該使用於存放具高度價值的秘密，例如未加密的金鑰 (Key) 或密碼。</li><li><p>隔離儲存區不應該被用來儲存程式碼。</p></li><li><p>隔離儲存區不應該被用來儲存系統管理員所控制的組態和部署設定值(使用者喜好不算是組態設定，因為系統管理員並不控制它們)。</p></li></ol><p>轉載自MSDN，詳細內容請參考『<a target="_blank" href="http://msdn.microsoft.com/zh-tw/library/kbcw921f(VS.80).aspx">隔離儲存區的案例』。</p><p> </p><h2>取得隔離儲存區</h2><p>取得隔離儲存區主要有四種方法：</p><p><strong>1.透過GetUserStoreForAssembly</strong></p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoFile <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoFile = IsolatedStorageFile.GetUserStoreForAssembly()</pre></div><p>C#</p></li><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoFile;</pre><pre>
+isoFile = IsolatedStorageFile.GetUserStoreForAssembly();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p><strong>2.透過GetUserStoreForDomain</strong></p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoFile <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoFile = IsolatedStorageFile.GetUserStoreForDomain()</pre></div><p>C#</p><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoFile;</pre><pre>
+isoFile = IsolatedStorageFile.GetUserStoreForDomain();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p><strong>3.透過GetMachineStoreForApplication</strong></p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoFile <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoFile = IsolatedStorageFile.GetMachineStoreForApplication ()</pre></div><p>C#</p><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoFile;</pre><pre>
+isoFile = IsolatedStorageFile.GetMachineStoreForApplication ();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p><strong>4.透過GetStore</strong></p><p>簡易範例如下：</p><p>VB.NET</p><div style="width: 663px; height: 88px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStore <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User <span class="kwrd">Or</span> IsolatedStorageScope.<span class="kwrd">Assembly</span>, <span class="kwrd">Nothing</span>, <span class="kwrd">Nothing</span>)</pre><pre class="alt">
+ </pre></div></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div style="width: 665px; height: 55px; overflow: auto"><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStore =  IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, <span class="kwrd">null</span>, <span class="kwrd">null</span>);</pre></div></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p>欲了解更多，可參考『HOW TO：取得離儲存區的存放區』。</p><p> </p><h2>刪除隔離儲存區</h2><p>刪除隔離儲存區主要有二種方法：</p><p><strong>1.透過執行個體方法 Remove</strong></p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStore <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain()</pre><pre class="alt">
+isoStore.Remove()</pre><pre>
+isoStore.Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStore;</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain();</pre><pre class="alt">
+isoStore.Remove();</pre><pre>
+isoStore.Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p><strong>2.透過靜態方法 Remove</strong></p><div>簡易範例如下：</div><p>VB.NET</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile.Remove(IsolatedStorageScope.User)</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile.Remove(IsolatedStorageScope.User);</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><p>欲了解更多，可參考『HOW TO：刪除隔離儲存區中的存放區』。</p><p> </p><h2>建立目錄</h2><p>欲在Isolated Storage建立目錄，可分為幾個步驟：</p><ol><li><div>取得IsolatedStorageFile物件</div></li><li><div>使用IsolatedStorageFile物件的CreateDirectory方法建立目錄</div></li><li><div>關閉IsolatedStorageFile</div></li></ol><p> </p><div>簡易範例如下：</div><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStore <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain()</pre><pre class="alt">
+isoStore.CreateDirectory(<span class="str">"Test"</span>)  </pre><pre>
+isoStore.Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStore;</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain();</pre><pre class="alt">
+isoStore.CreateDirectory(<span class="str">"Test"</span>);</pre><pre>
+isoStore.Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：讀取和寫入離儲存區中的檔案』。</p><p> </p><h2>尋找目錄</h2><p>欲尋找Isolated Storage的目錄，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>使用IsolatedStorageFile物件的GetDirectoryNames方法尋找目錄</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStore <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain()</pre><pre class="alt"><span class="kwrd">Dim</span> dirNames <span class="kwrd">As</span> <span class="kwrd">String</span>() = isoStore.GetDirectoryNames(<span class="str">"*"</span>)</pre><pre>
+isoStore.Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStore;</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain();</pre><pre class="alt">
+String dirNames() = isoStore.GetDirectoryNames(<span class="str">"*"</span>);</pre><pre>
+isoStore.Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：尋找隔離儲存區中的現有檔案和目錄』。</p><p> </p><h2>尋找檔案</h2><p>欲尋找Isolated Storage的檔案，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>使用IsolatedStorageFile物件的GetFileNames方法尋找檔案</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStore <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain</pre><pre class="alt"><span class="kwrd">Dim</span> fileNames <span class="kwrd">As</span> <span class="kwrd">String</span>() = isoStore.GetFileNames(<span class="str">"*"</span>)</pre><pre>
+isoStore.Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStore;</pre><pre>
+isoStore = IsolatedStorageFile.GetUserStoreForDomain();</pre><pre class="alt">
+Dim fileNames As String() = isoStore.GetFileNames(<span class="str">"*"</span>);</pre><pre>
+isoStore.Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：尋找隔離儲存區中的現有檔案和目錄』。</p><p> </p><h2>刪除目錄</h2><p>欲刪除目錄，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>使用IsolatedStorageFile物件的DeleteDirectory方法刪除目錄</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoFile <span class="kwrd">As</span> IsolatedStorageFile = IsolatedStorageFile.GetUserStoreForDomain</pre><pre>
+isoFile.DeleteDirectory(<span class="str">"Test"</span>)  </pre><pre class="alt">
+isoFile.Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoFile = IsolatedStorageFile.GetUserStoreForDomain();</pre><pre>
+isoFile.DeleteDirectory(<span class="str">"Test"</span>) ;</pre><pre class="alt">
+isoFile .Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：刪除隔離儲存區中的檔案和目錄』。</p><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><h2>刪除檔案</h2><p>欲刪除檔案，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>使用IsolatedStorageFile物件的DeleteFile方法刪除檔案</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><p>VB.NET</p><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStorage <span class="kwrd">As</span> IsolatedStorageFile</pre><pre>
+isoStorage = IsolatedStorageFile.GetUserStorageForDomain</pre><pre class="alt">
+isoStorage .DeleteFile(<span class="str">"Test.xml"</span>)</pre><pre>
+isoStorage .Dispose()</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>C#</p><div class="csharpcode"><pre class="alt">
+IsolatedStorageFile isoStorage;</pre><pre>
+isoStorage = IsolatedStorageFile.GetUserStorageForDomain;</pre><pre class="alt">
+isoStorage .DeleteFile(<span class="str">"Test.xml"</span>);</pre><pre>
+isoStorage .Dispose();</pre></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：刪除隔離儲存區中的檔案和目錄』。</p><p> </p><h2>寫入檔案</h2><p>欲寫入檔案，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>建立IsolatedStorageFileStream物件</li><li>建立StreamWriter物件，並串連IsolatedStorageFileStream</li><li>使用StreamWriter物件去寫入</li><li>關閉StreamWriter</li><li>關閉IsolatedStorageFileStream</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><div style="width: 662px; height: 157px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStorage <span class="kwrd">As</span> IsolatedStorage.IsolatedStorageFile</pre><pre>
+isoStorage = IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain</pre><pre class="alt"><span class="kwrd">Dim</span> stream <span class="kwrd">As</span> <span class="kwrd">New</span> IO.IsolatedStorage.IsolatedStorageFileStream(<span class="str">"Test.Txt"</span>, FileMode.Create, isoStorage)</pre><pre><span class="kwrd">Dim</span> sw <span class="kwrd">As</span> <span class="kwrd">New</span> StreamWriter(stream)</pre><pre class="alt">
+sw.WriteLine(<span class="str">"Test"</span>)</pre><pre>
+sw.Dispose()</pre><pre class="alt">
+stream.Dispose()</pre><pre>
+isoStorage.Dispose()</pre></div></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：在隔離儲存區中建立檔案和目錄』。</p><p> </p><h2>讀取檔案</h2><p>欲讀取檔案，可分為幾個步驟：</p><ol><li>取得IsolatedStorageFile物件</li><li>建立IsolatedStorageFileStream物件</li><li>建立StreamReader物件，並串連IsolatedStorageFileStream</li><li>使用StreamReader物件去讀取</li><li>關閉StreamReader</li><li>關閉IsolatedStorageFileStream</li><li>關閉IsolatedStorageFile</li></ol><p> </p><p>簡易範例如下：</p><div style="width: 655px; height: 149px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Dim</span> isoStorage <span class="kwrd">As</span> IsolatedStorage.IsolatedStorageFile</pre><pre>
+isoStorage = IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain</pre><pre class="alt"><span class="kwrd">Dim</span> stream <span class="kwrd">As</span> <span class="kwrd">New</span> IO.IsolatedStorage.IsolatedStorageFileStream(<span class="str">"Test.Txt"</span>, FileMode.Open, isoStorage)</pre><pre><span class="kwrd">Dim</span> sr <span class="kwrd">As</span> <span class="kwrd">New</span> StreamReader(stream)</pre><pre class="alt"><span class="kwrd">Dim</span> str <span class="kwrd">As</span> <span class="kwrd">String</span> = sr.ReadLine()</pre><pre>
+sr.Dispose()</pre><pre class="alt">
+stream.Dispose()</pre><pre>
+isoStorage.Dispose()</pre></div></div><style type="text/css"><![CDATA[
+
+
+
+
+
+
+
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p>欲了解更多，可參考『HOW TO：讀取和寫入離儲存區中的檔案』。</p><p> </p><p> </p>

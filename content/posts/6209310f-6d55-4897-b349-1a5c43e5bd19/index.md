@@ -1,0 +1,96 @@
+---
+title: "Google FeedBurner"
+date: "2013-11-06 12:00:00"
+description: "Google FeedBurner"
+---
+
+<p>
+	Google FeedBurner</a>這個服務~如同它的字面意思一樣，是一個RSS Feed燒錄的服務，我們可以將自己網誌的RSS Feed透過<a href="https://accounts.google.com/ServiceLogin?service=feedburner" target="_blank">Google FeedBurner燒錄一份專屬於自己的位置。這樣做的好處在於這個燒錄出來的RSS Feed訂閱位置是獨立於網誌的存在，等同是在中間架了一層中介層，所以可以在上面做很多事情。像是可以對訂閱者進行分析、統計、提供電子報、在RSS摘要中插入AdSense、以及同步至Twitter等。最好的是...哪天網誌搬家，發佈者也只要調整一下設定，將燒錄的來源改為新的網誌，對於訂閱者來說可以完全無痛。</p>
+<p>
+	 </p>
+<p>
+	要使用Google FeedBurner</a>燒錄專屬於自己的RSS Feed位置，首先我們必須連到<a href="https://accounts.google.com/ServiceLogin?service=feedburner" target="_blank">Google FeedBurner這邊。若是尚未登入Google帳號，必須要進行登入的動作。</p>
+<p>
+	<img alt="image" border="0" height="482" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_11.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	登入後會看到像下面這樣的畫面。假設你是在被Google購併以前有用過FeedBurner的使用者，這邊要選取Claim your feeds now，進行帳戶資料的合併。若是新的使用者，這邊直接將Blog網址或是RSS Feed位置帶入，並按下Next按鈕繼續。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="635" /></p>
+<p>
+	 </p>
+<p>
+	接著Google FeedBurner會開始對你帶入的網址進行偵測，看看是否可以找到對應的RSS Feed位置，像筆者這邊就從Blog位置中找到兩個一樣的RSS Feed位置(不要問我為什麼它會找到兩個一樣的)，這邊選取好要燒錄的RSS Feed位置後按下Next按鈕繼續。</p>
+<p>
+	<img alt="image" border="0" height="360" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="509" /></p>
+<p>
+	 </p>
+<p>
+	再過來我們要決定這個燒錄出來的專屬RSS Feed要叫什麼，以及它的訂閱位置。設定完成後一樣按下Next按鈕繼續。</p>
+<p>
+	<img alt="image" border="0" height="516" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="477" /></p>
+<p>
+	 </p>
+<p>
+	沒意外的話我們會看到類似下圖這樣的恭喜畫面，告訴我們燒錄的RSS Feed位置已經可供使用了</p>
+<p>
+	<img alt="image" border="0" height="516" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="488" /></p>
+<p>
+	 </p>
+<p>
+	實際連過去看，應該會看到專屬於你的RSS Feed頁面。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_5.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="642" /></p>
+<p>
+	 </p>
+<p>
+	再跳回來本來的頁面，這邊還有些引導設定的步驟要跑，有需要的話可視個人需求下去做些調整。不過這邊筆者是直接連續Next跳過，直接到後面再一併設定。</p>
+<p>
+	 </p>
+<p>
+	引導設定結束後，畫面會變得像下面這樣。這邊有Analyze、Optimize、Publicize、Troubleshootize四個頁籤，各自有各自的設定。</p>
+<p>
+	<img alt="image" border="0" height="477" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_7.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	我們可以切換到Publicize頁籤，左側選取Socialize，進行Twitter的同步設定，讓網址可以同步發佈到Twitter上。</p>
+<p>
+	<img alt="image" border="0" height="473" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_8.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	或是左側切到Chicklet Chooser，選取我們想放在網誌上的訂閱圖示的樣式，複製下方的Script語法並內嵌到網誌中，將想要訂閱的使用者導到專屬的訂閱位置。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_15.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="604" /></p>
+<p>
+	 </p>
+<p>
+	若有需要Google FeedBurner也提供我們在網誌上內嵌RSS Feed訂閱的人數。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_9.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="576" /></p>
+<p>
+	 </p>
+<p>
+	或是電子報的訂閱。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\6209310f-6d55-4897-b349-1a5c43e5bd19\image_thumb_12.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="622" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Google FeedBurner</li>
+	<li>
+		如何利用FeedBurner替自己燒一個專屬的RSS Feed？</li>
+	<li>
+		[教學] 使用 Google FeedBurner 製作部落格電子報－燒錄一個屬於自己的RSS</li>
+	<li>
+		使用Feedburner燒制一個專屬的RSS</li>
+	<li>
+		FeedBurner電子報設定教學－燒錄自己的RSS</li>
+	<li>
+		FeedBurner RSS ~ 讓您的部落格輕鬆被訂閱</li>
+</ul>

@@ -1,0 +1,124 @@
+---
+title: "[C++]使用Global Flags偵測記憶體越界錯誤"
+date: "2012-01-03 10:03:27"
+description: "[C++]使用Global Flags偵測記憶體越界錯誤"
+tags: [C++,Software]
+---
+
+<p>
+	筆者在[C++]使用Pageheap偵測記憶體越界錯誤這篇介紹了如何利用Pageheap去偵測記憶體的越界錯誤，這樣的功能也可以使用Debuging Tools內的Global Flags工具，可以達到相同的效果，且較易取得與使用。</p>
+<p>
+	 </p>
+<p>
+	Debuging Tools有需要可在Microsoft Windows SDK for Windows 7 and .NET Framework 4這邊下載。</p>
+<p>
+	<img alt="image" border="0" height="373" src="\images\posts\64186\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	安裝時要注意Common Utilities下的Debuging Tools for Windows必須勾選。</p>
+<p>
+	<img alt="image" border="0" height="451" src="\images\posts\64186\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	安裝完後，若需要使用可直接點擊Global Flags開啟GUI。</p>
+<p>
+	<img alt="image" border="0" height="472" src="\images\posts\64186\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="404" /></p>
+<p>
+	 </p>
+<p>
+	GUI視窗帶出後切換至Image File頁籤，在Image輸入框中鍵入要偵測的程式名稱。</p>
+<p>
+	<img alt="image" border="0" height="542" src="\images\posts\64186\image_thumb_10.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="550" /></p>
+<p>
+	 </p>
+<p>
+	輸入完偵測的程式名稱后按下Tab鍵，下方被Disable的Checkbox會變為Enable狀態，這時可以針對需要去做些勾選設定，以筆者個人來說視習慣將heap有關的都勾選起來，設定好後按下套用即可。</p>
+<p>
+	<img alt="image" border="0" height="532" src="\images\posts\64186\image_thumb_5.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="540" /></p>
+<p>
+	 </p>
+<p>
+	當程式啟用偵測後，越界問題能更容易被發現，就像是筆者在[C++]使用Pageheap偵測記憶體越界錯誤這篇所提到的一樣，下面的Code運行在Debug模式下能得到跟Release模式一樣的運行結果，運行後因為越界錯誤所以直接Crush。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:178f6dbf-e62b-4966-a54a-4b502dba6881" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+#include "stdafx.h"
+#include &lt;Windows.h&gt;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    int m_len = 5;
+    char *m_p = (char *)HeapAlloc (GetProcessHeap (), HEAP_ZERO_MEMORY, m_len);  
+    m_p[m_len] = 0;  
+    HeapFree (GetProcessHeap (),0, m_p);
+
+	return 0;
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	<img alt="image" border="0" height="422" src="\images\posts\64186\image_thumb_4.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	Google Flags程式除了可以用GUI的方式去設定，也可以透過命令列的方式去使用，使用時必須注意命令提示字元要給予管理者的權限。</p>
+<p>
+	<img alt="image" border="0" height="479" src="\images\posts\64186\image_thumb_6.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="414" /></p>
+<p>
+	 </p>
+<p>
+	命令提示字元開啟後，我們可以帶入-p、/enable、與要偵測的程式名稱：</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4786d66d-74f1-4a40-abe4-b6f3845c7075" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+gflags -p /enable [ExeFile]</pre>
+</div>
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	<img alt="image" border="0" height="240" src="\images\posts\64186\image_thumb_7.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	要關閉偵測時，則是帶入-p、/disable、與要關閉偵測的程式名稱：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:fb177a17-971d-4152-b984-6b9ae7c4716a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+gflags -p /disable [ExeFile]</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="240" src="\images\posts\64186\image_thumb_8.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	若要查詢有哪些程式開啟了偵測狀態，可以只帶入-p參數：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c5cd9cf8-58d0-41f2-8876-8c2dcfa72925" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+gflags -p</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="240" src="\images\posts\64186\image_thumb_9.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Download and Install Debugging Tools for Windows</li>
+	<li>
+		Microsoft Windows SDK for Windows 7 and .NET Framework 4</li>
+	<li>
+		使用Gflags来检测heap问题</li>
+	<li>
+		如何設定使用 Gflags.exe 工具 GlobalFlag 登錄值</li>
+	<li>
+		Detecting Heap Corruption Using GFlags and Dumps</li>
+	<li>
+		windows下堆异常调试神器--gflags</li>
+	<li>
+		[C++]使用Pageheap偵測記憶體越界錯誤</li>
+</ul>

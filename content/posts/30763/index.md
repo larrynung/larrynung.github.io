@@ -1,0 +1,136 @@
+---
+title: "[.Net Concept]理解並善用String pool"
+date: "2011-06-30 10:42:28"
+description: "[.Net Concept]理解並善用String pool"
+tags: [.NET Concept, CSharp]
+---
+
+<p> </p>  <p>寫過.Net或是Java程式的開發人員，或多或少都曾聽過這些程式語言在處理字串時，底層會有個名為String pool的機制，幫我們自動重用已經建立的字串實體，減少記憶體的耗費。</p>  <p>   <br />String pool簡單來說就是一個HashTable,其Key值是字串內容，Value是物件實體的位置。其內容值會在程式編譯時期做初始設定，將程式碼中用到的字串加入。因此不同字串變數所存放的靜態字串，若是是一樣的字串，字串會在編譯時期加入String pool，透過String pool的協助兩個變數會指到相同的物件實體。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d9808122-3a15-4e22-bd49-ec4a726faa4e" class="wlWriterSmartContent"><pre name="code" class="c#">            string str1 = "abcd1234";
+            string str2 = "abcd1234";
+            string str3 = str1;
+            string str4 = "abcd" + "1234";
+
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str2) = {0}", ReferenceEquals(str1, str2)));
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str3) = {0}", ReferenceEquals(str1, str3)));
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str4) = {0}", ReferenceEquals(str1, str4))); </pre></div>
+
+<p> </p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\30763\image_thumb.png" width="433" height="175" /></p>
+
+<p> </p>
+
+<p>若是動態產生的字串，因編譯階段並無法確定其字串為何，故無法在編譯時期將其加入String pool，因此就算字串內容相同也會指派不同的物件實體。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2fc8bf94-7f83-4adc-a1a2-aed2fd451364" class="wlWriterSmartContent"><pre name="code" class="c#">            string temp = "aaaa";
+            string str1 = "aaaaaaaa";
+            string str2 = temp + "aaaa";
+            string str3 = new string('a', 8);
+
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str2) = {0}", ReferenceEquals(str1, str2)));
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str3) = {0}", ReferenceEquals(str1, str3))); </pre></div>
+
+<p> </p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\30763\image_thumb_1.png" width="489" height="175" /></p>
+
+<p>
+  <br />此時我們可視需求使用String.Intern靜態方法將其加入String pool。該方法會回傳String pool中對應的物件實體，若字串不存在於String pool中，會將其加入String pool再回傳。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6a683e13-9172-4097-a62d-aacf6e3b95b8" class="wlWriterSmartContent"><pre name="code" class="c#">            string temp = "aaaa";
+            string str1 = "aaaaaaaa";
+            string str2 = temp + "aaaa";
+            string str3 = new string('a', 8);
+
+            str2 = string.Intern(str2);
+            str3 = string.Intern(str3);
+
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str2) = {0}", ReferenceEquals(str1, str2)));
+            Console.WriteLine(string.Format("ReferenceEquals(str1, str3) = {0}", ReferenceEquals(str1, str3)));</pre></div>
+
+<p> </p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\30763\image_thumb_2.png" width="433" height="159" /></p>
+
+<p> </p>
+
+<p>若有需要也可透過String.IsInterned靜態方法判別字串是否已加入String pool。若字串存在於String pool中，會回傳對應的物件實體，反之回傳null。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d51a057d-61ec-4286-8dee-d83c1cdca5d6" class="wlWriterSmartContent"><pre name="code" class="c#">            string str1 = new string('a', 8);
+            Console.WriteLine(string.Format(@"String.IsInterned(str1) = {0}", String.IsInterned(str1) != null));
+
+            str1 = string.Intern(str1);
+            
+            Console.WriteLine(string.Format(@"String.IsInterned(str1) = {0}", String.IsInterned(str1) != null));</pre></div>
+
+<p> </p>
+
+<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\30763\image_thumb_3.png" width="409" height="175" /></p>
+
+<p>
+  <br />那對於我們開發人員來說，理解了String Pool有甚麼用呢?理解String Pool能清楚的掌握到字串是否是指向同一物件參考，這在做字串比對動作時就是一個不錯的使用時機，因為一般的字串比對底層是以Byte為基礎的方式去比對，當比對的字串很長時，整個處理效能就跟著低落，若是可以善用String pool,我們只需比對兩者是否指到相同的物件實體就可以了，可以獲得較佳的效能。</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ca7dfe8e-6f0c-47ef-95ad-7b36993ea41b" class="wlWriterSmartContent"><pre name="code" class="c#">        static void Main(string[] args)
+        {
+            Test(1000000000, 10000000);
+        }
+
+        private static void Test(int testCount, int stringLength)
+        {
+            NormalCompare1(string.Empty, string.Empty);
+            NormalCompare2(string.Empty, string.Empty);
+            ReferenceCompare(string.Empty, string.Empty);
+
+            string str1 = new string('a', stringLength);
+            string str2 = str1;
+
+            Console.WriteLine("testCount = " + testCount.ToString());
+            Console.WriteLine("stringLength = " + stringLength.ToString());
+
+            Console.WriteLine("NormalCompare1...");
+            Stopwatch sw = Stopwatch.StartNew();
+            for (int i = 0; i &lt; testCount; i++)
+            {
+                NormalCompare1(str1, str2);
+            }
+            Console.WriteLine("Elapsed: " + sw.ElapsedMilliseconds.ToString());
+
+            Console.WriteLine("NormalCompare2...");
+            sw.Restart();
+            for (int i = 0; i &lt; testCount; i++)
+            {
+                NormalCompare2(str1, str2);
+            }
+            Console.WriteLine("Elapsed: " + sw.ElapsedMilliseconds.ToString());
+
+            str1 = string.Intern(str1);
+            str2 = string.Intern(str2);
+            Console.WriteLine("ReferenceCompare...");
+            sw.Restart();
+            for (int i = 0; i &lt; testCount; i++)
+            {
+                ReferenceCompare(str1, str2);
+            }
+            Console.WriteLine("Elapsed: " + sw.ElapsedMilliseconds.ToString());
+
+            Console.WriteLine(new string('=',50));
+        }
+
+        private static Boolean NormalCompare1(string str1, string str2)
+        {
+            return str1 == str2;
+        }
+
+        private static Boolean NormalCompare2(string str1, string str2)
+        {
+            return str1.Equals(str2);
+        }
+
+        private static Boolean ReferenceCompare(string str1, string str2)
+        {
+            return ReferenceEquals(str1, str2);
+        }</pre></div>
+
+<p> </p>
+
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\30763\image_thumb_5.png" width="505" height="239" /></p>

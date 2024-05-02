@@ -1,0 +1,54 @@
+---
+title: "[C#]利用FlowLayoutPanel控制項合併大量圖片"
+date: "2009-07-31 09:00:04"
+description: "[C#]利用FlowLayoutPanel控制項合併大量圖片"
+tags: [CSharp]
+---
+
+<h2>Introduction</h2><p>這幾天看到論壇有人問到合併圖片的作法，直覺的想到了以前看過的歐大文章。人老了記憶不好就回去翻了一下順便復習。突然就蹦出了用FlowLayoutPanel控制項來實作的想法，順手做了個實驗並記錄一下。</p><blockquote><p>使用FlowLayouyPanel控制項來合併大量圖片，純粹好玩、寫起來方便快速，可是可能會造成使用物件過多、記憶體用量過高等情況，效能方面也未做過比較，若要使用請自行評估仔細。</p></blockquote><h2>實作步驟</h2><p>用FlowLayoutPanel控制項來合併大量圖片，基本上大概可分為下列幾步驟：</p><ol><li>放入FlowLayoutPanel到表單，設定AutoSize屬性為True</li><li>載入圖片時把圖片載入到PictureBox，設定Margin=new Padding(0)、SizeMode=AutoSize，並把PictureBox放入FlowLayoutPanel</li><li>利用DrawToBitmap截取FlowLayoutPanel的畫面</li></ol><p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="640" height="118" src="\images\posts\9758\image_thumb.png" /></p><p> </p><h2>完整程式範例 </h2><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5550032c-c27f-431e-8a81-ad7a08332420" class="wlWriterEditableSmartContent"><pre class="c#:nocontrols" name="code">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication5
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK )
+            {
+                listBox1.Items.Clear();
+                listBox1.Items.AddRange(openFileDialog1.FileNames);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            foreach(string file in listBox1.Items){
+                flowLayoutPanel1.Controls.Add(new PictureBox() { Image = new Bitmap(file), SizeMode = PictureBoxSizeMode.AutoSize, Margin=new Padding(0)});
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap b = new Bitmap(flowLayoutPanel1.Width, flowLayoutPanel1.Height);
+                flowLayoutPanel1.DrawToBitmap(b, flowLayoutPanel1.ClientRectangle);
+                b.Save(saveFileDialog1.FileName );
+            }
+        }
+    }
+}</pre></div><p>  </p><h2>操作步驟與執行結果</h2><p><strong>Step1.開啟程式，並按下[Load Photo]按鈕</strong></p><p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="304" height="274" src="\images\posts\9758\image_thumb_1.png" /></a></p><p> </p><p><strong>Step2.選取圖片後按下[開啟]</strong></p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/7c42724954d5_11D86/image_8.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="567" height="394" src="\images\posts\9758\image_thumb_3.png" /></a></p><p> </p><p>程式會顯示所選取的所有圖片路徑</p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/7c42724954d5_11D86/image_25.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="304" height="274" src="\images\posts\9758\image_thumb_10.png" /></a></p><p> </p><p><strong>Step3.按下[合併]按鈕</strong> </p><p>合併完後會圖片會顯示在下方的FlowLayoutPanel區域</p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/7c42724954d5_11D86/image_21.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="304" height="274" src="\images\posts\9758\image_thumb_8.png" /></a></p><p> </p><p><strong>Step5.按下[Save]按鈕，在彈出的視窗選取存檔位置並按下儲存即可</strong></p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/7c42724954d5_11D86/image_29.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="304" height="274" src="\images\posts\9758\image_thumb_12.png" /></a></p><p> </p><p>儲存的檔案會像下面這樣合併完成</p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/7c42724954d5_11D86/image_14.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="615" height="324" src="\images\posts\9758\image_thumb_6.png" /></a><br /> </p><h2>Download</h2><p> <a href="http://Files.Dotblogs.com.tw/larrynung/0907/20097319119466.zip">MergePhoto.zip</a> <br /> </p><h2>Link</h2><ul><li><a target="_blank" href="http://www.dotblogs.com.tw/chou/archive/2009/02/11/7118.aspx">.NET菜鳥自救會-[C#]大量圖片合併程式</li></ul><p> </p>

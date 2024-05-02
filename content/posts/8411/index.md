@@ -1,0 +1,558 @@
+---
+title: "[Library][VB.NET].NET簡易測試用表單類別"
+date: "2009-05-15 08:58:32"
+description: "[Library][VB.NET].NET簡易測試用表單類別"
+tags: [VB.NET,Library]
+---
+
+<h2>Introduction</h2><p>在撰寫程式時，我們時常會需要撰寫一些測試程式、或是需要顯示一些資料。多半這時我們會設計一些測試用的表單介面來使用。這些介面多半是很簡單的介面，設計上也大同小異，所以我們可以把這些表單介面整理起來方便以後重覆使用。</p><p>本篇介紹簡易測試用表單類別的寫法。這些表單具備任意組合使用的能力。</p><p> </p><h2>測試用表單類別</h2><p>測試用表單類別的Code如下：</p><div style="width: 631px; height: 377px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="preproc">#Region</span> <span class="str">"Imports"</span></pre><pre><span class="kwrd">Imports</span> System.Windows.Forms</pre><pre class="alt"><span class="kwrd">Imports</span> System.Drawing</pre><pre><span class="preproc">#End Region</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt"><span class="rem">'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</span></pre><pre><span class="rem">'Author: Larry Nung</span></pre><pre class="alt"><span class="rem">'Date: 2009/5/13</span></pre><pre><span class="rem">'File: </span></pre><pre class="alt"><span class="rem">'Memo: </span></pre><pre><span class="rem">'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</span></pre><pre class="alt"><span class="rem">''' &lt;summary&gt;</span></pre><pre><span class="rem">''' </span></pre><pre class="alt"><span class="rem">''' &lt;/summary&gt;</span></pre><pre><span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt"><span class="kwrd">Friend</span> <span class="kwrd">Class</span> TestForm</pre><pre>
+ </pre><pre class="alt">
+ </pre><pre><span class="preproc">#Region</span> <span class="str">"Public Shared Method"</span></pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/14</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="dataSource"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowGridDlg(<span class="kwrd">ByVal</span> dataSource <span class="kwrd">As</span> DataTable) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowGridDlg(<span class="kwrd">String</span>.Empty, dataSource)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/14</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="dataSource"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowGridDlg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> dataSource <span class="kwrd">As</span> DataTable) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Dim</span> grid <span class="kwrd">As</span> <span class="kwrd">New</span> DataGridView</pre><pre>
+        <span class="kwrd">Dim</span> btnOk <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">With</span> grid</pre><pre class="alt">
+            .DataSource = dataSource</pre><pre>
+            .Dock = DockStyle.Fill</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> btnOk</pre><pre>
+            .Text = <span class="str">"OK"</span></pre><pre class="alt">
+            .Dock = DockStyle.Bottom</pre><pre>
+            .DialogResult = Windows.Forms.DialogResult.OK</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">Return</span> ShowForm(title, grid, btnOk)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/14</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListDlg(<span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowListDlg(<span class="kwrd">String</span>.Empty, items)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/14</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListDlg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection) <span class="kwrd">As</span> DialogResult</pre><pre>
+        <span class="kwrd">Dim</span> lstbox <span class="kwrd">As</span> <span class="kwrd">New</span> ListBox</pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">With</span> lstbox</pre><pre class="alt">
+            .BeginUpdate()</pre><pre>
+            .SelectionMode = SelectionMode.None</pre><pre class="alt">
+            <span class="kwrd">For</span> <span class="kwrd">Each</span> item <span class="kwrd">In</span> items</pre><pre>
+                .Items.Add(item)</pre><pre class="alt">
+            <span class="kwrd">Next</span></pre><pre>
+            .Dock = DockStyle.Fill</pre><pre class="alt">
+            .EndUpdate()</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">Return</span> ShowForm(title, lstbox)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="obj"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowPropertySettingDlg(<span class="kwrd">ByVal</span> obj <span class="kwrd">As</span> <span class="kwrd">Object</span>) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowPropertySettingDlg(obj.ToString, obj)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="obj"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowPropertySettingDlg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> obj <span class="kwrd">As</span> <span class="kwrd">Object</span>) <span class="kwrd">As</span> DialogResult</pre><pre>
+        <span class="kwrd">Dim</span> prop <span class="kwrd">As</span> <span class="kwrd">New</span> PropertyGrid</pre><pre class="alt">
+        <span class="kwrd">Dim</span> btnOk <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> prop</pre><pre>
+            .SelectedObject = obj</pre><pre class="alt">
+            .Dock = DockStyle.Fill</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">With</span> btnOk</pre><pre class="alt">
+            .Text = <span class="str">"OK"</span></pre><pre>
+            .Dock = DockStyle.Bottom</pre><pre class="alt">
+            .DialogResult = Windows.Forms.DialogResult.OK</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">Return</span> ShowForm(title, prop, btnOk)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/13</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="selectedIdx"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListSelectDlg(<span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection, <span class="kwrd">ByRef</span> selectedIdx <span class="kwrd">As</span> <span class="kwrd">Integer</span>) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowListSelectDlg(<span class="kwrd">String</span>.Empty, items, selectedIdx)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="selectedIdx"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListSelectDlg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection, <span class="kwrd">ByRef</span> selectedIdx <span class="kwrd">As</span> <span class="kwrd">Integer</span>) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowListSelectDlg(title, items, <span class="kwrd">Nothing</span>, selectedIdx)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="selectedItem"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="selectedIdx"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListSelectDlg(<span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection, <span class="kwrd">Optional</span> <span class="kwrd">ByRef</span> selectedItem <span class="kwrd">As</span> <span class="kwrd">Object</span> = <span class="kwrd">Nothing</span>, <span class="kwrd">Optional</span> <span class="kwrd">ByRef</span> selectedIdx <span class="kwrd">As</span> <span class="kwrd">Integer</span> = -1) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowListSelectDlg(<span class="kwrd">String</span>.Empty, items, selectedItem, selectedIdx)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/14</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="items"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="selectedItem"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="selectedIdx"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowListSelectDlg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> items <span class="kwrd">As</span> ICollection, <span class="kwrd">Optional</span> <span class="kwrd">ByRef</span> selectedItem <span class="kwrd">As</span> <span class="kwrd">Object</span> = <span class="kwrd">Nothing</span>, <span class="kwrd">Optional</span> <span class="kwrd">ByRef</span> selectedIdx <span class="kwrd">As</span> <span class="kwrd">Integer</span> = -1) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Dim</span> lstbox <span class="kwrd">As</span> <span class="kwrd">New</span> ListBox</pre><pre>
+        <span class="kwrd">Dim</span> btnOk <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre class="alt">
+        <span class="kwrd">Dim</span> btnCancel <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> lstbox</pre><pre>
+            .BeginUpdate()</pre><pre class="alt">
+            .SelectionMode = SelectionMode.One</pre><pre>
+            <span class="kwrd">For</span> <span class="kwrd">Each</span> item <span class="kwrd">In</span> items</pre><pre class="alt">
+                .Items.Add(item)</pre><pre>
+            <span class="kwrd">Next</span></pre><pre class="alt">
+            .SelectedIndex = 0</pre><pre>
+            .Dock = DockStyle.Fill</pre><pre class="alt">
+            .EndUpdate()</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+        <span class="kwrd">AddHandler</span> lstbox.DoubleClick, <span class="kwrd">Function</span>(sender <span class="kwrd">As</span> <span class="kwrd">Object</span>, e <span class="kwrd">As</span> EventArgs) CallByName(btnOk, <span class="str">"PerformClick"</span>, CallType.Method, <span class="kwrd">Nothing</span>)</pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+        <span class="kwrd">With</span> btnOk</pre><pre class="alt">
+            .Text = <span class="str">"OK"</span></pre><pre>
+            .Dock = DockStyle.Bottom</pre><pre class="alt">
+            .DialogResult = Windows.Forms.DialogResult.OK</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> btnCancel</pre><pre>
+            .Text = <span class="str">"Cancel"</span></pre><pre class="alt">
+            .Dock = DockStyle.Bottom</pre><pre>
+            .DialogResult = Windows.Forms.DialogResult.Cancel</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        ShowListSelectDlg = ShowForm(title, lstbox, btnOk, btnCancel)</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> lstbox</pre><pre>
+            selectedItem = .SelectedItem</pre><pre class="alt">
+            selectedIdx = .SelectedIndex</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/14</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="file"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowChart(<span class="kwrd">ByVal</span> file <span class="kwrd">As</span> <span class="kwrd">String</span>)</pre><pre class="alt">
+        ShowChart(<span class="kwrd">String</span>.Empty, file)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/14</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="file"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowChart(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> file <span class="kwrd">As</span> <span class="kwrd">String</span>)</pre><pre>
+        ShowChart(title, <span class="kwrd">New</span> Bitmap(file))</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/12</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="chart"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowChart(<span class="kwrd">ByVal</span> chart <span class="kwrd">As</span> Image)</pre><pre>
+        ShowChart(<span class="kwrd">String</span>.Empty, chart)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/12</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="chart"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowChart(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> chart <span class="kwrd">As</span> Image)</pre><pre>
+        <span class="kwrd">Dim</span> p <span class="kwrd">As</span> <span class="kwrd">New</span> PictureBox</pre><pre class="alt">
+        <span class="kwrd">Dim</span> btnOk <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> p</pre><pre>
+            .Image = chart</pre><pre class="alt">
+            .Dock = DockStyle.Fill</pre><pre>
+            .SizeMode = PictureBoxSizeMode.Zoom</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> btnOk</pre><pre>
+            .Text = <span class="str">"OK"</span></pre><pre class="alt">
+            .Dock = DockStyle.Bottom</pre><pre>
+            .DialogResult = Windows.Forms.DialogResult.OK</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        ShowForm(title, p, btnOk)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/12</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="msg"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowMsg(<span class="kwrd">ByVal</span> msg <span class="kwrd">As</span> <span class="kwrd">String</span>)</pre><pre class="alt">
+        ShowMsg(<span class="kwrd">String</span>.Empty, msg)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/12</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="msg"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Sub</span> ShowMsg(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> msg <span class="kwrd">As</span> <span class="kwrd">String</span>)</pre><pre>
+        <span class="kwrd">Dim</span> tbx <span class="kwrd">As</span> <span class="kwrd">New</span> TextBox</pre><pre class="alt">
+        <span class="kwrd">Dim</span> btnOk <span class="kwrd">As</span> <span class="kwrd">New</span> Button</pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> tbx</pre><pre>
+            .Multiline = <span class="kwrd">True</span></pre><pre class="alt">
+            .Dock = DockStyle.Fill</pre><pre>
+            .<span class="kwrd">ReadOnly</span> = <span class="kwrd">True</span></pre><pre class="alt">
+            .BackColor = Color.White</pre><pre>
+            .Text = msg</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        <span class="kwrd">With</span> btnOk</pre><pre>
+            .Text = <span class="str">"OK"</span></pre><pre class="alt">
+            .Dock = DockStyle.Bottom</pre><pre>
+            .DialogResult = Windows.Forms.DialogResult.OK</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+ </pre><pre class="alt">
+        ShowForm(title, tbx)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/12</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="controls"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowForm(<span class="kwrd">ByVal</span> <span class="kwrd">ParamArray</span> controls() <span class="kwrd">As</span> Control) <span class="kwrd">As</span> DialogResult</pre><pre>
+        <span class="kwrd">Return</span> ShowForm(<span class="kwrd">String</span>.Empty, controls)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="width"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="height"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="controls"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre>
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowForm(<span class="kwrd">ByVal</span> width <span class="kwrd">As</span> <span class="kwrd">Integer</span>, <span class="kwrd">ByVal</span> height <span class="kwrd">As</span> <span class="kwrd">Integer</span>, <span class="kwrd">ByVal</span> <span class="kwrd">ParamArray</span> controls() <span class="kwrd">As</span> Control) <span class="kwrd">As</span> DialogResult</pre><pre class="alt">
+        <span class="kwrd">Return</span> ShowForm(<span class="kwrd">String</span>.Empty, width, height, controls)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre>
+ </pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">'Author: Larry Nung</span></pre><pre class="alt">
+    <span class="rem">'Date: 2009/5/12</span></pre><pre>
+    <span class="rem">'Purpose: </span></pre><pre class="alt">
+    <span class="rem">'Memo: </span></pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre>
+    <span class="rem">''' </span></pre><pre class="alt">
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="controls"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowForm(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> <span class="kwrd">ParamArray</span> controls() <span class="kwrd">As</span> Control) <span class="kwrd">As</span> DialogResult</pre><pre>
+        <span class="kwrd">Return</span> ShowForm(title, 300, 300, controls)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre>
+ </pre><pre class="alt">
+ </pre><pre>
+    <span class="rem">'***************************************************************************</span></pre><pre class="alt">
+    <span class="rem">'Author: Larry Nung</span></pre><pre>
+    <span class="rem">'Date: 2009/5/13</span></pre><pre class="alt">
+    <span class="rem">'Purpose: </span></pre><pre>
+    <span class="rem">'Memo: </span></pre><pre class="alt">
+    <span class="rem">'***************************************************************************</span></pre><pre>
+    <span class="rem">''' &lt;summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' </span></pre><pre>
+    <span class="rem">''' &lt;/summary&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="title"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="width"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;param name="height"&gt;&lt;/param&gt;</span></pre><pre>
+    <span class="rem">''' &lt;param name="controls"&gt;&lt;/param&gt;</span></pre><pre class="alt">
+    <span class="rem">''' &lt;returns&gt;&lt;/returns&gt;</span></pre><pre>
+    <span class="rem">''' &lt;remarks&gt;&lt;/remarks&gt;</span></pre><pre class="alt">
+    <span class="kwrd">Public</span> <span class="kwrd">Shared</span> <span class="kwrd">Function</span> ShowForm(<span class="kwrd">ByVal</span> title <span class="kwrd">As</span> <span class="kwrd">String</span>, <span class="kwrd">ByVal</span> width <span class="kwrd">As</span> <span class="kwrd">Integer</span>, <span class="kwrd">ByVal</span> height <span class="kwrd">As</span> <span class="kwrd">Integer</span>, <span class="kwrd">ByVal</span> <span class="kwrd">ParamArray</span> controls() <span class="kwrd">As</span> Control) <span class="kwrd">As</span> DialogResult</pre><pre>
+        <span class="kwrd">Dim</span> f <span class="kwrd">As</span> <span class="kwrd">New</span> Form</pre><pre class="alt">
+        <span class="kwrd">With</span> f</pre><pre>
+            .SuspendLayout()</pre><pre class="alt">
+            .Width = width</pre><pre>
+            .Height = height</pre><pre class="alt">
+            .Text = title</pre><pre>
+            .Controls.AddRange(controls)</pre><pre class="alt">
+            .ResumeLayout()</pre><pre>
+            <span class="kwrd">Return</span> .ShowDialog()</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">With</span></pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Function</span></pre><pre class="alt">
+ </pre><pre><span class="preproc">#End Region</span></pre><pre class="alt">
+ </pre><pre><span class="kwrd">End</span> <span class="kwrd">Class</span></pre></div></div><p /><style type="text/css"><![CDATA[
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }]]></style><p> </p><h2>測試用表單畫面</h2><p><strong>秀圖界面</strong></p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb.png" /></a></p><p> </p><p><strong>訊息界面</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_4.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_1.png" /></a></p><p> </p><p><strong>清單界面</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_6.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_2.png" /></a></p><p> </p><p><strong>選取界面</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_8.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_3.png" /></a></p><p> </p><p><strong>屬性界面</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_10.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_4.png" /></a></p><p> </p><p><strong>表格界面</strong></p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_12.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_5.png" /></a></p><p> </p><h2>使用範例</h2><p><a href="http://files.dotblogs.com.tw/larrynung/0905/a9cf167d6fed.NET_12BD2/image_14.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="304" height="304" src="\images\posts\8411\image_thumb_6.png" /></p><p> </p><p>使用範例如下：</p><div style="width: 630px; height: 379px; overflow: auto"><div class="csharpcode"><pre class="alt"><span class="kwrd">Public</span> <span class="kwrd">Class</span> Form1</pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnShowPhoto_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnShowPhoto.Click</pre><pre>
+        <span class="kwrd">Dim</span> openDlg <span class="kwrd">As</span> <span class="kwrd">New</span> OpenFileDialog</pre><pre class="alt">
+        openDlg.Filter = <span class="str">"Photo file|*.bmp;*.jpg"</span></pre><pre>
+        <span class="kwrd">If</span> openDlg.ShowDialog = Windows.Forms.DialogResult.OK <span class="kwrd">Then</span></pre><pre class="alt">
+            TestForm.ShowChart(<span class="str">"Photo"</span>, openDlg.FileName)</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnShowFile_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnShowFile.Click</pre><pre>
+        <span class="kwrd">Dim</span> openDlg <span class="kwrd">As</span> <span class="kwrd">New</span> OpenFileDialog</pre><pre class="alt">
+        openDlg.Filter = <span class="str">"Text file|*.txt"</span></pre><pre>
+        <span class="kwrd">If</span> openDlg.ShowDialog = Windows.Forms.DialogResult.OK <span class="kwrd">Then</span></pre><pre class="alt">
+            TestForm.ShowMsg(<span class="str">"Text"</span>, My.Computer.FileSystem.ReadAllText(openDlg.FileName))</pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnShowFileContent_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnShowFileContent.Click</pre><pre>
+        <span class="kwrd">Dim</span> selectedItem <span class="kwrd">As</span> <span class="kwrd">Object</span> = <span class="kwrd">Nothing</span></pre><pre class="alt">
+        <span class="kwrd">Dim</span> folderDlg <span class="kwrd">As</span> <span class="kwrd">New</span> FolderBrowserDialog</pre><pre>
+        <span class="kwrd">If</span> folderDlg.ShowDialog = Windows.Forms.DialogResult.OK <span class="kwrd">Then</span></pre><pre class="alt">
+            <span class="kwrd">If</span> TestForm.ShowListSelectDlg(<span class="str">"Select File"</span>, My.Computer.FileSystem.GetFiles(folderDlg.SelectedPath, FileIO.SearchOption.SearchTopLevelOnly, <span class="str">"*.txt"</span>), selectedItem) = Windows.Forms.DialogResult.OK <span class="kwrd">Then</span></pre><pre>
+                TestForm.ShowMsg(My.Computer.FileSystem.ReadAllText(selectedItem.ToString))</pre><pre class="alt">
+            <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre>
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnSetProperty_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnSetProperty.Click</pre><pre>
+        TestForm.ShowPropertySettingDlg(<span class="kwrd">Me</span>)</pre><pre class="alt">
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre>
+ </pre><pre class="alt">
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnShowFileList_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnShowFileList.Click</pre><pre>
+        <span class="kwrd">Dim</span> folderDlg <span class="kwrd">As</span> <span class="kwrd">New</span> FolderBrowserDialog</pre><pre class="alt">
+        <span class="kwrd">If</span> folderDlg.ShowDialog = Windows.Forms.DialogResult.OK <span class="kwrd">Then</span></pre><pre>
+            TestForm.ShowListDlg(My.Computer.FileSystem.GetFiles(folderDlg.SelectedPath))</pre><pre class="alt">
+        <span class="kwrd">End</span> <span class="kwrd">If</span></pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt">
+ </pre><pre>
+    <span class="kwrd">Private</span> <span class="kwrd">Sub</span> btnShowGrid_Click(<span class="kwrd">ByVal</span> sender <span class="kwrd">As</span> System.<span class="kwrd">Object</span>, <span class="kwrd">ByVal</span> e <span class="kwrd">As</span> System.EventArgs) <span class="kwrd">Handles</span> btnShowGrid.Click</pre><pre class="alt">
+        <span class="kwrd">Dim</span> dt <span class="kwrd">As</span> <span class="kwrd">New</span> DataTable</pre><pre>
+        dt.Columns.Add()</pre><pre class="alt">
+        TestForm.ShowGridDlg(dt)</pre><pre>
+    <span class="kwrd">End</span> <span class="kwrd">Sub</span></pre><pre class="alt"><span class="kwrd">End</span> Class</pre></div></div>

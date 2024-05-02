@@ -1,0 +1,136 @@
+---
+title: "[CodePlex]如何使用CodePlex website發佈自己的開源專案"
+date: "2013-11-06 12:00:00"
+description: "[CodePlex]如何使用CodePlex website發佈自己的開源專案"
+---
+
+<p>
+	 </p>
+<p>
+	筆者因為最近在整理了一個序列化的函式庫，對微軟的開源程式碼網站CodePlex稍稍玩了一下，這邊隨手做個紀錄。</p>
+<p>
+	 </p>
+<p>
+	要將自己的開源專案程式放在CodePlex上其實很簡單，先將瀏覽器連到<em>CodePlex</em> - Open Source Project Hosting網站，登入自己的帳號，這邊有提供兩種登入方式，可以用Windows Live ID登入，也可以用CodePlex去做登入。</p>
+<p>
+	<img alt="2012-06-05_210041" border="0" height="215" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210041_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	登入帳號後我們可以看到下面這樣的畫面，按下Create Project，開始建立自己的CodePlex開源專案。</p>
+<p>
+	<img alt="2012-06-05_205045" border="0" height="351" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205045_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	在建立一個新的CodePlex Project，我們需要為這個Project起個名字，並告訴它專案的網址要用怎樣的開頭，以及要選擇用什麼來做我們Project的版本控制。</p>
+<p>
+	<img alt="2012-06-05_205157" border="0" height="364" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205157_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	輸入完按下CREATE按鈕建立CodePlex Project，你的CodePlex Project就建立出來了，這時Project還是尚未發布的狀態，記得30天內必需要將專案該設定的設完並發佈出去。</p>
+<p>
+	<img alt="2012-06-05_205240" border="0" height="377" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205240_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	這邊就先讓我們把建立的專案它的細部資料給補齊，注意頁面右上方會有個Edit Project Summary &amp; Details的連結，按下去進入設定頁面。這頁面主要要補齊的是SUMMARY的部份，可以在這邊概略的介紹一下專案。另外下面的FUND設定也可以看一下，這是廣告的設置設定，可以為專案頁面右側放置廣告，為專案放置個廣告去做公益也是不錯的。</p>
+<p>
+	<img alt="2012-06-05_211347" border="0" height="772" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_211347_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="594" /></p>
+<p>
+	 </p>
+<p>
+	設定完專案的細部資料後，我們可以開始著手編輯使用者第一眼會看到的HOME這頁，先用滑鼠點選Edit連結進入編輯狀態。</p>
+<p>
+	<img alt="2012-06-05_205746" border="0" height="273" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205746_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="468" /></p>
+<p>
+	 </p>
+<p>
+	剛進入CodePlex編輯的功能，有用過Wiki的可能會很熟悉。編輯時若需要些加些效果，像是要將描述變成黑體、斜體、或是要放程式碼進去，必需要善用右邊所提示的MARKUP GUIDE，套用對應的MARKUP GUIDE來達到我們想要的效果。</p>
+<p>
+	<img alt="image" border="0" height="421" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	若對Wiki這種編輯方是很感冒的，CodePlex也提供Html Markup這種編輯方式，可在上方的FORMAT區域切換，編輯上就會像一般的網站一樣會有些編輯Html的小工具讓我們直接套用。</p>
+<p>
+	<img alt="image" border="0" height="399" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	HOME頁面除了內容可以編輯外，注意右邊還會有些資訊，像是瀏覽人數之類的，比較要注意的是右下角有個Tag的設定，這能幫助專案被搜尋與曝光，可以為專案標註上一些關鍵字。以筆者的序列化函式庫來說，就標注了序列化與解序列化這些關鍵字。</p>
+<p>
+	<img alt="2012-06-05_205422" border="0" height="268" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205422_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="499" /></p>
+<p>
+	<img alt="2012-06-05_205619" border="0" height="132" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_205619_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="311" /></p>
+<p>
+	 </p>
+<p>
+	HOME頁面這邊的編輯若是都能上手，那麼後續的動作相信都不是問題了，因為這樣的編輯方式在很多頁面都是類似的，像是Document頁面的編輯也一樣，這邊就不多做介紹，你可以試著在Document頁面幫專案加上一些相關的教學文章，讓他人在使用您的專案時更為上手。</p>
+<p>
+	 </p>
+<p>
+	Home與Document頁面都依序設置完成，我們還必須要注意到要切換到LICENSE頁面，為專案設定它的授權。</p>
+<p>
+	<img alt="2012-06-05_210442" border="0" height="233" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210442_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	<img alt="2012-06-05_210504" border="0" height="248" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210504_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	到此專案大致該有的設定都設定完了，接著要進入上Code的階段，上Code的部份這邊會依照當初選擇的版本控制方式而有不同，因為筆者選擇的是Git上Code，故這邊以Git的方式來做個簡單的介紹(不足的地方請自行參閱CodePlex Information and Discussion這篇教學)，沒裝Git的請先自行安裝妥當。</p>
+<p>
+	 </p>
+<p>
+	首先我們必需要切至SOURCE CODE頁面，按下右下角的Git連結，CodePlex會彈出個小對話框，上面會顯示這個專案的Git位置、帳密提示、與教學說明的連結。</p>
+<p>
+	<img alt="image" border="0" height="297" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	有了Git位置後我們要先將這個專案給它Clone下來，開啟Git Bash用git clone指令就可以了，像是下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b9d8ac75-e5db-4e66-8399-a8808c0553f3" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c" name="code">
+git clone https://YourCodePlexUsername@CloneUrl NameOfFolder</pre>
+</div>
+<p>
+	 </p>
+<p>
+	以CodePlex教學頁面上所提的例子來說，就是先將Git Bash切至桌面，並將CodePlex專案Clone下來放在MyAwesomeGitProject目錄下。下Git指令時Git Bash會詢問帳號密碼，這邊帶入自己的帳密就可以了。</p>
+<p>
+	<img alt="image" border="0" height="172" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="598" /></p>
+<p>
+	 </p>
+<p>
+	Clone下來自己的專案後，我們可以直接用抓下來的專案進行編程，編程一個段落可以將Code加入索引，並將Code Commit後Push到CodePlex。</p>
+<p>
+	<img alt="image" border="0" height="152" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\image_thumb_4.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="600" /></p>
+<p>
+	 </p>
+<p>
+	上完的Code我們可以在SOURCE CODE頁面直接查閱，是修改什麼、有改動哪些檔案、其差異是什麼，每版的紀錄都是清清楚楚。</p>
+<p>
+	 </p>
+<p>
+	專案程式開發告一段落，功能達到預期且穩定的話，我們可以將專案Release。只要切至DOWNLOADS頁面，按下Create New Release。</p>
+<p>
+	  <img alt="2012-06-05_210558" border="0" height="295" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210558_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	填入這次Release是幾版，有什麼重大的功能與修正，並附上Release的檔案，以及是否是穩定版本。</p>
+<p>
+	<img alt="2012-06-05_210825" border="0" height="484" src="\images\posts\e95a7708-827b-423e-a017-77cb3b56192a\2012-06-05_210825_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="480" /></p>
+<p>
+	 </p>
+<p>
+	CodePlex上專案的流程到這邊大概簡單的介紹完畢了，整體來說CodePlex算是個還不錯也還滿完整的開放源碼網站服務，該有的功能大致上都內建了，也還滿好用的，不過Release時要自己編譯後壓縮上傳這點還是有點麻煩。</p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		CodePlex Information and Discussion</li>
+</ul>

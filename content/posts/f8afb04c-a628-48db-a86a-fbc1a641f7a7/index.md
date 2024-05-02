@@ -1,0 +1,146 @@
+---
+title: "Tkinter's tkMessageBox"
+date: "2013-11-06 12:00:00"
+description: "Tkinter's tkMessageBox"
+tags: [Python]
+---
+
+<p>
+	要使用Tkinter的MessageBox，首先要先將tkMessageBox package import進來。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b1560d12-116a-4caa-a9e2-8fba722dcd72" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+import tkMessageBox</pre>
+</div>
+<p>
+	 </p>
+<p>
+	tkMessageBox的用法大概像下面這樣，依使用需求呼叫不同的方法，並帶入訊息視窗的標題、內文、以及一些額外的參數就可以了。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:10d1b7de-da62-43d7-b9dc-fc07fe8eaa97" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.FunctionName(title, message [, options])</pre>
+</div>
+<p>
+	 </p>
+<p>
+	可以呼叫的方法有showinfo...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f2de087b-e2c5-4e4f-b56c-35244d8632b8" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.showinfo("showinfo demo", "Info")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="158" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="154" /></p>
+<p>
+	 </p>
+<p>
+	showwarning...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2d14f2fa-6311-4a85-8092-1cbae3d10385" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.showwarning("showwarning demo", "Warning")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="157" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_1.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="183" /></p>
+<p>
+	 </p>
+<p>
+	showerror...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c838195e-cd17-4cb1-a3fe-5fa57f886857" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.showerror("showerror demo", "Error")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="157" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_2.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="162" /></p>
+<p>
+	 </p>
+<p>
+	這些是用來提示使用者訊息用的訊息框，另外也有用來詢問使用者動作的訊息框。像是askquestion...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c7900751-2039-472d-949f-c5d29e7ad1a5" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.askquestion("askquestion demo", "Sure?!")</pre>
+</div>
+<p>
+	 <img alt="image" border="0" height="157" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_3.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="228" /></p>
+<p>
+	 </p>
+<p>
+	askokcancel...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:61919101-e8d2-4c47-8ad8-9f7fb0bb83e8" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="157" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_4.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="228" /></p>
+<p>
+	 </p>
+<p>
+	askyesno...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6fe2863f-b1d7-49ae-b53c-41c05a9c3c88" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.askyesno("askyesno demo", "Yes?! No?!")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="158" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_5.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="228" /></p>
+<p>
+	 </p>
+<p>
+	以及askretrycancel...</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:be959d35-3281-485a-bd5b-f356ac5bad04" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="158" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_6.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="229" /></p>
+<p>
+	 </p>
+<p>
+	在使用這種用來詢問使用者動作的訊息框時，我們可以帶入default參數下去指定預設選取的對話框按鈕。像是下面這樣：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7e17a59a-3ad3-4f55-8760-4dabd1d7d0db" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+tkMessageBox.askquestion("askquestion demo", "Sure?!")
+tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
+tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
+tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")</pre>
+</div>
+<p>
+	 </p>
+<p>
+	若是要知道使用者選取的結果，我們可以直接接方法的回傳值，除了askquest是回傳yes/no外，其它的方法在按下OK或是Yes按鈕時是回傳True，按下No與Cancel按鈕是回傳False。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8aa013a6-6d7b-4ff5-a501-383c5e454c11" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+print "askquestion's dialogresult: %s" % tkMessageBox.askquestion("askquestion demo", "Sure?!")
+print "askokcancel's dialogresult: %s" % tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
+print "askyesno's dialogresult: %s" % tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
+print "askretrycancel's dialogresult: %s" % tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")</pre>
+</div>
+<p>
+	<img alt="image" border="0" height="122" src="\images\posts8afb04c-a628-48db-a86a-fbc1a641f7a7\image_thumb_7.png" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" width="337" /></p>
+<p>
+	 </p>
+<p>
+	最後附上完整的測試範例：</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a5a87086-1222-4adf-b934-da5cd06c588b" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px">
+	<pre class="py" name="code">
+import tkMessageBox
+
+tkMessageBox.showinfo("showinfo demo", "Info")
+tkMessageBox.showwarning("showwarning demo", "Warning")
+tkMessageBox.showerror("showerror demo", "Error")
+
+print "askquestion's dialogresult: %s" % tkMessageBox.askquestion("askquestion demo", "Sure?!")
+print "askokcancel's dialogresult: %s" % tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
+print "askyesno's dialogresult: %s" % tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
+print "askretrycancel's dialogresult: %s" % tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")</pre>
+</div>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Standard Dialogs</li>
+	<li>
+		Python Tkinter tkMessageBox</li>
+	<li>
+		Tkinter 8.5 reference: a GUI for Python</li>
+</ul>

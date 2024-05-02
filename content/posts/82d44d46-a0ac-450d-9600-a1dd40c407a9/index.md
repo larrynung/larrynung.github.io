@@ -1,0 +1,246 @@
+---
+title: "[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
+date: "2013-11-06 12:00:00"
+description: "[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
+tags: [CSharp]
+---
+
+<p>
+	最近專案中在用Linq Distinct想要將重複的資料去除時，發現它跟Any之類的方法有點不太一樣，不能很直覺的在呼叫時直接帶入重複資料判斷的處理邏輯，所以當我們要用某個成員屬性做重複資料的判斷時，就必需繞一下路，這邊稍微將處理的方法做個整理並記錄一下。</p>
+<p>
+	 </p>
+<p>
+	首先為了方便接下去說明，我們必須先來準備後面會用到的資料類別，這邊一樣用筆者最常用來示範的Person類別，內含兩個成員屬性ID與Name。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:225750b7-c53b-4774-9b78-19066b04d18e" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	public struct Person
+	{
+		#region Property
+		/// &lt;summary&gt;
+		/// Gets or sets the ID.
+		/// &lt;/summary&gt;
+		/// &lt;value&gt;The ID.&lt;/value&gt;
+		public string ID { get; set; }
+
+		/// &lt;summary&gt;
+		/// Gets or sets the name.
+		/// &lt;/summary&gt;
+		/// &lt;value&gt;The name.&lt;/value&gt;
+		public string Name { get; set; } 
+		#endregion
+
+
+		#region Public Method
+		/// &lt;summary&gt;
+		/// Returns a &lt;see cref="System.String"/&gt; that represents this instance.
+		/// &lt;/summary&gt;
+		/// &lt;returns&gt;
+		/// A &lt;see cref="System.String"/&gt; that represents this instance.
+		/// &lt;/returns&gt;
+		public override string ToString()
+		{
+			return Name;
+		} 
+		#endregion</pre>
+</div>
+<p>
+	 </p>
+<p>
+	接著準備要用來測試的資料，這邊準備了十一個Person物件，前十個物件的名稱都是Larry，第十一個物件的名稱為LastLarry。期望後面可以透過Distinct將重複的Larry過濾掉。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4be5ae22-0c16-4ebe-85d0-70e1f9deef1e" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+...
+var datas = new List&lt;Person&gt;();
+int idx = 0;
+for (idx = 0; idx &lt; 10; ++idx)
+{
+	datas.Add(new Person() {ID = idx.ToString(), Name = "Larry" });
+}
+datas.Add(new Person() { ID = idx.ToString(), Name = "LastLarry" });
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	若是我們想直接用內建的Distinct函式來過濾資料。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6ea95a73-707e-4a1b-826c-0181c1afaaa1" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+...
+var distinctDatas = datas.Distinct();
+ShowDatas(distinctDatas);
+...
+private static void ShowDatas&lt;T&gt;(IEnumerable&lt;T&gt; datas)
+{
+	foreach (var data in datas)
+	{
+		Console.WriteLine(data.ToString());
+	}
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	可以看到運行起來並不如我們所預期的，過濾出來的資料跟沒過濾一樣。</p>
+<p>
+	<img alt="image" border="0" height="181" src="\images\posts\82d44d46-a0ac-450d-9600-a1dd40c407a9\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="150" /></p>
+<p>
+	 </p>
+<p>
+	為了解決這個問題，我們必須要做個可依照Person.Name去做比較的Compare類別，該Compare類別必須實做IEqualityCompare.Equals與IEqualityCompare.GetHashCode方法，並在呼叫Distinct過濾時將該Compare物件帶入。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5ef3ab21-6700-44ff-8ab2-6a59fdbf6ef0" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+...
+distinctDatas = datas.Distinct(new PersonCompare());
+ShowDatas(distinctDatas);
+...
+class PersonCompare : IEqualityComparer&lt;Person&gt;
+{
+	#region IEqualityComparer&lt;Person&gt; Members
+
+	public bool Equals(Person x, Person y)
+	{
+		return x.Name.Equals(y.Name);
+	}
+
+	public int GetHashCode(Person obj)
+	{
+		return obj.Name.GetHashCode();
+	}
+
+	#endregion
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	運行起來就會是我們所期望的樣子。</p>
+<p>
+	<img alt="image" border="0" height="41" src="\images\posts\82d44d46-a0ac-450d-9600-a1dd40c407a9\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="178" /></p>
+<p>
+	 </p>
+<p>
+	但是這樣做代表我們每次碰到新的類別就必須要實現對應的Compare類別，用起來十分的不便。因此有人就提出用泛型加上反射的方式做一個共用的Compare類別。</p>
+<p>
+	 </p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8b6f7e00-bb4d-4437-a069-6f98148f395f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+	public class PropertyComparer&lt;T&gt; : IEqualityComparer&lt;T&gt;
+	{
+		private PropertyInfo _PropertyInfo;
+
+		/// &lt;summary&gt;
+		/// Creates a new instance of PropertyComparer.
+		/// &lt;/summary&gt;
+		/// &lt;param name="propertyName"&gt;The name of the property on type T 
+		/// to perform the comparison on.&lt;/param&gt;
+		public PropertyComparer(string propertyName)
+		{
+			//store a reference to the property info object for use during the comparison
+			_PropertyInfo = typeof(T).GetProperty(propertyName,
+		BindingFlags.GetProperty | BindingFlags.Instance | BindingFlags.Public);
+			if (_PropertyInfo == null)
+			{
+				throw new ArgumentException(string.Format("{0} is not a property of type {1}.", propertyName, typeof(T)));
+			}
+		}
+
+		#region IEqualityComparer&lt;T&gt; Members
+
+		public bool Equals(T x, T y)
+		{
+			//get the current value of the comparison property of x and of y
+			object xValue = _PropertyInfo.GetValue(x, null);
+			object yValue = _PropertyInfo.GetValue(y, null);
+
+			//if the xValue is null then we consider them equal if and only if yValue is null
+			if (xValue == null)
+				return yValue == null;
+
+			//use the default comparer for whatever type the comparison property is.
+			return xValue.Equals(yValue);
+		}
+
+		public int GetHashCode(T obj)
+		{
+			//get the value of the comparison property out of obj
+			object propertyValue = _PropertyInfo.GetValue(obj, null);
+
+			if (propertyValue == null)
+				return 0;
+
+			else
+				return propertyValue.GetHashCode();
+		}
+
+		#endregion
+	}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	使用時只要帶入泛型的型態與成原屬性的名稱，就可以產生出需要的Compare物件。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a0bbac15-60e1-4e35-bff1-874a052abf6a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+...
+distinctDatas = datas.Distinct(new PropertyComparer&lt;Person&gt;("Name"));
+ShowDatas(distinctDatas);
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	這樣的作法是減少了許多額外的負擔，但是感覺還是少了一條路，用起來也還是必須要建立Compare物件，而且反射也存在著效能的問題，如果每個元素都透過這個Compare去做判斷，感覺處理上也不是很漂亮。所以有人也意識到了這個問題，用擴充方法提供了一條我們比較熟悉的路，可以直接將Lambda帶入以決定元素要怎樣過濾。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:aa739bb9-13fb-4fe4-adfc-60408a893282" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+public static class EnumerableExtender
+{
+	public static IEnumerable&lt;TSource&gt; Distinct&lt;TSource, TKey&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TKey&gt; keySelector)
+	{
+		HashSet&lt;TKey&gt; seenKeys = new HashSet&lt;TKey&gt;();
+		foreach (TSource element in source)
+		{
+			var elementValue = keySelector(element);
+			if (seenKeys.Add(elementValue))
+			{
+				yield return element;
+			}
+		}
+	}
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	使用上會好寫許多。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:09a92951-048d-4ae2-86aa-100807b528f8" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+...
+distinctDatas = datas.Distinct(person =&gt; person.Name);
+ShowDatas(distinctDatas);
+...</pre>
+</div>
+<p>
+	 </p>
+<p>
+	若是不想加入額外的類別，我們也可以透過Group方式來達到類似的效果。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:093e26dc-4344-4f58-9522-1caaceb82c9a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+			distinctDatas = from data in datas
+							group data by data.Name into g
+							select g.First();
+			ShowDatas(distinctDatas);</pre>
+</div>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Linq Distinct on a particular Property</li>
+	<li>
+		Linq Distinct with a single comparison class (and interface)</li>
+	<li>
+		LINQ Select Distinct on Custom Class Property</li>
+	<li>
+		A Generic IEqualityComparer for Linq Distinct()</li>
+</ul>

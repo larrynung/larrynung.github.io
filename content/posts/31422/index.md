@@ -1,0 +1,107 @@
+---
+title: "[C#][Linq]LINQ To WMI"
+date: "2011-07-10 10:38:05"
+description: "[C#][Linq]LINQ To WMI"
+tags: [CSharp,Linq]
+---
+
+<p>
+	Linq To WMI元件可提供我們使用Linq去查詢WMI的功能。</p>
+<p>
+	<img alt="image" border="0" height="356" src="\images\posts\31422\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	 </p>
+<p>
+	至Linq To WMI將檔案下載下來後，解開後會看到下面三個專案：</p>
+<ul>
+	<li>
+		LinqToWmi.ClassGenerator</li>
+	<li>
+		LinqToWmi.Core</li>
+	<li>
+		LinqToWmi.Tests</li>
+</ul>
+<p>
+	 </p>
+<p>
+	LinqToWmi.ClassGenerator專案是用來建立使用Linq To WMI時所需要的WMI對應的類別，LinqToWmi.Core專案是整個Linq To WMI的核心，提供整個查詢的功能，而LinqToWmi.Tests則是範例專案，示範要如何使用Linq To WMI的功能。</p>
+<p>
+	 </p>
+<p>
+	在進行Linq To WMI查詢前，我們必須先建立WMI對應的類別，LinqToWmi.Core內並未含有任何的WMI Class，因此只將LinqToWmi.Core加入參考使用，並無法做任何的查詢動作。需使用LinqToWmi.ClassGenerator專案編譯出來的Console Cmd，產生查詢所需的WMI對應類別，LinqToWmi.ClassGenerator.Exe可使用的參數如下：</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ecead026-ab3c-4275-b300-a6580aebbb4c" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+Switches:
+ /wmi       - WMI object to create class for! (Required)
+ /out       - Filename to create
+ /ns        - Namespace
+ /provider  - Language to generate the file for (IE. CSharp)</pre>
+</div>
+<p>
+	 </p>
+<p>
+	最簡單的產生方法就是帶入wmi參數指定WMI Class，並帶入out參數指定輸出的檔案，像是下面這個簡單的範例就是產生Win32_UserAccount Class對應的WMI類別，產生的檔案名稱為Win32_UserAccount.cs。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0f28b854-75a4-4ddc-b8a0-b05e0b60915d" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="xml" name="code">
+LinqToWmi.ClassGenerator.exe /wmi:Win32_UserAccount /out:Win32_UserAccount.cs</pre>
+</div>
+<p>
+	 </p>
+<p>
+	產生的類別會跟WMI Class具有相同的成員屬性。</p>
+<p>
+	<img alt="image" border="0" height="484" src="\images\posts\31422\image_thumb_7.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="590" /></p>
+<p>
+	 </p>
+<p>
+	我們可將產生的類別直接加入至專案中，將LinqToWmi.Core專案編譯出來的組件加入參考，建立WmiContext，並以WmiContext.Source當作搜尋的來源，使用Linq去查詢。</p>
+<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0bddd4eb-18ad-4eb8-8054-dbedc0954406" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+	<pre class="c#" name="code">
+private static void QueryAccounts()
+{
+    using (WmiContext context = new WmiContext(@"\."))
+    {
+        var query = from account in context.Source&lt;Win32_UserAccount&gt;()
+                    select account;
+
+        foreach (Win32_UserAccount account in query)
+        {
+            Console.WriteLine(account.Name);
+        }
+    }
+}</pre>
+</div>
+<p>
+	 </p>
+<p>
+	下面這邊我以LinqPad簡單的帶出查閱其它WMI Class的情況。</p>
+<p>
+	<img alt="image" border="0" height="425" src="\images\posts\31422\image6_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="363" src="\images\posts\31422\image9_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="644" /></p>
+<p>
+	<img alt="image" border="0" height="442" src="\images\posts\31422\image12_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="615" /></p>
+<p>
+	<img alt="image" border="0" height="442" src="\images\posts\31422\image15_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="615" /></p>
+<p>
+	<img alt="image" border="0" height="442" src="\images\posts\31422\image18_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="615" /></p>
+<p>
+	 </p>
+<p>
+	這邊若有需要查閱其它WMI Classes或想要更進一步了解其WMI Class可用來做查詢的資訊有哪些，可至Win32 Classes查閱。</p>
+<p>
+	<img alt="image" border="0" height="764" src="\images\posts\31422\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="662" /></p>
+<p>
+	 </p>
+<h2>
+	Link</h2>
+<ul>
+	<li>
+		Linq To WMI</li>
+	<li>
+		QUERY YOUR WMI WITH EASE USING WMILINQ!</li>
+	<li>
+		An Updated LINQ to WMI Implementation</li>
+	<li>
+		Win32 Classes</li>
+</ul>
