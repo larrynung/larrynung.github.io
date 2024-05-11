@@ -1,5 +1,6 @@
 ---
 title: "[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
+slug: "[CSharp]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
 date: "2013-11-06 12:00:00"
 description: "[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
 tags: [CSharp]

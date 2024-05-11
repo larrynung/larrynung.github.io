@@ -1,5 +1,6 @@
 ---
 title: "[C#]ListBox如何偵測Item的新增、插入、與刪除"
+slug: "[CSharp]ListBox如何偵測Item的新增、插入、與刪除"
 date: "2013-11-06 12:00:00"
 description: "[C#]ListBox如何偵測Item的新增、插入、與刪除"
 tags: [CSharp]

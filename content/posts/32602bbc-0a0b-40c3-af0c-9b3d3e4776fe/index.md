@@ -1,5 +1,6 @@
 ---
 title: "[C#]簡易的Backoff window實現類別"
+slug: "[CSharp]簡易的Backoff window實現類別"
 date: "2013-11-06 12:00:00"
 description: "[C#]簡易的Backoff window實現類別"
 tags: [CSharp]

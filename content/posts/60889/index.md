@@ -1,5 +1,6 @@
 ---
 title: "[C#][WPF]WPF程式接收視窗訊息"
+slug: "[CSharp][WPF]WPF程式接收視窗訊息"
 date: "2011-12-06 01:15:51"
 description: "[C#][WPF]WPF程式接收視窗訊息"
 tags: [CSharp,WPF]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用SHEmptyRecycleBin API清除資源回收桶"
+slug: "[CSharp]使用SHEmptyRecycleBin API清除資源回收桶"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用SHEmptyRecycleBin API清除資源回收桶"
 tags: [CSharp]

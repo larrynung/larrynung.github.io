@@ -1,5 +1,6 @@
 ---
 title: "[C#]Stream.Write Extension Method"
+slug: "[CSharp]Stream.Write Extension Method"
 date: "2011-07-12 10:53:13"
 description: "[C#]Stream.Write Extension Method"
 tags: [CSharp]

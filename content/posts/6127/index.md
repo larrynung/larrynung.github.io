@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]XML序列化私有欄位"
+slug: "[CSharp][VB.NET]XML序列化私有欄位"
 date: "2008-11-29 10:17:07"
 description: "[C#][VB.NET]XML序列化私有欄位"
 tags: [VB.NET,CSharp]

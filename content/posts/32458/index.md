@@ -1,5 +1,6 @@
 ---
 title: "[C#]取得網卡的IPV6位置"
+slug: "[CSharp]取得網卡的IPV6位置"
 date: "2011-08-02 01:18:13"
 description: "[C#]取得網卡的IPV6位置"
 tags: [CSharp]

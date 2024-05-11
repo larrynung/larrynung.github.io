@@ -1,5 +1,6 @@
 ---
 title: "[C#]實作UDP Broadcast的傳送與接收"
+slug: "[CSharp]實作UDP Broadcast的傳送與接收"
 date: "2013-11-06 12:00:00"
 description: "[C#]實作UDP Broadcast的傳送與接收"
 tags: [CSharp]

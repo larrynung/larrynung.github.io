@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何為程式加上Windows的SendTo功能支援"
+slug: "[CSharp]如何為程式加上Windows的SendTo功能支援"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何為程式加上Windows的SendTo功能支援"
 ---

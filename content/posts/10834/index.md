@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款三： 運算子is或as優於強制轉型"
+slug: "[CSharp]Effective C# 條款三： 運算子is或as優於強制轉型"
 date: "2009-09-30 08:17:52"
 description: "[C#]Effective C# 條款三： 運算子is或as優於強制轉型"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
+slug: "[CSharp][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
 date: "2013-11-06 12:00:00"
 description: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
 tags: [CSharp]
@@ -153,9 +154,9 @@ namespace WindowsFormsApplication3
 
 <p>運行結果如下：</p>
 
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�64d0-6c26-4299-b58c-2c62dc37dae0\image_thumb.png" width="304" height="304" /> </p>
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�64d0-6c26-4299-b58c-2c62dc37dae0\image_thumb.png" width="304" height="304" /> </p>
 
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�64d0-6c26-4299-b58c-2c62dc37dae0\image_thumb_1.png" width="304" height="304" /> </p>
+<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts�64d0-6c26-4299-b58c-2c62dc37dae0\image_thumb_1.png" width="304" height="304" /> </p>
 
 <p> </p>
 

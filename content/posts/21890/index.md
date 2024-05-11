@@ -1,5 +1,6 @@
 ---
 title: "[C#]原子能委員會輻射監控非官方API"
+slug: "[CSharp]原子能委員會輻射監控非官方API"
 date: "2011-03-17 07:25:18"
 description: "[C#]原子能委員會輻射監控非官方API"
 tags: [CSharp]

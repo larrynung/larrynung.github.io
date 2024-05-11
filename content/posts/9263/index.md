@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款二： 運行時常數優於編譯時常數"
+slug: "[CSharp]Effective C# 條款二： 運行時常數優於編譯時常數"
 date: "2009-07-09 08:46:16"
 description: "[C#]Effective C# 條款二： 運行時常數優於編譯時常數"
 tags: [CSharp]

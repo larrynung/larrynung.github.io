@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET].NET 4.0 Barrier Class"
+slug: "[CSharp][VB.NET].NET 4.0 Barrier Class"
 date: "2009-08-22 05:32:32"
 description: "[C#][VB.NET].NET 4.0 Barrier Class"
 tags: [VB.NET, CSharp]

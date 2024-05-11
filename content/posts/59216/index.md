@@ -1,5 +1,6 @@
 ---
 title: "[C#]Enable UAC Shield icons and run as administrator"
+slug: "[CSharp]Enable UAC Shield icons and run as administrator"
 date: "2011-11-23 01:20:05"
 description: "[C#]Enable UAC Shield icons and run as administrator"
 tags: [CSharp]

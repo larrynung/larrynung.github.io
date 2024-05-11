@@ -1,5 +1,6 @@
 ---
 title: "[C#]Export PowerPoint file to photos"
+slug: "[CSharp]Export PowerPoint file to photos"
 date: "2013-11-06 12:00:00"
 description: "[C#]Export PowerPoint file to photos"
 tags: [CSharp]

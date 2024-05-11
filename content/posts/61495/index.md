@@ -1,5 +1,6 @@
 ---
 title: "[C#][Control]指撥開關控制項的概念與簡易實作"
+slug: "[CSharp][Control]指撥開關控制項的概念與簡易實作"
 date: "2011-12-10 10:21:35"
 description: "[C#][Control]指撥開關控制項的概念與簡易實作"
 tags: [CSharp,Control]

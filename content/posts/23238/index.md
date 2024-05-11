@@ -1,5 +1,6 @@
 ---
 title: "[C#]取消WebBrowser開啟新視窗瀏覽"
+slug: "[CSharp]取消WebBrowser開啟新視窗瀏覽"
 date: "2011-04-21 12:51:04"
 description: "[C#]取消WebBrowser開啟新視窗瀏覽"
 tags: [CSharp]

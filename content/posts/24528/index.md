@@ -1,5 +1,6 @@
 ---
 title: "[C#][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊"
+slug: "[CSharp][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊"
 date: "2011-05-08 07:33:11"
 description: "[C#][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊"
 tags: [Visual Studio,CSharp]

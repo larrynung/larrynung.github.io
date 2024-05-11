@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
+slug: "[CSharp][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
 date: "2013-11-06 12:00:00"
 description: "[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
 tags: [CSharp]

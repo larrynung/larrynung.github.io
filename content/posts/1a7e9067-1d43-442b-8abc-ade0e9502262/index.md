@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用BitmapDecoder快速取用圖檔內含的縮圖"
+slug: "[CSharp]使用BitmapDecoder快速取用圖檔內含的縮圖"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用BitmapDecoder快速取用圖檔內含的縮圖"
 tags: [CSharp]

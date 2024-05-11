@@ -1,5 +1,6 @@
 ---
 title: "[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)"
+slug: "[CSharp][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)"
 date: "2013-11-06 12:00:00"
 description: "[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)"
 tags: [CSharp]

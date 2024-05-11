@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]FullScreen the winform"
+slug: "[CSharp][VB.NET]FullScreen the winform"
 date: "2010-01-24 12:00:24"
 description: "[C#][VB.NET]FullScreen the winform"
 tags: [VB.NET,CSharp]

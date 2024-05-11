@@ -1,5 +1,6 @@
 ---
 title: "[C#]Json.NET - A high performance Json library"
+slug: "[CSharp]Json.NET - A high performance Json library"
 date: "2013-11-06 12:00:00"
 description: "[C#]Json.NET - A high performance Json library"
 tags: [CSharp]

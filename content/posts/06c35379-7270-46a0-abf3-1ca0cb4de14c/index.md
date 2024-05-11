@@ -1,5 +1,6 @@
 ---
 title: "[C#][Extension Method]Get directory size"
+slug: "[CSharp][Extension Method]Get directory size"
 date: "2013-11-06 12:00:00"
 description: "[C#][Extension Method]Get directory size"
 tags: [CSharp]

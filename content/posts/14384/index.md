@@ -1,5 +1,6 @@
 ---
 title: "[C#]用Stopwatch計算累計耗費時間的注意事項"
+slug: "[CSharp]用Stopwatch計算累計耗費時間的注意事項"
 date: "2010-04-03 10:45:13"
 description: "[C#]用Stopwatch計算累計耗費時間的注意事項"
 tags: [CSharp]

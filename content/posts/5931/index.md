@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]設定.NET透明表單"
+slug: "[CSharp][VB.NET]設定.NET透明表單"
 date: "2008-11-10 12:49:27"
 description: "[C#][VB.NET]設定.NET透明表單"
 tags: [VB.NET, CSharp]

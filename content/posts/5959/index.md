@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]自定義.NET WindowForm表單介面"
+slug: "[CSharp][VB.NET]自定義.NET WindowForm表單介面"
 date: "2008-11-11 11:09:17"
 description: "[C#][VB.NET]自定義.NET WindowForm表單介面"
 tags: [CSharp,VB.NET]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]DropBox開發系列 - 使用DropNet上傳檔案至DropBox"
+slug: "[CSharp]DropBox開發系列 - 使用DropNet上傳檔案至DropBox"
 date: "2013-11-06 12:00:00"
 description: "[C#]DropBox開發系列 - 使用DropNet上傳檔案至DropBox"
 tags: [CSharp]

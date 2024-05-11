@@ -1,5 +1,6 @@
 ---
 title: "[C#]Notifyicon.Text 突破 64 字元的限制"
+slug: "[CSharp]Notifyicon.Text 突破 64 字元的限制"
 date: "2013-11-06 12:00:00"
 description: "[C#]Notifyicon.Text 突破 64 字元的限制"
 tags: [CSharp]

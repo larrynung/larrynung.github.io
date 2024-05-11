@@ -1,5 +1,6 @@
 ---
 title: "[C#][WPF]DependencyProperty"
+slug: "[CSharp][WPF]DependencyProperty"
 date: "2011-12-08 12:45:18"
 description: "[C#][WPF]DependencyProperty"
 tags: [WPF,CSharp]

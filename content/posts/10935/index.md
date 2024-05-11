@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
+slug: "[CSharp]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
 date: "2009-10-07 09:04:23"
 description: "[C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
 tags: [CSharp]

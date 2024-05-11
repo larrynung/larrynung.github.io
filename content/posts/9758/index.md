@@ -1,5 +1,6 @@
 ---
 title: "[C#]利用FlowLayoutPanel控制項合併大量圖片"
+slug: "[CSharp]利用FlowLayoutPanel控制項合併大量圖片"
 date: "2009-07-31 09:00:04"
 description: "[C#]利用FlowLayoutPanel控制項合併大量圖片"
 tags: [CSharp]

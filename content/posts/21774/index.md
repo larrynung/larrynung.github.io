@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十八：實現標準Dispose模式"
+slug: "[CSharp]Effective C# 條款十八：實現標準Dispose模式"
 date: "2011-03-10 08:22:50"
 description: "[C#]Effective C# 條款十八：實現標準Dispose模式"
 tags: [CSharp]

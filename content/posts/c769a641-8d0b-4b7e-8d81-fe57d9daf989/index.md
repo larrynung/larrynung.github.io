@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用NetSparkle為應用程式加入自動更新機制"
+slug: "[CSharp]使用NetSparkle為應用程式加入自動更新機制"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用NetSparkle為應用程式加入自動更新機制"
 tags: [CSharp]

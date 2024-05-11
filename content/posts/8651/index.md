@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]彩色圖片轉為黑白圖片"
+slug: "[CSharp][VB.NET]彩色圖片轉為黑白圖片"
 date: "2009-06-03 09:01:40"
 description: "[C#][VB.NET]彩色圖片轉為黑白圖片"
 tags: [CSharp,VB.NET]

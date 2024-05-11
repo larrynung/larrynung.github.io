@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用Reflection檢查指定類別是否含有預設建構子"
+slug: "[CSharp]使用Reflection檢查指定類別是否含有預設建構子"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用Reflection檢查指定類別是否含有預設建構子"
 tags: [CSharp]

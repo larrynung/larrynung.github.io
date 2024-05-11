@@ -1,5 +1,6 @@
 ---
 title: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
+slug: "[CSharp]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 date: "2013-11-06 12:00:00"
 description: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 tags: [CSharp]

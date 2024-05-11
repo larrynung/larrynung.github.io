@@ -1,5 +1,6 @@
 ---
 title: "[C#]More Effective C# 條款四十九： 考慮為大型物件使用弱引用"
+slug: "[CSharp]More Effective C# 條款四十九： 考慮為大型物件使用弱引用"
 date: "2011-03-09 10:08:11"
 description: "[C#]More Effective C# 條款四十九： 考慮為大型物件使用弱引用"
 tags: [CSharp]

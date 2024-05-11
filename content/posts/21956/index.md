@@ -1,5 +1,6 @@
 ---
 title: "[C#]IEnumerable型態回傳注意事項"
+slug: "[CSharp]IEnumerable型態回傳注意事項"
 date: "2011-03-19 08:44:03"
 description: "[C#]IEnumerable型態回傳注意事項"
 tags: [CSharp]

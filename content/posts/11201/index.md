@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十一： 優先採用foreach迴圈"
+slug: "[CSharp]Effective C# 條款十一： 優先採用foreach迴圈"
 date: "2009-10-22 08:41:07"
 description: "[C#]Effective C# 條款十一： 優先採用foreach迴圈"
 tags: [CSharp]

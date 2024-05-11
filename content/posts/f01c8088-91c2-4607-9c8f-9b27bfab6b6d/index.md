@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用Microsoft Translator Soap API實作翻譯功能"
+slug: "[CSharp]使用Microsoft Translator Soap API實作翻譯功能"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用Microsoft Translator Soap API實作翻譯功能"
 tags: [CSharp]

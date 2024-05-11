@@ -1,5 +1,6 @@
 ---
 title: "[C#]仿照Chrome的Multi-process Architecture"
+slug: "[CSharp]仿照Chrome的Multi-process Architecture"
 date: "2013-11-06 12:00:00"
 description: "[C#]仿照Chrome的Multi-process Architecture"
 tags: [CSharp]

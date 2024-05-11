@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十二：變數初始器優於賦值語句"
+slug: "[CSharp]Effective C# 條款十二：變數初始器優於賦值語句"
 date: "2010-10-31 08:57:43"
 description: "[C#]Effective C# 條款十二：變數初始器優於賦值語句"
 tags: [CSharp]

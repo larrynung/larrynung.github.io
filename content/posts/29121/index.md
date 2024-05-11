@@ -1,5 +1,6 @@
 ---
 title: "[C#]取得滑鼠游標所指到的視窗及其Process Name"
+slug: "[CSharp]取得滑鼠游標所指到的視窗及其Process Name"
 date: "2011-06-19 10:24:43"
 description: "[C#]取得滑鼠游標所指到的視窗及其Process Name"
 tags: [CSharp]

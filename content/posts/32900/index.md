@@ -1,5 +1,6 @@
 ---
 title: "[C#][Linq]Linq to Wikipedia"
+slug: "[CSharp][Linq]Linq to Wikipedia"
 date: "2011-08-11 01:20:08"
 description: "[C#][Linq]Linq to Wikipedia"
 tags: [CSharp,Linq]

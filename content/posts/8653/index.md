@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]彩色濾鏡"
+slug: "[CSharp][VB.NET]彩色濾鏡"
 date: "2009-06-03 09:02:08"
 description: "[C#][VB.NET]彩色濾鏡"
 tags: [CSharp,VB.NET]

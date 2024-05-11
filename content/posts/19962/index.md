@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]最大公因數 amp; 最小公倍數"
+slug: "[CSharp][VB.NET]最大公因數 amp; 最小公倍數"
 date: "2010-12-07 12:49:24"
 description: "[C#][VB.NET]最大公因數 &amp; 最小公倍數"
 tags: [CSharp,VB.NET]

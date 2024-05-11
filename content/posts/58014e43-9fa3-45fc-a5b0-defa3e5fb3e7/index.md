@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗"
+slug: "[CSharp]如何使用TraceListener實作類似Visual Studio的輸出視窗"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗"
 tags: [CSharp]

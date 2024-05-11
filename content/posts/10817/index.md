@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態"
+slug: "[CSharp][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態"
 date: "2009-09-29 08:22:26"
 description: "[C#][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態"
 tags: [CSharp]

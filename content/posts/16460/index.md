@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用Win32 API為編輯框與下拉方塊加上提示字串"
+slug: "[CSharp]使用Win32 API為編輯框與下拉方塊加上提示字串"
 date: "2010-07-08 11:03:48"
 description: "[C#]使用Win32 API為編輯框與下拉方塊加上提示字串"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#][Visual Studio]Debug With Object ID"
+slug: "[CSharp][Visual Studio]Debug With Object ID"
 date: "2011-05-05 11:27:32"
 description: "[C#][Visual Studio]Debug With Object ID"
 tags: [CSharp,Visual Studio]

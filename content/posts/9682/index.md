@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]擴充方法 (Extension Method)"
+slug: "[CSharp][VB.NET]擴充方法 (Extension Method)"
 date: "2009-07-26 02:10:46"
 description: "[C#][VB.NET]擴充方法 (Extension Method)"
 tags: [VB.NET, CSharp]

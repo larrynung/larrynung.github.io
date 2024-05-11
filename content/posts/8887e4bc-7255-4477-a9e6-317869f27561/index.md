@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何取得Process的Owner"
+slug: "[CSharp]如何取得Process的Owner"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何取得Process的Owner"
 tags: [CSharp]

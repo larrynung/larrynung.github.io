@@ -1,5 +1,6 @@
 ---
 title: "[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
+slug: "[CSharp]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
 date: "2013-11-06 12:00:00"
 description: "[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
 tags: [CSharp, MEF]

@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]自定義例外對話框"
+slug: "[CSharp][VB.NET]自定義例外對話框"
 date: "2013-11-06 12:00:00"
 description: "[C#][VB.NET]自定義例外對話框"
 tags: [CSharp]

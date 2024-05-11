@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]取得專案內所有表單名稱"
+slug: "[CSharp][VB.NET]取得專案內所有表單名稱"
 date: "2009-02-28 11:04:33"
 description: "[C#][VB.NET]取得專案內所有表單名稱"
 tags: [VB.NET,CSharp]

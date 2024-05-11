@@ -1,5 +1,6 @@
 ---
 title: "[C#][CodePlex]LevelUp Serializer"
+slug: "[CSharp][CodePlex]LevelUp Serializer"
 date: "2013-11-06 12:00:00"
 description: "[C#][CodePlex]LevelUp Serializer"
 tags: [CSharp]

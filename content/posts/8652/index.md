@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]反轉圖片顏色"
+slug: "[CSharp][VB.NET]反轉圖片顏色"
 date: "2009-06-03 09:01:55"
 description: "[C#][VB.NET]反轉圖片顏色"
 tags: [VB.NET,CSharp]

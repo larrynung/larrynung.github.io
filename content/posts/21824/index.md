@@ -1,5 +1,6 @@
 ---
 title: "[C#]Everything SDK"
+slug: "[CSharp]Everything SDK"
 date: "2011-03-14 12:51:09"
 description: "[C#]Everything SDK"
 tags: [CSharp]

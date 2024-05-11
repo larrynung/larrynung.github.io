@@ -1,5 +1,6 @@
 ---
 title: "[C#]不同的Random物件給予不同的亂數種子"
+slug: "[CSharp]不同的Random物件給予不同的亂數種子"
 date: "2010-01-04 10:41:36"
 description: "[C#]不同的Random物件給予不同的亂數種子"
 tags: [CSharp]

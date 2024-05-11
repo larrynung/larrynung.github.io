@@ -1,5 +1,6 @@
 ---
 title: "[C#]絕對路徑轉相對路徑"
+slug: "[CSharp]絕對路徑轉相對路徑"
 date: "2011-03-17 01:05:51"
 description: "[C#]絕對路徑轉相對路徑"
 tags: [CSharp]

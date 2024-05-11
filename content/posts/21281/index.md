@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十四：利用建構子鏈"
+slug: "[CSharp]Effective C# 條款十四：利用建構子鏈"
 date: "2011-02-08 10:42:22"
 description: "[C#]Effective C# 條款十四：利用建構子鏈"
 tags: [CSharp]

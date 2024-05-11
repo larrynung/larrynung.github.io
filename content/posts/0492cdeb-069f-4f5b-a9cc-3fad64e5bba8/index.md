@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用ShowCaret amp; HideCaret控制元件上的插入符號"
+slug: "[CSharp]使用ShowCaret amp; HideCaret控制元件上的插入符號"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用ShowCaret &amp; HideCaret控制元件上的插入符號"
 tags: [CSharp]

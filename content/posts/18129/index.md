@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
+slug: "[CSharp]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
 date: "2010-10-05 10:03:15"
 description: "[C#]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
 tags: [CSharp]

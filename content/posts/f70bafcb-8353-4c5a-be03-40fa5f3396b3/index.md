@@ -1,5 +1,6 @@
 ---
 title: "[C#]Command Line Parser Library"
+slug: "[CSharp]Command Line Parser Library"
 date: "2013-11-06 12:00:00"
 description: "[C#]Command Line Parser Library"
 tags: [CSharp]

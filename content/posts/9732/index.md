@@ -1,5 +1,6 @@
 ---
 title: "[C#]C# 4.0 具名參數 (Named Parameters)"
+slug: "[CSharp]C# 4.0 具名參數 (Named Parameters)"
 date: "2009-07-30 09:05:43"
 description: "[C#]C# 4.0 具名參數 (Named Parameters)"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#][Linq]LINQ To WMI"
+slug: "[CSharp][Linq]LINQ To WMI"
 date: "2011-07-10 10:38:05"
 description: "[C#][Linq]LINQ To WMI"
 tags: [CSharp,Linq]

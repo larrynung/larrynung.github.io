@@ -1,5 +1,6 @@
 ---
 title: "[C#][Linq]BLinq - Linq To Bing"
+slug: "[CSharp][Linq]BLinq - Linq To Bing"
 date: "2011-07-06 11:21:50"
 description: "[C#][Linq]BLinq - Linq To Bing"
 tags: [Linq, CSharp]

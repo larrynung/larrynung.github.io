@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用ExifLibrary簡易快速的擷取圖片的Exif資訊"
+slug: "[CSharp]使用ExifLibrary簡易快速的擷取圖片的Exif資訊"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用ExifLibrary簡易快速的擷取圖片的Exif資訊"
 tags: [CSharp]

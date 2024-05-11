@@ -1,5 +1,6 @@
 ---
 title: "[C#]擷取Picasa資料庫(_.PMP)內現有的資料"
+slug: "[CSharp]擷取Picasa資料庫(_.PMP)內現有的資料"
 date: "2013-11-06 12:00:00"
 description: "[C#]擷取Picasa資料庫(_.PMP)內現有的資料"
 tags: [CSharp]

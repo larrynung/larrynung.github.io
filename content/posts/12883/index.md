@@ -1,5 +1,6 @@
 ---
 title: "[C#]RNGCryptoServiceProvider亂數產生器"
+slug: "[CSharp]RNGCryptoServiceProvider亂數產生器"
 date: "2010-01-07 12:55:33"
 description: "[C#]RNGCryptoServiceProvider亂數產生器"
 tags: [CSharp]

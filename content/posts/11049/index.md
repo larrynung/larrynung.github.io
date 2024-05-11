@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合"
+slug: "[CSharp]Effective C# 條款六： 明辨值類型與參考類型的使用場合"
 date: "2009-10-14 09:01:03"
 description: "[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合"
 tags: [CSharp]

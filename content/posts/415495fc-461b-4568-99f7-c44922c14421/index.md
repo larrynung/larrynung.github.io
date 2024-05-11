@@ -1,5 +1,6 @@
 ---
 title: "[C#]忽略在 HTTP 剖析期間發生的驗證錯誤"
+slug: "[CSharp]忽略在 HTTP 剖析期間發生的驗證錯誤"
 date: "2013-11-06 12:00:00"
 description: "[C#]忽略在 HTTP 剖析期間發生的驗證錯誤"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十七：盡量減少裝箱與拆箱"
+slug: "[CSharp]Effective C# 條款十七：盡量減少裝箱與拆箱"
 date: "2011-03-08 12:06:04"
 description: "[C#]Effective C# 條款十七：盡量減少裝箱與拆箱"
 tags: [CSharp]

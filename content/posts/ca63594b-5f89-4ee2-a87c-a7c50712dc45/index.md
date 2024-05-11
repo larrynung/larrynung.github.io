@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何做出類似Facebook的web preview"
+slug: "[CSharp]如何做出類似Facebook的web preview"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何做出類似Facebook的web preview"
 tags: [CSharp]

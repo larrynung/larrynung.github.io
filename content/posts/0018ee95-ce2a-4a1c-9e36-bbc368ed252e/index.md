@@ -1,5 +1,6 @@
 ---
 title: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
+slug: "[CSharp]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
 date: "2013-11-06 12:00:00"
 description: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
 tags: [CSharp]

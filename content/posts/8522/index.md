@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
+slug: "[CSharp][VB.NET]壓縮.NET程式的記憶體用量"
 date: "2009-05-22 09:37:21"
 description: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
 tags: [CSharp,VB.NET]

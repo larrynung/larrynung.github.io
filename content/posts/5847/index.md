@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET].NET捷徑(ShortCut)控制"
+slug: "[CSharp][VB.NET].NET捷徑(ShortCut)控制"
 date: "2008-11-02 01:53:03"
 description: "[C#][VB.NET].NET捷徑(ShortCut)控制"
 tags: [CSharp,VB.NET]

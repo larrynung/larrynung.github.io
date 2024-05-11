@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
+slug: "[CSharp]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
 date: "2009-12-16 06:29:55"
 description: "[C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款八： 確保0為值類型的有效狀態"
+slug: "[CSharp]Effective C# 條款八： 確保0為值類型的有效狀態"
 date: "2009-10-16 09:04:21"
 description: "[C#]Effective C# 條款八： 確保0為值類型的有效狀態"
 tags: [CSharp]

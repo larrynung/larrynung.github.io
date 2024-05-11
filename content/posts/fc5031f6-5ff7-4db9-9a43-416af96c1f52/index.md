@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用NBug函式庫為程式加上錯誤回報機制"
+slug: "[CSharp]使用NBug函式庫為程式加上錯誤回報機制"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用NBug函式庫為程式加上錯誤回報機制"
 tags: [CSharp]

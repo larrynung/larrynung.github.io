@@ -1,5 +1,6 @@
 ---
 title: "[C#]RSS 資料讀取"
+slug: "[CSharp]RSS 資料讀取"
 date: "2011-04-04 09:50:45"
 description: "[C#]RSS 資料讀取"
 tags: [CSharp]

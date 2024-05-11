@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用GetSystemPowerStatus API查看目前電源使用狀態"
+slug: "[CSharp]使用GetSystemPowerStatus API查看目前電源使用狀態"
 date: "2009-10-02 09:01:15"
 description: "[C#]使用GetSystemPowerStatus API查看目前電源使用狀態"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]Isolated Storage 隔離儲存區"
+slug: "[CSharp][VB.NET]Isolated Storage 隔離儲存區"
 date: "2009-04-22 09:03:59"
 description: "[C#][VB.NET]Isolated Storage 隔離儲存區"
 tags: [CSharp,VB.NET]

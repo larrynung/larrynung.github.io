@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]自製桌面小玩意"
+slug: "[CSharp][VB.NET]自製桌面小玩意"
 date: "2008-11-15 01:28:44"
 description: "[C#][VB.NET]自製桌面小玩意"
 tags: [VB.NET, CSharp]

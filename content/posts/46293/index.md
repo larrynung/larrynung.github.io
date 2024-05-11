@@ -1,5 +1,6 @@
 ---
 title: "[C#].NET 4.5 New Feature - Regex match with timeout"
+slug: "[CSharp].NET 4.5 New Feature - Regex match with timeout"
 date: "2011-10-25 01:20:13"
 description: "[C#].NET 4.5 New Feature - Regex match with timeout"
 tags: [CSharp]

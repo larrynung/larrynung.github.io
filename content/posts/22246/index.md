@@ -1,5 +1,6 @@
 ---
 title: "[C#]LevelUp.Lazy"
+slug: "[CSharp]LevelUp.Lazy"
 date: "2011-04-04 12:30:18"
 description: "[C#]LevelUp.Lazy"
 tags: [CSharp]

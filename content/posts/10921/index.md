@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用DebuggerDisplayAttribute自訂除錯監看訊息"
+slug: "[CSharp]使用DebuggerDisplayAttribute自訂除錯監看訊息"
 date: "2009-10-06 09:01:20"
 description: "[C#]使用DebuggerDisplayAttribute自訂除錯監看訊息"
 tags: [CSharp]

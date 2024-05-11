@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]使用AxMediaPlayer撥放多媒體"
+slug: "[CSharp][VB.NET]使用AxMediaPlayer撥放多媒體"
 date: "2009-02-28 03:41:58"
 description: "[C#][VB.NET]使用AxMediaPlayer撥放多媒體"
 tags: [CSharp,VB.NET]

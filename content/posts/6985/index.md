@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]GC.Collect()造成的怪現象"
+slug: "[CSharp][VB.NET]GC.Collect()造成的怪現象"
 date: "2009-01-30 10:48:06"
 description: "[C#][VB.NET]GC.Collect()造成的怪現象"
 tags: [CSharp,VB.NET]

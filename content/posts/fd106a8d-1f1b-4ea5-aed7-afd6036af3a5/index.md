@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用Windows API Code Pack存取媒體櫃內存放的資料"
+slug: "[CSharp]使用Windows API Code Pack存取媒體櫃內存放的資料"
 date: "2013-11-06 12:00:00"
 description: "[C#]使用Windows API Code Pack存取媒體櫃內存放的資料"
 tags: [CSharp]

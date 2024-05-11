@@ -1,5 +1,6 @@
 ---
 title: "[C#]取得MIME Content Type對應的檔案副檔名"
+slug: "[CSharp]取得MIME Content Type對應的檔案副檔名"
 date: "2011-03-25 12:35:13"
 description: "[C#]取得MIME Content Type對應的檔案副檔名"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]Decode Unicode Character"
+slug: "[CSharp]Decode Unicode Character"
 date: "2013-11-06 12:00:00"
 description: "[C#]Decode Unicode Character"
 tags: [CSharp]

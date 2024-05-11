@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何偵測特定檔案是否為Lock狀態"
+slug: "[CSharp]如何偵測特定檔案是否為Lock狀態"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何偵測特定檔案是否為Lock狀態"
 tags: [CSharp]

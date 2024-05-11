@@ -1,5 +1,6 @@
 ---
 title: "[C#]使用反射搭配Extension Method來Reset物件"
+slug: "[CSharp]使用反射搭配Extension Method來Reset物件"
 date: "2011-04-18 09:52:22"
 description: "[C#]使用反射搭配Extension Method來Reset物件"
 tags: [CSharp]

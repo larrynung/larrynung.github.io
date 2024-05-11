@@ -1,5 +1,6 @@
 ---
 title: "[C#]RaiseEvent Extension Method (二)"
+slug: "[CSharp]RaiseEvent Extension Method (二)"
 date: "2011-08-17 06:52:51"
 description: "[C#]RaiseEvent Extension Method (二)"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]C# 4.0 選擇性參數 (Optional Parameters)"
+slug: "[CSharp]C# 4.0 選擇性參數 (Optional Parameters)"
 date: "2009-07-29 09:04:42"
 description: "[C#]C# 4.0 選擇性參數 (Optional Parameters)"
 tags: [CSharp]

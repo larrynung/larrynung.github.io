@@ -1,5 +1,6 @@
 ---
 title: "[C#]阿拉伯數字轉國字"
+slug: "[CSharp]阿拉伯數字轉國字"
 date: "2009-11-03 06:02:00"
 description: "[C#]阿拉伯數字轉國字"
 tags: [CSharp]

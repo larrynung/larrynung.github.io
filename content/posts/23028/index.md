@@ -1,5 +1,6 @@
 ---
 title: "[C#]Windows RSS Platform"
+slug: "[CSharp]Windows RSS Platform"
 date: "2011-04-18 10:17:46"
 description: "[C#]Windows RSS Platform"
 tags: [CSharp]

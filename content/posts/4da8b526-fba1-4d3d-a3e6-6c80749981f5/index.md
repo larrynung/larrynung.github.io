@@ -1,5 +1,6 @@
 ---
 title: "[C#]平行處理網路傳輸時因連線數不足發生連線Timeout的解決方案"
+slug: "[CSharp]平行處理網路傳輸時因連線數不足發生連線Timeout的解決方案"
 date: "2013-11-06 12:00:00"
 description: "[C#]平行處理網路傳輸時因連線數不足發生連線Timeout的解決方案"
 tags: [CSharp]

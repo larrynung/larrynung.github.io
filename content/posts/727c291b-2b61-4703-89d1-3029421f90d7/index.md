@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何取出最近在Windows上所使用的文件檔案"
+slug: "[CSharp]如何取出最近在Windows上所使用的文件檔案"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何取出最近在Windows上所使用的文件檔案"
 tags: [CSharp]

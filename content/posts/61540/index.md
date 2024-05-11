@@ -1,5 +1,6 @@
 ---
 title: "[C#][Control]BitsControl概念與簡易實做"
+slug: "[CSharp][Control]BitsControl概念與簡易實做"
 date: "2011-12-11 10:36:08"
 description: "[C#][Control]BitsControl概念與簡易實做"
 tags: [Control,CSharp]

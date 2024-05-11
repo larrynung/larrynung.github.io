@@ -1,5 +1,6 @@
 ---
 title: "[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
+slug: "[CSharp]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
 date: "2013-11-06 12:00:00"
 description: "[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
 tags: [CSharp]

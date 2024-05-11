@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型"
+slug: "[CSharp]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型"
 date: "2009-10-15 09:00:47"
 description: "[C#]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型"
 tags: [CSharp]

@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款一： 使用屬性代替公有欄位"
+slug: "[CSharp]Effective C# 條款一： 使用屬性代替公有欄位"
 date: "2009-07-08 12:38:19"
 description: "[C#]Effective C# 條款一： 使用屬性代替公有欄位"
 tags: [CSharp]

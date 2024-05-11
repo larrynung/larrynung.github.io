@@ -1,5 +1,6 @@
 ---
 title: "[C#]取得檔案內容中的詳細資料"
+slug: "[CSharp]取得檔案內容中的詳細資料"
 date: "2011-03-21 10:16:06"
 description: "[C#]取得檔案內容中的詳細資料"
 tags: [CSharp]

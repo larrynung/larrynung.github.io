@@ -1,5 +1,6 @@
 ---
 title: "[C#]快速將字串轉換為結構"
+slug: "[CSharp]快速將字串轉換為結構"
 date: "2011-03-19 09:20:12"
 description: "[C#]快速將字串轉換為結構"
 tags: [CSharp]

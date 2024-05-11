@@ -1,5 +1,6 @@
 ---
 title: "[C#][VB.NET]使用Nothing或Null作數值運算"
+slug: "[CSharp][VB.NET]使用Nothing或Null作數值運算"
 date: "2009-08-13 09:02:18"
 description: "[C#][VB.NET]使用Nothing或Null作數值運算"
 tags: [VB.NET, CSharp]

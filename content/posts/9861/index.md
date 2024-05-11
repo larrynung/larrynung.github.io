@@ -1,5 +1,6 @@
 ---
 title: "[C#]C# 4.0 動態繫結 (Dynamic Lookup)"
+slug: "[CSharp]C# 4.0 動態繫結 (Dynamic Lookup)"
 date: "2009-08-05 09:02:48"
 description: "[C#]C# 4.0 動態繫結 (Dynamic Lookup)"
 tags: [CSharp]

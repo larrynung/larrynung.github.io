@@ -1,5 +1,6 @@
 ---
 title: "[C#]Effective C# 條款九： 理解幾個相等判斷之間的關係"
+slug: "[CSharp]Effective C# 條款九： 理解幾個相等判斷之間的關係"
 date: "2009-10-21 08:27:25"
 description: "[C#]Effective C# 條款九： 理解幾個相等判斷之間的關係"
 tags: [CSharp]

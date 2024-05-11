@@ -1,5 +1,6 @@
 ---
 title: "[C#]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
+slug: "[CSharp]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
 tags: [CSharp]

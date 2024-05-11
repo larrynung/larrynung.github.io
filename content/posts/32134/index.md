@@ -1,5 +1,6 @@
 ---
 title: "[C#]DictService"
+slug: "[CSharp]DictService"
 date: "2011-07-26 01:18:26"
 description: "[C#]DictService"
 tags: [CSharp]

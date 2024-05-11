@@ -1,5 +1,6 @@
 ---
 title: "[C#]OAuth認證開發"
+slug: "[CSharp]OAuth認證開發"
 date: "2011-04-28 01:22:31"
 description: "[C#]OAuth認證開發"
 tags: [CSharp]
