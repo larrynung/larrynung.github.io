@@ -5,26 +5,17 @@ description: "Visual Studio - Extension Manger Cannot Connect From Behind a Fire
 tags: [Visual Studio]
 ---
 
-
-筆者工作環境的電腦，Visual Studio 內的 Extension Manager 無法正常的運作，查了一下才知道這是因為防火牆擋住了 100-Continue 的訊息發送所導致。 
-
-<!-- More -->
+筆者工作環境的電腦，Visual Studio 內的 Extension Manager 無法正常的運作，查了一下才知道這是因為防火牆擋住了 100-Continue 的訊息發送所導致。
 
 {% img /images/posts/VSExpect100Continue/1.png %}
 
-<br/>
-
-因此要將 `Common7\IDE` 下的 `devenv.exe.config` 開啟調整，將 100-Continue 這個 Feature 關閉才可正常運作。 
+因此要將 `Common7\IDE` 下的 `devenv.exe.config` 開啟調整，將 100-Continue 這個 Feature 關閉才可正常運作。
 
 {% img /images/posts/VSExpect100Continue/2.png %}
 
-<br/>
-
-檔案開啟後，在 system.net 的節點內加入 `<servicePointManager expect100Continue="false"/>`，將 100-Continue 這個 Feature 給關閉就可以了。  
+檔案開啟後，在 system.net 的節點內加入 ``，將 100-Continue 這個 Feature 給關閉就可以了。
 
 {% img /images/posts/VSExpect100Continue/3.png %}
-
-<br/>
 
 Link
 ----

@@ -4,26 +4,17 @@ date: "2017-09-15 23:52:13"
 tags: [kubectl]
 ---
 
+要在 Windows 使用 kubectl，透過 Chocolatey 進行安裝即可。
 
-要在 Windows 使用 kubectl，透過 Chocolatey 進行安裝即可。  
-
-<!-- More -->
-
-    choco install kubernetes-cli
+choco install kubernetes-cli
 
 ![1.png](1.png)
 
-<br/>
+安裝完可運行 kubectl 命令查閱 kubectl 版本，確認命令可以正確運行。
 
-
-安裝完可運行 kubectl 命令查閱 kubectl 版本，確認命令可以正確運行。  
-
-    kubectl version
+kubectl version
 
 ![2.png](2.png)
-
-<br/>
-
 
 Link
 ----

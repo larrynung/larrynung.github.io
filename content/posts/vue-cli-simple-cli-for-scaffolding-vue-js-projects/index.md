@@ -3,73 +3,43 @@ title: "vue-cli - Simple CLI for scaffolding Vue.js projects"
 date: "2017-05-01 17:08:44"
 ---
 
+vue-cli 是 vue 官方提供的 cli 工具，能用來建立 vue 的專案。
 
-vue-cli 是 vue 官方提供的 cli 工具，能用來建立 vue 的專案。  
+vue-cli 需要在 Node.js 4.x+、npm 3+ 以上，並要在有 git 的環境下使用。
 
-<!-- More -->
+可直接透過 npm 安裝到全域使用。
 
-<br/>
-
-
-vue-cli 需要在 Node.js 4.x+、npm 3+ 以上，並要在有 git 的環境下使用。  
-
-<br/>
-
-
-可直接透過 npm 安裝到全域使用。  
-
-    npm install -g vue-cli
+npm install -g vue-cli
 
 ![1.png](1.png)
 
-<br/>
-
-
-安裝後可打 vue 查看一下使用方式。  
+安裝後可打 vue 查看一下使用方式。
 
 ![2.png](2.png)
 
-<br/>
-
-
-他只有提供簡單的幾個命令，像是 vue list 可查閱可供使用的專案範本。  
+他只有提供簡單的幾個命令，像是 vue list 可查閱可供使用的專案範本。
 
 ![3.png](3.png)
 
-<br/>
+vue init 可用指定的專案範本建立專案。
 
-
-vue init 可用指定的專案範本建立專案。  
-
-    vue init <TemplateName> <ProjectName>
+vue init
 
 ![4.png](4.png)
 
-<br/>
-
-
-專案建立後就可以進到專案目錄開始開發了，以 Webpack 範本為例，開發告一段落可以用 npm init 將需要使用到的套件下載下來。  
+專案建立後就可以進到專案目錄開始開發了，以 Webpack 範本為例，開發告一段落可以用 npm init 將需要使用到的套件下載下來。
 
 ![5.png](5.png)
 
-<br/>
+然後使用 npm run 將服務運行起來。
 
-
-然後使用 npm run 將服務運行起來。  
-
-    npm run dev
+npm run dev
 
 ![6.png](6.png)
 
-<br/>
-
-
-服務運行起來後開啟瀏覽器瀏覽 'http://localhost:8080' 即可看到專案運行起來的樣子。  
+服務運行起來後開啟瀏覽器瀏覽 'http://localhost:8080' 即可看到專案運行起來的樣子。
 
 ![7.png](7.png)
-
-<br/>
-
 
 Link
 ----

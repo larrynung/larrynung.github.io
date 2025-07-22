@@ -22,41 +22,23 @@ tags: [VB.NET, CSharp]
 
 以Form.Opacity屬性為例，該屬性值所設定的是0~1之間的雙精度浮點數(Double)，用以表示表單的不透明度比例。如下圖所示，該值越小越透明、越大則越不透明。
 
-<table border="0" cellpadding="2" cellspacing="0" width="400">
+Form.Opacity = 0.3
 
-<tbody>
+Form.Opacity = 0.6
 
-<tr>
+Form.Opacity = 1
 
-<td valign="top" width="133">Form.Opacity = 0.3</td>
+![image](\images\posts\5931\image_thumb_8.png)
 
-<td valign="top" width="133">Form.Opacity = 0.6</td>
+![image](\images\posts\5931\image_thumb_9.png)
 
-<td valign="top" width="133">Form.Opacity = 1</td>
-
-</tr>
-
-<tr>
-
-<td valign="top" width="133">![image](\images\posts\5931\image_thumb_8.png)</td>
-
-<td valign="top" width="133">![image](\images\posts\5931\image_thumb_9.png)</td>
-
-<td valign="top" width="133">![image](\images\posts\5931\image_thumb_10.png)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+![image](\images\posts\5931\image_thumb_10.png)
 
 完整範例如下:
 
 VB.NET
 
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2c97cd15-6618-4836-bdef-60b2d360966e" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-
-<pre class="vb" name="code">	Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+	Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         With Me.TrackBar1
             .TickStyle = TickStyle.None
             .Maximum = 100
@@ -69,15 +51,11 @@ VB.NET
     Private Sub TrackBar1_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TrackBar1.ValueChanged
         Me.Opacity = TrackBar1.Value / 100
         Me.Text = String.Format("不透明度 - {0}%", TrackBar1.Value)
-    End Sub</pre>
-
-</div>
+    End Sub
 
 C#
 
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:76fc05ab-a29a-4615-9649-b6053c0fcdf4" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-
-<pre class="c#" name="code">	private void Form1_Load(object sender, EventArgs e)
+	private void Form1_Load(object sender, EventArgs e)
         {
             this.trackBar1.TickStyle = TickStyle.None;
             this.trackBar1.Maximum = 100;
@@ -90,9 +68,7 @@ C#
         {
             this.Opacity = trackBar1.Value / 100;
             this.Text = string.Format("不透明度 - {0}%", trackBar1.Value);
-        }</pre>
-
-</div>
+        }
 
 ## Form.TransparencyKey屬性設定透明的顏色
 
@@ -102,59 +78,23 @@ C#
 
 ## Form.Opacity VS Form.TransparencyKey
 
-<table border="1" cellpadding="5" cellspacing="0" width="748">
+**Form.Opacity**
 
-<tbody>
+**Form.TransparencyKey**
 
-<tr>
-
-<td valign="top" width="303">**Form.Opacity**</td>
-
-<td valign="top" width="301">**Form.TransparencyKey**</td>
-
-</tr>
-
-<tr>
-
-<td valign="top" width="138">**優點**</td>
-
-<td valign="top" width="303">
+**優點**
 
 *   可調整透明度比例
-
-</td>
-
-<td valign="top" width="300">
 
 *   點選表單透明區塊可穿透表單
 *   可設定表單一部份為透明區塊，只會影響跟設定相同顏色的區塊
 
-</td>
-
-</tr>
-
-<tr>
-
-<td valign="top" width="138">**缺點**</td>
-
-<td valign="top" width="303">
+**缺點**
 
 *   點選表單不完全透明區塊(Form.Opacity != 0)不可穿透表單
 *   透明度會影響整個表單上的元件
 
-</td>
-
-<td valign="top" width="300">
-
 *   不可調整透明度比例
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Conclusion
 

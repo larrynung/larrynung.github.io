@@ -5,33 +5,24 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 24 -Try to use boolean data type
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 
+條款二十四，當值只有兩種狀態時，試著使用 Boolean 型態。
 
-條款二十四，當值只有兩種狀態時，試著使用 Boolean 型態。  
-
-<!-- More -->
-
-<br/>
-
-
-像是如果要表達的是是否為較大的數值，如果沒有特別的理由，那就不該使用數值表示，因為數值代表的意義沒有 Boolean 型態來的明確。  
+像是如果要表達的是是否為較大的數值，如果沒有特別的理由，那就不該使用數值表示，因為數值代表的意義沒有 Boolean 型態來的明確。
 
 ```psql
-DECLARE 
-    v_IsBigger number(1) := 1; 
-BEGIN 
-    DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger = 1 THEN 'True' ELSE 'False' END); 
+DECLARE
+v_IsBigger number(1) := 1;
+BEGIN
+DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger = 1 THEN 'True' ELSE 'False' END);
 END;
 ```
 
-<br/>
-
-
-若用 Boolean 型態表達會比較清楚。  
+若用 Boolean 型態表達會比較清楚。
 
 ```psql
-DECLARE 
-    v_IsBigger BOOLEAN := true; 
-BEGIN 
-    DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger THEN 'True' ELSE 'False' END); 
+DECLARE
+v_IsBigger BOOLEAN := true;
+BEGIN
+DBMS_OUTPUT.PUT_LINE(CASE WHEN v_IsBigger THEN 'True' ELSE 'False' END);
 END;
 ```

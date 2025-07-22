@@ -5,26 +5,21 @@ description: "MS-DOS - Merge files with copy command"
 tags: [MS-Dos]
 ---
 
-
 若要在 MS-Dos 下撰寫 Script 去合併檔案，很直覺得會想到用 Type Command 將內容秀出並將之導到指定的檔案流做存放。
 
-<!--More-->
-像是要將所有的 txt 檔進行合併並儲存到 outputFile.txt 的話，就可以像下面這樣叫用：  
+像是要將所有的 txt 檔進行合併並儲存到 outputFile.txt 的話，就可以像下面這樣叫用：
 
-    type *.txt >> outputFile.txt
+type *.txt >> outputFile.txt
 
+但在 MS-DOS 下的 Copy Command 也能做到一樣的效果，只要像下面這樣叫用：
 
-但在 MS-DOS 下的 Copy Command 也能做到一樣的效果，只要像下面這樣叫用：  
+copy *.txt outputFile.txt
 
-    copy *.txt outputFile.txt
-
-
-就可以將所有的 txt 合併儲存至outputFile.txt 內。  
+就可以將所有的 txt 合併儲存至outputFile.txt 內。
 
 若是要合併的檔案不是單純的可用萬用字元濾出，或是需要精確的控制合併的順序，我們可以像下面這樣透過 `+` 去串接多個來源檔案：
 
-    Copy file1.txt+file2.txt+file3.txt outputFile.txt
-
+Copy file1.txt+file2.txt+file3.txt outputFile.txt
 
 Link
 ----

@@ -4,34 +4,21 @@ date: "2015-02-12 08:02:00"
 description: "Get the Public Key of an Assembly"
 ---
 
+在做 .NET 程式的開發時，有時候我們會需要查閱組件目前簽署的 Public Key 為何 （可能是為了確定組件是否跟我們預期的是同一個，或是要做些 Config 設定，抑或是反射叫用）。這時我們可以直接透過 Visual Studio 安裝時自帶的強命名命令列工具下去查閱，呼叫 SN 命令，帶入 -TP 參數與組件的檔案位置。
 
-在做 .NET 程式的開發時，有時候我們會需要查閱組件目前簽署的 Public Key 為何 （可能是為了確定組件是否跟我們預期的是同一個，或是要做些 Config 設定，抑或是反射叫用）。這時我們可以直接透過 Visual Studio 安裝時自帶的強命名命令列工具下去查閱，呼叫 SN 命令，帶入 -TP 參數與組件的檔案位置。  
+sn.exe -Tp [AssemblyFile]
 
-<!-- More -->
-
-    sn.exe -Tp [AssemblyFile]
-
-
-命令呼叫後會看到類似下面這樣的畫面，告訴你簽署 Public Key 以及 Public Key Token 為何。  
+命令呼叫後會看到類似下面這樣的畫面，告訴你簽署 Public Key 以及 Public Key Token 為何。
 
 {% img /images/posts/PublicKeyWithAssembly/1.png %}
 
-<br/>
-
-
-也可進一步將之與 Visual Studio 整合，加入 External Tools，Command 那邊指向 SN.Exe 的位置，Arguments 那邊設定 -Tp $(TargetPath) 就可以了。  
+也可進一步將之與 Visual Studio 整合，加入 External Tools，Command 那邊指向 SN.Exe 的位置，Arguments 那邊設定 -Tp $(TargetPath) 就可以了。
 
 {% img /images/posts/PublicKeyWithAssembly/2.png %}
 
-<br/>
-
-
-設定完以後就可以直接透過 Visual Studio 的 External Tools 直接觸發查詢當前專案產出的組件。  
+設定完以後就可以直接透過 Visual Studio 的 External Tools 直接觸發查詢當前專案產出的組件。
 
 {% img /images/posts/PublicKeyWithAssembly/3.png %}
-
-<br/>
-
 
 Link
 ----

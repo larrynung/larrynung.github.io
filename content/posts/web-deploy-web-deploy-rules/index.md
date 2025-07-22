@@ -4,10 +4,7 @@ date: "2016-12-13 23:23:28"
 tags: [Web Deploy]
 ---
 
-
-Web Deploy 提供許多不同的 Rule，像是：  
-
-<!-- More -->
+Web Deploy 提供許多不同的 Rule，像是：
 
 - AboFilter 
 - AnonymousUser 
@@ -39,17 +36,9 @@ Web Deploy 提供許多不同的 Rule，像是：
 - WarnForEncryptedDataRule 
 - XpIsapis 
 
-<br/>
+這些 Rule 能讓我們更改 sync operation 的行為。
 
-
-這些 Rule 能讓我們更改 sync operation 的行為。  
-
-<br/>
-
-
-這些 Rule 中以 DoNotDeleteRule 較常使用，能用來決定 sync 時是否刪除多餘的檔案。  
-
-<br/>
+這些 Rule 中以 DoNotDeleteRule 較常使用，能用來決定 sync 時是否刪除多餘的檔案。
 
 Link
 ----

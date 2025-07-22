@@ -5,22 +5,15 @@ description: "Visual Studio 2013 - 64-bit Edit and Continue for .NET Framework c
 tags: [Visual Studio]
 ---
 
+Visual Studio 的 Edit And Continue 功能可以允許開發人員在除錯的同時進行程式的修改，Visual Studio 會自動套用變更的程式碼，不需中斷除錯或是重新編譯，能有效的節省時間，增加除錯與開發上的效率。
 
-Visual Studio 的 Edit And Continue 功能可以允許開發人員在除錯的同時進行程式的修改，Visual Studio 會自動套用變更的程式碼，不需中斷除錯或是重新編譯，能有效的節省時間，增加除錯與開發上的效率。 
-
-<!-- More -->
-
-不過在舊版的 Visual Studio 只支援 32 Bit 的程式使用 Edit And Continue 功能，若是開發 64 Bit 程式則不能啟用。  
+不過在舊版的 Visual Studio 只支援 32 Bit 的程式使用 Edit And Continue 功能，若是開發 64 Bit 程式則不能啟用。
 
 {% img /images/posts/VSEditAndContinue64/1.png %}
-
-<br/>
 
 Visual Studio 2013 後解除了這項限制，開始支援在 64 Bit 程式上使用。
 
 {% img /images/posts/VSEditAndContinue64/2.png %}
-
-<br/>
 
 Link
 ----

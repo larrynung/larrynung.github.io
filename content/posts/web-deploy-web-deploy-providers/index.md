@@ -4,17 +4,11 @@ date: "2016-12-07 23:19:42"
 tags: [Web Deploy]
 ---
 
-
-Web Deploy Provider 主要是用來決定來源端或是目的端的資料要怎麼處理。  
-
-<!-- More -->
+Web Deploy Provider 主要是用來決定來源端或是目的端的資料要怎麼處理。
 
 ![1.png](1.png)
-	
-<br/>
 
-
-可以用的 Providers 有：  
+可以用的 Providers 有：
 
 - Web Deploy appHostConfig Provider
 - Web Deploy appHostSchema Provider
@@ -55,7 +49,4 @@ Web Deploy Provider 主要是用來決定來源端或是目的端的資料要怎
 - Web Deploy webServer Provider
 - Web Deploy webServer60 Provider
 
-<br/>
-
-
-比較常用的有 appHostConfig、appPoolConfig、contentPath、createApp、dbFullSql、manifest、package、recycleApp、runCommand 這幾個 Provider。appHostConfig Provider 主要用來做站台的處理、appPoolConfig 做 Application Pool 的處理、contentPath 做站台內容的處理、createApp 做網站應用程式建立的處理、dbFullSql 做 MsSQL 的處理、manifest 做自定義內容的處理、package 做 package 的處理、recycleApp 做 Application Pool 回收的處理、runCommand 做命令執行的處理。  
+比較常用的有 appHostConfig、appPoolConfig、contentPath、createApp、dbFullSql、manifest、package、recycleApp、runCommand 這幾個 Provider。appHostConfig Provider 主要用來做站台的處理、appPoolConfig 做 Application Pool 的處理、contentPath 做站台內容的處理、createApp 做網站應用程式建立的處理、dbFullSql 做 MsSQL 的處理、manifest 做自定義內容的處理、package 做 package 的處理、recycleApp 做 Application Pool 回收的處理、runCommand 做命令執行的處理。

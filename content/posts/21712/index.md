@@ -6,18 +6,12 @@ description: "[C#]Effective C# 條款十七：盡量減少裝箱與拆箱"
 tags: [CSharp]
 ---
 
-<p>
-	裝箱與拆箱是.Net裡很重要的一個概念，可將值類型視為參考類型一般使用，因此我們在程式撰寫時，可以將值類型以System.Object型態包裝，並保存於Managed 堆積中，開發人員不需自行處理這部份的轉換，這樣的動作在.Net程式中會自動發生。雖然這貼心的小動作會讓程式的撰寫變得很方便，但卻讓裝箱與拆箱動作的發生更不容易被差覺，更糟的是裝箱與拆箱的動作會產生額外不必要的性能耗費。要避免裝箱與拆箱所產生的性能耗費最重要的是我們必需了解到這兩個動作的用途與其發生的時機，能掌握到發生的時機就可以進一步的使用一些技巧來避開。</p>
-<p>
-	<br />
-	裝箱...簡單的來說是用來將值類型轉換為參考類型的動作。該動作在運作時會在heap上配置一份記憶體空間，在該塊記憶體空間建立匿名參考物件，並將本來存於stack的值類型物件的值賦予給該匿名參考物件，因此能讓值類型應用於只能使用參考類型的場合。</p>
-<p>
-	<img alt="image" border="0" height="151" src="\images\posts\21712\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="244" /></p>
-<p>
-	<br />
-	裝箱動作會於將值類型物件指派給參考類型變數時自動發生，像是:</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:91b83bf4-c17d-4ccc-b2d5-d125038eeadd" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="c#" name="code">
+裝箱與拆箱是.Net裡很重要的一個概念，可將值類型視為參考類型一般使用，因此我們在程式撰寫時，可以將值類型以System.Object型態包裝，並保存於Managed 堆積中，開發人員不需自行處理這部份的轉換，這樣的動作在.Net程式中會自動發生。雖然這貼心的小動作會讓程式的撰寫變得很方便，但卻讓裝箱與拆箱動作的發生更不容易被差覺，更糟的是裝箱與拆箱的動作會產生額外不必要的性能耗費。要避免裝箱與拆箱所產生的性能耗費最重要的是我們必需了解到這兩個動作的用途與其發生的時機，能掌握到發生的時機就可以進一步的使用一些技巧來避開。
+
+	裝箱...簡單的來說是用來將值類型轉換為參考類型的動作。該動作在運作時會在heap上配置一份記憶體空間，在該塊記憶體空間建立匿名參考物件，並將本來存於stack的值類型物件的值賦予給該匿名參考物件，因此能讓值類型應用於只能使用參考類型的場合。
+
+	裝箱動作會於將值類型物件指派給參考類型變數時自動發生，像是:
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,37 +58,22 @@ namespace ConsoleApplication18
             }
         }
     }
-}</pre>
-</div>
-<p>
-	 </p>
-<p>
-	運行後可以發現運作時當把值類型轉換為參考類型時會在背後自行產生對應的複本，這就是裝箱。</p>
-<p>
-	<img alt="image" border="0" height="191" src="\images\posts\21712\image_thumb_1.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="425" /></p>
-<p>
-	<br />
-	若要避免裝箱動作的發生，需避免值類型隱含轉換到System.Object，可考慮使用泛型避免使用System.Object當作參數類型。</p>
-<p>
-	<br />
-	至於拆箱，則是跟裝箱成對的動作，可從已裝箱的物件中將原本值類型的副本提取出來。</p>
-<p>
-	<img alt="image" border="0" height="213" src="\images\posts\21712\image_thumb_4.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="244" /></p>
-<p>
-	 </p>
-<p>
-	當企圖從參考類型中提取出值類型時，拆箱的動作就會自動發生。像是上述程式裡的：</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d1cf8cd3-d660-4e62-9ad1-7f8d84ba4678" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="c#" name="code">
+}
+
+	運行後可以發現運作時當把值類型轉換為參考類型時會在背後自行產生對應的複本，這就是裝箱。
+
+	若要避免裝箱動作的發生，需避免值類型隱含轉換到System.Object，可考慮使用泛型避免使用System.Object當作參數類型。
+
+	至於拆箱，則是跟裝箱成對的動作，可從已裝箱的物件中將原本值類型的副本提取出來。
+
+	當企圖從參考類型中提取出值類型時，拆箱的動作就會自動發生。像是上述程式裡的：
+
             //Unboxing
             Person p1 = (Person)o1; 
-            Person p2 = (Person)o2;</pre>
-</div>
-<p>
-	<br />
-	若要避免拆箱動作的發生，可盡可能的採用System.Array、泛型、或是介面編程的方式來避免。像是:</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:43d35309-57ea-4740-8a91-bf60e1f71d77" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="c#" name="code">
+            Person p2 = (Person)o2;
+
+	若要避免拆箱動作的發生，可盡可能的採用System.Array、泛型、或是介面編程的方式來避免。像是:
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -137,23 +116,15 @@ namespace ConsoleApplication18
             }
         }
     }
-}</pre>
-</div>
-<p>
-	 </p>
-<p>
-	運行結果如下：</p>
-<p>
-	<img alt="image" border="0" height="159" src="\images\posts\21712\image_thumb_2.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="409" /></p>
-<p>
-	 </p>
-<h2>
-	Link</h2>
-<ul>
-	<li>
-		Boxing 和 Unboxing (C# 程式設計手冊)</li>
-	<li>
-		Boxing 轉換 (C# 程式設計手冊)</li>
-	<li>
-		Unboxing 轉換 (C# 程式設計手冊)</li>
-</ul>
+}
+
+	運行結果如下：
+
+## 
+	Link
+
+		Boxing 和 Unboxing (C# 程式設計手冊)
+	
+		Boxing 轉換 (C# 程式設計手冊)
+	
+		Unboxing 轉換 (C# 程式設計手冊)

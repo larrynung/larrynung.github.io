@@ -1,31 +1,19 @@
 ---
-title: ">-"
+title: "The Diagnostic Tools window does not support the current debugging configuration"
 date: "2016-08-07 22:40:03"
 ---
 
-
-Diagnostic Tools 視窗若出現 `The Diagnostic Tools window does not support the current debugging configuration` 這樣的訊息。  
-
-<!-- More -->
+Diagnostic Tools 視窗若出現 `The Diagnostic Tools window does not support the current debugging configuration` 這樣的訊息。
 
 ![1.png](1.png)
 
-<br/>
-
-
-可開啟 Options 視窗，切到 [Debugging | General]，取消勾選 `Use Managed Compatiability Mode` 選項。  
+可開啟 Options 視窗，切到 [Debugging | General]，取消勾選 `Use Managed Compatiability Mode` 選項。
 
 ![2.png](2.png)
 
-<br/>
-
-
-Diagnostic Tools 就可正常運作了。  
+Diagnostic Tools 就可正常運作了。
 
 ![3.png](3.png)
-
-<br/>
-
 
 Link
 ----

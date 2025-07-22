@@ -5,37 +5,32 @@ description: ".NET 4.0 New Feature - Complex"
 tags: [VB.NET]
 ---
 
-<p>.NET 4.0新增了Complex類別，位於System.Numerics.dll組件內的System.Numerics中，可用來描述與處理複數資料，具備數值比對、算術運算、其它數值運算 、與三角運算等複數資料運算的能力。</p>  <p> </p>  <p>使用上需先加入System.Numerics.dll組件參考</p>  <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="372" alt="image" src="\images\posts\18718\image_thumb.png" width="644" border="0" /></p>  <p> </p>  <p>並將System.Numerics命名空間匯入</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:17a37601-1da8-42ef-836e-fb8a1c392d89" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Imports System.Numerics</pre></div>
+.NET 4.0新增了Complex類別，位於System.Numerics.dll組件內的System.Numerics中，可用來描述與處理複數資料，具備數值比對、算術運算、其它數值運算 、與三角運算等複數資料運算的能力。
 
-<p>加入了參考與命名空間後，我們就可以開始來使用Complex型別了。首先，我們必需建立Complex型別變數。</p>
+使用上需先加入System.Numerics.dll組件參考
 
-<p> </p>
+並將System.Numerics命名空間匯入
+  Imports System.Numerics
 
-<p>Complex型別變數有三種建立方式，一種是透過Complex的建構子將數值的實數部份與虛數部份帶入建構子建構。</p>
+加入了參考與命名空間後，我們就可以開始來使用Complex型別了。首先，我們必需建立Complex型別變數。
 
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:72f887d1-464d-480f-982c-f45ab98d3bce" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim c As New Complex(12, 6)</pre></div>
+Complex型別變數有三種建立方式，一種是透過Complex的建構子將數值的實數部份與虛數部份帶入建構子建構。
 
-<p> </p>
+Dim c As New Complex(12, 6)
 
-<p>一種則是先宣告出Complex變數，在將值塞入後使用。</p>
+一種則是先宣告出Complex變數，在將值塞入後使用。
 
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:045264ab-f013-40d7-88a9-59f4c0da30c3" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim c As Complex = 3.14</pre></div>
+Dim c As Complex = 3.14
 
-<p> </p>
+這邊需注意到的是，由於Complex是用以表示複數，而複數是由實數部份與虛數部份所構成，因此採用這種直接把值塞入的作法，只能設定到複數的實數部份，虛數部份會被設定為0。
 
-<p>這邊需注意到的是，由於Complex是用以表示複數，而複數是由實數部份與虛數部份所構成，因此採用這種直接把值塞入的作法，只能設定到複數的實數部份，虛數部份會被設定為0。</p>
+最後一種則是透過Complex.FromPolarCoordinates靜態方法來從極座標建立Complex變數
 
-<p> </p>
+Dim c As Complex = Complex.FromPolarCoordinates(10, .524)
 
-<p>最後一種則是透過Complex.FromPolarCoordinates靜態方法來從極座標建立Complex變數</p>
+建立完後可對其做些運算處理，這邊不一一詳述，自行參閱下方整理的範例：
 
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5b112549-9c67-4abe-aaf4-61c0ee3f5c5b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Dim c As Complex = Complex.FromPolarCoordinates(10, .524)</pre></div>
-
-<p> </p>
-
-<p>建立完後可對其做些運算處理，這邊不一一詳述，自行參閱下方整理的範例：</p>
-
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:83ffc766-33d0-4ec7-83f7-018f19c61fdc" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="vb">Imports System.Numerics
+Imports System.Numerics
 Module Module1
 
     Sub Main()
@@ -101,13 +96,11 @@ Module Module1
         Console.WriteLine("Magnitude: {0}", c.Magnitude)
     End Sub
 
-End Module</pre></div>
+End Module
 
-<p> </p>
+運行結果如下：
 
-<p>運行結果如下：</p>
-
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:220e6c50-d731-47f0-9cd2-e77c9ac3adda" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="xml">Complex.Zero: (0, 0)
+Complex.Zero: (0, 0)
 Real: 0
 Imaginary: 0
 Phase: 0
@@ -160,18 +153,14 @@ Complex.Tan((1, 2)) = (0.0338128260798967, 1.01479361614663)
 Complex.Tanh((1, 2)) = (1.16673625724092, -0.243458201185725)
 Complex.Asin((1, 2)) = (0.427078586392476, 1.528570919481)
 Complex.Acos((1, 2)) = (1.14371774040242, -1.528570919481)
-Complex.Atan((1, 2)) = (1.33897252229449, 0.402359478108525)</pre></div>
+Complex.Atan((1, 2)) = (1.33897252229449, 0.402359478108525)
 
-<p> </p>
+## Link
 
-<h2>Link</h2>
+  Complex 結構 
 
-<ul>
-  <li>Complex 結構 </li>
+  Complex 成員 
 
-  <li>Complex 成員 </li>
+  .Net Framework 4.0: Complex numbers 
 
-  <li>.Net Framework 4.0: Complex numbers </li>
-
-  <li>C# 4.0/BCL 4 Series: Complex numeric type </li>
-</ul>
+  C# 4.0/BCL 4 Series: Complex numeric type

@@ -4,22 +4,16 @@ date: "2017-05-26 23:30:25"
 tags: [Ansible]
 ---
 
+Ansible 的 APT module 可以用來管理 APT 套件。
 
-Ansible 的 APT module 可以用來管理 APT 套件。  
-
-<!-- More -->
-
-<br/>
-
-
-可用的參數如下：  
+可用的參數如下：
 
 | parameter | required | default | choices | comments |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | allow_unauthenticated | no | no | yes/no | Ignore if packages cannot be authenticated. This is useful for bootstrapping environments that manage their own apt-key setup. |
 | autoremove | no | | yes/no | If yes, remove unused dependency packages for all module states except build-dep. It can also be used as the only option. |
 | cache_valid_time | no | | | Update the apt cache if its older than the cache_valid_time. This option is set in seconds. |
-| deb | no | | | Path to a .deb package on the remote machine.If :// in the path, ansible will attempt to download deb before installing. (Version added 2.1) | 
+| deb | no | | | Path to a .deb package on the remote machine.If :// in the path, ansible will attempt to download deb before installing. (Version added 2.1) |
 | default_release | no | | | Corresponds to the -t option for apt and sets pin priorities |
 | dpkg_options | no | force-confdef,force-confold | | Add dpkg options to apt command. Options should be supplied as comma separated list |
 | force | no | no | yes/no | If yes, force installs/removes. |
@@ -31,33 +25,21 @@ Ansible 的 APT module 可以用來管理 APT 套件。
 | update_cache | no | | yes/no | Run the equivalent of apt-get update before the operation. Can be run as part of the package installation or as a separate step. |
 | upgrade | no | no | no/yes/safe/full/dist | If yes or safe, performs an aptitude safe-upgrade.If full, performs an aptitude full-upgrade.If dist, performs an apt-get dist-upgrade.Note: This does not upgrade a specific package, use state=latest for that. |
 
-<br/>
-
-
 以 Ad-Hoc 模式為例...
 
-<br/>
+要讓指定電腦透過 APT 安裝指定套件最新的版本，可以直接用 -m 指定使用 APT module，並用 -a 帶入 name 參數指定要安裝的 APT 套件，並將 state 參數設為 latest，指定安裝最新的版本。
 
-
-要讓指定電腦透過 APT 安裝指定套件最新的版本，可以直接用 -m 指定使用 APT module，並用 -a 帶入 name 參數指定要安裝的 APT 套件，並將 state 參數設為 latest，指定安裝最新的版本。  
-
-    ansible <Group> -i <IP>, -m apt -a "name=<Package> state=latest"
-    ansible <Group> -i <Inventory> -m apt -a "name=<Package> state=latest"
+ansible  -i , -m apt -a "name= state=latest"
+ansible  -i  -m apt -a "name= state=latest"
 
 ![1.png](1.png)
 
-<br/>
+要透過 APT 移除指定套件的話，可用 name 參數指定所要移除的 APT 套件，並將 state 參數設為 absent。
 
-
-要透過 APT 移除指定套件的話，可用 name 參數指定所要移除的 APT 套件，並將 state 參數設為 absent。  
-
-    ansible <Group> -i <IP>, -m apt -a "name=<Package> state=absent"
-    ansible <Group> -i <Inventory> -m apt -a "name=<Package> state=absent"
+ansible  -i , -m apt -a "name= state=absent"
+ansible  -i  -m apt -a "name= state=absent"
 
 ![2.png](2.png)
-
-<br/>
-
 
 Link
 ----

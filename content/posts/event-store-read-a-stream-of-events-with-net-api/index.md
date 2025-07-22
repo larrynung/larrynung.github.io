@@ -4,10 +4,7 @@ date: "2018-09-16 23:56:40"
 tags: [Event Store]
 ---
 
-
-要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內的 Event，可以帶入 Stream 的名稱、起始的 Event 編號、以及預計要讀取的 Event 數，去調用 Connetction.ReadStreamEventsForwardAsync 方法。  
-
-<!-- More -->
+要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內的 Event，可以帶入 Stream 的名稱、起始的 Event 編號、以及預計要讀取的 Event 數，去調用 Connetction.ReadStreamEventsForwardAsync 方法。
 
 ```C#
 ...
@@ -15,53 +12,39 @@ var readEvents = conn.ReadStreamEventsForwardAsync(streamName, start, count, tru
 ...
 ```
 
-<br/>
-
-然後再去讀取需要的 Event 資料即可。  
+然後再去讀取需要的 Event 資料即可。
 
 ```C#
 ...
 foreach (var evt in readEvents.Events)
-    Console.WriteLine("{0} {1}", evt.Event.EventNumber, Encoding.UTF8.GetString(evt.Event.Data));
+Console.WriteLine("{0} {1}", evt.Event.EventNumber, Encoding.UTF8.GetString(evt.Event.Data));
 ...
 ```
 
-<br/>
-
-
-像是這邊筆者有個 Stream 內含有 100 個相同資料的 Event。  
+像是這邊筆者有個 Stream 內含有 100 個相同資料的 Event。
 
 ![1.png](1.png)
- 
-<br/>
 
-
-就可以像下面這樣讀取特定範圍的 Event。  
+就可以像下面這樣讀取特定範圍的 Event。
 
 ```C#
 using EventStore.ClientAPI;
 ...
 using (var conn = EventStoreConnection.Create(connectionString, connectionName))
 {
-    conn.ConnectAsync().Wait();
+conn.ConnectAsync().Wait();
 
-    var streamName = "MyStream";
-    var readEvents = conn.ReadStreamEventsForwardAsync(streamName, 10, 10, true).Result;
-    foreach (var evt in readEvents.Events)
-        Console.WriteLine("{0} {1}", evt.Event.EventNumber, Encoding.UTF8.GetString(evt.Event.Data));
+var streamName = "MyStream";
+var readEvents = conn.ReadStreamEventsForwardAsync(streamName, 10, 10, true).Result;
+foreach (var evt in readEvents.Events)
+Console.WriteLine("{0} {1}", evt.Event.EventNumber, Encoding.UTF8.GetString(evt.Event.Data));
 }
 ...
 ```
 
 ![2.png](2.png)
- 
-<br/>
-
 
 ![3.png](3.png)
- 
-<br/>
-
 
 Link
 ----

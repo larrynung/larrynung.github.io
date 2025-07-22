@@ -4,203 +4,193 @@ slug: "[CSharp]取得檔案內容中的詳細資料"
 date: "2011-03-21 10:16:06"
 description: "[C#]取得檔案內容中的詳細資料"
 tags: [CSharp]
----
+---這邊記錄ㄧ下要如何取得檔案內容中的詳細資料 ...
 
-<p>這邊記錄ㄧ下要如何取得檔案內容中的詳細資料 ...</p>  <p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\21994\image_thumb.png" width="381" height="484" /></a> </p>  <p> </p>  <p>首先我們必須將Microsoft Shell Controls and Automation加入參考。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1103/C_B84F/image_8.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\21994\image_thumb_3.png" width="644" height="372" /> </p>  <p> </p>  <p>加入Shell32命名空間後就可以開始使用了...</p>  <p> </p>  <p>使用上先建立ShellClass物件實體，透過ShellClass中的Namespace方法取得Folder物件，接著利用ParseName方法取得FolderItem物件，取得了FolderItem物件後對其叫用GetDetailsOf，將要抓取的詳細資料索引代入即可求得。</p> static string GetDetailValue(string file, int column)  <br />{  <br />    ShellClass sh = new ShellClass();  <br />    Folder dir = sh.NameSpace(Path.GetDirectoryName(file));  <br />    FolderItem item = dir.ParseName(Path.GetFileName(file));  <br />    return dir.GetDetailsOf(item, column);  <br />}  <br />  <p> </p>  <p>但是詳細資料頁面中的資料有很多，依照不同檔案類型又有不同的資訊，要如何才能取得想要的詳細資料索引?只要透過類似上面的作法，將GetDetailsOf方法的第一個參數代入0即可： </p>  <pre>static IEnumerable&lt;KeyValuePair&lt;string, int&gt;&gt; GetDetailColumn()<br />{<br />    ShellClass sh = new ShellClass();<br />    Folder dir = sh.NameSpace(@"c:\");<br /> <br />    int idx = 0;<br />    string columnName = dir.GetDetailsOf(0, idx);<br />    do<br />     {<br />        yield return new KeyValuePair&lt;string, int&gt;(columnName, idx);<br />        columnName = dir.GetDetailsOf(0, ++idx);                <br />     } while (!string.IsNullOrEmpty(columnName));<br />}</pre>
+首先我們必須將Microsoft Shell Controls and Automation加入參考。
 
-<p> </p>
+加入Shell32命名空間後就可以開始使用了...
 
-<pre>完整的範例如下：</pre>
+使用上先建立ShellClass物件實體，透過ShellClass中的Namespace方法取得Folder物件，接著利用ParseName方法取得FolderItem物件，取得了FolderItem物件後對其叫用GetDetailsOf，將要抓取的詳細資料索引代入即可求得。
+static string GetDetailValue(string file, int column)
+{
+    ShellClass sh = new ShellClass();
+    Folder dir = sh.NameSpace(Path.GetDirectoryName(file));
+    FolderItem item = dir.ParseName(Path.GetFileName(file));
+    return dir.GetDetailsOf(item, column);
+}
 
-<p>using System;
-  <br />using System.Collections.Generic;
+但是詳細資料頁面中的資料有很多，依照不同檔案類型又有不同的資訊，要如何才能取得想要的詳細資料索引?只要透過類似上面的作法，將GetDetailsOf方法的第一個參數代入0即可：
+static IEnumerable> GetDetailColumn()
+{
+    ShellClass sh = new ShellClass();
+    Folder dir = sh.NameSpace(@"c:\");
 
-  <br />using System.Linq;
+    int idx = 0;
+    string column idx);
+    do
+     {
+        yield return new KeyValuePair(columnName, idx);
+        column ++idx);               
+     } while (!string.IsNullOrEmpty(columnName));
+}
 
-  <br />using System.Text;
+完整的範例如下：
 
-  <br />using Shell32;
+using System;
 
-  <br />using System.IO;
+using System.Collections.Generic;
 
-  <br /> 
+using System.Linq;
 
-  <br />namespace ConsoleApplication1
+using System.Text;
 
-  <br />{
+using Shell32;
 
-  <br />    class Program
+using System.IO;
 
-  <br />    {
+namespace ConsoleApplication1
 
-  <br />        static void Main(string[] args)
+{
 
-  <br />        {
+    class Program
 
-  <br />            ViewDetailColumn();
+    {
 
-  <br />            Console.WriteLine(new string('=', 50));
+        static void Main(string[] args)
 
-  <br />            var file = @"C:\Users\Public\Music\Sample Music\Kalimba.mp3";
+        {
 
-  <br />            ViewDetailValue(file, "Album");
+            ViewDetailColumn();
 
-  <br />            ViewDetailValue(file, "Size");
+            Console.WriteLine(new string('=', 50));
 
-  <br />        }
+            var file = @"C:\Users\Public\Music\Sample Music\Kalimba.mp3";
 
-  <br /> 
+            ViewDetailValue(file, "Album");
 
-  <br /> 
+            ViewDetailValue(file, "Size");
 
-  <br />        static IEnumerable&lt;KeyValuePair&lt;string, int&gt;&gt; GetDetailColumn()
+        }
 
-  <br />        {
+        static IEnumerable> GetDetailColumn()
 
-  <br />            ShellClass sh = new ShellClass();
+        {
 
-  <br />            Folder dir = sh.NameSpace(@"c:\");
+            ShellClass sh = new ShellClass();
 
-  <br /> 
+            Folder dir = sh.NameSpace(@"c:\");
 
-  <br />            int idx = 0;
+            int idx = 0;
 
-  <br />            string columnName = dir.GetDetailsOf(0, idx);
+            string column idx);
 
-  <br />            do
+            do
 
-  <br />            {
+            {
 
-  <br />                yield return new KeyValuePair&lt;string, int&gt;(columnName, idx);
+                yield return new KeyValuePair(columnName, idx);
 
-  <br />                columnName = dir.GetDetailsOf(0, ++idx);                 <br />            } while (!string.IsNullOrEmpty(columnName));
+                column ++idx);                
+            } while (!string.IsNullOrEmpty(columnName));
 
-  <br />        }
+        }
 
-  <br /> 
+        static IEnumerable> GetDetailColumn(int offset, int count)
 
-  <br />        static IEnumerable&lt;KeyValuePair&lt;string, int&gt;&gt; GetDetailColumn(int offset, int count)
+        {
 
-  <br />        {
+            ShellClass sh = new ShellClass();
 
-  <br />            ShellClass sh = new ShellClass();
+            Folder dir = sh.NameSpace(@"c:\");
 
-  <br />            Folder dir = sh.NameSpace(@"c:\");
+            for (var idx = offset; idx (dir.GetDetailsOf(0, idx), idx);
 
-  <br /> 
+            }
 
-  <br />            for (var idx = offset; idx &lt; offset + count; ++idx)
+        }
 
-  <br />            {
+        static void ViewDetailColumn()
 
-  <br />                yield return new KeyValuePair&lt;string, int&gt;(dir.GetDetailsOf(0, idx), idx);
+        {
 
-  <br />            }
+            var columns = GetDetailColumn();
 
-  <br />        }
+            foreach (var item in columns)
 
-  <br /> 
+            {
 
-  <br />        static void ViewDetailColumn()
+                Console.WriteLine(item.Key);
 
-  <br />        {
+            }
 
-  <br />            var columns = GetDetailColumn();
+        }
 
-  <br />            foreach (var item in columns)
+        static void ViewDetailColumn(int offset, int count)
 
-  <br />            {
+        {
 
-  <br />                Console.WriteLine(item.Key);
+            var columns = GetDetailColumn(offset, count);
 
-  <br />            }
+            foreach (var item in columns)
 
-  <br />        }
+            {
 
-  <br /> 
+                Console.WriteLine(item.Key);
 
-  <br />        static void ViewDetailColumn(int offset, int count)
+            }
 
-  <br />        {
+        }
 
-  <br />            var columns = GetDetailColumn(offset, count);
+        static string GetDetailValue(string file, int column)
 
-  <br />            foreach (var item in columns)
+        {
 
-  <br />            {
+            ShellClass sh = new ShellClass();
 
-  <br />                Console.WriteLine(item.Key);
+            Folder dir = sh.NameSpace(Path.GetDirectoryName(file));
 
-  <br />            }
+            FolderItem item = dir.ParseName(Path.GetFileName(file));
 
-  <br />        }
+            return dir.GetDetailsOf(item, column);
 
-  <br /> 
+        }
 
-  <br />        static string GetDetailValue(string file, int column)
+        static void ViewDetailValue(string file, int column)
 
-  <br />        {
+        {
 
-  <br />            ShellClass sh = new ShellClass();
+            Console.WriteLine(GetDetailValue(file, column));
 
-  <br />            Folder dir = sh.NameSpace(Path.GetDirectoryName(file));
+        }
 
-  <br />            FolderItem item = dir.ParseName(Path.GetFileName(file));
+        static string GetDetailValue(string file, string column)
 
-  <br />            return dir.GetDetailsOf(item, column);
+        {
 
-  <br />        }
+            var linq = from item in GetDetailColumn()
 
-  <br /> 
+                       where item.Key == column
 
-  <br />        static void ViewDetailValue(string file, int column)
+                       select item.Value;
 
-  <br />        {
+            return GetDetailValue(file, linq.FirstOrDefault());
 
-  <br />            Console.WriteLine(GetDetailValue(file, column));
+        }
 
-  <br />        }
+        static void ViewDetailValue(string file, string column)
 
-  <br /> 
+        {
 
-  <br />        static string GetDetailValue(string file, string column)
+            Console.WriteLine(GetDetailValue(file, column));
 
-  <br />        {
+        }
 
-  <br />            var linq = from item in GetDetailColumn()
+    }
 
-  <br />                       where item.Key == column
+}
 
-  <br />                       select item.Value;
+運行結果如下：
 
-  <br />            return GetDetailValue(file, linq.FirstOrDefault());
+## Link
 
-  <br />        }
-
-  <br /> 
-
-  <br />        static void ViewDetailValue(string file, string column)
-
-  <br />        {
-
-  <br />            Console.WriteLine(GetDetailValue(file, column));
-
-  <br />        }
-
-  <br />    }
-
-  <br />}
-
-  <br /></p>
-
-<p> 運行結果如下：</p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\21994\image_thumb_2.png" width="481" height="463" />  </p>
-
-<p> </p>
-
-<h2>Link</h2>
-
-<ul>
-  <li>如何用C#获得文件信息以及扩展信息 </li>
-</ul>
+如何用C#获得文件信息以及扩展信息

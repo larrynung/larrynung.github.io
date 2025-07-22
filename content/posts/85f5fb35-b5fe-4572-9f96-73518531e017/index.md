@@ -6,13 +6,18 @@ description: "[C#]Set Windows 7 Progress Bar's State"
 tags: [CSharp]
 ---
 
-<p>要在Win7設定Progressbar的運行狀態，可能是一般運行狀態，可能是暫停狀態，或是錯誤狀態。</p>  <p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\85f5fb35-b5fe-4572-9f96-73518531e017\image_thumb_4.png" width="429" height="181" /></a> </p>  <p> </p>  <p>我們可以透過SendMessage發送PBM_SETSTATE訊息給ProgressBar，訊息的wParam依需求可帶入PBST_NORMAL、PBST_ERROR、與PBST_PAUSED，lParam部分則帶入0就可以了。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1202/e82d075458e7_B556/image_8.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\85f5fb35-b5fe-4572-9f96-73518531e017\image_thumb_3.png" width="563" height="484" /> </p>  <p> </p>  <p>程式撰寫起來會像下面這樣：</p>  <p>   </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c605bd07-b1fe-4833-8b3b-d61194fe571b" class="wlWriterSmartContent"><pre name="code" class="c#">        #region Const
+要在Win7設定Progressbar的運行狀態，可能是一般運行狀態，可能是暫停狀態，或是錯誤狀態。
+
+我們可以透過SendMessage發送PBM_SETSTATE訊息給ProgressBar，訊息的wParam依需求可帶入PBST_NORMAL、PBST_ERROR、與PBST_PAUSED，lParam部分則帶入0就可以了。
+
+程式撰寫起來會像下面這樣：
+
+        #region Const
         const int PBM_SETSTATE = 0x410;
         const int PBST_PAUSE = 0x0003;
         const int PBST_ERROR = 0x0002;
         const int PBST_NORMAL = 0x0001;
         #endregion
-
 
         #region DllImport
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -34,15 +39,11 @@ tags: [CSharp]
         {
             SendMessage(progressBar.Handle, PBM_SETSTATE, PBST_NORMAL, 0);
         } 
-        #endregion</pre></div>
+        #endregion
 
+這邊用此概念做個簡單的示意範例：
 
-<p> </p>
-
-<p>這邊用此概念做個簡單的示意範例：</p>
-
-<p>
-  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a8eee87e-bfc3-46ee-bd80-9ced6dd6bb0f" class="wlWriterSmartContent"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,7 +66,6 @@ namespace WindowsFormsApplication3
         const int PBST_ERROR = 0x0002;
         const int PBST_NORMAL = 0x0001;
         #endregion
-
 
         #region DllImport
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -114,26 +114,13 @@ namespace WindowsFormsApplication3
             SetError(progressBar1);
         }
     }
-}</pre></div>
+}
 
+當按下不同狀態按鈕，ProgressBar會有不同的呈現。
 
-<p> </p>
+為了方便起見也可以將之整理成擴充方法。
 
-<p>當按下不同狀態按鈕，ProgressBar會有不同的呈現。</p>
-
-<p />
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\85f5fb35-b5fe-4572-9f96-73518531e017\image_thumb.png" width="304" height="182" /> </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\85f5fb35-b5fe-4572-9f96-73518531e017\image_thumb_1.png" width="304" height="182" /> </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\85f5fb35-b5fe-4572-9f96-73518531e017\image_thumb_2.png" width="304" height="182" /> </p>
-
-<p> </p>
-
-<p>為了方便起見也可以將之整理成擴充方法。</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:36093ea9-e34a-40fe-915b-f7c09dd0c4aa" class="wlWriterSmartContent"><pre name="code" class="c#">    public static class ProgressExtension
+    public static class ProgressExtension
     {
         #region Const
         const int PBM_SETSTATE = 0x410;
@@ -163,13 +150,11 @@ namespace WindowsFormsApplication3
             SendMessage(progressBar.Handle, PBM_SETSTATE, PBST_ERROR, 0);
         } 
         #endregion
-    }</pre></div>
+    }
 
-<p> </p>
+使用上會更為方便簡潔。
 
-<p>使用上會更為方便簡潔。</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9c81b37e-d0ee-41b2-bbc9-7bc54db3b766" class="wlWriterSmartContent"><pre name="code" class="c#">    public partial class Form1 : Form
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -195,14 +180,10 @@ namespace WindowsFormsApplication3
         {
             progressBar1.SetErrorState();
         }
-    }</pre></div>
+    }
 
-<p> </p>
+## Link
 
-<h2>Link</h2>
+  Windows 7 Progress Bars in .NET
 
-<ul>
-  <li>Windows 7 Progress Bars in .NET</li>
-
-  <li>PBM_SETSTATE message</li>
-</ul>
+  PBM_SETSTATE message

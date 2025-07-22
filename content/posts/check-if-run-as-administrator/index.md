@@ -5,35 +5,28 @@ description: "Check if run as administrator"
 tags: [CSharp]
 ---
 
+要判斷當前使用者是否具有管理者權限，我們可以先取得當前使用的 WindowsIdenty。
 
-要判斷當前使用者是否具有管理者權限，我們可以先取得當前使用的 WindowsIdenty。 
+var wi = WindowsIdentity.GetCurrent();
 
-<!-- More -->
-    var wi = WindowsIdentity.GetCurrent();
+接著帶入剛取得的 WindowsIdenty，建立對應的 WindowsPrinciple。
 
+var wp = new WindowsPrincipal(wi);
 
-接著帶入剛取得的 WindowsIdenty，建立對應的 WindowsPrinciple。 
+透過 WindowsPrinciple 的 IsInRole 方法判斷當前的使用者是否為 WindowsBuiltInRole.Administrator。
 
-    var wp = new WindowsPrincipal(wi);
+var isAdmin = wp.IsInRole(WindowsBuiltInRole.Administrator);
 
+所以整個程式會像下面這樣 :
 
-透過 WindowsPrinciple 的 IsInRole 方法判斷當前的使用者是否為 WindowsBuiltInRole.Administrator。 
-
-    var isAdmin = wp.IsInRole(WindowsBuiltInRole.Administrator);
-
-
-所以整個程式會像下面這樣 : 
-
-```c# 
-private bool IsRunAsAdministrator() 
+```c#
+private bool IsRunAsAdministrator()
 {
-    var wi = WindowsIdentity.GetCurrent(); 
-    var wp = new WindowsPrincipal(wi); 
-    return wp.IsInRole(WindowsBuiltInRole.Administrator);
+var wi = WindowsIdentity.GetCurrent();
+var wp = new WindowsPrincipal(wi);
+return wp.IsInRole(WindowsBuiltInRole.Administrator);
 }
 ```
-
-<br/>
 
 Link
 -----

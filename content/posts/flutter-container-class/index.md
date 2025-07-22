@@ -4,20 +4,13 @@ date: "2018-03-23 00:38:51"
 tags: [Flutter]
 ---
 
+Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 widget。
 
-Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 widget。  
+其建構子如下：
 
-<!-- More -->
+Container({Key key, AlignmentGeometry alignment, EdgeInsetsGeometry padding, Color color, Decoration decoration, Decoration foregroundDecoration, double width, double height, BoxConstraints constraints, EdgeInsetsGeometry margin, Matrix4 transform, Widget child })
 
-其建構子如下：  
-
-    Container({Key key, AlignmentGeometry alignment, EdgeInsetsGeometry padding, Color color, Decoration decoration, Decoration foregroundDecoration, double width, double height, BoxConstraints constraints, EdgeInsetsGeometry margin, Matrix4 transform, Widget child })
-
-
-<br/>
-
-
-屬性如下： 
+屬性如下：
 
 | Name | Type | Description |
 |:-------------:|:-------------:|:-----:|
@@ -33,9 +26,6 @@ Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 w
 | key | Key | Controls how one widget replaces another widget in the tree. |
 | runtimeType | Type | A representation of the runtime type of the object. |
 
-<br/>
-
-
 方法如下：
 
 | Name | Return Type | Description |
@@ -43,7 +33,7 @@ Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 w
 | build(BuildContext context) | Widget | Describes the part of the user interface represented by this widget. |
 | debugFillProperties(DiagnosticPropertiesBuilder description) | void ||
 | createElement() | StatelessElement | Creates a StatelessElement to manage this widget's location in the tree. |
-| debugDescribeChildren() | List<DiagnosticsNode> | Returns a list of DiagnosticsNode objects describing this node's children. |
+| debugDescribeChildren() | List | Returns a list of DiagnosticsNode objects describing this node's children. |
 | noSuchMethod(Invocation invocation) | dynamic | Invoked when a non-existent method or property is accessed. |
 | toDiagnosticsNode({String name, DiagnosticsTreeStyle style }) | DiagnosticsNode | Returns a debug representation of the object that is used by debugging tools and by toStringDeep. |
 | toString({DiagnosticLevel minLevel: DiagnosticLevel.debug }) | String | Returns a string representation of this object. |
@@ -51,92 +41,68 @@ Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 w
 | toStringShallow({String joiner: ', ', DiagnosticLevel minLevel: DiagnosticLevel.debug }) | String | Returns a one-line detailed description of the object. |
 | toStringShort() | String | A short, textual description of this widget. |
 
-<br/>
-
-
-使用上可以設定 color 屬性變更顏色。  
-
+使用上可以設定 color 屬性變更顏色。
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new Container(
-      color: Colors.blue,
-    ),
-  );
+runApp(
+new Container(
+color: Colors.blue,
+),
+);
 }
 ```
-
 ![1.png](1.png)
- 
-<br/>
 
 ![2.png](2.png)
- 
-<br/>
 
-
-可以設定 width 屬性變更寬度，設定 height 屬性變更高度。  
-
+可以設定 width 屬性變更寬度，設定 height 屬性變更高度。
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new Center(
-      child: new Container(
-        color: Colors.blue,
-        width: 48.0,
-        height: 48.0,
-      ),
-    ),
-  );
+runApp(
+new Center(
+child: new Container(
+color: Colors.blue,
+width: 48.0,
+height: 48.0,
+),
+),
+);
 }
 ```
-
 ![3.png](3.png)
- 
-<br/>
 
 ![4.png](4.png)
- 
-<br/>
 
-
-可以設定 child 屬性指定容器內的元件，設定 alignment 指定容器內的元件要怎麼排放，設定 transform 屬性指定容器要怎樣變形。  
-
+可以設定 child 屬性指定容器內的元件，設定 alignment 指定容器內的元件要怎麼排放，設定 transform 屬性指定容器要怎樣變形。
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new Container(
-        color: Colors.blue,
-        child: new Container(
-          color: Colors.yellow,
-          margin: const EdgeInsets.all(10.0),
-          alignment: Alignment.center,
-          child: new Container(
-            color: Colors.white,
-            width: 48.0,
-            height: 48.0,
-            transform: new Matrix4.rotationZ(0.1),
-          )
-        )
-      ),
-  );
+runApp(
+new Container(
+color: Colors.blue,
+child: new Container(
+color: Colors.yellow,
+margin: const EdgeInsets.all(10.0),
+alignment: Alignment.center,
+child: new Container(
+color: Colors.white,
+width: 48.0,
+height: 48.0,
+transform: new Matrix4.rotationZ(0.1),
+)
+)
+),
+);
 }
 ```
-
 ![5.png](5.png)
- 
-<br/>
 
 ![6.png](6.png)
- 
-<br/>
-
 
 Link
 ----

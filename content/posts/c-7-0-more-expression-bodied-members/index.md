@@ -4,81 +4,60 @@ date: "2017-03-07 23:54:27"
 tags: [CSharp, CSharp 7.0]
 ---
 
+C# 7.0 擴展了 Expression bodied。
 
-C# 7.0 擴展了 Expression bodied。  
-
-<!-- More -->
-
-<br/>
-
-
-開始支援建構子。  
+開始支援建構子。
 
 ```C#
 ...
 class Program
 {
-    ...
-    public Program() => Console.WriteLine("Program()");
-    ...
+...
+public Program() => Console.WriteLine("Program()");
+...
 }
 ...
 ```
 
-<br/>
-
-
-支援解構子。  
+支援解構子。
 
 ```C#
 ...
 class Program
 {
-    ...
-    ~Program() => Console.WriteLine("~Program()");
-    ...
+...
+~Program() => Console.WriteLine("~Program()");
+...
 }
 ...
 ```
 
-<br/>
-
-
-支援 property accessors。  
+支援 property accessors。
 
 ```C#
 ...
 private string _myProperty;
 public string MyProperty
 {
-    get => _myProperty;
-    set => _myProperty = value;
+get => _myProperty;
+set => _myProperty = value;
 }
 ...
 ```
 
-<br/>
-
-
-支援 event accessors。  
+支援 event accessors。
 
 ```C#
 ...
 public event EventHandler MyEvent
 {
-    add => _myEvent += value;
-    remove => _myEvent -= value;
+add => _myEvent += value;
+remove => _myEvent -= value;
 }
 ...
 ```
 
-<br/>
-
-
 ![1.png](1.png)
-
-<br/>
-
 
 Link
 =====

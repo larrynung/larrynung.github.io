@@ -4,26 +4,17 @@ date: "2018-10-13 08:19:38"
 tags: [Termux]
 ---
 
-
-要讓 Termux 可以獲取手機資訊或是跟手機進行互動，可以安裝 Termux:API application。  
-
-<!-- more -->
+要讓 Termux 可以獲取手機資訊或是跟手機進行互動，可以安裝 Termux:API application。
 
 ![1.jpg](1.jpg)
 
-</br>
+然後在 Termux 安裝 termux-api。
 
-
-然後在 Termux 安裝 termux-api。  
-
-    pkg install termux-api
+pkg install termux-api
 
 ![2.jpg](2.jpg)
 
-</br>
-
-
-Termux:API 提供如下功能:  
+Termux:API 提供如下功能:
 
 ```
 termux-battery-status
@@ -138,36 +129,21 @@ termux-wifi-scaninfo
 Get information about the last wifi scan.
 ```
 
-</br>
-
-
-像是 termux-battery-status 可以取得電池資訊。  
+像是 termux-battery-status 可以取得電池資訊。
 
 ![3.jpg](3.jpg)
 
-</br>
-
-
-termux-camera-info 可以取得相機資訊。  
+termux-camera-info 可以取得相機資訊。
 
 ![4.jpg](4.jpg)
 
-</br>
-
-
-termux-clipboard-set 可設定資料到剪貼簿。  
+termux-clipboard-set 可設定資料到剪貼簿。
 
 ![5.jpg](5.jpg)
 
-</br>
-
-
-termux-clipboard-get 可取得剪貼簿內的資料。  
+termux-clipboard-get 可取得剪貼簿內的資料。
 
 ![6.jpg](6.jpg)
-
-</br>
-
 
 Link
 ----

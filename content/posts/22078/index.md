@@ -4,13 +4,44 @@ slug: "[CSharp]取得MIME Content Type對應的檔案副檔名"
 date: "2011-03-25 12:35:13"
 description: "[C#]取得MIME Content Type對應的檔案副檔名"
 tags: [CSharp]
----
+---續[C#]取得檔案對應的MIME Content Type這篇，這次反過來若是想知道MIME Content Type對應到的副檔名有哪些的話，一樣我們可以從登錄檔中取得，像是下面這樣：
+private static IEnumerable GetMIMESupportedExt(string mime)
+{
+    var linq = from item in Microsoft.Win32.Registry.ClassesRoot.GetSubKeyNames()
+               let key = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(item)
+               let value = key.GetValue("Content Type")
+               where value != null && value.ToString().Equals(mime, StringComparison.CurrentCultureIgnoreCase)
+               select item;
+    return linq;
+}   
 
-<p>續[C#]取得檔案對應的MIME Content Type這篇，這次反過來若是想知道MIME Content Type對應到的副檔名有哪些的話，一樣我們可以從登錄檔中取得，像是下面這樣：</p> <p>private static IEnumerable&lt;string&gt; GetMIMESupportedExt(string mime)<br />{<br />    var linq = from item in Microsoft.Win32.Registry.ClassesRoot.GetSubKeyNames()<br />               let key = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(item)<br />               let value = key.GetValue("Content Type")<br />               where value != null &amp;&amp; value.ToString().Equals(mime, StringComparison.CurrentCultureIgnoreCase)<br />               select item;<br />    return linq;<br />}  </p><pre> </pre>
-<p>完整的範例如下：</p>
-<p>using System;<br />using System.Collections.Generic;<br />using System.Linq;<br />using System.Text; 
-</p><p>namespace ConsoleApplication11<br />{<br />    class Program<br />    {<br />        static void Main(string[] args)<br />        {<br />            foreach (var item in GetMIMESupportedExt("video/x-ms-asf"))<br />            {<br />                Console.WriteLine(item); ;<br />            }<br />        } 
-</p><p>        private static IEnumerable&lt;string&gt; GetMIMESupportedExt(string mime)<br />        {<br />            var linq = from item in Microsoft.Win32.Registry.ClassesRoot.GetSubKeyNames()<br />                       let key = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(item)<br />                       let value = key.GetValue("Content Type")<br />                       where value != null &amp;&amp; value.ToString().Equals(mime, StringComparison.CurrentCultureIgnoreCase)<br />                       select item;<br />            return linq;<br />        }  <br />    }<br />}
-</p><p> </p>
-<p>運行結果：</p>
-<p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" src="\images\posts\22078\image_thumb.png" width="345" height="175" /></p>
+完整的範例如下：
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            foreach (var item in GetMIMESupportedExt("video/x-ms-asf"))
+            {
+                Console.WriteLine(item); ;
+            }
+        }
+        private static IEnumerable GetMIMESupportedExt(string mime)
+        {
+            var linq = from item in Microsoft.Win32.Registry.ClassesRoot.GetSubKeyNames()
+                       let key = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(item)
+                       let value = key.GetValue("Content Type")
+                       where value != null && value.ToString().Equals(mime, StringComparison.CurrentCultureIgnoreCase)
+                       select item;
+            return linq;
+        } 
+    }
+}
+
+運行結果：

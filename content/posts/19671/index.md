@@ -5,7 +5,14 @@ description: ".NET 4.0 New Feature - Stream.CopyTo"
 tags: [CSharp]
 ---
 
-<p>.NET 4.0在Stream類別中新增了CopyTo方法，該方法有兩個多載版本CopyTo(Stream)</a>、與<a href="http://msdn.microsoft.com/zh-tw/library/dd783870.aspx" target="_blank">CopyTo(Stream, Int32)</a>。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1011/.NET4.0NewFeatureStream.CopyTo_B44A/image_4.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="128" alt="image" src="\images\posts\19671\image_thumb_1.png" width="454" border="0" /> </p>  <p> </p>  <p>CopyTo方法主要功能為將當前的資料流內容複製到另一資料流，能讓我們快速的做資料流內容的複製，不需要像以往一樣需先將來源資料流內容讀出，再對目標資料流寫入，以達資料流複製的功用。</p>  <p> </p>  <p>值得注意的是CopyTo方法是從當前資料流的目前位置開始做複製的動作。</p>  <p> </p>  <p>完整範例如下，這個範例會建立一個MemoryStream，並將"Test Stream.CopyTo"字樣寫入產生的MemoryStream，接著建立一個FileStream，其對應的檔案為Test.Txt，再透過Stream.CopyTo將MemoryStream資料內容寫入FileStream。</p>  <div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e10b654b-65f9-4700-88bb-5b497491bb1d" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"><pre name="code" class="c#">using System.IO;
+.NET 4.0在Stream類別中新增了CopyTo方法，該方法有兩個多載版本CopyTo(Stream)、與CopyTo(Stream, Int32)。     
+
+CopyTo方法主要功能為將當前的資料流內容複製到另一資料流，能讓我們快速的做資料流內容的複製，不需要像以往一樣需先將來源資料流內容讀出，再對目標資料流寫入，以達資料流複製的功用。
+
+值得注意的是CopyTo方法是從當前資料流的目前位置開始做複製的動作。
+
+完整範例如下，這個範例會建立一個MemoryStream，並將"Test Stream.CopyTo"字樣寫入產生的MemoryStream，接著建立一個FileStream，其對應的檔案為Test.Txt，再透過Stream.CopyTo將MemoryStream資料內容寫入FileStream。
+  using System.IO;
 
 namespace ConsoleApplication1
 {
@@ -30,20 +37,12 @@ namespace ConsoleApplication1
             }
         }
     }
-}</pre></div>
+}
 
-<p> </p>
+運行後會在程式目錄下產生一個Test.Txt文字檔，其內容為"Test Stream.CopyTo"。
 
-<p>運行後會在程式目錄下產生一個Test.Txt文字檔，其內容為"Test Stream.CopyTo"。</p>
+## Link
 
-<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="124" alt="image" src="\images\posts\19671\image_thumb.png" width="340" border="0" /> </p>
+  Stream.CopyTo 方法
 
-<p> </p>
-
-<h2>Link</h2>
-
-<ul>
-  <li>Stream.CopyTo 方法</li>
-
-  <li>New Stream.CopyTo() in .Net framework 4</li>
-</ul>
+  New Stream.CopyTo() in .Net framework 4

@@ -6,7 +6,8 @@ description: "[C#]DropBox開發系列 - 使用DropNet下載DropBox內存放的�
 tags: [CSharp]
 ---
 
-<p>要使用DropNet下載DropBox內存放的檔案，我們可以透過DropNetClient.GetFile來做，將我們想要下載的檔案位置帶入該函式，會將指定檔案的內容回傳，因此成式撰寫起來會像下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:602ced37-f421-44e8-8cb2-2a4c1ad13dad" class="wlWriterSmartContent"><pre name="code" class="c#">			...
+要使用DropNet下載DropBox內存放的檔案，我們可以透過DropNetClient.GetFile來做，將我們想要下載的檔案位置帶入該函式，會將指定檔案的內容回傳，因此成式撰寫起來會像下面這樣：
+  			...
 			var selectedNode = treeView1.SelectedNode;
 			if (selectedNode == null)
 				return;
@@ -25,35 +26,19 @@ tags: [CSharp]
 					File.WriteAllBytes(saveFileDialog.FileName, fileData);
 				}
 			}
-			...</pre></div>
+			...
 
-<p> </p>
+實際運作起來會像下面這樣，假設我嚐試要抓取的是Batch目錄下的Close.bat檔。
 
-<p>實際運作起來會像下面這樣，假設我嚐試要抓取的是Batch目錄下的Close.bat檔。</p>
+下載時會先詢問要存放的檔案位置，這邊為了方便就先將檔案放在桌面上。 
 
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\150ecf2d-1534-43a9-b42d-f7fdb0209fae\image_thumb.png" width="644" height="472" /></p>
+按下儲存後桌面上會有我們剛剛所選取的檔案，將檔案開起來查驗，可以看到檔案確確實實的下載下來了。 
 
-<p> </p>
+筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫GetFileAsync就可以了。
 
-<p>下載時會先詢問要存放的檔案位置，這邊為了方便就先將檔案放在桌面上。 </p>
+最後一樣附上完整的使用範例：
 
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\150ecf2d-1534-43a9-b42d-f7fdb0209fae\image_thumb_1.png" width="644" height="472" /></p>
-
-<p> </p>
-
-<p>按下儲存後桌面上會有我們剛剛所選取的檔案，將檔案開起來查驗，可以看到檔案確確實實的下載下來了。 </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\150ecf2d-1534-43a9-b42d-f7fdb0209fae\image_thumb_2.png" width="466" height="232" /> </p>
-
-<p> </p>
-
-<p>筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫<code>GetFileAsync就可以了。</code></p>
-
-<p> </p>
-
-<p>最後一樣附上完整的使用範例：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6f2afa39-99e0-4167-9fcf-229ced5244dd" class="wlWriterSmartContent"><pre name="code" class="c">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,7 +86,7 @@ namespace DropNetDemo
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) &amp;&amp; !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
+			if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
 			{
 				m_DropNetClient.UserLogin = new UserLogin()
 				{
@@ -169,7 +154,7 @@ namespace DropNetDemo
 		{
 			var node = e.Node;
 
-			if (!(node.Nodes.Count == 1 &amp;&amp; node.Nodes[0].Tag == null))
+			if (!(node.Nodes.Count == 1 && node.Nodes[0].Tag == null))
 				return;
 
 			node.Nodes.Clear();
@@ -188,7 +173,7 @@ namespace DropNetDemo
 
 				var token = m_DropNetClient.GetToken();
 				var authUrl = m_DropNetClient.BuildAuthorizeUrl();
-				browesr.Navigated += (s, ex) =&gt;
+				browesr.Navigated += (s, ex) =>
 				{
 					var url = ex.Url.ToString();
 					if (url.Equals(callbackUrl))
@@ -242,4 +227,3 @@ namespace DropNetDemo
 		}
 	}
 }
-</pre></div>

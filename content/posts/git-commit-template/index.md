@@ -4,64 +4,37 @@ date: "2020-05-29 07:04:25"
 tags: [git]
 ---
 
+如果 git commit 的 message 想要有一定的規範，可為 git 設定 commit template，設定完後 template 會在 commit 時帶出範本，供編輯修改 commit message。
 
-如果 git commit 的 message 想要有一定的規範，可為 git 設定 commit template，設定完後 template 會在 commit 時帶出範本，供編輯修改 commit message。  
+要設定 git commit template，我們需先建立範本檔。
 
-<!-- More -->
-
-<br>
-
-
-要設定 git commit template，我們需先建立範本檔。  
-
-    vim .gitmessage.txt
+vim .gitmessage.txt
 
 ![1.png](1.png)
 
-<br>
-
-
-設定範本檔的內容。  
+設定範本檔的內容。
 
 ![2.png](2.png)
 
-<br>
+然後將範本檔設定到設定檔中。
 
-
-然後將範本檔設定到設定檔中。  
-
-    git config commit.template .gitmessage.txt
+git config commit.template .gitmessage.txt
 
 ![3.png](3.png)
 
-<br>
+設定好後 commit 時就會自動帶出設定好的範本了。
 
-
-設定好後 commit 時就會自動帶出設定好的範本了。  
-
-    git add .
+git add .
 
 ![4.png](4.png)
 
-<br>
-
-
-    git commit
+git commit
 
 ![5.png](5.png)
 
-<br>
-
-
 ![6.png](6.png)
 
-<br>
-
-
-這邊需特別注意一點，如果使用的是 GUI 而非命令列的話，多半範本是不支援註釋的，也就是說如果範本中有使用到註釋，都需自行刪除註釋後才能 commit，不然都會當成 commit message。  
-
-<br>
-
+這邊需特別注意一點，如果使用的是 GUI 而非命令列的話，多半範本是不支援註釋的，也就是說如果範本中有使用到註釋，都需自行刪除註釋後才能 commit，不然都會當成 commit message。
 
 Link
 ====

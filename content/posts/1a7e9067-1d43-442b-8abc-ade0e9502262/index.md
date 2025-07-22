@@ -6,7 +6,13 @@ description: "[C#]使用BitmapDecoder快速取用圖檔內含的縮圖"
 tags: [CSharp]
 ---
 
-<p>為了記憶體的佔用或是速度上面的考量，有的時候我們會有為圖檔產生縮圖的需求。產生縮圖的方法很多，多半都需要耗費一點時間，所以有時候我們可能會考慮直接取用圖檔本身就內含的縮圖。</p>  <p> </p>  <p>這邊一樣是用WPF內的BitmapDecoder來取用圖檔內含的縮圖。若是Window Form程式的話我們必須額外將PresentationCore.dll、System.Xaml、與WindowsBase.dll加入參考。</p>  <p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\1a7e9067-1d43-442b-8abc-ade0e9502262\image_thumb_2.png" width="269" height="276" /></a> </p>  <p> </p>  <p>實際的程式撰寫部份跟<a href="http://www.dotblogs.com.tw/larrynung/archive/2012/09/05/74627.aspx">[C#]使用BitmapDecoder快速讀取圖檔的大小這篇類似，用BitmapDecoder.Create將要讀取的圖檔位置帶入，然後取得第一個Frame，裡面的Thumbnail就是我們所需要的縮圖圖檔。這邊要注意到的是，Thumbnail屬性的型態是BitmapSource，若是在Window Form程式中使用必須將BitmapSource轉換成Bitmap才能使用。</p>  <p>   </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:10bf3f0e-c870-48f8-b45e-13fbad8da60f" class="wlWriterSmartContent"><pre name="code" class="c#">...
+為了記憶體的佔用或是速度上面的考量，有的時候我們會有為圖檔產生縮圖的需求。產生縮圖的方法很多，多半都需要耗費一點時間，所以有時候我們可能會考慮直接取用圖檔本身就內含的縮圖。
+
+這邊一樣是用WPF內的BitmapDecoder來取用圖檔內含的縮圖。若是Window Form程式的話我們必須額外將PresentationCore.dll、System.Xaml、與WindowsBase.dll加入參考。
+
+  實際的程式撰寫部份跟[C#]使用BitmapDecoder快速讀取圖檔的大小這篇類似，用BitmapDecoder.Create將要讀取的圖檔位置帶入，然後取得第一個Frame，裡面的Thumbnail就是我們所需要的縮圖圖檔。這邊要注意到的是，Thumbnail屬性的型態是BitmapSource，若是在Window Form程式中使用必須將BitmapSource轉換成Bitmap才能使用。  
+   
+...
 public static Bitmap GetBitmap(this BitmapSource bitmapsource)
 {
 	Bitmap bitmap;
@@ -28,14 +34,11 @@ public Image GetThumbnail(string file)
 
 	return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
 }
-...</pre></div>
+...
 
+完整的程式範例如下：
 
-<p> </p>
-
-<p>完整的程式範例如下：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ef63d9b3-5a04-4bb0-832d-06b9d662f017" class="wlWriterSmartContent"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,11 +78,9 @@ namespace WindowsFormsApplication33
 			}
 		}
 	}
-}</pre></div>
+}
 
-<p> </p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:75d0137a-ae4a-483d-9ca4-06d7b52d9afa" class="wlWriterSmartContent"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -101,16 +102,8 @@ public static class BitmapSourceExtension
 		}
 		return bitmap;
 	}
-}</pre></div>
+}
 
-<p> </p>
+程式運作起來會像下面這樣，可以看到抓取4-5 MB的圖檔只需花費43ms。
 
-<p>程式運作起來會像下面這樣，可以看到抓取4-5 MB的圖檔只需花費43ms。</p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\1a7e9067-1d43-442b-8abc-ade0e9502262\image_thumb.png" width="304" height="304" /> </p>
-
-<p> </p>
-
-<p>以這張圖片來說縮圖的大小也有160X120。</p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\1a7e9067-1d43-442b-8abc-ade0e9502262\image_thumb_1.png" width="644" height="465" /></p>
+以這張圖片來說縮圖的大小也有160X120。

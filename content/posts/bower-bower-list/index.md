@@ -5,28 +5,16 @@ description: "Bower - Bower list"
 tags: [Bower]
 ---
 
+Bower list 可用來列出安裝的 bower 套件，以及其之間的依賴關係。
 
-Bower list 可用來列出安裝的 bower 套件，以及其之間的依賴關係。  
+使用方式如下：
 
-<!-- More -->
+bower list
 
-<br/>
-
-
-使用方式如下：  
-
-    bower list
-
-<br/>
-
-
-像是如果本地已安裝了 jQuery 與 Bootstrap。  
+像是如果本地已安裝了 jQuery 與 Bootstrap。
 
 {% img /images/posts/BowerList/1.png %}
 
-<br/>
-
-
-那當輸入命令 bower list，則會像下面這樣列出安裝的套件，且會用樹狀結構顯示其依賴關係。  
+那當輸入命令 bower list，則會像下面這樣列出安裝的套件，且會用樹狀結構顯示其依賴關係。
 
 {% img /images/posts/BowerList/2.png %}

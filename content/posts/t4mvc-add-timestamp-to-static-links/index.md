@@ -5,16 +5,13 @@ description: "T4MVC - Add Timestamp To Static Links"
 tags: [T4MVC, T4]
 ---
 
-
-T4MVC 除了解決 ASP.NET MVC Magic String 的問題外，還能解決常見的網頁 Cache 問題。 
-
-<!--More -->
+T4MVC 除了解決 ASP.NET MVC Magic String 的問題外，還能解決常見的網頁 Cache 問題。
 
 只要在 T4MVC.tt.settings.xml 設定檔中將 AddTimestampToStaticLinks 設為 True 就可以了。
 
 ```xml
 ...
-<AddTimestampToStaticLinks>True</AddTimestampToStaticLinks>
+True
 ...
 ```
 

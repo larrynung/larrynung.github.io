@@ -4,51 +4,30 @@ date: "2019-05-15 08:57:48"
 tags: [Git]
 ---
 
-
 若在本地操作 Git 錯誤，想將本地分支還原到跟遠端分支一樣狀態的話。
 
-<!-- More -->
+可以將遠端分支 fetch 下來。
 
-</br>
+git fetch ${RemoteName} ${BranchName}
 
+然後強制將本地分支還原至遠端分支的狀態。
 
-可以將遠端分支 fetch 下來。  
+git reset --hard ${RemoteName}/${BranchName}
 
-    git fetch ${RemoteName} ${BranchName}
-
-</br>
-
-
-然後強制將本地分支還原至遠端分支的狀態。  
-
-    git reset --hard ${RemoteName}/${BranchName}
-
-</br>
-
-
-像是筆者這邊不小心做錯，搞出了 Revert Commit。  
+像是筆者這邊不小心做錯，搞出了 Revert Commit。
 
 ![1.png](1.png)
 
-</br>
+這時可以像下面這樣調用。
 
-
-這時可以像下面這樣調用。  
-
-    git fetch origin source
-    git reset --hard origin/source
+git fetch origin source
+git reset --hard origin/source
 
 ![2.png](2.png)
 
-</br>
-
-
-本地分支就會變為跟遠端分支一樣的狀態，本地做錯的動作就會被還原。  
+本地分支就會變為跟遠端分支一樣的狀態，本地做錯的動作就會被還原。
 
 ![3.png](3.png)
-
-</br>
-
 
 Link
 ----

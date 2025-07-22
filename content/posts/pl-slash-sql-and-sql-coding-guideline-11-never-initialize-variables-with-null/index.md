@@ -5,28 +5,22 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 11 - Never initialize variables 
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 
-
-條款十一是說不要將變數初始為 NULL。  
-
-<!-- More -->
+條款十一是說不要將變數初始為 NULL。
 
 ```psql
-DECLARE 
-	v_str VARCHAR2(30) := null; 
-BEGIN 
-	... 
+DECLARE
+v_str VARCHAR2(30) := null;
+BEGIN
+...
 END;
 ```
 
-<br/>
-
-
-因為預設就是初始為 Null。  
+因為預設就是初始為 Null。
 
 ```psql
-DECLARE 
-	v_str VARCHAR2(30); 
-BEGIN 
-	... 
+DECLARE
+v_str VARCHAR2(30);
+BEGIN
+...
 END;
 ```

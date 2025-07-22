@@ -6,80 +6,118 @@ description: "[C#]使用反射搭配Extension Method來Reset物件"
 tags: [CSharp]
 ---
 
-<p>
-	看到網友在論壇發問的問題，想起之前在開發時有用過反射與擴充方法去將物件初始，擴充方法如下，可將物件的屬性值初始：</p>
-<p>
-	public static class ObjectExtension<br />
-	{<br />
-	    public static void Reset(this object obj)<br />
-	    {<br />
-	        foreach (var p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))<br />
-	        {<br />
-	            if (!p.CanWrite)<br />
-	                continue;<br />
-	            var defaultValue = (p.GetCustomAttributes(typeof(DefaultValueAttribute), false) as DefaultValueAttribute[]).FirstOrDefault();<br />
-	            p.SetValue(obj, (defaultValue == null) ? (p.PropertyType.IsValueType ? Activator.CreateInstance(p.PropertyType) : null) : defaultValue.Value, null);<br />
-	        }<br />
-	    }<br />
-	}</p>
-<p>
-	 </p>
-<p>
-	簡易的使用範例：</p>
-<p>
-	using System;<br />
-	using System.Collections.Generic;<br />
-	using System.Linq;<br />
-	using System.Text;<br />
-	using System.ComponentModel;</p>
-<p>
-	namespace ConsoleApplication13<br />
-	{<br />
-	    class Program<br />
-	    {<br />
-	        static void Main(string[] args)<br />
-	        {<br />
-	            var people = new Person()<br />
-	            {<br />
-	                Name ="Larry",<br />
-	                Sex= Person.SexType.Boy,<br />
-	                Age=32<br />
-	            };</p>
-<p>
-	            ShowPeople(people);</p>
-<p>
-	            people.Reset();</p>
-<p>
-	            Console.WriteLine(new string('=', 50));<br />
-	            ShowPeople(people);<br />
-	        }</p>
-<p>
-	        static void ShowPeople(Person people)<br />
-	        {           <br />
-	            Console.WriteLine(String.Format ("Name: {0}",people.Name));<br />
-	            Console.WriteLine(String.Format("Sex: {0}", people.Sex));<br />
-	            Console.WriteLine(String.Format("Age: {0}", people.Age));<br />
-	        }<br />
-	    }</p>
-<p>
-	    public class Person<br />
-	    {<br />
-	        public enum SexType<br />
-	        {<br />
-	            Boy,<br />
-	            Girl<br />
-	        }</p>
-<p>
-	        public string Name { get; set; }               <br />
-	        public SexType Sex { get; set; }</p>
-<p>
-	        [DefaultValue(18)]<br />
-	        public int Age { get; set; }<br />
-	    }<br />
-	}</p>
-<p>
-	 </p>
-<p>
-	運行結果如下：</p>
-<p>
-	<img alt="image" border="0" height="239" src="\images\posts\23027\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="457" /></p>
+看到網友在論壇發問的問題，想起之前在開發時有用過反射與擴充方法去將物件初始，擴充方法如下，可將物件的屬性值初始：
+
+	public static class ObjectExtension  
+
+	{  
+
+	    public static void Reset(this object obj)  
+
+	    {  
+
+	        foreach (var p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))  
+
+	        {  
+
+	            if (!p.CanWrite)  
+
+	                continue;  
+
+	            var defaultValue = (p.GetCustomAttributes(typeof(DefaultValueAttribute), false) as DefaultValueAttribute[]).FirstOrDefault();  
+
+	            p.SetValue(obj, (defaultValue == null) ? (p.PropertyType.IsValueType ? Activator.CreateInstance(p.PropertyType) : null) : defaultValue.Value, null);  
+
+	        }  
+
+	    }  
+
+	}
+
+	簡易的使用範例：
+
+	using System;  
+
+	using System.Collections.Generic;  
+
+	using System.Linq;  
+
+	using System.Text;  
+
+	using System.ComponentModel;
+
+	namespace ConsoleApplication13  
+
+	{  
+
+	    class Program  
+
+	    {  
+
+	        static void Main(string[] args)  
+
+	        {  
+
+	            var people = new Person()  
+
+	            {  
+
+	                Name ="Larry",  
+
+	                Sex= Person.SexType.Boy,  
+
+	                Age=32  
+
+	            };
+
+	            ShowPeople(people);
+
+	            people.Reset();
+
+	            Console.WriteLine(new string('=', 50));  
+
+	            ShowPeople(people);  
+
+	        }
+
+	        static void ShowPeople(Person people)  
+
+	        {             
+
+	            Console.WriteLine(String.Format ("Name: {0}",people.Name));  
+
+	            Console.WriteLine(String.Format("Sex: {0}", people.Sex));  
+
+	            Console.WriteLine(String.Format("Age: {0}", people.Age));  
+
+	        }  
+
+	    }
+
+	    public class Person  
+
+	    {  
+
+	        public enum SexType  
+
+	        {  
+
+	            Boy,  
+
+	            Girl  
+
+	        }
+
+	        public string Name { get; set; }                 
+
+	        public SexType Sex { get; set; }
+
+	        [DefaultValue(18)]  
+
+	        public int Age { get; set; }  
+
+	    }  
+
+	}
+
+	運行結果如下：

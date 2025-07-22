@@ -4,10 +4,7 @@ date: "2018-09-17 22:32:13"
 tags: [Event Store]
 ---
 
-
-要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內特定的 Event，可以帶入 Stream 的名稱、Event 的編號，調用 Connection.ReadEventAsync 方法。  
-
-<!-- More -->
+要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內特定的 Event，可以帶入 Stream 的名稱、Event 的編號，調用 Connection.ReadEventAsync 方法。
 
 ```C#
 ...
@@ -15,10 +12,7 @@ var readResult = conn.ReadEventAsync(streamName, 0, true).Result;
 ...
 ```
 
-<br/>
-
-
-然後再去讀取需要的 Event 資料即可。  
+然後再去讀取需要的 Event 資料即可。
 
 ```C#
 ...
@@ -26,41 +20,29 @@ Console.WriteLine("{0} {1}", readResult.EventNumber, Encoding.UTF8.GetString(rea
 ...
 ```
 
-<br/>
-
-
-像是筆者這邊有個 Event 如下：   
+像是筆者這邊有個 Event 如下：
 
 ![1.png](1.png)
- 
-<br/>
 
-
-就可以像下面這樣讀取指定的 Event。  
+就可以像下面這樣讀取指定的 Event。
 
 ```C#
 using EventStore.ClientAPI;
 ...
 using (var conn = EventStoreConnection.Create(connectionString, connectionName))
 {
-    conn.ConnectAsync().Wait();
+conn.ConnectAsync().Wait();
 
-    var streamName = "MyStream";
-    var readResult = conn.ReadEventAsync(streamName, 0, true).Result;
-    Console.WriteLine("{0} {1}", readResult.EventNumber, Encoding.UTF8.GetString(readResult.Event.Value.Event.Data));
+var streamName = "MyStream";
+var readResult = conn.ReadEventAsync(streamName, 0, true).Result;
+Console.WriteLine("{0} {1}", readResult.EventNumber, Encoding.UTF8.GetString(readResult.Event.Value.Event.Data));
 }
 ...
 ```
 
 ![2.png](2.png)
- 
-<br/>
-
 
 ![3.png](3.png)
- 
-<br/>
-
 
 Link
 ----

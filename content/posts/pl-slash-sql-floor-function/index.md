@@ -5,26 +5,15 @@ description: "PL/SQL - FLOOR function"
 tags: [PL/SQL]
 ---
 
+FLOOR function 可傳回小於或等於指定數值的最大整數值。
 
-FLOOR function 可傳回小於或等於指定數值的最大整數值。  
+使用語法如下：
 
-<!-- More -->
+FLOOR( number )
 
-<br/>
-
-
-使用語法如下：  
-
-    FLOOR( number )
-
-<br/>
-
-
-使用上會像下面這樣：  
+使用上會像下面這樣：
 
 {% img /images/posts/FloorFunction/1.png %}
-
-<br/>
 
 Link
 ----

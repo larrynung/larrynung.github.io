@@ -5,12 +5,6 @@ description: "PL/SQL &amp; SQL CODING GUIDELINE 25 - Avoid using the LONG and LO
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 
+條款二十五，避免使用 LONG 與 LONG RAW 型態。
 
-條款二十五，避免使用 LONG 與 LONG RAW 型態。  
-
-<!-- More -->
-
-<br/>
-
-
-LONG 與 LONG RAW 型態已經過時，留著只是為了向前相容，不建議拿來使用，應考慮用 NCLOB、BLOB、BFILE 去替。  
+LONG 與 LONG RAW 型態已經過時，留著只是為了向前相容，不建議拿來使用，應考慮用 NCLOB、BLOB、BFILE 去替。

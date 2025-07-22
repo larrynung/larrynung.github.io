@@ -5,42 +5,31 @@ description: "C# 7.0 - Digit separators"
 tags: [CSharp, CSharp 7.0]
 ---
 
+以前在開發 C# 時，如果數值過大，在閱讀上會十分不易。
 
-以前在開發 C# 時，如果數值過大，在閱讀上會十分不易。  
-
-<!-- More -->
-
-<br/>
-
-
-C# 7.0 以後提供了 Digit separators 功能，允許開發人員使用 `_` 將數值做些分隔，有效解決了上述問題。最普遍的用法就是將數值做千分位分隔，像是下面這樣：  
+C# 7.0 以後提供了 Digit separators 功能，允許開發人員使用 `_` 將數值做些分隔，有效解決了上述問題。最普遍的用法就是將數值做千分位分隔，像是下面這樣：
 
 ```c#
 using System;
 
 namespace ConsoleApplication1
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var values = new int[] { 1_000, 1_000_000, 0b1_000 };
+class Program
+{
+static void Main(string[] args)
+{
+var values = new int[] { 1_000, 1_000_000, 0b1_000 };
 
-            foreach (var value in values)
-            {
-                Console.WriteLine(value.ToString());
-            }
-        }
-    }
+foreach (var value in values)
+{
+Console.WriteLine(value.ToString());
+}
+}
+}
 }
 ```
 
-<br/>
-
-
 {% img /images/posts/CSharp7DigitSeparators/1.png %}
-
-<br/>
 
 Link
 ----

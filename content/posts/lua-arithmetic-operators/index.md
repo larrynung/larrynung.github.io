@@ -4,10 +4,7 @@ date: "2017-08-02 23:39:33"
 tags: [Lua]
 ---
 
-
-Lua 的 Arithmetic operators 有 +、-、*、/、%、>=，這些運算符可用來做數值的運算。  
-
-<!-- More -->
+Lua 的 Arithmetic operators 有 +、-、*、/、%、>=，這些運算符可用來做數值的運算。
 
 | Operator | Description |
 |:-------------:|:-------------:|
@@ -19,28 +16,19 @@ Lua 的 Arithmetic operators 有 +、-、*、/、%、>=，這些運算符可用�
 | ^ | 用來將數值乘冪 |
 | - | 用來將數值正負反轉 |
 
-<br/>
-
-
-使用起來就像下面這樣：  
+使用起來就像下面這樣：
 
 ```Lua
-print(1 + 2)            
-print(1 - 2)    
-print(1 * 2)          
-print(1 / 2)         
-print(7 % 4) 
-print(2 ^ 2)       
-print(-1)                  
+print(1 + 2)
+print(1 - 2)
+print(1 * 2)
+print(1 / 2)
+print(7 % 4)
+print(2 ^ 2)
+print(-1)
 ```
 
-<br/>
-
-
 ![1.png](1.png)
-
-<br/>
-
 
 Link
 ----

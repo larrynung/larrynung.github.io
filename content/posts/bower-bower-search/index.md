@@ -5,21 +5,12 @@ description: "Bower - Bower search"
 tags: [Bower]
 ---
 
+Bower search 可用來搜尋 bower 的 package。
 
-Bower search 可用來搜尋 bower 的 package。  
+使用方式如下：
 
-<!-- More -->
+bower search
 
-<br/>
-
-
-使用方式如下：  
-
-    bower search <package>
-
-<br/>
-
-
-像是要搜尋 jQuery 的 package，就可以下 bower search jquery。  
+像是要搜尋 jQuery 的 package，就可以下 bower search jquery。
 
 {% img /images/posts/BowerSearch/1.png %}

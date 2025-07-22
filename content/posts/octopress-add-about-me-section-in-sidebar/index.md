@@ -5,32 +5,21 @@ description: "Octopress - Add About Me section in sidebar"
 tags: [Octopress]
 ---
 
-
-新增 About Me 檔，檔案位置存放在 `source/_includes/custom/asides` 下。  
-
-<!-- More -->
+新增 About Me 檔，檔案位置存放在 `source/_includes/custom/asides` 下。
 
 {% img /images/posts/OctopressAboutMe/1.png %}
 
-<br/>
-
-編輯後存檔退出。  
+編輯後存檔退出。
 
 {% img /images/posts/OctopressAboutMe/2.png %}
 
-<br/>
-
-接著開啟 `_config.yml` 設定檔找到 `blog_index_asides` 設定，將剛編輯好的 About Me 檔設上。  
+接著開啟 `_config.yml` 設定檔找到 `blog_index_asides` 設定，將剛編輯好的 About Me 檔設上。
 
 {% img /images/posts/OctopressAboutMe/3.png %}
 
-<br/>
-
-存檔退出，編譯網頁後啟用預覽功能，即會看到側欄這邊多出剛我們設在 About Me 檔的內容。  
+存檔退出，編譯網頁後啟用預覽功能，即會看到側欄這邊多出剛我們設在 About Me 檔的內容。
 
 {% img /images/posts/OctopressAboutMe/4.png %}
-
-<br/>
 
 Link
 ----

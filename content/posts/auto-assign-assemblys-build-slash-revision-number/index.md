@@ -5,28 +5,17 @@ description: "Auto assign assembly's build/revision number"
 tags: [.NET]
 ---
 
+在做軟體開發時，總是會碰到遞增產品版號的需求，通常這種時候我們會撰寫 Script 在建置之前對 Assembly.vs 檔內的版本資訊進行修改，以達到像這樣的需求。
 
-在做軟體開發時，總是會碰到遞增產品版號的需求，通常這種時候我們會撰寫 Script 在建置之前對 Assembly.vs 檔內的版本資訊進行修改，以達到像這樣的需求。  
+然而有些時後我們只是想要讓建置的版號跟前次建立的有所區隔，不一定要將版號遞增的話，其實不需要到撰寫 Script 這樣麻煩，只要透過 Visual Studio 內建的機制就可以做到了。
 
-<!-- More -->
-
-<br/>
-
-然而有些時後我們只是想要讓建置的版號跟前次建立的有所區隔，不一定要將版號遞增的話，其實不需要到撰寫 Script 這樣麻煩，只要透過 Visual Studio 內建的機制就可以做到了。  
-
-<br/>
-
-將 Assembly.vs 檔開啟，視需求將 AssemblyVersion 的 Build 或 Revision Number 部份用 * 替換。並將 AssemblyFileVersion 設定移除。  
+將 Assembly.vs 檔開啟，視需求將 AssemblyVersion 的 Build 或 Revision Number 部份用 * 替換。並將 AssemblyFileVersion 設定移除。
 
 {% img /images/posts/AutoAssignAssemblyVersion/1.png %}
 
-<br/>
+接著存檔建置，即會發現每次建置的版號會有所不同。
 
-接著存檔建置，即會發現每次建置的版號會有所不同。 
-
-<br/>
-
-Build 的部份會是當前本地時間與 2000 年 1 月 1 日之間所差天數，Revision 部分為與本地午夜所差的秒數除以 2。  
+Build 的部份會是當前本地時間與 2000 年 1 月 1 日之間所差天數，Revision 部分為與本地午夜所差的秒數除以 2。
 
 Link
 ----

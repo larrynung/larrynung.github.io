@@ -5,29 +5,17 @@ description: "PL/SQL - Sysdate function"
 tags: [PL/SQL]
 ---
 
+Sysdate function 會回傳資料庫系統當前的日期與時間。
 
-Sysdate function 會回傳資料庫系統當前的日期與時間。  
+使用語法如下：
 
-<!-- More -->
-
-<br/>
-
-
-使用語法如下：  
-
-    Sysdate
-
+Sysdate
 
 直接叫用即可，不需帶入任何的參數。
 
-<br/>
-
-
-像是這樣：  
+像是這樣：
 
 {% img /images/posts/SysdateFunction/1.png %}
-
-<br/>
 
 Link
 ----

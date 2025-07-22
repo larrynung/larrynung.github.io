@@ -6,15 +6,16 @@ description: "[C#]ListBox如何偵測Item的新增、插入、與刪除"
 tags: [CSharp]
 ---
 
-<p>有時候我們使用ListBox元件會想要針對Item的新增、插入、與刪除做些反應，可能像是有個Item插入時我們會想把游標移到最下面之類的。但內建的ListBox並未將這樣的訊息開放出來，所以我們無法直接的去做這樣的處理，必須要自行去接收視窗訊息才行。</p>  <p> </p>  <p>我們可以建立個控制項，繼承自ListBox，並視需要來接收想要處理的視窗訊息。像是想要偵測Item新增的話我們可以偵測LB_ADDSTRING、想要偵測Item插入的話可以偵測LB_INSERTSTRING、想要偵測Item刪除的話可以偵測LB_DELETESTRING。</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d3a04066-5b0e-4f84-9ebf-6873825e4383" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">			private const int LB_ADDSTRING = 0x180;
+有時候我們使用ListBox元件會想要針對Item的新增、插入、與刪除做些反應，可能像是有個Item插入時我們會想把游標移到最下面之類的。但內建的ListBox並未將這樣的訊息開放出來，所以我們無法直接的去做這樣的處理，必須要自行去接收視窗訊息才行。
+
+我們可以建立個控制項，繼承自ListBox，並視需要來接收想要處理的視窗訊息。像是想要偵測Item新增的話我們可以偵測LB_ADDSTRING、想要偵測Item插入的話可以偵測LB_INSERTSTRING、想要偵測Item刪除的話可以偵測LB_DELETESTRING。
+  			private const int LB_ADDSTRING = 0x180;
 			private const int LB_INSERTSTRING = 0x181;
-			private const int LB_DELETESTRING = 0x182; </pre></div>
+			private const int LB_DELETESTRING = 0x182; 
 
-<p> </p>
+偵測時需覆寫WndProc方法，並在方法內判斷Msg是否是我們所感興趣的訊息。有的訊息會內含較為詳細的資訊，像是Item的索引與值，若有需要可從wparam與lparam中擷取。
 
-<p>偵測時需覆寫WndProc方法，並在方法內判斷Msg是否是我們所感興趣的訊息。有的訊息會內含較為詳細的資訊，像是Item的索引與值，若有需要可從wparam與lparam中擷取。</p>
-
-<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d778840c-ff2f-4b48-93b7-f0b9b6260011" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">			protected override void WndProc(ref Message m)
+			protected override void WndProc(ref Message m)
 			{
 				var itemIndex = 0;
 				var itemValue = string.Empty;
@@ -38,13 +39,11 @@ tags: [CSharp]
 						break;
 				}
 				base.WndProc(ref m);
-			} </pre></div>
+			} 
 
-<p> </p>
+這邊附上較為完整的測試範例：
 
-<p>這邊附上較為完整的測試範例：</p>
-
-<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:78d608b4-1058-4357-87ab-1765eb571bf0" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,13 +66,11 @@ namespace WindowsFormsApplication4
 			private const int LB_DELETESTRING = 0x182; 
 			#endregion
 
-
 			#region Event
 			public event EventHandler ItemAdded;
 			public event EventHandler ItemInserted;
 			public event EventHandler ItemDeleted;
 			#endregion
-
 
 			#region Protected Method
 			protected void OnItemAdded(EventArgs e)
@@ -129,7 +126,6 @@ namespace WindowsFormsApplication4
 		private ListBoxEx _listBox; 
 		#endregion
 
-
 		#region Private Property
 		private ListBoxEx m_ListBox
 		{
@@ -142,7 +138,6 @@ namespace WindowsFormsApplication4
 			}
 		} 
 		#endregion
-
 
 		#region Constructor
 		public Form1()
@@ -157,7 +152,6 @@ namespace WindowsFormsApplication4
 		} 
 		#endregion
 
-
 		#region Event Process
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -166,7 +160,7 @@ namespace WindowsFormsApplication4
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			var index = m_ListBox.SelectedIndex &gt;= 0 ? m_ListBox.SelectedIndex : 0;
+			var index = m_ListBox.SelectedIndex >= 0 ? m_ListBox.SelectedIndex : 0;
 			m_ListBox.Items.Insert(index, Guid.NewGuid().ToString());
 		}
 
@@ -194,24 +188,15 @@ namespace WindowsFormsApplication4
 		#endregion
 	}
 }
-</pre></div>
 
-<p> </p>
+運行後的結果如下，新增、插入、與刪除都能夠即時的偵測。
 
-<p>運行後的結果如下，新增、插入、與刪除都能夠即時的偵測。</p>
+## Link
 
-<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts\d519bf98-9092-4f48-99da-a49329ae6e5e\image_thumb.png" width="460" height="348" /> </p>
+  How to detect if items are added to a ListBox (or CheckedListBox) control
 
-<p> </p>
+  LB_ADDSTRING message (Windows)
 
-<h2>Link</h2>
+  LB_DELETESTRING message (Windows)
 
-<ul>
-  <li>How to detect if items are added to a ListBox (or CheckedListBox) control</li>
-
-  <li>LB_ADDSTRING message (Windows)</li>
-
-  <li>LB_DELETESTRING message (Windows)</li>
-
-  <li>LB_INSERTSTRING message (Windows)</li>
-</ul>
+  LB_INSERTSTRING message (Windows)

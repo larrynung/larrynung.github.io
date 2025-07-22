@@ -4,60 +4,33 @@ date: "2019-01-03 00:03:42"
 tags: [Oracle]
 ---
 
-
-要用 SQL*Plus 將查詢的資料輸出成 HTML 報表，可以準備像下面這樣的 SQL 檔。  
-
-<!-- More -->
+要用 SQL*Plus 將查詢的資料輸出成 HTML 報表，可以準備像下面這樣的 SQL 檔。
 
 ![1.png](1.png)
 
-<br/>
+開啟 MARKUP HTML 與 SPOOL。
 
+SET MARKUP HTML ON SPOOL ON
 
-開啟 MARKUP HTML 與 SPOOL。  
+然後指定 SPOOL 要輸出的檔案。
 
-    SET MARKUP HTML ON SPOOL ON
+SPOOL
 
-<br/>
+接著撈出要產出的資料。
 
+然後將 MARKUP HTML 與 SPOOL 關掉即可。
 
-然後指定 SPOOL 要輸出的檔案。 
+SET MARKUP HTML OFF SPOOL OFF
 
-    SPOOL <File>
-
-<br/>
-
-
-接著撈出要產出的資料。  
-
-<br/>
-
-
-然後將 MARKUP HTML 與 SPOOL 關掉即可。  
-
-    SET MARKUP HTML OFF SPOOL OFF
-
-<br/>
-
-
-用 SQL*Plus 運行剛撰寫的 SQL 檔。  
+用 SQL*Plus 運行剛撰寫的 SQL 檔。
 
 ![2.png](2.png)
 
-<br/>
-
-
 ![3.png](3.png)
 
-<br/>
-
-
-HTML 報表即會被輸出到指定的輸出檔案。  
+HTML 報表即會被輸出到指定的輸出檔案。
 
 ![4.png](4.png)
-
-<br/>
-
 
 Link
 ----

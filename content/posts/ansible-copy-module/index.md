@@ -4,15 +4,9 @@ date: "2017-05-27 23:39:53"
 tags: [Ansible]
 ---
 
+Ansible 的 Copy module 可以用來處理檔案的複製。
 
-Ansible 的 Copy module 可以用來處理檔案的複製。  
-
-<!-- More -->
-
-<br/>
-
-
-可用的參數如下：  
+可用的參數如下：
 
 | parameter | required | default | choices | comments |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
@@ -36,40 +30,25 @@ Ansible 的 Copy module 可以用來處理檔案的複製。
 | unsafe_writes | no | | | Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the target files, sometimes systems are configured or just broken in ways that prevent this. One example are docker mounted files, they cannot be updated atomically and can only be done in an unsafe manner. This boolean option allows ansible to fall back to unsafe methods of updating files for those cases in which you do not have any other choice. Be aware that this is subject to race conditions and can lead to data corruption. |
 | validate | no | None | | The validation command to run before copying into place. The path to the file to validate is passed in via '%s' which must be present as in the example below. The command is passed securely so shell features like expansion and pipes won't work. |
 
-<br/>
-
-
 以 Ad-Hoc 模式為例...
 
-<br/>
+要將指定檔案複製到指定的電腦，可以直接用 -m 指定使用 Copy module，並用 -a 帶入 src 參數指定來源檔案，以及 dest 參數設定目的檔案。
 
-
-要將指定檔案複製到指定的電腦，可以直接用 -m 指定使用 Copy module，並用 -a 帶入 src 參數指定來源檔案，以及 dest 參數設定目的檔案。  
-
-    ansible <Group> -i <IP>, -m Copy -a "src=<SourceFile> dest=<DestFile>"
-    ansible <Group> -i <Inventory> -m Copy -a "src=<SourceFile> dest=<DestFile>"
+ansible  -i , -m Copy -a "src= dest="
+ansible  -i  -m Copy -a "src= dest="
 
 ![1.png](1.png)
 
-<br/>
+要直接將檔案內容寫到指定電腦，可以用 content 參數來設定要寫入的檔案內容。
 
-
-要直接將檔案內容寫到指定電腦，可以用 content 參數來設定要寫入的檔案內容。  
-
-    ansible <Group> -i <IP>, -m Copy -a "content=<FileContent> dest=<DestFile>"
-    ansible <Group> -i <Inventory> -m Copy -a "content=<FileContent> dest=<DestFile>"
+ansible  -i , -m Copy -a "content= dest="
+ansible  -i  -m Copy -a "content= dest="
 
 ![2.png](2.png)
 
-<br/>
-
-
-要在指定檔案不存在時才寫檔案，可以將 force 參數設為 false。  
+要在指定檔案不存在時才寫檔案，可以將 force 參數設為 false。
 
 ![3.png](3.png)
-
-<br/>
-
 
 Link
 ----

@@ -5,43 +5,27 @@ description: "PL/SQL - ADD_MONTHS function"
 tags: [PL/SQL]
 ---
 
+ADD_MONTHS function 可將帶入的日期月份做加減處理後回傳。
 
-ADD_MONTHS function 可將帶入的日期月份做加減處理後回傳。  
+使用語法如下：
 
-<!-- More -->
+ADD_MONTHS( date1, number_months )
 
-<br/>
+其中 data1 為要做處理的日期，number_months 為要加減的月份。
 
+number_months 帶入的值為正值，表示是要加上指定的月份，反之表示要減上指定的月份。
 
-使用語法如下：  
+像是要將當前的日期加三個月，可這樣叫用：
 
-    ADD_MONTHS( date1, number_months )
+add_months(sysdate, 3)
 
+要將當前日期減三個月，可這樣叫用：
 
-其中 data1 為要做處理的日期，number_months 為要加減的月份。  
-
-<br/>
-
-
-number_months 帶入的值為正值，表示是要加上指定的月份，反之表示要減上指定的月份。  
-
-<br/>
-
-像是要將當前的日期加三個月，可這樣叫用：  
-
-    add_months(sysdate, 3)
-
-
-要將當前日期減三個月，可這樣叫用：  
-
-    add_months(sysdate, -3)
-
+add_months(sysdate, -3)
 
 使用上會像下面這樣：
 
 {% img /images/posts/AddMonthsFunction/1.png %}
-
-<br/>
 
 Link
 ----

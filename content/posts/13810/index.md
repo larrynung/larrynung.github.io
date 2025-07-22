@@ -5,7 +5,10 @@ description: "[VB.NET]如何自製使用者控制項測試容器(User Control Te
 tags: [VB.NET]
 ---
 
-<p>前一篇[Visual Studio]使用者控制項測試容器(User Control Test Container)介紹了User Control Test Container的使用方式。雖然User Control Test Container很好用，但美中不足的是一定要開啟Visual Studio才能叫用。因此這篇介紹一下如何自己來做這樣的功能。</p><p> </p><p>要做類似User Control Test Container的程式，首先我們必須要會使用.NET中的反射技術。利用反射技術把載入的組件所內含的控制項類別名稱都加到下拉清單中。像下面這樣：  <br /> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5ac92dce-cd8b-40e6-a425-b3ee84e08bf3" class="wlWriterEditableSmartContent"><pre class="vb:nocontrols" name="code">
+前一篇[Visual Studio]使用者控制項測試容器(User Control Test Container)介紹了User Control Test Container的使用方式。雖然User Control Test Container很好用，但美中不足的是一定要開啟Visual Studio才能叫用。因此這篇介紹一下如何自己來做這樣的功能。
+
+要做類似User Control Test Container的程式，首先我們必須要會使用.NET中的反射技術。利用反射技術把載入的組件所內含的控制項類別名稱都加到下拉清單中。像下面這樣：    
+ 
         m_Assembly = Assembly.LoadFrom(assemblyFile)
         Try
             cbxUserControl.BeginUpdate()
@@ -15,18 +18,20 @@ tags: [VB.NET]
                     cbxUserControl.Items.Add(t)
                 End If
             Next
-            If cbxUserControl.Items.Count &gt; 0 Then
+            If cbxUserControl.Items.Count > 0 Then
                 cbxUserControl.SelectedIndex = 0
             End If
         Finally
             cbxUserControl.EndUpdate()
-        End Try</pre></div><p> </p><p>再來就是要在選取好控制項後，利用反射技術把控制項物件給建立起來，動態的嵌到預覽區，並把物件設定到PropertyGrid。像下面這樣： <br /> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0c4d8576-25b3-4799-b5da-78da4ed48ec4" class="wlWriterEditableSmartContent"><pre class="vb:nocontrols" name="code">
+        End Try
+
+再來就是要在選取好控制項後，利用反射技術把控制項物件給建立起來，動態的嵌到預覽區，並把物件設定到PropertyGrid。像下面這樣：   
+ 
     Private Sub SetPreviewControl()
         If cbxUserControl.SelectedItem IsNot Nothing Then
             SetPreviewControl(m_Assembly.CreateInstance(cbxUserControl.Text))
         End If
     End Sub
-
 
     Private Sub SetPreviewControl(ByVal c As Control)
         With pnlControlContainer.Controls
@@ -34,4 +39,11 @@ tags: [VB.NET]
             .Add(c)
         End With
         Me.PropertyGrid1.SelectedObject = c      
-    End Sub</pre></div><p>如此簡易的User Control Test Container就完成了。</p><p> </p><p>這邊附上我寫好的範例程式，主要介面仿照User Test Container。除提供User Test Container的功能外，另加上語系切換，與預覽表單的功能。程式介面外觀如下：</p><p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" width="602" height="522" src="\images\posts\13810\image_thumb.png" /></a></p><p>  </p> <h2>Download</h2><p><a href="http://Files.Dotblogs.com.tw/larrynung/1002/2010227232727262.zip">User Control Test Container.zip</p>
+    End Sub
+
+如此簡易的User Control Test Container就完成了。
+
+這邊附上我寫好的範例程式，主要介面仿照User Test Container。除提供User Test Container的功能外，另加上語系切換，與預覽表單的功能。程式介面外觀如下：
+
+## Download
+User Control Test Container.zip

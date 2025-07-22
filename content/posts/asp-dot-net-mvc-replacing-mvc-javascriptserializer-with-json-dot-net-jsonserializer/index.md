@@ -5,137 +5,117 @@ description: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET Jso
 tags: [ASP.NET MVC]
 ---
 
-
 使用 ASP.NET MVC 或是 Web API 做 JSON 格式的回傳，只要將 Model 帶入去建構 JsonResult 物件回傳即可，像是下面這樣：
-
-<!-- More -->
-
 ```c#
 ...
 return new JsonResult(model);
 ...
 ```
+這樣的寫法預設會採用 JavaSriptSerializer 去做 JSON 的序列化，有著效能不佳的問題，且序列化出來的資料有時也不是我們所期望的，像是 DateTime 物件會被序列化成下面這樣：
 
-<br/>
-
-這樣的寫法預設會採用 JavaSriptSerializer 去做 JSON 的序列化，有著效能不佳的問題，且序列化出來的資料有時也不是我們所期望的，像是 DateTime 物件會被序列化成下面這樣：  
-
-    "/Date(1290181373164)/"
-
+"/Date(1290181373164)/"
 
 Json.Net 提供了 JsonNetResult 可解決這樣的問題，可將程式直接加到專案內使用。
-
 ```c#
-/// <summary> 
-/// Simple Json Result that implements the Json.NET serialiser offering more versatile serialisation 
-/// </summary> 
-public class JsonNetResult : ActionResult 
-{ 
-    public JsonNetResult() 
-    { 
-    }
+///
+/// Simple Json Result that implements the Json.NET serialiser offering more versatile serialisation
+///
+public class JsonNetResult : ActionResult
+{
+public JsonNetResult()
+{
+}
 
-    public JsonNetResult (object responseBody) 
-    { 
-        ResponseBody = responseBody; 
-    }
+public JsonNetResult (object responseBody)
+{
+ResponseBody = responseBody;
+}
 
-    public JsonNetResult(object responseBody, JsonSerializerSettings settings) 
-    { 
-        Settings = settings; 
-    }
+public JsonNetResult(object responseBody, JsonSerializerSettings settings)
+{
+Settings = settings;
+}
 
-    /// <summary>Gets or sets the serialiser settings</summary> 
-    public JsonSerializerSettings Settings { get; set; }
+/// Gets or sets the serialiser settings
+public JsonSerializerSettings Settings { get; set; }
 
-    /// <summary>Gets or sets the encoding of the response</summary> 
-    public Encoding ContentEncoding { get; set; }
+/// Gets or sets the encoding of the response
+public Encoding ContentEncoding { get; set; }
 
-    /// <summary>Gets or sets the content type for the response</summary> 
-    public string ContentType { get; set; }
+/// Gets or sets the content type for the response
+public string ContentType { get; set; }
 
-    /// <summary>Gets or sets the body of the response</summary> 
-    public object ResponseBody { get; set; }
+/// Gets or sets the body of the response
+public object ResponseBody { get; set; }
 
-    /// <summary>Gets the formatting types depending on whether we are in debug mode</summary> 
-    private Formatting Formatting 
-    { 
-        get 
-        { 
-            return Debugger.IsAttached ? Formatting.Indented : Formatting.None; 
-        } 
-    }
+/// Gets the formatting types depending on whether we are in debug mode
+private Formatting Formatting
+{
+get
+{
+return Debugger.IsAttached ? Formatting.Indented : Formatting.None;
+}
+}
 
-    /// <summary> 
-    /// Serialises the response and writes it out to the response object 
-    /// </summary> 
-    /// <param name="context">The execution context</param> 
-    public override void ExecuteResult(ControllerContext context) 
-    { 
-        if (context == null) 
-        { 
-            throw new ArgumentNullException("context"); 
-        }
+///
+/// Serialises the response and writes it out to the response object
+///
+/// The execution context
+public override void ExecuteResult(ControllerContext context)
+{
+if (context == null)
+{
+throw new ArgumentNullException("context");
+}
 
-        HttpResponseBase response = context.HttpContext.Response;
+HttpResponseBase response = context.HttpContext.Response;
 
-        // set content type 
-        if (!string.IsNullOrEmpty(ContentType)) 
-        { 
-            response.ContentType = ContentType; 
-        } 
-        else 
-        { 
-            response.ContentType = "application/json"; 
-        }
+// set content type
+if (!string.IsNullOrEmpty(ContentType))
+{
+response.ContentType = ContentType;
+}
+else
+{
+response.ContentType = "application/json";
+}
 
-        // set content encoding 
-        if (ContentEncoding != null) 
-        { 
-            response.ContentEncoding = ContentEncoding; 
-        }
+// set content encoding
+if (ContentEncoding != null)
+{
+response.ContentEncoding = ContentEncoding;
+}
 
-        if (ResponseBody != null) 
-        { 
-            response.Write(JsonConvert.SerializeObject(ResponseBody, Formatting, Settings));             
-        } 
-    } 
+if (ResponseBody != null)
+{
+response.Write(JsonConvert.SerializeObject(ResponseBody, Formatting, Settings));
+}
+}
 }
 ```
-
-<br/>
-
-
-使用上把本來的 JsonResult 替換成 JsonNetResult 就可以了。  
-
+使用上把本來的 JsonResult 替換成 JsonNetResult 就可以了。
 ```c#
 ...
 return new JsonNetResult(model);
 ...
 ```
-
-<br/>
-
-
 或是撰寫基底的 Controller 來處理也可以。
-
 ```c#
 public class BaseController:Controller
 {
-   protected internal override JsonResult Json(object data)
-   {
-       return new JsonNetResult(data);
-   }
+protected internal override JsonResult Json(object data)
+{
+return new JsonNetResult(data);
+}
 }
 
 public class MyController:BaseController
 {
-    ...
-        return Json(model);
-    ...
+...
+return Json(model);
+...
 }
 ```
-
 Link
 -------
 * [ASP.NET MVC小改裝 - 以Json.NET取代JavaScriptSerializer - 黑暗執行緒](http://blog.darkthread.net/post-2012-08-30-asp-net-mvc-and-json-net.aspx)

@@ -4,19 +4,14 @@ date: "2019-09-17 23:35:33"
 tags: [MongoDB]
 ---
 
+MongoDB 在設定好 Profiler 後，可用 db.getProfilingLevel 查驗設定的 Profiling 層級。
 
-MongoDB 在設定好 Profiler 後，可用 db.getProfilingLevel 查驗設定的 Profiling 層級。      
-<!-- More -->
+db.getProfilingLevel()
 
-    db.getProfilingLevel()                 
+![1.png](1.png)
 
-![1.png](1.png)                       
+或是用 db.getProfilingStatus 查驗整個 Profiling 設定。
 
-</br>                                      
-
-
-或是用 db.getProfilingStatus 查驗整個 Profiling 設定。                                  
-
-    db.getProfilingStatus()                 
+db.getProfilingStatus()
 
 ![2.png](2.png)

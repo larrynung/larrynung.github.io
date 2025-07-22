@@ -4,15 +4,9 @@ date: "2017-02-15 23:05:24"
 tags: [SonarQube]
 ---
 
+要讓 SonarQube 使用 MySQL 資料庫，需先在伺服器中安裝 MySQL 資料庫。
 
-要讓 SonarQube 使用 MySQL 資料庫，需先在伺服器中安裝 MySQL 資料庫。  
-
-<!-- More -->
-
-<br/>
-
-
-接著要設定 MySQL 資料庫，可先將下列 SQL 語法存放至副檔名為 SQL 的檔案 (這邊筆者選用 create_database.sql)。  
+接著要設定 MySQL 資料庫，可先將下列 SQL 語法存放至副檔名為 SQL 的檔案 (這邊筆者選用 create_database.sql)。
 
 ```sql
 CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -24,29 +18,17 @@ GRANT ALL ON sonar.* TO sonar@'%';
 
 ![1.png](1.png)
 
-<br/>
-
-
-接著使用 `mysql -u -root -p < create_database.sql` 將 SQL 送到 MySQL 運行。  
+接著使用 `mysql -u -root -p < create_database.sql` 將 SQL 送到 MySQL 運行。
 
 ![2.png](2.png)
 
-<br/>
-
-
-然後要設定 SonarQube 的設定檔 sonar.properties，sonar.jdbc.username 與 sonar.jdbc.password 這邊要設定 MySQL 的帳密，sonar.jdbc.url 設定這邊要將註解拿掉。   
+然後要設定 SonarQube 的設定檔 sonar.properties，sonar.jdbc.username 與 sonar.jdbc.password 這邊要設定 MySQL 的帳密，sonar.jdbc.url 設定這邊要將註解拿掉。
 
 ![3.png](3.png)
 
-<br/>
-
-
-最後將 SonarQube 服務重啟就可以了。  
+最後將 SonarQube 服務重啟就可以了。
 
 ![4.png](4.png)
-
-<br/>
-
 
 Link
 ----

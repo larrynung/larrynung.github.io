@@ -5,40 +5,31 @@ description: "TypeScript - Generics"
 tags: [TypeScript]
 ---
 
-
-TypeScript 支援泛型語法，使用方式如下：  
-
-<!-- More -->
+TypeScript 支援泛型語法，使用方式如下：
 
 ```js
-function GenericsFunction<T>(param:T) { 
-	 ...
-} 
+function GenericsFunction(param:T) {
 ...
-class GenericsClass<T>
+}
+...
+class GenericsClass
 {
-	GenericsField:T;
-	GenericsMethod(param:T) { 
-		...
-	} 
+GenericsField:T;
+GenericsMethod(param:T) {
+...
+}
 }
 ```
 
-<br/>
-
-
-最後附上個簡單的使用範例：  
+最後附上個簡單的使用範例：
 
 ```js
-function ShowMessage<T>(message:T) { 
-	alert(message); 
-} 
+function ShowMessage(message:T) {
+alert(message);
+}
 
-ShowMessage<string>("test"); 
-ShowMessage<number>(123);
+ShowMessage("test");
+ShowMessage(123);
 ```
-
-<br/>
-
 
 {% img /images/posts/TypeScriptGenerics/1.png %}

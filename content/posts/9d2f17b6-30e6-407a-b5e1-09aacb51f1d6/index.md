@@ -2,230 +2,203 @@
 title: "使用XML序列化程式產生器工具加速XML序列化"
 date: "2013-11-06 12:00:00"
 description: "使用XML序列化程式產生器工具加速XML序列化"
----
+---## XML 序列化程式產生器工具
+.NET程式在做XML序列化時，在效能上表現並不佳，因此提供了XML 序列化程式產生器工具來改善這個問題。使用XML 序列化程式產生器工具，可為指定組件中的型別建立 XML 序列化 (Serialization) 組件，以改善 XmlSerializer 在序列化或還原序列化指定型別物件時的啟動效能。
+ 
+如果未使用 XML 序列化程式產生器，為指定組件中的型別建立XML 序列化組件。則每當應用程式執行時，XmlSerializer 便會為每個型別產生序列化程式碼和序列化組件，造成XML序列化緩慢。
 
-<h2>XML 序列化程式產生器工具</h2>  <p>.NET程式在做XML序列化時，在效能上表現並不佳，因此提供了XML 序列化程式產生器工具來改善這個問題。使用XML 序列化程式產生器工具，可為指定組件中的型別建立 XML 序列化 (Serialization) 組件，以改善 XmlSerializer</a> 在序列化或還原序列化指定型別物件時的啟動效能。</p>  <p> </p>  <p>如果未使用 XML 序列化程式產生器，為指定組件中的型別建立XML 序列化組件。則每當應用程式執行時，<a href="http://msdn.microsoft.com/zh-tw/library/system.xml.serialization.xmlserializer(v=VS.80).aspx" target="_blank">XmlSerializer 便會為每個型別產生序列化程式碼和序列化組件，造成XML序列化緩慢。</p>  <p> </p>  <p>何謂XML序列化組件呢?換句話說就是使用XML 序列化程式產生器所產生出來的檔案，也就是檔案命名後半部為XmlSerializers.dll的檔案，像是Data.XmlSerializers.dll。</p>  <p> </p>  <p>這邊我們可以寫個簡單的程式來觀察這個現象，程式碼如下：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3838d87d-e413-4441-8f24-b54ca56d9689" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Xml.Serialization
+何謂XML序列化組件呢?換句話說就是使用XML 序列化程式產生器所產生出來的檔案，也就是檔案命名後半部為XmlSerializers.dll的檔案，像是Data.XmlSerializers.dll。
+
+這邊我們可以寫個簡單的程式來觀察這個現象，程式碼如下：
+Imports System.Xml.Serialization
 Imports System.IO
 
 Public Class Form1
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim count As Integer = 1
-        Dim perosn As New Person
-        Dim xs As New XmlSerializer(GetType(Person))
-        Dim sw As Stopwatch = Stopwatch.StartNew
-        Using ms As New MemoryStream
-            For i As Integer = 0 To count - 1
-                ms.Seek(0, SeekOrigin.Begin)
-                xs.Serialize(ms, perosn)
-            Next
-        End Using
-        MsgBox("ElapsedMilliseconds: " &amp; sw.ElapsedMilliseconds)
-    End Sub
+Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+Dim count As Integer = 1
+Dim perosn As New Person
+Dim xs As New XmlSerializer(GetType(Person))
+Dim sw As Stopwatch = Stopwatch.StartNew
+Using ms As New MemoryStream
+For i As Integer = 0 To count - 1
+ms.Seek(0, SeekOrigin.Begin)
+xs.Serialize(ms, perosn)
+Next
+End Using
+MsgBox("ElapsedMilliseconds: " & sw.ElapsedMilliseconds)
+End Sub
 End Class
 
 Public Class Person
-    Private _name As String
-    Public Property Name() As String
-        Get
-            Return _name
-        End Get
-        Set(ByVal value As String)
-            _name = value
-        End Set
-    End Property
+Private _name As String
+Public Property Name() As String
+Get
+Return _name
+End Get
+Set(ByVal value As String)
+_
+End Set
+End Property
 
-    Private _year As Integer
-    Public Property Year() As Integer
-        Get
-            Return _year
-        End Get
-        Set(ByVal value As Integer)
-            _year = value
-        End Set
-    End Property
+Private _year As Integer
+Public Property Year() As Integer
+Get
+Return _year
+End Get
+Set(ByVal value As Integer)
+_year = value
+End Set
+End Property
 End Class
-</pre></div>
 
-<p> </p>
+運行後用ProcessMonitor去觀察，可發現當第一次執行到建立XmlSerializer物件的程式碼時，背後就在偷偷的找尋並試圖建立XML序列化組件。
 
-<p>運行後用ProcessMonitor去觀察，可發現當第一次執行到建立XmlSerializer物件的程式碼時，背後就在偷偷的找尋並試圖建立XML序列化組件。</p>
+## 使用XML 序列化程式產生器工具
 
-<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9d2f17b6-30e6-407a-b5e1-09aacb51f1d6\image_thumb.png" width="644" height="235" /> </p>
+要熟悉如何使用XML 序列化程式產生器工具來加速XML序列化的動作，先來看一下Sgen.Exe的用法。
 
-<p> </p>
+Usage: sgen.exe [[/assembly:] | []]
 
-<h2>使用XML 序列化程式產生器工具</h2>
+    [/type:] [/reference:] [/compiler:] [/debug] [/keep] [/nologo]
 
-<p>要熟悉如何使用XML 序列化程式產生器工具來加速XML序列化的動作，先來看一下Sgen.Exe的用法。</p>
+    [/silent] [/verbose]
 
-<p>Usage: sgen.exe [[/assembly:&lt;assembly name&gt;] | [&lt;assembly file location&gt;]] 
-  <br />    [/type:] [/reference:] [/compiler:] [/debug] [/keep] [/nologo] 
+  Developer options:
 
-  <br />    [/silent] [/verbose] </p>
+    /assembly:   Assembly location or display name. Short form is '/a:'.
 
-<p>  Developer options: 
-  <br />    <strong>/assembly:   Assembly location or display name. Short form is '/a:'. 
-    <br /></strong>    /type:       Generate code for serialization/deserialization of a single 
+    /type:       Generate code for serialization/deserialization of a single
 
-  <br />                 type from the input assembly. Short form is '/t:'. 
+                 type from the input assembly. Short form is '/t:'.
 
-  <br />    /reference:  Reference metadata from the specified assembly files. 
+    /reference:  Reference metadata from the specified assembly files.
 
-  <br />                 Short form is '/r:'. 
+                 Short form is '/r:'.
 
-  <br />    /compiler:   Visual C# compiler options to use while compiling generated 
+    /compiler:   Visual C# compiler options to use while compiling generated
 
-  <br />                 code. Short form is '/c'. 
+                 code. Short form is '/c'.
 
-  <br />                 For complete list of available options see c# compiler help. 
+                 For complete list of available options see c# compiler help.
 
-  <br />    /proxytypes  Generate serialization code only for proxy classes and web 
+    /proxytypes  Generate serialization code only for proxy classes and web
 
-  <br />                 method parameters. Short form is '/p'. 
+                 method parameters. Short form is '/p'.
 
-  <br />    /debug       Generate image which can be used under a debugger. 
+    /debug       Generate image which can be used under a debugger.
 
-  <br />                 Short form is '/d'. 
+                 Short form is '/d'.
 
-  <br />    /keep        Keep source code and compiler temp files. Short form is '/k'. 
+    /keep        Keep source code and compiler temp files. Short form is '/k'.
 
-  <br />    <strong>/force       Forces overwrite of a previously generated assembly. 
-    <br />                 Short form is '/f'. 
+    /force       Forces overwrite of a previously generated assembly.
 
-    <br /></strong>    /out:        Output directory name (default: target assembly location). 
+                 Short form is '/f'.
 
-  <br />                 Short form is '/o:'. 
+    /out:        Output directory name (default: target assembly location).
 
-  <br />    /parsableerrors 
+                 Short form is '/o:'.
 
-  <br />                 Print errors in a format similar to those reported by 
+    /parsableerrors
 
-  <br />                 compilers. </p>
+                 Print errors in a format similar to those reported by
 
-<p>  Miscellaneous options: 
-  <br />    /? or /help  Show this message 
+                 compilers.
 
-  <br />    /nologo      Prevents displaying of logo. Short form is '/n'. 
+  Miscellaneous options:
 
-  <br />    /silent      Prevents displaying of success messages. Short form is '/s'. 
+    /? or /help  Show this message
 
-  <br />    <strong>/verbose     Displays verbose output for debugging. Short form is '/v'. 
-    <br /></strong>                 List types from the target assembly that cannot be serialized 
+    /nologo      Prevents displaying of logo. Short form is '/n'.
 
-  <br />                 with XmlSerializer.</p>
+    /silent      Prevents displaying of success messages. Short form is '/s'.
 
-<p> </p>
+    /verbose     Displays verbose output for debugging. Short form is '/v'.
 
-<p>最簡單的用法就是直接在命令後面接上組件名稱，像是：</p>
+                 List types from the target assembly that cannot be serialized
 
-<p>Sgen XXX.dll</p>
+                 with XmlSerializer.
 
-<p> </p>
+最簡單的用法就是直接在命令後面接上組件名稱，像是：
 
-<p>若產生的檔案可能已經存在，可加上/f參數強迫覆蓋。而若無法正確的產生XML序列化組件，可加上/v參數顯示造成無法產生的錯誤訊息。</p>
+Sgen XXX.dll
 
-<p> </p>
+若產生的檔案可能已經存在，可加上/f參數強迫覆蓋。而若無法正確的產生XML序列化組件，可加上/v參數顯示造成無法產生的錯誤訊息。
 
-<p>使用上可在[專案]→[屬性]→[編譯]→[建置事件]內的建置後事件加上如下命令(命令路徑請依電腦實際狀況去做調整)：</p>
+使用上可在[專案]→[屬性]→[編譯]→[建置事件]內的建置後事件加上如下命令(命令路徑請依電腦實際狀況去做調整)：
 
-<p>"%ProgramFiles%\Microsoft SDKs\Windows7.0Ain\sgen.exe" /a:"$(TargetPath)" /force</p>
+"%ProgramFiles%\Microsoft SDKs\Windows7.0Ain\sgen.exe" /a:"$(TargetPath)" /force
 
-<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9d2f17b6-30e6-407a-b5e1-09aacb51f1d6\image_thumb_1.png" width="450" height="407" /> </p>
+如此建置後將在輸出目錄自動產生對應的XML序列化組件，將產生的XML序列化組件與自己撰寫的組件放在一起，序列化的速度就會提升了。
 
-<p> </p>
+若仍嫌速度緩慢，也可以把產生的序列化組件加入參考，匯入Microsoft.Xml.Serialization.GeneratedAssembly命名空間，改用序列化組件內的Serializer取代XmlSerializer，像是：
 
-<p>如此建置後將在輸出目錄自動產生對應的XML序列化組件，將產生的XML序列化組件與自己撰寫的組件放在一起，序列化的速度就會提升了。</p>
-
-<p> </p>
-
-<p>若仍嫌速度緩慢，也可以把產生的序列化組件加入參考，匯入Microsoft.Xml.Serialization.GeneratedAssembly命名空間，改用序列化組件內的Serializer取代XmlSerializer，像是：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1963ef7e-6203-4c0b-97b9-1eac1f16351d" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Xml.Serialization
+Imports System.Xml.Serialization
 Imports System.IO
 Imports Microsoft.Xml.Serialization.GeneratedAssembly
 
 Public Class Form1
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim count As Integer = 1000
-        Dim perosn As New Person
-        Dim xs As New PersonSerializer
-        Dim sw As Stopwatch = Stopwatch.StartNew
-        Using ms As New MemoryStream
-            For i As Integer = 0 To count - 1
-                ms.Seek(0, SeekOrigin.Begin)
-                xs.Serialize(ms, perosn)
-            Next
-        End Using
-        MsgBox("ElapsedMilliseconds: " &amp; sw.ElapsedMilliseconds)
-    End Sub
-End Class</pre></div>
+Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+Dim count As Integer = 1000
+Dim perosn As New Person
+Dim xs As New PersonSerializer
+Dim sw As Stopwatch = Stopwatch.StartNew
+Using ms As New MemoryStream
+For i As Integer = 0 To count - 1
+ms.Seek(0, SeekOrigin.Begin)
+xs.Serialize(ms, perosn)
+Next
+End Using
+MsgBox("ElapsedMilliseconds: " & sw.ElapsedMilliseconds)
+End Sub
+End Class
 
-<p> </p>
+## 效能測試
 
-<h2>效能測試</h2>
+這邊針對校能的改進作了一些測試，測試的CODE沿用上面的範例，實驗數據與結果如下：
 
-<p>這邊針對校能的改進作了一些測試，測試的CODE沿用上面的範例，實驗數據與結果如下：</p>
+次數
 
-<table border="1" cellspacing="0" cellpadding="2" width="575"><tbody>
-    <tr>
-      <td valign="top" width="79">次數</td>
+無XML序列化組件
 
-      <td valign="top" width="132">無XML序列化組件</td>
+有XML序列化組件
 
-      <td valign="top" width="150">有XML序列化組件</td>
+使用XML序列化組件的Serialzer
 
-      <td valign="top" width="212">使用XML序列化組件的Serialzer</td>
-    </tr>
+1000
 
-    <tr>
-      <td valign="top" width="79">1000 </td>
+125
 
-      <td valign="top" width="132">125 </td>
+107
 
-      <td valign="top" width="150">107</td>
+84
 
-      <td valign="top" width="212">84</td>
-    </tr>
+10000
 
-    <tr>
-      <td valign="top" width="79">10000 </td>
+946
 
-      <td valign="top" width="132">946 </td>
+884
 
-      <td valign="top" width="150">884</td>
+597
 
-      <td valign="top" width="212">597</td>
-    </tr>
+100000
 
-    <tr>
-      <td valign="top" width="79">100000 </td>
+7382
 
-      <td valign="top" width="132">7382 </td>
+5909
 
-      <td valign="top" width="150">5909</td>
+5924
 
-      <td valign="top" width="212">5924</td>
-    </tr>
+1000000
 
-    <tr>
-      <td valign="top" width="79">1000000 </td>
+62892 
 
-      <td valign="top" width="132">62892  </td>
+59159
 
-      <td valign="top" width="150">59159</td>
+44779
 
-      <td valign="top" width="212">44779</td>
-    </tr>
-  </tbody></table>
+## Link
 
-<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9d2f17b6-30e6-407a-b5e1-09aacb51f1d6\image_thumb_4.png" width="579" height="295" /> </p>
-
-<p> </p>
-
-<h2>Link</h2>
-
-<ul>
-  <li>XML 序列化程式產生器工具 (Sgen.exe) </li>
-</ul>
+XML 序列化程式產生器工具 (Sgen.exe)

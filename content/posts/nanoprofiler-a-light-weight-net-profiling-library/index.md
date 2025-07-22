@@ -4,18 +4,9 @@ date: "2016-10-05 22:36:27"
 tags: [NanoProfiler]
 ---
 
-
 NanoProfiler 有許多的套件。  
 
-<!-- More -->
-
-<br/>
-
-
 如果是 Web 專案，安裝 NanoProfiler.Web 即可 (會連帶安裝 NanoProfiler)。  
-
-<br/>
-
 
 套件安裝完後要設定 CircularBuffer，可透過程式設定...   
 
@@ -23,29 +14,18 @@ NanoProfiler 有許多的套件。
 protected void Application_Start(object sender, EventArgs e)
 {
     ...
-    ProfilingSession.CircularBuffer = new CircularBuffer<ITimingSession>(200, session => false);
+    ProfilingSession.CircularBuffer = new CircularBuffer(200, session => false);
     ...
 }
 ```
 
-<br/>
-
-
 也可以透過設定檔設定...  
 
 ```xml
-<configuration>
-  <configSections>
-    <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />
-    <section name="nanoprofiler" type="EF.Diagnostics.Profiling.Configuration.NanoProfilerConfigurationSection, NanoProfiler" />
-  </configSections>
+
   ...
-  <nanoprofiler circularBufferSize="200" />
-</configuration>
+
 ```
-
-<br/>
-
 
 CircularBuffer 設定完後，就可以設定要 Profile 的部分，像是每個 Request 的進出。    
 ```c#
@@ -60,9 +40,6 @@ CircularBuffer 設定完後，就可以設定要 Profile 的部分，像是每�
         }
 ```
 
-<br/>
-
-
 以及 Request 中想要監測的部分。  
 
 ```c#
@@ -72,31 +49,18 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
 }
 ```
 
-<br/>
-
-
 將程式運行起來，訪問 http://[Domain]/nanoprofiler/view 即可看到 profile 的結果。  
 ![1.png](1.png)
-
-<br/>
-
 
 這邊如果要將資料保存下來，可以加裝 NanoProfiler.Storages.Json，並修改設定去指定使用 Storage。  
 
 ```xml
-<configuration>
-  <configSections>
-    <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />
-    <section name="nanoprofiler" type="EF.Diagnostics.Profiling.Configuration.NanoProfilerConfigurationSection, NanoProfiler" />
+
     ...
-  </configSections>
+  
   ...
-  <nanoprofiler circularBufferSize="200" storage="EF.Diagnostics.Profiling.Storages.Json.JsonProfilingStorage, NanoProfiler.Storages.Json"/>
-</configuration>
+
 ```
-
-<br/>
-
 
 如果 Profile 要過濾掉一些位置，可以透過程式設定 filter。  
 
@@ -111,31 +75,15 @@ using (var step = ProfilingSession.Current.Step("[StepName]"))
         }
 ```
 
-<br/>
-
-
 或是透過設定檔設定也可以。  
 
 ```xml
-<configuration>
-  <configSections>
-    <section name="slf4net" type="slf4net.Configuration.SlfConfigurationSection, slf4net" />
-    <section name="nanoprofiler" type="EF.Diagnostics.Profiling.Configuration.NanoProfilerConfigurationSection, NanoProfiler" />
+
     ...
-  </configSections>
+  
   ...
-  <nanoprofiler circularBufferSize="200" storage="EF.Diagnostics.Profiling.Storages.Json.JsonProfilingStorage, NanoProfiler.Storages.Json">
-    <filters>
-        <add key="_tools" value="_tools/" type="Contain" />
-        <add key="exts" value="ico,jpg,js,css" type="EF.Diagnostics.Profiling.Web.ProfilingFilters.FileExtensionProfilingFilter, NanoProfiler.Web" />
-        <add key="ViewProfilingLogsHandler" value="ViewProfilingLogsHandler.*" type="regex" />
-    </filters>
-  </nanoprofiler>
-</configuration>
+
 ```
-
-<br/>
-
 
 Link
 ----

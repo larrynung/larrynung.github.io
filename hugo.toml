@@ -4,4 +4,4 @@ title = 'Level Up'
 theme = 'ananke'
 
 [permalinks]
-  posts = '/:year/:month/:day/:slug/'
+  posts = '/:year/:month/:day/:filename/'

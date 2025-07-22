@@ -4,34 +4,17 @@ date: "2018-07-23 19:23:41"
 tags: [Rest]
 ---
 
+Rest API 的方法依其性質可以被劃分為 Safe method 或是 Idempotent method。
 
-Rest API 的方法依其性質可以被劃分為 Safe method 或是 Idempotent method。 
+Safe method 也就是安全的方法，表示該方法不會對資源進行任何的修改，且其結果可以被快取。GET 與 HEAD 屬於這類方法。
 
-<!-- More -->
+Idempotent method 也就是冪等方法，表示該方法重複調用的結果都是相同的， GET、PUT、DELETE、HEAD、OPTIONS 屬於這類方法。
 
-<br/>
+POST、PATCH 則兩類方法都不是。
 
-Safe method 也就是安全的方法，表示該方法不會對資源進行任何的修改，且其結果可以被快取。GET 與 HEAD 屬於這類方法。  
+了解 HTTP Method 屬於 Safe method 還是 Idempotent method，可讓我們清楚識別 API 應該使用哪種 HTTP method，也可以了解 HTTP method 在實作上所應該做的處理。
 
-<br/>
-
-
-Idempotent method 也就是冪等方法，表示該方法重複調用的結果都是相同的， GET、PUT、DELETE、HEAD、OPTIONS 屬於這類方法。  
-
-<br/>
-
-
-POST、PATCH 則兩類方法都不是。  
-
-<br/>
-
-
-了解 HTTP Method 屬於 Safe method 還是 Idempotent method，可讓我們清楚識別 API 應該使用哪種 HTTP method，也可以了解 HTTP method 在實作上所應該做的處理。  
-
-<br/>
-
-
-最後附上對應總表：  
+最後附上對應總表：
 
 | Method | Safe | Indempotent |
 |:-------------:|:-------------:|:-----:|
@@ -42,7 +25,6 @@ POST、PATCH 則兩類方法都不是。
 | PATCH | N | N |
 | HEAD | Y | Y |
 | OPTIONS | Y | Y |
-
 
 Link
 ----

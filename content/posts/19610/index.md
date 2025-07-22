@@ -5,34 +5,20 @@ description: ".NET 4.0 New Feature - String.IsNullOrWhiteSpace"
 tags: [CSharp]
 ---
 
-<p>
-	.NET 4.0在String類別中新增了IsNullOrWhiteSpace方法，該方法可幫助我們判別指定的字串是否為null、空白、或由空白字元所組成的字串。</p>
-<p>
-	 </p>
-<p>
-	MSDN中有提到IsNullOrWhiteSpace方法其實就等同於下面這樣的寫法：</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9eaa1441-b460-4e56-95d0-46d2b7a54067" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
-	<pre class="c#" name="code">
-	return String.IsNullOrEmpty(value) || value.Trim().Length == 0;</pre>
-</div>
-<p>
-	 </p>
-<p>
-	簡單的說它跟IsNullOrEmpty方法的差異只在於是否為空的字元所組成，在很多的情況下，我們會把空白字元組成的字串視為是空值，故多了IsNullOrEmpty方法可讓我們省去需先撰寫Trim掉前後空白字元的動作，另外一提據MSDN的說法，使用IsNullOrEmpty方法替換這樣的作法也能得到稍許的效能改善。</p>
-<p>
-	 </p>
-<p>
-	不過這邊因為MSDN的value.Trim().Length == 0動作有包含String.IsNullOrEmpty(value)部份的動作，個人是覺得IsNullOrEmpty方法應該是比較像是下面這樣：</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a0ee628a-4dce-430b-ab6f-874eb35ad56b" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
-	<pre class="c#" name="code">
-	return value == null || value.Trim().Length == 0;</pre>
-</div>
-<p>
-	 </p>
-<p>
-	最後來看個比較完整的範例：</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:40c9694f-1d96-4330-8bab-4a6ed9dab8a5" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">
-	<pre class="c#" name="code">
+.NET 4.0在String類別中新增了IsNullOrWhiteSpace方法，該方法可幫助我們判別指定的字串是否為null、空白、或由空白字元所組成的字串。
+
+	MSDN中有提到IsNullOrWhiteSpace方法其實就等同於下面這樣的寫法：
+
+	return String.IsNullOrEmpty(value) || value.Trim().Length == 0;
+
+	簡單的說它跟IsNullOrEmpty方法的差異只在於是否為空的字元所組成，在很多的情況下，我們會把空白字元組成的字串視為是空值，故多了IsNullOrEmpty方法可讓我們省去需先撰寫Trim掉前後空白字元的動作，另外一提據MSDN的說法，使用IsNullOrEmpty方法替換這樣的作法也能得到稍許的效能改善。
+
+	不過這邊因為MSDN的value.Trim().Length == 0動作有包含String.IsNullOrEmpty(value)部份的動作，個人是覺得IsNullOrEmpty方法應該是比較像是下面這樣：
+
+	return value == null || value.Trim().Length == 0;
+
+	最後來看個比較完整的範例：
+
 	using System;
 
 namespace ConsoleApplication1
@@ -90,19 +76,11 @@ namespace ConsoleApplication1
             return value == null || value.Trim().Length == 0;
         }
     }
-}</pre>
-</div>
-<p>
-	 </p>
-<p>
-	運行結果如下：</p>
-<p>
-	<img alt="image" border="0" height="523" src="\images\posts\19610\image_thumb.png" style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" width="497" /></p>
-<p>
-	 </p>
-<h2>
-	Link</h2>
-<ul>
-	<li>
-		String.IsNullOrWhiteSpace 方法</li>
-</ul>
+}
+
+	運行結果如下：
+
+## 
+	Link
+
+		String.IsNullOrWhiteSpace 方法

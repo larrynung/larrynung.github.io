@@ -6,7 +6,29 @@ description: "[C#][VB.NET]自定義.NET WindowForm表單介面"
 tags: [CSharp,VB.NET]
 ---
 
-<h2>Abstract</h2><ul><li>Introduction</li><li>自定義WindowForm表單介面</li><li>Conclusion</li></ul><p> </p><h2>Introduction</h2><p>本篇將由一個簡單的小範例，試範如何實現自定義的WindowForm表單介面。</p><p> </p><h2>自定義WindowForm表單介面</h2><p>Step1.首先，打開一個Window Form專案。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="448" src="\images\posts\5959\image_thumb.png" /></a></p><p> </p><p>Step2.設定其表單的FormBorderStyle屬性值為None，你會發現設完後其表單的標題列與視窗本來的邊框都不見了。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/a68f315e6101.NETWindowForm_14378/image_40.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="448" src="\images\posts\5959\image_thumb_19.png" /></a> </p><p> </p><p>Step3.設定表單的BackgroundImage屬性，將其屬性值設定為自定義的介面圖片。設定完後表單會變成自定義的介面，記得要把表單的大小調整的跟圖片一樣。這邊若自定義的介面是非矩形的介面，則須利用Form.TransparencyKey屬性把介面多餘的部份變為透明。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/a68f315e6101.NETWindowForm_14378/image_34.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="446" src="\images\posts\5959\image_thumb_16.png" /></a></p><p> </p><p>Step4.為了後面方便做到自定表單標題列的拖曳動作。我們在表單中加入一個Panel控制項，並使其Dock在最上面，且剛好覆蓋標題列。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/a68f315e6101.NETWindowForm_14378/image_26.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="446" src="\images\posts\5959\image_thumb_12.png" /></a></p><p> </p><p>Step5.將剛放入的Panel的BackColor設為Transparent，設定完後Panel將會變成透明的，使用者無法用肉眼察覺此Panel的存在。</p><p><a href="http://files.dotblogs.com.tw/larrynung/0811/a68f315e6101.NETWindowForm_14378/image_38.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="446" src="\images\posts\5959\image_thumb_18.png" /> </p><p> </p><p>Step6.針對標題列上Panel的MouseDown事件與MouseMove事件加入處理表單拖曳的程式碼，實現自定表單標題列的拖曳機制。</p><p>VB.NET</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:b635939d-83a2-4cba-9cb3-1daa0eb41af2" class="wlWriterSmartContent"><pre class="vb" name="code">
+## Abstract
+Introduction自定義WindowForm表單介面Conclusion
+
+## Introduction
+
+本篇將由一個簡單的小範例，試範如何實現自定義的WindowForm表單介面。
+
+## 自定義WindowForm表單介面
+
+Step1.首先，打開一個Window Form專案。
+
+Step2.設定其表單的FormBorderStyle屬性值為None，你會發現設完後其表單的標題列與視窗本來的邊框都不見了。
+
+Step3.設定表單的BackgroundImage屬性，將其屬性值設定為自定義的介面圖片。設定完後表單會變成自定義的介面，記得要把表單的大小調整的跟圖片一樣。這邊若自定義的介面是非矩形的介面，則須利用Form.TransparencyKey屬性把介面多餘的部份變為透明。
+
+Step4.為了後面方便做到自定表單標題列的拖曳動作。我們在表單中加入一個Panel控制項，並使其Dock在最上面，且剛好覆蓋標題列。
+
+Step5.將剛放入的Panel的BackColor設為Transparent，設定完後Panel將會變成透明的，使用者無法用肉眼察覺此Panel的存在。
+
+Step6.針對標題列上Panel的MouseDown事件與MouseMove事件加入處理表單拖曳的程式碼，實現自定表單標題列的拖曳機制。
+
+VB.NET
+
     Private Sub pnlTitleBar_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles pnlTitleBar.MouseDown
        '紀錄滑鼠點選時的視窗位置與滑鼠點選位置
         nOldWndLeft = Me.Left
@@ -24,7 +46,10 @@ tags: [CSharp,VB.NET]
             nOldWndLeft = Me.Left
             nOldWndTop = Me.Top
         End If
-    End Sub</pre></div><p> </p><p>C#</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0d2adec9-5189-493d-821d-1272f208c5e0" class="wlWriterSmartContent"><pre class="c#" name="code">
+    End Sub
+
+C#
+
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             //紀錄滑鼠點選時的視窗位置與滑鼠點選位置
@@ -46,23 +71,40 @@ tags: [CSharp,VB.NET]
                 nOldWndTop = this.Top;
             }
 
-        }</pre></div><p> </p><p>Step7.在標題列放入兩個PictureBox，並將其外觀設定的跟標題列的按鈕一樣。</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="644" height="446" src="\images\posts\5959\image_thumb_20.png" /></p><p> </p><p>Step8.加入實作標題列按鈕的程式碼。</p><p>VB.NET</p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a555c2a9-1021-4ac0-8843-4ec1dc4d5507" class="wlWriterSmartContent"><pre class="vb" name="code">
+        }
+
+Step7.在標題列放入兩個PictureBox，並將其外觀設定的跟標題列的按鈕一樣。
+
+Step8.加入實作標題列按鈕的程式碼。
+
+VB.NET
+
     Private Sub pbxMinBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxMinBtn.Click
-        Me.WindowState = FormWindowState.Minimized		'標題列縮小按鈕被按下=&gt;縮小視窗
+        Me.WindowState = FormWindowState.Minimized		'標題列縮小按鈕被按下=>縮小視窗
     End Sub
 
     Private Sub pbxCloseBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxCloseBtn.Click
-        Me.Close()		'標題列關閉按鈕被按下=&gt;關閉視窗
-    End Sub</pre></div><p>C#</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8318b76d-def3-43b2-93b1-e3a4d9c25673" class="wlWriterSmartContent"><pre class="c#" name="code">
+        Me.Close()		'標題列關閉按鈕被按下=>關閉視窗
+    End Sub
+
+C#
+
         private void pbxMinBtn_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;		//標題列縮小按鈕被按下=&gt;縮小視窗
+            this.WindowState = FormWindowState.Minimized;		//標題列縮小按鈕被按下=>縮小視窗
         }
 
         private void pbxCloseBtn_Click(object sender, EventArgs e)
         {
-            this.Close();		//標題列關閉按鈕被按下=&gt;關閉視窗
-        }</pre></div><p> </p><p> </p><p>Step9.完成</p><p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="244" height="183" src="\images\posts\5959\image_thumb_22.png" /></p><p> </p><p>完整範例如下:</p><p>VB.NET</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e886f6a3-8ffe-46f9-ad13-427c1e069a38" class="wlWriterSmartContent"><pre class="vb" name="code">
+            this.Close();		//標題列關閉按鈕被按下=>關閉視窗
+        }
+
+Step9.完成
+
+完整範例如下:
+
+VB.NET
+
 Public Class Form1
 
     Dim nOldWndLeft As Integer
@@ -71,11 +113,11 @@ Public Class Form1
     Dim nClickY As Integer
 
     Private Sub pbxMinBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxMinBtn.Click
-        Me.WindowState = FormWindowState.Minimized		'標題列縮小按鈕被按下=&gt;縮小視窗
+        Me.WindowState = FormWindowState.Minimized		'標題列縮小按鈕被按下=>縮小視窗
     End Sub
 
     Private Sub pbxCloseBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxCloseBtn.Click
-        Me.Close()		'標題列關閉按鈕被按下=&gt;關閉視窗
+        Me.Close()		'標題列關閉按鈕被按下=>關閉視窗
     End Sub
 
     Private Sub pnlTitleBar_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles pnlTitleBar.MouseDown
@@ -98,7 +140,9 @@ Public Class Form1
     End Sub
 
 End Class
-</pre></div><p> </p><p>C#</p><p> </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e74d5c22-3886-4729-8fe6-6880c390d67c" class="wlWriterSmartContent"><pre class="c#" name="code">
+
+C#
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -125,12 +169,12 @@ namespace WindowsFormsApplication1
 
         private void pbxMinBtn_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;		//標題列縮小按鈕被按下=&gt;縮小視窗
+            this.WindowState = FormWindowState.Minimized;		//標題列縮小按鈕被按下=>縮小視窗
         }
 
         private void pbxCloseBtn_Click(object sender, EventArgs e)
         {
-            this.Close();		//標題列關閉按鈕被按下=&gt;關閉視窗
+            this.Close();		//標題列關閉按鈕被按下=>關閉視窗
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -157,4 +201,7 @@ namespace WindowsFormsApplication1
         }
     }
 }
-</pre></div><p> </p><p> </p><h2>Conclusion</h2><p>這篇以一個簡單的小範例試範了如何實現自定義的WindowForm表單介面。值得注意的是，該篇試範的是用簡單的矩形表單，當自定義的表單不是一般的矩形的話，則須要結合 設定.NET透明表單 與這篇的概念下去做，把介面多餘的部份變為透明的。表單介面在顯示上才不會有多餘的空白部份。</p>
+
+## Conclusion
+
+這篇以一個簡單的小範例試範了如何實現自定義的WindowForm表單介面。值得注意的是，該篇試範的是用簡單的矩形表單，當自定義的表單不是一般的矩形的話，則須要結合 設定.NET透明表單 與這篇的概念下去做，把介面多餘的部份變為透明的。表單介面在顯示上才不會有多餘的空白部份。

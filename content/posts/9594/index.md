@@ -5,4 +5,4 @@ description: "[Other]寫下你對TechNet的建議，即有機會獲得Keroro軍�
 tags: [Other]
 ---
 
-<p>活動網址: TechNet Taiwan官方部落格</a></p><p><a rel="lightbox" href="http://files.dotblogs.com.tw/larrynung/0907/TechNetKeroro4_FC8A/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" width="822" height="529" src="\images\posts\9594\image_thumb.png" /></p>
+活動網址: TechNet Taiwan官方部落格

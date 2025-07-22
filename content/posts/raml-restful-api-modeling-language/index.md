@@ -5,16 +5,11 @@ description: "RAML - RESTful API Modeling Language"
 tags: [RAML]
 ---
 
-
 RAML (RESTful API Modeling Language) 是ㄧ以YAML為基礎、專門用來描述 RESTful API、且人與機器都看得懂的標記語言。 
-
-<!--More-->
 
 {% img /images/posts/RAML/1.png %}
 
-
 因為透過RAML去描述的API，機器也能夠看得懂，所以可以衍生出一些附加的功能服務，像是解析並自動產生對應的 API Console、API Client、API Server、API User Document…等。
-
 
 Root Section
 ------------
@@ -33,19 +28,16 @@ RAML文檔最開始是Root Section，是用來做 API 基本的描述用，像�
 
 除了上面範例提到的設定外，還有其它可用的設定，這邊不深究，請直接參閱下表整理： 
 
-<table>
-<tr><td> Property </td> <td> Required</td> <td> Description</td> </tr>
-<tr><td> title </td> <td> Yes </td> <td> API 文件標題</td> </tr>
-<tr><td> version </td> <td> No </td> <td> API 版本</td> </tr>
-<tr><td> baseUri </td> <td> No </td> <td> API 基底位置</td> </tr>
-<tr><td> baseUriParameters </td> <td> No </td> <td> API 基底位置的參數</td> </tr>
-<tr><td> Protocols </td> <td> No </td> <td> API 支援的通訊協定</td> </tr>
-<tr><td> mediaType </td> <td> No </td> <td> API 預設的MediaType</td> </tr>
-<tr><td> schemas </td> <td> No </td> <td> </td> schema</tr>
-<tr><td> uriParameters </td> <td> No </td> <td> API 相關參數</td> </tr>
-<tr><td> documentation </td> <td> No </td> <td> API 相關文件</td> </tr>
-</table>
-
+ Property   Required  Description 
+ title   Yes   API 文件標題 
+ version   No   API 版本 
+ baseUri   No   API 基底位置 
+ baseUriParameters   No   API 基底位置的參數 
+ Protocols   No   API 支援的通訊協定 
+ mediaType   No   API 預設的MediaType 
+ schemas   No    schema
+ uriParameters   No   API 相關參數 
+ documentation   No   API 相關文件 
 
 Resource
 --------
@@ -56,13 +48,10 @@ Root Section設定好我們已經有 API 的基底位置了，所有的 API 都�
 
     /gists:
 
-
 要做巢狀的 Resource 也是可以的：
 
     /gists:
     	/{gistId}:
-
-      
 
 Methods
 -------
@@ -79,7 +68,6 @@ Resource 定義完，我們可以決定 Resource 對應下列哪些Method：
     /gists:
         /{gistId}:
     		get:
-
 
 Query parameters
 ----------------
@@ -107,25 +95,21 @@ Resource 跟 Method 都設定好，有的簡單的 API 到這邊就可以動了�
           pageSize:
             type: integer      
 
-
 queryParameters 後面帶上 QueryString 內所含的參數設定，每個參數設定都可套用需要的 Named Parameters，Named Parameters 這邊可參考下表：
 
-<table>
-<tr><td> displayName </td> <td> Required</td> <td> 顯示名稱 </td> </tr>
-<tr><td> title </td> <td> Yes </td> <td> 標題</td> </tr>
-<tr><td> type </td> <td> No </td> <td> 型態</td> </tr>
-<tr><td> enum </td> <td> No </td> <td> 列舉值</td> </tr>
-<tr><td> pattern </td> <td> No </td> <td> </td> </tr>
-<tr><td> minLength </td> <td> No </td> <td>最小長度</td> </tr>
-<tr><td> maxLength </td> <td> No </td> <td>最大長度</td> </tr>
-<tr><td> minimum </td> <td> No </td> <td> 最小值</td> </tr>
-<tr><td> maximum </td> <td> No </td> <td> 最大值</td> </tr>
-<tr><td> example </td> <td> No </td> <td> 範例</td> </tr>
-<tr><td> repeat </td> <td> No </td> <td> </td> </tr>
-<tr><td> required </td> <td> No </td> <td>必要值</td> </tr>
-<tr><td> default </td> <td> No </td> <td> 預設值</td> </tr>
-</table>
-
+ displayName   Required  顯示名稱  
+ title   Yes   標題 
+ type   No   型態 
+ enum   No   列舉值 
+ pattern   No    
+ minLength   No  最小長度 
+ maxLength   No  最大長度 
+ minimum   No   最小值 
+ maximum   No   最大值 
+ example   No   範例 
+ repeat   No    
+ required   No  必要值 
+ default   No   預設值 
 
 Response
 --------
@@ -145,7 +129,6 @@ Response 這塊是定義 API 的回傳值，一樣是接在 Method 後面，帶�
                       "documentation_url": "http://developer.github.com/v3"
                     }
 
-
 Conclusion
 ----------
 
@@ -157,19 +140,15 @@ RAML 的文檔基礎來說就是這樣而已，當然還有些細部的設定參
 
 {% img /images/posts/RAML/2.png %}
 
-
 編輯的同時右側這邊會即時呈現對應的 API Console 
 
 {% img /images/posts/RAML/3.png %}
 
-
 藉由比對我們可以更清楚了解 RAML 文檔的欄位會用在哪邊，也可以即時叫用 API。
-
 
 另外就是 [API Console](http://www.apihub.com/raml-tools)，是跟 API Designer 右側一樣的東西，可解析 RAML 檔產生對應的互動式文檔。
 
 {% img /images/posts/RAML/4.png %}
-
 
 這些 Tool 都有開源在 GitHub 上，有需要都可以自行架設。
 

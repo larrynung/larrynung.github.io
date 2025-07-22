@@ -3,36 +3,21 @@ title: "Enable fusion assembly binding logging"
 date: "2017-09-01 23:38:00"
 ---
 
-
-Assembly binding 如果出錯，資訊不足以查出問題的話。  
-
-<!-- More -->
+Assembly binding 如果出錯，資訊不足以查出問題的話。
 
 ![1.png](1.png)
 
-<br/>
-
-
 可開啟 Assembly binding logging 功能查閱更為詳細的訊息。
 
-<br/>
+只要在 HKLM\Software\Microsoft\Fusion 加入 EnableLog 的 DWORD Key，其值設為 1，Assembly binding logging 即會開啟。
 
-
-只要在 HKLM\Software\Microsoft\Fusion 加入 EnableLog 的 DWORD Key，其值設為 1，Assembly binding logging 即會開啟。  
-
-    reg add "HKLM\Software\Microsoft\Fusion" /v EnableLog /t REG_DWORD /d 1 /f
+reg add "HKLM\Software\Microsoft\Fusion" /v EnableLog /t REG_DWORD /d 1 /f
 
 ![2.png](2.png)
 
-<br/>
-
-
-開啟後再次運行，當 Assembly binding 發生錯誤時，就會顯示更為詳細的資訊。  
+開啟後再次運行，當 Assembly binding 發生錯誤時，就會顯示更為詳細的資訊。
 
 ![3.png](3.png)
-
-<br/>
-
 
 Link
 ----

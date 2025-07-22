@@ -4,29 +4,17 @@ date: "2020-03-11 08:21:10"
 tags: [Percona Toolkit, MySQL, MariaDB]
 ---
 
+pt-variable-advisor 是 Percona Toolkit 內的工具之一，能調用 MySQL/MariaDB 的 SHOW VARIABLES 命令偵測參數值，並根據 Rule 分析給予修正的建議。
 
-pt-variable-advisor 是 Percona Toolkit 內的工具之一，能調用 MySQL/MariaDB 的 SHOW VARIABLES 命令偵測參數值，並根據 Rule 分析給予修正的建議。  
+使用方式如下:
 
-<!-- More -->
+pt-variable-advisor [OPTIONS] [DSN]
 
-<br>
+像是:
 
-
-使用方式如下:  
-
-    pt-variable-advisor [OPTIONS] [DSN]
-
-<br>
-
-
-像是:  
-
-    pt-variable-advisor h=$host,P=$port,u=$user,p=$password
+pt-variable-advisor h=$host,P=$port,u=$user,p=$password
 
 ![1.png](1.png)
-
-<br>
-
 
 Link
 ====

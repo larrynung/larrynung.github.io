@@ -6,60 +6,61 @@ description: "[C#]使用GetSystemPowerStatus API查看目前電源使用狀態"
 tags: [CSharp]
 ---
 
-<h2>Introduction</h2>  <p>這篇簡單記錄一下，如何透過GetSystemPowerStatus API，來查看目前電源的使用狀態。</p>  <p> </p>  <h2>Library</h2>  <p>kernel32.dll</p>  <p> </p>  <h2>GetSystemPowerStatus API</h2>  <p>GetSystemPowerStatus API可取得系統電源狀態，包括使用交流電還是直流電、是否為充電狀態、剩餘可用時間等資訊。其函式原型如下：    <br />BOOL WINAPI GetSystemPowerStatus(__out LPSYSTEM_POWER_STATUS <i>lpSystemPowerStatus</i>);</p>  <p> </p>  <p>傳入的參數為LPSYSTEM_POWER_STATUS型態的結構    <br />typedef struct _SYSTEM_POWER_STATUS {     <br />BYTE ACLineStatus;     <br />BYTE BatteryFlag;     <br />BYTE BatteryLifePercent;     <br />BYTE Reserved1;     <br />DWORD BatteryLifeTime;     <br />DWORD BatteryFullLifeTime; } SYSTEM_POWER_STATUS,     <br />*LPSYSTEM_POWER_STATUS;</p>  <pre> </pre>
+## Introduction
+  
+這篇簡單記錄一下，如何透過GetSystemPowerStatus API，來查看目前電源的使用狀態。
 
-<pre>結構成員所代表的意義簡略如下：</pre>
+## Library
+  
+kernel32.dll
 
-<table border="1" cellspacing="0" cellpadding="2" width="701"><tbody>
-    <tr>
-      <td valign="top" width="200">BatteryFlag</td>
+## GetSystemPowerStatus API
+  GetSystemPowerStatus API可取得系統電源狀態，包括使用交流電還是直流電、是否為充電狀態、剩餘可用時間等資訊。其函式原型如下：      
+BOOL WINAPI GetSystemPowerStatus(__out LPSYSTEM_POWER_STATUS lpSystemPowerStatus);  
+ 
+  傳入的參數為LPSYSTEM_POWER_STATUS型態的結構      
+typedef struct _SYSTEM_POWER_STATUS {       
+BYTE ACLineStatus;       
+BYTE BatteryFlag;       
+BYTE BatteryLifePercent;       
+BYTE Reserved1;       
+DWORD BatteryLifeTime;       
+DWORD BatteryFullLifeTime; } SYSTEM_POWER_STATUS,       
+*LPSYSTEM_POWER_STATUS;   
 
-      <td valign="top" width="499">表示目前充電狀態。 
-        <br />1為High(66%以上電力)、2為Low(33%以上電力)、4為Critical(5%以下電力)、8為Charging、128為NoBattery、255為UnKnow</td>
-    </tr>
+結構成員所代表的意義簡略如下：
 
-    <tr>
-      <td valign="top" width="200">BatteryFullLifeTime</td>
+      BatteryFlag
 
-      <td valign="top" width="499">表示充滿電力可使用多久時間(-1為不詳)。</td>
-    </tr>
+      表示目前充電狀態。 
+          
+1為High(66%以上電力)、2為Low(33%以上電力)、4為Critical(5%以下電力)、8為Charging、128為NoBattery、255為UnKnow
 
-    <tr>
-      <td valign="top" width="200">BatteryLifePercent</td>
+      BatteryFullLifeTime
 
-      <td valign="top" width="499">表示電力剩餘多少百分比，其正常值為0~100，255為電力不詳。</td>
-    </tr>
+      表示充滿電力可使用多久時間(-1為不詳)。
 
-    <tr>
-      <td valign="top" width="200">BatteryLifeTime</td>
+      BatteryLifePercent
 
-      <td valign="top" width="499">表示剩餘電力可使用多久時間(-1為不詳)。</td>
-    </tr>
+      表示電力剩餘多少百分比，其正常值為0~100，255為電力不詳。
 
-    <tr>
-      <td valign="top" width="200">ACLineStatus</td>
+      BatteryLifeTime
 
-      <td valign="top" width="499">表示電源狀態。 
-        <br />0為offline、1為online、255為unknow。</td>
-    </tr>
-  </tbody></table>
+      表示剩餘電力可使用多久時間(-1為不詳)。
 
-<pre> </pre>
+      ACLineStatus
 
-<pre>使用時只要把LPSYSTEM_POWER_STATUS型態的結構傳入GetSystemPowerStatus，再從傳入的結構中取出感興趣的資料就可以了。</pre>
+      表示電源狀態。 
+          
+0為offline、1為online、255為unknow。
 
-<pre> </pre>
+使用時只要把LPSYSTEM_POWER_STATUS型態的結構傳入GetSystemPowerStatus，再從傳入的結構中取出感興趣的資料就可以了。
 
-<h2>Example</h2>
+## Example
 
-<p />
+為了使用方便，也便於對照比較。這邊我把GetSystemPowerStatus API包成了類似System.Windows.Form.PowerStatus的類別。 
 
-<p />
-
-<p>為了使用方便，也便於對照比較。這邊我把GetSystemPowerStatus API包成了類似System.Windows.Form.PowerStatus的類別。 
-  <br /></p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2d1a6390-984e-4ddf-aa5e-fccbe38e6232" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -147,23 +148,16 @@ namespace Battery
             UpdatePowerInfo();
         }
 
-
         public void UpdatePowerInfo()
         {
             GetSystemPowerStatus(ref _powerStatus);
         }
     }
 }
-</pre></div>
 
-<p />
+使用上跟.NET內建的PowerStatus大同小異。只要取得對應的屬性值即可。 
 
-<p> </p>
-
-<p>使用上跟.NET內建的PowerStatus大同小異。只要取得對應的屬性值即可。 
-  <br /></p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:f1bd1ae9-1cd8-4aa5-8f7f-4d8d79a532be" class="wlWriterEditableSmartContent"><pre name="code" class="c#:nocontrols">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -172,12 +166,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
 namespace BatteryPower
 {
     public partial class Form1 : Form
     {
-
 
         public Form1()
         {
@@ -205,32 +197,15 @@ namespace BatteryPower
         }
     }
 }
-</pre></div>
 
-<p />
+執行畫面
 
-<p />
+## Link
 
-<p> </p>
+  GetSystemPowerStatus Function
 
-<p>執行畫面</p>
+  SYSTEM_POWER_STATUS Structure
 
-<p />
+  C#透過Windows API取得NoteBook電池使用狀況
 
-<p />
-
-<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\10882\image_thumb.png" width="304" height="179" /></p>
-
-<p> </p>
-
-<h2>Link</h2>
-
-<ul>
-  <li>GetSystemPowerStatus Function</li>
-
-  <li>SYSTEM_POWER_STATUS Structure</li>
-
-  <li>C#透過Windows API取得NoteBook電池使用狀況</li>
-
-  <li>如何得知 Notebook中 電池 的使用狀況</li>
-</ul>
+  如何得知 Notebook中 電池 的使用狀況

@@ -4,57 +4,33 @@ date: "2017-05-22 23:44:35"
 tags: [Ansible]
 ---
 
+Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。
 
-Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。  
-
-<!-- More -->
-
-<br/>
-
-
-最簡單的設置方式就是直接將要被管理的主機 IP 逐一寫入。  
+最簡單的設置方式就是直接將要被管理的主機 IP 逐一寫入。
 
 ![1.png](1.png)
 
-<br/>
-
-
-Ansible 就可以透過 Inventory 找到要控制的機器做對應的操控。  
+Ansible 就可以透過 Inventory 找到要控制的機器做對應的操控。
 
 ![2.png](2.png)
 
-<br/>
-
-
-若有多台相近 IP 或相近網址的主機，Inventory 也可以用中括號來設定範圍值，便於設定與後續的管理。  
+若有多台相近 IP 或相近網址的主機，Inventory 也可以用中括號來設定範圍值，便於設定與後續的管理。
 
 ![3.png](3.png)
 
-<br/>
-
-
 ![4.png](4.png)
 
-<br/>
-
-
-在比較複雜的環境下，為了佈署上的方便，我們也可以在 Inventory 中將機器做群組。  
+在比較複雜的環境下，為了佈署上的方便，我們也可以在 Inventory 中將機器做群組。
 
 ![5.png](5.png)
 
-<br/>
-
-
-這樣可針對不同群組套用不同的佈署策略。  
+這樣可針對不同群組套用不同的佈署策略。
 
 ![6.png](6.png)
 
-<br/>
+此外， Inventory 也支援一些可以設定的參數，可參閱下表。
 
-
-此外， Inventory 也支援一些可以設定的參數，可參閱下表。  
-
-| Parameter | Description | 
+| Parameter | Description |
 |:-------------:|:-------------:|
 | ansible_connection | Connection type to the host. This can be the name of any of ansible’s connection plugins. SSH protocol types are smart, ssh or paramiko. The default is smart. Non-SSH based types are described in the next section. |
 | ansible_host | The name of the host to connect to, if different from the alias you wish to give to it. |
@@ -77,16 +53,8 @@ Ansible 就可以透過 Inventory 找到要控制的機器做對應的操控。
 | ansible_shell_executable | This sets the shell the ansible controller will use on the target machine, overrides executable in ansible.cfg which defaults to /bin/sh. You should really only change it if is not possible to use /bin/sh (i.e. /bin/sh is not installed on the target machine or cannot be run from sudo.). |
 | ansible_docker_extra_args | Could be a string with any additional arguments understood by Docker, which are not command specific. This parameter is mainly used to configure a remote Docker daemon to use. |
 
-<br/>
-
-
-像是這邊筆者設定了 localhost 至 Inventory，但因為 localhost 不需要走 ssh，所以這邊將 ansible_connection 設為 local。  
+像是這邊筆者設定了 localhost 至 Inventory，但因為 localhost 不需要走 ssh，所以這邊將 ansible_connection 設為 local。
 
 ![7.png](7.png)
 
-<br/>
-
-
 ![8.png](8.png)
-
-<br/>

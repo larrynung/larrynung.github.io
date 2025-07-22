@@ -4,26 +4,17 @@ date: "2018-03-24 00:19:08"
 tags: [Flutter]
 ---
 
+Flutter 的 Column widget 可用來將子元件垂直放置。
 
-Flutter 的 Column widget 可用來將子元件垂直放置。  
+其建構子如下：
 
-<!-- More -->
-
-<br/>
-
-
-其建構子如下：  
-
-    Column({Key key, MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start, MainAxisSize mainAxisSize: MainAxisSize.max, CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center, TextDirection textDirection, VerticalDirection verticalDirection: VerticalDirection.down, TextBaseline textBaseline, List<Widget> children: const [] })
-
-<br/>
-
+Column({Key key, MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start, MainAxisSize mainAxisSize: MainAxisSize.max, CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center, TextDirection textDirection, VerticalDirection verticalDirection: VerticalDirection.down, TextBaseline textBaseline, List children: const [] })
 
 屬性如下：
 
 | Name | Type | Description |
 |:-------------:|:-------------:|:-----:|
-| children |  List<Widget> | The widgets below this widget in the tree. |
+| children |  List | The widgets below this widget in the tree. |
 | crossAxisAlignment | CrossAxisAlignment | How the children should be placed along the cross axis. |
 | direction | Axis | The direction to use as the main axis. |
 | hashCode | int | The hash code for this object. |
@@ -35,16 +26,13 @@ Flutter 的 Column widget 可用來將子元件垂直放置。
 | textDirection | TextDirection | Determines the order to lay children out horizontally and how to interpret start and end in the horizontal direction. |
 | verticalDirection | VerticalDirection | Determines the order to lay children out vertically and how to interpret start and end in the vertical direction. |
 
-<br/>
-
-
 方法如下：
 
 | Name | Return Type | Description |
 |:-------------:|:-------------:|:-----:|
 | createElement() | MultiChildRenderObjectElement | RenderObjectWidgets always inflate to a RenderObjectElement subclass. |
 | createRenderObject(BuildContext context) | RenderFlex | Creates an instance of the RenderObject class that this RenderObjectWidget represents, using the configuration described by this RenderObjectWidget. |
-| debugDescribeChildren() | List<DiagnosticsNode> | Returns a list of DiagnosticsNode objects describing this node's children. |
+| debugDescribeChildren() | List | Returns a list of DiagnosticsNode objects describing this node's children. |
 | debugFillProperties(DiagnosticPropertiesBuilder description) | void ||
 | didUnmountRenderObject(RenderObject renderObject) | void | A render object previously associated with this widget has been removed from the tree. The given RenderObject will be of the same type as returned by this object's createRenderObject. |
 | getEffectiveTextDirection(BuildContext context) | TextDirection | The value to pass to RenderFlex.textDirection. |
@@ -56,42 +44,32 @@ Flutter 的 Column widget 可用來將子元件垂直放置。
 | toStringShort() | String | A short, textual description of this widget. |
 | updateRenderObject(BuildContext context, RenderFlex renderObject) | void | Copies the configuration described by this RenderObjectWidget to the given RenderObject, which will be of the same type as returned by this object's createRenderObject. |
 
-<br/>
-
-
-使用上只要將要垂直放置的元件用陣列的方式設置到 children 屬性即可。  
-
+使用上只要將要垂直放置的元件用陣列的方式設置到 children 屬性即可。
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new Container(
-        child: new Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text('Hello, world!', textDirection: TextDirection.ltr),
-            new Container(
-              color: Colors.blue,
-              width: 48.0,
-              height: 48.0
-            )
-          ],
-        )
-      ),
-  );
+runApp(
+new Container(
+child: new Column(
+mainAxisSize: MainAxisSize.min,
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+new Text('Hello, world!', textDirection: TextDirection.ltr),
+new Container(
+color: Colors.blue,
+width: 48.0,
+height: 48.0
+)
+],
+)
+),
+);
 }
 ```
-
 ![1.png](1.png)
- 
-<br/>
 
 ![2.png](2.png)
- 
-<br/>
-
 
 Link
 ----

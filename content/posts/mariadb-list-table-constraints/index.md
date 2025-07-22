@@ -4,10 +4,7 @@ date: "2019-05-22 21:58:49"
 tags: [MariaDB]
 ---
 
-
-要查詢資料庫的 Constraints 可查閱 information_schema schema 的 table_constraints table。  
-
-<!-- More -->
+要查詢資料庫的 Constraints 可查閱 information_schema schema 的 table_constraints table。
 
 ```sql
 select *
@@ -16,9 +13,6 @@ order by table_schema, table_name;
 ```
 
 ![1.png](1.png)
-
-</br>
-
 
 Link
 ----

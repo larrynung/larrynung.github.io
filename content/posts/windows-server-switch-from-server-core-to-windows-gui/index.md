@@ -3,36 +3,21 @@ title: "Windows Server - Switch from Server Core to Windows GUI"
 date: "2018-01-21 23:50:33"
 ---
 
-
-Windows Server 有 Server Core 與 GUI 兩種模式，有時後玩一玩 Windows 會不知怎麼的從 GUI 模式變到 Server Core 模式，這時進到 Windows 就會看到空空的一遍，只有一個命令提示字元在上面。  
-
-<!-- More -->
+Windows Server 有 Server Core 與 GUI 兩種模式，有時後玩一玩 Windows 會不知怎麼的從 GUI 模式變到 Server Core 模式，這時進到 Windows 就會看到空空的一遍，只有一個命令提示字元在上面。
 
 ![1.png](1.png)
- 
-<br/>
 
+要恢復到本來熟悉的 GUI 畫面，我們可以用 PowerShell 或是 MS-DOS 將 Windows Server 切回到 GUI 模式。
 
-要恢復到本來熟悉的 GUI 畫面，我們可以用 PowerShell 或是 MS-DOS 將 Windows Server 切回到 GUI 模式。  
+這邊直接使用 MS-DOS 命令切回 GUI 模式。
 
-<br/>
-
-
-這邊直接使用 MS-DOS 命令切回 GUI 模式。  
-
-    Dism /online /enable-feature /featurename:Server-Gui-Mgmt /featurename:Server-Gui-Shell /featurename:ServerCore-FullServer /all
+Dism /online /enable-feature /featurename:Server-Gui-Mgmt /featurename:Server-Gui-Shell /featurename:ServerCore-FullServer /all
 
 ![2.png](2.png)
- 
-<br/>
 
-
-跑完後重新啟動即會恢復到熟悉的 GUI 畫面。  
+跑完後重新啟動即會恢復到熟悉的 GUI 畫面。
 
 ![3.png](3.png)
- 
-<br/>
-
 
 Link
 =====

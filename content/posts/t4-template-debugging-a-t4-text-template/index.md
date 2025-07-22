@@ -5,35 +5,21 @@ description: "T4 Template - Debugging a T4 Text Template"
 tags: [T4]
 ---
 
-
-
 要對 T4 Template 進行偵錯，首先需將 Template 的 Debug 設定開啟。
 
-<!-- More -->
-
 {% img /images/posts/DebugT4Template/1.png %}
-
-<br/>
 
 接著在要除錯的位置上加入中斷點。
 
 {% img /images/posts/DebugT4Template/2.png %}
 
-<br/>
-
 然後在 T4 Template 檔案上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中點選 'Debug T4 Template' 選單選項，即可開始進行偵錯。
 
 {% img /images/posts/DebugT4Template/3.png %}
 
-<br/>
-
 {% img /images/posts/DebugT4Template/4.png %}
 
-<br/>
-
 {% img /images/posts/DebugT4Template/5.png %}
-
-<br/>
 
 Link
 ----

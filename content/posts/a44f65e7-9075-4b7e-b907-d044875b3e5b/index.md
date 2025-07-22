@@ -4,72 +4,67 @@ slug: "[CSharp]實作UDP Broadcast的傳送與接收"
 date: "2013-11-06 12:00:00"
 description: "[C#]實作UDP Broadcast的傳送與接收"
 tags: [CSharp]
----
+---最近筆者想要利用廣播封包做些處理，稍微研究了一下，這篇簡單的做個紀錄。
 
-<p>最近筆者想要利用廣播封包做些處理，稍微研究了一下，這篇簡單的做個紀錄。</p>  <p> </p>  <p>若要發送UDP Broadcast，我們可以像下面這樣建立ProtocolType為Udp的Socket物件實體，呼叫SetSocketOption做些設定，並向IPAddress.Broadcast位置發送我們想要送出的廣播資料。</p>  <div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:60c2cf35-64e5-4255-b147-2fb1947c46ae" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">		private static void BroadcastMessage(string message, int port)
-		{
-			BroadcastMessage(Encoding.ASCII.GetBytes(message), port);
-		}
+若要發送UDP Broadcast，我們可以像下面這樣建立ProtocolType為Udp的Socket物件實體，呼叫SetSocketOption做些設定，並向IPAddress.Broadcast位置發送我們想要送出的廣播資料。
+private static void BroadcastMessage(string message, int port)
+{
+BroadcastMessage(Encoding.ASCII.GetBytes(message), port);
+}
 
-		private static void BroadcastMessage(byte[] message, int port)
-		{
-			using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
-			 ProtocolType.Udp))
-			{
-				sock.EnableBroadcast = true;
-				sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
+private static void BroadcastMessage(byte[] message, int port)
+{
+using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
+ProtocolType.Udp))
+{
+sock.EnableBroadcast = true;
+sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
 
-				var iep = new IPEndPoint(IPAddress.Broadcast, port);
+var iep = new IPEndPoint(IPAddress.Broadcast, port);
 
-				sock.SendTo(message, iep);
-			}
-		}</pre></div>
+sock.SendTo(message, iep);
+}
+}
 
-<p> </p>
+在接收廣播封包這邊，一樣我們要建立ProtocolType為Udp的Socket物件實體，將Socket綁定在IPAddress.Any位置，並用Socket.ReceiveFrom接收廣播的訊息。
 
-<p>在接收廣播封包這邊，一樣我們要建立ProtocolType為Udp的Socket物件實體，將Socket綁定在IPAddress.Any位置，並用Socket.ReceiveFrom接收廣播的訊息。</p>
+private void ReceiveBroadcastMessage(Action receivedAction, int port)
+{
+ReceiveBroadcastMessage((ep, data) =>
+{
+var stringData = Encoding.ASCII.GetString(data);
+receivedAction(ep, stringData);
+}, port);
+}
 
-<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:a520de9d-8584-4015-9db5-84fd3efc043a" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">		private void ReceiveBroadcastMessage(Action&lt;EndPoint, string&gt; receivedAction, int port)
-		{
-			ReceiveBroadcastMessage((ep, data) =&gt;
-			{
-				var stringData = Encoding.ASCII.GetString(data);
-				receivedAction(ep, stringData);
-			}, port);
-		}
+private void ReceiveBroadcastMessage(Action receivedAction, int port)
+{
+using (var sock = new Socket(AddressFamily.InterNetwork,
+SocketType.Dgram, ProtocolType.Udp))
+{
+var ep = new IPEndPoint(IPAddress.Any, port) as EndPoint;
+sock.Bind(ep);
 
-		private void ReceiveBroadcastMessage(Action&lt;EndPoint, byte[]&gt; receivedAction, int port)
-		{
-			using (var sock = new Socket(AddressFamily.InterNetwork,
- SocketType.Dgram, ProtocolType.Udp))
-			{
-				var ep = new IPEndPoint(IPAddress.Any, port) as EndPoint;
-				sock.Bind(ep);
+while (true)
+{
+var buffer = new byte[1024];
+var recv = sock.ReceiveFrom(buffer, ref ep);
 
-				while (true)
-				{
-					var buffer = new byte[1024];
-					var recv = sock.ReceiveFrom(buffer, ref ep);
+var data = new byte[recv];
 
-					var data = new byte[recv];
+Array.Copy(buffer, 0, data, 0, recv);
 
-					Array.Copy(buffer, 0, data, 0, recv);
+receivedAction(ep, data);
 
-					receivedAction(ep, data);
+Thread.Sleep(500);
+Application.DoEvents();
+}
+}
+}
 
-					Thread.Sleep(500);
-					Application.DoEvents();
-				}
-			}
-		}</pre></div>
+最後附上完整的程式碼範例：
 
-<p> </p>
-
-<p> </p>
-
-<p>最後附上完整的程式碼範例：</p>
-
-<div id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c1aeab9b-9372-4d2c-81bf-4aa6248cfda3" class="wlWriterSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,103 +79,94 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication8
 {
-	public partial class Form1 : Form
-	{
-		public Form1()
-		{
-			InitializeComponent();
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			BroadcastMessage("This is a test message", 9051);
-		}
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			backgroundWorker1.RunWorkerAsync();
-		}
-
-		private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-		{
-			ReceiveBroadcastMessage((EndPoint ep, string data) =&gt;
-			{
-				this.Invoke((MethodInvoker)delegate()
-				{
-					listBox1.Items.Add(string.Format("received: {0} from: {1}",
-							   data, ep.ToString()));
-				});
-			}, 9051);
-		}
-
-		private static void BroadcastMessage(string message, int port)
-		{
-			BroadcastMessage(Encoding.ASCII.GetBytes(message), port);
-		}
-
-		private static void BroadcastMessage(byte[] message, int port)
-		{
-			using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
-			 ProtocolType.Udp))
-			{
-				sock.EnableBroadcast = true;
-				sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
-
-				var iep = new IPEndPoint(IPAddress.Broadcast, port);
-
-				sock.SendTo(message, iep);
-			}
-		}
-
-		private void ReceiveBroadcastMessage(Action&lt;EndPoint, string&gt; receivedAction, int port)
-		{
-			ReceiveBroadcastMessage((ep, data) =&gt;
-			{
-				var stringData = Encoding.ASCII.GetString(data);
-				receivedAction(ep, stringData);
-			}, port);
-		}
-
-		private void ReceiveBroadcastMessage(Action&lt;EndPoint, byte[]&gt; receivedAction, int port)
-		{
-			using (var sock = new Socket(AddressFamily.InterNetwork,
- SocketType.Dgram, ProtocolType.Udp))
-			{
-				var ep = new IPEndPoint(IPAddress.Any, port) as EndPoint;
-				sock.Bind(ep);
-
-				while (true)
-				{
-					var buffer = new byte[1024];
-					var recv = sock.ReceiveFrom(buffer, ref ep);
-
-					var data = new byte[recv];
-
-					Array.Copy(buffer, 0, data, 0, recv);
-
-					receivedAction(ep, data);
-
-					Thread.Sleep(500);
-					Application.DoEvents();
-				}
-			}
-		}
-	}
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
 }
-</pre></div>
 
-<p> </p>
+private void button1_Click(object sender, EventArgs e)
+{
+BroadcastMessage("This is a test message", 9051);
+}
 
-<p>運行結果如下：</p>
+private void Form1_Load(object sender, EventArgs e)
+{
+backgroundWorker1.RunWorkerAsync();
+}
 
-<p><img style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px" border="0" alt="image" src="\images\posts44f65e7-9075-4b7e-b907-d044875b3e5b\image_thumb.png" width="378" height="337" /> </p>
+private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+{
+ReceiveBroadcastMessage((EndPoint ep, string data) =>
+{
+this.Invoke((MethodInvoker)delegate()
+{
+listBox1.Items.Add(string.Format("received: {0} from: {1}",
+data, ep.ToString()));
+});
+}, 9051);
+}
 
-<p> </p>
+private static void BroadcastMessage(string message, int port)
+{
+BroadcastMessage(Encoding.ASCII.GetBytes(message), port);
+}
 
-<h2>Link</h2>
+private static void BroadcastMessage(byte[] message, int port)
+{
+using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
+ProtocolType.Udp))
+{
+sock.EnableBroadcast = true;
+sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
 
-<ul>
-  <li>IP Multicasting in C#</li>
+var iep = new IPEndPoint(IPAddress.Broadcast, port);
 
-  <li>[C#] 傳送與接收UDP廣播封包</li>
-</ul>
+sock.SendTo(message, iep);
+}
+}
+
+private void ReceiveBroadcastMessage(Action receivedAction, int port)
+{
+ReceiveBroadcastMessage((ep, data) =>
+{
+var stringData = Encoding.ASCII.GetString(data);
+receivedAction(ep, stringData);
+}, port);
+}
+
+private void ReceiveBroadcastMessage(Action receivedAction, int port)
+{
+using (var sock = new Socket(AddressFamily.InterNetwork,
+SocketType.Dgram, ProtocolType.Udp))
+{
+var ep = new IPEndPoint(IPAddress.Any, port) as EndPoint;
+sock.Bind(ep);
+
+while (true)
+{
+var buffer = new byte[1024];
+var recv = sock.ReceiveFrom(buffer, ref ep);
+
+var data = new byte[recv];
+
+Array.Copy(buffer, 0, data, 0, recv);
+
+receivedAction(ep, data);
+
+Thread.Sleep(500);
+Application.DoEvents();
+}
+}
+}
+}
+}
+
+運行結果如下：
+
+## Link
+
+IP Multicasting in C#
+
+[C#] 傳送與接收UDP廣播封包

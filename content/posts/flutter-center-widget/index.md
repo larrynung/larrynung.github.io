@@ -4,19 +4,13 @@ date: "2018-03-19 23:38:07"
 tags: [Flutter]
 ---
 
+Flutter 的 Center widget 可用來做置中的呈現。
 
-Flutter 的 Center widget 可用來做置中的呈現。  
+其建構子如下：
 
-<!-- More -->
+Center({Key key, double widthFactor, double heightFactor, Widget child })
 
-其建構子如下：  
-
-    Center({Key key, double widthFactor, double heightFactor, Widget child })
-
-<br/>
-
-
-屬性如下： 
+屬性如下：
 
 | Name | Type | Description |
 |:-------------:|:-------------:|:-----:|
@@ -28,16 +22,13 @@ Flutter 的 Center widget 可用來做置中的呈現。
 | runtimeType | Type | A representation of the runtime type of the object. |
 | widthFactor | doube | If non-null, sets its width to the child's width multiplied by this factor. |
 
-<br/>
-
-
-方法如下：  
+方法如下：
 
 | Name | Return Type | Description |
 |:-------------:|:-------------:|:-----:|
 | createElement() | SingleChildRenderObjectElement | RenderObjectWidgets always inflate to a RenderObjectElement subclass. |
 | createRenderObject(BuildContext context) | RenderPositionedBox | Creates an instance of the RenderObject class that this RenderObjectWidget represents, using the configuration described by this RenderObjectWidget. |
-| debugDescribeChildren() | List<DiagnosticsNode> | Returns a list of DiagnosticsNode objects describing this node's children. |
+| debugDescribeChildren() | List | Returns a list of DiagnosticsNode objects describing this node's children. |
 | debugFillProperties(DiagnosticPropertiesBuilder description)  | void | |
 | didUnmountRenderObject(RenderObject renderObject) | void | A render object previously associated with this widget has been removed from the tree. The given RenderObject will be of the same type as returned by this object's createRenderObject. |
 | noSuchMethod(Invocation invocation) | dynamic | Invoked when a non-existent method or property is accessed. |
@@ -48,38 +39,29 @@ Flutter 的 Center widget 可用來做置中的呈現。
 | toStringShort() | String | A short, textual description of this widget. |
 | updateRenderObject(BuildContext context, RenderPositionedBox renderObject) | void | Copies the configuration described by this RenderObjectWidget to the given RenderObject, which will be of the same type as returned by this object's createRenderObject. |
 
-<br/>
-
-
-使用上只要將元件放置於 Center widget 的 child 屬性。     
+使用上只要將元件放置於 Center widget 的 child 屬性。
 
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new Center(
-      child: new Container(
-        color: Colors.blue,
-        width: 48.0,
-        height: 48.0,
-      ),
-    ),
-  );
+runApp(
+new Center(
+child: new Container(
+color: Colors.blue,
+width: 48.0,
+height: 48.0,
+),
+),
+);
 }
 ```
 
 ![1.png](1.png)
- 
-<br/>
 
-
-該元件即會被置中處理。  
+該元件即會被置中處理。
 
 ![2.png](2.png)
- 
-<br/>
-
 
 Link
 ----

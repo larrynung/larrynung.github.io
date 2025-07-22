@@ -5,110 +5,102 @@ description: "[VB.NET]MFC CArchive的讀取"
 tags: [VB.NET]
 ---
 
-<p>CArchive是MFC的序列化處理類別，除了一般的序列化存檔會用到外，在SendMessage傳送WN_COPYDATA訊息，連帶觸發OnCopyData，其傳遞的資料也是CArchive的格式。</p>  <p> </p>  <p>CArchive的檔案格式若要在.NET程式中讀取，我們可以直接使用.NET Framework中的BinaryReader。</p>  <p> </p>  <p>也可以參考MFC CArchive的寫法自行實作讀取，有興趣的可直接透過VC6 Debug追進CArchive看程式的處理，或是直接看網路上的文章。</p>  <p> </p>  <p>下面這個類別就是之前自己寫來讀取CArchive的。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:59903f52-063a-433b-973f-1fa51e9a5bd1" class="wlWriterEditableSmartContent"><pre name="code" class="vb:nocontrols">Imports System.IO
+CArchive是MFC的序列化處理類別，除了一般的序列化存檔會用到外，在SendMessage傳送WN_COPYDATA訊息，連帶觸發OnCopyData，其傳遞的資料也是CArchive的格式。
+
+CArchive的檔案格式若要在.NET程式中讀取，我們可以直接使用.NET Framework中的BinaryReader。
+
+也可以參考MFC CArchive的寫法自行實作讀取，有興趣的可直接透過VC6 Debug追進CArchive看程式的處理，或是直接看網路上的文章。
+
+下面這個類別就是之前自己寫來讀取CArchive的。
+```
+Imports System.IO
 Imports System.Text
 Public Class CArchive
 
-
 #Region "Config"
-    Private ReadOnly BYTES_COUNT_IN_BOOL As Byte = 4  'VC6的BOOL佔 4 Bytes
-    Private ReadOnly BYTES_COUNT_IN_INT As Byte = 4  'VC6的Int佔 4 Bytes
-    Private ReadOnly BYTES_COUNT_IN_FLOAT As Byte = 4  'VC6的Float佔 4 Bytes
-    Private ReadOnly BYTES_COUNT_IN_DOUBLE As Byte = 8  'VC6的Double佔 8 Bytes
-    Private ReadOnly BUFFERSIZE As Integer = 512
+Private ReadOnly BYTES_COUNT_IN_BOOL As Byte = 4  'VC6的BOOL佔 4 Bytes
+Private ReadOnly BYTES_COUNT_IN_INT As Byte = 4  'VC6的Int佔 4 Bytes
+Private ReadOnly BYTES_COUNT_IN_FLOAT As Byte = 4  'VC6的Float佔 4 Bytes
+Private ReadOnly BYTES_COUNT_IN_DOUBLE As Byte = 8  'VC6的Double佔 8 Bytes
+Private ReadOnly BUFFERSIZE As Integer = 512
 
 #End Region
-
-
 
 #Region "Private Var"
 
-    Private m_baryBinaryData(BUFFERSIZE) As Byte
-    Private m_fsFileStream As FileStream
+Private m_baryBinaryData(BUFFERSIZE) As Byte
+Private m_fsFileStream As FileStream
 
-    Private m_nDataLength As Integer
-    Private m_strData As String
-    Private m_nData As Integer
-    Private m_sData As Single
-    Private m_dData As Double
-    Private m_bData As Boolean
+Private m_nDataLength As Integer
+Private m_strData As String
+Private m_nData As Integer
+Private m_sData As Single
+Private m_dData As Double
+Private m_bData As Boolean
 #End Region
-
-
-
 
 #Region "Constructer"
 
-
-    Public Sub New(ByVal FilePath As String)
-        m_fsFileStream = New FileStream(FilePath, FileMode.Open)
-    End Sub
-
+Public Sub New(ByVal FilePath As String)
+m_fsFileStream = New FileStream(FilePath, FileMode.Open)
+End Sub
 
 #End Region
 
-
-
-
 #Region "Public Method"
 
-    Public Function GetString() As String
-        m_nDataLength = m_fsFileStream.ReadByte
-      
-        m_fsFileStream.Read(m_baryBinaryData, 0, m_nDataLength)
+Public Function GetString() As String
+m_nDataLength = m_fsFileStream.ReadByte
 
+m_fsFileStream.Read(m_baryBinaryData, 0, m_nDataLength)
 
-        m_strData = Encoding.Default.GetString(m_baryBinaryData, 0, m_nDataLength)
+m_strData = Encoding.Default.GetString(m_baryBinaryData, 0, m_nDataLength)
 
-        Return m_strData
+Return m_strData
 
-    End Function
+End Function
 
-    Public Function GetInt() As Integer
+Public Function GetInt() As Integer
 
-        m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_INT)
+m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_INT)
 
+m_nData = BitConverter.ToInt32(m_baryBinaryData, 0)
 
-        m_nData = BitConverter.ToInt32(m_baryBinaryData, 0)
+Return m_nData
 
-        Return m_nData
+End Function
 
-    End Function
+Public Function GetDouble() As Double
 
+m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_DOUBLE)
 
-    Public Function GetDouble() As Double
+m_dData = BitConverter.ToDouble(m_baryBinaryData, 0)
 
-        m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_DOUBLE)
+Return m_dData
 
+End Function
 
-        m_dData = BitConverter.ToDouble(m_baryBinaryData, 0)
+Public Function GetFloat() As Single
 
-        Return m_dData
+m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_FLOAT)
 
-    End Function
+m_sData = BitConverter.ToSingle(m_baryBinaryData, 0)
 
-    Public Function GetFloat() As Single
+Return m_sData
 
-        m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_FLOAT)
+End Function
 
+Public Function GetBoolean() As Boolean
 
-        m_sData = BitConverter.ToSingle(m_baryBinaryData, 0)
+m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_BOOL)
 
-        Return m_sData
+m_bData = BitConverter.ToBoolean(m_baryBinaryData, 0)
 
-    End Function
+Return m_bData
 
-    Public Function GetBoolean() As Boolean
-
-        m_fsFileStream.Read(m_baryBinaryData, 0, BYTES_COUNT_IN_BOOL)
-
-        m_bData = BitConverter.ToBoolean(m_baryBinaryData, 0)
-
-        Return m_bData
-
-    End Function
+End Function
 
 #End Region
 
 End Class
-</pre></div>
+```

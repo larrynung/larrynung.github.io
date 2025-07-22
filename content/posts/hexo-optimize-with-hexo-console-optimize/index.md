@@ -4,44 +4,26 @@ date: "2017-08-09 12:37:04"
 tags: [Hexo]
 ---
 
+hexo-console-optimize 是 Hexo 的套件，可讓 Hexo 對 HTML、CSS、JS、Image 進行壓縮優化。
 
-hexo-console-optimize 是 Hexo 的套件，可讓 Hexo 對 HTML、CSS、JS、Image 進行壓縮優化。  
+可透過 npm 進行安裝。
 
-<!-- More -->
-
-<br/>
-
-
-可透過 npm 進行安裝。  
-
-    npm install hexo-console-optimize --save
+npm install hexo-console-optimize --save
 
 ![1.png](1.png)
 
-<br/>
+要使用時調用 Hexo 的 Optimize 命令，即會對 HTML、CSS、JS、Image 檔案進行壓縮優化。
 
-
-要使用時調用 Hexo 的 Optimize 命令，即會對 HTML、CSS、JS、Image 檔案進行壓縮優化。  
-
-    hexo optimize
-    hexo o
+hexo optimize
+hexo o
 
 ![2.png](2.png)
 
-<br/>
-
-
 ![3.png](3.png)
 
-<br/>
+如有需要，也可加帶 -d 參數在壓縮優化後直接進行佈署。
 
-
-如有需要，也可加帶 -d 參數在壓縮優化後直接進行佈署。  
-
-    hexo o -d
-
-<br/>
-
+hexo o -d
 
 Link
 ----

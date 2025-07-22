@@ -4,34 +4,22 @@ date: "2019-12-12 08:24:39"
 tags: [.NET Core, HomeBrew]
 ---
 
-
-用 HomeBrew 安裝的 .NET core SDK，可直接用 HomeBrew 進行更新。  
-
-<!-- More -->
-
-</br>
-
+用 HomeBrew 安裝的 .NET core SDK，可直接用 HomeBrew 進行更新。
 
 像是筆者電腦中的 .NET Core SDK 是 3.0 的版本。
 
-    dotnet --version
+dotnet --version
 
 ![1.png](1.png)
 
-</br>
-
-
 要升級到最新版的 .NET core SDK 3.1，可直接透過 HomeBrew cask reinstall 命令去更新 dotnet-sdk 套件。
 
-    brew cask reinstall dotnet-sdk
+brew cask reinstall dotnet-sdk
 
 ![2.png](2.png)
 
-</br>
-
-
 .NET core SDK 就會被升到 3.1 最新版。
 
-    dotnet --version
+dotnet --version
 
 ![3.png](3.png)

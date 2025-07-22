@@ -5,26 +5,15 @@ description: "PL/SQL - CEIL function"
 tags: [PL/SQL]
 ---
 
+CEIL function 可傳回大於或等於指定數值的最小整數值。
 
-CEIL function 可傳回大於或等於指定數值的最小整數值。  
+使用語法如下：
 
-<!-- More -->
+CEIL( number )
 
-<br/>
-
-
-使用語法如下：  
-
-    CEIL( number )
-
-<br/>
-
-
-使用上會像下面這樣：  
+使用上會像下面這樣：
 
 {% img /images/posts/CeilFunction/1.png %}
-
-<br/>
 
 Link
 ----

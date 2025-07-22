@@ -5,10 +5,7 @@ description: "Outlook - Archive Email"
 tags: [Outlook]
 ---
 
-
-要 Archive Outlook Mail Box，可透過 Outlook 的 Auto Archive 的功能。  
-
-<!-- More -->
+要 Archive Outlook Mail Box，可透過 Outlook 的 Auto Archive 的功能。
 
 開啟 Tools 主選單，點選 'Option...' 主選單選項。
 
@@ -33,7 +30,6 @@ tags: [Outlook]
 {% img /images/posts/ArchiveOutlookMail/5.png %}
 
 設定好按下 OK 按鈕即會開始進行 Archive 動作。
-
 
 Link
 ----

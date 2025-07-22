@@ -4,65 +4,35 @@ date: "2015-09-18 14:45:00"
 description: "Code Analysis Error CA0058"
 ---
 
-
-最近抽空把開發中的專案設定了一下 Code Analysis，運行時發生了 CA0058 這個錯誤。  
-
-<!-- More -->
-
-<br/>
-
+最近抽空把開發中的專案設定了一下 Code Analysis，運行時發生了 CA0058 這個錯誤。
 
 {% img /images/posts/CA0058/1.png %}
 
-<br/>
-
-
 要解決這個問題，在 Visual Studio 2012 以前可以修改 FxCopCmd.exe.config。位置在
 
-    C:\Program Files (x86)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe.config
-
-<br/>
-
+C:\Program Files (x86)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe.config
 
 {% img /images/posts/CA0058/2.png %}
 
-<br/>
+實際位置需視 Visual Studio 版本或是安裝位置下去調整。
 
-
-實際位置需視 Visual Studio 版本或是安裝位置下去調整。  
-
-<br/>
-
-
-將之開啟找到 AssemblyReferenceResolveMode 的值改為 StrongNameIgnoringVersion。  
+將之開啟找到 AssemblyReferenceResolveMode 的值改為 StrongNameIgnoringVersion。
 
 {% img /images/posts/CA0058/3.png %}
 
-<br/>
-
-
-Visual Studio 2012 後我們要開啟專案檔進行編輯，在第一個 PropertyGroup 中加入 CodeAnalysisAdditionalOptions，將其設為 /assemblyCompareMode:StrongNameIgnoringVersion。  
-
+Visual Studio 2012 後我們要開啟專案檔進行編輯，在第一個 PropertyGroup 中加入 CodeAnalysisAdditionalOptions，將其設為 /assemblyCompareMode:StrongNameIgnoringVersion。
 ```xml
 ...
-<PropertyGroup>
-  ...
-  <CodeAnalysisAdditionalOptions>/assemblyCompareMode:StrongNameIgnoringVersion</CodeAnalysisAdditionalOptions>
-  ...
-</PropertyGroup>
+
+...
+/assemblyCompareMode:StrongNameIgnoringVersion
+...
+
 ...
 ```
-
-
 {% img /images/posts/CA0058/4.png %}
 
-<br/>
-
-
-這樣設完問題應該就解決了。  
-
-<br/>
-
+這樣設完問題應該就解決了。
 
 Link
 ----

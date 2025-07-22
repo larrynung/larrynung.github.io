@@ -4,64 +4,37 @@ date: "2016-11-21 13:15:10"
 tags: [SQL Server v.Next]
 ---
 
+要使用 Docker 運行 SQL Server v.Next，首先要先確定下列環境需求：
 
-要使用 Docker 運行 SQL Server v.Next，首先要先確定下列環境需求：  
+Docker Engine: 1.8+
+Disk space: Minimum of 4 GB
+RAM: Minimum of 4 GB
 
-<!-- More -->
+Docker 引擎需要在 1.8 以上的版本，硬碟空間最小要 4 GB，記憶體最小要有 4GB。
 
-    Docker Engine: 1.8+  
-    Disk space: Minimum of 4 GB  
-    RAM: Minimum of 4 GB  
+記得要調整設定讓 Docker 吃到 4 GB 的記憶體。
 
-<br/>
+接著將 microsoft/mssql-server-linux 這個 Docker image 拉下來。
 
-
-Docker 引擎需要在 1.8 以上的版本，硬碟空間最小要 4 GB，記憶體最小要有 4GB。  
-
-<br/>
-
-
-記得要調整設定讓 Docker 吃到 4 GB 的記憶體。  
-
-<br/>
-
-
-接著將 microsoft/mssql-server-linux 這個 Docker image 拉下來。  
-
-    sudo docker pull microsoft/mssql-server-linux
+sudo docker pull microsoft/mssql-server-linux
 
 ![1.png](1.png)
 
-<br/>
+拉下來後可以像下面這樣將 Container 運行起來，SA_PASSWORD 需要自行修改後帶入。
 
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=' -p 1433:1433 -d microsoft/mssql-server-linux
 
-拉下來後可以像下面這樣將 Container 運行起來，SA_PASSWORD 需要自行修改後帶入。  
-
-	docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -d microsoft/mssql-server-linux
-	
 ![2.png](2.png)
 
-<br/>
+若是要將資料庫的資料保留下來，可以在 Container 運行時加掛資料卷。
 
+sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=' -p 1433:1433 -v :/var/opt/mssql -d microsoft/mssql-server-linux
 
-若是要將資料庫的資料保留下來，可以在 Container 運行時加掛資料卷。  
-
-    sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -v <host directory>:/var/opt/mssql -d microsoft/mssql-server-linux 
-
-<br/>
-
-
-叫用命令 `docker ps` 查驗是否 Container 有正常運行。  
+叫用命令 `docker ps` 查驗是否 Container 有正常運行。
 
 ![3.png](3.png)
 
-<br/>
-
-
-Container 正常運行後，用剛才運行 Container 的 Port 號以及 SA 密碼即可連到 Docker Container 內的 SQL Server。  
-
-<br/>
-
+Container 正常運行後，用剛才運行 Container 的 Port 號以及 SA 密碼即可連到 Docker Container 內的 SQL Server。
 
 Link
 ----

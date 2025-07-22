@@ -5,54 +5,45 @@ description: "Octopress - Remove reduant blog folder"
 tags: [Octopress]
 ---
 
-
 Octopress blog架設好後，預設的部落格網址格式為 `/blog/:year/:month/:day/:title/`，會在網址那邊多一層不必要的 `blog` 目錄，要將這層不必要的目錄拿掉，我們可以開啟 `_config.yaml` 進行些修改，將 `permalink`、 `category_dir`、與 `pagination_dir` 的 `/blog` 前綴給拿掉 ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/1.png))。
 
-<!--More-->
+#permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 
-    #permalink: /blog/:year/:month/:day/:title/
-    permalink: /:year/:month/:day/:title/
+#category_dir: blog/categories
+category_dir: categories
 
-    #category_dir: blog/categories
-    category_dir: categories
-
-    #pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
-    pagination_dir:       # Directory base for pagination URLs eg. /page/2/
-
+#pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+pagination_dir:       # Directory base for pagination URLs eg. /page/2/
 
 接著將 `source/_includes/custom/navigation.html` 檔案開啟，針對上方巡覽列這邊的連結部分作些修改，一樣將 `/blog` 前綴給移掉 ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/2.png))。
 
-    <li><a href="/">Home</a></li>
-    <li><a href="/archives">Archives</a></li>
+- [Home](/)
 
+- [Archives](/archives)
 
 同樣的動作也要對 `source/index.html` 做一次。
 
-    <a href="/archives">Archives</a>
-
+[Archives](/archives)
 
 網址跟連結都做完，記得要將本來放在 `source/blog` 下的資料移到`source` ([Demo](/images/posts/OctopressRemoveReduantBlogFolder/3.png))。
 
-    mv -v source/blog/archives source/
-
+mv -v source/blog/archives source/
 
 最後老樣子建置網頁並預覽
-    
-    rake generate
-    rake preview
 
+rake generate
+rake preview
 
 預覽沒什麼問題的話將之佈署上去
 
-    rake deploy
-
+rake deploy
 
 一樣要記得將 Source Commit 回 Github
 
-    git add .
-    git commit -a -m "..."
-    git push
-
+git add .
+git commit -a -m "..."
+git push
 
 Link
 ----

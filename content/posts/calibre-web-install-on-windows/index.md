@@ -4,57 +4,32 @@ date: "2017-10-10 23:43:59"
 tags: [Calibre Web]
 ---
 
+要在 Windows 安裝 Calibre Web，可先在 Windows 安裝 Python 與 Pip。
 
-要在 Windows 安裝 Calibre Web，可先在 Windows 安裝 Python 與 Pip。  
+然後將 Calibre Web 下載下來。
 
-<!-- More -->
-
-<br/>
-
-
-然後將 Calibre Web 下載下來。  
-
-    git clone https://github.com/janeczku/calibre-web.git    
+git clone https://github.com/janeczku/calibre-web.git
 
 ![1.png](1.png)
 
-<br/>
+將 KindleGen 放至 Calibre Web 下的 vendor 目錄。
 
+使用 pip 安裝 dependencies。
 
-將 KindleGen 放至 Calibre Web 下的 vendor 目錄。  
-
-<br/>
-
-
-使用 pip 安裝 dependencies。  
-
-    sudo pip install --target vendor -r requirements.txt
-
+sudo pip install --target vendor -r requirements.txt
 
 ![2.png](2.png)
 
-<br/>
+將 Calibre Web 服務運行起來。
 
-
-將 Calibre Web 服務運行起來。  
-
-    python cps.py
+python cps.py
 
 ![3.png](3.png)
 
-<br/>
-
-
-訪問 http://localhost:8083，指定 Calibre database 位置，這邊的 Calibre 資料庫指的是 Calibre 桌機版的 Calibre library 目錄下的 metadata.db，可以直接指到同一個檔案，或是將之複製一份放置在欲放置的位置。   
+訪問 http://localhost:8083，指定 Calibre database 位置，這邊的 Calibre 資料庫指的是 Calibre 桌機版的 Calibre library 目錄下的 metadata.db，可以直接指到同一個檔案，或是將之複製一份放置在欲放置的位置。
 
 ![4.png](4.png)
 
-<br/>
-
-
-設定完導回 http://localhost:8083 首頁，輸入帳密 admin/admin123 登入。  
-
-<br/>
-
+設定完導回 http://localhost:8083 首頁，輸入帳密 admin/admin123 登入。
 
 即可開始使用 Calibre Web。

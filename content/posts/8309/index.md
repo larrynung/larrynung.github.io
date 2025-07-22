@@ -5,4 +5,17 @@ description: "[UML]Use case diagram"
 tags: [UML]
 ---
 
-<h2><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="512" height="161" src="\images\posts\8309\image_thumb.png" /></a></h2><h2>Introduction</h2><p>Use case diagram又稱使用者案例圖。</p><p> </p><h2>功能</h2><ul><li>表達外部觀察到的系統功能。</li><li>用以表示動作者與系統所提供的使用案例之間的溝通。</li><li>可以表現出系統的功能。</li></ul><p> </p><h2>使用案例</h2><ul><li>是系統部份功能</li><li>是系統外部所見的功能</li></ul><p> </p><h2>動作者</h2><ul><li>是執行使用案例的角色</li><li>是執行使用案例的人或外部系統</li><li>動作者不限於人</li></ul><p> </p><h2>圖示</h2><p><a href="http://files.dotblogs.com.tw/larrynung/0905/UMLUsecasediagram_12F37/image_6.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="399" height="206" src="\images\posts\8309\image_thumb_2.png" /></a></p><p> </p><p><a href="http://files.dotblogs.com.tw/larrynung/0905/UMLUsecasediagram_12F37/image_7.png"><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image" width="448" height="380" src="\images\posts\8309\image_thumb_1.png" /></p>
+## Introduction
+
+Use case diagram又稱使用者案例圖。
+
+## 功能
+表達外部觀察到的系統功能。用以表示動作者與系統所提供的使用案例之間的溝通。可以表現出系統的功能。
+
+## 使用案例
+是系統部份功能是系統外部所見的功能
+
+## 動作者
+是執行使用案例的角色是執行使用案例的人或外部系統動作者不限於人
+
+## 圖示

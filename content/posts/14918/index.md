@@ -5,18 +5,41 @@ description: "[VB.NET]SecureString較為安全的加密字串類別"
 tags: [VB.NET]
 ---
 
-<h2>Namespace</h2>  <p>System.Security </p>  <p> </p>  <h2>Framework</h2>  <p>2.0 or Latter</p>  <p> </p>  <h2>SecureString</h2>  <p>SecureString是.NET 2.0開始提供的加密字串類別，為一較安全的字串處理類別，適合用以保存較為機密或是較為敏感的字串。</p>  <p>SecureString內部使用DPAPI對記憶體作加密的動作，存入的資料會自動進行加密的動作，甚至可以使用MakeReadOnly</a>方法讓物件執行個體設為唯讀狀態，避免被進一步修改。</p>  <p>在記憶體層級的保護上，對於該物件執行個體所使用的記憶體會被禁止作複製的動作(除非自行呼叫複製)。</p>  <p>SecureString提供較少的類別成員，像是檢查、比較或轉換等成員皆未提供，有助於防止執行個體值被不慎或惡意公開。此外，也有實作IDisposiable介面，可在不需使用資源時作即時的資源釋放，不像String一樣需等待GC的回收，減少機密資料存在記憶體中的時間，降低被竊取的風險。</p>  <p> </p>  <h2>重要成員</h2>  <p>屬性</p>  <table border="1" cellspacing="0" cellpadding="2" width="391"><tbody>     <tr>       <td valign="top" width="110">名稱</td>        <td valign="top" width="279">說明</td>     </tr>      <tr>       <td valign="top" width="110"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.length(v=VS.90).aspx" target="_blank">Length</a></td>        <td valign="top" width="279">取得目前安全字串的長度。</td>     </tr>   </tbody></table>  <p> </p>  <p>方法</p>  <table border="1" cellspacing="0" cellpadding="2" width="389"><tbody>     <tr>       <td valign="top" width="113">名稱</td>        <td valign="top" width="274">說明</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.appendchar(v=VS.90).aspx" target="_blank">AppendChar</a></td>        <td valign="top" width="274">將字元附加至目前安全字串的結尾。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.clear(v=VS.90).aspx" target="_blank">Clear</a></td>        <td valign="top" width="274">刪除目前安全字串的值。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.copy(v=VS.90).aspx" target="_blank">Copy</a></td>        <td valign="top" width="274">建立目前安全字串的複本</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.dispose(v=VS.90).aspx" target="_blank">Dispose</a></td>        <td valign="top" width="274">釋放由目前的 <a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring(v=VS.90).aspx" target="_blank">SecureString</a> 物件使用的所有資源。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.insertat(v=VS.90).aspx" target="_blank">InsertAt</a></td>        <td valign="top" width="274">將這個安全字串中的字元插入指定索引位置。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.isreadonly(v=VS.90).aspx" target="_blank">IsReadOnly</a></td>        <td valign="top" width="274">指示這個安全字串是否標示為唯讀。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.makereadonly(v=VS.90).aspx" target="_blank">MakeReadOnly</a></td>        <td valign="top" width="274">使這個安全字串的文字值成為唯讀。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.removeat(v=VS.90).aspx" target="_blank">RemoveAt</a></td>        <td valign="top" width="274">從這個安全字串移除位在指定索引位置的字元。</td>     </tr>      <tr>       <td valign="top" width="113"><a href="http://msdn.microsoft.com/zh-tw/library/system.security.securestring.setat(v=VS.90).aspx" target="_blank">SetAt</td>        <td valign="top" width="274">使用另一個字元，取代位在指定索引位置的現有字元。</td>     </tr>   </tbody></table>  <p> </p>  <h2>設定字串</h2>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3d3d0719-5471-4bc3-8619-df3fb7b99aaa" class="wlWriterEditableSmartContent"><pre name="code" class="vb">        Const testString As String = "Level Up"  '要寫入的字串
+## Namespace
+  
+System.Security 
+
+## Framework
+  
+2.0 or Latter
+
+## SecureString
+  
+SecureString是.NET 2.0開始提供的加密字串類別，為一較安全的字串處理類別，適合用以保存較為機密或是較為敏感的字串。
+  SecureString內部使用DPAPI對記憶體作加密的動作，存入的資料會自動進行加密的動作，甚至可以使用MakeReadOnly方法讓物件執行個體設為唯讀狀態，避免被進一步修改。  
+在記憶體層級的保護上，對於該物件執行個體所使用的記憶體會被禁止作複製的動作(除非自行呼叫複製)。
+  
+SecureString提供較少的類別成員，像是檢查、比較或轉換等成員皆未提供，有助於防止執行個體值被不慎或惡意公開。此外，也有實作IDisposiable介面，可在不需使用資源時作即時的資源釋放，不像String一樣需等待GC的回收，減少機密資料存在記憶體中的時間，降低被竊取的風險。
+
+## 重要成員
+  
+屬性
+              名稱        說明                  Length        取得目前安全字串的長度。          
+
+方法
+              名稱        說明                  AppendChar        將字元附加至目前安全字串的結尾。                  Clear        刪除目前安全字串的值。                  Copy        建立目前安全字串的複本                  Dispose        釋放由目前的 SecureString 物件使用的所有資源。                  InsertAt        將這個安全字串中的字元插入指定索引位置。                  IsReadOnly        指示這個安全字串是否標示為唯讀。                  MakeReadOnly        使這個安全字串的文字值成為唯讀。                  RemoveAt        從這個安全字串移除位在指定索引位置的字元。                  SetAt        使用另一個字元，取代位在指定索引位置的現有字元。          
+
+## 設定字串
+          Const testString As String = "Level Up"  '要寫入的字串
         Dim secureString As New SecureString
         For Each c In testString
             secureString.AppendChar(c)           '使用AppendChar加入SecureString
         Next
-        secureString.MakeReadOnly()              '設定為唯讀狀態</pre></div>
+        secureString.MakeReadOnly()              '設定為唯讀狀態
 
-<p> </p>
+## 讀取字串
 
-<h2>讀取字串</h2>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:00cdbae8-8fa6-45eb-95cb-05717872134e" class="wlWriterEditableSmartContent"><pre name="code" class="vb">        '配置 BSTR，並將 Managed SecureString 物件的內容複製到其中。
+        '配置 BSTR，並將 Managed SecureString 物件的內容複製到其中。
         Dim stringPointer As IntPtr = Marshal.SecureStringToBSTR(secureString)
         Try
             '配置 Managed String，並將儲存在 Unmanaged 記憶體的 BSTR 字串複製到其中，並顯示出來。
@@ -24,13 +47,11 @@ tags: [VB.NET]
         Finally
             '釋放之前使用 SecureStringToBSTR 方法配置的 BSTR 指標。
             Marshal.ZeroFreeBSTR(stringPointer)
-        End Try</pre></div>
+        End Try
 
-<p> </p>
+## 清除字串
 
-<h2>清除字串</h2>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1b791e23-c9c1-494e-b700-d0af9d50e91e" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Sub Main()       
+    Sub Main()       
         Dim secureString As New SecureString
         ...
         Console.WriteLine("原字串...")
@@ -41,19 +62,15 @@ tags: [VB.NET]
         PrintSecureString(secureString)
     End Sub
 
-
     Public Sub PrintSecureString(ByVal secureString As SecureString)
     ...
-    End Sub</pre></div>
+    End Sub
 
-<p> </p>
+## 完整範例
 
-<h2>完整範例</h2>
+該範例主要是參閱How to: Use strings in a secure manner with SecureString class與Making Strings More Secure兩篇的範例所撰寫。
 
-<p>該範例主要是參閱How to: Use strings in a secure manner with SecureString class</a>與<a href="http://blogs.msdn.com/shawnfa/archive/2004/05/27/143254.aspx" target="_blank">Making Strings More Secure兩篇的範例所撰寫。</p>
-
-<p>
-  </p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:3b53ff4b-3b16-4ddc-95bb-68623f78b2c1" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Security
+Imports System.Security
 Imports System.Runtime.InteropServices
 
 Module Module1
@@ -70,16 +87,15 @@ Module Module1
         PrintPassword(password)
     End Sub
 
-
     Public Function ReadPassword() As SecureString
 
         Dim password As New SecureString()
 
         Dim nextKey As ConsoleKeyInfo = Console.ReadKey(True)
 
-        While nextKey.Key &lt;&gt; ConsoleKey.Enter
+        While nextKey.Key <> ConsoleKey.Enter
             If nextKey.Key = ConsoleKey.Backspace Then
-                If password.Length &gt; 0 Then
+                If password.Length > 0 Then
                     password.RemoveAt(password.Length - 1)
 
                     ' erase the last * as well
@@ -110,7 +126,6 @@ Module Module1
 
         Dim bstr As IntPtr = Marshal.SecureStringToBSTR(password)
 
-
         Try
             ' Printing the uncrypted password...
 
@@ -124,29 +139,20 @@ Module Module1
 
     End Sub
 
-End Module</pre></div>
+End Module
 
+## Link
 
-<p> </p>
+  SecureString 類別
 
-<p><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="\images\posts\14918\image_thumb_3.png" width="449" height="359" /> </p>
+  SecureString 應用程式範例
 
-<p> </p>
+  Security Enhancements in the .NET Framework 2.0
 
-<h2>Link</h2>
+  SecureString in .Net 2.0
 
-<ul>
-  <li>SecureString 類別</li>
+  How to: Use strings in a secure manner with SecureString class
 
-  <li>SecureString 應用程式範例</li>
+  Making Strings More Secure
 
-  <li>Security Enhancements in the .NET Framework 2.0</li>
-
-  <li>SecureString in .Net 2.0</li>
-
-  <li>How to: Use strings in a secure manner with SecureString class</li>
-
-  <li>Making Strings More Secure</li>
-
-  <li>C# SecureString</li>
-</ul>
+  C# SecureString

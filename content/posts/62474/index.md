@@ -5,38 +5,18 @@ description: "[C++]使用nsiqcppstyle輔助檢查C/C++的Coding Style"
 tags: [Software,C++,Visual Studio]
 ---
 
-<p>
-	nsiqcppstyle是韓國人開發的C/C++ Coding Style檢查工具，可檢查程式碼並給予編碼上的建議，使用上十分的簡易，具有許約40幾條檢查的規則，檢查的規則能自動個更新且允許自行擴充。</p>
-<p>
-	 </p>
-<p>
-	工具部分可至nsiqcppstyle - C/C++ Coding Style Checker下載。</p>
-<p>
-	<img alt="image" border="0" height="585" src="\images\posts\62474\image12_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="614" /></p>
-<p>
-	 </p>
-<p>
-	下載後解壓縮可以看到如下的目錄結構，其中比較要關注的，nsiqcppstyle.exe是主要要運行的主控台程式，rules目錄內則是存放著所有檢查的規則。</p>
-<p>
-	<img alt="image" border="0" height="701" src="\images\posts\62474\image15_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="652" /></p>
-<p>
-	 </p>
-<p>
-	內建約有47個檢查規則，都是附檔名為py的文字檔。</p>
-<p>
-	<img alt="image" border="0" height="484" src="\images\posts\62474\image18_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="635" /></p>
-<p>
-	 </p>
-<p>
-	在運行nsiqcppstyle時程式都會嚐試去更新檢查的規則，不需使用者煩惱、不需手動的更新，檢查規則就能保持在最新的狀態。</p>
-<p>
-	<img alt="image" border="0" height="606" src="\images\posts\62474\image_thumb_1.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="681" /></p>
-<p>
-	 </p>
-<p>
-	nsiqcppstyle是主控台程式，使用時必須依自己的需求帶入正確的參數，參數的部分可運行nsiqcppstyle後參閱列出的使用說明。</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:573f9376-fb06-449a-bec1-bf835fd47b7f" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="xml" name="code">
+nsiqcppstyle是韓國人開發的C/C++ Coding Style檢查工具，可檢查程式碼並給予編碼上的建議，使用上十分的簡易，具有許約40幾條檢查的規則，檢查的規則能自動個更新且允許自行擴充。
+
+	工具部分可至nsiqcppstyle - C/C++ Coding Style Checker下載。
+
+	下載後解壓縮可以看到如下的目錄結構，其中比較要關注的，nsiqcppstyle.exe是主要要運行的主控台程式，rules目錄內則是存放著所有檢查的規則。
+
+	內建約有47個檢查規則，都是附檔名為py的文字檔。
+
+	在運行nsiqcppstyle時程式都會嚐試去更新檢查的規則，不需使用者煩惱、不需手動的更新，檢查規則就能保持在最新的狀態。
+
+	nsiqcppstyle是主控台程式，使用時必須依自己的需求帶入正確的參數，參數的部分可運行nsiqcppstyle後參閱列出的使用說明。
+
 Usage : nsiqcppstyle [Options]
            targetdirectory
 
@@ -71,58 +51,28 @@ csv"
                 "nsiqcppstyle_result.xml" respectively, if you don't provide -o
 option.
   --ci          Continuous Integration mode. If this mode is on, this tool only
-report summary.</pre>
-</div>
-<p>
-	 </p>
-<p>
-	使用上十分的簡單，最簡單的使用方式就是像使用說明說的一樣，帶入『.』檢查當前目錄下的程式碼。</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e91ef18d-d251-459f-945a-36ea4048979e" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="xml" name="code">
-nsiqcppstyle .</pre>
-</div>
-<p>
-	 </p>
-<p>
-	也可以明確帶入要檢查的目錄讓程式去檢查目錄裡面的程式碼。</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5469d207-c4e1-4ea3-ac71-26c00c5972ae" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="c" name="code">
-nsiqcppstyle "C:\Users\Larry\Documents\Visual Studio 2010\Projects\MFCApplication\MFCApplication"</pre>
-</div>
-<p>
-	 </p>
-<p>
-	或是用『-f』帶入要套用的檢查規則設定檔與要檢查的單一程式碼。</p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ae944cd4-b3d2-4392-a325-2312ae32d4c4" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="xml" name="code">
-nsiqcppstyle -f filefilter.txt Test_nsiqcppstyle.cpp</pre>
-</div>
-<p>
-	 </p>
-<p>
-	 </p>
-<p>
-	這邊需特別注意，在用nsiqcppstyle在做程式碼檢查時，必須先產生檢查規則設定檔，不然運行檢查時會有錯誤產生。</p>
-<p>
-	<img alt="image" border="0" height="350" src="\images\posts\62474\image_thumb.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="681" /></p>
-<p>
-	 </p>
-<p>
-	檢查規則設定檔可是用以指定在進行程式碼檢查時要套用哪些檢查的規則，最簡單的產生方式就是像是下面這樣將所有可用的檢查規則轉印到filefilter.txt檔。</p>
-<p>
-	 </p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e2205f46-422e-4e64-bca3-ad2d98567342" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="xml" name="code">
-nsiqcppstyle.exe -r &gt;&gt; filefilter.txt</pre>
-</div>
-<p>
-	 </p>
-<p>
-	產出的filefilter.txt檔它的內容會像下面這樣：</p>
-<p>
-	 </p>
-<div class="wlWriterSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:329b564a-39de-490e-b20f-9bb91cd2b17b" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
-	<pre class="xml" name="code">
+report summary.
+
+	使用上十分的簡單，最簡單的使用方式就是像使用說明說的一樣，帶入『.』檢查當前目錄下的程式碼。
+
+nsiqcppstyle .
+
+	也可以明確帶入要檢查的目錄讓程式去檢查目錄裡面的程式碼。
+
+nsiqcppstyle "C:\Users\Larry\Documents\Visual Studio 2010\Projects\MFCApplication\MFCApplication"
+
+	或是用『-f』帶入要套用的檢查規則設定檔與要檢查的單一程式碼。
+
+nsiqcppstyle -f filefilter.txt Test_nsiqcppstyle.cpp
+
+	這邊需特別注意，在用nsiqcppstyle在做程式碼檢查時，必須先產生檢查規則設定檔，不然運行檢查時會有錯誤產生。
+
+	檢查規則設定檔可是用以指定在進行程式碼檢查時要套用哪些檢查的規則，最簡單的產生方式就是像是下面這樣將所有可用的檢查規則轉印到filefilter.txt檔。
+
+nsiqcppstyle.exe -r >> filefilter.txt
+
+	產出的filefilter.txt檔它的內容會像下面這樣：
+
 ~ RULE_10_1_A_do_not_use_bufferoverflow_risky_function_for_unix
 ~ RULE_10_1_B_do_not_use_bufferoverflow_risky_function_for_windows
 ~ RULE_3_1_A_do_not_start_filename_with_underbar
@@ -169,69 +119,33 @@ nsiqcppstyle.exe -r &gt;&gt; filefilter.txt</pre>
 ~ RULE_8_1_A_provide_file_info_comment
 ~ RULE_9_1_A_do_not_use_hardcorded_include_path
 ~ RULE_9_2_D_use_reentrant_function
-~ RULE_A_3_avoid_too_deep_blocks</pre>
-</div>
-<p>
-	 </p>
-<p>
-	用這個檢查規則設定檔可以套用所有的檢查規則去做檢查，若有需要也可以開啟這個產生出來的檔案，將不想要檢查的規則給過濾掉。</p>
-<p>
-	 </p>
-<p>
-	檢查規則設定檔準備好後就可以開始運行了，運行後會顯示檢查的結果，檔案哪一行哪一列，違反了哪個規則都會清楚的條列出來。</p>
-<p>
-	<img alt="image" border="0" height="350" src="\images\posts\62474\image_thumb_3.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="681" /></p>
-<p>
-	 </p>
-<p>
-	後面還會依檢查結果做些統計，像是可以取得的檢查規則有幾項、套用的檢查規則有幾項、總共違反幾項規則、總共有幾個錯誤被檢查到、總共分析幾個檔案...等。</p>
-<p>
-	<img alt="image" border="0" height="238" src="\images\posts\62474\image_thumb_4.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="681" /></p>
-<p>
-	 </p>
-<p>
-	若想進一步了解每個檢查規則總共違反的檔案數，或是想要依檔案去查閱違反的檢查規則都可以。</p>
-<p>
-	<img alt="image" border="0" height="238" src="\images\posts\62474\image_thumb_5.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="681" /></p>
-<p>
-	<img alt="image" border="0" height="238" src="\images\posts\62474\image_thumb_6.png" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" width="681" /></p>
-<p>
-	 </p>
-<p>
-	在查閱程式碼檢查出來的結果時，若有不清楚的規則想要查閱更詳細的資料，我們可以回到一開始說的rules目錄將對應的rule檔開啟，或是到N'SIQ CppStyle Style Doc去查閱，這邊都寫得很清楚。</p>
-<p>
-	<img alt="image" border="0" height="484" src="\images\posts\62474\image21_thumb.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="614" /></p>
-<p>
-	 </p>
-<p>
-	若要將nsiqcppstyle與Visual Studio整合也可以，透過Visual Studio的外部工具就可以了，若要檢查整個專案內的程式，需將Command部分設定nsiqcppstyle的主程式，而參數部分設定$(ProjectDir)，『Use Output window』也要記得選取。</p>
-<p>
-	<img alt="image" border="0" height="492" src="\images\posts\62474\image_thumb_9.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="475" /></p>
-<p>
-	 </p>
-<p>
-	運行後程式碼檢查的結果就會輸出在輸出視窗。</p>
-<p>
-	<img alt="image" border="0" height="713" src="\images\posts\62474\image_thumb_10.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="676" /></p>
-<p>
-	 </p>
-<p>
-	若有需要檢查當前開啟的程式碼，也可以透過Visual Studio的外部程式去處理，跟剛剛一樣的步驟參數的部分設定像下面這樣指定檢查規則設定檔與當前開啟的程式碼位置就可以了。</p>
-<p>
-	<img alt="image" border="0" height="492" src="\images\posts\62474\image_thumb_11.png" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" width="475" /></p>
-<p>
-	 </p>
-<h2>
-	Link</h2>
-<ul>
-	<li>
-		nsiqcppstyle - C/C++ Coding Style Checker</li>
-	<li>
-		C/C++编码风格自动检查工具--nsiqcppstyle使用手册--中文版</li>
-	<li>
-		N'SIQ CppStyle</li>
-	<li>
-		N'SIQ CppStyle Rule Server</li>
-	<li>
-		N'SIQ CppStyle Style Doc</li>
-</ul>
+~ RULE_A_3_avoid_too_deep_blocks
+
+	用這個檢查規則設定檔可以套用所有的檢查規則去做檢查，若有需要也可以開啟這個產生出來的檔案，將不想要檢查的規則給過濾掉。
+
+	檢查規則設定檔準備好後就可以開始運行了，運行後會顯示檢查的結果，檔案哪一行哪一列，違反了哪個規則都會清楚的條列出來。
+
+	後面還會依檢查結果做些統計，像是可以取得的檢查規則有幾項、套用的檢查規則有幾項、總共違反幾項規則、總共有幾個錯誤被檢查到、總共分析幾個檔案...等。
+
+	若想進一步了解每個檢查規則總共違反的檔案數，或是想要依檔案去查閱違反的檢查規則都可以。
+
+	在查閱程式碼檢查出來的結果時，若有不清楚的規則想要查閱更詳細的資料，我們可以回到一開始說的rules目錄將對應的rule檔開啟，或是到N'SIQ CppStyle Style Doc去查閱，這邊都寫得很清楚。
+
+	若要將nsiqcppstyle與Visual Studio整合也可以，透過Visual Studio的外部工具就可以了，若要檢查整個專案內的程式，需將Command部分設定nsiqcppstyle的主程式，而參數部分設定$(ProjectDir)，『Use Output window』也要記得選取。
+
+	運行後程式碼檢查的結果就會輸出在輸出視窗。
+
+	若有需要檢查當前開啟的程式碼，也可以透過Visual Studio的外部程式去處理，跟剛剛一樣的步驟參數的部分設定像下面這樣指定檢查規則設定檔與當前開啟的程式碼位置就可以了。
+
+## 
+	Link
+
+		nsiqcppstyle - C/C++ Coding Style Checker
+	
+		C/C++编码风格自动检查工具--nsiqcppstyle使用手册--中文版
+	
+		N'SIQ CppStyle
+	
+		N'SIQ CppStyle Rule Server
+	
+		N'SIQ CppStyle Style Doc

@@ -5,47 +5,12 @@ description: "T4 Template - JsResource.tt"
 tags: [T4, CSharp]
 ---
 
-
 在撰寫 ASP.NET 時，.NET 程式部分可用 Resource 去做多語的部分，JavaScript 這邊雖然也有 L10N 的解決方案，但是若走不同的解決方案，難以避免有些詞彙會重複定義。    
-
-<!-- More -->
-
-<br/>
-
 
 這邊筆者嘗試使用 T4 來解決這樣的問題。  
 
 ```c#
-<#@ template language="C#" debug="false" hostspecific="true"#>
-<#@ assembly name="System.Windows.Forms" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="System.Xml" #>
-<#@ assembly name="EnvDTE" #>
-<#@ assembly name="Microsoft.VisualStudio.OLE.Interop" #>
-<#@ assembly name="Microsoft.VisualStudio.Shell" #>
-<#@ assembly name="Microsoft.VisualStudio.Shell.Interop" #>
-<#@ assembly name="Microsoft.VisualStudio.Shell.Interop.8.0" #>
-<#@ import namespace="System.Resources" #>
-<#@ import namespace="System.Diagnostics" #>
-<#@ import namespace="System.Collections" #>
-<#@ import namespace="System.IO" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Xml" #>
-<#@ import namespace="System.Text.RegularExpressions" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="Microsoft.VisualStudio.Shell" #>
-<#@ import namespace="Microsoft.VisualStudio.Shell.Interop" #>
-<#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
-<#@ output extension=".js"#>
 
-<#
-var path = Path.GetDirectoryName(Host.TemplateFile) + "/App_GlobalResources/";
-var resourceFiles= Directory.GetFiles(path, "*.resx");
-foreach (var resourceFile in resourceFiles) {
-	var fileName = Path.GetFileNameWithoutExtension(resourceFile);
-    var resourceName = Regex.Match(fileName, "([^.]*)").Groups[1].Value;
-#>
 /**
 * Resources
 * ---------
@@ -54,25 +19,11 @@ foreach (var resourceFile in resourceFiles) {
 * 2016 LarryNung
 **/
 
-var <#=resourceName #> = {};
+var  = {};
 
-<#
-var resxSet = new ResXResourceSet(Host.ResolvePath(resourceFile));
-foreach (DictionaryEntry item in resxSet) {
-#>
-<#=resourceName#>.<#=item.Key.ToString() #> = "<#=resxSet.GetString(item.Key.ToString()).Replace("
-", string.Empty).Replace("'","\'")#>";
-<#
- }
-#>
-<#
-SaveOutput(fileName + ".js");
-}
-DeleteOldOutputs();
-#>
-<#+
- 
-    List<string> __savedOutputs = new List<string>();
+. = "";
+
+ __savedOutputs = new List();
     Engine __engine = new Engine();
 
     void DeleteOldOutputs()
@@ -206,30 +157,16 @@ DeleteOldOutputs();
 #>
 ```
 
-<br/>
-
-
 像是這邊筆者準備了不同的資源檔。  
 
 {% img /images/posts/T4JSResource/1.png %}
-
-<br/>
-
 
 透過 T4 會產生對應的 js 檔。  
 
 {% img /images/posts/T4JSResource/2.png %}
 
-<br/>
-
-
 只要將 js 檔引用進來就可以直接使用。  
 
 {% img /images/posts/T4JSResource/3.png %}
 
-<br/>
-
-
 {% img /images/posts/T4JSResource/4.png %}
-
-<br/>

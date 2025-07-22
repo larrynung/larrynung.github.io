@@ -6,7 +6,12 @@ description: "[C#]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
 tags: [CSharp]
 ---
 
-<p>要控制螢幕的開啟、關閉，可透SendMessage發送WM_SYSCOMMAND訊息，wParam參數傳入SC_MONITORPOWER，lParam參數則傳入螢幕的模式。</p>  <p> </p>  <p>參數方面參閱WM_SYSCOMMAND Message</a>，裡面清楚的帶出WM_SYSCOMMAND為0x0112、SC_MONITORPOWER為0xF170、與其對應的lParam。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1010/C_12F22/image_4.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="567" height="37" src="\images\posts\18129\image_thumb_1.png" /></a></p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1010/C_12F22/image_2.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" width="527" height="194" src="\images\posts\18129\image_thumb.png" /></p>  <p> </p>  <p>使用上就像下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:8b674005-2de7-4c52-9d89-88c1ac70d3e2" class="wlWriterSmartContent"><pre name="code" class="c#">
+要控制螢幕的開啟、關閉，可透SendMessage發送WM_SYSCOMMAND訊息，wParam參數傳入SC_MONITORPOWER，lParam參數則傳入螢幕的模式。
+
+  參數方面參閱WM_SYSCOMMAND Message，裡面清楚的帶出WM_SYSCOMMAND為0x0112、SC_MONITORPOWER為0xF170、與其對應的lParam。      
+
+使用上就像下面這樣：
+  
         [DllImport("user32.dll")]
         private static extern int SendMessage(int hWnd, int Msg, int wParam, int lParam);
  
@@ -16,7 +21,9 @@ tags: [CSharp]
         SendMessage(-1,  WM_SYSCOMMAND, SC_MONITORPOWER , -1);
         SendMessage(-1,  WM_SYSCOMMAND, SC_MONITORPOWER , 1);
         SendMessage(-1,  WM_SYSCOMMAND, SC_MONITORPOWER , 2);
-      </pre></div>  <p> </p>  <p>這邊為方便後續使用，將程式整理成類別，有需要的自行取用。</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:c3cd5a55-1615-41d4-9ccd-45dd058acb8b" class="wlWriterSmartContent"><pre name="code" class="c#">
+
+這邊為方便後續使用，將程式整理成類別，有需要的自行取用。
+  
 public static class MonitorControler
     {
         [DllImport("user32.dll")]
@@ -52,4 +59,7 @@ public static class MonitorControler
         {
             ChangeMonitorState(MonitorMode.MONITOR_STANBY);
         }
-    }</pre></div>  <p> </p>  <h2>Link</h2>  <ul>   <li>WM_SYSCOMMAND Message</li> </ul>
+    }
+
+## Link
+     WM_SYSCOMMAND Message

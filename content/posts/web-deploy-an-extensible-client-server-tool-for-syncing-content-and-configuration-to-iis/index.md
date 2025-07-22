@@ -1,20 +1,14 @@
 ---
-title: ">-"
+title: "Web Deploy - An extensible client server tool for syncing content and configuration to IIS"
 date: "2016-12-06 23:43:08"
 tags: [Web Deploy]
 ---
 
-
 Web Deploy 是一 client-server 架構的工具程式，能用來同步 IIS 內容與設定，簡化網頁應用程式或是網站的佈署。  
-
-<!-- More -->
 
 ![1.png](1.png)
 
-<br/>
-
-
-具有以下幾個特點：  
+具有以下幾個特點：
 
 - 與 IIS Manager、Visual Studio 無縫整合，能建立 package 並佈署到本地或是遠端機器
 - 整合 WebMatrix
@@ -37,19 +31,10 @@ Web Deploy 是一 client-server 架構的工具程式，能用來同步 IIS 內�
 -- 使用者可以直接還原站台
 - 支援 CommandLine、PowerShell Cmdlets、與 API
 
-<br/>
-
-
-Web Deploy 在運作上如下圖所示：  
+Web Deploy 在運作上如下圖所示：
 
 ![2.png](2.png)
 
-<br/>
+可以看到來源端與目的端都有許多的 Provider，這些 Provider 能針對 Dump、Sync、Delete 等操作有著各自不同的處理方式。這些 Provider 彼此可以搭配使用，達到更多不同的效果。
 
-
-可以看到來源端與目的端都有許多的 Provider，這些 Provider 能針對 Dump、Sync、Delete 等操作有著各自不同的處理方式。這些 Provider 彼此可以搭配使用，達到更多不同的效果。  
-
-<br/>
-
-
-另外要注意到的是，來源端與目的端電腦之間有兩條可供連線的路，一條是透過 Remote Agent Service，一條是透過 Web Management Service。透過 Remote Agent Service 這條路需使用 Admin 的帳號，若是非 Admin 帳號就要走 Web Management Service 這條路。這兩條路在使用上必須要有所了解，安裝設定或是發生問題時才能知道要怎麼處理。    
+另外要注意到的是，來源端與目的端電腦之間有兩條可供連線的路，一條是透過 Remote Agent Service，一條是透過 Web Management Service。透過 Remote Agent Service 這條路需使用 Admin 的帳號，若是非 Admin 帳號就要走 Web Management Service 這條路。這兩條路在使用上必須要有所了解，安裝設定或是發生問題時才能知道要怎麼處理。

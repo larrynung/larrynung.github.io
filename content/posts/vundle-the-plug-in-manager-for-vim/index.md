@@ -4,27 +4,17 @@ date: "2018-10-22 19:40:20"
 tags: [Vim]
 ---
 
+Vundle 是 Vim 的套件管理程式，安裝可直接透過 git 下載。
 
-Vundle 是 Vim 的套件管理程式，安裝可直接透過 git 下載。  
-
-<!-- more -->
-
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ![1.jpg](1.jpg)
 
-</br>
+下載後開啟 Vim 設定檔。
 
+vi ~/.vimrc
 
-下載後開啟 Vim 設定檔。  
-
-    vi ~/.vimrc
-
-</br>
-
-
-加入設定 (不需要的套件請自行移除)。  
-
+加入設定 (不需要的套件請自行移除)。
 ```
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -70,104 +60,61 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 ```
-
 ![2.jpg](2.jpg)
-
-</br>
-
 
 然後透過命令列命令...
 
-    vim +PluginInstall +qall
+vim +PluginInstall +qall
 
 ![3.jpg](3.jpg)
 
-</br>
+或是 Vim 命令進行安裝。
 
-
-或是 Vim 命令進行安裝。  
-
-    :PluginInstall
+:PluginInstall
 
 ![4.jpg](4.jpg)
 
-</br>
-
-
 ![5.jpg](5.jpg)
 
-</br>
+Vundle 的使用如有不清楚的，可調用 Vim 命令直接查閱。
 
-
-Vundle 的使用如有不清楚的，可調用 Vim 命令直接查閱。 
-
-    :h vundle
+:h vundle
 
 ![6.jpg](6.jpg)
 
-</br>
-
-
 ![7.jpg](7.jpg)
-
-</br>
-
 
 簡單的操作像是安裝套件，可以使用...
 
-    :PluginInstall <Plugin>
+:PluginInstall
 
 ![8.jpg](8.jpg)
 
-</br>
-
-
 ![9.jpg](9.jpg)
-
-</br>
-
 
 顯示安裝的套件可調用...
 
-    :PluginList
+:PluginList
 
 ![10.jpg](10.jpg)
 
-</br>
-
-
 ![11.jpg](11.jpg)
-
-</br>
-
 
 搜尋指定套件可用...
 
-    :PluginSearch <Plugin>
+:PluginSearch
 
 ![12.jpg](12.jpg)
 
-</br>
-
-
 ![13.jpg](13.jpg)
-
-</br>
-
 
 清除套件可用...
 
-    :PluginClean
+:PluginClean
 
 ![14.jpg](14.jpg)
 
-</br>
-
-
 ![15.jpg](15.jpg)
-
-</br>
-
 
 Link
 ----

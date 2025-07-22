@@ -4,23 +4,13 @@ date: "2017-12-24 23:49:23"
 tags: [Parcel]
 ---
 
-
-使用 Parcel 時若發生 SyntaxError: Unexpected token function 錯誤。  
-
-<!-- More -->
-
+使用 Parcel 時若發生 SyntaxError: Unexpected token function 錯誤。
 
 ![1.png](1.png)
 
-<br/>
-
-
-這是因為 Parcel 用到了 Node.js 8.x 的語法，確認 Node.js 是否已更新到指定版本，更新完後即可正常運行。  
+這是因為 Parcel 用到了 Node.js 8.x 的語法，確認 Node.js 是否已更新到指定版本，更新完後即可正常運行。
 
 ![2.png](2.png)
-
-<br/>
-
 
 Link
 ----

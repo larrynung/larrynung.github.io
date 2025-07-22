@@ -5,43 +5,31 @@ description: "Web API - Adding Request.IsLocal to ASP.NET Web API"
 tags: [Web API]
 ---
 
+要判斷 Request 是否為本地 Request，在 ASP.NET 那邊因為 Request 是 HttpRequest 型態，內建有 IsLocal 方法，可以直接叫用判斷。
 
-要判斷 Request 是否為本地 Request，在 ASP.NET 那邊因為 Request 是 HttpRequest 型態，內建有 IsLocal 方法，可以直接叫用判斷。  
+但在 Web API 就沒辦法那麼直接判斷，因為 APIController.Request 是 HttpRequestMessage 型態，沒有 IsLocal 方法可以直接叫用。要自行處理這樣的判斷可以查閱 Request 內的 MS_IsLocal Property 值，這邊國外的網友已經有現成寫好的擴充方法：
 
-<!-- More -->
-
-<br/>
-
-
-但在 Web API 就沒辦法那麼直接判斷，因為 APIController.Request 是 HttpRequestMessage 型態，沒有 IsLocal 方法可以直接叫用。要自行處理這樣的判斷可以查閱 Request 內的 MS_IsLocal Property 值，這邊國外的網友已經有現成寫好的擴充方法：  
-
-```c# 
+```c#
 public static class HttpRequestMessageExtensions
 {
-   public static bool IsLocal(this HttpRequestMessage request)
-   {
-      var localFlag = request.Properties["MS_IsLocal"] as Lazy<bool>;
-      return localFlag != null && localFlag.Value;
-   }
+public static bool IsLocal(this HttpRequestMessage request)
+{
+var localFlag = request.Properties["MS_IsLocal"] as Lazy;
+return localFlag != null && localFlag.Value;
+}
 }
 ```
 
-<br/>
+放進專案中直接使用即可：
 
-
-放進專案中直接使用即可：  
-
-```c# 
+```c#
 public HttpResponseMessage Get()
 {
-    if (Request.IsLocal()) {
-        //do stuff
-    }
+if (Request.IsLocal()) {
+//do stuff
+}
 }
 ```
-
-<br/>
-
 
 Link
 ----

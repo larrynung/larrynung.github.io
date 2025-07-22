@@ -5,28 +5,79 @@ description: "[Performance][C#]StringBuilder與String.Join串接字串時的效�
 tags: [CSharp,Performance]
 ---
 
-<p>這陣子在寫程式寫到要用分隔符號串接字串的時候，想到兩種方法：一種是透過StringBuilder去串字串、一種是先把字串塞到字串陣列，再用String.Join去串字串。雖然StringBuilder對於字串的串接效能做了很大的改善，但我直覺上仍認為後者效率比前者來得佳，特此做個實驗。</p>  <p> </p>  <p>測試程式碼如下：</p>  <p>using System;    <br />using System.Collections.Generic;     <br />using System.Linq;     <br />using System.Text;     <br />using System.Diagnostics;</p>  <p>namespace StringTest    <br />{     <br />    class Program     <br />    {     <br />        static void Main(string[] args)     <br />        {     <br />            string result="";     <br />            int count = 1000;     <br />            Stopwatch sw = Stopwatch.StartNew();     <br />            for (int i = 0; i &lt; count; i++)     <br />            {     <br />                result=Test1();     <br />            }     <br />            sw.Stop();     <br />            Console.WriteLine("Method: String.Join");     <br />            Console.WriteLine("Elapsed Time: "+sw.ElapsedMilliseconds );     <br />            Console.WriteLine("Result: " + result);</p>  <p>            sw = Stopwatch.StartNew();    <br />            for (int i = 0; i &lt; count; i++)     <br />            {     <br />                result = Test2();     <br />            }     <br />            sw.Stop();            <br />            Console.WriteLine("Method: StringBuilder");     <br />            Console.WriteLine("Elapsed Time: " + sw.ElapsedMilliseconds);     <br />            Console.WriteLine("Result: " + result);     <br />        }</p>  <p>        static string Test1()    <br />        {     <br />            int count = 1000;     <br />            string[] strList = new string[count];     <br />            for (int i = 0; i &lt; count; i++)     <br />            {     <br />                strList[i] = i.ToString();     <br />            }     <br />            return string.Join(",", strList);     <br />        }</p>  <p>        static string Test2()    <br />        {     <br />            StringBuilder strList = new StringBuilder();     <br />            int count = 1000;        <br />            for (int i = 0; i &lt; count-1; i++)     <br />            {     <br />                strList.Append (i.ToString() + ",");     <br />            }     <br />            return strList.Append((count-1).ToString()).ToString ();     <br />        }     <br />    }</p>  <p>}</p>  <p> </p>  <p> </p>  <p>執行結果</p>  <p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9264\image_thumb_4.png" width="673" height="442" /></a></p>  <p><a href="http://files.dotblogs.com.tw/larrynung/0907/StringBuilderV.SString.Join_14D78/image_12.png" rel="lightbox"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\9264\image_thumb_5.png" width="673" height="442" /></p>  <p> </p>  <p>這樣看起來String.join方法是比較優一點，但後來經Ammon網友提醒發現這樣的試驗仍有著不公正的因素存在，故測試出來的結果是不正確的。這邊將其實驗代碼修改ㄧ下，把</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:321bc449-f78d-45a2-8d3e-0f7cedf7710d" class="wlWriterSmartContent"><pre name="code" class="c#">strList.Append (i.ToString() + ","); </pre></div>
+這陣子在寫程式寫到要用分隔符號串接字串的時候，想到兩種方法：一種是透過StringBuilder去串字串、一種是先把字串塞到字串陣列，再用String.Join去串字串。雖然StringBuilder對於字串的串接效能做了很大的改善，但我直覺上仍認為後者效率比前者來得佳，特此做個實驗。
 
-<p> </p>
+測試程式碼如下：
+  using System;      
+using System.Collections.Generic;       
+using System.Linq;       
+using System.Text;       
+using System.Diagnostics;  namespace StringTest      
+{       
+    class Program       
+    {       
+        static void Main(string[] args)       
+        {       
+            string result="";       
+            int count = 1000;       
+            Stopwatch sw = Stopwatch.StartNew();       
+            for (int i = 0; i < count; i++)       
+            {       
+                result=Test1();       
+            }       
+            sw.Stop();       
+            Console.WriteLine("Method: String.Join");       
+            Console.WriteLine("Elapsed Time: "+sw.ElapsedMilliseconds );       
+            Console.WriteLine("Result: " + result);              sw = Stopwatch.StartNew();      
+            for (int i = 0; i < count; i++)       
+            {       
+                result = Test2();       
+            }       
+            sw.Stop();              
+            Console.WriteLine("Method: StringBuilder");       
+            Console.WriteLine("Elapsed Time: " + sw.ElapsedMilliseconds);       
+            Console.WriteLine("Result: " + result);       
+        }          static string Test1()      
+        {       
+            int count = 1000;       
+            string[] strList = new string[count];       
+            for (int i = 0; i < count; i++)       
+            {       
+                strList[i] = i.ToString();       
+            }       
+            return string.Join(",", strList);       
+        }          static string Test2()      
+        {       
+            StringBuilder strList = new StringBuilder();       
+            int count = 1000;          
+            for (int i = 0; i < count-1; i++)       
+            {       
+                strList.Append (i.ToString() + ",");       
+            }       
+            return strList.Append((count-1).ToString()).ToString ();       
+        }       
+    }  
+}
 
-<p>改為</p>
+執行結果
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:be4f7701-746f-437f-8add-77d0ecfdc42c" class="wlWriterSmartContent"><pre name="code" class="c#">strList.Append(i);
-strList.Append(",");</pre></div>
+這樣看起來String.join方法是比較優一點，但後來經Ammon網友提醒發現這樣的試驗仍有著不公正的因素存在，故測試出來的結果是不正確的。這邊將其實驗代碼修改ㄧ下，把
+  strList.Append (i.ToString() + ","); 
 
-<p> </p>
+改為
 
-<p>順便加入下面程式碼讓兩個要測試的方法先行編譯，以避免JIT Compiler造成不必要的誤差。</p>
+strList.Append(i);
+strList.Append(",");
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e5790fa2-03bf-4798-a64d-ece97423642c" class="wlWriterSmartContent"><pre name="code" class="c#">//Let JIT compiler precompiler
+順便加入下面程式碼讓兩個要測試的方法先行編譯，以避免JIT Compiler造成不必要的誤差。
+
+//Let JIT compiler precompiler
 Test1(1);
-Test2(1);</pre></div>
+Test2(1);
 
-<p> </p>
+完整程式碼如下：
 
-<p>完整程式碼如下：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:4a56dd70-66f0-4b2c-a7e1-414429fa548a" class="wlWriterSmartContent"><pre name="code" class="c#">using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,7 +105,7 @@ namespace ConsoleApplication17
             long[] elapsedTimes = new long[testTimes];
 
             Console.WriteLine("String.Join...");
-            for (int i = 0; i &lt; testTimes; i++)
+            for (int i = 0; i < testTimes; i++)
             {
                 sw = Stopwatch.StartNew();
                 Test1(dataCount);
@@ -63,10 +114,9 @@ namespace ConsoleApplication17
             }
             Console.WriteLine("Average Elapsed Time: " + elapsedTimes.Average().ToString());
 
-
             Console.WriteLine();
             Console.WriteLine("StringBuilder...");
-            for (int i = 0; i &lt; testTimes; i++)
+            for (int i = 0; i < testTimes; i++)
             {
                 sw = Stopwatch.StartNew();
                 Test2(dataCount);
@@ -79,7 +129,7 @@ namespace ConsoleApplication17
         static string Test1(int count)
         {
             string[] strList = new string[count];
-            for (int i = 0; i &lt; count; i++)
+            for (int i = 0; i < count; i++)
             {
                 strList[i] = i.ToString();
             }
@@ -89,7 +139,7 @@ namespace ConsoleApplication17
         static string Test2(int count)
         {
             StringBuilder strList = new StringBuilder();            
-            for (int i = 0; i &lt; count - 1; i++)
+            for (int i = 0; i < count - 1; i++)
             {
                 strList.Append(i);
                 strList.Append(",");
@@ -97,14 +147,6 @@ namespace ConsoleApplication17
             return strList.Append(count - 1).ToString();
         } 
     }
-}</pre></div>
+}
 
-<p> </p>
-
-<p>為避免誤差，這邊多運行了幾次，運行結果如下：</p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\9264\image_thumb_7.png" width="329" height="511" /> </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\9264\image_thumb_8.png" width="313" height="495" /> </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="\images\posts\9264\image_thumb_9.png" width="337" height="495" /></p>
+為避免誤差，這邊多運行了幾次，運行結果如下：

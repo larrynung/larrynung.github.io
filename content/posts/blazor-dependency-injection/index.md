@@ -4,13 +4,7 @@ date: "2019-07-16 19:12:34"
 tags: [Blazor]
 ---
 
-
 Blazor component 若需要使用 Service，可透過 DI 注入。  
-
-<!-- More -->
-
-</br>
-
 
 像是 Blazor 範本內就有一個 Service。  
 
@@ -18,7 +12,6 @@ Blazor component 若需要使用 Service，可透過 DI 注入。
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-
 
 namespace WebApplication1.Data
 {
@@ -29,8 +22,7 @@ namespace WebApplication1.Data
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-
-        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        public Task GetForecastAsync(DateTime startDate)
         {
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -46,9 +38,6 @@ namespace WebApplication1.Data
 
 ![1.png](1.png)
 
-</br>
-
-
 這個 Service 會在 Startup.ConfigureServices 這邊加入，指定為 Singleton 的 Service。  
 
 ```c#
@@ -57,14 +46,11 @@ public class Startup
     ...
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton<WeatherForecastService>();
+        services.AddSingleton();
     }
     ...
 }
 ```
-
-</br>
-
 
 ```c#
 using System;
@@ -79,7 +65,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApplication1.Data;
 
-
 namespace WebApplication1
 {
     public class Startup
@@ -89,9 +74,7 @@ namespace WebApplication1
             Configuration = configuration;
         }
 
-
         public IConfiguration Configuration { get; }
-
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -99,9 +82,8 @@ namespace WebApplication1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton();
         }
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -117,13 +99,10 @@ namespace WebApplication1
                 app.UseHsts();
             }
 
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-
             app.UseRouting();
-
 
             app.UseEndpoints(endpoints =>
             {
@@ -136,9 +115,6 @@ namespace WebApplication1
 ```
 
 ![2.png](2.png)
-
-</br>
-
 
 然後在 Blazor component 中透過 @inject directive 注進 Service。  
 
@@ -154,55 +130,41 @@ namespace WebApplication1
 }
 ```
 
-</br>
-
-
-
 ```c#
 @page "/fetchdata"
 @using WebApplication1.Data
 @inject WeatherForecastService ForecastService
 
+# Weather forecast
 
-<h1>Weather forecast</h1>
-
-
-<p>This component demonstrates fetching data from a service.</p>
-
+This component demonstrates fetching data from a service.
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    Loading...
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
+
+                Date
+                Temp. (C)
+                Temp. (F)
+                Summary
+
             @foreach (var forecast in forecasts)
             {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
+                
+                    @forecast.Date.ToShortDateString()
+                    @forecast.TemperatureC
+                    @forecast.TemperatureF
+                    @forecast.Summary
+                
             }
-        </tbody>
-    </table>
-}
 
+}
 
 @code {
     WeatherForecast[] forecasts;
-
 
     protected override async Task OnInitAsync()
     {
@@ -212,9 +174,6 @@ else
 ```
 
 ![3.png](3.png)
-
-</br>
-
 
 運行後可看到 Blazor component 可以正常的從注入的 Service 取得資料做呈現。  
 

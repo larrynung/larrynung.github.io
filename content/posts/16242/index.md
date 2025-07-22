@@ -5,18 +5,19 @@ description: "[VB.NET]MDI Thumbnail Preview"
 tags: [VB.NET]
 ---
 
-<p>最近試著把MDI視窗加上Thumbnail Preview功能，找來找去找不到相關的技術文件，只好硬幹處理，這邊簡單記錄一下簡陋的作法。</p>  <p>要為MDI視窗加上Thumbnail Preview功能，必須知道如何透過複寫ProcessCmdKey把Ctrl+Tab切換MDI子視窗的動作給過濾掉，就像下面這樣：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7981f01c-9a9d-485e-aa01-2e37eea7ad39" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+最近試著把MDI視窗加上Thumbnail Preview功能，找來找去找不到相關的技術文件，只好硬幹處理，這邊簡單記錄一下簡陋的作法。
+  
+要為MDI視窗加上Thumbnail Preview功能，必須知道如何透過複寫ProcessCmdKey把Ctrl+Tab切換MDI子視窗的動作給過濾掉，就像下面這樣：
+      Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
         If keyData = (Keys.Control Or Keys.Tab) Then
             Return True
         End If
         Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function</pre></div>
+    End Function
 
-<p> </p>
+了解如何過濾掉預設的切換動作後，我們必須改寫讓系統先彈出Thumbnail Preview對話盒，把對話盒放至中間，在Thumbnail Preview對話盒關閉時，把子視窗切至Thumbnail Preview對話盒最後選取的子視窗，像是下面這樣：
 
-<p>了解如何過濾掉預設的切換動作後，我們必須改寫讓系統先彈出Thumbnail Preview對話盒，把對話盒放至中間，在Thumbnail Preview對話盒關閉時，把子視窗切至Thumbnail Preview對話盒最後選取的子視窗，像是下面這樣：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:57b3359d-0b1b-447a-908a-846d4f414839" class="wlWriterEditableSmartContent"><pre name="code" class="vb">    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
         If keyData = (Keys.Control Or Keys.Tab) Then
             Dim thumbnailDlg As New ThumbnailDialog(Me)
             thumbnailDlg.ShowInTaskbar = False
@@ -28,13 +29,11 @@ tags: [VB.NET]
             Return True
         End If
         Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function</pre></div>
+    End Function
 
-<p> </p>
+至於Thumbnail Preview對話盒則必須要做到放開Ctrl就關閉，與按下Ctrl + Tab切換子視窗選項的功能，簡單的範例如下：
 
-<p>至於Thumbnail Preview對話盒則必須要做到放開Ctrl就關閉，與按下Ctrl + Tab切換子視窗選項的功能，簡單的範例如下：</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:334ab4d7-c858-47f5-9ee1-6ab68e2ec0f4" class="wlWriterEditableSmartContent"><pre name="code" class="vb">Imports System.Windows.Forms
+Imports System.Windows.Forms
 
 Public Class ThumbnailDialog
 
@@ -74,7 +73,7 @@ Public Class ThumbnailDialog
 
     Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
         If keyData = (Keys.Control Or Keys.Tab) Then
-            If ListBox1.Items.Count &gt; 1 Then
+            If ListBox1.Items.Count > 1 Then
                 ListBox1.SelectedIndex = (ListBox1.SelectedIndex + 1) Mod ListBox1.Items.Count
             End If
             Return True
@@ -113,16 +112,10 @@ Public Class ThumbnailDialog
         End If
         PictureBox1.Image = thumbnailImage
     End Sub
-End Class</pre></div>
+End Class
 
-<p> </p>
+下面是醜醜的執行範例圖(美工部分請自行補強)：
 
-<p>下面是醜醜的執行範例圖(美工部分請自行補強)：</p>
+## Download
 
-<p><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="\images\posts\16242\image_thumb.png" width="652" height="495" /> </p>
-
-<p> </p>
-
-<h2>Download</h2>
-
-<p>MDIThumbnailPreview.zip</p>
+MDIThumbnailPreview.zip
