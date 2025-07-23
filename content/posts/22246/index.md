@@ -69,7 +69,7 @@ namespace LazyDemo
 ```
 運行結果如下：
 
-![](\images\posts\22246\image_thumb.png)
+![](/images/posts/22246/)
 
 ## Download
 

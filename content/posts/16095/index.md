@@ -7,7 +7,7 @@ tags: [VB.NET]
 
 我們必需要了解的是在序列化時，通常知道的資訊只有要序列化的物件個體，或是其類別型態。從類別型態我們必需往回推敲出該型態所在的組件位置，有了組件位置我們就可以斷定Xml序列化組件的位置，如此就能從該組件中取出可以加速的Serializer。
 
-![](\images\posts\16095\image_thumb.png)
+![](/images/posts/16095/)
 
 就像下面這段程式就可以取得XML序列化組件內的XmlSerializer，若找不到XML序列化組件內的XmlSerializer則會回傳本來的XmlSerializer：
 ```

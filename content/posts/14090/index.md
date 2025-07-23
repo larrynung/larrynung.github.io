@@ -11,8 +11,8 @@ Box Selection功能在以往的Visual Studio就已存在，只要按下Ctrl按�
 
 而在VS2010中，整合開發環境開始支援更為簡易的多行編輯方式。在使用上，必須先做矩形範圍的選取。
 
-![](\images\posts\14090\image_thumb.png)
+![image_thumb.png](/images/posts/14090/image_thumb.png)
 
 再鍵入要輸要編輯的字串即可。
 
-![](\images\posts\14090\image_thumb_1.png)
+![image_thumb_1.png](/images/posts/14090/image_thumb_1.png)

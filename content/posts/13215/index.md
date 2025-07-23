@@ -17,4 +17,4 @@ tags: [Other]
 
 可惜的是這次的聚會我又不克參加，不能湊湊熱鬧。希望下次能再有機會摟^^
 
-![](\images\posts\13215\IMGP0144_thumb.jpg)
+![](/images/posts/13215/)

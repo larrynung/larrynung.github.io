@@ -184,9 +184,9 @@ pbxPhoto.Image = image;
 ```
 實際運行後可以看到我們正確的將臉部給標示出來，跟Picasa上看到的臉部範圍完全一樣。
 
-![](\images\posts\18a821c3-954e-402a-8a9c-16185fa84576\image_thumb_2.png) 
+![](/images/posts/18a821c3-954e-402a-8a9c-16185fa84576/)
 
-![](\images\posts\18a821c3-954e-402a-8a9c-16185fa84576\image_thumb_3.png)
+![](/images/posts/18a821c3-954e-402a-8a9c-16185fa84576/)
 
 ## Link
 

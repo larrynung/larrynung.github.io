@@ -1,12 +1,1 @@
----
-title: "[Visual Studio]Process Pro Extension v1.2"
-date: "2013-11-06 12:00:00"
-description: "[Visual Studio]Process Pro Extension v1.2"
----
-
-前陣子筆者在[Visual Studio]Process Pro Extension v1.0這篇先丟出了一版堪用Process Pro Extension版本，只是達到了最基本的需求，但是效能跟功能面都還是不太夠，離筆者想要的東西也還有點距離。因此筆者持續地修改並朝著往目標邁進，再推了一版比v1.0稍稍好一點點的v1.2版，這篇簡單的帶一下。
-
-有需要的使用者可透過Visual Studio的Extensions and Updates去更新，若是看不到更新可以先移除後再裝，因為筆者在v1.1時有改過Extension的metadata，所以可能無法直接從v1.0升上去。
-
-v1.2版的UI外觀如下，Filter的浮水印終於加上去了...orz，上方也多了幾個工具列按鈕。可以方便使用者全選後Attach、Detach Process。
-<img  border="0" alt="image" src="\images\posts
+![image_thumb.png](/images/posts/c6a286e0-ea73-42bf-b9cd-50cb49c695d6/image_thumb.png)

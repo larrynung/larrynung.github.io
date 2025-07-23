@@ -151,7 +151,7 @@ End Class
 
 類別圖如下：
 
-![](\images\posts\19711\image_thumb_1.png) 
+![](/images/posts/19711/)
 
 裡面只有簡單的幾個方法與屬性，Permission屬性是當前的權限，AllPermission是最高權限，AddPermission是用來增加權限，ContainsPermission用來判斷是否有特定的權限，RemovePermission可移除特定權限，LoadPermission用以設定當前權限。
 
@@ -189,7 +189,7 @@ End Module
 
 運行結果：
 
-![](\images\posts\19711\image_thumb_2.png)
+![](/images/posts/19711/)
 
 ## Link
 

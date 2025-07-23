@@ -1,11 +1,1 @@
----
-title: "開啟Win7隱藏的各國佈景主題"
-date: "2013-11-06 12:00:00"
-description: "開啟Win7隱藏的各國佈景主題"
----
-
-Win7在安裝完後，在安裝目錄下會有隱藏的各國佈景主題，其存放位置為"C:\Windows\Globalization\MCT"。
-
-該存放位置在預設是隱藏的，可透過[組合管理]→[資料夾和搜尋選項]，叫起[資料夾選項]對話框。
-
-<img  title="image" border="0" alt="image" src="\images\posts
+![image_thumb_4.png](/images/posts/cb40e40d-811b-4a66-b182-107d75e32181/image_thumb_4.png)

@@ -6,10 +6,10 @@ description: "[IADP]Software search issue"
 
 當初在撰寫[IADP]Intel AppUp(SM) Center這篇時，稍微試了一下搜尋軟體的功能，以Alex Lee所上傳的ProcessViewerLight下去做了測試，意外的發現我找不到該軟體。
 
-![](\images\posts\175955d6-e993-4549-8107-22727ec3b1be\image_thumb_1.png)
+![](/images/posts/175955d6-e993-4549-8107-22727ec3b1be/)
 
 本來以為自己的操作錯誤了，或是Intel AppUp Center無法搜到上傳上去的軟體，抑或是目前該軟體處在某個狀態使得透過Intel AppUp Center暫時無法搜尋到。
 
 向Bill叔確定後發現，原來我的操作流程並沒有錯誤，軟體也該要被正常搜到才是，像是Bill叔的軟體就可以正常的搜到。最後發現會造成這樣的問題，其實是因為在Pricing步驟中未輸入軟體的Keywords，而Intel AppUp Center又不會以軟體的名稱為最基本的關鍵字，才導致發生這樣的問題。故在Intel修正前需特別注意軟體Keywords一定要輸入，這樣不僅可以讓您的軟體曝光的機率更高，也不至於讓軟體消失在Intel AppUp Center。
 
-![](\images\posts\175955d6-e993-4549-8107-22727ec3b1be\image_thumb_2.png)
+![](/images/posts/175955d6-e993-4549-8107-22727ec3b1be/)

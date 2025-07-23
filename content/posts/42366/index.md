@@ -67,20 +67,20 @@ _$field$ = value;
 
 將其複製下來存至 [My Documents]\Visual Studio 11\Code Snippets\Visual C++\My Code Snippets 下，副檔名為snippet。
 
-![](\images\posts\42366\image_thumb_1.png)
+![](/images/posts/42366/)
 
 放置好後可叫出Code Snippets Manager查看。
 
-![](\images\posts\42366\image_thumb_3.png)
+![](/images/posts/42366/)
 
 剛剛手動加入的Code Snippet應該可在Code Snippets Manager看到。
 
-![](\images\posts\42366\image_thumb_5.png)
+![](/images/posts/42366/)
 
 使用上在編譯視窗內輸入nprop，連按兩次[Tab]按鍵。
 
-![](\images\posts\42366\image_thumb_2.png)
+![](/images/posts/42366/)
 
 Nativated Property的程式碼片斷就會輸入到編輯區中，再針對屬性的型態、屬性的名稱做些調整就可以了。
 
-![](\images\posts\42366\image_thumb_4.png)
+![](/images/posts/42366/)

@@ -50,4 +50,4 @@ select ipAddress);
 ```
 運行結果：
 
-![](\images\posts\32458\image_thumb.png)
+![](/images/posts/32458/)

@@ -41,7 +41,7 @@ return base.CreateParams;
 
 運行起來視窗的ClassName也是不太對勁。
 
-![](\images\posts\43587ea2-bd7c-4317-b931-6e56c8801f45\image_thumb_1.png)
+![](/images/posts/43587ea2-bd7c-4317-b931-6e56c8801f45/)
 
 因此在.NET程式中做視窗訊息的傳送，多半都還是使用視窗標題去找尋視窗的Handle，這樣就衍生出視窗標題會有重覆、或是要隱藏接收訊息的視窗、隱藏的視窗會閃爍或突然出現之類的問題。
 
@@ -366,4 +366,4 @@ SendMessage(handle, 0x401, IntPtr.Zero, IntPtr.Zero);
 
 運行起來可以看到我們可以透過指定ClassName的方式去傳送訊息了。
 
-![](\images\posts\43587ea2-bd7c-4317-b931-6e56c8801f45\image_thumb.png)
+![](/images/posts/43587ea2-bd7c-4317-b931-6e56c8801f45/)

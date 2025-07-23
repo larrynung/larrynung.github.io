@@ -31,7 +31,7 @@ End Class
 ```
 就算DataGridView有設定AllowUserToAddRows，DataGridView也是無法做新增的動作。
 
-![](\images\posts\15130\image_thumb.png)
+![](/images/posts/15130/)
 
 要解決這樣的問題，可以把集合類別設至BindingSource，把AllowNew屬性設起來，再把BindingSource給繫到DataGridView就可以了。
 ```
@@ -49,4 +49,4 @@ End Sub
 
 End Class
 ```
-![](\images\posts\15130\image_thumb_1.png)
+![](/images/posts/15130/)

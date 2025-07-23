@@ -127,4 +127,4 @@ return 0;
 ```
 運行結果如下，可以看到一開始是未初始化的，當使用了Lazy.m_result才會做初始的動作，也才可以取到我們想要的值。
 
-![](\images\posts\38161\image_thumb.png)
+![](/images/posts/38161/)

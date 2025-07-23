@@ -80,6 +80,6 @@ End Class
 ```
 執行後表單中的控制項就可以直接透過滑鼠拖曳。
 
-![](\images\posts\16012\image_thumb.png)
+![](/images/posts/16012/)
 
-![](\images\posts\16012\image_thumb_1.png)
+![](/images/posts/16012/)

@@ -79,7 +79,7 @@ UpdateRadiationValue();
 ```
 運行結果如下:
 
-![](\images\posts\21890\image_thumb.png)
+![](/images/posts/21890/)
 
 ## Download
 

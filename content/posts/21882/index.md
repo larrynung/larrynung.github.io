@@ -39,4 +39,4 @@ return baseUri.MakeRelativeUri(targetUri).ToString().Replace(@"/", @"\");
 ```
 運行結果如下：
 
-![](\images\posts\21882\image_thumb.png)
+![](/images/posts/21882/)

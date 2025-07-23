@@ -169,4 +169,4 @@ End Class
 
 運行結果
 
-![](\images\posts\14572\image_thumb_1.png)
+![](/images/posts/14572/)

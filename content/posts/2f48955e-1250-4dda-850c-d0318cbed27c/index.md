@@ -8,7 +8,7 @@ tags: [CSharp]
 
 要用Windows Shell來做Zip檔的壓縮與解壓縮，因為我們要使用Shell的功能，因此首先必須將Microsoft Shell Controls and Automation組件加入參考。
 
-![](\images\posts\2f48955e-1250-4dda-850c-d0318cbed27c\image_thumb.png)
+![](/images/posts/2f48955e-1250-4dda-850c-d0318cbed27c/)
 
 組件參考加入後，還要記得引用Shell32命名空間，引用後我們可以開始進行Zip檔的壓縮與解壓縮。程式部份很簡單，Windows Shell將一般檔案系統的目錄與壓縮檔皆視為一個Folder物件。因此壓縮時是將檔案目錄裡面的FolderItems拷貝到壓縮檔的Folder物件，解壓縮就是將壓縮檔的FolderItems拷貝到目的目錄的Folder物件。這邊特別要注意的是要是壓縮時壓縮檔不存在的話，需要建立一個空的檔案，這樣程式才能正常的取得壓縮檔Folder物件。
 

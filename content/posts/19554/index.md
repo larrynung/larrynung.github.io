@@ -9,7 +9,7 @@ tags: [CSharp]
 
 若是在C#中想要使用VB.NET中的CallByName函式，我們可以將Microsoft.VisualBasic.dll加入參考。
 
-![](\images\posts\19554\image_thumb.png)
+![](/images/posts/19554/)
 
 並在程式碼上方加入Microsoft.VisualBasic與Microsoft.VisualBasic.CompilerServices這兩個命名空間
 ```

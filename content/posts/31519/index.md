@@ -99,4 +99,4 @@ targetStream.Write(sourceStream, 1024, (sender, e) => { Console.WriteLine(e.Prog
 ```
 運行結果如下：
 
-![](\images\posts\31519\image_thumb.png)
+![](/images/posts/31519/)

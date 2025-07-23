@@ -12,7 +12,7 @@ description: ".NET 4.0 New Feature - Concurrent Collection"
 
 下面是MSDN對這幾個新的集合的描述：
 
-![](\images\posts\3627dd59-2fad-436c-b715-b117bfdc43ef\image_thumb.png)
+![](/images/posts/3627dd59-2fad-436c-b715-b117bfdc43ef/)
 
 ## Link
 - 安全執行緒集合

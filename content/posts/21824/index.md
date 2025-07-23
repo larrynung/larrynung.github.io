@@ -327,7 +327,7 @@ listBox1.Items.Add(item);
 
 運行結果如下：
 
-![](\images\posts\21824\image_thumb.png)
+![](/images/posts/21824/)
 
 ##
 Download
