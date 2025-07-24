@@ -1,0 +1,47 @@
+baseURL = 'https://larrynung.github.io/'
+theme = 'PaperMod'
+title = 'LevelUp'
+defaultContentLanguage = 'en'
+languageCode = 'en'
+languageName = 'English'
+hasCJKLanguage = true
+copyright = "{year} Larry Nung"
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+summaryLength = 15
+
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = "page"
+
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    title = "文章列表"
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    name = "標籤"
+    url = "/tags/"
+    title = "標籤"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    style = 'dracula'
+    tabWidth = 4

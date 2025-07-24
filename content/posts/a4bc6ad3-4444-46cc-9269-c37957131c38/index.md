@@ -2,9 +2,8 @@
 title: "Google Plus One API"
 date: "2013-11-06 12:00:00"
 description: "Google Plus One API"
-tags: [
-  {lang: 'zh-TW', parsetags: 'explicit'}]
----Google近期推出了Plus One功能，類似於Facebook上的讚，你可以透過Plus One功能對你覺得喜歡的內容做個標記。詳細介紹可參閱Google的介紹影片：
+tags: ["Google", "API", "Plus One"]
+---
 
 若將這樣的功能加入到自己的網站，可透過Google Plus One API來完成。只要簡簡單單的在網站上加入JavaScript標記。
 

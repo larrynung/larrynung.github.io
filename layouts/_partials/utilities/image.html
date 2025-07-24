@@ -1,0 +1,9 @@
+{{/* 簡化版圖片處理模板 - 避免複雜的圖片優化 */}}
+{{ if .src }}
+  <img 
+    src="{{ .src | relURL }}" 
+    {{ with .class }}class="{{ . }}"{{ end }}
+    {{ with .alt }}alt="{{ . }}"{{ else }}alt=""{{ end }}
+    loading="lazy"
+  />
+{{ end }}

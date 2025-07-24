@@ -1,0 +1,16 @@
+{{ $title := .Title }}
+{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+{{ with .Site.Params.social.twitter }}
+<meta name="twitter:site" content="@{{ . }}" />
+{{ end }}
+
+{{ with .Site.Params.images }}
+{{ range first 1 . }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{ end }}
+{{ end }}
