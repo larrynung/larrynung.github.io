@@ -1,5 +1,5 @@
 +++
-title = "Coze Studio - Getting Started
+title = "Coze Studio - Getting Started"
 date = "2025-08-11T00:05:59+08:00"
 tags = ["Coze Studio", "AI", "開源", "Docker"]
 draft = false
