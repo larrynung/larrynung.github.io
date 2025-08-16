@@ -1,7 +1,6 @@
 ---
 title: "Obsidian - Sync notes with 'Google Drive Sync' plugin"
 date: "2025-08-14 00:01:21"
-draft: true
 tags: ["Obsidian", "Google Drive Sync", "Google Drive"]
 ---
 
