@@ -22,11 +22,18 @@ BMAD 方法有兩大關鍵創新：
 
 ## 快速開始
 
+### 安裝步驟
+
+使用以下命令安裝 BMAD-METHOD：
+
 ```bash
+# 安裝最新版本
 npx bmad-method install
-# OR explicitly use stable tag:
+
+# 或安裝穩定版本
 npx bmad-method@stable install
-# OR if you already have BMad installed:
+
+# 如果已經安裝過 BMAD，進行更新
 git pull
 npm run install:bmad
 ```
@@ -37,12 +44,13 @@ npm run install:bmad
 
 ![bmad-method install 3](images/install-bmad-method-3.png)
 
+### 安裝完成
 
-BMAD-METHOD 安裝完成後會看到 .bmad-core 目錄跟安裝時設定的 IDE 對應目錄，裡面放有後續會使用到的提示詞。
+安裝完成後，您會看到 `.bmad-core` 目錄，其中包含 BMAD-METHOD 的配置文件和提示詞模板。
 
 ![bmad-method installed](images/bmad-method-installed.png)
 
 ## 資源
 
-- [官方文檔](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/docs/user-guide.md)
-- [GitHub 倉庫](https://github.com/bmad-code-org/BMAD-METHOD)
+- [BMAD-METHOD User Guide](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/docs/user-guide.md)
+- [BMAD-METHOD GitHub Repository](https://github.com/bmad-code-org/BMAD-METHOD)
