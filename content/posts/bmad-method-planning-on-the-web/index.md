@@ -20,7 +20,7 @@ BMAD-METHOD 官方維護的核心提示詞資源都開源在 GitHub 上，供任
 
 ## 第二步：設定 BMAD-METHOD Gemini Gem
 
-這個步驟非常簡單。
+這邊以 Gemini Gem 上的使用為例。
 
 1.  在 Gemini 中，選擇「新增 Gem」。
 
