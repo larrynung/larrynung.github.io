@@ -1,5 +1,6 @@
 ---
 description: 建立與發布 Hugo 部落格文章的工作流程指南
+auto_execution_mode: 1
 ---
 
 # Hugo 文章新增與發布工作流程
@@ -13,7 +14,7 @@ description: 建立與發布 Hugo 部落格文章的工作流程指南
 cd /path/to/your/hugo/site
 
 # 建立新文章（會自動建立目錄和 index.md）
-hugo new posts/文章名稱/index.md
+hugo new content content/posts/文章名稱/index.md
 ```
 
 **思考過程**：
