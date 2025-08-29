@@ -65,12 +65,16 @@ Claude Code Router 提供兩種配置方式，您可以選擇其中一種方式�
 
 ![路由器配置](images/router-configuration.png)
 
-- `default`：一般任務的預設模型
-- `background`：後台任務使用的模型（可選用較小的本地模型以節省成本）
-- `think`：用於推理密集型任務的模型（如計劃模式）
-- `longContext`：處理長上下文（> 60K tokens）的模型
-- `longContextThreshold`（可選）：觸發長上下文模型的 token 閾值（預設 60000）
-- `webSearch`：用於網頁搜尋任務的模型（需模型支援，OpenRouter 用戶需在模型名稱後加上 `:online` 後綴）
+| 配置項 | 說明 | 範例 |
+|--------|------|------|
+| `default` | 一般任務的預設模型 | `"anthropic/claude-3.5-sonnet"` |
+| `background` | 後台任務使用的模型（可選用較小的本地模型以節省成本） | `"local/llama3-8b"` |
+| `think` | 用於推理密集型任務的模型（如計劃模式） | `"anthropic/claude-3-opus"` |
+| `longContext` | 處理長上下文（> 60K tokens）的模型 | `"anthropic/claude-3.5-sonnet-200k"` |
+| `longContextThreshold` | 觸發長上下文模型的 token 閾值（可選，預設 60000） | `60000` |
+| `webSearch` | 用於網頁搜尋任務的模型（需模型支援） | `"openrouter/anthropic/claude-3.5-sonnet:online"` |
+
+> **注意**：OpenRouter 用戶需在 `webSearch` 的模型名稱後加上 `:online` 後綴才能啟用網頁搜尋功能。
 
 ## 動態切換模型
 
