@@ -1,7 +1,6 @@
 ---
 title: 'JetBrains Junie - Getting Started'
 date: '2025-09-02T23:18:39+08:00'
-draft: true
 tags: ['JetBrains', 'Junie']
 ---
 
