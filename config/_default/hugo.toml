@@ -41,7 +41,9 @@ summaryLength = 15
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = false
-    noClasses = true
+    noClasses = false
     noHl = false
     style = 'dracula'
     tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true
