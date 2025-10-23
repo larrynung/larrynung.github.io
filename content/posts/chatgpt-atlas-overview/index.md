@@ -48,13 +48,15 @@ OpenAI 致力於用戶隱私保護。ChatGPT Atlas 內建多項功能，如網�
 
 
 ## ChatGPT 側邊欄
-此圖展示了 ChatGPT Atlas 的核心介面，其中 ChatGPT 功能與瀏覽器側邊欄緊密結合，提供即時的 AI 協助與互動。
+ChatGPT Atlas 的核心介面有將 ChatGPT 功能與瀏覽器側邊欄緊密結合，透過左上方的 Icon 或是熱鍵 `⇧⌘H` 展開，提供即時的 AI 協助與互動。
 ![ChatGPT Atlas 側邊欄 ChatGPT 整合](images/atlas-sidebar-chatgpt-integration.png)
 
 
 ## 詢問 ChatGPT 側邊欄
 
-ChatGPT Atlas 的側邊欄功能，讓您能在瀏覽任何網頁時，即時與 ChatGPT 互動。以下我們以 OpenAI 官方網站為例，示範側邊欄如何協助您理解網頁內容：
+ChatGPT Atlas 的側邊欄功能，讓您能在瀏覽任何網頁時，即時與 ChatGPT 互動，可透過右上方的 `詢問 ChatGPT` Icon 或是熱鍵 `⌘>` 展開。
+
+以下我們以 OpenAI 官方網站為例，示範側邊欄如何協助您理解網頁內容：
 ![ChatGPT Atlas 側邊欄功能示範：OpenAI 網站](images/atlas-openai-webpage.png)
 
 透過側邊欄，您可以快速獲取當前網頁的文章摘要，了解其核心理念、主要特色、發佈資訊和未來規劃。
