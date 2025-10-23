@@ -1,10 +1,8 @@
 ---
 title: '探索 ChatGPT Atlas：內建 AI 的智慧瀏覽器'
-date: 2025-09-04T10:14:34+08:00
+date: 2025-10-23T10:14:34+08:00
 tags: ['ChatGPT', 'AI', 'Browser']
 ---
-
-# 探索 ChatGPT Atlas：內建 AI 的智慧瀏覽器
 
 ## 前言
 
