@@ -12,26 +12,33 @@ C#中的foreach迴圈並不僅僅是do…while或是for迴圈的變形。它會�
 
 	1.foreach迴圈寫法  
 
-	int[] foo = new int[100];
+```csharp
+int[] foo = new int[100];
 foreach(int i in foo)
     Console.WriteLine(i.ToString());
+```
 
 	2.for迴圈寫法
 
-	int[] foo = new int[100];
+```csharp
+int[] foo = new int[100];
 for(int index=0;index<foo.Length;index++)
     Console.WriteLine(foo[index].ToString());
+```
 
 	3.for迴圈寫法 (結束條件提到迴圈外)
 
-	int[] foo = new int[100];
+```csharp
+int[] foo = new int[100];
 int len = foo.Length;
 for(int index=0;index<len;index++)
     Console.WriteLine(foo[index].ToString());
+```
 
 	據作者所述，第一個迴圈的寫法，在.NET1.1以後的版本，其效率最佳，程式碼也最少。而第三個迴圈寫法是最慢的，因為這樣刻意的把結束條件提出迴圈外，會阻礙JIT編譯器移除迴圈內的範圍檢查，讓JIT編譯器編譯成下面這樣：
 
-	int[] foo = new int[100];
+```csharp
+int[] foo = new int[100];
 int len = foo.Length;
 for(int index=0;index<len;index++){
     if(index<foo.Length)
@@ -39,21 +46,26 @@ for(int index=0;index<len;index++){
     else
         throw new IndexOutOfRangeException();
 }
+```
 
 	在.NET 1.0以前，使用foreach效率上會較差，因為JIT編譯器會把程式編譯成下面這樣：
 
-	IEnumerator it = foo.GetEnumerator();
+```csharp
+IEnumerator it = foo.GetEnumerator();
 while(it.MoveNext())
 {
    int i = (int) it.Current;
    Console.WriteLine(i.ToString());
 }
+```
 
 	這樣的程式會產生裝箱與拆箱，因此在效能上會有不良的影響。但在.NET 1.1以後的版本，JIT編譯器會把程式編譯成下面這樣：
 
-	int[] foo = new int[100];
+```csharp
+int[] foo = new int[100];
 for(int index=0;index<foo.Length;index++)
     Console.WriteLine(foo[index].ToString());
+```
 
 	所以我們可以得知，使用foreach來處理迴圈，編譯器會幫我們自動產生最佳的程式碼，程式也較短較易閱讀。
 

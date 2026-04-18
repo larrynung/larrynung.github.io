@@ -10,33 +10,37 @@ tags: [CSharp]
 
 	以列舉型別來看，假設今天我有一個列舉型別：
 
-	enum Sex
-    {
-        Boy=1,
-        Girl=2
-    }
+```csharp
+enum Sex
+{
+    Boy=1,
+    Girl=2
+}
+```
 
 	其列舉值並未從0，而是從1開始。則初始值0對該列舉來說，是一個無效的狀態。程式也可能因此無法正常運作。像是：
 
-	class Program
+```csharp
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Person p=new Person();
-            //p.Sex = Sex.Boy;
-            Console.WriteLine(p.Sex.ToString ());        
-        }
+        Person p=new Person();
+        //p.Sex = Sex.Boy;
+        Console.WriteLine(p.Sex.ToString());        
     }
-    enum Sex
-    {
-        Boy = 1,
-        Girl = 2
-    }
-    struct Person
-    {
-        public String Name;
-        public Sex Sex ;
-    }
+}
+enum Sex
+{
+    Boy = 1,
+    Girl = 2
+}
+struct Person
+{
+    public String Name;
+    public Sex Sex;
+}
+```
 
 	運行結果如下：
 
@@ -44,40 +48,44 @@ tags: [CSharp]
 
 	這樣的問題我們無法透過建構子給予初始值來解決，因為就算指定了具備參數的建構子。
 
-	struct Person
+```csharp
+struct Person
+{
+    public String Name;
+    public Sex Sex;
+    public Person(String name,Sex sex)
     {
-        public String Name;
-        public Sex Sex ;
-        public Person(String name,Sex sex)
-        {
-            this.Name = name;
-            this.Sex = sex;
-        }
+        this.Name = name;
+        this.Sex = sex;
     }
+}
+```
 
 	對於值類型來說仍有預設建構子可以使用。像是：
 
-	class Program
+```csharp
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Person p=new Person();
-            Console.WriteLine(p.Sex.ToString ());        
-        }
+        Person p=new Person();
+        Console.WriteLine(p.Sex.ToString());        
     }
-    enum Sex
-    {
-        Boy = 1,
-        Girl = 2
-    }
+}
+enum Sex
+{
+    Boy = 1,
+    Girl = 2
+}
 
-    struct Person
-    {
-        public String Name;
-        public Sex Sex;
+struct Person
+{
+    public String Name;
+    public Sex Sex;
 
-        public Person(String name, Sex sex)
-        {
+    public Person(String name, Sex sex)
+    {
+```
             this.Name = name;
             this.Sex = sex;
         }
