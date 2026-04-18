@@ -10,7 +10,9 @@ tags: [CSharp,Performance]
   測試介面      
 
   測試程式碼      
-  using System;
+  
+```csharp
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +60,7 @@ namespace WindowsFormsApplication35
         } 
     }
 }
+```
 
 測試結果
 
@@ -103,6 +106,7 @@ namespace WindowsFormsApplication35
 
 再簡單的試驗一下，若使用checked來檢查，仍會稍微快一點。 
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -147,6 +151,7 @@ namespace ConsoleApplication31
 
     }
 }
+```
 
 運行1000000000次的結果如下：
 

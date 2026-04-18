@@ -8,15 +8,18 @@ tags: [CSharp]
 
 要動態將JavaScript插入網頁中，我們可以在WebBrowser.DocumentCompleted事件處發時去動些手腳。用WebBrowser.Document.GetElementsByTagName找到head的xml element tag，然後再用WebBrowser.Document.CreateElement建立要插入的xml element tag，將要插入的JavaScript塞到剛建立的element的text屬性，最後將建立的element附加到head的子節點就可以了。
 ...
+```csharp
 HtmlElement head = webBrowser1.Document.GetElementsByTagName("head")[0];
 HtmlElement script = webBrowser1.Document.CreateElement("script");
 IHTMLScriptElement element = (IHTMLScriptElement)script.DomElement;
 element.text = "function GetVar(varName) { return eval('(' + varName + ')'); }";
 head.AppendChild(script);
+```
 ...
 
 有了這樣的技術基礎我們就可以玩些有意思的東西，像是透過插入個JavaScript，我們可以取得網頁中所有的JavaScript變數值。
 
+```csharp
 [PermissionSet(SecurityAction.Demand,)]
 [ComVisible(true)]
 public partial class Form1 : Form
@@ -48,9 +51,11 @@ element.text = "function GetVar(varName) { return eval('(' + varName + ')'); }";
 head.AppendChild(script);
 }
 }
+```
 
 或是透過插入的JavaScript我們可以將JSON字串塞給JavaScript，透過JavaScript去Parse JSON資料。
 
+```csharp
 [PermissionSet(SecurityAction.Demand,)]
 [ComVisible(true)]
 public partial class Form1 : Form
@@ -81,9 +86,11 @@ head.AppendChild(script);
 MessageBox.Show(webBrowser1.Document.InvokeScript("GetJsonValue", new object[] { "{'version': '1.0'}", "version" }).ToString());
 }
 }
+```
 
 當然還有很多變化的可能性，就看個人怎樣運用了。這邊附上較為完整的範例：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -144,6 +151,7 @@ MessageBox.Show(webBrowser1.Document.InvokeScript("GetJsonValue", new object[] {
 }
 }
 }
+```
 
 運行結果如下：
 

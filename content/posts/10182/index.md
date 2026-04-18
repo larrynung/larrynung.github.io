@@ -8,24 +8,24 @@ tags: [VB.NET, CSharp]
 
 ## Introduction
 .NET 4.0後在System.Threading命名空間中新加入了Barrier類別，該類別的功能就如同字面意義一樣，可視為是一個關卡或是剪票口。透過Barrier Class我們可以管制執行緒的運作，做到執行緒同步的效果。   
- 
+ 
 ## 字面意思
 
 Barrier [`bærIL]
 n.剪票口;海關關卡;障礙物;路障,柵欄   
- 
+ 
 ## Support
 .NET Framework 4.0 (C# 4.0、VB.NET 10.0) or latter   
- 
+ 
 ## Assembly
 System (in System.dll)   
- 
+ 
 ## Namespace
 System.Threading   
- 
+ 
 ## Barrier Class
 Barrier Class在使用上十分的簡單，只要宣告Barrier物件並在建構函式帶入participantCount(簡單的說就是要等待的執行緒個數)，並在要同步的點叫用SignalAndWait即可。
- 
+ 
 執行緒會在叫用SignalAndWait後會暫停運行，等待所有要參與的執行緒都到了同步點才繼續往下運行。
 舉個例子來看，假設今天Charlie、Mac、Dennis三個人相約要去西雅圖喝咖啡。由於三個人的住的地區不盡相同，且車子都需要加油，因此他們約在途中會經過的加油站待會合後一同前往。
 
@@ -33,6 +33,7 @@ Barrier Class在使用上十分的簡單，只要宣告Barrier物件並在建構
 
 VB.NET
 
+```vbnet
 Imports System.Threading
 
 Module Module1
@@ -73,9 +74,11 @@ Module Module1
     End Sub
 
 End Module
+```
 
 C#
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,6 +123,7 @@ namespace BarrierDemo
         }
     }
 }
+```
 
 運行結果   
 

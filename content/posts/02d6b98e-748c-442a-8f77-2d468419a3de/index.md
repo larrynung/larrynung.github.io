@@ -11,7 +11,9 @@ tags: [CSharp]
   要讓系統主動通知電源狀態變更，我們可以很簡單的繫結SystemEvents.PowerModeChanged事件，透過事件處理常式回傳的參數我們可以很容易的判斷出是目前系統是發生了怎樣的電源狀態改變。電源狀態的對應值可參閱PowerModes 列舉型別。     
 
 這邊來看個簡單的範例：
-  using System;
+
+```csharp
+using System;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -35,6 +37,7 @@ namespace WindowsFormsApplication15
 		}
 	}
 }
+```
 
 這邊將程式運行起來，拔掉筆電的電源線再插上，系統會告知我們目前為StatusChange狀態，表示從充電狀態與電池模式之間的切換。若是將電腦切換至睡眠模式，系統會告知我們目前為Suspend狀態。再將電腦從睡眠模式中喚醒，則會收到Resume的狀態變更。
 
@@ -42,6 +45,7 @@ namespace WindowsFormsApplication15
 
 這邊一樣附上個簡單的使用範例：
 
+```csharp
 using System;
 using System.Windows.Forms;
 
@@ -79,6 +83,7 @@ namespace WindowsFormsApplication15
 		}
 	}
 }
+```
 
 ## Link
 

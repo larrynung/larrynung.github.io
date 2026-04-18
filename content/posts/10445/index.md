@@ -17,11 +17,14 @@ tags: [.NET Concept,Security]
 像是GetValue()=>AAA()
 
 2.耗費程式效能加入一些不會影響結果的程式讓返組譯變得困難 像是   
- 
+ 
+```csharp
 for(int i=0;i<100;i++);  //不影響結果
-
+```
+ 
 或   
- 
+ 
+```csharp
 for(int i=0;i<100;i++){
     int a = i+1;    //不影響結果
     Console.WriteLine(i.ToString());
@@ -31,15 +34,20 @@ for(int i=0;i<100;i++){
         Console.WriteLine("Some Thing Error!!"); 
     }
 }
+```
 
 3.加入一些冗贅的運算
+```csharp
 int a = 10;
+```
 
 改為
 
+```csharp
 int b = 2; 
 int c = 5; 
 int a = b * c;
+```
 
 值得注意的是，使用混淆保護的程式仍是可以使用反組譯工具看到混淆後的MSIL，且很容易被有心人反推回去的，只是增加了反推的難度而已。
 微軟自帶的Dotfuscator Community Edition好像已經有現成反推回去的程式在網路上流佈，像水瓶大介紹的DF Stack就是一例。
