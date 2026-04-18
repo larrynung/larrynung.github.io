@@ -9,17 +9,17 @@ MediaWiki 在使用標頭時，預設是不會有自動編號的，這樣的呈�
 
 要將自動編號功能給開啟，首先要先將 LocalSettings.php 檔案開啟。
 
-{% img /images/posts/MediaWikiAutoNumberHeadings/1.png %}
+![/images/posts/MediaWikiAutoNumberHeadings/1.png](/images/posts/MediaWikiAutoNumberHeadings/1.png)
 
 找到 `$wgDefaultUserOptions['numberheadings']` 設定，將其值設定為 1。
 
 $wgDefaultUserOptions['numberheadings'] = 1;
 
-{% img /images/posts/MediaWikiAutoNumberHeadings/2.png %}
+![/images/posts/MediaWikiAutoNumberHeadings/2.png](/images/posts/MediaWikiAutoNumberHeadings/2.png)
 
 這樣 MediaWiki 的標頭前面就會自動編號。
 
-{% img /images/posts/MediaWikiAutoNumberHeadings/3.png %}
+![/images/posts/MediaWikiAutoNumberHeadings/3.png](/images/posts/MediaWikiAutoNumberHeadings/3.png)
 
 Link
 ----

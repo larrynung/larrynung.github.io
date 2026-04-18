@@ -7,15 +7,15 @@ tags: [Vagrant]
 
 Vagrantfile 的設定跟很多軟體一樣是有繼承關係的。
 
-{% img /images/posts/VagrantfileInheritance/1.png %}
+![/images/posts/VagrantfileInheritance/1.png](/images/posts/VagrantfileInheritance/1.png)
 
 首先他會去看 Vagrant Box 的 Vagrantfile。通常會是在 `%HOMEPATH%\.vagrant.doxs` 下，若有設定 VAGRANT_HOME 則是在  `%VAGRANT_HOME%\.vagrant.doxs` 下。
 
-{% img /images/posts/VagrantfileInheritance/2.png %}
+![/images/posts/VagrantfileInheritance/2.png](/images/posts/VagrantfileInheritance/2.png)
 
 接著會看 `%HOMEPATH%\.vagrant.d` 或是 `%VAGRANT_HOME%\.vagrant.d\` 下的 Vagrantfile。
 
-{% img /images/posts/VagrantfileInheritance/3.png %}
+![/images/posts/VagrantfileInheritance/3.png](/images/posts/VagrantfileInheritance/3.png)
 
 最後才會看專案目錄下的 Vagrantfile。
 

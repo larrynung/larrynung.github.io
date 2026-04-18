@@ -27,7 +27,7 @@ EXTRACT(hour from systimestamp)
 
 使用上會像下面這樣：
 
-{% img /images/posts/ExtractFunction/1.png %}
+![/images/posts/ExtractFunction/1.png](/images/posts/ExtractFunction/1.png)
 
 Link
 ----

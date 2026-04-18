@@ -40,4 +40,4 @@ Console.WriteLine(JSON.Serialize(dt, Options.ISO8601));
 }
 ```
 
-{% img /images/posts/JilIso8601/1.png %}
+![/images/posts/JilIso8601/1.png](/images/posts/JilIso8601/1.png)

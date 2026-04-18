@@ -8,11 +8,11 @@ tags: [VMware]
 
 首先將VMware的Settings對話框開啟，點擊選取Advanced按鈕
 
-{% img /images/posts/VMwareVirtualization/1.png %}
+![](/images/posts/VMwareVirtualization/1.png)
 
 將Preferred virtualization engine欄位的值設為Intel VT-x with EPT.
 
-{% img /images/posts/VMwareVirtualization/2.png %}
+![](/images/posts/VMwareVirtualization/2.png)
 
 找到對應的.vmx檔將之開啟，將下列內容填入後存檔
 
@@ -22,12 +22,12 @@ vhv.enable = “TRUE”
 
 像是下面這樣
 
-{% img /images/posts/VMwareVirtualization/3.png %}
+![](/images/posts/VMwareVirtualization/3.png)
 
-{% img /images/posts/VMwareVirtualization/4.png %}
+![](/images/posts/VMwareVirtualization/4.png)
 
-{% img /images/posts/VMwareVirtualization/5.png %}
+![](/images/posts/VMwareVirtualization/5.png)
 
 設定完後將虛擬機啟動，就可以在裡面使用虛擬化的功能了，像是Windows Phone的模擬器就可以在VMware內運行良好。
 
-{% img /images/posts/VMwareVirtualization/6.png %}
+![](/images/posts/VMwareVirtualization/6.png)

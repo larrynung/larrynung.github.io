@@ -9,11 +9,11 @@ Visual Studio 的 Edit And Continue 功能可以允許開發人員在除錯的�
 
 不過在舊版的 Visual Studio 只支援 32 Bit 的程式使用 Edit And Continue 功能，若是開發 64 Bit 程式則不能啟用。
 
-{% img /images/posts/VSEditAndContinue64/1.png %}
+![/images/posts/VSEditAndContinue64/1.png](/images/posts/VSEditAndContinue64/1.png)
 
 Visual Studio 2013 後解除了這項限制，開始支援在 64 Bit 程式上使用。
 
-{% img /images/posts/VSEditAndContinue64/2.png %}
+![/images/posts/VSEditAndContinue64/2.png](/images/posts/VSEditAndContinue64/2.png)
 
 Link
 ----

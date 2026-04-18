@@ -38,7 +38,7 @@ return new String(ca);
 }
 ```
 
-{% img /images/posts/ValidAnagram/1.png %}
+![/images/posts/ValidAnagram/1.png](/images/posts/ValidAnagram/1.png)
 
 Link
 ----

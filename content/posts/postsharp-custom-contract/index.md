@@ -9,11 +9,11 @@ PostSharp 內建的 Contracts 能支援我們做些常見的檢查，若是內�
 
 擴建時要先確保 PostSharp.Patterns.Model 的引用已加入專案中，若無可透過 NuGet 將套件安裝起來。
 
-{% img /images/posts/CustomPostSharpContract/1.png %}
+![/images/posts/CustomPostSharpContract/1.png](/images/posts/CustomPostSharpContract/1.png)
 
 接著建立個繼承自 LocationContractAttribute 的 Contract 類別，LocationContractAttribute 會提供我們建立 Contract Attribute 所需的基本功能，像是 CreateArgumentException、CreateArgumentNullException、CreateArgumentOutOfRangeException、及 ErrorMessage 等。
 
-{% img /images/posts/CustomPostSharpContract/2.png %}
+![/images/posts/CustomPostSharpContract/2.png](/images/posts/CustomPostSharpContract/2.png)
 
 並實作 ILocationValidationAspect\ ，在 ValudateValue 方法中撰寫自己的判斷邏輯，當不符合規範時叫用繼承自 LocationContractAttribute 的方法拋出例外即可。
 
@@ -66,7 +66,7 @@ this.Url = url;
 ```
 運行結果如下，當代入不符合 Pattern 的參數時就會丟出例外。
 
-{% img /images/posts/CustomPostSharpContract/3.png %}
+![/images/posts/CustomPostSharpContract/3.png](/images/posts/CustomPostSharpContract/3.png)
 
 這邊若有需要，我們也可以用上面提到的 ErrorMessage 屬性將錯誤訊息進行客製。
 

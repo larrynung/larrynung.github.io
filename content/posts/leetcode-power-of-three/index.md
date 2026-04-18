@@ -21,7 +21,7 @@ return n > 0 && 1162261467 % n == 0;
 }
 ```
 
-{% img /images/posts/PowerOfThree/1.png %}
+![/images/posts/PowerOfThree/1.png](/images/posts/PowerOfThree/1.png)
 
 Link
 ----

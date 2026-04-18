@@ -20,23 +20,23 @@ Opserver 是 Stack Exchange 開發的監控系統，能夠針對以下系統進�
 
 Opserver 的 Config 設定放置於 /Opserver/Config/ 下，參閱放置在裡面的 example 檔設定即可。需先針對 Opserver/Config/SecuritySettings.config 下去設定，設定網站的安全性，再來才是要監控的系統對應的設定。如果設定後本地運行無法看到效果，可將 IISExpress 停掉後重跑看看。
 
-{% img /images/posts/Opserver/1.png %}
+![/images/posts/Opserver/1.png](/images/posts/Opserver/1.png)
 
-{% img /images/posts/Opserver/2.png %}
+![/images/posts/Opserver/2.png](/images/posts/Opserver/2.png)
 
-{% img /images/posts/Opserver/3.png %}
+![/images/posts/Opserver/3.png](/images/posts/Opserver/3.png)
 
-{% img /images/posts/Opserver/4.png %}
+![/images/posts/Opserver/4.png](/images/posts/Opserver/4.png)
 
-{% img /images/posts/Opserver/5.png %}
+![/images/posts/Opserver/5.png](/images/posts/Opserver/5.png)
 
-{% img /images/posts/Opserver/6.png %}
+![/images/posts/Opserver/6.png](/images/posts/Opserver/6.png)
 
-{% img /images/posts/Opserver/7.png %}
+![/images/posts/Opserver/7.png](/images/posts/Opserver/7.png)
 
-{% img /images/posts/Opserver/8.png %}
+![/images/posts/Opserver/8.png](/images/posts/Opserver/8.png)
 
-{% img /images/posts/Opserver/9.png %}
+![/images/posts/Opserver/9.png](/images/posts/Opserver/9.png)
 
 Link
 ----

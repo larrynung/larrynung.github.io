@@ -62,7 +62,7 @@ LogShutDownInfo();
 
 這樣當系統就會自動在 Shutdown 時將 Shutdown 訊息記錄下來。
 
-{% img /images/posts/LogShutDownInfo/1.png %}
+![/images/posts/LogShutDownInfo/1.png](/images/posts/LogShutDownInfo/1.png)
 
 Link
 ----

@@ -6,19 +6,19 @@ description: "Code Analysis Error CA0058"
 
 最近抽空把開發中的專案設定了一下 Code Analysis，運行時發生了 CA0058 這個錯誤。
 
-{% img /images/posts/CA0058/1.png %}
+![/images/posts/CA0058/1.png](/images/posts/CA0058/1.png)
 
 要解決這個問題，在 Visual Studio 2012 以前可以修改 FxCopCmd.exe.config。位置在
 
 C:\Program Files (x86)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe.config
 
-{% img /images/posts/CA0058/2.png %}
+![/images/posts/CA0058/2.png](/images/posts/CA0058/2.png)
 
 實際位置需視 Visual Studio 版本或是安裝位置下去調整。
 
 將之開啟找到 AssemblyReferenceResolveMode 的值改為 StrongNameIgnoringVersion。
 
-{% img /images/posts/CA0058/3.png %}
+![/images/posts/CA0058/3.png](/images/posts/CA0058/3.png)
 
 Visual Studio 2012 後我們要開啟專案檔進行編輯，在第一個 PropertyGroup 中加入 CodeAnalysisAdditionalOptions，將其設為 /assemblyCompareMode:StrongNameIgnoringVersion。
 ```xml
@@ -30,7 +30,7 @@ Visual Studio 2012 後我們要開啟專案檔進行編輯，在第一個 Proper
 
 ...
 ```
-{% img /images/posts/CA0058/4.png %}
+![/images/posts/CA0058/4.png](/images/posts/CA0058/4.png)
 
 這樣設完問題應該就解決了。
 

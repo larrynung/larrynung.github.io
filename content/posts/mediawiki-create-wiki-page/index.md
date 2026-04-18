@@ -24,11 +24,11 @@ http://[Wiki url]/index.php?title=[Title]&action=edit
 
 將特定的網址帶入
 
-{% img /images/posts/CreateMediaWikiPage/1.png %}
+![/images/posts/CreateMediaWikiPage/1.png](/images/posts/CreateMediaWikiPage/1.png)
 
 就可以建立出對應的 Wiki Page。
 
-{% img /images/posts/CreateMediaWikiPage/2.png %}
+![/images/posts/CreateMediaWikiPage/2.png](/images/posts/CreateMediaWikiPage/2.png)
 
 透過連結 Wiki Page 的方式建立
 -----------------------------
@@ -37,7 +37,7 @@ http://[Wiki url]/index.php?title=[Title]&action=edit
 
 連結後回頭看一下撰寫的 Wiki Page，這時將滑鼠移上去，會很明顯的看到該連結頁面不存在。
 
-{% img /images/posts/CreateMediaWikiPage/3.png %}
+![/images/posts/CreateMediaWikiPage/3.png](/images/posts/CreateMediaWikiPage/3.png)
 
 點擊連結即可建立對應的 Wiki Page。
 
@@ -46,11 +46,11 @@ http://[Wiki url]/index.php?title=[Title]&action=edit
 
 這邊需先透過搜尋框搜尋欲建立的 Wiki Page 是否已經存在。
 
-{% img /images/posts/CreateMediaWikiPage/4.png %}
+![/images/posts/CreateMediaWikiPage/4.png](/images/posts/CreateMediaWikiPage/4.png)
 
 若不存在， MediaWiki 會在這邊告知搜尋的 Wiki Page 不存在，同時會有個建立頁面的快速連結，點擊下去即可建立指定的 Wiki Page。
 
-{% img /images/posts/CreateMediaWikiPage/5.png %}
+![/images/posts/CreateMediaWikiPage/5.png](/images/posts/CreateMediaWikiPage/5.png)
 
 Link
 -----

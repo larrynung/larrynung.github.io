@@ -15,17 +15,17 @@ number 這邊帶入的是要轉換的值，expression 這邊帶入的是要轉�
 
 使用上可搭配日期使用，對日期做些增減處理。像是下面這樣：
 
-{% img /images/posts/NUMTODSINTERVALFunction/1.png %}
+![/images/posts/NUMTODSINTERVALFunction/1.png](/images/posts/NUMTODSINTERVALFunction/1.png)
 
-{% img /images/posts/NUMTODSINTERVALFunction/2.png %}
+![/images/posts/NUMTODSINTERVALFunction/2.png](/images/posts/NUMTODSINTERVALFunction/2.png)
 
-{% img /images/posts/NUMTODSINTERVALFunction/3.png %}
+![/images/posts/NUMTODSINTERVALFunction/3.png](/images/posts/NUMTODSINTERVALFunction/3.png)
 
-{% img /images/posts/NUMTODSINTERVALFunction/4.png %}
+![/images/posts/NUMTODSINTERVALFunction/4.png](/images/posts/NUMTODSINTERVALFunction/4.png)
 
-{% img /images/posts/NUMTODSINTERVALFunction/5.png %}
+![/images/posts/NUMTODSINTERVALFunction/5.png](/images/posts/NUMTODSINTERVALFunction/5.png)
 
-{% img /images/posts/NUMTODSINTERVALFunction/6.png %}
+![/images/posts/NUMTODSINTERVALFunction/6.png](/images/posts/NUMTODSINTERVALFunction/6.png)
 
 Link
 ----

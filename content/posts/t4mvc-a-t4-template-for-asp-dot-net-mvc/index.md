@@ -23,13 +23,13 @@ return RedirectToAction("About");
 
 使用前需先透過 NuGet 搜尋並安裝 T4MVC 套件。
 
-{% img /images/posts/T4MVC/1.png %}
+![/images/posts/T4MVC/1.png](/images/posts/T4MVC/1.png)
 
-{% img /images/posts/T4MVC/2.png %}
+![/images/posts/T4MVC/2.png](/images/posts/T4MVC/2.png)
 
 安裝完畢專案根目錄會多出幾個檔案(若想更動檔案位置，直接搬動這幾個檔案即可)，比較重要的是用來生成程式部分的 T4 主檔，另外則是用來調整生成設定的 Setting 檔。
 
-{% img /images/posts/T4MVC/3.png %}
+![/images/posts/T4MVC/3.png](/images/posts/T4MVC/3.png)
 
 接著我們將程式中的 Magic Sting 做些處理。像是本來在寫連結的部份，可以這樣修改：
 

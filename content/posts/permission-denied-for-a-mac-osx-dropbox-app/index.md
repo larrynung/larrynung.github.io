@@ -7,11 +7,11 @@ tags: [Mac, Dropbox]
 
 最近 Mac 的 Dropbox 突然出問題，可能是前陣子搬動家目錄所導致，想將他進行重裝還原，但過程中總是會跟我要求提升權限：
 
-{% img /images/posts/DropboxPermissionDenied/1.png %}
+![/images/posts/DropboxPermissionDenied/1.png](/images/posts/DropboxPermissionDenied/1.png)
 
 輸入密碼後權限好像都沒取道，怎樣都出現權限錯誤的問題。
 
-{% img /images/posts/DropboxPermissionDenied/2.png %}
+![/images/posts/DropboxPermissionDenied/2.png](/images/posts/DropboxPermissionDenied/2.png)
 
 查了一下要在 Terminal 下下列指令：
 

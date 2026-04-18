@@ -15,7 +15,7 @@ Script 的位置前綴為 `http://gist-it.appspot.com/github/` ，也就是 gist
 
 像是下面這樣，筆者想要嵌入 `larrynung/RDPDemo` 這個 Repository 下的 `Source/RDPDemo/Form1.cs` 檔案，我們要帶到 gist-it 服務位置後的位置就是 `larrynung/blob/master/Source/RDPDemo/Form1.cs` 。
 
-{% img /images/posts/GistIt/1.png %}
+![/images/posts/GistIt/1.png](/images/posts/GistIt/1.png)
 
 所以內嵌的 JavaScript 會是
 
@@ -37,7 +37,7 @@ Script 的位置前綴為 `http://gist-it.appspot.com/github/` ，也就是 gist
 
 最後一提， gist-it 服務也有提供測試的功能，可以線上測試會內嵌到什麼內容。若有需要可連至 [gist-it.appspot.com - Embed files from a github repository like a gist](http://gist-it.appspot.com/) 這邊，點選網站左上方的 Try It 連結，輸入網址後按下 Enter ，下方就會帶出會被內嵌的內容。
 
-{% img /images/posts/GistIt/2.png %}
+![/images/posts/GistIt/2.png](/images/posts/GistIt/2.png)
 
 Link
 ----

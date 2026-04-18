@@ -7,7 +7,7 @@ tags: [RAML]
 
 RAML (RESTful API Modeling Language) 是ㄧ以YAML為基礎、專門用來描述 RESTful API、且人與機器都看得懂的標記語言。 
 
-{% img /images/posts/RAML/1.png %}
+![/images/posts/RAML/1.png](/images/posts/RAML/1.png)
 
 因為透過RAML去描述的API，機器也能夠看得懂，所以可以衍生出一些附加的功能服務，像是解析並自動產生對應的 API Console、API Client、API Server、API User Document…等。
 
@@ -138,17 +138,17 @@ RAML 的文檔基礎來說就是這樣而已，當然還有些細部的設定參
 
 比較重要的像是 [API Designer](http://www.apihub.com/raml/api-designer#/api-designer) 就能輔助我們編輯 RAML 文檔
 
-{% img /images/posts/RAML/2.png %}
+![/images/posts/RAML/2.png](/images/posts/RAML/2.png)
 
 編輯的同時右側這邊會即時呈現對應的 API Console 
 
-{% img /images/posts/RAML/3.png %}
+![/images/posts/RAML/3.png](/images/posts/RAML/3.png)
 
 藉由比對我們可以更清楚了解 RAML 文檔的欄位會用在哪邊，也可以即時叫用 API。
 
 另外就是 [API Console](http://www.apihub.com/raml-tools)，是跟 API Designer 右側一樣的東西，可解析 RAML 檔產生對應的互動式文檔。
 
-{% img /images/posts/RAML/4.png %}
+![/images/posts/RAML/4.png](/images/posts/RAML/4.png)
 
 這些 Tool 都有開源在 GitHub 上，有需要都可以自行架設。
 

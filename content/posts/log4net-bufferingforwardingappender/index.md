@@ -33,27 +33,27 @@ namespace ConsoleApplication27
 
 整個性能反而嚴重下降。  
 
-{% img /images/posts/log4netBufferingForwardingAppender/2.png %}
+![/images/posts/log4netBufferingForwardingAppender/2.png](/images/posts/log4netBufferingForwardingAppender/2.png)
 
 這邊可進一步調整 Fix 參數，像是如果我們將之設為 0，效能就會提升上去。  
 
-{% img /images/posts/log4netBufferingForwardingAppender/3.png %}
+![/images/posts/log4netBufferingForwardingAppender/3.png](/images/posts/log4netBufferingForwardingAppender/3.png)
 
 但是如果設為 0，Log 的資料會不正確，像是圖中的 Thread ID 就無法正確紀錄。  
 
 實際使用時我們應該參閱 FixFlags Enumeration，依需求下去設定。  
 
-{% img /images/posts/log4netBufferingForwardingAppender/4.png %}
+![/images/posts/log4netBufferingForwardingAppender/4.png](/images/posts/log4netBufferingForwardingAppender/4.png)
 
 像是可以設定為 12，使其修正 Message 與 ThreadName。  
 
-{% img /images/posts/log4netBufferingForwardingAppender/5.png %}
+![/images/posts/log4netBufferingForwardingAppender/5.png](/images/posts/log4netBufferingForwardingAppender/5.png)
 
 效能問題解決了，仍需考慮 Buffer 的資料是否可以正確的寫入。  
 
 一樣做個簡單的實驗去測試，設定 Buffer 大小為 512 筆，然後程式這邊在第 511 筆時丟出例外，可以看到這邊 Buffer 的資料並未正確的紀錄。  
 
-{% img /images/posts/log4netBufferingForwardingAppender/6.png %}
+![/images/posts/log4netBufferingForwardingAppender/6.png](/images/posts/log4netBufferingForwardingAppender/6.png)
 
 所以我們需要在程式中適當的時機點，像是在 Application_End 或是在全域例外處理這邊，將 Buffer Flush 讓 Log 可被寫入。  
 
@@ -85,7 +85,7 @@ public static void FlushBuffers()
 ...
 ```
 
-{% img /images/posts/log4netBufferingForwardingAppender/7.png %}
+![/images/posts/log4netBufferingForwardingAppender/7.png](/images/posts/log4netBufferingForwardingAppender/7.png)
 
 Link
 ----

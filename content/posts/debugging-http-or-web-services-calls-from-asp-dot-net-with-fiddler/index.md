@@ -14,7 +14,7 @@ description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 
 這樣 Fiddler 就可以記錄到 Web Site 的網路使用情形：
 
-{% img /images/posts/DebugWebSiteWithFiddler/1.png %}
+![/images/posts/DebugWebSiteWithFiddler/1.png](/images/posts/DebugWebSiteWithFiddler/1.png)
 
 Link
 ----

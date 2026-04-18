@@ -9,29 +9,29 @@ Code Compare 是ㄧ用來對檔案、目錄做比對與合併的程式，能輕�
 
 使用前請至 Visual Studio Gallery 下載。
 
-{% img /images/posts/CodeCompare/1.png %}
+![/images/posts/CodeCompare/1.png](/images/posts/CodeCompare/1.png)
 
 下載後點擊安裝...
 
-{% img /images/posts/CodeCompare/2.png %}
+![/images/posts/CodeCompare/2.png](/images/posts/CodeCompare/2.png)
 
-{% img /images/posts/CodeCompare/3.png %}
+![/images/posts/CodeCompare/3.png](/images/posts/CodeCompare/3.png)
 
-{% img /images/posts/CodeCompare/4.png %}
+![/images/posts/CodeCompare/4.png](/images/posts/CodeCompare/4.png)
 
 安裝這邊會提供一些設定選項，可供使用者決定有哪些環境需要整合。
 
-{% img /images/posts/CodeCompare/5.png %}
+![/images/posts/CodeCompare/5.png](/images/posts/CodeCompare/5.png)
 
-{% img /images/posts/CodeCompare/6.png %}
+![/images/posts/CodeCompare/6.png](/images/posts/CodeCompare/6.png)
 
 安裝完成就可以透過被整合的環境下去觸發使用。
 
 像是筆者這邊在安裝時有勾選與 Visual Studio 整合，就可以在 Visual Studio 的方案總管中直接選取兩個檔案做比對。
 
-{% img /images/posts/CodeCompare/7.png %}
+![/images/posts/CodeCompare/7.png](/images/posts/CodeCompare/7.png)
 
-{% img /images/posts/CodeCompare/8.png %}
+![/images/posts/CodeCompare/8.png](/images/posts/CodeCompare/8.png)
 
 Link
 -----

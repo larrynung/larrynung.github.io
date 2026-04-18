@@ -73,7 +73,7 @@ public String NickName { get; set ; }
 }
 ```
 
-{% img /images/posts/JilIgnoreAndCustomElement/1.png %}
+![/images/posts/JilIgnoreAndCustomElement/1.png](/images/posts/JilIgnoreAndCustomElement/1.png)
 
 如果要客製輸出的 Element 名稱，則直接透過 JilDirectiveAttribute 帶入指定的名稱：
 
@@ -109,4 +109,4 @@ public String NickName { get; set ; }
 }
 ```
 
-{% img /images/posts/JilIgnoreAndCustomElement/2.png %}
+![/images/posts/JilIgnoreAndCustomElement/2.png](/images/posts/JilIgnoreAndCustomElement/2.png)

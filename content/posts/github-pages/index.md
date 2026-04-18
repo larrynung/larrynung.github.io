@@ -44,32 +44,32 @@ Automatic Page Generator
 
 只要開啟專案的Settings
 
-{% img /images/posts/GitHubPages/1.png %}
+![GitHubPages-1](/images/posts/GitHubPages/1.png)
 
 點選Automatic Page Generator按鈕
 
-{% img /images/posts/GitHubPages/2.png %}
+![GitHubPages-2](/images/posts/GitHubPages/2.png)
 
 編輯頁面想要呈現的內容
 
-{% img /images/posts/GitHubPages/3.png %}
+![GitHubPages-3](/images/posts/GitHubPages/3.png)
 
 按下Continue to Layouts按鈕繼續
 
-{% img /images/posts/GitHubPages/4.png %}
+![GitHubPages-4](/images/posts/GitHubPages/4.png)
 
 這邊GitHub Pages會提供一些預設的樣板供套用，上方可供樣版的選取與切換，下方則是將選取的樣板作即時的御覽
 
-{% img /images/posts/GitHubPages/5.png %}
+![GitHubPages-5](/images/posts/GitHubPages/5.png)
 
 選取好樣板後按下PUBLISH按鈕確定
 
-{% img /images/posts/GitHubPages/6.png %}
+![GitHubPages-6](/images/posts/GitHubPages/6.png)
 
 網頁會被帶回到對應的GitHub Repository，上方會提示頁面的建置動作已經完成，以及提示對應的網址，不過網址要生效大概要10分鐘的處理時間
 
-{% img /images/posts/GitHubPages/7.png %}
+![GitHubPages-7](/images/posts/GitHubPages/7.png)
 
 網址生效後就可以看到我們剛剛透過Automatic Page Generator所產生的頁面
 
-{% img /images/posts/GitHubPages/8.png %}
+![GitHubPages-8](/images/posts/GitHubPages/8.png)

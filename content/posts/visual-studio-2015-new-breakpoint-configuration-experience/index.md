@@ -11,19 +11,19 @@ Visual Studio 2015 在除錯功能上做了一些改進，其中一項就是 New
 
 使用上只要將滑鼠移至斷點之上，按下浮現的設定按鈕。
 
-{% img /images/posts/NewBreakpointExperienceInVS2015/1.png %}
+![/images/posts/NewBreakpointExperienceInVS2015/1.png](/images/posts/NewBreakpointExperienceInVS2015/1.png)
 
 類似 Peek Definition 的設定視窗會跑出來，可看到之前的設定都在這邊可以一次設完，像是 Hit Condition 與 Count Condition。
 
-{% img /images/posts/NewBreakpointExperienceInVS2015/2.png %}
+![/images/posts/NewBreakpointExperienceInVS2015/2.png](/images/posts/NewBreakpointExperienceInVS2015/2.png)
 
 追蹤點的設定也不例外。
 
-{% img /images/posts/NewBreakpointExperienceInVS2015/3.png %}
+![/images/posts/NewBreakpointExperienceInVS2015/3.png](/images/posts/NewBreakpointExperienceInVS2015/3.png)
 
 因為是用嵌入的方式去做設定，所以設定完在除錯時若有需要，檢視上也比較容易。
 
-{% img /images/posts/NewBreakpointExperienceInVS2015/4.png %}
+![/images/posts/NewBreakpointExperienceInVS2015/4.png](/images/posts/NewBreakpointExperienceInVS2015/4.png)
 
 Link
 ----

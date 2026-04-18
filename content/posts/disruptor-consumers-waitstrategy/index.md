@@ -11,35 +11,35 @@ Disruptor 內建幾種等待策略，可用以設定消費者怎樣等待生產�
 
 這邊筆者做了簡單的測試，在 Unicast 1p-1c 的狀況下瘋狂寫入，每秒約處理 145 筆資料。
 
-{% img /images/posts/DisruptorWaitStrategy/1.png %}
+![/images/posts/DisruptorWaitStrategy/1.png](/images/posts/DisruptorWaitStrategy/1.png)
 
 如果讓 Producer 不要那麼頻繁的產生資料，那會看到消費者在等待的同時 CPU 會忙於等待。
 
-{% img /images/posts/DisruptorWaitStrategy/2.png %}
+![/images/posts/DisruptorWaitStrategy/2.png](/images/posts/DisruptorWaitStrategy/2.png)
 
 SleepingWaitStrategy 策略則是用迴圈下去睡眠等待。可以看到這邊的實驗，每秒處理可達到約 18xxxx 筆資料。
 
-{% img /images/posts/DisruptorWaitStrategy/3.png %}
+![/images/posts/DisruptorWaitStrategy/3.png](/images/posts/DisruptorWaitStrategy/3.png)
 
 且等待生產者資料時 CPU 耗費也不高。
 
-{% img /images/posts/DisruptorWaitStrategy/4.png %}
+![/images/posts/DisruptorWaitStrategy/4.png](/images/posts/DisruptorWaitStrategy/4.png)
 
 BusySpinWaitStrategy 策略套到同樣的實驗，每秒處理約 144 筆資料。
 
-{% img /images/posts/DisruptorWaitStrategy/5.png %}
+![/images/posts/DisruptorWaitStrategy/5.png](/images/posts/DisruptorWaitStrategy/5.png)
 
 等待資料時 CPU 也是飆高狀態。
 
-{% img /images/posts/DisruptorWaitStrategy/6.png %}
+![/images/posts/DisruptorWaitStrategy/6.png](/images/posts/DisruptorWaitStrategy/6.png)
 
 YieldingWaitStrategy 策略套到同樣的實驗，每秒處理約 24xxxx 筆資料.
 
-{% img /images/posts/DisruptorWaitStrategy/7.png %}
+![/images/posts/DisruptorWaitStrategy/7.png](/images/posts/DisruptorWaitStrategy/7.png)
 
 等待資料時 CPU 依舊飆高。
 
-{% img /images/posts/DisruptorWaitStrategy/8.png %}
+![/images/posts/DisruptorWaitStrategy/8.png](/images/posts/DisruptorWaitStrategy/8.png)
 
 Link
 ----

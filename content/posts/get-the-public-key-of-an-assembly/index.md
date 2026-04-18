@@ -10,15 +10,15 @@ sn.exe -Tp [AssemblyFile]
 
 命令呼叫後會看到類似下面這樣的畫面，告訴你簽署 Public Key 以及 Public Key Token 為何。
 
-{% img /images/posts/PublicKeyWithAssembly/1.png %}
+![/images/posts/PublicKeyWithAssembly/1.png](/images/posts/PublicKeyWithAssembly/1.png)
 
 也可進一步將之與 Visual Studio 整合，加入 External Tools，Command 那邊指向 SN.Exe 的位置，Arguments 那邊設定 -Tp $(TargetPath) 就可以了。
 
-{% img /images/posts/PublicKeyWithAssembly/2.png %}
+![/images/posts/PublicKeyWithAssembly/2.png](/images/posts/PublicKeyWithAssembly/2.png)
 
 設定完以後就可以直接透過 Visual Studio 的 External Tools 直接觸發查詢當前專案產出的組件。
 
-{% img /images/posts/PublicKeyWithAssembly/3.png %}
+![/images/posts/PublicKeyWithAssembly/3.png](/images/posts/PublicKeyWithAssembly/3.png)
 
 Link
 ----

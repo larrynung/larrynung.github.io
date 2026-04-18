@@ -57,7 +57,7 @@ return st.Count == 1;
 }
 ```
 
-{% img /images/posts/ValidParentheses/1.png %}
+![/images/posts/ValidParentheses/1.png](/images/posts/ValidParentheses/1.png)
 
 Link
 ----

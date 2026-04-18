@@ -10,9 +10,9 @@ UniqueIdGenerator 是 Twitter Snowflake ID 的 C# 實作。
 
 使用上要先透過 NuGet 安裝 UniqueIdGenerator 套件。
 
-{% img /images/posts/UniqueIdGenerator/1.png %}
+![/images/posts/UniqueIdGenerator/1.png](/images/posts/UniqueIdGenerator/1.png)
 
-{% img /images/posts/UniqueIdGenerator/2.png %}
+![/images/posts/UniqueIdGenerator/2.png](/images/posts/UniqueIdGenerator/2.png)
 
 接著引用 UniqueIdGenerator.Net 命名空間，帶入 Generator id 與 EPoch 建立 Generator，然後調用 Next() 取得文字型態的 ID，或是透過 NextLong() 取得數值型態的 ID 即可。
 ```c#
@@ -56,7 +56,7 @@ Console.WriteLine(generator.NextLong());
 
 運行結果如下：
 
-{% img /images/posts/UniqueIdGenerator/3.png %}
+![/images/posts/UniqueIdGenerator/3.png](/images/posts/UniqueIdGenerator/3.png)
 
 Link
 -----

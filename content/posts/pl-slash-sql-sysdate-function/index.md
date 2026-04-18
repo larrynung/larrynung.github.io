@@ -15,7 +15,7 @@ Sysdate
 
 像是這樣：
 
-{% img /images/posts/SysdateFunction/1.png %}
+![/images/posts/SysdateFunction/1.png](/images/posts/SysdateFunction/1.png)
 
 Link
 ----

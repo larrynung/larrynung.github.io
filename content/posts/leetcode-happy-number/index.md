@@ -49,7 +49,7 @@ return value == 1;
 }
 ```
 
-{% img /images/posts/HappyNumber/1.png %}
+![/images/posts/HappyNumber/1.png](/images/posts/HappyNumber/1.png)
 
 Link
 ----

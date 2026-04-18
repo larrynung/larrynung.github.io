@@ -13,11 +13,11 @@ Disruptor 之所以能有如此優異的效能，是因為裡面運用了很多�
 
 Disruptor 最經典的使用架構就是 LMAX 所提出的架構，分為三個部分，一個是輸入的 Disruptor，一個是商業邏輯處理的部份，最後是輸出的 Disruptor。
 
-{% img /images/posts/Disruptor/1.png %}
+![/images/posts/Disruptor/1.png](/images/posts/Disruptor/1.png)
 
 輸入的 Disruptor 這邊，會先將進來的事件存起來，如果發生什麼問題，可以讓他重新運轉。接著會將事件傳送給其他 Slave 節點(LMAX 這邊是用 IP Multicasting 去同步所有 Slave 節點)，以實現 HA 架構。最後是拆解任務與資料，讓後續商業邏輯的處理比較容易。
 
-{% img /images/posts/Disruptor/2.png %}
+![/images/posts/Disruptor/2.png](/images/posts/Disruptor/2.png)
 
 商業邏輯處理這邊要注意的就是要盡可能的快速，所以需要的資料都放置在記憶體中是最好的，且要避免 IO 的處理。
 
@@ -25,7 +25,7 @@ Disruptor 最經典的使用架構就是 LMAX 所提出的架構，分為三個�
 
 整個架構就像下面這樣：
 
-{% img /images/posts/Disruptor/3.png %}
+![/images/posts/Disruptor/3.png](/images/posts/Disruptor/3.png)
 
 Link
 ----

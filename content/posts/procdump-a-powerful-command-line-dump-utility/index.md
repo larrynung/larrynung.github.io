@@ -12,7 +12,7 @@ ProcDump 是ㄧ命令列 Dump 工具。能監控 Process 狀態，在滿足特�
 
 程式主檔可至 [ProcDump - TechNet - Microsoft](http://technet.microsoft.com/zh-tw/sysinternals/dd996900.aspx) 這邊下載
 
-{% img /images/posts/ProcDump/1.png %}
+![/images/posts/ProcDump/1.png](/images/posts/ProcDump/1.png)
 
 下載完後可直接呼叫命令查閱使用方式以及使用參數
 

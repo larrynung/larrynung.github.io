@@ -12,15 +12,15 @@ Sign up Disqus
 ----------------
 進行整合前需先取至Disqus網站上註冊，以取得Disqus的帳戶。
 
-{% img /images/posts/Disqus/1.png %}
+![](/images/posts/Disqus/1.png)
 
-{% img /images/posts/Disqus/2.png %}
+![](/images/posts/Disqus/2.png)
 
 Config Octopress
 ------------------
 將Disqus帳號設定至_config.yaml中，並將Disqus comment功能開啟。
 
-{% img /images/posts/Disqus/3.png %}
+![](/images/posts/Disqus/3.png)
 
 Generate and deploy
 ---------------------
@@ -31,4 +31,4 @@ rake deploy
 
 透過Octopress架設的部落格就可以支援留言功能了。
 
-{% img /images/posts/Disqus/4.png %}
+![](/images/posts/Disqus/4.png)

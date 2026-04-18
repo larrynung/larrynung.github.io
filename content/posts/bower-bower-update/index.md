@@ -14,4 +14,4 @@ bower update
 
 像是這邊筆者安裝了 jQuery 1.0.1 的版本，開啟 bower.json 將其版號改為 2.1.4，接著運行 bower update jquery，安裝的 jQuery 版本就會變為 2.1.4。
 
-{% img /images/posts/BowerUpdate/1.png %}
+![/images/posts/BowerUpdate/1.png](/images/posts/BowerUpdate/1.png)

@@ -21,7 +21,7 @@ Update-Package -reinstall [Package Name]
 
 Update-Package -reinstall Log4Net
 
-{% img /images/posts/NuGetReinstallingPackages/1.png %}
+![/images/posts/NuGetReinstallingPackages/1.png](/images/posts/NuGetReinstallingPackages/1.png)
 
 若是要指定重裝特定專案內的套件，可像下面這樣加入 Project 參數，並帶上專案的名稱：
 

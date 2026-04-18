@@ -12,13 +12,13 @@ SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Fram
 NuGet使用者可在Visual Studio的Package Manager Console視窗中輸入下列命令進行下載
 Install-Package SuperBenchmarker
 
-{% img /images/posts/SuperBenchmarker/1.jpeg %}
+![/images/posts/SuperBenchmarker/1.jpeg](/images/posts/SuperBenchmarker/1.jpeg)
 
 Github使用者可在download目錄內取得編譯好的程式主檔
 
-{% img /images/posts/SuperBenchmarker/2.jpeg %}
+![/images/posts/SuperBenchmarker/2.jpeg](/images/posts/SuperBenchmarker/2.jpeg)
 
-{% img /images/posts/SuperBenchmarker/3.jpeg %}
+![/images/posts/SuperBenchmarker/3.jpeg](/images/posts/SuperBenchmarker/3.jpeg)
 
 Chocolatey使用者可輸入下列命令進行下載
 
@@ -26,7 +26,7 @@ cinst SuperBenchmarker
 
 不過該程式作者在開發時有用一些第三方的套件，而NuGet上所放置的版本並沒有把那些參考到的組件連帶釋出，所以要手動將參考到的組件ㄧㄧ補齊，不然無法正常運行。
 
-{% img /images/posts/SuperBenchmarker/4.jpg %}
+![/images/posts/SuperBenchmarker/4.jpg](/images/posts/SuperBenchmarker/4.jpg)
 
 而且該程式其實是一個獨立的主控台程式，跟專案與方案應該無任何關聯，為此要開個方案進行下載是有點弔詭。且依筆者的觀察，NuGet上的更新也比較緩慢。
 
@@ -36,7 +36,7 @@ cinst SuperBenchmarker
 
 程式的使用方式可直接在命令列下輸入sb查看，裡面會有程式的使用方式、參數、及簡易的使用範例
 
-{% img /images/posts/SuperBenchmarker/5.jpeg %}
+![/images/posts/SuperBenchmarker/5.jpeg](/images/posts/SuperBenchmarker/5.jpeg)
 
 其中比較重要的參數大概有下列幾個
 
@@ -65,15 +65,15 @@ sb -u http://google.com -n 1000 -c 10 -h -q
 
 要在發送命令的同時指定Http Header與Payload的話, 可以先將Http Header與Payload設定在文字檔中
 
-{% img /images/posts/SuperBenchmarker/6.png %}
+![/images/posts/SuperBenchmarker/6.png](/images/posts/SuperBenchmarker/6.png)
 
 然後帶入參數-t與檔名去發送Request
 
-{% img /images/posts/SuperBenchmarker/7.png %}
+![/images/posts/SuperBenchmarker/7.png](/images/posts/SuperBenchmarker/7.png)
 
 命令運行的最後我們都會看到類似下面這樣的畫面:
 
-{% img /images/posts/SuperBenchmarker/8.jpg %}
+![/images/posts/SuperBenchmarker/8.jpg](/images/posts/SuperBenchmarker/8.jpg)
 
 這邊有簡易的測試統計，可以看出每秒可處理多少的Request、最大的處理時間、最小的處理時間、平均的處理時間、以及打了這麼多次的API，依比例分大概在哪個Range。
 

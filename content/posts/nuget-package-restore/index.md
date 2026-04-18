@@ -9,7 +9,7 @@ tags: [NuGet]
 
 要做 Nuget 套件的復原，以前我們會在 Visual Studio 的方案上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中，按下 `Enable NuGet Package Restore` 這個滑鼠右鍵選單選項。點選下去，會針對專案檔做些修改，並產生一個名為 .nuget 的方案目錄，裡面會有 Nuget.config、Nuget.target、以及 Nuget.exe 這幾個檔案，此時再次建置就會將遺失的 Nuget 套件復原。
 
-{% img /images/posts/RestoreNugetPackage/1.png %}
+![/images/posts/RestoreNugetPackage/1.png](/images/posts/RestoreNugetPackage/1.png)
 
 這邊這個動作產生的 Nuget.config 內容會像下面這樣
 
@@ -19,11 +19,11 @@ tags: [NuGet]
 
 預設在 Options 視窗這邊會將 `Allow NuGet to download missing packages` 以及 `Automatically check for missing packages during build in Visual Studio` 這兩個選項勾起，建置時會自動將遺失的 Nuget 套件復原。
 
-{% img /images/posts/RestoreNugetPackage/2.png %}
+![/images/posts/RestoreNugetPackage/2.png](/images/posts/RestoreNugetPackage/2.png)
 
 除了建置時去做 Nuget 的復原外，我們也可以開啟 Visual Studio 的 Manage NuGet Packages 視窗，開啟後若有遺失的 Nuget 套件這邊會偵測到，按下 Restore 按鈕就可以立即進行復原的動作。
 
-{% img /images/posts/RestoreNugetPackage/3.png %}
+![/images/posts/RestoreNugetPackage/3.png](/images/posts/RestoreNugetPackage/3.png)
 
 Nuget 套件的還原也支援命令列的觸發方式，在 Build Server 這邊，我們很常會需要藉此去還原套件讓建置動作正常的運行。
 

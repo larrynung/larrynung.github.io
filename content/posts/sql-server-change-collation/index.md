@@ -9,7 +9,7 @@ tags: [SQL ]
 
 在調整之前必需先將 Restrict Access 欄位值為 SINGLE_USER，不然會無法切換 Collation。
 
-{% img /images/posts/ChangeSqlCollation/1.png %}
+![/images/posts/ChangeSqlCollation/1.png](/images/posts/ChangeSqlCollation/1.png)
 
 透過 GUI 設定是比較簡易，但是資料庫一多就不怎麼適用，這時可以用 SQL 語法來做處理，開啟一個新的 Query ，填入下列語法，修改 Collation name，接著依序針對不同的資料庫下去執行就可以了。
 

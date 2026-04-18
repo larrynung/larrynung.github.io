@@ -7,7 +7,7 @@ tags: [TypeScript]
 
 TypeScript 內可用的型態有 Boolean、Number、String、Array、Any、Void、Enum 這幾種。
 
-{% img /images/posts/TypeScriptBasicTypes/1.png %}
+![/images/posts/TypeScriptBasicTypes/1.png](/images/posts/TypeScriptBasicTypes/1.png)
 
 其中 Boolean、Number、String、Array、Any、Enum 的宣告方式如下：
 

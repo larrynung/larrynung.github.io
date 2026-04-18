@@ -6,7 +6,7 @@ description: "ApacheBench - A simple stress testing tool for http server"
 
 ApacheBench 簡稱 ab，是 Apache 自帶的 HTTP 負載測試命令列工具，程式主檔在 Apache 安裝目錄下的 bin 目錄內，可安裝 Apache 後取出使用，或是下載 [Standalone 版本](https://code.google.com/p/apachebench-standalone/) 使用也可。
 
-{% img /images/posts/ApacheBench/1.png %}
+![/images/posts/ApacheBench/1.png](/images/posts/ApacheBench/1.png)
 
 使用方式及參數如下：
 
@@ -46,7 +46,7 @@ are a colon separated username and password.
 ab
 ab -h
 
-{% img /images/posts/ApacheBench/2.png %}
+![/images/posts/ApacheBench/2.png](/images/posts/ApacheBench/2.png)
 
 比較常用的參數有 -n、-c、-k，-n 用來指定所要發送的 Request 數、-c 用來指定同時發送的 Request 數、-k 用來指定是否 Keep-Alive。
 
@@ -56,7 +56,7 @@ ab -n 10 http://www.google.com
 
 發送完 ApacheBench 會有詳細的報告。
 
-{% img /images/posts/ApacheBench/3.png %}
+![/images/posts/ApacheBench/3.png](/images/posts/ApacheBench/3.png)
 
 若要輸出報告留底，可用參數 -e 並帶上輸出的檔案位置，ApacheBench 會將之輸出成 CSV 檔。
 

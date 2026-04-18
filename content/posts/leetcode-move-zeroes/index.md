@@ -40,7 +40,7 @@ nums[tempIdx] = temp;
 }
 ```
 
-{% img /images/posts/MoveZeroes/1.png %}
+![/images/posts/MoveZeroes/1.png](/images/posts/MoveZeroes/1.png)
 
 Link
 ----

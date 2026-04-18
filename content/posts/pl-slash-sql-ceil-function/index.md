@@ -13,7 +13,7 @@ CEIL( number )
 
 使用上會像下面這樣：
 
-{% img /images/posts/CeilFunction/1.png %}
+![/images/posts/CeilFunction/1.png](/images/posts/CeilFunction/1.png)
 
 Link
 ----

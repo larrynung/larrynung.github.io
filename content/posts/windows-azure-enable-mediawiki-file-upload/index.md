@@ -9,14 +9,14 @@ tags: [Windows Azure, MediaWiki ]
 
 >
 
-{% img /images/posts/EnableAzureMediaWikiFileUplad/1.png %}
+![](/images/posts/EnableAzureMediaWikiFileUplad/1.png)
 
 填寫 Windows Azure Storage Account Name 以及 Windows Azure Storage Account Key 的值時，可參閱儲存體的存取金鑰。
 
-{% img /images/posts/EnableAzureMediaWikiFileUplad/2.png %}
+![](/images/posts/EnableAzureMediaWikiFileUplad/2.png)
 
 這樣建立出來的 MediaWiki 就會啟用 MediaWiki 的 WindowsAzureStorage Extension，可以看到建立好的 LocalSetting.php 內會自動設好相關的設定。
 
-{% img /images/posts/EnableAzureMediaWikiFileUplad/3.png %}
+![](/images/posts/EnableAzureMediaWikiFileUplad/3.png)
 
 建立出來的 MediaWiki 也可以正常的將檔案上傳上去。

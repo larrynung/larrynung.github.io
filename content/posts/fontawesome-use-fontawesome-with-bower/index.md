@@ -7,7 +7,7 @@ tags: [FontAwesome]
 
 當我們透過 Bower 來使用 FontAwesome。
 
-{% img /images/posts/FontAwesomeWithBower/1.png %}
+![/images/posts/FontAwesomeWithBower/1.png](/images/posts/FontAwesomeWithBower/1.png)
 
 下載下來的 FontAwesome CSS 內會用相對路徑指定所要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。
 
@@ -23,7 +23,7 @@ font-style: normal;
 ...
 ```
 
-{% img /images/posts/FontAwesomeWithBower/2.png %}
+![/images/posts/FontAwesomeWithBower/2.png](/images/posts/FontAwesomeWithBower/2.png)
 
 當然我們可以透過 Grunt、Gupl 之類的自動化工具將路徑改掉，但這樣的做法感覺並不是很好，因此這邊筆者是使用自己的 CSS 將 Font 的位置改掉。
 
@@ -37,6 +37,6 @@ src: url('/wwwroot/lib/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0'
 ...
 ```
 
-{% img /images/posts/FontAwesomeWithBower/3.png %}
+![/images/posts/FontAwesomeWithBower/3.png](/images/posts/FontAwesomeWithBower/3.png)
 
 這樣改完後 FontAwesome 就可以正常使用。

@@ -50,11 +50,11 @@ SayHello("Larry");
 
 運行結果如下：
 
-{% img /images/posts/CSharp7LocalFunctions/1.png %}
+![/images/posts/CSharp7LocalFunctions/1.png](/images/posts/CSharp7LocalFunctions/1.png)
 
 反組譯看一下：
 
-{% img /images/posts/CSharp7LocalFunctions/2.png %}
+![/images/posts/CSharp7LocalFunctions/2.png](/images/posts/CSharp7LocalFunctions/2.png)
 
 可以看到編譯器幫我們產生了對應的方法以供調用，因此使用上無需額外的記憶體消耗，還能被 inline 處理。
 

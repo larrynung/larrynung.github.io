@@ -53,7 +53,7 @@ return ret;
 }
 ```
 
-{% img /images/posts/RomanToInt/1.png %}
+![/images/posts/RomanToInt/1.png](/images/posts/RomanToInt/1.png)
 
 Link
 ----

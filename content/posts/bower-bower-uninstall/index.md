@@ -13,6 +13,6 @@ bower uninstall
 
 像是要移除安裝的 jQuery bower 套件，可以下 bower uninstall jquery。
 
-{% img /images/posts/BowerUninstall/1.png %}
+![/images/posts/BowerUninstall/1.png](/images/posts/BowerUninstall/1.png)
 
-{% img /images/posts/BowerUninstall/2.png %}
+![/images/posts/BowerUninstall/2.png](/images/posts/BowerUninstall/2.png)

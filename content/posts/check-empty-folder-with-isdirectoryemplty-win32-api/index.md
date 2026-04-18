@@ -64,4 +64,4 @@ Console.WriteLine(sw.ElapsedMilliseconds);
 
 可以看到這邊判斷 Program Files 目錄也只要 1 ms 。
 
-{% img /images/posts/IsDirectoryEmplty/1.png %}
+![/images/posts/IsDirectoryEmplty/1.png](/images/posts/IsDirectoryEmplty/1.png)

@@ -16,7 +16,7 @@ $(function() {
 $("#spinner").spinner();
 });
 ```
-{% img /images/posts/JQueryUISpinner/1.png %}
+![/images/posts/JQueryUISpinner/1.png](/images/posts/JQueryUISpinner/1.png)
 
 若要做些細部設定，spinner 有提供些 options 可供我們使用，像是 min 可以設定  spinner 的最小值，max 可以設定 spinner 的最大值，step 可以設定 spinner 按一次要增加多少值。
 ```js

@@ -13,4 +13,4 @@ bower lookup
 
 像是要查閱 jQuery 套件的位置，可以輸入 bower lookup jquery。
 
-{% img /images/posts/BowerLookup/1.png %}
+![/images/posts/BowerLookup/1.png](/images/posts/BowerLookup/1.png)

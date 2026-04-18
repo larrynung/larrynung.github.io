@@ -60,4 +60,4 @@ disruptor.Shutdown();
 
 運作時可以看到收到的資料是被分攤處理的。
 
-{% img /images/posts/DisruptorWorkerPool/1.png %}
+![/images/posts/DisruptorWorkerPool/1.png](/images/posts/DisruptorWorkerPool/1.png)

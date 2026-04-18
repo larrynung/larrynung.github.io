@@ -36,7 +36,7 @@ $(document).ready( function () {
 } );
 ```
 
-{% img /images/posts/JQueryDataTables/1.png %}
+![/images/posts/JQueryDataTables/1.png](/images/posts/JQueryDataTables/1.png)
 
 啟用的同時可視需求下去設定對應的參數：  
 
@@ -59,7 +59,7 @@ $(document).ready(
 
 像是欄位的設定、分頁與排序的設定，或是設定是要做 Client side 的處理還是 Server side 的處理。  
 
-{% img /images/posts/JQueryDataTables/2.png %}
+![/images/posts/JQueryDataTables/2.png](/images/posts/JQueryDataTables/2.png)
 
 詳細的參數可參閱 [DataTables - Usage](http://legacy.datatables.net/usage/)。  
 

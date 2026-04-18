@@ -9,18 +9,18 @@ Save and Apply Custom IDE Layouts 是 Visual Studio 14 所釋出的新功能，�
 
 使用上只要將 IDE 的版面配置好，接著點擊 [Window/Save Window Layout] 主選單選項將當前的版面配置儲存。
 
-{% img /images/posts/VS14SaveAndApplyLayout/1.png %}
+![/images/posts/VS14SaveAndApplyLayout/1.png](/images/posts/VS14SaveAndApplyLayout/1.png)
 
-{% img /images/posts/VS14SaveAndApplyLayout/2.png %}
+![/images/posts/VS14SaveAndApplyLayout/2.png](/images/posts/VS14SaveAndApplyLayout/2.png)
 
-{% img /images/posts/VS14SaveAndApplyLayout/3.png %}
+![/images/posts/VS14SaveAndApplyLayout/3.png](/images/posts/VS14SaveAndApplyLayout/3.png)
 
 當需要時可透過點擊 [Window/Apply Window Layout] 主選單選項，或是透過觸發熱鍵 Ctrl + Alt +1~9 快速的進行版面配置的切換。
 
-{% img /images/posts/VS14SaveAndApplyLayout/4.png %}
+![/images/posts/VS14SaveAndApplyLayout/4.png](/images/posts/VS14SaveAndApplyLayout/4.png)
 
 這邊的 Layout 擺放順序跟儲存的順序有關，若有需要隨時可透過點擊 [Window/Manage Window Layouts] 主選單選項，將 Manage Window Layouts 視窗叫出來調整。
 
-{% img /images/posts/VS14SaveAndApplyLayout/5.png %}
+![/images/posts/VS14SaveAndApplyLayout/5.png](/images/posts/VS14SaveAndApplyLayout/5.png)
 
-{% img /images/posts/VS14SaveAndApplyLayout/6.png %}
+![/images/posts/VS14SaveAndApplyLayout/6.png](/images/posts/VS14SaveAndApplyLayout/6.png)

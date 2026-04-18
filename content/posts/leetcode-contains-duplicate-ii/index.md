@@ -34,7 +34,7 @@ return false;
 }
 ```
 
-{% img /images/posts/ContainsDuplicateII/1.png %}
+![/images/posts/ContainsDuplicateII/1.png](/images/posts/ContainsDuplicateII/1.png)
 
 Link
 ----

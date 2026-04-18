@@ -24,7 +24,7 @@ this.Url = url;
 
 運行在 C# 6.0 以前，編譯器就會告知錯誤：
 
-{% img /images/posts/ParamlessStructConstructor/1.png %}
+![/images/posts/ParamlessStructConstructor/1.png](/images/posts/ParamlessStructConstructor/1.png)
 
 如果想要在 Parameterless Constructors 自行加些處理，像是用建構子鏈導到別的建構子去建構，在 C# 6.0 以前都沒辦法。
 
@@ -95,4 +95,4 @@ this.Url = url;
 
 其運行結果如下：
 
-{% img /images/posts/ParamlessStructConstructor/2.png %}
+![/images/posts/ParamlessStructConstructor/2.png](/images/posts/ParamlessStructConstructor/2.png)

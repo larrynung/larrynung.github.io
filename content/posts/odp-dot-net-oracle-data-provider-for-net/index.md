@@ -15,13 +15,13 @@ x86 與 x64 版本的 ODP.NET 不具位元適應性，需依運行環境使用�
 
 不論選用哪個版本做開發，使用前都需先將組件加入參考，這邊可直接透過 NuGet 安裝對應的套件。
 
-{% img /images/posts/ODP.NET/1.png %}
+![/images/posts/ODP.NET/1.png](/images/posts/ODP.NET/1.png)
 
-{% img /images/posts/ODP.NET/2.png %}
+![/images/posts/ODP.NET/2.png](/images/posts/ODP.NET/2.png)
 
-{% img /images/posts/ODP.NET/3.png %}
+![/images/posts/ODP.NET/3.png](/images/posts/ODP.NET/3.png)
 
-{% img /images/posts/ODP.NET/4.png %}
+![/images/posts/ODP.NET/4.png](/images/posts/ODP.NET/4.png)
 
 組件載入後，程式撰寫起來跟一般的 ADO.NET 程式沒什麼兩樣。
 

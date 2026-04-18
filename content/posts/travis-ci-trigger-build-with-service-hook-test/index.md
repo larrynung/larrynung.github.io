@@ -11,18 +11,18 @@ tags: [Travis, CI]
 
 這邊可直接由 GitHub repository's setting 進入， 或是由 Travis CI 進入。
 
-{% img /images/posts/TravisCIServiceHookTest/1.png %}
+![/images/posts/TravisCIServiceHookTest/1.png](/images/posts/TravisCIServiceHookTest/1.png)
 
 進入後會看到像這樣的畫面：
 
-{% img /images/posts/TravisCIServiceHookTest/2.png %}
+![/images/posts/TravisCIServiceHookTest/2.png](/images/posts/TravisCIServiceHookTest/2.png)
 
 往下捲動找到 Travis CI 後點擊。
 
-{% img /images/posts/TravisCIServiceHookTest/3.png %}
+![/images/posts/TravisCIServiceHookTest/3.png](/images/posts/TravisCIServiceHookTest/3.png)
 
 接著點選 Test Hook 按鈕觸發 Travis CI 建置就可以了。
 
-{% img /images/posts/TravisCIServiceHookTest/4.png %}
+![/images/posts/TravisCIServiceHookTest/4.png](/images/posts/TravisCIServiceHookTest/4.png)
 
-{% img /images/posts/TravisCIServiceHookTest/5.png %}
+![/images/posts/TravisCIServiceHookTest/5.png](/images/posts/TravisCIServiceHookTest/5.png)

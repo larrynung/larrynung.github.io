@@ -23,7 +23,7 @@ MONTHS_BETWEEN(sysdate, ADD_MONTHS(sysdate, 2))
 
 使用上會像下面這樣：
 
-{% img /images/posts/MonthsBetweenFunction/1.png %}
+![/images/posts/MonthsBetweenFunction/1.png](/images/posts/MonthsBetweenFunction/1.png)
 
 Link
 ----

@@ -23,7 +23,7 @@ Ruby環境準備妥當後，將Octopress從Github clone下來。
 
 git clone git://github.com/imathis/octopress.git octopress
 
-{% img /images/posts/Octopress/1.png %}
+![/images/posts/Octopress/1.png](/images/posts/Octopress/1.png)
 
 接著進到Octopress目錄下。
 
@@ -34,13 +34,13 @@ cd octopress
 gem bundle
 bundle install
 
-{% img /images/posts/Octopress/2.png %}
+![/images/posts/Octopress/2.png](/images/posts/Octopress/2.png)
 
 bundle安裝完後，再將rake安裝上就可以了。
 
 rake install
 
-{% img /images/posts/Octopress/3.png %}
+![/images/posts/Octopress/3.png](/images/posts/Octopress/3.png)
 
 Configure Octopress
 ---------------------
@@ -52,7 +52,7 @@ _config.yml是我們主要要調整的設定檔，設定檔依設定的內容區
 
 Main Configs的設定有部落格的網址、部落格的標題、部落格的副標題...等，是啟用部落格主要要調整的設定。
 
-{% img /images/posts/Octopress/4.png %}
+![/images/posts/Octopress/4.png](/images/posts/Octopress/4.png)
 
 Jekyll & Plugins設定部分是設定部落格引擎以及外掛的部份，通常也是不需要做什麼調整
 
@@ -64,9 +64,9 @@ Init and deploy to Github page
 
 因為這邊要將之Host在Github的Github page，所以要先至Github上建立Repository,Repository命名需像username/username.github.io這樣。
 
-{% img /images/posts/Octopress/5.png %}
+![/images/posts/Octopress/5.png](/images/posts/Octopress/5.png)
 
-{% img /images/posts/Octopress/6.png %}
+![/images/posts/Octopress/6.png](/images/posts/Octopress/6.png)
 
 建立完後呼叫命令:
 
@@ -74,7 +74,7 @@ rake setup_github_pages
 
 該命令呼叫後會詢問Github page repository位置，帶入後Octopress會做些對應的設置動作。
 
-{% img /images/posts/Octopress/7.png %}
+![/images/posts/Octopress/7.png](/images/posts/Octopress/7.png)
 
 像是將Git的remote origin repository指向Github page repository、將branch從master切到source、設定_deploy目錄供存放要部署至master branch的內容...等。
 
@@ -118,11 +118,11 @@ rake watch
 
 rake preview
 
-{% img /images/posts/Octopress/8.png %}
+![/images/posts/Octopress/8.png](/images/posts/Octopress/8.png)
 
 預覽服務啟動後，可開啟瀏覽器訪問localhost:4000。沒意外的話會看到你部落格運行起來的樣子。
 
-{% img /images/posts/Octopress/9.png %}
+![/images/posts/Octopress/9.png](/images/posts/Octopress/9.png)
 
 若在預覽時發現需要修改，可以不中斷預覽服務，預覽服務會偵測修改，自動產生對應的靜態網頁。
 

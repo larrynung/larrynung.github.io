@@ -7,7 +7,7 @@ tags: [Octopress]
 
 sitemap.xml 是 Google 提出來的標準，以 XML 為格式，紀錄著網頁的連結與最後修改的時間。
 
-{% img /images/posts/OctopressNotifySearchEngine/1.png %}
+![](/images/posts/OctopressNotifySearchEngine/1.png)
 
 如果要即時通知搜尋引擎更新，而不等待搜尋引擎自行檢測，我們可以主動將 sitmap.xml 上傳給搜尋引擎。
 

@@ -55,7 +55,7 @@ Console.WriteLine(db.StringGet("Blog:Url", CommandFlags.PreferSlave));
 
 運行起來會像下面這樣：
 
-{% img /images/posts/ScriptingInStackExchange.Redis/1.png %}
+![/images/posts/ScriptingInStackExchange.Redis/1.png](/images/posts/ScriptingInStackExchange.Redis/1.png)
 
 但這樣的方法有個問題，就是每次運行都會傳輸一次 Lua script。
 
@@ -116,4 +116,4 @@ Console.WriteLine(db.StringGet("Blog:Url", CommandFlags.PreferSlave));
 
 運行結果如下：
 
-{% img /images/posts/ScriptingInStackExchange.Redis/2.png %}
+![/images/posts/ScriptingInStackExchange.Redis/2.png](/images/posts/ScriptingInStackExchange.Redis/2.png)

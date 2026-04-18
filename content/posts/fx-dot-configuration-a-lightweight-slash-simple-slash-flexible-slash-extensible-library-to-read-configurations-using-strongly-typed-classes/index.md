@@ -9,17 +9,17 @@ FX.Configuration 是一號稱輕量，簡單，具彈性，可擴充的 Configur
 
 使用上可分為幾個步驟。
 
-{% img /images/posts/FxConfiguration/1.png %}
+![/images/posts/FxConfiguration/1.png](/images/posts/FxConfiguration/1.png)
 
 首先需先透過 NuGet 套件管理視窗安裝套件。
 
-{% img /images/posts/FxConfiguration/2.png %}
+![/images/posts/FxConfiguration/2.png](/images/posts/FxConfiguration/2.png)
 
 或是透過 `Package Manager Console` 輸入下列命令安裝套件。
 
 Install-Package FX.Configuration
 
-{% img /images/posts/FxConfiguration/3.png %}
+![/images/posts/FxConfiguration/3.png](/images/posts/FxConfiguration/3.png)
 
 套件安裝完成後，接著要準備 Configuration 設定檔案，視需求決定是要用 Application/JSON/Mixed 哪種 Configuration，並訂定 Configuration 的結構以及要有哪些設定值。
 

@@ -25,6 +25,6 @@ public string Property { get; set; } = "Value";
 
 反組譯看一下，可以看到比較接近透過變數初始器去做賦值的動作，會在基底類別初始前宣告，也會標注 beforefieldinit。
 
-{% img /images/posts/AutoPropertyInitializers/1.png %}
+![/images/posts/AutoPropertyInitializers/1.png](/images/posts/AutoPropertyInitializers/1.png)
 
-{% img /images/posts/AutoPropertyInitializers/2.png %}
+![/images/posts/AutoPropertyInitializers/2.png](/images/posts/AutoPropertyInitializers/2.png)

@@ -17,7 +17,7 @@ StackExchange.Redis 是 StackExchange 提供的 redis client 實作。
 
 使用上需先透過 NuGet 套件管理視窗安裝套件，他有提供兩種套件，一種是不含強命名簽章的套件 StackExchange.Redis，一種是有強命名簽章的套件 StackExchange.Redis.StrongName。
 
-{% img /images/posts/StackExchange.Redis/1.png %}
+![/images/posts/StackExchange.Redis/1.png](/images/posts/StackExchange.Redis/1.png)
 
 或是透過 Package Manager Console 輸入下列命令安裝套件。
 

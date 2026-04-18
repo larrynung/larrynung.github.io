@@ -9,7 +9,7 @@ Mefx 是一用來分析與診斷 MEF 錯誤的命令列工具。當 MEF 在運�
 
 程式主檔可至 [Managed Extensibility Framework - Download: MEF Analysis Tool (mefx) for .NET 4.0 Beta](http://mef.codeplex.com/releases/view/33536) 這邊下載。
 
-{% img /images/posts/Mefx/1.png %}
+![/images/posts/Mefx/1.png](/images/posts/Mefx/1.png)
 
 命令列的使用語法如下：
 

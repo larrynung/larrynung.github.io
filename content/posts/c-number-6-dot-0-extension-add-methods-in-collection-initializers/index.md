@@ -94,4 +94,4 @@ list.Add( new Blog(name, url));
 ```
 運行結果如下：
 
-{% img /images/posts/ExtensionAddMethods/1.png %}
+![/images/posts/ExtensionAddMethods/1.png](/images/posts/ExtensionAddMethods/1.png)

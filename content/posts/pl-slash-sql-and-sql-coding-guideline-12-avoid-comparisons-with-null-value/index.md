@@ -19,7 +19,7 @@ END;
 
 因為 null 不等於任何東西，即使是 null 也不等於 null。
 
-{% img /images/posts/PLSQLCopRule12/1.png %}
+![/images/posts/PLSQLCopRule12/1.png](/images/posts/PLSQLCopRule12/1.png)
 
 正確的方式應該是用 is 或 is not 去做判斷。
 

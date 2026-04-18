@@ -9,25 +9,25 @@ Microsoft Monitoring Agent (MMA) 是可獨立運行的 IntelliTrace，可用來�
 
 透過 Microsoft Monitoring Agent ，我們可以 Follow  編寫程式 => 建置 => 發佈 => 偵測 => 診斷 這樣的流程，不斷的進行迭代，讓產品更加的穩定。
 
-{% img /images/posts/MicrosoftMonitoringAgent/1.png %}
+![/images/posts/MicrosoftMonitoringAgent/1.png](/images/posts/MicrosoftMonitoringAgent/1.png)
 
 Microsoft Monitoring Agent 主程式可至 [Microsoft Monitoring Agent 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40316) 這邊下載安裝。
 
-{% img /images/posts/MicrosoftMonitoringAgent/2.png %}
+![/images/posts/MicrosoftMonitoringAgent/2.png](/images/posts/MicrosoftMonitoringAgent/2.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/3.png %}
+![/images/posts/MicrosoftMonitoringAgent/3.png](/images/posts/MicrosoftMonitoringAgent/3.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/4.png %}
+![/images/posts/MicrosoftMonitoringAgent/4.png](/images/posts/MicrosoftMonitoringAgent/4.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/5.png %}
+![/images/posts/MicrosoftMonitoringAgent/5.png](/images/posts/MicrosoftMonitoringAgent/5.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/6.png %}
+![/images/posts/MicrosoftMonitoringAgent/6.png](/images/posts/MicrosoftMonitoringAgent/6.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/7.png %}
+![/images/posts/MicrosoftMonitoringAgent/7.png](/images/posts/MicrosoftMonitoringAgent/7.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/8.png %}
+![/images/posts/MicrosoftMonitoringAgent/8.png](/images/posts/MicrosoftMonitoringAgent/8.png)
 
-{% img /images/posts/MicrosoftMonitoringAgent/9.png %}
+![/images/posts/MicrosoftMonitoringAgent/9.png](/images/posts/MicrosoftMonitoringAgent/9.png)
 
 建議環境為 .NET Framework 3.5+、以及 PowerShell 3.0+。
 
@@ -37,7 +37,7 @@ Microsoft Monitoring Agent 主程式可至 [Microsoft Monitoring Agent 2013](htt
 
 Import-Module "C:\Program Files\Microsoft Monitoring Agent\Agent\PowerShell\Microsoft.MonitoringAgent.PowerShell\Microsoft.MonitoringAgent.PowerShell.dll"
 
-{% img /images/posts/MicrosoftMonitoringAgent/10.png %}
+![/images/posts/MicrosoftMonitoringAgent/10.png](/images/posts/MicrosoftMonitoringAgent/10.png)
 
 要開始啟用 Microsoft Montoring Agent 進行偵測，只要輸入命令：
 
@@ -45,33 +45,33 @@ Start-WebApplicationMonitoring
 
 命令叫用的同時，會詢問要監測的網站 (即IIS上網站的名稱)、偵測的類型 (Monitor、Trace、Custom)、以及 Intellitrace 檔輸出的位置。
 
-{% img /images/posts/MicrosoftMonitoringAgent/11.png %}
+![/images/posts/MicrosoftMonitoringAgent/11.png](/images/posts/MicrosoftMonitoringAgent/11.png)
 
 若想在當下立即產生 IntelliTrace 檔案進行分析，可叫用命令:
 
 Checkpoint-WebApplicationMonitoring
 
-{% img /images/posts/MicrosoftMonitoringAgent/12.png %}
+![/images/posts/MicrosoftMonitoringAgent/12.png](/images/posts/MicrosoftMonitoringAgent/12.png)
 
 若要終止偵測並將到目前為止的偵測儲存並產生 IntelliTrace 檔案，可叫用下列命令:
 
 Stop-WebApplicationMonitoring [WebSite]
 
-{% img /images/posts/MicrosoftMonitoringAgent/13.png %}
+![/images/posts/MicrosoftMonitoringAgent/13.png](/images/posts/MicrosoftMonitoringAgent/13.png)
 
 產生的 IntelliTrace file 可用 Visual Studio 開啟。
 
 開啟後會看到像下面這樣的畫面，會顯示所偵測到的 Exception、 System Info 、以及 Module Info。
 
-{% img /images/posts/MicrosoftMonitoringAgent/14.png %}
+![/images/posts/MicrosoftMonitoringAgent/14.png](/images/posts/MicrosoftMonitoringAgent/14.png)
 
 這邊通常我們關注的會是 Exception 這塊，找看看有沒有不該丟出的例外，找到後選取，在下方可看到對應的呼叫堆疊。
 
-{% img /images/posts/MicrosoftMonitoringAgent/15.png %}
+![/images/posts/MicrosoftMonitoringAgent/15.png](/images/posts/MicrosoftMonitoringAgent/15.png)
 
 進一步要查閱的話，可滑鼠左鍵連點，或是按下 `Start Debugging` 按鈕，會進入到偵錯模式，可以看到細部的區域變數或是呼叫堆疊，若有 PDB 檔的這邊也可以將之 Attach 上去，看更細部的資訊。
 
-{% img /images/posts/MicrosoftMonitoringAgent/16.png %}
+![/images/posts/MicrosoftMonitoringAgent/16.png](/images/posts/MicrosoftMonitoringAgent/16.png)
 
 Link
 ----

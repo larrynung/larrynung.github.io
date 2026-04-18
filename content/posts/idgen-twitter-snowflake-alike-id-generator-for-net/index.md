@@ -8,13 +8,13 @@ IdGen 是 ID 產生器套件，可用以產生 Twitter Snowflake-alike 的 ID，
 
 IdGen 產生的 ID 預設有 64 bit，就一個 long 的大小， 由 1 bit 的正負符號， 41 bit 的 Timestamp， 10 bit 的 Generator id， 12 bit 的 Sequence 所組成。
 
-{% img /images/posts/IdGen/1.png %}
+![/images/posts/IdGen/1.png](/images/posts/IdGen/1.png)
 
 使用上要先透過 NuGet 安裝 IdGen 套件。
 
-{% img /images/posts/IdGen/2.png %}
+![/images/posts/IdGen/2.png](/images/posts/IdGen/2.png)
 
-{% img /images/posts/IdGen/3.png %}
+![/images/posts/IdGen/3.png](/images/posts/IdGen/3.png)
 
 接著引用 IdGen 命名空間，建立 IdGenerator，然後調用 CreateId() 取得單一 ID，或是調用 Take() 取得多個 ID 即可。
 ```c#
@@ -93,7 +93,7 @@ Console.WriteLine(id.ToString());
 ```
 運行結果如下：
 
-{% img /images/posts/IdGen/4.png %}
+![/images/posts/IdGen/4.png](/images/posts/IdGen/4.png)
 
 Link
 ----

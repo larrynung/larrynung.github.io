@@ -46,7 +46,7 @@ throw new ArgumentException("Invalid argument.");
 
 這樣跑出來的數值就會漂亮...
 
-{% img /images/posts/TwoSum/2.png %}
+![/images/posts/TwoSum/2.png](/images/posts/TwoSum/2.png)
 
 Link
 ----

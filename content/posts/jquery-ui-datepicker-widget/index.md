@@ -24,7 +24,7 @@ Date：
   });
 ```
 
-{% img /images/posts/JQueryUIDatepicker/1.png %}
+![/images/posts/JQueryUIDatepicker/1.png](/images/posts/JQueryUIDatepicker/1.png)
 
 若要做些細部設定，Datepicker 有提供些 options 可供我們使用，像是 minDate、maxDate 可以用來決定可供選取的時間範圍，onSelect 方法可以設定日期選取後的動作。  
 
@@ -41,7 +41,7 @@ Date：
   });
 ```
 
-{% img /images/posts/JQueryUIDatepicker/2.png %}
+![/images/posts/JQueryUIDatepicker/2.png](/images/posts/JQueryUIDatepicker/2.png)
 
 若要主動觸發 Datepicker，也提供了些 methods 讓我們使用，像是 setDate、show。  
 
@@ -55,7 +55,7 @@ Date：
   });
 ```
 
-{% img /images/posts/JQueryUIDatepicker/3.png %}
+![/images/posts/JQueryUIDatepicker/3.png](/images/posts/JQueryUIDatepicker/3.png)
 
 最後這邊附上測試用的範例：  
 

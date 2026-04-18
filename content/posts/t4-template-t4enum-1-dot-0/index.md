@@ -7,7 +7,7 @@ tags: [T4, T4Enum]
 
 .NET 列舉的很多操作都會有難以避免的 Boxing/UnBoxing，像是要取得特定列舉值的列舉名，取得所有的列舉名，取得所有的列舉值，取得列舉值的 Attribute，都無法避免 Boxing/UnBoxing 的發生。
 
-{% img /images/posts/T4Enum/1.png %}
+![/images/posts/T4Enum/1.png](/images/posts/T4Enum/1.png)
 
 這邊筆者嘗試用 T4 來解這問題，用 T4 範本可以遍尋專案內的所有列舉，產生對應的輔助類別與擴充方法，藉此避開列舉操作的 Boxing/UnBoxing 問題。
 
@@ -64,6 +64,6 @@ Console.WriteLine((int)value);
 
 運行結果如下：
 
-{% img /images/posts/T4Enum/2.png %}
+![/images/posts/T4Enum/2.png](/images/posts/T4Enum/2.png)
 
 目前這版已經能取得列舉名，遍尋列舉名，與遍尋列舉值，但尚未支援 Attribute 的取得。

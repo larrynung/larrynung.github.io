@@ -13,9 +13,9 @@ ABS( number )
 
 number 為要轉換的數值，如果帶入的是負值，會將其變為正值傳出，就像下面這樣：
 
-{% img /images/posts/ABSFunction/1.png %}
+![/images/posts/ABSFunction/1.png](/images/posts/ABSFunction/1.png)
 
-{% img /images/posts/ABSFunction/2.png %}
+![/images/posts/ABSFunction/2.png](/images/posts/ABSFunction/2.png)
 
 Link
 ----

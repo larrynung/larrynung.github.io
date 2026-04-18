@@ -9,10 +9,10 @@ Oracle SQL Developer 預設的的 Syntax Color 若不習慣，我們可以開啟
 
 不太會調整的也可以直接換用 Scheme。
 
-{% img /images/posts/OracleSQLDeveloperSyntaxColors/1.png %}
+![/images/posts/OracleSQLDeveloperSyntaxColors/1.png](/images/posts/OracleSQLDeveloperSyntaxColors/1.png)
 
 要注意的是，若這邊換用的是 Twilight Scheme，由於底色太暗，會看不到當前輸入的游標，因此要在切到 [Code Editor | Caret Behavior] 下設定 Caret Color，將輸入游標調成淺色系。
 
-{% img /images/posts/OracleSQLDeveloperSyntaxColors/2.png %}
+![/images/posts/OracleSQLDeveloperSyntaxColors/2.png](/images/posts/OracleSQLDeveloperSyntaxColors/2.png)
 
 ~

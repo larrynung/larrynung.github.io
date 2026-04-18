@@ -11,7 +11,7 @@ Boxing 是種隱含的處理，當 Value Type 物件塞到 Reference Type 時發
 int i = 123;
 object o = i; // explicit boxing
 ```
-{% img /images/posts/BoxingUnBoxing/1.png %}
+![/images/posts/BoxingUnBoxing/1.png](/images/posts/BoxingUnBoxing/1.png)
 
 因為 int 為 Value Type，object 為 Reference Type，故會做 Boxing 的處理。
 
@@ -23,7 +23,7 @@ int i = 123; // a value type
 object o = i; // boxing
 int j = (int)o; // unboxing
 ```
-{% img /images/posts/BoxingUnBoxing/2.png %}
+![/images/posts/BoxingUnBoxing/2.png](/images/posts/BoxingUnBoxing/2.png)
 
 之所以要了解 Boxing & UnBoxing 的運作，是因為他會帶來不必要的性能耗費，透過下面這段簡單的測試就可以清楚的看出。
 ```c#
@@ -63,7 +63,7 @@ return sw.ElapsedMilliseconds;
 }
 }
 ```
-{% img /images/posts/BoxingUnBoxing/4.png %}
+![/images/posts/BoxingUnBoxing/4.png](/images/posts/BoxingUnBoxing/4.png)
 
 可以看到其實我們很容易就造成不必要的 Boxing，因為不能避免的還是會有些方法會要求傳入 Object 型態，像是 String.Format。如果叫用時帶入的數值不主動呼叫 ToString 讓它透過低階的 API 轉成字串，就會造成 Boxing。
 
@@ -86,7 +86,7 @@ Console.WriteLine(ex);
 }
 }
 ```
-{% img /images/posts/BoxingUnBoxing/5.png %}
+![/images/posts/BoxingUnBoxing/5.png](/images/posts/BoxingUnBoxing/5.png)
 
 但因為物件內裝的是整數數值，當用 float 轉型時會長是用 float 進行拆箱，因為無法拆箱，所以系統會發出例外。
 
@@ -116,7 +116,7 @@ Console.WriteLine(((Counter)riddle.counter).Count);
 }
 }
 ```
-{% img /images/posts/BoxingUnBoxing/6.png %}
+![/images/posts/BoxingUnBoxing/6.png](/images/posts/BoxingUnBoxing/6.png)
 
 因為拆箱後是在新的 Stack 位置，所以第一次拆箱呼叫 Increment，與後來拆箱取 Count 的實體是不同的。
 

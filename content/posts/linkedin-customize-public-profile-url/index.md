@@ -11,19 +11,19 @@ http://linkedin.com/pub/johndoe/40/263/205
 
 這樣的 Url 不僅不便於記憶，對於 SEO 來說也不是很好。一般來說我們會傾向將 Public Profile Url 帶上自己的 English Name，這樣在搜尋時會比較會被搜尋到。所以我們需要將 Public Profile Url 進行客製，第一步就是要先連到我們的 Public Profile (這邊因為筆者已經改過了，所以網址看起來不會像上面提的那樣)。
 
-{% img /images/posts/CustomizeLinkedInProfileUrl/1.png %}
+![/images/posts/CustomizeLinkedInProfileUrl/1.png](/images/posts/CustomizeLinkedInProfileUrl/1.png)
 
 開啟的 Public Profile 頁面會像下面這樣。
 
-{% img /images/posts/CustomizeLinkedInProfileUrl/2.png %}
+![/images/posts/CustomizeLinkedInProfileUrl/2.png](/images/posts/CustomizeLinkedInProfileUrl/2.png)
 
 將之向下捲動，在右側這邊會看到 Yor public profile URL 這個區塊，找到後點擊 Public Profile Url 後面的鉛筆圖示進行編輯。
 
-{% img /images/posts/CustomizeLinkedInProfileUrl/3.png %}
+![/images/posts/CustomizeLinkedInProfileUrl/3.png](/images/posts/CustomizeLinkedInProfileUrl/3.png)
 
 將之改為我們期望的網址後按下 Save 按鈕即可。
 
-{% img /images/posts/CustomizeLinkedInProfileUrl/4.png %}
+![/images/posts/CustomizeLinkedInProfileUrl/4.png](/images/posts/CustomizeLinkedInProfileUrl/4.png)
 
 Link
 ----

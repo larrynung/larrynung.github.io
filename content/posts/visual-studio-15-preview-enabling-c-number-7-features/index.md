@@ -9,7 +9,7 @@ Visual Studio 15 Preview 開始支援部分 C# 7.0 的功能，由於尚未完�
 
 若要啟用需切打開專案的屬性頁，切至建置頁面，在條件式編譯的符號那邊設定 `__DEMO__,__DEMO_EXPERIMENTAL__` 即可。
 
-{% img /images/posts/VS15PreviewEnableCSharp7/1.png %}
+![/images/posts/VS15PreviewEnableCSharp7/1.png](/images/posts/VS15PreviewEnableCSharp7/1.png)
 
 Link
 ----

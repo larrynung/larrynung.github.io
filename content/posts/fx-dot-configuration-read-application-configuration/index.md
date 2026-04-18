@@ -22,10 +22,10 @@ tags: [FX.Configuration]
 using FX.Configuration;
 
 namespace ConsoleApplication12 {
-public class MyAppConfig: AppConfiguration{
-public string Setting1 { get; private set; }
-public string Setting2 { get; private set; }
-}
+    public class MyAppConfig: AppConfiguration {
+        public string Setting1 { get; private set; }
+        public string Setting2 { get; private set; }
+    }
 }
 ```
 準備好後就只要將類別實體化即可透過成員屬性取得 Application Configuration 的設定值。
@@ -33,17 +33,17 @@ public string Setting2 { get; private set; }
 using System;
 
 namespace ConsoleApplication12 {
-class Program {
-static void Main(string[] args) {
-var config = new MyAppConfig();
+    class Program {
+        static void Main(string[] args) {
+            var config = new MyAppConfig();
 
-Console.WriteLine(config.Setting1);
-Console.WriteLine(config.Setting2);
-}
-}
+            Console.WriteLine(config.Setting1);
+            Console.WriteLine(config.Setting2);
+        }
+    }
 }
 ```
-{% img /images/posts/FxConfigurationReadAPPConfig/1.png %}
+![](/images/posts/FxConfigurationReadAPPConfig/1.png)
 
 Link
 ----

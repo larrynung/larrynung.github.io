@@ -54,7 +54,7 @@ return sw.ElapsedMilliseconds;
 
 可以看到直接拆箱的效能比先轉成字串後再去 Parse 來的要好的多。
 
-{% img /images/posts/CastVSParse/1.png %}
+![/images/posts/CastVSParse/1.png](/images/posts/CastVSParse/1.png)
 
 Link
 ----

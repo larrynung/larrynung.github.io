@@ -27,15 +27,15 @@ rake generate
 
 首先將 Theme 用 Git Clone 下來，並進行安裝。
 
-{% img /images/posts/OctopressChangeTheme/7.png %}
+![](/images/posts/OctopressChangeTheme/7.png)
 
 安裝完後預設是深色的 Theme，若需要淺色的 Theme 可開啟 `sass/custom/_colors.scss `，將前後的註解給拿掉就可以了。
 
-{% img /images/posts/OctopressChangeTheme/8.png %}
+![](/images/posts/OctopressChangeTheme/8.png)
 
 此外我們還需要對 _config.yml 作些調整。該 Theme 上方的巡覽列設定方式跟預設的 Theme 不太一樣，它是要設定在 _config.yml 內，因此我們要在 _config.yml 中加入我們的巡覽列設定，設定巡覽列上的每個元素的名稱與連結位置。
 
-{% img /images/posts/OctopressChangeTheme/9.png %}
+![](/images/posts/OctopressChangeTheme/9.png)
 
 最後呼叫 `rake generate` 建立靜態網頁，沒意外的話 Theme 就套用完成了。
 

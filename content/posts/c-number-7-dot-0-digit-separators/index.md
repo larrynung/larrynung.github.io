@@ -29,7 +29,7 @@ Console.WriteLine(value.ToString());
 }
 ```
 
-{% img /images/posts/CSharp7DigitSeparators/1.png %}
+![/images/posts/CSharp7DigitSeparators/1.png](/images/posts/CSharp7DigitSeparators/1.png)
 
 Link
 ----

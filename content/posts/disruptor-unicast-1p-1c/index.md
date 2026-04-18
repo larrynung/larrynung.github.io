@@ -9,11 +9,11 @@ tags: [Disruptor]
 
 最簡單的 Pattern 就是 Unicast: 1P - 1C，一個 Producer 負責生產資料，一個 Consumer 負責消費資料。依賴關係圖會像這樣：
 
-{% img /images/posts/DisruptorUnicast1P1C/1.png %}
+![/images/posts/DisruptorUnicast1P1C/1.png](/images/posts/DisruptorUnicast1P1C/1.png)
 
 可以將之簡化成下面這樣：
 
-{% img /images/posts/DisruptorUnicast1P1C/2.png %}
+![/images/posts/DisruptorUnicast1P1C/2.png](/images/posts/DisruptorUnicast1P1C/2.png)
 
 透過 DSL 的方式撰寫的話會像下面這樣：
 ```c#
@@ -41,7 +41,7 @@ disruptor.Shutdown();
 ```
 若是改用 Non-DSL 撰寫的話，依賴關係圖形會像下面這樣：
 
-{% img /images/posts/DisruptorUnicast1P1C/3.png %}
+![/images/posts/DisruptorUnicast1P1C/3.png](/images/posts/DisruptorUnicast1P1C/3.png)
 
 程式撰寫起來會像下面這樣：
 ```c#
@@ -56,4 +56,4 @@ eventProcessor.Halt();
 ...
 ```
 運行起來可以看到我們只有一個 Handler，這個 Handler 會在一個執行緒上循序地消費 Producer 產生的資料。
-{% img /images/posts/DisruptorUnicast1P1C/4.png %}
+![/images/posts/DisruptorUnicast1P1C/4.png](/images/posts/DisruptorUnicast1P1C/4.png)

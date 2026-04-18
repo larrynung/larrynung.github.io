@@ -13,7 +13,7 @@ FLOOR( number )
 
 使用上會像下面這樣：
 
-{% img /images/posts/FloorFunction/1.png %}
+![/images/posts/FloorFunction/1.png](/images/posts/FloorFunction/1.png)
 
 Link
 ----

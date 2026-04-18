@@ -9,7 +9,7 @@ Bower 依賴於 Node.js 與 Git，安裝 Bower 需透過 Node.js 內的 npm，�
 
 npm install -g bower
 
-{% img /images/posts/InstallBower/1.png %}
+![/images/posts/InstallBower/1.png](/images/posts/InstallBower/1.png)
 
 而  Bower 套件的安裝與使用會用到 Git，所以記得也要將之安裝。
 

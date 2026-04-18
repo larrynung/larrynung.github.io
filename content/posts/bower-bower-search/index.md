@@ -13,4 +13,4 @@ bower search
 
 像是要搜尋 jQuery 的 package，就可以下 bower search jquery。
 
-{% img /images/posts/BowerSearch/1.png %}
+![/images/posts/BowerSearch/1.png](/images/posts/BowerSearch/1.png)

@@ -7,7 +7,7 @@ tags: [Disruptor]
 
 要使用 Disruptor 必須先將套件加入專案中，透過 NuGet 將之載入即可：
 
-{% img /images/posts/DisruptorGettingStarted/1.png %}
+![/images/posts/DisruptorGettingStarted/1.png](/images/posts/DisruptorGettingStarted/1.png)
 
 套件載入後我們就可以開始來使用 Disruptor 了。首先，必須要撰寫 EventHandler，用來消費生產者所生產的資料。撰寫上很簡單，只要實作 IEventHandler 泛型介面即可，泛型介面要指定預期的資料型態，並在 OnEvent 方法中進行資料的處理。
 
@@ -35,7 +35,7 @@ EventHandler 好了，接著就是撰寫 Producer 生產資料的部分以及資
 
 DSL 的寫法比較簡潔，首先要告訴 Disruptor 怎樣初始 Ringbuffer 的每個元素，以及 Ringbuffer 的大小，建立出 Disruptor 的物件實體。接著要決定資料怎樣在 Consumer 間流動。再來要 Start Disruptor，取得 Ringbuffer，然後產生資料往 Ringbuffer 上塞。
 
-{% img /images/posts/DisruptorGettingStarted/2.png %}
+![/images/posts/DisruptorGettingStarted/2.png](/images/posts/DisruptorGettingStarted/2.png)
 
 程式寫起來就像下面這樣：
 ```c#
@@ -59,11 +59,11 @@ ringBuffer.Publish(sequenceNo);
 disruptor.Shutdown();
 ...
 ```
-{% img /images/posts/DisruptorGettingStarted/3.png %}
+![/images/posts/DisruptorGettingStarted/3.png](/images/posts/DisruptorGettingStarted/3.png)
 
 Non-DSL 寫起來相對複雜些，一樣要告訴 Disruptor 怎樣初始 Ringbuffer 的每個元素，以及 Ringbuffer 的大小，但是這邊改建立出 Ringbuffer，接著要用 EventProcessor 與 Barrier 去設定資料怎樣在 Consumer 間流動，然後要用非同步的方式調用 EventProcessor 的 Run 方法，再來就一樣是產生資料往 Ringbuffer 上塞。
 
-{% img /images/posts/DisruptorGettingStarted/4.png %}
+![/images/posts/DisruptorGettingStarted/4.png](/images/posts/DisruptorGettingStarted/4.png)
 
 程式寫起來就像下面這樣：
 ```c#
@@ -89,4 +89,4 @@ eventProcessor.Halt();
 Application.DoEvents();
 ...
 ```
-{% img /images/posts/DisruptorGettingStarted/5.png %}
+![/images/posts/DisruptorGettingStarted/5.png](/images/posts/DisruptorGettingStarted/5.png)
