@@ -61,7 +61,8 @@ namespace Generate_From_Usage
 若要產生靜態的屬性，我們可以透過"類別.屬性名稱"來作Generate Property
 
 使用後，靜態的屬性就產生了
- 
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,6 +76,7 @@ namespace Generate_From_Usage
         public static string StaticProperty { get; set; }
     }
 }
+```
 
 ## Generate Field
 
@@ -82,6 +84,7 @@ namespace Generate_From_Usage
 
 使用後，會幫我們產生對應的欄位
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,11 +98,13 @@ namespace Generate_From_Usage
         public string Name { get{return _name;} set; }
     }
 }
+```
 
 若要產生靜態的欄位，我們可以像下圖這般作Generate Field
 
 使用後，靜態的欄位就產生了   
- 
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -116,11 +121,13 @@ namespace Generate_From_Usage
         public static string StaticProperty { get { return _staticField; } set; }
     }
 }
+```
 
 也可以透過"類別.欄位名稱"來作Generate Field
 
 同樣的，我們也可以產生靜態的欄位，只是存取範圍不同而已。
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -138,13 +145,15 @@ namespace Generate_From_Usage
         public static string StaticProperty { get { return _staticField; } set; }
     }
 }
+```
 
 ## Generate Constructer
 
 當物件的建構子不存在時，我們可透過Generate From Usage的Generate Constructer來替我們產生。
 
 使用後，會幫我們產生對應的建構子   
- 
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -165,13 +174,15 @@ namespace Generate_From_Usage
         }
     }
 }
+```
 
 ## Generate Method
 
 當物件的方法不存在時，我們可透過Generate From Usage的Generate Method來替我們產生。
 
 使用後，會幫我們產生對應的方法   
- 
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -187,11 +198,13 @@ namespace Generate_From_Usage
         }
     }
 }
+```
 
 若要產生靜態的方法，我們可以像下圖這般作Generate Method
 
 使用後，靜態的方法就產生了   
- 
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -212,6 +225,7 @@ namespace Generate_From_Usage
         }
     }
 }
+```
 
 ## Link
 VS 2010 Generate From UsageGenerate From UsageWalkthrough: TDD Support with the Generate From Usage FeatureGenerate From Usage in Visual Studio 2010Walkthrough: TDD Support with the Generate From Usage Feature in VS 2010 (Lisa Feigenbaum)HDI Video: Generate from Usage in Visual Studio 2010 with Karen LiuHow Do I Use Generate from Usage in Visual Studio 2010?
