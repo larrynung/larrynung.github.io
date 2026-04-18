@@ -15,14 +15,14 @@ tags: [C++]
 
 ```cpp
 #include "stdafx.h"
-#include <iostream>
+#include
 using namespace System;
 using namespace System::IO;
 
-int main(array<String ^> ^args)
+int main(array ^args)
 {
-    Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory()); // Error!
-    return 0;
+Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory()); // Error!
+return 0;
 }
 ```
 
@@ -36,16 +36,16 @@ int main(array<String ^> ^args)
 
 ```cpp
 #include "stdafx.h"
-#include <iostream>
+#include
 using namespace System;
 using namespace System::IO;
 
 #undef GetCurrentDirectory
 
-int main(array<String ^> ^args)
+int main(array ^args)
 {
-    Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory());
-    return 0;
+Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory());
+return 0;
 }
 ```
 
