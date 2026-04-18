@@ -58,8 +58,9 @@ DWORD BatteryFullLifeTime; } SYSTEM_POWER_STATUS,
 
 ## Example
 
-為了使用方便，也便於對照比較。這邊我把GetSystemPowerStatus API包成了類似System.Windows.Form.PowerStatus的類別。 
+為了使用方便，也便於對照比較。這邊我把GetSystemPowerStatus API包成了類��System.Windows.Form.PowerStatus的類別。 
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -154,9 +155,11 @@ namespace Battery
         }
     }
 }
+```
 
 使用上跟.NET內建的PowerStatus大同小異。只要取得對應的屬性值即可。 
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -197,6 +200,7 @@ namespace BatteryPower
         }
     }
 }
+```
 
 執行畫面
 

@@ -13,16 +13,18 @@ tags: [C++]
 
 因此使用類似下面的程式，在編譯時就會發生錯誤。
 
+```cpp
 #include "stdafx.h"
-#include
+#include <iostream>
 using namespace System;
 using namespace System::IO;
 
-int main(array ^args)
+int main(array<String ^> ^args)
 {
-Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory()); // Error!
-return 0;
+    Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory()); // Error!
+    return 0;
 }
+```
 
 錯誤訊息
 
@@ -32,18 +34,20 @@ return 0;
 
 像是
 
+```cpp
 #include "stdafx.h"
-#include
+#include <iostream>
 using namespace System;
 using namespace System::IO;
 
 #undef GetCurrentDirectory
 
-int main(array ^args)
+int main(array<String ^> ^args)
 {
-Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory());
-return 0;
+    Console::WriteLine(L"Dir: "+System::IO::Directory::GetCurrentDirectory());
+    return 0;
 }
+```
 
 ##
 Link
