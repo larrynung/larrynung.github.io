@@ -22,7 +22,8 @@ Generate From Usage在使用上我們可以透過把滑鼠移至小波浪下的�
 當宣告物件的類別在專案中找不到時，我們可透過Generate From Usage的Generate Class來替我們產生。
 
 使用後，專案會自動幫我們產生類別檔   
- 
+ 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Generate_From_Usage
     {
     }
 }
+```
 
 ## Generate Property
 
@@ -41,6 +43,7 @@ namespace Generate_From_Usage
 
 使用後，會幫我們產生對應的屬性
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,10 +56,11 @@ namespace Generate_From_Usage
         public string Name { get; set; }
     }
 }
+```
 
 若要產生靜態的屬性，我們可以透過"類別.屬性名稱"來作Generate Property
 
-使用後，靜態的屬性就產生了   
+使用後，靜態的屬性就產生了
  
 using System;
 using System.Collections.Generic;
