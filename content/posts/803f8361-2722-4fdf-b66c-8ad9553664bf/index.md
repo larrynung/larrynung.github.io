@@ -2,7 +2,9 @@
 title: "[JavaScript]HTML5 New Feature - Web Storage"
 date: "2013-11-06 12:00:00"
 description: "[JavaScript]HTML5 New Feature - Web Storage"
----Web storage是HTML5新功能之一，允許使用者透過瀏覽器將資料暫存在client端。以往使用cookie來做類似這樣的需求，每個頁面可容納的資料量，約只有 4 KB 左右，且會在HTTP Request時上傳資料至Server端，造成不必要的頻寬浪費，也對執行效能造成不好的影響。而若是透過 Web Storage來儲存，儲存容量依瀏覽器不同而有不同，約有 1-5MB，且能手動調整透過設定將空間放大，能存放更大的資料量，不耗費不必要的頻寬，使用起來也更為方便。
+---
+
+Web storage是HTML5新功能之一，允許使用者透過瀏覽器將資料暫存在client端。以往使用cookie來做類似這樣的需求，每個頁面可容納的資料量，約只有 4 KB 左右，且會在HTTP Request時上傳資料至Server端，造成不必要的頻寬浪費，也對執行效能造成不好的影響。而若是透過 Web Storage來儲存，儲存容量依瀏覽器不同而有不同，約有 1-5MB，且能手動調整透過設定將空間放大，能存放更大的資料量，不耗費不必要的頻寬，使用起來也更為方便。
 
 Web storage可依其儲存特性再被細分為sessionStorage與localStorage。以sessionStorage來說，所儲存的資料在瀏覽的分頁或是瀏覽器關閉時就會被清除，較適合用來儲存比較臨時性的資料。
 

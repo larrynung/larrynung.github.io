@@ -3,7 +3,9 @@ title: "[C++]使用Global Flags偵測記憶體越界錯誤"
 date: "2012-01-03 10:03:27"
 description: "[C++]使用Global Flags偵測記憶體越界錯誤"
 tags: [C++,Software]
----筆者在[C++]使用Pageheap偵測記憶體越界錯誤這篇介紹了如何利用Pageheap去偵測記憶體的越界錯誤，這樣的功能也可以使用Debuging Tools內的Global Flags工具，可以達到相同的效果，且較易取得與使用。
+---
+
+筆者在[C++]使用Pageheap偵測記憶體越界錯誤這篇介紹了如何利用Pageheap去偵測記憶體的越界錯誤，這樣的功能也可以使用Debuging Tools內的Global Flags工具，可以達到相同的效果，且較易取得與使用。
 
 Debuging Tools有需要可在Microsoft Windows SDK for Windows 7 and .NET Framework 4這邊下載。
 

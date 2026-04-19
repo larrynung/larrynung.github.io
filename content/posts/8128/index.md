@@ -4,7 +4,9 @@ slug: "[CSharp][VB.NET]Isolated Storage 隔離儲存區"
 date: "2009-04-22 09:03:59"
 description: "[C#][VB.NET]Isolated Storage 隔離儲存區"
 tags: [CSharp,VB.NET]
----## Abstract
+---
+
+## Abstract
 NamespaceAssemble功能重要類別隔離類型儲存位置使用時機不該使用時機取得隔離儲存區刪除隔離儲存區建立目錄尋找目錄尋找檔案刪除目錄刪除檔案寫入檔案讀取檔案
 
 ## Namespace

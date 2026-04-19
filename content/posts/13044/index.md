@@ -3,7 +3,9 @@ title: "[VS 2010]Start Page Customization"
 date: "2010-01-16 02:58:43"
 description: "[VS 2010]Start Page Customization"
 tags: [Visual Studio]
----## Introduction
+---
+
+## Introduction
 
 Visual Studio在啟動時，預設會自動載入起始頁面。預設的起始頁面上會放一些微軟覺得常用與實用的功能，像是歡迎訊息、回報問題.‧‧‧等功能。方便使用者快速的使用這些功能。
 

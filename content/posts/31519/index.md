@@ -4,7 +4,9 @@ slug: "[CSharp]Stream.Write Extension Method"
 date: "2011-07-12 10:53:13"
 description: "[C#]Stream.Write Extension Method"
 tags: [CSharp]
----在處理Stream型態時常會使用到Stream.Write這個方法，每次都會有種疑問就是，大多數的處理都是要將Buffer整個寫入，為何偏偏每次都要將索引帶0，長度帶為Buffer的大小呢?另外在處理Stream時，若要顯示其處理進度，是否能有更為簡單的方法?這邊將我為了解決這些問題所寫的擴充方法整裡如下：
+---
+
+在處理Stream型態時常會使用到Stream.Write這個方法，每次都會有種疑問就是，大多數的處理都是要將Buffer整個寫入，為何偏偏每次都要將索引帶0，長度帶為Buffer的大小呢?另外在處理Stream時，若要顯示其處理進度，是否能有更為簡單的方法?這邊將我為了解決這些問題所寫的擴充方法整裡如下：
 ```
 using System;
 using System.Reflection;

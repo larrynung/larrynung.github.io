@@ -4,7 +4,9 @@ slug: "[CSharp]如何使用Windows Shell做Zip檔的壓縮與解壓縮"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何使用Windows Shell做Zip檔的壓縮與解壓縮"
 tags: [CSharp]
----在.NET程式中開發人員要做壓縮與解壓縮有很多種方法，可以用BCL內建的壓縮類別，或是用 DotNetZip與SharpZipLib之類的第三方元件庫，抑或是使用Windows Shell來做。內建的壓縮方式與第三方元件很多人都做過了介紹，使用上也大概都不是問題，但對於Windows Shell的使用方式可能就比較沒有那麼熟悉，所以這邊筆者稍微簡介一下怎樣用Windows Shell來做Zip檔的壓縮與解壓縮。
+---
+
+在.NET程式中開發人員要做壓縮與解壓縮有很多種方法，可以用BCL內建的壓縮類別，或是用 DotNetZip與SharpZipLib之類的第三方元件庫，抑或是使用Windows Shell來做。內建的壓縮方式與第三方元件很多人都做過了介紹，使用上也大概都不是問題，但對於Windows Shell的使用方式可能就比較沒有那麼熟悉，所以這邊筆者稍微簡介一下怎樣用Windows Shell來做Zip檔的壓縮與解壓縮。
 
 要用Windows Shell來做Zip檔的壓縮與解壓縮，因為我們要使用Shell的功能，因此首先必須將Microsoft Shell Controls and Automation組件加入參考。
 
