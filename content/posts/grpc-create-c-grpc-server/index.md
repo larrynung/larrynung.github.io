@@ -5,14 +5,24 @@ tags: [gRPC, CSharp]
 ---
 
 要建立 gRPC 的 Server，須先將 GRPC.Tools、GRPC.Core、Google.Protobuf 這三個 NuGet 套件加入參考。
-```C#
-...
 
-...
+```xml
+<ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.20.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.0" />
+</ItemGroup>
 ```
+
 然後設定從 Proto 檔產生需要的程式部分。
-```C#
+
+```xml
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Server" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+</ItemGroup>
 ```
+
 ![1.png](1.png)
 
 編譯後可在 obj 下看到產出的檔案。
@@ -28,11 +38,12 @@ public class HelloServiceImpl:HelloService.HelloServiceBase
 ...
 ```
 並覆寫該服務的方法即可。
-```C#
+
+```csharp
 ...
-public override Task SayHello(HelloRequest request, ServerCallContext context)
+public override Task<HelloResponse> SayHello(HelloRequest request, ServerCallContext context)
 {
-...
+    ...
 }
 ...
 ```
@@ -43,7 +54,7 @@ using Grpc.Core;
 
 public class HelloServiceImpl:HelloService.HelloServiceBase
 {
-public override Task SayHello(HelloRequest request, ServerCallContext context)
+public override Task<HelloResponse> SayHello(HelloRequest request, ServerCallContext context)
 {
 return Task.FromResult(new HelloResponse
 {

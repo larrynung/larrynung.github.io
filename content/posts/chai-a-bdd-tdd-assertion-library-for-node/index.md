@@ -8,7 +8,9 @@ Chai 是 Node.js 的 BDD / TDD 斷言套件。
 
 使用前先從 Registry 下載套件。
 
+```bash
 npm install chai --save-dev
+```
 
 ![1.png](1.png)
 

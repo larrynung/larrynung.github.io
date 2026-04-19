@@ -7,7 +7,7 @@ tags: [gRPC]
 gRPC 的 Streaming 可用來做大量資料的傳輸，不論是 Client 傳到 Service，或是 Service 回給 Client。
 
 使用上就是在 proto 檔用 stream 去定義要使用 Streaming 的地方，看是用在傳入還是回傳。
-```
+```protobuf
 ...
 service Greeter {
 ...
@@ -59,7 +59,7 @@ var data = await stream.ToListAsync();
 ...
 ```
 所以假設我們有個 proto 如下:
-```
+```protobuf
 syntax = "proto3";
 
 package Greet;

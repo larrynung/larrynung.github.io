@@ -14,7 +14,7 @@ tags: [Redis, Snowflake]
 
 舉個例子來說，假設我用 Redis 的 Hash 來實作，Key 假定為 generator，裡面的 field 用來放 Generator id，value 用來放 Redis client 的 Id。
 
-```
+```text
 generator =>
 {
 {$generator-id, $redis-client-id},
@@ -24,7 +24,7 @@ generator =>
 
 這樣在第一個服務上線時，Redis 內的資料是空的。
 
-```
+```text
 generator =>
 {
 }
@@ -32,7 +32,7 @@ generator =>
 
 這時透過 Redis 命令 CLIENT LIST 取得所有連線的 Id，與 CLIENT ID 命令取得當前連線的 Id，就可以去更新並配給 Generator id。像是所有連線 Id 問回來只有一個連線，且連線 Id 跟當前連線 Id 一樣都是 0，就會將 Generator id 0 配給 Redis client 0。
 
-```
+```text
 generator =>
 {
 {0, 0}
@@ -41,7 +41,7 @@ generator =>
 
 當第二個服務上線，Redis 有兩個連線，當前連線 Id 為 1，則將 Generator id 1 配給 Redis client 1。
 
-```
+```text
 generator =>
 {
 {0, 0},
@@ -51,7 +51,7 @@ generator =>
 
 當第三個服務上線時，假設第一個服務也斷線了，透過 Redis 命令 CLIENT LIST 取得所有連線的 Id 得到 1 跟 3。比對 Redis 內的資料可得知連線 0 已經下線，故將 Generator id 0 可配給 Redis client 3。
 
-```
+```text
 generator =>
 {
 {0, 3},

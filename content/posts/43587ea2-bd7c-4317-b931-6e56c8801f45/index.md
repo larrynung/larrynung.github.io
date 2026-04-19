@@ -5,7 +5,7 @@ date: "2013-11-06 12:00:00"
 description: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 tags: [CSharp]
 ---有使用過.NET程式做視窗訊息的接收的應該都會知道，好像沒有比較直接的方法去設定視窗的ClassName。就算去覆寫Form.CreateParams也不太行，若是指定的ClassName沒有註冊過，運行起來會丟出例外。
-```
+```csharp
 public partial class Form1 : Form
 {
 public Form1()
@@ -26,7 +26,7 @@ return base.CreateParams;
 
 若是指定的是有註冊過的ClassName，像是Button之類的。
 
-```
+```csharp
 ...
 protected override CreateParams CreateParams
 {
@@ -47,7 +47,7 @@ return base.CreateParams;
 
 為了解決這樣的問題我們得使用比較低階的方法，去跟作業系統註冊視窗的名稱，然後建立視窗出來。這邊筆者稍微整理了一個簡單的MessageReceiver類別以方便使用：
 
-```
+```csharp
 public class MessageReceiver : IDisposable
 {
 #region Struct
@@ -305,7 +305,7 @@ GC.SuppressFinalize(this);
 }
 ```
 
-```
+```csharp
 public class MessageEventArgs : EventArgs
 {
 #region Property
@@ -327,7 +327,7 @@ lParam = lparam;
 
 使用上就只要帶入視窗標題與視窗的ClassName去建立出物件實體，然後繫結事件下去處理就可以了，像是下面這段程式碼，筆者建立了MessageReceiver類別，並用FindWindow透過ClassName找尋出MessageReceiver，然後發送個簡單的訊息給它。
 
-```
+```csharp
 public partial class Form1 : Form
 {
 [DllImport("user32.dll", SetLastError = true)]
