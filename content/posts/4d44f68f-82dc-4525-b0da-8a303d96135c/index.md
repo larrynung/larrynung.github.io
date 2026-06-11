@@ -6,31 +6,31 @@ description: "[Software]PerfCompare - A C# micro-benchmarking and performance an
 
 PerfCompare是一個用來測試C#程式效能的輔助小工具，使用上十分容易，但卻有一些限制存在。這邊筆者實際以[Performance][C#]StringBuilder與String.Join串接字串時的效能比較這篇的範例為例，解釋如何使用這樣的一個工具來作效能的測量比較。
 
-	PerfCompare下載完解壓縮，開啟後我們會看到像下面這樣的畫面。程式分為很多頁面，Code頁面可以讓我們輸入所要測試的程式碼，下方Additional compiler parameters可以設定一些額外的編譯參數，像是/unsave之類的。
+PerfCompare下載完解壓縮，開啟後我們會看到像下面這樣的畫面。程式分為很多頁面，Code頁面可以讓我們輸入所要測試的程式碼，下方Additional compiler parameters可以設定一些額外的編譯參數，像是/unsave之類的。
 
-	而Advanced Edit選項則是可以看到這個測試效能的工具是用怎樣的程式碼去計算效能的，進階的使用者也可以進一步調整。
+而Advanced Edit選項則是可以看到這個測試效能的工具是用怎樣的程式碼去計算效能的，進階的使用者也可以進一步調整。
 
-	若想要看程式對應的IL碼，可切換至ILDasm Result頁面，因為是借用SDK的ILDasm來做反組譯，所以第一次切換必須指定ILDasm檔案的位置。
+若想要看程式對應的IL碼，可切換至ILDasm Result頁面，因為是借用SDK的ILDasm來做反組譯，所以第一次切換必須指定ILDasm檔案的位置。
 
-	設定完後可在該頁面看到對應的IL碼。
+設定完後可在該頁面看到對應的IL碼。
 
-	程式碼輸入完，若要開始進行效能測試，可將PerfCompare切換至Performance頁面，鍵入要測試的次數與可用來識別測試的字樣，按下Go按鈕，測試即會開始運行，測試完畢下方會顯示所花費的測試時間。
+程式碼輸入完，若要開始進行效能測試，可將PerfCompare切換至Performance頁面，鍵入要測試的次數與可用來識別測試的字樣，按下Go按鈕，測試即會開始運行，測試完畢下方會顯示所花費的測試時間。
 
-	要做測試一定要會有要比較的對象，上面的示範是測試用String.Join去做字串的串連，因為我們要跟StringBuilder的串連下去做比較，因此必須再切回到Code頁面輸入StringBuilder做字串串連的程式碼。
+要做測試一定要會有要比較的對象，上面的示範是測試用String.Join去做字串的串連，因為我們要跟StringBuilder的串連下去做比較，因此必須再切回到Code頁面輸入StringBuilder做字串串連的程式碼。
 
-	在切到Performance頁面，修改用來識別測試的字樣，再次按下Go按鈕進行測試。
+在切到Performance頁面，修改用來識別測試的字樣，再次按下Go按鈕進行測試。
 
-	都測完後切換至History，可看到剛剛測試的紀錄，按下Export to Clipboard可將測試結果複製至剪貼簿，有需要也可以直接貼至Excel去瀏覽。這邊PerfCompare也很貼心的提供了比較的功能，可以選取兩筆測試紀錄，按下下方的Compare按鈕。
+都測完後切換至History，可看到剛剛測試的紀錄，按下Export to Clipboard可將測試結果複製至剪貼簿，有需要也可以直接貼至Excel去瀏覽。這邊PerfCompare也很貼心的提供了比較的功能，可以選取兩筆測試紀錄，按下下方的Compare按鈕。
 
-	PerfCompare會幫我們算好速度上差異大概是幾倍。
+PerfCompare會幫我們算好速度上差異大概是幾倍。
 
-	看到這邊相信大家都能理解PerfCompare能帶給我們什麼樣的幫助了，當然因為它只是一個小型的測量輔助工具，所以如一開始筆者所提的會有些使用上的限制，像是不能一次將兩種要測試的程式寫上，必須依序填入測試、無較方便的方法提供變數的初始與命名空間的引用。
+看到這邊相信大家都能理解PerfCompare能帶給我們什麼樣的幫助了，當然因為它只是一個小型的測量輔助工具，所以如一開始筆者所提的會有些使用上的限制，像是不能一次將兩種要測試的程式寫上，必須依序填入測試、無較方便的方法提供變數的初始與命名空間的引用。
 
-	最後在提一下，在利用PerfCompare做效能測試時，若有需要在測試時列出些訊息，我們可以在程式碼中加入LogLine下去處理，像是下面這樣：
+最後在提一下，在利用PerfCompare做效能測試時，若有需要在測試時列出些訊息，我們可以在程式碼中加入LogLine下去處理，像是下面這樣：
 
-	運行後結果會被輸出至LogLine() Output頁面。
+運行後結果會被輸出至LogLine() Output頁面。
 
-## 
-	Link
+## Link
 
-		PerfCompare
+
+PerfCompare

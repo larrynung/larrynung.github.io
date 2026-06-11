@@ -10,23 +10,23 @@ tags: [CSharp]
 
 撰寫如下的程式：
   		void ConvertPptToJpg(string file, string outputPath)
-		{
-			var application = new Microsoft.Office.Interop.PowerPoint.Application();
+{
+var application = new Microsoft.Office.Interop.PowerPoint.Application();
 
-			var ppt = application.Presentations.Open(file, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
+var ppt = application.Presentations.Open(file, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
 
-			var index = 0;
-			var fileName = Path.GetFileNameWithoutExtension(file);
-			foreach (Slide slid in ppt.Slides)
-			{
-				++index;
-				slid.Export(Path.Combine(outputPath, string.Format("{0}{1}.jpg", fileName, index)), "jpg", Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-			}
+var index = 0;
+var fileName = Path.GetFileNameWithoutExtension(file);
+foreach (Slide slid in ppt.Slides)
+{
+++index;
+slid.Export(Path.Combine(outputPath, string.Format("{0}{1}.jpg", fileName, index)), "jpg", Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+}
 
-			ppt.Close();
-			application.Quit();
-			GC.Collect();
-		}
+ppt.Close();
+application.Quit();
+GC.Collect();
+}
 
 程式碼很簡單，就是建立出PowerPoint應用程式後，讓PowerPoint應用程式將投影片檔案開啟，開啟時設定不顯示視窗，然後遍巡所有的投影片匯出，匯出時帶入匯出的檔案位置以及想要的解析度大小，做完後再將PowerPoint檔及應用程式關閉。
 
@@ -40,78 +40,78 @@ ConvertPptToJpg(@"C:\Users\larry\Desktop\Win8 Screen Capture.pptx", @"c:\");
 
 這邊也可以進一步用Late-Binding的方式處理，效果一樣。
 
-		private void NAR(object o)
-		{
-			try
-			{
-				while ((Marshal.ReleaseComObject(o) > 0) || (Marshal.FinalReleaseComObject(o) > 0))
-				{
-				}
-			}
-			catch
-			{
-			}
-			finally
-			{
-				o = null;
-			}
-		}
+private void NAR(object o)
+{
+try
+{
+while ((Marshal.ReleaseComObject(o) > 0) || (Marshal.FinalReleaseComObject(o) > 0))
+{
+}
+}
+catch
+{
+}
+finally
+{
+o = null;
+}
+}
 
-		void ConvertPptToJpg(string file, string outputPath)
-		{
-			Type t = Type.GetTypeFromProgID("PowerPoint.Application");
-			object o = Activator.CreateInstance(t);
+void ConvertPptToJpg(string file, string outputPath)
+{
+Type t = Type.GetTypeFromProgID("PowerPoint.Application");
+object o = Activator.CreateInstance(t);
 
-			object p = t.InvokeMember(
-				"Presentations",
-				BindingFlags.Public | BindingFlags.GetProperty,
-				null, o, null, null);
+object p = t.InvokeMember(
+"Presentations",
+BindingFlags.Public | BindingFlags.GetProperty,
+null, o, null, null);
 
-			Type t2 = p.GetType();
-			object ppt = t2.InvokeMember("Open",
-				BindingFlags.Public | BindingFlags.InvokeMethod,
-				null, p, new object[] { file, 0, 0, 0 }, null);
+Type t2 = p.GetType();
+object ppt = t2.InvokeMember("Open",
+BindingFlags.Public | BindingFlags.InvokeMethod,
+null, p, new object[] { file, 0, 0, 0 }, null);
 
-			object slides = t2.InvokeMember(
-			"Slides",
-			BindingFlags.Public | BindingFlags.GetProperty,
-			null, ppt, null, null);
+object slides = t2.InvokeMember(
+"Slides",
+BindingFlags.Public | BindingFlags.GetProperty,
+null, ppt, null, null);
 
-			var index = 0;
-			var fileName = Path.GetFileNameWithoutExtension(file);
-			foreach (object slid in (slides as IEnumerable))
-			{
-				++index;
-				var slidType = slid.GetType();
-				slidType.InvokeMember("Export",
-				BindingFlags.Public | BindingFlags.InvokeMethod,
-				null, slid, new object[] { Path.Combine(outputPath, string.Format("{0}{1}.jpg", fileName, index)), "jpg", Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height }, null);
-				NAR(slid);
-			}
+var index = 0;
+var fileName = Path.GetFileNameWithoutExtension(file);
+foreach (object slid in (slides as IEnumerable))
+{
+++index;
+var slidType = slid.GetType();
+slidType.InvokeMember("Export",
+BindingFlags.Public | BindingFlags.InvokeMethod,
+null, slid, new object[] { Path.Combine(outputPath, string.Format("{0}{1}.jpg", fileName, index)), "jpg", Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height }, null);
+NAR(slid);
+}
 
-			NAR(p);
-			p = null;
+NAR(p);
+p = null;
 
-			NAR(slides);
-			slides = null;
+NAR(slides);
+slides = null;
 
-			t2.InvokeMember("Close",
-				BindingFlags.Public | BindingFlags.InvokeMethod,
-				null, ppt, null, null);
+t2.InvokeMember("Close",
+BindingFlags.Public | BindingFlags.InvokeMethod,
+null, ppt, null, null);
 
-			NAR(ppt);
-			ppt = null;
+NAR(ppt);
+ppt = null;
 
-			t.InvokeMember(
-				"Quit",
-				BindingFlags.Public | BindingFlags.InvokeMethod,
-				null, o, null, null);
+t.InvokeMember(
+"Quit",
+BindingFlags.Public | BindingFlags.InvokeMethod,
+null, o, null, null);
 
-			NAR(o);
-			o = null;
+NAR(o);
+o = null;
 
-			GC.Collect();
-		}
+GC.Collect();
+}
 
 ## Link
 

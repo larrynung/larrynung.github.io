@@ -6,33 +6,33 @@ description: "How to use LinkedIn's plugins"
 
 至筆者接觸LinkedIn以來，一直都是將LinkedIn視為跟Twitter一樣適合貼技術方面資訊的管道，所以筆者的技術文章多半都會轉貼到LinkedIn與Twitter上面。且筆者設定了LinkedIn會轉貼至Twitter，Twitter又設定了轉貼至Facebook，所以技術文章只要貼在LinkedIn就會自動串到Twitter與Facebook。但要另外開啟LinkedIn將技術文章的位置貼上總還是有一點點的不方便，所以筆者前陣子抽空查了一下LinkedIn是否有類似Facebook那樣的PlugIn可以使用。
 
-	果不其然，在Plugins | LinkedIn Developer Network這邊就有提供很多PlugIn可供使用。像是Share、Proflie之類的套件，或是讓人Follow公司、亦或是應徵工作的套件...等等。
+果不其然，在Plugins | LinkedIn Developer Network這邊就有提供很多PlugIn可供使用。像是Share、Proflie之類的套件，或是讓人Follow公司、亦或是應徵工作的套件...等等。
 
-	筆者這邊暫時只需要使用到類似Share這樣的PlugIn(其它也都大同小異)，所以按下Share On LinkedIn這邊的Get it按鈕。
+筆者這邊暫時只需要使用到類似Share這樣的PlugIn(其它也都大同小異)，所以按下Share On LinkedIn這邊的Get it按鈕。
 
-	按下後會出現簡單的設定頁面，可以設些簡單且常用的參數，像是外觀要用哪種模式、要用哪種語系顯示Share字樣、或是要Share的網址(留白是share當前頁面)，設定的同時可以在右側的預覽區預覽PlugIn外觀。
+按下後會出現簡單的設定頁面，可以設些簡單且常用的參數，像是外觀要用哪種模式、要用哪種語系顯示Share字樣、或是要Share的網址(留白是share當前頁面)，設定的同時可以在右側的預覽區預覽PlugIn外觀。
 
-	初步的設定完成後，我們可以按下左下方的Get Code按鈕。
+初步的設定完成後，我們可以按下左下方的Get Code按鈕。
 
-	按下後按鈕下方會展開讓我們嵌入用的程式碼，複製起來貼到我們要嵌入的網頁就可以了。這邊要特別留意一下，在程式碼的下方有configuring this plugin的連結。
+按下後按鈕下方會展開讓我們嵌入用的程式碼，複製起來貼到我們要嵌入的網頁就可以了。這邊要特別留意一下，在程式碼的下方有configuring this plugin的連結。
 
-	按下去後有相對應的說明與介紹。
+按下去後有相對應的說明與介紹。
 
-	捲至下方可以看到Next Steps這邊有個Reference按鈕。
+捲至下方可以看到Next Steps這邊有個Reference按鈕。
 
-	按下後會跳至該PlugIn的Reference頁面，這邊有些參數可能是前面的設定頁面沒有的，如前面提到的設定頁面提供的只是簡單且常用的參數，所以要進階的微調還是需要參閱一下Reference頁面。
+按下後會跳至該PlugIn的Reference頁面，這邊有些參數可能是前面的設定頁面沒有的，如前面提到的設定頁面提供的只是簡單且常用的參數，所以要進階的微調還是需要參閱一下Reference頁面。
 
-	PlugIn設定調完了，內嵌用的程式碼也已到手，這邊實際的嵌入到DotBlogs看看。以點部落來說文章的上方有個預設的分享列，提供了一些常用的分享功能。
+PlugIn設定調完了，內嵌用的程式碼也已到手，這邊實際的嵌入到DotBlogs看看。以點部落來說文章的上方有個預設的分享列，提供了一些常用的分享功能。
 
-	這個位置很適合我們加入LinkedIn的Share PlugIn，檢視一下網頁原始碼，可以看到名為sharebar的div元素。
+這個位置很適合我們加入LinkedIn的Share PlugIn，檢視一下網頁原始碼，可以看到名為sharebar的div元素。
 
-	因此這邊進到點部落的組態設定，在Sitewide Tracking code這邊做些手腳，將LinkedIn Share PlugIn先放在一個隱藏的span內，再將它插至sharebar中。
+因此這邊進到點部落的組態設定，在Sitewide Tracking code這邊做些手腳，將LinkedIn Share PlugIn先放在一個隱藏的span內，再將它插至sharebar中。
 
-	儲存後，我們可以在部落格中看到上方的分享列會多出我們新加入的LinkedIn Share PlugIn。
+儲存後，我們可以在部落格中看到上方的分享列會多出我們新加入的LinkedIn Share PlugIn。
 
-	分享技術文章到LinkedIn也變得更簡單了...
+分享技術文章到LinkedIn也變得更簡單了...
 
-## 
-	Link
+## Link
 
-		Plugins | LinkedIn Developer Network
+
+Plugins | LinkedIn Developer Network

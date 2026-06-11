@@ -6,14 +6,14 @@ description: "Deploy application to cloud with Google App Engine Launcher"
 
 參閱筆者Registering Google App Engine's Application這篇，當你跟Google App Engine註冊完一個Application後，用對應的網址連上去應該會像下面這張圖一樣回應Server Error。這是因為我們還未將Application佈署到Cloud上所導致。
 
-	若是在本地撰寫好了Application，經過測試無誤，我們就可以準備將Application佈署到Cloud上了。
+若是在本地撰寫好了Application，經過測試無誤，我們就可以準備將Application佈署到Cloud上了。
 
-	以使用Google App Engine Launcher為例，我們可以選取要準備要上傳的Application，並按下上方工具列的Edit按鈕。
+以使用Google App Engine Launcher為例，我們可以選取要準備要上傳的Application，並按下上方工具列的Edit按鈕。
 
-	按下後Google App Engine Launcher會用設定的編輯器去開啟Application的app.yaml檔案，確定application這邊的設定跟我們當時註冊的Application ID是一致的，像是筆者當初註冊的Application ID是levelupapp1，app.yaml這邊的application設定就必須要是levelupapp1，這樣佈署時Google App Engine才能做個對應，才知道是要佈署到哪邊。
+按下後Google App Engine Launcher會用設定的編輯器去開啟Application的app.yaml檔案，確定application這邊的設定跟我們當時註冊的Application ID是一致的，像是筆者當初註冊的Application ID是levelupapp1，app.yaml這邊的application設定就必須要是levelupapp1，這樣佈署時Google App Engine才能做個對應，才知道是要佈署到哪邊。
 
-	app.yaml的設定確定無誤後，按下上方工具列的Deploy按鈕，Google App Engine Launcher會彈出對話框，要求使用者輸入帳密，帳密輸入後按下OK按鈕開始進行佈署的動作。
+app.yaml的設定確定無誤後，按下上方工具列的Deploy按鈕，Google App Engine Launcher會彈出對話框，要求使用者輸入帳密，帳密輸入後按下OK按鈕開始進行佈署的動作。
 
-	開始佈署的同時，Google App Engine Launcher會彈出個訊息對話框，告知我們佈署的進度與狀態(依筆者的使用經驗，如果Google App Engine與Python的RunTime對應不起來，這步驟會失效...)。當在訊息對話框中看到Deployment successful字樣，就代表我們已經完成佈署的動作。
+開始佈署的同時，Google App Engine Launcher會彈出個訊息對話框，告知我們佈署的進度與狀態(依筆者的使用經驗，如果Google App Engine與Python的RunTime對應不起來，這步驟會失效...)。當在訊息對話框中看到Deployment successful字樣，就代表我們已經完成佈署的動作。
 
-	佈署到Cloud後我們可以再次用當初註冊的Application網址來測試看看，沒意外的話應該會看到我們的Application確實的運行在Cloud上面。
+佈署到Cloud後我們可以再次用當初註冊的Application網址來測試看看，沒意外的話應該會看到我們的Application確實的運行在Cloud上面。

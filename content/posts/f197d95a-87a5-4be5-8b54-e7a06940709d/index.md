@@ -9,12 +9,12 @@ CString -> System::String^    
 CString strNativedMsg = _T("Test");
 System::String^ strManagedMsg = %System::String(strNativedMsg);
 
-		System::String^ -> CString
+System::String^ -> CString
 
 System::String^ strManagedMsg = "Test";
 CString strNativedMsg = (CString) strManagedMsg ;
 
-		System::String^ -> int
+System::String^ -> int
 
 System::String^ strManagedNumber = "123";
 int nNativatedNumber = System::Convert::ToInt32(strManagedNumber );

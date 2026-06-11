@@ -7,25 +7,25 @@ tags: [CSharp]
 
 .NET 4.0新增了一個System.Runtime.Caching命名空間，該命名空間主要提供了一個可擴充的資料快取框架，提供開發者使用與實作快取的功能。
 
-	在以往我們可能得自行將資料Load到記憶體中，在背景去監控是否變動或是過期需要更新，甚至是自行撰寫Cache Pool去做控管，甚至是套用LRU演算法去釋放，避免快取佔用過多的記憶體。在.NET 4.0以後，再也不用那麼麻煩了。
+在以往我們可能得自行將資料Load到記憶體中，在背景去監控是否變動或是過期需要更新，甚至是自行撰寫Cache Pool去做控管，甚至是套用LRU演算法去釋放，避免快取佔用過多的記憶體。在.NET 4.0以後，再也不用那麼麻煩了。
 
-	框架中比較重要的組成元件有ObjectCache、CacheItemPolicy、ChangeMonitor。
+框架中比較重要的組成元件有ObjectCache、CacheItemPolicy、ChangeMonitor。
 
-	ObjectCache為記憶體快取框架中的主要類別，簡單的說就是一個快取池。提供存取快取所需方法和屬性，支援加入、擷取與更新快取資料，主要職責為建立管理快取的元素、指定快取回收與到期的資訊、觸發變更事件。快取框架中所提供的MemoryCache類別即為ObjectCache抽象類別的實作，可將從快取介質所讀出的資料快取到記憶體中，有點類似於ASP.NET中的Cache類別。
+ObjectCache為記憶體快取框架中的主要類別，簡單的說就是一個快取池。提供存取快取所需方法和屬性，支援加入、擷取與更新快取資料，主要職責為建立管理快取的元素、指定快取回收與到期的資訊、觸發變更事件。快取框架中所提供的MemoryCache類別即為ObjectCache抽象類別的實作，可將從快取介質所讀出的資料快取到記憶體中，有點類似於ASP.NET中的Cache類別。
 
-	CacheItemPolicy的主要職責為告知ObjectCache內的內容何時會過期，我們可設定絕對的或是相對應的過期時間，也可與ChangeMonitor搭配使用。
+CacheItemPolicy的主要職責為告知ObjectCache內的內容何時會過期，我們可設定絕對的或是相對應的過期時間，也可與ChangeMonitor搭配使用。
 
-	ChangeMonitor為一抽象基底類別，主要職責為監控快取介質的狀態變更，可監控快取介質的狀態並判斷快取是否過期需要更新，透過適當的設定可讓資料在享有快取好處的同時也能保證資料不至於過時。快取框架中的CacheEntryChangeMonitor、FileChangeMonitor、HostFileChangeMonitor、SqlChangeMonitor等類別都是該抽象類別的實作。
+ChangeMonitor為一抽象基底類別，主要職責為監控快取介質的狀態變更，可監控快取介質的狀態並判斷快取是否過期需要更新，透過適當的設定可讓資料在享有快取好處的同時也能保證資料不至於過時。快取框架中的CacheEntryChangeMonitor、FileChangeMonitor、HostFileChangeMonitor、SqlChangeMonitor等類別都是該抽象類別的實作。
 
-	在快取框架的使用上我們需先將System.Runtime.Caching.dll組件加入參考，該框架不支援Client Profile的.NET Framework，若看不到請切回.NET Framework 4。
+在快取框架的使用上我們需先將System.Runtime.Caching.dll組件加入參考，該框架不支援Client Profile的.NET Framework，若看不到請切回.NET Framework 4。
 
-	並加入System.Runtime.Caching命名空間。
+並加入System.Runtime.Caching命名空間。
 
-	using System.Runtime.Caching;
+using System.Runtime.Caching;
 
-	接著我們遵循著一定的開發Flow就可以了。首先記得要初始ObjectCache，這邊多半是直接取得內建的MemoryCache實體，然後我們要帶入Content的Key，試圖從ObjectCache取得快取的內容，如果有快取的內容就直接回傳，若無則我們需從介質中取得內容，設定CacheItemPolicy，將Content的Key、Content、以及CacheItemPolicy設定給ObjectCachem。
+接著我們遵循著一定的開發Flow就可以了。首先記得要初始ObjectCache，這邊多半是直接取得內建的MemoryCache實體，然後我們要帶入Content的Key，試圖從ObjectCache取得快取的內容，如果有快取的內容就直接回傳，若無則我們需從介質中取得內容，設定CacheItemPolicy，將Content的Key、Content、以及CacheItemPolicy設定給ObjectCachem。
 
-	這邊實際的示範個完整的範例
+這邊實際的示範個完整的範例
 
 using System;
 using System.Collections.Generic;
@@ -38,46 +38,46 @@ using System.Threading.Tasks;
 
 namespace CacheItemPolicyDemo
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			ContentProvider textFile = new ContentProvider();
-			Stopwatch sw = new Stopwatch();
-			while (true)
-			{
-				sw.Reset();
-				sw.Start();
+class Program
+{
+static void Main(string[] args)
+{
+ContentProvider textFile = new ContentProvider();
+Stopwatch sw = new Stopwatch();
+while (true)
+{
+sw.Reset();
+sw.Start();
                 Console.WriteLine(DateTime.Now.ToString());
-				Console.WriteLine(textFile.Content);
-				sw.Stop();
-				Console.WriteLine("Elapsed Time: {0} ms", sw.ElapsedMilliseconds);
-				Console.WriteLine(new string('=', 50));
-				Console.ReadLine();
-			}
-		}
-	}
+Console.WriteLine(textFile.Content);
+sw.Stop();
+Console.WriteLine("Elapsed Time: {0} ms", sw.ElapsedMilliseconds);
+Console.WriteLine(new string('=', 50));
+Console.ReadLine();
+}
+}
+}
 
-	public class ContentProvider
-	{
-		public String Content
-		{
-			get
-			{
-				const string CACHE_KEY = "Content";
-				string content = m_Cache[CACHE_KEY] as string;
-				if (content == null)
-				{
-					CacheItemPolicy policy = new CacheItemPolicy();
-					policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(1500);
-					//policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);
+public class ContentProvider
+{
+public String Content
+{
+get
+{
+const string CACHE_KEY = "Content";
+string content = m_Cache[CACHE_KEY] as string;
+if (content == null)
+{
+CacheItemPolicy policy = new CacheItemPolicy();
+policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(1500);
+//policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);
 
-					//policy.UpdateCallback = new CacheEntryUpdateCallback((args) => 
-					//{
-					//	Console.WriteLine("MyCachedItemUpdatedCallback...");
-					//	Console.WriteLine(string.Format("Remove {0}...Because {1}",args.Key,args.RemovedReason.ToString()));
-					//	Console.WriteLine(new string('=', 50));
-					//});
+//policy.UpdateCallback = new CacheEntryUpdateCallback((args) => 
+//{
+//	Console.WriteLine("MyCachedItemUpdatedCallback...");
+//	Console.WriteLine(string.Format("Remove {0}...Because {1}",args.Key,args.RemovedReason.ToString()));
+//	Console.WriteLine(new string('=', 50));
+//});
 
                     //policy.RemovedCallback = new CacheEntryRemovedCallback((args) => 
                     //{
@@ -86,64 +86,64 @@ namespace CacheItemPolicyDemo
                     //    Console.WriteLine(new string('=', 50));
                     //});
 
-					content = Guid.NewGuid().ToString();
-					Thread.Sleep(1000);
-					m_Cache.Set(CACHE_KEY, content, policy);
-				}
-				return content;
-			}
-		}
-
-		private ObjectCache _cache;
-		private ObjectCache m_Cache
-		{
-			get
-			{
-				if (_cache == null)
-					_cache = MemoryCache.Default;
-				return _cache;
-			}
-		}
-	}
+content = Guid.NewGuid().ToString();
+Thread.Sleep(1000);
+m_Cache.Set(CACHE_KEY, content, policy);
+}
+return content;
+}
 }
 
-	以這例子來說，若是CacheItemPolicy設定了AbsoluteExpiration，像是下面這樣：
+private ObjectCache _cache;
+private ObjectCache m_Cache
+{
+get
+{
+if (_cache == null)
+_cache = MemoryCache.Default;
+return _cache;
+}
+}
+}
+}
+
+以這例子來說，若是CacheItemPolicy設定了AbsoluteExpiration，像是下面這樣：
 
 policy.AbsoluteExpiration = DateTime.Now.AddMilliseconds(1500);
 
-	則快取的內容會在指定的時間內失效，所以我們程式運行起來一直按著Enter，大概每1.5秒就會更新一次內容，1.5秒以內問回來的資料都是在0ms左右。
+則快取的內容會在指定的時間內失效，所以我們程式運行起來一直按著Enter，大概每1.5秒就會更新一次內容，1.5秒以內問回來的資料都是在0ms左右。
 
-	若是CacheItemPolicy設定了SlidingExpiration，像是下面這樣：
+若是CacheItemPolicy設定了SlidingExpiration，像是下面這樣：
 
 policy.SlidingExpiration = TimeSpan.FromMilliseconds(1500);
 
-	程式運行起來一直按著Enter，快取的內容都不會更新，但是放開大約1.5秒再次按下，快取的內容就會被更新。
+程式運行起來一直按著Enter，快取的內容都不會更新，但是放開大約1.5秒再次按下，快取的內容就會被更新。
 
-	CacheItemPolicy這邊也可以設定UpdateCallback與RemovedCallback，分別是快取更新前與更新後的回呼，若有需要這邊也可以自行設定去做些動作，像是紀錄LOG或是將資料回存之類的。
+CacheItemPolicy這邊也可以設定UpdateCallback與RemovedCallback，分別是快取更新前與更新後的回呼，若有需要這邊也可以自行設定去做些動作，像是紀錄LOG或是將資料回存之類的。
 
-	再來看一個例子，假設今天我想要從檔案中讀取資料做顯示的動作，我希望每次顯示的值都是最新的內容，在以往我們可能需要在每次讀取時重新載入並回傳內容值；或是載入資料後用FileSystemWatcher監視檔案是否有更動，有更動就重新載入。現在有了.NET 4.0你可以將這樣的功能需求透過快取框架來實現，透過MemoryCache去做檔案內容的快取，並透過HostFileChangeMonitor去監控快取介質，在內部告知快取類別所存的快取是否過期，範例程式如下：
+再來看一個例子，假設今天我想要從檔案中讀取資料做顯示的動作，我希望每次顯示的值都是最新的內容，在以往我們可能需要在每次讀取時重新載入並回傳內容值；或是載入資料後用FileSystemWatcher監視檔案是否有更動，有更動就重新載入。現在有了.NET 4.0你可以將這樣的功能需求透過快取框架來實現，透過MemoryCache去做檔案內容的快取，並透過HostFileChangeMonitor去監控快取介質，在內部告知快取類別所存的快取是否過期，範例程式如下：
 
-	運行前我們可以先準備如下內容的文字檔案
+運行前我們可以先準備如下內容的文字檔案
 
-	運行後可以看到檔案的內容確實被讀出了，這邊可多按幾次Enter讓範例顯示檔案內容，在檔案未變更的狀況下，快取都不算過期，故取得的內容都是快取中的內容，不會耗費時間在讀取檔案內容上。
+運行後可以看到檔案的內容確實被讀出了，這邊可多按幾次Enter讓範例顯示檔案內容，在檔案未變更的狀況下，快取都不算過期，故取得的內容都是快取中的內容，不會耗費時間在讀取檔案內容上。
 
-	接著變更文字檔案內容後存檔
+接著變更文字檔案內容後存檔
 
-	按下Enter讓範例程式重新讀取，這時快取會自動透過HostFileChangeMonitor判斷到快取過期，因此我們從快取區讀回的值會是Null，整個檔案內容會再重新載入，顯示的內容就會是新的檔案內容。
+按下Enter讓範例程式重新讀取，這時快取會自動透過HostFileChangeMonitor判斷到快取過期，因此我們從快取區讀回的值會是Null，整個檔案內容會再重新載入，顯示的內容就會是新的檔案內容。
 
-	除了HostFileChangeMonitor外，若是快取的介質是SQL資料庫，我們也可以換用SqlChangeMonitor，操作上大致雷同，只是建立出SqlChangeMonitor時要帶入對應的SqlDependency，有興趣的可自行參閱.NET 4.0 MemoryCache with SqlChangeMonitor，這邊不多做示範。
+除了HostFileChangeMonitor外，若是快取的介質是SQL資料庫，我們也可以換用SqlChangeMonitor，操作上大致雷同，只是建立出SqlChangeMonitor時要帶入對應的SqlDependency，有興趣的可自行參閱.NET 4.0 MemoryCache with SqlChangeMonitor，這邊不多做示範。
 
-	若有需要可至CacheItemPolicyDemo、HostFileChangeMonitorDemo下載完整的程式範例。
+若有需要可至CacheItemPolicyDemo、HostFileChangeMonitorDemo下載完整的程式範例。
 
-## 
-	Link
+## Link
 
-		System.Runtime.Caching 命名空間
-	
-		Extensible Caching Added to .NET 4.0
-	
-		Object Caching - .NET 4
-	
-		Caching in .NET Framework Applications
-	
-		.NET4.0的可擴展緩存系統
+
+System.Runtime.Caching 命名空間
+
+Extensible Caching Added to .NET 4.0
+
+Object Caching - .NET 4
+
+Caching in .NET Framework Applications
+
+.NET4.0的可擴展緩存系統

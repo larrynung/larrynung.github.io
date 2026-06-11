@@ -14,27 +14,27 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication13
 {
-	public partial class Form1 : Form
-	{
-		public Form1()
-		{
-			InitializeComponent();
-		}
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
+}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			var process = Process.Start("calc.exe");
-			process.EnableRaisingEvents = true;
-			process.Exited += new EventHandler(process_Exited);
-			textBox1.Text = "Main Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString();
-			Console.Read();
-		}
+private void Form1_Load(object sender, EventArgs e)
+{
+var process = Process.Start("calc.exe");
+process.EnableRaisingEvents = true;
+process.Exited += new EventHandler(process_Exited);
+textBox1.Text = "Main Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString();
+Console.Read();
+}
 
-		void process_Exited(object sender, EventArgs e)
-		{
-			MessageBox.Show("Process Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString());
-		}
-	}
+void process_Exited(object sender, EventArgs e)
+{
+MessageBox.Show("Process Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString());
+}
+}
 }
 
 程式啟動時會順帶開啟計算機程式，並秀出主執行緒ID。
@@ -56,28 +56,28 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication13
 {
-	public partial class Form1 : Form
-	{
-		public Form1()
-		{
-			InitializeComponent();
-		}
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
+}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			var process = Process.Start("calc.exe");
-			process.EnableRaisingEvents = true;
-			process.Exited += new EventHandler(process_Exited);
-			process.SynchronizingObject = this;
-			textBox1.Text = "Main Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString();
-			Console.Read();
-		}
+private void Form1_Load(object sender, EventArgs e)
+{
+var process = Process.Start("calc.exe");
+process.EnableRaisingEvents = true;
+process.Exited += new EventHandler(process_Exited);
+process.SynchronizingObject = this;
+textBox1.Text = "Main Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString();
+Console.Read();
+}
 
-		void process_Exited(object sender, EventArgs e)
-		{
-			MessageBox.Show("Process Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString());
-		}
-	}
+void process_Exited(object sender, EventArgs e)
+{
+MessageBox.Show("Process Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString());
+}
+}
 }
 
 Process.Exited觸發的動作就會被帶回到主執行緒。

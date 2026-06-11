@@ -12,7 +12,7 @@ Bower info 可用來查詢 Bower 套件的資訊。
 bower info
 
 bower info
-#
+
 
 如果要查詢 jQuery 套件的資訊，可以輸入 bower info jquery。這邊可以看到他會顯示該套件所用的 bower.json 資訊，以及可使用的版本。
 

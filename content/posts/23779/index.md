@@ -4,7 +4,9 @@ slug: "[CSharp]OAuth認證開發"
 date: "2011-04-28 01:22:31"
 description: "[C#]OAuth認證開發"
 tags: [CSharp]
----OAuth為開放式的認證標準，提供一個簡單、標準、且較為安全的認證方法，相容於Http標準，可供較為私密的API使用。
+---
+
+OAuth為開放式的認證標準，提供一個簡單、標準、且較為安全的認證方法，相容於Http標準，可供較為私密的API使用。
 
 這邊先試想一個情景，假設今天開發一個應用程式，需要存取其它服務的資訊加以應用處理，服務可能是Facebook、Youtube、Flickr等。
 
@@ -118,8 +120,8 @@ public void getRequestToken()
 
 這邊筆者也有發現些小Tool可以輔助開發，像是OAuth Signature Validation Tool、OAuth Test Client、與OAuth Test Server。只要填入要求的資料，送出後就可以直接透過工具看到回傳的Token之類的資訊。
 
-##
-Link
+## Link
+
 
 [OAuth Series] Introduction to OAuth: An open authorization protocol in the Internet
 

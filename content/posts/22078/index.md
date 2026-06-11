@@ -4,7 +4,9 @@ slug: "[CSharp]取得MIME Content Type對應的檔案副檔名"
 date: "2011-03-25 12:35:13"
 description: "[C#]取得MIME Content Type對應的檔案副檔名"
 tags: [CSharp]
----續[C#]取得檔案對應的MIME Content Type這篇，這次反過來若是想知道MIME Content Type對應到的副檔名有哪些的話，一樣我們可以從登錄檔中取得，像是下面這樣：
+---
+
+續[C#]取得檔案對應的MIME Content Type這篇，這次反過來若是想知道MIME Content Type對應到的副檔名有哪些的話，一樣我們可以從登錄檔中取得，像是下面這樣：
 private static IEnumerable GetMIMESupportedExt(string mime)
 {
     var linq = from item in Microsoft.Win32.Registry.ClassesRoot.GetSubKeyNames()

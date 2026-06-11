@@ -1,8 +1,8 @@
 ---
-title: "[C#]使用ShowCaret amp; HideCaret控制元件上的插入符號"
-slug: "[CSharp]使用ShowCaret amp; HideCaret控制元件上的插入符號"
+title: "[C#]使用ShowCaret & HideCaret控制元件上的插入符號"
+slug: "[CSharp]使用ShowCaret & HideCaret控制元件上的插入符號"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用ShowCaret &amp; HideCaret控制元件上的插入符號"
+description: "[C#]使用ShowCaret & HideCaret控制元件上的插入符號"
 tags: [CSharp]
 ---
 
@@ -55,18 +55,18 @@ namespace WindowsFormsApplication22
  		}
 ```
 
-		private void timer1_Tick(object sender, EventArgs e)
-		{
-			if (rbtnShowCaret.Checked)
-			{
-				ShowCaret(textBox1.Handle);
-			}
-			else
-			{
-				HideCaret(textBox1.Handle);
-			}
-		}
-	}
+private void timer1_Tick(object sender, EventArgs e)
+{
+if (rbtnShowCaret.Checked)
+{
+ShowCaret(textBox1.Handle);
+}
+else
+{
+HideCaret(textBox1.Handle);
+}
+}
+}
 }
 
 運行的畫面像下面這樣，可以分別選取Show caret與Hide caret兩個選項，並在上方的TextBox點選，讓TextBox取得焦點，仔細觀察插入符號在這兩種狀況下的運行狀況，應該可以發現在選取Hide caret時插入符號一下就會消失，而在選取Show caret時就跟一般的使用無異。

@@ -22,27 +22,27 @@ using System.Text;
 
 namespace ConsoleApplication11
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			for (int i = 0; i < 3; ++i)
-			{
-				ShowFakeUserInfo();
-				Console.WriteLine(new String('=', 50));
-			}
-		}
+class Program
+{
+static void Main(string[] args)
+{
+for (int i = 0; i < 3; ++i)
+{
+ShowFakeUserInfo();
+Console.WriteLine(new String('=', 50));
+}
+}
 
-		static void ShowFakeUserInfo()
-		{
-			Console.WriteLine(String.Format("User: {0}", Faker.Name.FullName()));
-			Console.WriteLine(String.Format("Phone: {0}", Faker.Phone.Number()));
-			Console.WriteLine(String.Format("Email1: {0}", Faker.Internet.Email()));
-			Console.WriteLine(String.Format("Email2: {0}", Faker.Internet.FreeEmail()));
-			Console.WriteLine(String.Format("Company: {0}", Faker.Company.Name()));
-			Console.WriteLine(String.Format("Country: {0}", Faker.Address.Country()));
-		}
-	}
+static void ShowFakeUserInfo()
+{
+Console.WriteLine(String.Format("User: {0}", Faker.Name.FullName()));
+Console.WriteLine(String.Format("Phone: {0}", Faker.Phone.Number()));
+Console.WriteLine(String.Format("Email1: {0}", Faker.Internet.Email()));
+Console.WriteLine(String.Format("Email2: {0}", Faker.Internet.FreeEmail()));
+Console.WriteLine(String.Format("Company: {0}", Faker.Company.Name()));
+Console.WriteLine(String.Format("Country: {0}", Faker.Address.Country()));
+}
+}
 }
 
 運行後可以得到像是下面這樣的結果，使用者的名字、電話、電子郵件、公司名稱、所屬城市這些資料是不是看起來都很真呢？

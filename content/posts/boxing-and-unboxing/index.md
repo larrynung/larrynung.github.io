@@ -1,7 +1,7 @@
 ---
-title: "Boxing amp; UnBoxing"
+title: "Boxing & UnBoxing"
 date: "2015-09-21 23:11:00"
-description: "Boxing &amp; UnBoxing"
+description: "Boxing & UnBoxing"
 ---
 
 Boxing 是種隱含的處理，當 Value Type 物件塞到 Reference Type 時發生，會幫我們在 Managed Heap 建立一塊空間，並將本來 Value Type 的值賦予其中。

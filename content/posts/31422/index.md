@@ -4,7 +4,9 @@ slug: "[CSharp][Linq]LINQ To WMI"
 date: "2011-07-10 10:38:05"
 description: "[C#][Linq]LINQ To WMI"
 tags: [CSharp,Linq]
----Linq To WMI元件可提供我們使用Linq去查詢WMI的功能。
+---
+
+Linq To WMI元件可提供我們使用Linq去查詢WMI的功能。
 
 至Linq To WMI將檔案下載下來後，解開後會看到下面三個專案：
 
@@ -50,8 +52,8 @@ Console.WriteLine(account.Name);
 
 這邊若有需要查閱其它WMI Classes或想要更進一步了解其WMI Class可用來做查詢的資訊有哪些，可至Win32 Classes查閱。
 
-##
-Link
+## Link
+
 
 Linq To WMI
 

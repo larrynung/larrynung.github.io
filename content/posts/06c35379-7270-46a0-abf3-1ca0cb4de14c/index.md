@@ -28,7 +28,7 @@ public static long DirSize(DirectoryInfo d)
 }
 ```
 
-	可以看到這道Function就只是利用遞回去將目錄裡面所有的檔案大小加起來，除了醜了點外，並沒有什麼特別難的處理。這邊也可以不需要利用遞迴，改用Directory.GetFiles搭配Linq去取得目錄大小，效果是一樣的。
+可以看到這道Function就只是利用遞回去將目錄裡面所有的檔案大小加起來，除了醜了點外，並沒有什麼特別難的處理。這邊也可以不需要利用遞迴，改用Directory.GetFiles搭配Linq去取得目錄大小，效果是一樣的。
 
 ```csharp
 static long GetDirSize(string path)
@@ -38,9 +38,9 @@ static long GetDirSize(string path)
 }
 ```
 
-	除了去計算目錄內的檔案總大小外，我們也可以直接取得目錄的大小。使用前需先將Microsoft Scripting Runtime Com組件加入參考。
+除了去計算目錄內的檔案總大小外，我們也可以直接取得目錄的大小。使用前需先將Microsoft Scripting Runtime Com組件加入參考。
 
-	建立出Sctipting.FileSystemObjectClass物件後，呼叫GetFolder成員方法並帶入指定的目錄，該函式會回傳回Folder物件，透過Folder.Size就可以取得目錄的大小。
+建立出Sctipting.FileSystemObjectClass物件後，呼叫GetFolder成員方法並帶入指定的目錄，該函式會回傳回Folder物件，透過Folder.Size就可以取得目錄的大小。
 
 ```csharp
 static long GetFolderSize(string folder)
@@ -49,7 +49,7 @@ static long GetFolderSize(string folder)
 }
 ```
 
-	這邊強力榔頭大有在如何取得資料夾容量大小這篇討論中提供用反射來做的方法，可以不用將參考加入就直接使用。
+這邊強力榔頭大有在如何取得資料夾容量大小這篇討論中提供用反射來做的方法，可以不用將參考加入就直接使用。
 
 ```csharp
 static long GetFolderSize(string folder) 
@@ -63,7 +63,7 @@ static long GetFolderSize(string folder)
 }
 ```
 
-	在.NET取得目錄大小的方法主要大概就是這幾種，以筆者來說，以簡單乾淨來說筆者是喜歡Linq加總的寫法，但是加總的做法總是感覺比較慢，直覺能直接透過系統去讀取目錄大小是最快，但又不想加入額外的參考，對於用反射來做又有點又臭又長，到底哪種方法比較好呢?這邊筆者做了一個簡單的測試，測試的程式如下：
+在.NET取得目錄大小的方法主要大概就是這幾種，以筆者來說，以簡單乾淨來說筆者是喜歡Linq加總的寫法，但是加總的做法總是感覺比較慢，直覺能直接透過系統去讀取目錄大小是最快，但又不想加入額外的參考，對於用反射來做又有點又臭又長，到底哪種方法比較好呢?這邊筆者做了一個簡單的測試，測試的程式如下：
 
 ```csharp
 using System;
@@ -163,13 +163,13 @@ public static class DirectoryInfoExtension
 }
 ```
 
-## 
-	Link
+## Link
 
-		C# Get Directory Size
-	
-		Directory 類別
-	
-		如何取得資料夾容量大小
-	
-		在c#中直接取得目錄大小的方法
+
+C# Get Directory Size
+
+Directory 類別
+
+如何取得資料夾容量大小
+
+在c#中直接取得目錄大小的方法

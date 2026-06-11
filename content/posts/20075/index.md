@@ -1,7 +1,7 @@
 ---
-title: ".NET 4.0 New Feature - Environment.Is64BitProcess amp; Environment.Is64BitOperatingSystem"
+title: ".NET 4.0 New Feature - Environment.Is64BitProcess & Environment.Is64BitOperatingSystem"
 date: "2010-12-12 11:33:51"
-description: ".NET 4.0 New Feature - Environment.Is64BitProcess &amp; Environment.Is64BitOperatingSystem"
+description: ".NET 4.0 New Feature - Environment.Is64BitProcess & Environment.Is64BitOperatingSystem"
 tags: [CSharp]
 ---
 

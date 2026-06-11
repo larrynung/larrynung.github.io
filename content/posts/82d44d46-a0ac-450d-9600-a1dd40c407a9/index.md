@@ -4,7 +4,9 @@ slug: "[CSharp]Linq在使用Distinct去除重複資料時如何指定所要依�
 date: "2013-11-06 12:00:00"
 description: "[C#]Linq在使用Distinct去除重複資料時如何指定所要依據的成員屬性"
 tags: [CSharp]
----最近專案中在用Linq Distinct想要將重複的資料去除時，發現它跟Any之類的方法有點不太一樣，不能很直覺的在呼叫時直接帶入重複資料判斷的處理邏輯，所以當我們要用某個成員屬性做重複資料的判斷時，就必需繞一下路，這邊稍微將處理的方法做個整理並記錄一下。
+---
+
+最近專案中在用Linq Distinct想要將重複的資料去除時，發現它跟Any之類的方法有點不太一樣，不能很直覺的在呼叫時直接帶入重複資料判斷的處理邏輯，所以當我們要用某個成員屬性做重複資料的判斷時，就必需繞一下路，這邊稍微將處理的方法做個整理並記錄一下。
 
 首先為了方便接下去說明，我們必須先來準備後面會用到的資料類別，這邊一樣用筆者最常用來示範的Person類別，內含兩個成員屬性ID與Name。
 
@@ -169,8 +171,8 @@ group data by data.Name into g
 select g.First();
 ShowDatas(distinctDatas);
 
-##
-Link
+## Link
+
 
 Linq Distinct on a particular Property
 

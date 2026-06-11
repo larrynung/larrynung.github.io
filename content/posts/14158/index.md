@@ -3,7 +3,9 @@ title: "[VB.NET]用FindExecutable API取得開啟文件用的執行檔位置"
 date: "2010-03-22 04:53:06"
 description: "[VB.NET]用FindExecutable API取得開啟文件用的執行檔位置"
 tags: [VB.NET]
----FindExecutable  API可用來取得開啟文件用的執行檔位置，像是Doc檔就用Word開啟、Pdf檔就用Adobe開啟，這道API就是可以找到開啟文件用的執行檔位置。
+---
+
+FindExecutable  API可用來取得開啟文件用的執行檔位置，像是Doc檔就用Word開啟、Pdf檔就用Adobe開啟，這道API就是可以找到開啟文件用的執行檔位置。
 
 該API的函式原型如下：
 HINSTANCE FindExecutable(

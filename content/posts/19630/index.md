@@ -3,7 +3,9 @@ title: ".NET 4.0 New Feature - String.Join"
 date: "2010-11-22 08:08:33"
 description: ".NET 4.0 New Feature - String.Join"
 tags: [CSharp]
----.NET Framework 4.0新增了三個String.Join的多載函式Join(String, IEnumerable)、Join(String, IEnumerable)、與Join(String, Object[])。
+---
+
+.NET Framework 4.0新增了三個String.Join的多載函式Join(String, IEnumerable)、Join(String, IEnumerable)、與Join(String, Object[])。
 
 這三個多載函式可以看出，我們可傳入Object[]、IEnumerable這三種新的型態，不需再將List、StringCollection等型態的資料塞成String[]就可以使用，也能在陣列中放入不同的型態，不需先將集合元素轉成字串，這部份在4.0(含)以後.NET Framework會幫我們做掉了。
 

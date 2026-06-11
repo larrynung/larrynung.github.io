@@ -3,7 +3,9 @@ title: "[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換"
 date: "2009-08-17 09:05:45"
 description: "[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換"
 tags: [VB.NET]
----記得在.NET多語系程式(一)中，有提到若要切換已開啟的表單時，我們可以參考Designer.vb檔，透過ComponentResourceManager配合遞迴來作切換的動作。這邊讓我們來看一下實作方式：
+---
+
+記得在.NET多語系程式(一)中，有提到若要切換已開啟的表單時，我們可以參考Designer.vb檔，透過ComponentResourceManager配合遞迴來作切換的動作。這邊讓我們來看一下實作方式：
 
 '''
 ''' Changes the UI language.

@@ -4,7 +4,9 @@ slug: "[CSharp][JavaScript]WinForm與WebPage的JavaScript互通(一)"
 date: "2013-11-06 12:00:00"
 description: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)"
 tags: [CSharp]
----有時候我們在開發時會將網頁嵌入WinForm程式之中，把網頁跟WinForm程式做個整合，最常見的就是登入或註冊時將動作導給網頁來做。也有某些程式是把整個WebPage給嵌入，WinForm只是做一個殼，程式的畫面與邏輯完全都是用WebPage的，最多針對一些細節下去調整或做些輔助功能，這樣程式就能很快的導入各個平台使用。這樣的開發方式以後會越來越常碰到，因為網頁的功能越來越強大，尤其是HTML5技術成熟後更是如此。
+---
+
+有時候我們在開發時會將網頁嵌入WinForm程式之中，把網頁跟WinForm程式做個整合，最常見的就是登入或註冊時將動作導給網頁來做。也有某些程式是把整個WebPage給嵌入，WinForm只是做一個殼，程式的畫面與邏輯完全都是用WebPage的，最多針對一些細節下去調整或做些輔助功能，這樣程式就能很快的導入各個平台使用。這樣的開發方式以後會越來越常碰到，因為網頁的功能越來越強大，尤其是HTML5技術成熟後更是如此。
 
 要以上面的方式下去開發，我們必需對WinForm程式與WebPage之間的交互處理很熟悉才行。
 
@@ -156,8 +158,8 @@ webBrowser1.Document.InvokeScript("ShowAlert", new object[] { "WebPage Ready..."
 
 運行結果如下：
 
-##
-Link
+## Link
+
 
 HtmlDocument.InvokeScript 方法 (String)
 

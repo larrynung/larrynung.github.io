@@ -15,24 +15,24 @@ tags: [CSharp]
 ...
 public static Bitmap GetBitmap(this BitmapSource bitmapsource)
 {
-	Bitmap bitmap;
-	using (MemoryStream outStream = new MemoryStream())
-	{
-		BitmapEncoder enc = new BmpBitmapEncoder();
-		enc.Frames.Add(BitmapFrame.Create(bitmapsource));
-		enc.Save(outStream);
-		bitmap = (new Bitmap(outStream)).Clone() as Bitmap;
-	}
-	return bitmap;
+Bitmap bitmap;
+using (MemoryStream outStream = new MemoryStream())
+{
+BitmapEncoder enc = new BmpBitmapEncoder();
+enc.Frames.Add(BitmapFrame.Create(bitmapsource));
+enc.Save(outStream);
+bitmap = (new Bitmap(outStream)).Clone() as Bitmap;
+}
+return bitmap;
 }
 ...
 
 public Image GetThumbnail(string file)
 {
-	var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
-	var frame = decoder.Frames.FirstOrDefault();
+var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
+var frame = decoder.Frames.FirstOrDefault();
 
-	return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
+return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
 }
 ...
 
@@ -51,33 +51,33 @@ using System.Diagnostics;
 
 namespace WindowsFormsApplication33
 {
-	public partial class Form1 : Form
-	{
-		public Form1()
-		{
-			InitializeComponent();
-		}
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
+}
 
-		public Image GetThumbnail(string file)
-		{
-			var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
-			var frame = decoder.Frames.FirstOrDefault();
+public Image GetThumbnail(string file)
+{
+var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
+var frame = decoder.Frames.FirstOrDefault();
 
-			return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
-		}
+return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
+}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				var file = openFileDialog1.FileName;
+private void button1_Click(object sender, EventArgs e)
+{
+if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+{
+var file = openFileDialog1.FileName;
 
-				var sw = Stopwatch.StartNew();
-				pictureBox1.Image = GetThumbnail(file);
-				toolStripStatusLabel1.Text = String.Format("Elapsed {0} ms", sw.ElapsedMilliseconds.ToString());
-			}
-		}
-	}
+var sw = Stopwatch.StartNew();
+pictureBox1.Image = GetThumbnail(file);
+toolStripStatusLabel1.Text = String.Format("Elapsed {0} ms", sw.ElapsedMilliseconds.ToString());
+}
+}
+}
 }
 
 using System;
@@ -90,18 +90,18 @@ using System.IO;
 
 public static class BitmapSourceExtension
 {
-	public static Bitmap GetBitmap(this BitmapSource bitmapsource)
-	{
-		Bitmap bitmap;
-		using (MemoryStream outStream = new MemoryStream())
-		{
-			BitmapEncoder enc = new BmpBitmapEncoder();
-			enc.Frames.Add(BitmapFrame.Create(bitmapsource));
-			enc.Save(outStream);
-			bitmap = (new Bitmap(outStream)).Clone() as Bitmap;
-		}
-		return bitmap;
-	}
+public static Bitmap GetBitmap(this BitmapSource bitmapsource)
+{
+Bitmap bitmap;
+using (MemoryStream outStream = new MemoryStream())
+{
+BitmapEncoder enc = new BmpBitmapEncoder();
+enc.Frames.Add(BitmapFrame.Create(bitmapsource));
+enc.Save(outStream);
+bitmap = (new Bitmap(outStream)).Clone() as Bitmap;
+}
+return bitmap;
+}
 }
 
 程式運作起來會像下面這樣，可以看到抓取4-5 MB的圖檔只需花費43ms。

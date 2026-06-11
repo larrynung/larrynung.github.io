@@ -1,7 +1,7 @@
 ---
-title: "[Performance][C#]String.Empty V.S ldquo;rdquo;"
+title: "[Performance][C#]String.Empty V.S “”"
 date: "2009-12-22 08:00:58"
-description: "[Performance][C#]String.Empty V.S &ldquo;&rdquo;"
+description: "[Performance][C#]String.Empty V.S “”"
 tags: [CSharp,Performance]
 ---
 

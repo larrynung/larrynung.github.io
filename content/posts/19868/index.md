@@ -3,7 +3,9 @@ title: "Linq To Excel"
 date: "2010-12-02 08:20:00"
 description: "Linq To Excel"
 tags: [Linq, CSharp]
----Linq to Excel為一Open Source函式庫，該函式庫能讓我們使用Linq去對Excel與CSV做查詢的動作。
+---
+
+Linq to Excel為一Open Source函式庫，該函式庫能讓我們使用Linq去對Excel與CSV做查詢的動作。
 
 使用前需先將LinqToExcel.dll與Remotion.Data.Linq.dll這兩個組件檔給加入參考，並加入LinqToExcel命名空間就可以開始使用Linq to Excel了。
 
@@ -149,8 +151,8 @@ excel.AddTransformation(item => item.Sex, item => (item == "Boy") ? SexType.Boy 
 
 另外一提，Linq to Excel在使用上會自動去找尋第一個符合的資料，就算內容不是從Excel最左上的A1欄位開始，Linq to Excel都會幫我們自動找尋，多半我們可以不指定要抓取的範圍，除非工作表內的資料是分成好幾塊。
 
-##
-完整範例
+## 完整範例
+
 
 若有需要範例程式可至larrynung / LinqToExcelDemo這邊下載。
 
@@ -255,8 +257,8 @@ System.Console.WriteLine(item.ToString());
 
 運行後結果如下：
 
-##
-Link
+## Link
+
 
 讀取 Excel 你還在用 NPOI 嗎?快來試試 LinqToExcel
 

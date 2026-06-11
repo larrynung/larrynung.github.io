@@ -8,97 +8,97 @@ tags: [CSharp]
 
 認證的開發介紹完了，這邊要介紹一下如何遍巡DropBox內存放的檔案，使用DropNet去實做這個功能也很簡單，只需要透過DropNetClient.GetMetaData這個函式帶入要查閱的路徑就可以了。若是要查閱的是根目錄，可帶入"/"去做查閱，但需注意申請App Key時必需要允許對整個DropBox做控制才可以，不然只能針對該App的目錄下去巡覽。
 
-	用DropNetClient.GetMetaData問回來的資料是MetaData型態。DropNet將DropBox內的檔案都視為是MetaData，MetaData內會有檔案名稱、大小、是否是目錄之類的相關資訊。
+用DropNetClient.GetMetaData問回來的資料是MetaData型態。DropNet將DropBox內的檔案都視為是MetaData，MetaData內會有檔案名稱、大小、是否是目錄之類的相關資訊。
 
-	若MetaData是目錄的話，目錄下的存放的檔案資料會在Contents屬性中，我們只要遞迴去遍巡處理就可以了。但這邊需要特別留意的是，為了速度考量DropNet預設只會抓指定那層的資料，超過指定那層Contents屬性會是Null，因此再往下層處理時記得要再次叫用DropNetClient.GetMetaData。
+若MetaData是目錄的話，目錄下的存放的檔案資料會在Contents屬性中，我們只要遞迴去遍巡處理就可以了。但這邊需要特別留意的是，為了速度考量DropNet預設只會抓指定那層的資料，超過指定那層Contents屬性會是Null，因此再往下層處理時記得要再次叫用DropNetClient.GetMetaData。
 
-	處理起來會像下面這樣：
+處理起來會像下面這樣：
 
 ...
 private void btnLogin_Click(object sender, EventArgs e)
 {
-	if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
-	{
-		m_DropNetClient.UserLogin = new UserLogin()
-		{
-			Secret = Properties.Settings.Default.SECRET,
-			Token = Properties.Settings.Default.TOKEN
-		};
+if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
+{
+m_DropNetClient.UserLogin = new UserLogin()
+{
+Secret = Properties.Settings.Default.SECRET,
+Token = Properties.Settings.Default.TOKEN
+};
 
-		FillTreeView();
-		return;
-	}
+FillTreeView();
+return;
+}
 
-	var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
-	var cancelCallbackUrl = "https://www.dropbox.com/home";
-	var size = new Size(1024, 600);
+var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
+var cancelCallbackUrl = "https://www.dropbox.com/home";
+var size = new Size(1024, 600);
 
-	if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
-	{
-		var accessToken = m_DropNetClient.GetAccessToken();
-		Properties.Settings.Default.SECRET = accessToken.Secret;
-		Properties.Settings.Default.TOKEN = accessToken.Token;
-		Properties.Settings.Default.Save();
+if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
+{
+var accessToken = m_DropNetClient.GetAccessToken();
+Properties.Settings.Default.SECRET = accessToken.Secret;
+Properties.Settings.Default.TOKEN = accessToken.Token;
+Properties.Settings.Default.Save();
 
-		FillTreeView();
-	}
+FillTreeView();
+}
 }
 
 private void FillTreeView()
 {
-	treeView1.Nodes.Clear();
-	var metaData = m_DropNetClient.GetMetaData("/");
+treeView1.Nodes.Clear();
+var metaData = m_DropNetClient.GetMetaData("/");
 
-	FillDirOrFileToTreeView(null, metaData);
+FillDirOrFileToTreeView(null, metaData);
 }
 
 private void FillDirOrFileToTreeView(TreeNode parentNode, MetaData metaData)
 {
-	if (metaData.Contents == null)
-		return;
+if (metaData.Contents == null)
+return;
 
-	var nodes = (parentNode == null) ? treeView1.Nodes : parentNode.Nodes;
-	try
-	{
-		treeView1.BeginUpdate();
-		foreach (var childMetaData in metaData.Contents)
-		{
-			if (childMetaData.Is_Dir)
-			{
-				var node = nodes.Add(childMetaData.Name);
-				node.Tag = childMetaData;
-				node.Nodes.Add(string.Empty);
-			}
-			else
-			{
-				nodes.Add(childMetaData.Name).Tag = childMetaData;
-			}
-		}
-	}
-	finally
-	{
-		treeView1.EndUpdate();
-	}
+var nodes = (parentNode == null) ? treeView1.Nodes : parentNode.Nodes;
+try
+{
+treeView1.BeginUpdate();
+foreach (var childMetaData in metaData.Contents)
+{
+if (childMetaData.Is_Dir)
+{
+var node = nodes.Add(childMetaData.Name);
+node.Tag = childMetaData;
+node.Nodes.Add(string.Empty);
+}
+else
+{
+nodes.Add(childMetaData.Name).Tag = childMetaData;
+}
+}
+}
+finally
+{
+treeView1.EndUpdate();
+}
 }
 
 private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
 {
-	var node = e.Node;
+var node = e.Node;
 
-	if (!(node.Nodes.Count == 1 && node.Nodes[0].Tag == null))
-		return;
+if (!(node.Nodes.Count == 1 && node.Nodes[0].Tag == null))
+return;
 
-	node.Nodes.Clear();
+node.Nodes.Clear();
 
-	FillDirOrFileToTreeView(node, m_DropNetClient.GetMetaData("/" + node.FullPath));
+FillDirOrFileToTreeView(node, m_DropNetClient.GetMetaData("/" + node.FullPath));
 }
 ...
 
-	運行後可以看到我們確實的將整個DropBox內的內容都抓出來了。
+運行後可以看到我們確實的將整個DropBox內的內容都抓出來了。
 
-	筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫GetMetaDataAsync就可以了。
+筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫GetMetaDataAsync就可以了。
 
-	最後一樣附上完整的範例程式碼：
+最後一樣附上完整的範例程式碼：
 
 using System;
 using System.Collections.Generic;
@@ -114,155 +114,155 @@ using DropNet.Models;
 
 namespace DropNetDemo
 {
-	public partial class Form1 : Form
-	{
-		#region Var
-		private DropNetClient _dropNetClient;
-		#endregion
+public partial class Form1 : Form
+{
+#region Var
+private DropNetClient _dropNetClient;
+#endregion
 
-		#region Private Property
-		private DropNetClient m_DropNetClient
-		{
-			get
-			{
-				return _dropNetClient ?? (_dropNetClient = new DropNetClient(tbxAppKey.Text, tbxAppSecret.Text));
-			}
-			set
-			{
-				_dropNetClient = value;
-			}
-		}
-		#endregion
+#region Private Property
+private DropNetClient m_DropNetClient
+{
+get
+{
+return _dropNetClient ?? (_dropNetClient = new DropNetClient(tbxAppKey.Text, tbxAppSecret.Text));
+}
+set
+{
+_dropNetClient = value;
+}
+}
+#endregion
 
-		public Form1()
-		{
-			InitializeComponent();
-		}
+public Form1()
+{
+InitializeComponent();
+}
 
-		private void SetSecretAndToken(string secret, string token)
-		{
-			Settings.Default.SECRET = secret;
-			Settings.Default.TOKEN = token;
-		}
+private void SetSecretAndToken(string secret, string token)
+{
+Settings.Default.SECRET = secret;
+Settings.Default.TOKEN = token;
+}
 
-		private void btnLogin_Click(object sender, EventArgs e)
-		{
-			if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
-			{
-				m_DropNetClient.UserLogin = new UserLogin()
-				{
-					Secret = Properties.Settings.Default.SECRET,
-					Token = Properties.Settings.Default.TOKEN
-				};
+private void btnLogin_Click(object sender, EventArgs e)
+{
+if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
+{
+m_DropNetClient.UserLogin = new UserLogin()
+{
+Secret = Properties.Settings.Default.SECRET,
+Token = Properties.Settings.Default.TOKEN
+};
 
-				FillTreeView();
-				return;
-			}
+FillTreeView();
+return;
+}
 
-			var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
-			var cancelCallbackUrl = "https://www.dropbox.com/home";
-			var size = new Size(1024, 600);
+var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
+var cancelCallbackUrl = "https://www.dropbox.com/home";
+var size = new Size(1024, 600);
 
-			if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
-			{
-				var accessToken = m_DropNetClient.GetAccessToken();
-				Properties.Settings.Default.SECRET = accessToken.Secret;
-				Properties.Settings.Default.TOKEN = accessToken.Token;
-				Properties.Settings.Default.Save();
+if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
+{
+var accessToken = m_DropNetClient.GetAccessToken();
+Properties.Settings.Default.SECRET = accessToken.Secret;
+Properties.Settings.Default.TOKEN = accessToken.Token;
+Properties.Settings.Default.Save();
 
-				FillTreeView();
-			}
-		}
+FillTreeView();
+}
+}
 
-		private void FillTreeView()
-		{
-			treeView1.Nodes.Clear();
-			var metaData = m_DropNetClient.GetMetaData("/");
+private void FillTreeView()
+{
+treeView1.Nodes.Clear();
+var metaData = m_DropNetClient.GetMetaData("/");
 
-			FillDirOrFileToTreeView(null, metaData);
-		}
+FillDirOrFileToTreeView(null, metaData);
+}
 
-		private void FillDirOrFileToTreeView(TreeNode parentNode, MetaData metaData)
-		{
-			if (metaData.Contents == null)
-				return;
+private void FillDirOrFileToTreeView(TreeNode parentNode, MetaData metaData)
+{
+if (metaData.Contents == null)
+return;
 
-			var nodes = (parentNode == null) ? treeView1.Nodes : parentNode.Nodes;
-			try
-			{
-				treeView1.BeginUpdate();
-				foreach (var childMetaData in metaData.Contents)
-				{
-					if (childMetaData.Is_Dir)
-					{
-						var node = nodes.Add(childMetaData.Name);
-						node.Tag = childMetaData;
-						node.Nodes.Add(string.Empty);
-					}
-					else
-					{
-						nodes.Add(childMetaData.Name).Tag = childMetaData;
-					}
-				}
-			}
-			finally
-			{
-				treeView1.EndUpdate();
-			}
-		}
+var nodes = (parentNode == null) ? treeView1.Nodes : parentNode.Nodes;
+try
+{
+treeView1.BeginUpdate();
+foreach (var childMetaData in metaData.Contents)
+{
+if (childMetaData.Is_Dir)
+{
+var node = nodes.Add(childMetaData.Name);
+node.Tag = childMetaData;
+node.Nodes.Add(string.Empty);
+}
+else
+{
+nodes.Add(childMetaData.Name).Tag = childMetaData;
+}
+}
+}
+finally
+{
+treeView1.EndUpdate();
+}
+}
 
-		private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
-		{
-			var node = e.Node;
+private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+{
+var node = e.Node;
 
-			if (!(node.Nodes.Count == 1 && node.Nodes[0].Tag == null))
-				return;
+if (!(node.Nodes.Count == 1 && node.Nodes[0].Tag == null))
+return;
 
-			node.Nodes.Clear();
+node.Nodes.Clear();
 
-			FillDirOrFileToTreeView(node, m_DropNetClient.GetMetaData("/" + node.FullPath));
-		}
+FillDirOrFileToTreeView(node, m_DropNetClient.GetMetaData("/" + node.FullPath));
+}
 
-		private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
-		{
-			using (var dialog = new Form())
-			{
-				var browesr = new WebBrowser()
-				{
-					Dock = DockStyle.Fill
-				};
+private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
+{
+using (var dialog = new Form())
+{
+var browesr = new WebBrowser()
+{
+Dock = DockStyle.Fill
+};
 
-				var token = m_DropNetClient.GetToken();
-				var authUrl = m_DropNetClient.BuildAuthorizeUrl();
-				browesr.Navigated += (s, ex) =>
-				{
-					var url = ex.Url.ToString();
-					if (url.Equals(callbackUrl))
-					{
-						dialog.DialogResult = DialogResult.OK;
-					}
-					else if (url.Equals(cancelCallbackUrl))
-					{
-						dialog.DialogResult = DialogResult.Cancel;
-					}
-				};
-				browesr.Navigate(authUrl);
+var token = m_DropNetClient.GetToken();
+var authUrl = m_DropNetClient.BuildAuthorizeUrl();
+browesr.Navigated += (s, ex) =>
+{
+var url = ex.Url.ToString();
+if (url.Equals(callbackUrl))
+{
+dialog.DialogResult = DialogResult.OK;
+}
+else if (url.Equals(cancelCallbackUrl))
+{
+dialog.DialogResult = DialogResult.Cancel;
+}
+};
+browesr.Navigate(authUrl);
 
-				dialog.Size = size;
-				dialog.Controls.Add(browesr);
+dialog.Size = size;
+dialog.Controls.Add(browesr);
 
-				return dialog.ShowDialog();
-			}
-		}
+return dialog.ShowDialog();
+}
+}
 
-		private void tbxAppKey_TextChanged(object sender, EventArgs e)
-		{
-			m_DropNetClient = null;
-		}
+private void tbxAppKey_TextChanged(object sender, EventArgs e)
+{
+m_DropNetClient = null;
+}
 
-		private void tbxAppSecret_TextChanged(object sender, EventArgs e)
-		{
-			m_DropNetClient = null;
-		}
-	}
+private void tbxAppSecret_TextChanged(object sender, EventArgs e)
+{
+m_DropNetClient = null;
+}
+}
 }

@@ -2,7 +2,9 @@
 title: "GAE's Memcache"
 date: "2013-11-06 12:00:00"
 description: "GAE's Memcache"
----Memcache 是高效能、分散式的記憶體物件快取系統。存放在Memcache內的資料若一段時間不訪問，或是可供快取的空間用完時，快取的內容即會過時。
+---
+
+Memcache 是高效能、分散式的記憶體物件快取系統。存放在Memcache內的資料若一段時間不訪問，或是可供快取的空間用完時，快取的內容即會過時。
 
 首先需先將google.appengine.ext.db import進來。
 
@@ -62,7 +64,7 @@ application = webapp2.WSGIApplication([
 
 再進一步將筆者GAE's Python Datastore API這篇的範例套用Memcache，讓用GQL讀取出的資料可以存放在Memcache中，可以像下面這樣撰寫：
 
-####
+
 
 from google.appengine.api import memcache
 from google.appengine.ext import db
@@ -137,7 +139,7 @@ application = webapp2.WSGIApplication([
 
 再次運行就會改由Memcache中讀取。
 
-##
-Link
+## Link
+
 
 Using Memcache

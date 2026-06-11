@@ -2,7 +2,9 @@
 title: "[Visual Studio]Introduce Visual Studio Achievements"
 date: "2013-11-06 12:00:00"
 description: "[Visual Studio]Introduce Visual Studio Achievements"
----Visual Studio Achievements是Visual Studio的成就系統外掛，能外掛在Visual Studio上，有點類似於一般遊戲的成就系統，當達到特定的目標會頒給勳章以資獎勵，可以讓寫程式變得像是玩遊戲一般輕鬆，也能逐步帶領使用者熟悉整個Visual Studio的使用與較好的Coding方式。
+---
+
+Visual Studio Achievements是Visual Studio的成就系統外掛，能外掛在Visual Studio上，有點類似於一般遊戲的成就系統，當達到特定的目標會頒給勳章以資獎勵，可以讓寫程式變得像是玩遊戲一般輕鬆，也能逐步帶領使用者熟悉整個Visual Studio的使用與較好的Coding方式。
 
 目前具有六大類不同的勳章，每類勳章都有不同的意義，像是Don't Try This At Home這類的勳章就是代表不是很好的寫作習慣，可以自己設定找些勳章當自己的里程碑，像是UML God勳章等，都是不錯的目標。
 

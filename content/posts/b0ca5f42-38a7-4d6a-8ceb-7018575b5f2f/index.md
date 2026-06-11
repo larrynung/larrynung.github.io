@@ -2,7 +2,9 @@
 title: "停用Debug.Assert警示對話框與啟用訊息記錄"
 date: "2013-11-06 12:00:00"
 description: "停用Debug.Assert警示對話框與啟用訊息記錄"
----據Disable System.Diagnostics.Debug.Assert dialogs這篇文章所提，有時我們會有需要將System.Diagnostics.Debug.Assert產生的對話框給停止使用，像是讓電腦自動運行整合測試時，若因為程式中有加入System.Diagnostics.Debug.Assert的判斷，像是：
+---
+
+據Disable System.Diagnostics.Debug.Assert dialogs這篇文章所提，有時我們會有需要將System.Diagnostics.Debug.Assert產生的對話框給停止使用，像是讓電腦自動運行整合測試時，若因為程式中有加入System.Diagnostics.Debug.Assert的判斷，像是：
 
 System.Diagnostics.Debug.Assert(False)
 

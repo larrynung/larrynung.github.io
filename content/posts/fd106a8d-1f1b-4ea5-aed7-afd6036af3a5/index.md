@@ -17,10 +17,10 @@ tags: [CSharp]
 
 使用Windows API Code Pack來操作媒體櫃主要要用到ShellLibrary這個類別，若要建立一個新的媒體櫃，很簡單的建立一個ShellLibrary物件就可以了，建立時要帶入新媒體櫃的名稱。
 
-			using (ShellLibrary library = new ShellLibrary(libraryName, true))
-			{
-			...
-			}
+using (ShellLibrary library = new ShellLibrary(libraryName, true))
+{
+...
+}
 
 而若是要載入現有的媒體櫃，則可以呼叫ShellLibrary.Load，帶入要載入的媒體櫃名稱。
 
@@ -39,16 +39,16 @@ shellLibrary.Add(folderToAdd);
 
 若是要遍巡找出媒體櫃內有哪些目錄及檔案，可以直接對取得的ShellLibrary物件實體去遍巡，這邊要注意的是，遍巡的元素可能是ShellFolder，也有可能是ShellFile，若有需要ShellFolder還必須再另行處理。
 
-			...
-			using (ShellLibrary library = ShellLibrary.Load("Pictures", false))
-			{
-				foreach (ShellFolder folder in library)
-				{
-					var folderPath = folder.ParsingName;
-					Console.WriteLine(folderPath);
-				}
-			}
-			...
+...
+using (ShellLibrary library = ShellLibrary.Load("Pictures", false))
+{
+foreach (ShellFolder folder in library)
+{
+var folderPath = folder.ParsingName;
+Console.WriteLine(folderPath);
+}
+}
+...
 
 ## Link
 

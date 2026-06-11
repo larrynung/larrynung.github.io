@@ -3,7 +3,9 @@ title: ".NET 4.0 New Feature - System.Device.Location"
 date: "2011-01-13 12:43:04"
 description: ".NET 4.0 New Feature - System.Device.Location"
 tags: [CSharp]
----.NET 4.0 BCL中新增了System.Device.Location命名空間，該命名空間內提供許多類別允許應用程式開發人員在Windows 7以後的作業系統使用單一 API 輕鬆存取裝置位置，開發人員不需去考量電腦中可以使用的位置提供者，也不需要為多個位置提供者排定彼此的優先權與中間的轉換，透過這個命名空間開發人員可以更專注於位置取得程式的撰寫，而不需花費心思考量各式各樣的位置提供者。
+---
+
+.NET 4.0 BCL中新增了System.Device.Location命名空間，該命名空間內提供許多類別允許應用程式開發人員在Windows 7以後的作業系統使用單一 API 輕鬆存取裝置位置，開發人員不需去考量電腦中可以使用的位置提供者，也不需要為多個位置提供者排定彼此的優先權與中間的轉換，透過這個命名空間開發人員可以更專注於位置取得程式的撰寫，而不需花費心思考量各式各樣的位置提供者。
 
 在使用System.Device.Location命名空間前，我們必須知道裝置位置的資訊是由位置提供者提供的，位置提供者的位置資訊可能是由GPS，或是由IP位置去查詢，甚至是用Wifi、手機基地台的訊號做三角定位取得，在Windows 7中我們可透過控制台中的Location and Other Sensors設定位置提供者。
 

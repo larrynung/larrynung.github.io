@@ -7,19 +7,19 @@ tags: [CSharp]
 
 要從土豆往上截取影集資料，我們可先參閱頻道劇集查詢，該API的URL位置會像下面這樣：
 
-	http://api.tudou.com/v3/gw?method=album.channel.get&appKey=&format=&channel=&pageNo=&pageSize=
+http://api.tudou.com/v3/gw?method=album.channel.get&appKey=&format=&channel=&pageNo=&pageSize=
 
-	除了appKey與format這兩個API所通用的參數外，另外又含有channel、pagegNo、pageSize這三個參數，channel部份可帶入的有m、t、z三個，分別代表的是電影、電視、與綜藝，而pageNo與pageSize用以指定想要截取的頁數與資料量。
+除了appKey與format這兩個API所通用的參數外，另外又含有channel、pagegNo、pageSize這三個參數，channel部份可帶入的有m、t、z三個，分別代表的是電影、電視、與綜藝，而pageNo與pageSize用以指定想要截取的頁數與資料量。
 
-	使用上就像是下面這樣：
+使用上就像是下面這樣：
 
-	http://api.tudou.com/v3/gw?method=album.channel.get&appKey=myKey&format=xml&channel=z&pageNo=1&pageSize=10
+http://api.tudou.com/v3/gw?method=album.channel.get&appKey=myKey&format=xml&channel=z&pageNo=1&pageSize=10
 
-	API會依照指定的指定的格釋回傳所查詢的資料，因這邊示範的是XML所以會以XML的形式呈現。
+API會依照指定的指定的格釋回傳所查詢的資料，因這邊示範的是XML所以會以XML的形式呈現。
 
-	其資料所對應的欄位可查閱劇集字段定義。
+其資料所對應的欄位可查閱劇集字段定義。
 
-	範例程式如下：
+範例程式如下：
 
 private void SetTudouAlbumContent()
 {
@@ -41,32 +41,32 @@ private void SetTudouAlbumContent()
     ...
 }
 
-	透過上面的程式已經可以取得影集的資料，若要進一步取得影集中的節目資訊，需參閱劇集節目查詢，該API的URL位置會像下面這樣：
+透過上面的程式已經可以取得影集的資料，若要進一步取得影集中的節目資訊，需參閱劇集節目查詢，該API的URL位置會像下面這樣：
 
-	http://api.tudou.com/v3/gw?method=album.item.get&appKey=&format=&albumId=&pageNo=&pageSize=
+http://api.tudou.com/v3/gw?method=album.item.get&appKey=&format=&albumId=&pageNo=&pageSize=
 
-	該道API的參數跟上面大同小異，這邊不作重複的敘述，不同的是albumId這個參數，我們可將上面取得的albumid帶入，像是下面這樣：
+該道API的參數跟上面大同小異，這邊不作重複的敘述，不同的是albumId這個參數，我們可將上面取得的albumid帶入，像是下面這樣：
 
-	http://api.tudou.com/v3/gw?method=album.item.get&appKey=myKey&format=xml&albumId=50815&pageNo=1&pageSize=10
+http://api.tudou.com/v3/gw?method=album.item.get&appKey=myKey&format=xml&albumId=50815&pageNo=1&pageSize=10
 
-	叫用後會取得如下XML資料：
+叫用後會取得如下XML資料：
 
-	其資料所對應的欄位可查閱視頻字段定義。
+其資料所對應的欄位可查閱視頻字段定義。
 
-	這邊做了ㄧ個範例程式，將上面的API做了較為完整的示範，可查閱電視、電影、綜藝這三種不同類型的影片，可指定查閱的頁數，以及透過網頁做簡易的播放。
+這邊做了ㄧ個範例程式，將上面的API做了較為完整的示範，可查閱電視、電影、綜藝這三種不同類型的影片，可指定查閱的頁數，以及透過網頁做簡易的播放。
 
-## 
-	Download
+## Download
 
-	TudouDemo.rar
 
-## 
-	Link
+TudouDemo.rar
 
-		頻道劇集查詢
-	
-		劇集字段定義
-	
-		劇集節目查詢
-	
-		視頻字段定義
+## Link
+
+
+頻道劇集查詢
+
+劇集字段定義
+
+劇集節目查詢
+
+視頻字段定義

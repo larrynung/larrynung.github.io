@@ -4,7 +4,9 @@ slug: "[CSharp]快速將字串轉換為結構"
 date: "2011-03-19 09:20:12"
 description: "[C#]快速將字串轉換為結構"
 tags: [CSharp]
----看到MSDN上請問將一個字串copy到一個結構中最快的方式為何?這篇的發問，做些紀錄：
+---
+
+看到MSDN上請問將一個字串copy到一個結構中最快的方式為何?這篇的發問，做些紀錄：
 
 要將字串快速轉換為結構，首先我們必須要在結構上加些Attribute，像是設定每個欄位所佔用的型態、大小...等：
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]

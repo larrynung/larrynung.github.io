@@ -9,19 +9,19 @@ tags: [CSharp]
  
   接下來筆者以[C#]Json.NET - A high performance Json library這篇的例子來做個簡單的說明，假設我們有個Person類別長得像下面這樣：  public class Person
 {
-	public String Name { get; set; }
+public String Name { get; set; }
 
-	public String NickName { get; set; }
+public String NickName { get; set; }
 
-	public DateTime Birthday { get; set; }
+public DateTime Birthday { get; set; }
 
-	public int Age 
-	{
-		get
-		{
-			return (int)((DateTime.Now - Birthday).TotalDays / 365);
-		}
-	}
+public int Age 
+{
+get
+{
+return (int)((DateTime.Now - Birthday).TotalDays / 365);
+}
+}
 }
 
 裡面的NickName成員屬性就是個很好的例子，若NickName是忽略不序列化，那我們永遠無法從其它的地方推斷回來，它並不是跟Age這個成員屬性一樣可以透過推算所以可以直接忽略，但是若不做任何處理，當值為Null時它序列化出來的資訊也沒甚麼意義。
@@ -31,8 +31,8 @@ DateTime date = DateTime.Now;
 
 Person Larry = new Person
 {
-	Name = "Larry Nung",
-	Birthday = new DateTime(1980,4,19)
+Name = "Larry Nung",
+Birthday = new DateTime(1980,4,19)
 };
 
 var json = JsonConvert.SerializeObject(Larry, Formatting.Indented);

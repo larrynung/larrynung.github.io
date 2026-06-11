@@ -2,7 +2,9 @@
 title: "Google App Engine 1.8.2 New Feature - Push-to-Deploy"
 date: "2013-11-06 12:00:00"
 description: "Google App Engine 1.8.2 New Feature - Push-to-Deploy"
----Google App Engine 1.8.2開始支援Git，允許透過Git Push的方式來做佈署的動作。這邊簡單的紀錄一下。
+---
+
+Google App Engine 1.8.2開始支援Git，允許透過Git Push的方式來做佈署的動作。這邊簡單的紀錄一下。
 
 首先進到Application的Dashboard，在頁面的左側找到Application Settings的連結後用滑鼠點擊。
 
@@ -32,8 +34,8 @@ machine code.google.com login password
 
 再呼叫命令"git push appengine master"就可以將程式佈署上去...
 
-##
-Link
+## Link
+
 
 Google App Engine 1.8.2 released
 

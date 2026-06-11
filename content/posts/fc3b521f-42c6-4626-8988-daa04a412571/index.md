@@ -4,7 +4,9 @@ slug: "[CSharp]透過PerformanceCounter取得特定Process的CPU使用率"
 date: "2013-11-06 12:00:00"
 description: "[C#]透過PerformanceCounter取得特定Process的CPU使用率"
 tags: [CSharp]
----想要透過PerformanceCounter取得特定Process的CPU使用率，首先我們要理解這部分的資料在PerformanceCounter是怎樣分布的。這邊我們可以叫出效能監視器後，找到Process分類，可以看到如下畫面，所有的Process都有對應的Instance，像是chrome、chrome#1、chrome#11...。
+---
+
+想要透過PerformanceCounter取得特定Process的CPU使用率，首先我們要理解這部分的資料在PerformanceCounter是怎樣分布的。這邊我們可以叫出效能監視器後，找到Process分類，可以看到如下畫面，所有的Process都有對應的Instance，像是chrome、chrome#1、chrome#11...。
 
 所以我們的第一步就是要從Process找到對應的Process Instance Name。但是BCL內建的Process類別中並未有這樣的資訊，要怎樣找到呢？這邊可透過另一個名叫ID Process的PerformanceCounter輔助，對照筆者準備的兩張圖，不難發現該PerformanceCounter的值對應的就是Process的PID。
 

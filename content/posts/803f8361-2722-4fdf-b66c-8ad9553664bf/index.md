@@ -97,8 +97,8 @@ return (typeof(Storage)!=="undefined");
 
 運行後會像下面這樣，會顯示出瀏覽器是否支援Web Storage。
 
-##
-Link
+## Link
+
 
 Web Storage
 

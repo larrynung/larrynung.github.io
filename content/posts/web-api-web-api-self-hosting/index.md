@@ -3,7 +3,9 @@ title: "Web API - Web API Self Hosting"
 date: "2014-04-14 23:24:00"
 description: "Web API - Web API Self Hosting"
 tags: [Web API ]
----要 Self Hosting Web API，首先需要安裝 Microsoft.AspNet.WebApi.SelfHost 套件。
+---
+
+要 Self Hosting Web API，首先需要安裝 Microsoft.AspNet.WebApi.SelfHost 套件。
 
 建立 HttpSelfHostConfiguration 並指定要監聽的位置。
 ```c#

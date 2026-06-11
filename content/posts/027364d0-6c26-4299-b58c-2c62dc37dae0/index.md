@@ -4,7 +4,9 @@ slug: "[CSharp][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加
 date: "2013-11-06 12:00:00"
 description: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
 tags: [CSharp]
----筆者在[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)這篇稍微介紹了一下基本的互通，實際在程式的運用上可能不是那樣簡單的互通就可以滿足我們的需求，有時候WinForm必須要動態將JavaScript插入網頁並調用，來做些更為進階的處理。
+---
+
+筆者在[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)這篇稍微介紹了一下基本的互通，實際在程式的運用上可能不是那樣簡單的互通就可以滿足我們的需求，有時候WinForm必須要動態將JavaScript插入網頁並調用，來做些更為進階的處理。
 
 要動態將JavaScript插入網頁中，我們可以在WebBrowser.DocumentCompleted事件處發時去動些手腳。用WebBrowser.Document.GetElementsByTagName找到head的xml element tag，然後再用WebBrowser.Document.CreateElement建立要插入的xml element tag，將要插入的JavaScript塞到剛建立的element的text屬性，最後將建立的element附加到head的子節點就可以了。
 ...

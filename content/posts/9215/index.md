@@ -8,176 +8,176 @@ tags: [CSharp]
 
 為何要用屬性來替代公有欄位主要有下列幾項原因：
 
-		符合物件導向封裝概念
-	
-		支援資料繫結
-	
-		具修改彈性
+符合物件導向封裝概念
 
-## 
-	符合物件導向封裝概念
+支援資料繫結
 
-	屬性是對取得/修改內部數據的方法的一種擴展，從表面看來就像是數據成員，但內部卻是以方法實現。
+具修改彈性
 
-	在程式編譯後，編譯器在把程式編譯成MSIL時，會自動把屬性中的get區塊與set區塊編譯成兩個分離的方法。所以使用屬性能穫得函式的全部好處。
+## 符合物件導向封裝概念
 
-	讓我們來看一下簡單的例子。假設今天有個People的類別，內含一個Name屬性，該屬性可讀可寫。
 
-	class People  
+屬性是對取得/修改內部數據的方法的一種擴展，從表面看來就像是數據成員，但內部卻是以方法實現。
 
-	{  
+在程式編譯後，編譯器在把程式編譯成MSIL時，會自動把屬性中的get區塊與set區塊編譯成兩個分離的方法。所以使用屬性能穫得函式的全部好處。
 
-	    string Name { get; set; }  
+讓我們來看一下簡單的例子。假設今天有個People的類別，內含一個Name屬性，該屬性可讀可寫。
 
-	}
+class People  
 
-	程式編譯後我們透過SDK內建的IL Disassembler工具查看MSIL。
+{  
 
-	我們可以發現Name屬性在MSIL中已不復可見，取而代之的是MSIL中多了兩個Method，一個是get_name、一個是set_name，這兩個方法分別對應至本來屬性的get與set區塊。
+    string Name { get; set; }  
 
-## 
-	支援資料繫結
+}
 
-	.NET中的資料繫結只支援屬性，並不支援公有欄位。這是因為資料繫結機制用反射來實作時只尋找類別的屬性。而之所以不支援公有欄位，主要是因為公有欄位把數據成員直接鋪暴露給外界較不符合物件導向的封裝原則。
+程式編譯後我們透過SDK內建的IL Disassembler工具查看MSIL。
 
-## 
-	具修改彈性
+我們可以發現Name屬性在MSIL中已不復可見，取而代之的是MSIL中多了兩個Method，一個是get_name、一個是set_name，這兩個方法分別對應至本來屬性的get與set區塊。
 
-	使用屬性在修改上也較一般公有欄位更具彈性。試想當程式中類別的公有欄位被頻繁的使用，則當我們要增加判斷防止公有欄位值為空時，我們勢必需要把散在程式中所有用到的地方都加上判斷才行。同樣的情況對於屬性來說，我們只需在屬性的get區塊增加判斷即可。
+## 支援資料繫結
 
-	class People  
 
-	{  
+.NET中的資料繫結只支援屬性，並不支援公有欄位。這是因為資料繫結機制用反射來實作時只尋找類別的屬性。而之所以不支援公有欄位，主要是因為公有欄位把數據成員直接鋪暴露給外界較不符合物件導向的封裝原則。
 
-	    private string _name;  
+## 具修改彈性
 
-	    public string Name  
 
-	    {  
+使用屬性在修改上也較一般公有欄位更具彈性。試想當程式中類別的公有欄位被頻繁的使用，則當我們要增加判斷防止公有欄位值為空時，我們勢必需要把散在程式中所有用到的地方都加上判斷才行。同樣的情況對於屬性來說，我們只需在屬性的get區塊增加判斷即可。
 
-	        get  
+class People  
 
-	        {  
+{  
 
-	            if (_name == null)  
+    private string _name;  
 
-	                return string.Empty;  
+    public string Name  
 
-	            return _name;  
+    {  
 
-	        }  
+        get  
 
-	        set  
+        {  
 
-	        {  
+            if (_name == null)  
 
-	            _name = value;  
+                return string.Empty;  
 
-	        }  
+            return _name;  
 
-	    }  
+        }  
 
-	}
+        set  
 
-	若是日後要改成多執行緒程式，使用屬性也會比使用公有欄位容易來得修改。只要在get與set區塊中加入lock即可。
+        {  
 
-	class People  
+            _name = value;  
 
-	{  
+        }  
 
-	    private string _name;  
+    }  
 
-	    public string Name  
+}
 
-	    {  
+若是日後要改成多執行緒程式，使用屬性也會比使用公有欄位容易來得修改。只要在get與set區塊中加入lock即可。
 
-	        get  
+class People  
 
-	        {  
+{  
 
-	            lock (this)  
+    private string _name;  
 
-	            {  
+    public string Name  
 
-	                if (_name == null)  
+    {  
 
-	                    return string.Empty;  
+        get  
 
-	                return _name;  
+        {  
 
-	            }  
+            lock (this)  
 
-	        }  
+            {  
 
-	        set  
+                if (_name == null)  
 
-	        {  
+                    return string.Empty;  
 
-	            lock (this)  
+                return _name;  
 
-	            {  
+            }  
 
-	                _name = value;  
+        }  
 
-	            }  
+        set  
 
-	        }  
+        {  
 
-	    }  
+            lock (this)  
 
-	}
+            {  
 
-	除此之外，使用屬性對於事件的增加也較為容易。
+                _name = value;  
 
-	class People  
+            }  
 
-	{  
+        }  
 
-	    public event EventHandler NameChanging;  
+    }  
 
-	    public event EventHandler NameChanged;
+}
 
-	    private string _name;  
+除此之外，使用屬性對於事件的增加也較為容易。
 
-	    public string Name  
+class People  
 
-	    {  
+{  
 
-	        get  
+    public event EventHandler NameChanging;  
 
-	        {  
+    public event EventHandler NameChanged;
 
-	            if (_name == null)  
+    private string _name;  
 
-	                return string.Empty;  
+    public string Name  
 
-	            return _name;  
+    {  
 
-	        }  
+        get  
 
-	        set  
+        {  
 
-	        {  
+            if (_name == null)  
 
-	            if (_name != value)  
+                return string.Empty;  
 
-	            {  
+            return _name;  
 
-	                NameChanging(this, new EventArgs());  
+        }  
 
-	                _name = value;  
+        set  
 
-	                NameChanged(this, new EventArgs());  
+        {  
 
-	            }  
+            if (_name != value)  
 
-	        }  
+            {  
 
-	    }  
+                NameChanging(this, new EventArgs());  
 
-	}
+                _name = value;  
 
-## 
-	注意事項
+                NameChanged(this, new EventArgs());  
 
-	雖然屬性與公有欄位在使用上看起來是一樣的，但不代表可以先寫成公有欄位以後有需要再改成屬性，因為公有欄位與屬性所編譯出的MSIL是不同的，因此若把公有欄位改為屬性，所有使用到本來公有欄位的程式都必需重新編譯，兩者以二進制的層級來看並非是兼容的。
+            }  
+
+        }  
+
+    }  
+
+}
+
+## 注意事項
+
+
+雖然屬性與公有欄位在使用上看起來是一樣的，但不代表可以先寫成公有欄位以後有需要再改成屬性，因為公有欄位與屬性所編譯出的MSIL是不同的，因此若把公有欄位改為屬性，所有使用到本來公有欄位的程式都必需重新編譯，兩者以二進制的層級來看並非是兼容的。

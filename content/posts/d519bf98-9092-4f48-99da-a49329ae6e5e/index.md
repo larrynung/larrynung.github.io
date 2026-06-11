@@ -10,36 +10,36 @@ tags: [CSharp]
 
 我們可以建立個控制項，繼承自ListBox，並視需要來接收想要處理的視窗訊息。像是想要偵測Item新增的話我們可以偵測LB_ADDSTRING、想要偵測Item插入的話可以偵測LB_INSERTSTRING、想要偵測Item刪除的話可以偵測LB_DELETESTRING。
   			private const int LB_ADDSTRING = 0x180;
-			private const int LB_INSERTSTRING = 0x181;
-			private const int LB_DELETESTRING = 0x182; 
+private const int LB_INSERTSTRING = 0x181;
+private const int LB_DELETESTRING = 0x182; 
 
 偵測時需覆寫WndProc方法，並在方法內判斷Msg是否是我們所感興趣的訊息。有的訊息會內含較為詳細的資訊，像是Item的索引與值，若有需要可從wparam與lparam中擷取。
 
-			protected override void WndProc(ref Message m)
-			{
-				var itemIndex = 0;
-				var itemValue = string.Empty;
+protected override void WndProc(ref Message m)
+{
+var itemIndex = 0;
+var itemValue = string.Empty;
 
-				switch (m.Msg)
-				{
-					case LB_ADDSTRING:
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemAdded(EventArgs.Empty);
-						break;
-					case LB_INSERTSTRING:
-						itemIndex = (int)m.WParam;
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemInserted(EventArgs.Empty);
-						break;
-					case LB_DELETESTRING:
-						itemIndex = (int)m.WParam;
-						OnItemDeleted(EventArgs.Empty);
-						break;
-					default:
-						break;
-				}
-				base.WndProc(ref m);
-			} 
+switch (m.Msg)
+{
+case LB_ADDSTRING:
+itemValue = Marshal.PtrToStringUni(m.LParam);
+OnItemAdded(EventArgs.Empty);
+break;
+case LB_INSERTSTRING:
+itemIndex = (int)m.WParam;
+itemValue = Marshal.PtrToStringUni(m.LParam);
+OnItemInserted(EventArgs.Empty);
+break;
+case LB_DELETESTRING:
+itemIndex = (int)m.WParam;
+OnItemDeleted(EventArgs.Empty);
+break;
+default:
+break;
+}
+base.WndProc(ref m);
+} 
 
 這邊附上較為完整的測試範例：
 
@@ -56,137 +56,137 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
 {
-	public partial class Form1 : Form
-	{
-		class ListBoxEx : ListBox
-		{
-			#region Const
-			private const int LB_ADDSTRING = 0x180;
-			private const int LB_INSERTSTRING = 0x181;
-			private const int LB_DELETESTRING = 0x182; 
-			#endregion
+public partial class Form1 : Form
+{
+class ListBoxEx : ListBox
+{
+#region Const
+private const int LB_ADDSTRING = 0x180;
+private const int LB_INSERTSTRING = 0x181;
+private const int LB_DELETESTRING = 0x182; 
+#endregion
 
-			#region Event
-			public event EventHandler ItemAdded;
-			public event EventHandler ItemInserted;
-			public event EventHandler ItemDeleted;
-			#endregion
+#region Event
+public event EventHandler ItemAdded;
+public event EventHandler ItemInserted;
+public event EventHandler ItemDeleted;
+#endregion
 
-			#region Protected Method
-			protected void OnItemAdded(EventArgs e)
-			{
-				if (ItemAdded == null)
-					return;
-				ItemAdded(this, e);
-			}
+#region Protected Method
+protected void OnItemAdded(EventArgs e)
+{
+if (ItemAdded == null)
+return;
+ItemAdded(this, e);
+}
 
-			protected void OnItemInserted(EventArgs e)
-			{
-				if (ItemInserted == null)
-					return;
-				ItemInserted(this, e);
-			}
+protected void OnItemInserted(EventArgs e)
+{
+if (ItemInserted == null)
+return;
+ItemInserted(this, e);
+}
 
-			protected void OnItemDeleted(EventArgs e)
-			{
-				if (ItemDeleted == null)
-					return;
-				ItemDeleted(this, e);
-			}
+protected void OnItemDeleted(EventArgs e)
+{
+if (ItemDeleted == null)
+return;
+ItemDeleted(this, e);
+}
 
-			protected override void WndProc(ref Message m)
-			{
-				var itemIndex = 0;
-				var itemValue = string.Empty;
+protected override void WndProc(ref Message m)
+{
+var itemIndex = 0;
+var itemValue = string.Empty;
 
-				switch (m.Msg)
-				{
-					case LB_ADDSTRING:
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemAdded(EventArgs.Empty);
-						break;
-					case LB_INSERTSTRING:
-						itemIndex = (int)m.WParam;
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemInserted(EventArgs.Empty);
-						break;
-					case LB_DELETESTRING:
-						itemIndex = (int)m.WParam;
-						OnItemDeleted(EventArgs.Empty);
-						break;
-					default:
-						break;
-				}
-				base.WndProc(ref m);
-			} 
-			#endregion
-		}
+switch (m.Msg)
+{
+case LB_ADDSTRING:
+itemValue = Marshal.PtrToStringUni(m.LParam);
+OnItemAdded(EventArgs.Empty);
+break;
+case LB_INSERTSTRING:
+itemIndex = (int)m.WParam;
+itemValue = Marshal.PtrToStringUni(m.LParam);
+OnItemInserted(EventArgs.Empty);
+break;
+case LB_DELETESTRING:
+itemIndex = (int)m.WParam;
+OnItemDeleted(EventArgs.Empty);
+break;
+default:
+break;
+}
+base.WndProc(ref m);
+} 
+#endregion
+}
 
-		#region Var
-		private ListBoxEx _listBox; 
-		#endregion
+#region Var
+private ListBoxEx _listBox; 
+#endregion
 
-		#region Private Property
-		private ListBoxEx m_ListBox
-		{
-			get
-			{
-				return _listBox ?? (_listBox = new ListBoxEx() 
-				{
-					Dock = DockStyle.Fill
-				});
-			}
-		} 
-		#endregion
+#region Private Property
+private ListBoxEx m_ListBox
+{
+get
+{
+return _listBox ?? (_listBox = new ListBoxEx() 
+{
+Dock = DockStyle.Fill
+});
+}
+} 
+#endregion
 
-		#region Constructor
-		public Form1()
-		{
-			InitializeComponent();
+#region Constructor
+public Form1()
+{
+InitializeComponent();
 
-			m_ListBox.ItemAdded += m_ListBox_ItemAdded;
-			m_ListBox.ItemDeleted += m_ListBox_ItemDeleted;
-			m_ListBox.ItemInserted += m_ListBox_ItemInserted;
+m_ListBox.ItemAdded += m_ListBox_ItemAdded;
+m_ListBox.ItemDeleted += m_ListBox_ItemDeleted;
+m_ListBox.ItemInserted += m_ListBox_ItemInserted;
 
-			this.panel1.Controls.Add(m_ListBox);
-		} 
-		#endregion
+this.panel1.Controls.Add(m_ListBox);
+} 
+#endregion
 
-		#region Event Process
-		private void button1_Click(object sender, EventArgs e)
-		{
-			m_ListBox.Items.Add(Guid.NewGuid().ToString());
-		}
+#region Event Process
+private void button1_Click(object sender, EventArgs e)
+{
+m_ListBox.Items.Add(Guid.NewGuid().ToString());
+}
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			var index = m_ListBox.SelectedIndex >= 0 ? m_ListBox.SelectedIndex : 0;
-			m_ListBox.Items.Insert(index, Guid.NewGuid().ToString());
-		}
+private void button2_Click(object sender, EventArgs e)
+{
+var index = m_ListBox.SelectedIndex >= 0 ? m_ListBox.SelectedIndex : 0;
+m_ListBox.Items.Insert(index, Guid.NewGuid().ToString());
+}
 
-		private void button3_Click(object sender, EventArgs e)
-		{
-			if (m_ListBox.SelectedIndex == -1)
-				return;
-			m_ListBox.Items.RemoveAt(m_ListBox.SelectedIndex);
-		}
+private void button3_Click(object sender, EventArgs e)
+{
+if (m_ListBox.SelectedIndex == -1)
+return;
+m_ListBox.Items.RemoveAt(m_ListBox.SelectedIndex);
+}
 
-		void m_ListBox_ItemInserted(object sender, EventArgs e)
-		{
-			lbxLog.Items.Add("Item inserted");
-		}
+void m_ListBox_ItemInserted(object sender, EventArgs e)
+{
+lbxLog.Items.Add("Item inserted");
+}
 
-		void m_ListBox_ItemDeleted(object sender, EventArgs e)
-		{
-			lbxLog.Items.Add("Item deleted");
-		}
+void m_ListBox_ItemDeleted(object sender, EventArgs e)
+{
+lbxLog.Items.Add("Item deleted");
+}
 
-		void m_ListBox_ItemAdded(object sender, EventArgs e)
-		{
-			lbxLog.Items.Add("Item added");
-		} 
-		#endregion
-	}
+void m_ListBox_ItemAdded(object sender, EventArgs e)
+{
+lbxLog.Items.Add("Item added");
+} 
+#endregion
+}
 }
 
 運行後的結果如下，新增、插入、與刪除都能夠即時的偵測。

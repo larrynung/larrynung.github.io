@@ -3,7 +3,9 @@ title: "LINQ to CSV library"
 date: "2010-12-08 01:01:18"
 description: "LINQ to CSV library"
 tags: [CSharp,Linq]
----Matt Perdeck開發的LINQ to CSV library提供強大的CSV檔存取功能，可讓我們很輕鬆的取出CSV檔內容，搭配使用Linq去做查詢的動作，也具備有CSV檔文件產出與例外處理的功能，使用上十分的彈性好用。
+---
+
+Matt Perdeck開發的LINQ to CSV library提供強大的CSV檔存取功能，可讓我們很輕鬆的取出CSV檔內容，搭配使用Linq去做查詢的動作，也具備有CSV檔文件產出與例外處理的功能，使用上十分的彈性好用。
 
 其具備以下特點：
 
@@ -85,8 +87,8 @@ const string FILE_;
 CsvContext cc = new CsvContext();
 Var data = cc.Read(FILE_NAME);
 
-##
-完整範例
+## 完整範例
+
 
 Person.cs
 
@@ -199,13 +201,13 @@ Console.WriteLine(cc.Read(FILE_NAME, cfd).FirstOrDefault().ToString());
 
 運行結果如下：
 
-##
-Download
+## Download
+
 
 LinqToCSVDemo.zip
 
-##
-Link
+## Link
+
 
 LINQ to CSV library
 

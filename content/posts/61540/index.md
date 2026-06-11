@@ -4,7 +4,9 @@ slug: "[CSharp][Control]BitsControl概念與簡易實做"
 date: "2011-12-11 10:36:08"
 description: "[C#][Control]BitsControl概念與簡易實做"
 tags: [Control,CSharp]
----有些人可能還看不出前一篇指撥開關的用途，其實做些變化指撥開關還可以用來做些簡易的硬體設定。像是做個控制項可以載入一個Byte的資料，並允許使用者直接去調整設定，可用在GPIB、I2C之類的通訊界面設定，設定一些位置資訊。
+---
+
+有些人可能還看不出前一篇指撥開關的用途，其實做些變化指撥開關還可以用來做些簡易的硬體設定。像是做個控制項可以載入一個Byte的資料，並允許使用者直接去調整設定，可用在GPIB、I2C之類的通訊界面設定，設定一些位置資訊。
 
 實作時可建立一個新的使用者控制項，在裡面加入FlowLayoutPanel控制項，再加入八個SwitchButton，與一個Panel去分隔。這邊可將控制項的BorderStyle設為FixedSingle，整個控制項比較會有一體的感覺。
 

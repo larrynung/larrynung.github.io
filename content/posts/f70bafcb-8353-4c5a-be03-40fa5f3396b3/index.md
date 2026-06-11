@@ -4,7 +4,9 @@ slug: "[CSharp]Command Line Parser Library"
 date: "2013-11-06 12:00:00"
 description: "[C#]Command Line Parser Library"
 tags: [CSharp]
----前陣子為程式加上命令列參數去啟動除錯的功能，先暫時套用筆者之前看到的Brahma Command Line Parser來做到這個需求，用了一陣子還是覺得卡手卡腳的，明明只想帶個簡單的參數進去，卻因為用的solution變得必須要帶較為複雜的參數。因此還是花了一下時間用Command Line Parser Library將他重寫，這篇筆者就稍微簡單的紀錄一下Command Line Parser Library的使用方式。
+---
+
+前陣子為程式加上命令列參數去啟動除錯的功能，先暫時套用筆者之前看到的Brahma Command Line Parser來做到這個需求，用了一陣子還是覺得卡手卡腳的，明明只想帶個簡單的參數進去，卻因為用的solution變得必須要帶較為複雜的參數。因此還是花了一下時間用Command Line Parser Library將他重寫，這篇筆者就稍微簡單的紀錄一下Command Line Parser Library的使用方式。
 
 Command Line Parser Library這個函式庫主要是輔助開發人員做命令列參數的處理，可以很輕鬆的為程式加上完整的命令列參數支援，可適用於：
 CSharp 3.0+ .NET Framework 2.0+ Mono Profile 2.1+

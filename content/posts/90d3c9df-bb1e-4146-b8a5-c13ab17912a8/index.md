@@ -10,10 +10,10 @@ tags: [CSharp]
 
 這邊的繪製控制項邊框並不是要我們將整個控制項重繪，而是用ControlPaint.DrawBorder在控制項上面再蓋上個新的邊框，下面是ControlPaint.DrawBorder的函式原型：
   public static void DrawBorder(
-	Graphics graphics,
-	Rectangle bounds,
-	Color color,
-	ButtonBorderStyle style
+Graphics graphics,
+Rectangle bounds,
+Color color,
+ButtonBorderStyle style
 )
 
 簡單的說它需要帶入畫布、邊框的範圍、邊框的顏色、以及邊框的風格，這邊實際用個簡單的例子來示範一下，筆者在表單上放了一個DataGridView元件，試圖將其元件的邊框改為黃色。
@@ -23,7 +23,7 @@ tags: [CSharp]
 ...
 private void dataGridView1_Paint(object sender, PaintEventArgs e)
 {
-	ControlPaint.DrawBorder(e.Graphics, (sender as Control).DisplayRectangle, Color.Yellow, ButtonBorderStyle.Solid);
+ControlPaint.DrawBorder(e.Graphics, (sender as Control).DisplayRectangle, Color.Yellow, ButtonBorderStyle.Solid);
 }
 ...
 

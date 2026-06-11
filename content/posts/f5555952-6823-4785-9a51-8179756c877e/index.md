@@ -10,7 +10,7 @@ description: "[Software]TortoiseGit的TGitCache佔用過多的CPU"
 
 碰到這個問題的話可到Settings內的Icon Overlays頁面，視個人需求將Status cache設定為Shell或是None，這樣設定也許檔案總管瀏覽時狀態圖示的顯示會不夠即時，但卻能解決吃CPU的問題。
      
-##  
+
   
 ## Link
      Issue 48:    High CPU usage during TGitCache process of large repositories    Issue 980:    100% CPU with TGitCache in Windows 7 "Libraries" folder

@@ -1,7 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 New Feature ndash; Add Reference Dialog Improvements"
+title: "[Visual Studio]Visual Studio 2010 New Feature – Add Reference Dialog Improvements"
 date: "2010-03-16 09:42:05"
-description: "[Visual Studio]Visual Studio 2010 New Feature &ndash; Add Reference Dialog Improvements"
+description: "[Visual Studio]Visual Studio 2010 New Feature – Add Reference Dialog Improvements"
 tags: [Visual Studio]
 ---
 

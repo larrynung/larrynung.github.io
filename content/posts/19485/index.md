@@ -3,7 +3,9 @@ title: "Brahma Command Line Parser"
 date: "2010-11-16 12:34:12"
 description: "Brahma Command Line Parser"
 tags: [CSharp]
----在研究Brahma這個C#開源的Linq To GPU函式庫時，發現在Brahma網站上有釋出用來解析命令列參數的程式碼片段，稍微玩了一下，隨手做個記錄。
+---
+
+在研究Brahma這個C#開源的Linq To GPU函式庫時，發現在Brahma網站上有釋出用來解析命令列參數的程式碼片段，稍微玩了一下，隨手做個記錄。
 
 程式碼片段可在Code Snippets下載，透過程式碼片段管理員將其匯入至本機的Visual Studio中，程式碼片段如下：
 
@@ -143,12 +145,12 @@ Console.WriteLine(args.FirstOrDefault());
 
 使用起來感覺程式還算十分清楚好維護，在撰寫上也很容易上手，但是彈性上卻稍嫌不足，像是命令名稱與值要用等號隔開、名稱與值中間不能有空格、無法處理不合法參數...等等，使用上這邊要特別注意一下。
 
-##
-Download
+## Download
+
 
 CommandLineParser.zip
 
-##
-Link
+## Link
+
 
 Code Snippets

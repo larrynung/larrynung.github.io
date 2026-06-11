@@ -3,7 +3,9 @@ title: "[C++]C++ Nativated Property Code Snippet"
 date: "2011-10-13 12:39:34"
 description: "[C++]C++ Nativated Property Code Snippet"
 tags: [C++]
----Visual Studio 2011 Preview開始支援C++的Code Snippet，開發人員可以將自己常用的功能寫成Code Snippet加速專案的開發。由於筆者在開發Nativated C++時，常會需要撰寫Nativated Property，故將其整理為Code Snippet，Code Snippet內容如下：
+---
+
+Visual Studio 2011 Preview開始支援C++的Code Snippet，開發人員可以將自己常用的功能寫成Code Snippet加速專案的開發。由於筆者在開發Nativated C++時，常會需要撰寫Nativated Property，故將其整理為Code Snippet，Code Snippet內容如下：
 
 ```
 

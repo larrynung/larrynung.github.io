@@ -7,55 +7,55 @@ tags: [Visual Studio,C++]
 
 筆者在前面[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇帶出了如何將C++的類別開出給其他組件使用，這篇將延伸該篇概念，示範如何針對Natived C++去做Visual Studio的單元測試。
 
-	為了方便測試，這邊將[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇的範例程式改了一下，將本來的Test方法改為Add方法，其功能為將兩個數值相加後回傳。
+為了方便測試，這邊將[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇的範例程式改了一下，將本來的Test方法改為Add方法，其功能為將兩個數值相加後回傳。
 
-	接著為方案加入Test Project。
+接著為方案加入Test Project。
 
-	再來可參閱[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇，設定測試專案的屬性，讓測試專案得以引用要測試的組件。
+再來可參閱[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇，設定測試專案的屬性，讓測試專案得以引用要測試的組件。
 
-	都設定完後就可以在測試專案中撰寫測試程式了 ，測試程式的撰寫方式跟一般的.NET程式無太大的差異，惟需注意的是撰寫測試程式所用到的Assert主要是Managed的類別，整個測試專案也是C++/CLI類型的專案，因此若想要判別的結果其型態非Managed與Natived共用的話，我們必須將Natived的型態的資料轉為Managed型態的資料，再將其帶入Assert去比對。
+都設定完後就可以在測試專案中撰寫測試程式了 ，測試程式的撰寫方式跟一般的.NET程式無太大的差異，惟需注意的是撰寫測試程式所用到的Assert主要是Managed的類別，整個測試專案也是C++/CLI類型的專案，因此若想要判別的結果其型態非Managed與Natived共用的話，我們必須將Natived的型態的資料轉為Managed型態的資料，再將其帶入Assert去比對。
 
 #include "stdafx.h"
 #include "MyClass.h"
 ...
 namespace MyDllTest
 {
-	[TestClass]
-	public ref class UnitTest1
-	{
-	...
-		[TestMethod]
-		void Add_AddTwoValue_ReturnAddedValue()
-		{			
-			//Arrange		
-			int x = 1;
-			int y = 2;
-			int actual;
-			int expected = x + y;
-			MyClass myObj;
-			
-			//Act
-			actual = myObj.Add(x, y);	
+[TestClass]
+public ref class UnitTest1
+{
+...
+[TestMethod]
+void Add_AddTwoValue_ReturnAddedValue()
+{			
+//Arrange		
+int x = 1;
+int y = 2;
+int actual;
+int expected = x + y;
+MyClass myObj;
 
-			//Assert
-			Assert::AreEqual(actual, expected);		
-		};
-	};
+//Act
+actual = myObj.Add(x, y);	
+
+//Assert
+Assert::AreEqual(actual, expected);		
+};
+};
 }
 
-	因為這邊示範的是int型態，int型態為Natived與Managed共用的型態，因此這邊可以直接帶入使用，若型態是用std::string的話，就必須要像下面這樣轉換。
+因為這邊示範的是int型態，int型態為Natived與Managed共用的型態，因此這邊可以直接帶入使用，若型態是用std::string的話，就必須要像下面這樣轉換。
 
 ...
 System::String^ GetManagedString(string nativedString)
 {
-	return %System::String(nativedString.c_str());
+return %System::String(nativedString.c_str());
 }
 ...
 Assert::AreEqual(GetManagedString(actual),GetManagedString(expected));
 
-	除了在比對上要特別留意外，其他的部分像是如何進行測試與單元測試的管理都跟Managed的單元測試大同小異，這邊不對此多做說明。
+除了在比對上要特別留意外，其他的部分像是如何進行測試與單元測試的管理都跟Managed的單元測試大同小異，這邊不對此多做說明。
 
-## 
-	Link
+## Link
 
-		Assert 類別
+
+Assert 類別

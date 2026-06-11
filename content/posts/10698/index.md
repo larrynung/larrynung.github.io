@@ -7,8 +7,8 @@ tags: [C++]
 
 Natived
  			
-				Managed
-				Pointer
+Managed
+Pointer
 ```cpp
 NativedClass* obj = new NativedClass();
 ```
@@ -16,7 +16,7 @@ NativedClass* obj = new NativedClass();
 ```cpp
 ManagedClass^ obj = gcnew ManagedClass();
 ```
-				Call By Reference
+Call By Reference
 ```cpp
 void Method(int& value)
 {
@@ -28,7 +28,7 @@ void Method(int% value)
 {
 }
 ```
-				Enum
+Enum
 ```cpp
 enum
 {	
@@ -44,7 +44,7 @@ enum class EnumName
     Element2
 };
 ```
-				Class
+Class
 ```cpp
 class ClassName
 {
@@ -56,7 +56,7 @@ ref class ClassName
 {
 };
 ```
-				Struct
+Struct
 ```cpp
 struct StructName
 {
@@ -70,7 +70,7 @@ ref struct StructName
     int m_nElement1;
 }
 ```
-				Property
+Property
 ```cpp
 private:
 	bool _propertyValue;
@@ -109,7 +109,7 @@ void Method(int% value)
 {
 }
 
-				Enum
+Enum
 
 enum
 {	
@@ -123,7 +123,7 @@ enum class EnumName
     Element2
 };
 
-				Class
+Class
 
 class ClassName
 {
@@ -133,7 +133,7 @@ ref class ClassName
 {
 };
 
-				Struct
+Struct
 
 struct StructName
 {
@@ -145,34 +145,34 @@ ref struct StructName
     int m_nElement1;
 }
 
-				Property
+Property
 
 private:
-	bool _propertyValue;
+bool _propertyValue;
 public:
-	__declspec(property(get=GetPropertyValue,put=SetPropertyValue))
-		bool m_propertyValue;
+__declspec(property(get=GetPropertyValue,put=SetPropertyValue))
+bool m_propertyValue;
 public:
-	void SetPropertyValue(bool value)
-	{
-		_propertyValue = value;
-	}
-	bool GetPropertyValue()
-	{
-		return _propertyValue;
-	}
+void SetPropertyValue(bool value)
+{
+_propertyValue = value;
+}
+bool GetPropertyValue()
+{
+return _propertyValue;
+}
 
 private:
-	System::Boolean _propertyValue;
+System::Boolean _propertyValue;
 public:
-	property System::Boolean PropertyValue
-	{
-		System::Boolean get()
-		{
-			return _propertyValue;
-		}
-		void set(System::Boolean value)
-		{
-			_propertyValue = value;
-		}
-	}
+property System::Boolean PropertyValue
+{
+System::Boolean get()
+{
+return _propertyValue;
+}
+void set(System::Boolean value)
+{
+_propertyValue = value;
+}
+}

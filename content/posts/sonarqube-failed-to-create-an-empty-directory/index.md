@@ -8,6 +8,6 @@ SonarQube 運行 Pre-processing 時，可能會拋出 `Failed to create an empty
 
 這錯誤是因為 SonarQube 運行時會需要建立一個 `.sonarqube` 的目錄，該目錄如果因位檔案佔住無法刪除就會發生這樣的錯誤。
 
-![1.png](1.png)
+![1.png](2016-08-26_143246.png)
 
 這問題發生時可以查看任務管理員，看看是否有殘留的 MSBuild 在背後運行，如果有將之刪除即可。

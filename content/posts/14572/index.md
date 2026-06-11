@@ -3,7 +3,9 @@ title: "[VB.NET]比對兩個目錄中不同的檔案"
 date: "2010-04-13 11:35:46"
 description: "[VB.NET]比對兩個目錄中不同的檔案"
 tags: [VB.NET]
----這陣子回論壇問題時，試著使用交集的方式寫了比對檔案的函式，整理紀錄如下：
+---
+
+這陣子回論壇問題時，試著使用交集的方式寫了比對檔案的函式，整理紀錄如下：
 ```
 Imports System.IO
 Imports System.Runtime.CompilerServices

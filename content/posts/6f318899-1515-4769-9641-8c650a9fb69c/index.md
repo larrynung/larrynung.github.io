@@ -23,8 +23,8 @@ pixel = point * dpi /72
 
 using (var g = this.CreateGraphics())
 {
-	points = pixels * 72 / g.DpiX;
-	pixels = points * g.DpiX / 72
+points = pixels * 72 / g.DpiX;
+pixels = points * g.DpiX / 72
 }
 
 ## Link

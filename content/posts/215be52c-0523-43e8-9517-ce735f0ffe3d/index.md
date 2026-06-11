@@ -20,11 +20,11 @@ tags: [CSharp]
 
 函式原型跟用法都清楚後，我們可以開始實際的使用API，首先為程式加入API的PInvoke宣告：
 
-		[DllImport("wininet")]
-		public static extern bool InternetGetConnectedState(
-			ref uint lpdwFlags,
-			uint dwReserved
-			);
+[DllImport("wininet")]
+public static extern bool InternetGetConnectedState(
+ref uint lpdwFlags,
+uint dwReserved
+);
 
 使用時就先宣告個用來回傳的參數，然後將宣告的參數與0帶入該API中即可。
 
@@ -43,23 +43,23 @@ using System.Runtime.InteropServices;
 
 namespace ConsoleApplication21
 {
-	class Program
-	{
-		[DllImport("wininet")]
-		public static extern bool InternetGetConnectedState(
-			ref uint lpdwFlags,
-			uint dwReserved
-			);
+class Program
+{
+[DllImport("wininet")]
+public static extern bool InternetGetConnectedState(
+ref uint lpdwFlags,
+uint dwReserved
+);
 
-		static void Main(string[] args)
-		{
-			uint flags = 0x0;
+static void Main(string[] args)
+{
+uint flags = 0x0;
 
-			var isNetworkAvailable = InternetGetConnectedState(ref flags, 0);
+var isNetworkAvailable = InternetGetConnectedState(ref flags, 0);
 
-			Console.WriteLine(string.Format("Network available: {0} ({1})", isNetworkAvailable.ToString(), flags.ToString()));
-		}
-	}
+Console.WriteLine(string.Format("Network available: {0} ({1})", isNetworkAvailable.ToString(), flags.ToString()));
+}
+}
 }
 
 運行後可以看到如下的畫面，代表筆者的電腦目前是有網路連線的，而且網路的連線狀態是INTERNET_RAS_INSTALLED & INTERNET_CONNECTION_LAN。

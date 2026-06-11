@@ -1,7 +1,7 @@
 ---
-title: "[Visual Studio]Fixldquo;The application cannot startrdquo;"
+title: "[Visual Studio]Fix“The application cannot start”"
 date: "2010-02-03 11:56:17"
-description: "[Visual Studio]Fix&ldquo;The application cannot start&rdquo;"
+description: "[Visual Studio]Fix“The application cannot start”"
 tags: [Visual Studio]
 ---
 

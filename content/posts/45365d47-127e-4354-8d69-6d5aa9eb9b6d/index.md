@@ -4,7 +4,9 @@ slug: "[CSharp]擷取Picasa資料庫(_.PMP)內現有的資料"
 date: "2013-11-06 12:00:00"
 description: "[C#]擷取Picasa資料庫(_.PMP)內現有的資料"
 tags: [CSharp]
----筆者在[C#]取用.picasa.ini內存的現有資訊來做臉部偵測這篇透過了Picasa的ini檔擷取出了臉部的資訊，但是該ini檔如果不經過Picasa去整理相片就不會產生。因此這邊筆者想要直接去擷取Picasa的資料庫，因為用Picasa瀏覽時多半相片都會顯示臉部的範圍，儘管使用者沒有做過Tag的動作，代表Picasa其實不論是否有做過Tag都會有臉部識別的資訊，只是可能存放在自己的資料庫中。
+---
+
+筆者在[C#]取用.picasa.ini內存的現有資訊來做臉部偵測這篇透過了Picasa的ini檔擷取出了臉部的資訊，但是該ini檔如果不經過Picasa去整理相片就不會產生。因此這邊筆者想要直接去擷取Picasa的資料庫，因為用Picasa瀏覽時多半相片都會顯示臉部的範圍，儘管使用者沒有做過Tag的動作，代表Picasa其實不論是否有做過Tag都會有臉部識別的資訊，只是可能存放在自己的資料庫中。
 
 Picasa的資料庫檔存放在%localappdata%\Google\Picasa2\db3下，以.pmp為附檔名。
 

@@ -3,7 +3,9 @@ title: "[VB.NET]使用SuppressIldasmAttribute防止MSIL反組譯工具對組件�
 date: "2010-05-09 10:17:59"
 description: "[VB.NET]使用SuppressIldasmAttribute防止MSIL反組譯工具對組件進行反組譯"
 tags: [VB.NET]
----## Introduction
+---
+
+## Introduction
 
 使用SuppressIldasmAttribute可為自己開發的組件加上一層簡單的防護，該防護動作只對MSIL反組譯工具(Ildasm.exe)有效，對於Reflector則無任何的防護效果。值得注意的是，該防護是非常簡單的防護，很輕鬆的就可以把該防護給拿掉，因此不建議單純靠這屬性來保護組件。
 

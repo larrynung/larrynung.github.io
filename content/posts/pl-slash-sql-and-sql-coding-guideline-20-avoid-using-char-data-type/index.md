@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
+title: "PL/SQL & SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
 date: "2015-12-05 19:35:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
+description: "PL/SQL & SQL CODING GUIDELINE 20 - Avoid using CHAR data type"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

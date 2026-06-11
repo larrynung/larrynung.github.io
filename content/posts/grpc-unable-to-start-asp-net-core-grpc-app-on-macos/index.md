@@ -9,8 +9,12 @@ tags: [gRPC]
 
 ```
 System.IO.IOException: Failed to bind to address https://localhost:5001.
----> System.AggregateException: One or more errors occurred. (HTTP/2 over TLS is not supported on macOS due to missing ALPN support.) (HTTP/2 over TLS is not supported on macOS due to missing ALPN support.)
----> System.NotSupportedException: HTTP/2 over TLS is not supported on macOS due to missing ALPN support.
+---
+
+> System.AggregateException: One or more errors occurred. (HTTP/2 over TLS is not supported on macOS due to missing ALPN support.) (HTTP/2 over TLS is not supported on macOS due to missing ALPN support.)
+---
+
+> System.NotSupportedException: HTTP/2 over TLS is not supported on macOS due to missing ALPN support.
 ```
 
 ![1.png](1.png)

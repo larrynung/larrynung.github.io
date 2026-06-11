@@ -3,7 +3,9 @@ title: "Linq To Excel Provider"
 date: "2010-12-04 11:49:31"
 description: "Linq To Excel Provider"
 tags: [CSharp,Linq]
----Linq To Excel Provider跟Linq To Excel開放源始碼函式庫一樣都是用來對Excel做查詢用途，不同的是Linq To Excel Provider使用方式跟Linq To SQL有些接近，2.5版以後更具備更新、插入、與刪除等功能，這是Linq To Excel開放源始碼函式庫目前尚無法做到的一塊，也因如此Linq To Excel Provider在使用上就變得比Linq To Excel開放源始碼函式庫來得複雜許多，也多了些限制存在。
+---
+
+Linq To Excel Provider跟Linq To Excel開放源始碼函式庫一樣都是用來對Excel做查詢用途，不同的是Linq To Excel Provider使用方式跟Linq To SQL有些接近，2.5版以後更具備更新、插入、與刪除等功能，這是Linq To Excel開放源始碼函式庫目前尚無法做到的一塊，也因如此Linq To Excel Provider在使用上就變得比Linq To Excel開放源始碼函式庫來得複雜許多，也多了些限制存在。
 
 Linq To Excel Provider在官網有公開下載Source Code，使用前需先至官網下載，並將其加入專案，再把LinqToExcel命名空間加入使用。下載下來的Source Code雖然只有一個檔案，但裡面卻內含有使用範例，像是Person類別與啟始函式Main，在使用時我們可開啟Source Code先將裡面的範例拿掉。
 
@@ -153,8 +155,8 @@ provider.SubmitChanges();
 
 Linq To Excel Provider算是滿好的Excel查詢與編輯的解決方案，但使用上具有一些限制，像是一定要先有對應Excel資料的類別，與無法用來產生資料，若Excel一開始是空的，在使用Linq To Excel Provider時，它會因為無法找到Column而掛掉，若一開始有欄位卻無資料，在取資料時可能會在塞值那邊掛掉。另外一提，追了一下Linq To Excel Provider的程式，感覺在效能上的處理並沒有最佳化，有些資料在使用時是重覆一直去取的，沒有套用一些快取的機制，像是它裡面的ExcelMapReader.GetColumnList，這邊在使用時若有這方面的問題可自行調整一下。
 
-##
-完整範例
+## 完整範例
+
 
 Program.cs
 
@@ -270,13 +272,13 @@ return string.Join(",", new string[] { id.ToString(), FirstName, LastName, Birth
 
 運行後結果如下：
 
-##
-Download
+## Download
+
 
 LinqToExcelProvider.zip
 
-##
-Link
+## Link
+
 
 LINQ to Excel Provider 2.0
 

@@ -1,9 +1,11 @@
 ---
-title: "[VC.NET] 如何修復 quot;C2039: lsquo;GetCurrentDirectoryA()rsquo; : is Not a Member of lsquo;System::IO::Directoryrsquo;quot;問題"
+title: "[VC.NET] 如何修復 \"C2039: ‘GetCurrentDirectoryA()’ : is Not a Member of ‘System::IO::Directory’\"問題"
 date: "2009-10-03 12:57:56"
-description: "[VC.NET] 如何修復 &quot;C2039: &lsquo;GetCurrentDirectoryA()&rsquo; : is Not a Member of &lsquo;System::IO::Directory&rsquo;&quot;問題"
+description: "[VC.NET] 如何修復 \"C2039: ‘GetCurrentDirectoryA()’ : is Not a Member of ‘System::IO::Directory’\"問題"
 tags: [C++]
----看到論壇上有人問到如何處理這樣的問題。看了一下前輩的回應後才發現，原來這樣的問題是由於Windows.h檔案內，已定義了GetCurrentDirectory這個巨集所導致。該巨集會在編譯時把GetCurrentDirectory給改為GetCurrentDirectoryA或是GetCurrentDirectoryW。
+---
+
+看到論壇上有人問到如何處理這樣的問題。看了一下前輩的回應後才發現，原來這樣的問題是由於Windows.h檔案內，已定義了GetCurrentDirectory這個巨集所導致。該巨集會在編譯時把GetCurrentDirectory給改為GetCurrentDirectoryA或是GetCurrentDirectoryW。
 
 #if UNICODE
 #define GetCurrentDirectory GetCurrentDirectorryW
@@ -49,7 +51,7 @@ return 0;
 }
 ```
 
-##
-Link
+## Link
+
 
 How to Fix – "C2039: ‘GetCurrentDirectoryA()’ : is Not a Member of ‘System::IO::Directory’"

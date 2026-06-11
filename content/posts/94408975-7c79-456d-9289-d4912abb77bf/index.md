@@ -25,7 +25,7 @@ Windows Server 2008 (64 位元) – 512 MB
   Step1.用滑鼠連點兩下IE8安裝程式。     Step2.依個人意願選取是否協助改進Internet Explorer，接著按下下一步按鈕。     Step3.閱讀授權條款後按下我接受按鈕。     Step4.依個人需求自行決定是否安裝更新，接著按下下一步按鈕。      Step5.等待安裝完畢     Step6.安裝完成     
 IE8執行畫面如下：
      
-##  
+
   
 ## 如何移除
   Step1.開始->控制台->新增或移除程式      Step2.選取Windows Internet Explorer 8->移除    

@@ -3,7 +3,9 @@ title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: auto"
 date: "2011-08-23 12:39:30"
 description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: auto"
 tags: [C++,Visual Studio]
----Visual studio 2010為C++的開發人員新增了auto這個C++0x的功能，讓變數宣告時的型態能由編譯器自動判別，自動依照初始值的型態去決定變數的型態，使得複雜的類型宣告能有更簡單的宣告方式。雖然變數的型態是由初始值判斷，但是是編譯時期所作的處理，在編譯到MSIL時就會用正確的型態去替換，故不會影響程式運行的效能，也是型別安全的編程方式。這也就是C#與VB.Net領域在.Net 3.0所提供的區域型別推斷功能。
+---
+
+Visual studio 2010為C++的開發人員新增了auto這個C++0x的功能，讓變數宣告時的型態能由編譯器自動判別，自動依照初始值的型態去決定變數的型態，使得複雜的類型宣告能有更簡單的宣告方式。雖然變數的型態是由初始值判斷，但是是編譯時期所作的處理，在編譯到MSIL時就會用正確的型態去替換，故不會影響程式運行的效能，也是型別安全的編程方式。這也就是C#與VB.Net領域在.Net 3.0所提供的區域型別推斷功能。
 
 使用的語法如下:
 
@@ -41,8 +43,8 @@ return 0;
 return 0;
 }
 
-##
-Link
+## Link
+
 
 VS2010 中的 C++ 0x 新特性：Lambdas、auto 和 static_assert
 

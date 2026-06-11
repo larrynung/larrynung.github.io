@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
+title: "PL/SQL & SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
 date: "2015-12-05 20:10:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
+description: "PL/SQL & SQL CODING GUIDELINE 21 - Avoid using VARCHAR data type"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

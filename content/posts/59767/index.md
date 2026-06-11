@@ -3,7 +3,9 @@ title: "[C++]使用Pageheap偵測記憶體越界錯誤"
 date: "2011-11-28 01:14:47"
 description: "[C++]使用Pageheap偵測記憶體越界錯誤"
 tags: [C++]
----Pageheap工具能輔助C++開發人員偵測難以察覺的記憶體越界錯誤，工具程式可至這邊下載。
+---
+
+Pageheap工具能輔助C++開發人員偵測難以察覺的記憶體越界錯誤，工具程式可至這邊下載。
 
 Pageheap可分為兩種偵測模式，一種是一般分頁堆積，一種是完整分頁堆積。不同的偵測模式有不同的效果，在如何在 Windows XP 和 Windows 2000 中使用 Pageheap.exe這篇中有很清楚的介紹，這邊截錄文章裡面的表格，可以很清楚的看到兩個模式的差異，這邊是自己的需要去選擇模式就可以了。
 
@@ -154,8 +156,8 @@ return 0;
 
 當調試完成，我們可以執行Pageheap /disable [檔名]將越界錯誤偵測給關閉。
 
-##
-Link
+## Link
+
 
 如何在 Windows XP 和 Windows 2000 中使用 Pageheap.exe
 

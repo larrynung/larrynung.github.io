@@ -1,7 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 quot;(Class) does not existquot; 錯誤"
+title: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 \"(Class) does not exist\" 錯誤"
 date: "2010-10-15 12:54:19"
-description: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 &quot;(Class) does not exist&quot; 錯誤"
+description: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 \"(Class) does not exist\" 錯誤"
 tags: [Visual Studio]
 ---
 

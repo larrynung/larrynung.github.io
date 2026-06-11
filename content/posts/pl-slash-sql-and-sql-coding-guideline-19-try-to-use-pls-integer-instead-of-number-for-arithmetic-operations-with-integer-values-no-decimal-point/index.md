@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
+title: "PL/SQL & SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
 date: "2015-12-05 19:12:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
+description: "PL/SQL & SQL CODING GUIDELINE 19 - Try to use PLS_INTEGER instead of NUMBER for arithmetic operations with integer values (no decimal point)"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

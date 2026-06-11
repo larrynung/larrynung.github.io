@@ -20,32 +20,32 @@ DropNet組件加入後我們開始進行程式部份的撰寫，要用DropNet做
 
 第二步Authorize App with Dropbox則是先用DropNetClient.BuildAuthorizeUrl()取得使用者授權頁面的網址，然後開個瀏覽器把網頁導過去就可以了。
 
-			using (var dialog = new Form())
-			{
-				var browesr = new WebBrowser()
-				{
-					Dock = DockStyle.Fill
-				};
-				var authUrl = m_DropNetClient.BuildAuthorizeUrl();
-				browesr.Navigated += (s, ex) =>
-				{
-					var url = ex.Url.ToString();
-					if (url.Equals(callbackUrl))
-					{
-						dialog.DialogResult = DialogResult.OK;
-					}
-					else if (url.Equals(cancelCallbackUrl))
-					{
-						dialog.DialogResult = DialogResult.Cancel;
-					}
-				};
-				browesr.Navigate(authUrl);
+using (var dialog = new Form())
+{
+var browesr = new WebBrowser()
+{
+Dock = DockStyle.Fill
+};
+var authUrl = m_DropNetClient.BuildAuthorizeUrl();
+browesr.Navigated += (s, ex) =>
+{
+var url = ex.Url.ToString();
+if (url.Equals(callbackUrl))
+{
+dialog.DialogResult = DialogResult.OK;
+}
+else if (url.Equals(cancelCallbackUrl))
+{
+dialog.DialogResult = DialogResult.Cancel;
+}
+};
+browesr.Navigate(authUrl);
 
-				...
-				dialog.Controls.Add(browesr);
-				dialog.ShowDialog();
-				...
-			}
+...
+dialog.Controls.Add(browesr);
+dialog.ShowDialog();
+...
+}
 
 授權頁面跑起來會像是下面這樣，需要使用者先行用DropBox帳號做登入。
 
@@ -61,48 +61,48 @@ DropNet組件加入後我們開始進行程式部份的撰寫，要用DropNet做
 
 整個認證部分的程式撰寫起來會像下面這樣：
 
-		...
-		var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
-		var cancelCallbackUrl = "https://www.dropbox.com/home";
-		var size = new Size(1024, 600);
+...
+var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
+var cancelCallbackUrl = "https://www.dropbox.com/home";
+var size = new Size(1024, 600);
 
-		if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
-		{
-			var accessToken = m_DropNetClient.GetAccessToken();
-		}
-		...
+if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
+{
+var accessToken = m_DropNetClient.GetAccessToken();
+}
+...
 
-		private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
-		{
-			using (var dialog = new Form())
-			{
-				var browesr = new WebBrowser()
-				{
-					Dock = DockStyle.Fill
-				};
+private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
+{
+using (var dialog = new Form())
+{
+var browesr = new WebBrowser()
+{
+Dock = DockStyle.Fill
+};
 
-				m_DropNetClient.GetToken();
-				var authUrl = m_DropNetClient.BuildAuthorizeUrl();
-				browesr.Navigated += (s, ex) =>
-				{
-					var url = ex.Url.ToString();
-					if (url.Equals(callbackUrl))
-					{
-						dialog.DialogResult = DialogResult.OK;
-					}
-					else if (url.Equals(cancelCallbackUrl))
-					{
-						dialog.DialogResult = DialogResult.Cancel;
-					}
-				};
-				browesr.Navigate(authUrl);
+m_DropNetClient.GetToken();
+var authUrl = m_DropNetClient.BuildAuthorizeUrl();
+browesr.Navigated += (s, ex) =>
+{
+var url = ex.Url.ToString();
+if (url.Equals(callbackUrl))
+{
+dialog.DialogResult = DialogResult.OK;
+}
+else if (url.Equals(cancelCallbackUrl))
+{
+dialog.DialogResult = DialogResult.Cancel;
+}
+};
+browesr.Navigate(authUrl);
 
-				dialog.Size = size;
-				dialog.Controls.Add(browesr);
+dialog.Size = size;
+dialog.Controls.Add(browesr);
 
-				return dialog.ShowDialog();
-			}
-		}
+return dialog.ShowDialog();
+}
+}
 
 最後一樣完整的附上筆者在學習時所撰寫的使用範例：
 
@@ -118,83 +118,83 @@ using DropNet;
 
 namespace DropNetDemo
 {
-	public partial class Form1 : Form
-	{
-		#region Var
-		private DropNetClient _dropNetClient;
-		#endregion
+public partial class Form1 : Form
+{
+#region Var
+private DropNetClient _dropNetClient;
+#endregion
 
-		#region Private Property
-		private DropNetClient m_DropNetClient
-		{
-			get
-			{
-				return _dropNetClient ?? (_dropNetClient = new DropNetClient(tbxAppKey.Text, tbxAppSecret.Text));
-			}
-			set
-			{
-				_dropNetClient = value;
-			}
-		}
-		#endregion
+#region Private Property
+private DropNetClient m_DropNetClient
+{
+get
+{
+return _dropNetClient ?? (_dropNetClient = new DropNetClient(tbxAppKey.Text, tbxAppSecret.Text));
+}
+set
+{
+_dropNetClient = value;
+}
+}
+#endregion
 
-		public Form1()
-		{
-			InitializeComponent();
-		}
+public Form1()
+{
+InitializeComponent();
+}
 
-		private void btnLogin_Click(object sender, EventArgs e)
-		{
-			var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
-			var cancelCallbackUrl = "https://www.dropbox.com/home";
-			var size = new Size(1024, 600);
+private void btnLogin_Click(object sender, EventArgs e)
+{
+var callbackUrl = "https://www.dropbox.com/1/oauth/authorize";
+var cancelCallbackUrl = "https://www.dropbox.com/home";
+var size = new Size(1024, 600);
 
-			if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
-			{
-				var accessToken = m_DropNetClient.GetAccessToken();
-			}
-		}
+if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
+{
+var accessToken = m_DropNetClient.GetAccessToken();
+}
+}
 
-		private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
-		{
-			using (var dialog = new Form())
-			{
-				var browesr = new WebBrowser()
-				{
-					Dock = DockStyle.Fill
-				};
+private DialogResult DoOAuth(string callbackUrl, string cancelCallbackUrl, System.Drawing.Size size)
+{
+using (var dialog = new Form())
+{
+var browesr = new WebBrowser()
+{
+Dock = DockStyle.Fill
+};
 
-				m_DropNetClient.GetToken();
-				var authUrl = m_DropNetClient.BuildAuthorizeUrl();
-				browesr.Navigated += (s, ex) =>
-				{
-					var url = ex.Url.ToString();
-					if (url.Equals(callbackUrl))
-					{
-						dialog.DialogResult = DialogResult.OK;
-					}
-					else if (url.Equals(cancelCallbackUrl))
-					{
-						dialog.DialogResult = DialogResult.Cancel;
-					}
-				};
-				browesr.Navigate(authUrl);
+m_DropNetClient.GetToken();
+var authUrl = m_DropNetClient.BuildAuthorizeUrl();
+browesr.Navigated += (s, ex) =>
+{
+var url = ex.Url.ToString();
+if (url.Equals(callbackUrl))
+{
+dialog.DialogResult = DialogResult.OK;
+}
+else if (url.Equals(cancelCallbackUrl))
+{
+dialog.DialogResult = DialogResult.Cancel;
+}
+};
+browesr.Navigate(authUrl);
 
-				dialog.Size = size;
-				dialog.Controls.Add(browesr);
+dialog.Size = size;
+dialog.Controls.Add(browesr);
 
-				return dialog.ShowDialog();
-			}
-		}
+return dialog.ShowDialog();
+}
+}
 
-		private void tbxAppKey_TextChanged(object sender, EventArgs e)
-		{
-			m_DropNetClient = null;
-		}
+private void tbxAppKey_TextChanged(object sender, EventArgs e)
+{
+m_DropNetClient = null;
+}
 
-		private void tbxAppSecret_TextChanged(object sender, EventArgs e)
-		{
-			m_DropNetClient = null;
-		}
-	}
+private void tbxAppSecret_TextChanged(object sender, EventArgs e)
+{
+m_DropNetClient = null;
+}
+}
 }

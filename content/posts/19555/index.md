@@ -3,7 +3,9 @@ title: ".NET 4.0 New Feature - Tuple"
 date: "2010-11-19 12:59:23"
 description: ".NET 4.0 New Feature - Tuple"
 tags: [CSharp]
----.NET 4.0在System命名空間下新增了Tuple泛型類別，用以儲存特定數目和順序的值，可做臨時性的儲存與滿足方法具有多個回傳值的需求。
+---
+
+.NET 4.0在System命名空間下新增了Tuple泛型類別，用以儲存特定數目和順序的值，可做臨時性的儲存與滿足方法具有多個回傳值的需求。
 
 .NET 4.0內建有8種Tuple泛型類別，各自帶有不同數量的泛型屬性成員。
 

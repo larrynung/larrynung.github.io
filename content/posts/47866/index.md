@@ -3,7 +3,9 @@ title: "[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題"
 date: "2011-10-29 11:03:24"
 description: "[C++]使用Cppcheck靜態分析工具輔助檢查C++程式潛在問題"
 tags: [C++]
----Cppcheck是開放源碼的靜態分析工具，可用於分析C/C++的程式。跟一般的編譯器所具備的靜態分析功能不同的是，Cppcheck被定位在專門偵測編譯器一般偵測不到的問題，所以能幫我們檢查出程式中是否有記憶體洩漏、未初始的變數或是未使用到的方法、或是存取位置超出範圍...等等，而像是語法錯誤這類編譯器能偵測到的問題Cppcheck就不提供了。主要能偵測的有下面幾項：
+---
+
+Cppcheck是開放源碼的靜態分析工具，可用於分析C/C++的程式。跟一般的編譯器所具備的靜態分析功能不同的是，Cppcheck被定位在專門偵測編譯器一般偵測不到的問題，所以能幫我們檢查出程式中是否有記憶體洩漏、未初始的變數或是未使用到的方法、或是存取位置超出範圍...等等，而像是語法錯誤這類編譯器能偵測到的問題Cppcheck就不提供了。主要能偵測的有下面幾項：
 
 Out of bounds
 
@@ -169,8 +171,8 @@ For more information:
 http://cppcheck.sf.net/manual.pdf
 cppcheck: error: could not find or open any of the paths given.
 
-##
-Link
+## Link
+
 
 Cppcheck
 

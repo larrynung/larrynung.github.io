@@ -1,7 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 New Feature ndash; Box Selection With Multi-Line Editing"
+title: "[Visual Studio]Visual Studio 2010 New Feature – Box Selection With Multi-Line Editing"
 date: "2010-03-18 12:46:59"
-description: "[Visual Studio]Visual Studio 2010 New Feature &ndash; Box Selection With Multi-Line Editing"
+description: "[Visual Studio]Visual Studio 2010 New Feature – Box Selection With Multi-Line Editing"
 tags: [Visual Studio]
 ---
 

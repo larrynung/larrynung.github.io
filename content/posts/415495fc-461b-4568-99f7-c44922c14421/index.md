@@ -4,7 +4,9 @@ slug: "[CSharp]忽略在 HTTP 剖析期間發生的驗證錯誤"
 date: "2013-11-06 12:00:00"
 description: "[C#]忽略在 HTTP 剖析期間發生的驗證錯誤"
 tags: [CSharp]
----這次Sprint有解一個問題，就是我們的專案程式在抓取某些網站的縮圖(像是Yahoo...)時會抓取不到，但是Web版的程式看同一篇貼文卻是OK的，實際查驗了一下發現程式在抓取圖片時會丟出例外導致無法正確將圖片下載下來，例外的訊息大概是這樣的"The server committed a protocol violation. Section=ResponseHeader Detail=CR must be followed by LF"，查驗了一下網路文章才知道這部份問題可能是違反了以下幾項：
+---
+
+這次Sprint有解一個問題，就是我們的專案程式在抓取某些網站的縮圖(像是Yahoo...)時會抓取不到，但是Web版的程式看同一篇貼文卻是OK的，實際查驗了一下發現程式在抓取圖片時會丟出例外導致無法正確將圖片下載下來，例外的訊息大概是這樣的"The server committed a protocol violation. Section=ResponseHeader Detail=CR must be followed by LF"，查驗了一下網路文章才知道這部份問題可能是違反了以下幾項：
 
 在行結尾程式碼中使用 CRLF；不允許單獨使用 CR 或 LF。
 
@@ -52,8 +54,8 @@ return true;
 return false;
 }
 
-##
-Link
+## Link
+
 
 HttpWebRequest 錯誤訊息 “The server committed a protocol violation…" 的解法
 

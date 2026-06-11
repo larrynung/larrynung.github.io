@@ -6,49 +6,49 @@ description: "[Win8]客製化專屬於自己的WinX選單"
 
 在Win8中有個WinX選單，可透過熱鍵Win + X啟用，也可以直接將滑鼠移至桌面左下角後按右鍵啟用。WinX選單內有些我們熟悉的選單選項可供我們使用，像是命令提示字元、電腦管理、控制台之類的選單選項，若是嫌裡面選單選項不夠實用，Win8也允許我們將其客製化，這邊就稍微對此做個簡單的介紹。
 
-	讓我們先來瞧瞧WinX選單，大至上分為三個群組。
+讓我們先來瞧瞧WinX選單，大至上分為三個群組。
 
-	WinX選單裡面的選單選項是跟"%LocalAppData%\Microsoft\Windows\WinX"下的資料對應的，我們可以先按熱鍵Win + R叫起執行對話框，鍵入"%LocalAppData%\Microsoft\Windows\WinX"帶出WinX選單對應的目錄。
+WinX選單裡面的選單選項是跟"%LocalAppData%\Microsoft\Windows\WinX"下的資料對應的，我們可以先按熱鍵Win + R叫起執行對話框，鍵入"%LocalAppData%\Microsoft\Windows\WinX"帶出WinX選單對應的目錄。
 
-	我們可以看到在%LocalAppData%\Microsoft\Windows\WinX下有Group1、Group2、與Group3三個目錄，這三個目錄跟WinX選單的三個群組是對應的，進去目錄裡面在比對WinX的選單選項，我們可以看到WinX選單的選單選項都是這些目錄裡面的捷徑。
+我們可以看到在%LocalAppData%\Microsoft\Windows\WinX下有Group1、Group2、與Group3三個目錄，這三個目錄跟WinX選單的三個群組是對應的，進去目錄裡面在比對WinX的選單選項，我們可以看到WinX選單的選單選項都是這些目錄裡面的捷徑。
 
-	知道了WinX選單的目錄結構後是否我們很直接的放些捷徑進去就好了呢？其實不然，捷徑還必須要透過hashlnk做些處理，這邊就跟著筆者來做做看吧。筆者這邊試圖試著要將WinX選單加入個關機的選單選項，所以這邊先建立個要用來關機的捷徑。
+知道了WinX選單的目錄結構後是否我們很直接的放些捷徑進去就好了呢？其實不然，捷徑還必須要透過hashlnk做些處理，這邊就跟著筆者來做做看吧。筆者這邊試圖試著要將WinX選單加入個關機的選單選項，所以這邊先建立個要用來關機的捷徑。
 
-	捷徑要執行的動作為"shutdown -s -t 01"。
+捷徑要執行的動作為"shutdown -s -t 01"。
 
-	捷徑名稱為shutdown。
+捷徑名稱為shutdown。
 
-	建立完捷徑後，這邊在針對捷徑內容做些調整，將執行時視窗設為最小化，讓關機時比較不會看到彈出的命令提示字元視窗。
+建立完捷徑後，這邊在針對捷徑內容做些調整，將執行時視窗設為最小化，讓關機時比較不會看到彈出的命令提示字元視窗。
 
-	捷徑建立完畢後如之前稍微帶到的，我們必須用hashlnk程式做些處理，這邊可以直接將捷徑拖至hashlnk上。(hashlnk檔案可從Win + X Menu Editor裡面取得，因為它額外需要msvcr100.dll，對於Win8 RP版又有對應的hashlnk版本，所以這邊就不給hashlnk的下載位置，從Win + X Menu Editor取得比較方便)
+捷徑建立完畢後如之前稍微帶到的，我們必須用hashlnk程式做些處理，這邊可以直接將捷徑拖至hashlnk上。(hashlnk檔案可從Win + X Menu Editor裡面取得，因為它額外需要msvcr100.dll，對於Win8 RP版又有對應的hashlnk版本，所以這邊就不給hashlnk的下載位置，從Win + X Menu Editor取得比較方便)
 
-	然後我們會看到作業系統的警告提示，這邊我們要按下其他資訊。
+然後我們會看到作業系統的警告提示，這邊我們要按下其他資訊。
 
-	接著點選仍要執行。
+接著點選仍要執行。
 
-	這樣捷徑就做完了處理，我們再把做完的捷徑丟入對應的目錄下就好了，這邊因為筆者想要將關機選單選項放在WinX選單最下面的群組，所以我將捷徑放在Group1下。
+這樣捷徑就做完了處理，我們再把做完的捷徑丟入對應的目錄下就好了，這邊因為筆者想要將關機選單選項放在WinX選單最下面的群組，所以我將捷徑放在Group1下。
 
-	放完後我們按下熱鍵Win + X，會發現選單並沒有任何變化，因為作業系統還沒去重Load選單，這邊可以將機器重新啟動，或是進入工作管理員後，選取Windows 檔案總管，在點選右下方的重新啟動按鈕，強制作業系統重新載入WinX選單。
+放完後我們按下熱鍵Win + X，會發現選單並沒有任何變化，因為作業系統還沒去重Load選單，這邊可以將機器重新啟動，或是進入工作管理員後，選取Windows 檔案總管，在點選右下方的重新啟動按鈕，強制作業系統重新載入WinX選單。
 
-	沒有意外的話我們就可以在WinX選單中看到剛剛所加入的關機選單選項。
+沒有意外的話我們就可以在WinX選單中看到剛剛所加入的關機選單選項。
 
-	上面大致將客製化WinX選單選項的作法給帶過了，這種方法不是最簡單的，只是為了將架構、運作原理、與基本作法稍稍的帶一下。如果要方便快速的客製化WinX選單，可以考慮直接使用Win + X Menu Editor來做，相信有上面介紹的概念看到這個介面應該都不成問題了吧，筆者在這邊就不針對此工具多做描述了。
+上面大致將客製化WinX選單選項的作法給帶過了，這種方法不是最簡單的，只是為了將架構、運作原理、與基本作法稍稍的帶一下。如果要方便快速的客製化WinX選單，可以考慮直接使用Win + X Menu Editor來做，相信有上面介紹的概念看到這個介面應該都不成問題了吧，筆者在這邊就不針對此工具多做描述了。
 
-## 
-	Link
+## Link
 
-		Windows 8 隱藏的開始功能表解密，DIY 開始功能表項目
-	
-		How to Add Items to the New Win+X Menu in Windows 8
-	
-		How to Edit the Win+X Menu in Windows 8 Using a Free Tool
-	
-		如何增加選項到Windows 8的WinX功能表
-	
-		Customize or Add New Shortcuts to WinX Menu in Windows 8
-	
-		Win+X Menu Editor for Windows 8 allows you to add or remove Win+X menu items
-	
-		Tweaking Guide: Advanced control the Quick Access Menu (WinX Menu) in Windows 8
-	
-		Win+X Menu Editor – 自定義Win8的“Win+X”菜單
+
+Windows 8 隱藏的開始功能表解密，DIY 開始功能表項目
+
+How to Add Items to the New Win+X Menu in Windows 8
+
+How to Edit the Win+X Menu in Windows 8 Using a Free Tool
+
+如何增加選項到Windows 8的WinX功能表
+
+Customize or Add New Shortcuts to WinX Menu in Windows 8
+
+Win+X Menu Editor for Windows 8 allows you to add or remove Win+X menu items
+
+Tweaking Guide: Advanced control the Quick Access Menu (WinX Menu) in Windows 8
+
+Win+X Menu Editor – 自定義Win8的“Win+X”菜單

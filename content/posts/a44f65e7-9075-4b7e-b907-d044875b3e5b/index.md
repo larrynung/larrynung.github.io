@@ -4,7 +4,9 @@ slug: "[CSharp]實作UDP Broadcast的傳送與接收"
 date: "2013-11-06 12:00:00"
 description: "[C#]實作UDP Broadcast的傳送與接收"
 tags: [CSharp]
----最近筆者想要利用廣播封包做些處理，稍微研究了一下，這篇簡單的做個紀錄。
+---
+
+最近筆者想要利用廣播封包做些處理，稍微研究了一下，這篇簡單的做個紀錄。
 
 若要發送UDP Broadcast，我們可以像下面這樣建立ProtocolType為Udp的Socket物件實體，呼叫SetSocketOption做些設定，並向IPAddress.Broadcast位置發送我們想要送出的廣播資料。
 private static void BroadcastMessage(string message, int port)
