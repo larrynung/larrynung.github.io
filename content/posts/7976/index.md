@@ -42,7 +42,7 @@ StarUML is an open source project to develop fast, flexible, extensible, feature
 
 StarUML is mostly written in Delphi. However, StarUML is *multi-lingual project* and not tied to specific programming language, so any programming languages can be used to develop StarUML. (for example, C/C++, Java, Visual Basic, Delphi, JScript, VBScript, C#, VB.NET, ...)
 
-**操作畫面 : \**![dbimage.php?id=48463](/images/posts/7976/dbimage.php?id=48463)
+**操作畫面 : \***(截圖已失效)*
 
 ## BOUML
 
