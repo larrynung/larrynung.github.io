@@ -42,7 +42,7 @@ Console.WriteLine(config.Setting2);
 }
 }
 ```
-![/images/posts/FxConfigurationReadMixedConfig/1.png](/images/posts/FxConfigurationReadMixedConfig/1.png)
+![1.png](/images/posts/FxConfigurationReadMixedConfig/1.png)
 
 Link
 ----

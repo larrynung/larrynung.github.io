@@ -6,8 +6,8 @@ description: "Visual Studio 2013 Preview New Feature - XAML Editor's Tag refacto
 
 以往在透過Visual Studio的XAML Editor進行XAML Code的編輯時，若是有需要針對Tag進行修改，我們必須要分別針對Start Tag與End Tag進行同樣的修改動作，像是下面這樣：
 
-![](/images/posts/72424020-07f3-40fb-8f96-7c9455c76428/)
+![2013830162216485.gif](/images/posts/72424020-07f3-40fb-8f96-7c9455c76428/2013830162216485.gif)
 
 在Visual Studio 2013 Preview 後，修改Tag時會將Start Tag與End Tag連動，修改起來變得簡單了許多。
 
-![](/images/posts/72424020-07f3-40fb-8f96-7c9455c76428/)
+![2013830162340579.gif](/images/posts/72424020-07f3-40fb-8f96-7c9455c76428/2013830162340579.gif)

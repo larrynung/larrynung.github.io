@@ -32,4 +32,4 @@ sub.PublishAsync(key, "LarryNung", CommandFlags.FireAndForget);
 
 運行結果如下：
 
-![/images/posts/PubSubInStackExchange.Redis/1.png](/images/posts/PubSubInStackExchange.Redis/1.png)
+![1.png](/images/posts/PubSubInStackExchange.Redis/1.png)

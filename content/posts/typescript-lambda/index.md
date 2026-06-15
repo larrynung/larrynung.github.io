@@ -19,4 +19,4 @@ alert(cmd + "(" + params.join(", ") + ")");
 Execute("Test", "Param1", "Param2");
 ```
 
-![/images/posts/TypeScriptLambda/1.png](/images/posts/TypeScriptLambda/1.png)
+![1.png](/images/posts/TypeScriptLambda/1.png)

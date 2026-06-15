@@ -62,10 +62,10 @@ public string Url { get; set; }
 
 其運行結果如下:
 
-![/images/posts/NameofExpression/1.png](/images/posts/NameofExpression/1.png)
+![1.png](/images/posts/NameofExpression/1.png)
 
 可以看到程式中很輕易的就取得了類別與變數的名稱。
 
 最後反組譯看一下，可以發現使用 Nameof expressions 功能，編譯器會在編譯時幫我們編譯成對應的字串，所以 Runtime 時無需額外的解析耗費。
 
-![/images/posts/NameofExpression/2.png](/images/posts/NameofExpression/2.png)
+![2.png](/images/posts/NameofExpression/2.png)

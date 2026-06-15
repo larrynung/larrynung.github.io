@@ -3,7 +3,8 @@ title: "[VB.NET]使用mouse_event API 來操控滑鼠動作"
 date: "2010-05-21 12:07:12"
 description: "[VB.NET]使用mouse_event API 來操控滑鼠動作"
 tags: [VB.NET]
----函式原型
+---
+函式原型
 VOID WINAPI mouse_event(
 __in DWORD dwFlags,
 __in DWORD dx,

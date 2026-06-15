@@ -2,7 +2,8 @@
 title: "[C++]使用GetAdaptersAddresses API取得本地IP"
 date: "2013-11-06 12:00:00"
 description: "[C++]使用GetAdaptersAddresses API取得本地IP"
----最近有個需求必須在C++中取得本地的IP，包括IPv6與IPv4兩種的IP，查來查去就只有GetAdaptersAddresses API比較合用，但是使用上卻不是很容易，這篇將之稍做整理。
+---
+最近有個需求必須在C++中取得本地的IP，包括IPv6與IPv4兩種的IP，查來查去就只有GetAdaptersAddresses API比較合用，但是使用上卻不是很容易，這篇將之稍做整理。
 
 GetAdaptersAddresses API在使用時必須先將相關的函式庫與標頭擋設定好，必須設定靜態函式庫Iphlpapi.lib與Iphlpapi.h標頭擋，像是下面這樣，靜態函式庫若有需要也可以透過專案屬性設定。
 

@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Win32 Color lt;=gt; .NET Color"
 date: "2010-05-26 10:05:38"
-description: "[VB.NET]Win32 Color &lt;=&gt; .NET Color"
+description: "[VB.NET]Win32 Color <=> .NET Color"
 tags: [VB.NET]
 ---
 

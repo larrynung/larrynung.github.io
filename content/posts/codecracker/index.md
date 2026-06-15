@@ -7,15 +7,15 @@ tags: [Roslyn, Visual Studio]
 
 Code Cracker 是 Roslyn analyzer 的 Library，有點類似 FxCop 的 Rule，依不同的範疇實做了很多相關的檢查，可以看到有 Design、Globalization、Maintainability、Naming、Performance、Portabili、Security ...等。雖然還未完全實作完畢，但目前已經相當多的檢查 Rule 了。
 
-![/images/posts/CodeCracker/1.png](/images/posts/CodeCracker/1.png)
+![1.png](/images/posts/CodeCracker/1.png)
 
 安裝上一樣是提供 VSIX 或是 NuGet Package 兩種，若是要套到所有專案，可直接透過 Extension and Updates 安裝。
 
-![/images/posts/CodeCracker/2.png](/images/posts/CodeCracker/2.png)
+![2.png](/images/posts/CodeCracker/2.png)
 
 若是只要套用到單一專案，可直接透過 NuGet 安裝。不論是要用 NuGet 的 GUI 介面。
 
-![/images/posts/CodeCracker/3.png](/images/posts/CodeCracker/3.png)
+![3.png](/images/posts/CodeCracker/3.png)
 
 或是直接透過 NuGet 命令都可以。
 
@@ -25,15 +25,15 @@ Install-Package CodeCracker.VisualBasic -IncludePrerelease
 
 用 NuGet 安裝的話，Analyzer 會出現在方案總管的 References\Analyzers 節點下。
 
-![/images/posts/CodeCracker/4.png](/images/posts/CodeCracker/4.png)
+![4.png](/images/posts/CodeCracker/4.png)
 
 展開 Analyzer 節點可進一步看到支援的 Rule。
 
-![/images/posts/CodeCracker/5.png](/images/posts/CodeCracker/5.png)
+![5.png](/images/posts/CodeCracker/5.png)
 
 在編輯視窗做個簡單的測試，像是放個空的解構子，或是方法的參數宣告了但不使用，沒意外的話應該要會被 Code Cracker 的 Analyzer 偵測出來。
 
-![/images/posts/CodeCracker/6.png](/images/posts/CodeCracker/6.png)
+![6.png](/images/posts/CodeCracker/6.png)
 
 Link
 -----

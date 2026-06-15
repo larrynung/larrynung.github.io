@@ -3,7 +3,8 @@ title: "[C++]C++ Simple Lazy class"
 date: "2011-09-28 09:41:37"
 description: "[C++]C++ Simple Lazy class"
 tags: [C++]
----延遲載入是程式寫作時很重要的一個概念，能讓物件要用在建立，避免不必要的運算。這篇簡單示範一下如何使用VC++ 2010以後的Lambda表示式撰寫C++版本的Lazy類別，透過std::function與template搭配使用，可以將lambda或是Callback Function儲存，當物件要建立時再透過剛儲存的初始動作執行。
+---
+延遲載入是程式寫作時很重要的一個概念，能讓物件要用在建立，避免不必要的運算。這篇簡單示範一下如何使用VC++ 2010以後的Lambda表示式撰寫C++版本的Lazy類別，透過std::function與template搭配使用，可以將lambda或是Callback Function儲存，當物件要建立時再透過剛儲存的初始動作執行。
 ```
 #include
 
@@ -127,4 +128,4 @@ return 0;
 ```
 運行結果如下，可以看到一開始是未初始化的，當使用了Lazy.m_result才會做初始的動作，也才可以取到我們想要的值。
 
-![](/images/posts/38161/)
+![image_thumb.png](/images/posts/38161/image_thumb.png)

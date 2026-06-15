@@ -1,7 +1,7 @@
 ---
 title: "[Other]quot;無法開啟此封裝quot; 微軟的Bug?!"
 date: "2008-11-28 09:31:57"
-description: "[Other]&quot;無法開啟此封裝&quot; 微軟的Bug?!"
+description: "[Other]\"無法開啟此封裝\" 微軟的Bug?!"
 tags: [Other]
 ---
 

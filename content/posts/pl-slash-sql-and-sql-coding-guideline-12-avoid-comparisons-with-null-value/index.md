@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
+title: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 date: "2015-11-26 01:12:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
+description: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 
@@ -19,7 +19,7 @@ END;
 
 因為 null 不等於任何東西，即使是 null 也不等於 null。
 
-![/images/posts/PLSQLCopRule12/1.png](/images/posts/PLSQLCopRule12/1.png)
+![1.png](/images/posts/PLSQLCopRule12/1.png)
 
 正確的方式應該是用 is 或 is not 去做判斷。
 

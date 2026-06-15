@@ -10,16 +10,16 @@ tags: [Octopress]
 
 若您也有這樣的需求，可以開啟_config.yaml這個設定檔，在excerpt_link這邊設定進ㄧ步閱讀的按鈕所要呈現的字樣。
 
-![/images/posts/OctopressReadMore/1.png](/images/posts/OctopressReadMore/1.png)
+![1.png](/images/posts/OctopressReadMore/1.png)
 
 設定好後存檔，並在撰寫文章的同時，加入特定的註解:
 
 像是這樣
 
-![/images/posts/OctopressReadMore/2.png](/images/posts/OctopressReadMore/2.png)
+![2.png](/images/posts/OctopressReadMore/2.png)
 
 該註解可以用以指定文章的摘要要顯示到哪。
 
 實際將部落格跑起來就會像下面這樣:
 
-![/images/posts/OctopressReadMore/3.png](/images/posts/OctopressReadMore/3.png)
+![3.png](/images/posts/OctopressReadMore/3.png)

@@ -7,7 +7,7 @@ tags: [Software]
 
 在使用SVN做檔案控管時，SVN會在專案目錄下新增個.svn目錄。
 
-![](/images/posts/8760/)
+![image_thumb_2.png](/images/posts/8760/image_thumb_2.png)
 
 該目錄內記錄著SVN控管所需的資訊。
 

@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 18 - Avoid declaring NUMBER variables or subtypes with no precision"
+title: "PL/SQL & SQL CODING GUIDELINE 18 - Avoid declaring NUMBER variables or subtypes with no precision"
 date: "2015-12-05 18:48:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 18 - Avoid declaring NUMBER variables or subtypes with no precision"
+description: "PL/SQL & SQL CODING GUIDELINE 18 - Avoid declaring NUMBER variables or subtypes with no precision"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

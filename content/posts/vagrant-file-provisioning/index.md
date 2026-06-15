@@ -13,11 +13,11 @@ File Provisioning 可以讓我們自動在 Vagrant 啟動時將檔案傳遞至�
 
 像是這邊，若要將本地的 shell script 帶入到虛擬機中。
 
-![/images/posts/VagrantFileProvisioning/1.png](/images/posts/VagrantFileProvisioning/1.png)
+![1.png](/images/posts/VagrantFileProvisioning/1.png)
 
 Provisioning 運行後虛擬機就會將指定的檔案帶到指定的位置。
 
-![/images/posts/VagrantFileProvisioning/2.png](/images/posts/VagrantFileProvisioning/2.png)
+![2.png](/images/posts/VagrantFileProvisioning/2.png)
 
 Link
 ----

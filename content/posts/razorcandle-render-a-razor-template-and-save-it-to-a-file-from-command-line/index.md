@@ -23,27 +23,27 @@ source with the html extension.
 
 舉個例子來說，假設今天我們有個 cshtml，裡面的 Model 有 FirstName 與 LastName。
 
-![/images/posts/RazorCandle/1.png](/images/posts/RazorCandle/1.png)
+![1.png](/images/posts/RazorCandle/1.png)
 
 我們可以像下面這樣進行轉換。
 
 RazorCandle hello.cshtml /M="{FirstName: 'Larry', LastName: 'Nung'}"
 
-![/images/posts/RazorCandle/2.png](/images/posts/RazorCandle/2.png)
+![2.png](/images/posts/RazorCandle/2.png)
 
 轉換出來的檔案會像下面這樣，可以正確的取得 Model 值並轉換。
 
-![/images/posts/RazorCandle/3.png](/images/posts/RazorCandle/3.png)
+![3.png](/images/posts/RazorCandle/3.png)
 
 它也支援 Partial view 的 Support，像是上面這個例子，使用 Partial View 來做。
 
-![/images/posts/RazorCandle/4.png](/images/posts/RazorCandle/4.png)
+![4.png](/images/posts/RazorCandle/4.png)
 
-![/images/posts/RazorCandle/5.png](/images/posts/RazorCandle/5.png)
+![5.png](/images/posts/RazorCandle/5.png)
 
 一樣運行良好。
 
-![/images/posts/RazorCandle/6.png](/images/posts/RazorCandle/6.png)
+![6.png](/images/posts/RazorCandle/6.png)
 
 Link
 ----

@@ -40,6 +40,6 @@ using (var conn = ConnectionMultiplexer.Connect(configuration))
 
 如果不清楚有哪些可供設定，可參閱下表：
 
-![/images/posts/ConfigurationInStackExchange.Redis/1.png](/images/posts/ConfigurationInStackExchange.Redis/1.png)
+![1.png](/images/posts/ConfigurationInStackExchange.Redis/1.png)
 
-![/images/posts/ConfigurationInStackExchange.Redis/2.png](/images/posts/ConfigurationInStackExchange.Redis/2.png)
+![2.png](/images/posts/ConfigurationInStackExchange.Redis/2.png)

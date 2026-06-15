@@ -9,4 +9,4 @@ tags: [Web.Config Transformation]
 
 建立新的 Config Transform 檔很簡單，只要在方案總管中找到 Web.config 檔，在檔案上按下滑鼠右鍵。在彈出的滑鼠右鍵快顯選單中，選取 Add Config Transform 選單選項。Visual Studio 即會比對 Build Configuration 去產生缺少的 Config Transform 檔案。
 
-![/images/posts/AddConfigTransform/1.png](/images/posts/AddConfigTransform/1.png)
+![1.png](/images/posts/AddConfigTransform/1.png)

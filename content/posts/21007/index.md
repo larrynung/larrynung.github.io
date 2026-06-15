@@ -3,7 +3,8 @@ title: ".NET 4.0 New Feature - Corrupted State Exceptions(CSEs)"
 date: "2011-01-25 12:45:08"
 description: ".NET 4.0 New Feature - Corrupted State Exceptions(CSEs)"
 tags: [CSharp]
----在.NET 4.0 以前的例外處理機制，開發人員能透過Try...Catch將所有例外攔截，也許是用來做一致性的例外處理、也許是將例外吞掉。不論是哪種狀況我們都可以藉由例外處理機制攔截到所有的例外。
+---
+在.NET 4.0 以前的例外處理機制，開發人員能透過Try...Catch將所有例外攔截，也許是用來做一致性的例外處理、也許是將例外吞掉。不論是哪種狀況我們都可以藉由例外處理機制攔截到所有的例外。
 try
 {
 ...

@@ -2,7 +2,8 @@
 title: ".NET 4.0 New Feature - Concurrent Collection"
 date: "2013-11-06 12:00:00"
 description: ".NET 4.0 New Feature - Concurrent Collection"
----.NET 4.0 BCL 新加入System.Collections.Concurrent命名空間，該命名空間提供許多執行緒安全的集合，像是ConcurrentDictionary、ConcurrentQueue、ConcurrentStack、ConcurrentBag、與BlockingCollection。
+---
+.NET 4.0 BCL 新加入System.Collections.Concurrent命名空間，該命名空間提供許多執行緒安全的集合，像是ConcurrentDictionary、ConcurrentQueue、ConcurrentStack、ConcurrentBag、與BlockingCollection。
 
 這些新的集合類別具有執行緒安全的特性，跟以往的集合類別不同。在.NET 1.0時雖然集合類型像是ArrayList或是Hashtable等都會具有Synchronized 屬性以處理不同執行緒間的同步，但是運作上會在加入或移除集合元素時鎖住整個集合，對大型集合來說，可能會導致效能大幅下降。
 
@@ -12,7 +13,7 @@ description: ".NET 4.0 New Feature - Concurrent Collection"
 
 下面是MSDN對這幾個新的集合的描述：
 
-![](/images/posts/3627dd59-2fad-436c-b715-b117bfdc43ef/)
+![image_thumb.png](/images/posts/3627dd59-2fad-436c-b715-b117bfdc43ef/image_thumb.png)
 
 ## Link
 - 安全執行緒集合

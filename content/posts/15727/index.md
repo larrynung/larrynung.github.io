@@ -22,7 +22,7 @@ End Class
 ```
 運行後的效果如下：
 
-![](/images/posts/15727/)
+![image_thumb_1.png](/images/posts/15727/image_thumb_1.png)
 
 ## Download
 

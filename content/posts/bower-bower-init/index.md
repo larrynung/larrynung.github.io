@@ -9,8 +9,8 @@ Bower init 可用來建立 bower.json 檔。
 
 只要呼叫 bower init，然後依序填寫詢問的問題即可：
 
-![/images/posts/BowerInit/1.png](/images/posts/BowerInit/1.png)
+![1.png](/images/posts/BowerInit/1.png)
 
 填完後即會在當前目錄產生對應的 bower.json 檔。
 
-![/images/posts/BowerInit/2.png](/images/posts/BowerInit/2.png)
+![2.png](/images/posts/BowerInit/2.png)

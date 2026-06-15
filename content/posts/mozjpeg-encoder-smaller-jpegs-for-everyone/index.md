@@ -10,15 +10,15 @@ description: "mozjpeg encoder - smaller jpegs for everyone"
 
 使用上只要先設定所要使用的圖片品質，或是選取無失真的處理方式...
 
-![/images/posts/MozjpegEncoder/1.png](/images/posts/MozjpegEncoder/1.png)
+![1.png](/images/posts/MozjpegEncoder/1.png)
 
 然後將要處理的檔案用拖曳的方式放至網站上...
 
-![/images/posts/MozjpegEncoder/2.png](/images/posts/MozjpegEncoder/2.png)
+![2.png](/images/posts/MozjpegEncoder/2.png)
 
 拖曳完成，圖片會進行上傳的動作，並做壓縮的處理。處理完後網站會有處理前後的比對，可以清楚知道圖片壓縮為我們省下了多少。若要將壓縮後的圖檔下載下來使用，這邊也可直接點擊 `download image` 按鈕進行下載...
 
-![/images/posts/MozjpegEncoder/3.png](/images/posts/MozjpegEncoder/3.png)
+![3.png](/images/posts/MozjpegEncoder/3.png)
 
 最後一提，該網站上方的 binaries 頁面有提供 Mozjpeg 的 Binary 檔，有需要的可直接從該頁面下載使用，就不需要自行將 Mozjpeg 編譯。
 

@@ -15,9 +15,9 @@ DECODE( expression , search , result [, search , result]... [, default] )
 
 像是要將數值帶入，依其值決定要回傳 'true' 或是 'false'，可以像下面這樣撰寫：
 
-![/images/posts/DecodeFunction/1.png](/images/posts/DecodeFunction/1.png)
+![1.png](/images/posts/DecodeFunction/1.png)
 
-![/images/posts/DecodeFunction/2.png](/images/posts/DecodeFunction/2.png)
+![2.png](/images/posts/DecodeFunction/2.png)
 
 Link
 ----

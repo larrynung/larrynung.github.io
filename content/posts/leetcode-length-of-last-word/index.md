@@ -35,7 +35,7 @@ return (input.Length - 1) - input.LastIndexOf(' ');
 }
 ```
 
-![/images/posts/LengthOfLastWord/1.png](/images/posts/LengthOfLastWord/1.png)
+![1.png](/images/posts/LengthOfLastWord/1.png)
 
 Link
 ----

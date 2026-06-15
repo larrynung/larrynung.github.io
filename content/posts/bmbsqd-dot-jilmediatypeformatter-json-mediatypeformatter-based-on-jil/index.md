@@ -7,9 +7,9 @@ tags: [Jil]
 
 如果要將 Web API 的 JSON 處理改用 Jil 替換，我們可以使用 Bmbsqd.JilMediaTypeFormatter 這個 NuGet 套件。
 
-![/images/posts/BmbsqdJilMediaTypeFormatter/1.png](/images/posts/BmbsqdJilMediaTypeFormatter/1.png)
+![1.png](/images/posts/BmbsqdJilMediaTypeFormatter/1.png)
 
-![/images/posts/BmbsqdJilMediaTypeFormatter/2.png](/images/posts/BmbsqdJilMediaTypeFormatter/2.png)
+![2.png](/images/posts/BmbsqdJilMediaTypeFormatter/2.png)
 
 套件安裝完後，開啟 WebApiConfig 將 JsonFormatter 換成 JilMediaTypeFormatter。
 
@@ -23,7 +23,7 @@ config.Formatters.Add(new JilMediaTypeFormatter());
 
 像是下面這樣：
 
-![/images/posts/BmbsqdJilMediaTypeFormatter/3.png](/images/posts/BmbsqdJilMediaTypeFormatter/3.png)
+![3.png](/images/posts/BmbsqdJilMediaTypeFormatter/3.png)
 
 這樣 Web API 的 JSON 處理就會換成用 Jil 去做了。
 

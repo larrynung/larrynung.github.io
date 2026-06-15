@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
+title: "PL/SQL & SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
 date: "2015-12-18 03:40:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
+description: "PL/SQL & SQL CODING GUIDELINE 25 - Avoid using the LONG and LONG RAW data types"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

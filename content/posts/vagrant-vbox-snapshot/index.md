@@ -15,7 +15,7 @@ vagrant plugin install vagrant-vbox-snapshot
 
 vagrant plugin install vagrant-winnfsd
 
-![/images/posts/VagrantSnapshot/1.png](/images/posts/VagrantSnapshot/1.png)
+![1.png](/images/posts/VagrantSnapshot/1.png)
 
 套件安裝完畢後，我們就可以視需要調用命令進行 Snapshot 的操作。
 
@@ -45,15 +45,15 @@ Vagrant snapshot delete “init”
 
 像是 vagrant snapshot take 後面接 Snapshot 的名稱下去調用即可進行 Snapshot 的建立。vagrant snapshot list 可查驗有哪些 Snapshot 可用。
 
-![/images/posts/VagrantSnapshot/2.png](/images/posts/VagrantSnapshot/2.png)
+![2.png](/images/posts/VagrantSnapshot/2.png)
 
 要刪除特定的 Snapshot，可用 vagrant snapshot delete 後面接 Snapshot 名稱下去調用。
 
-![/images/posts/VagrantSnapshot/3.png](/images/posts/VagrantSnapshot/3.png)
+![3.png](/images/posts/VagrantSnapshot/3.png)
 
 要還原到特定的 Snapshot，可用 vagrant snapshot go 接 Snapshot 名稱下去調用。
 
-![/images/posts/VagrantSnapshot/4.png](/images/posts/VagrantSnapshot/4.png)
+![4.png](/images/posts/VagrantSnapshot/4.png)
 
 Link
 ----

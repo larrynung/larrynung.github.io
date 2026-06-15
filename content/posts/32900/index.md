@@ -4,7 +4,8 @@ slug: "[CSharp][Linq]Linq to Wikipedia"
 date: "2011-08-11 01:20:08"
 description: "[C#][Linq]Linq to Wikipedia"
 tags: [CSharp,Linq]
----Linq to Wikipedia元件提供開發人員使用Linq去查詢Wiki的功能，具備兩種查詢模式，一種是OpenSearch、一種是Keyword Search。
+---
+Linq to Wikipedia元件提供開發人員使用Linq去查詢Wiki的功能，具備兩種查詢模式，一種是OpenSearch、一種是Keyword Search。
 
 搜尋後所能提供的Wiki資訊大概就是標題、描述、頁面網址、關鍵字等等，有興趣的可將CodePlex上的專案下載下來運行看看，甚至是查閱一下WikipediaKeywordSearchResult與WikipediaOpenSearchResult這兩個類別的成員變數，就可以知道這個元件能提供我們做到甚麼程度了。
 

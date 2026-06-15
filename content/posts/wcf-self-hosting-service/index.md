@@ -7,7 +7,7 @@ tags: [WCF, CSharp]
 
 要 Self hosting WCF 的服務。首先要先將 System.ServiceModel 加入參考。
 
-![/images/posts/WCFSelfHosting/1.png](/images/posts/WCFSelfHosting/1.png)
+![1.png](/images/posts/WCFSelfHosting/1.png)
 
 接著在程式設計中建立 ServiceHost。建立的同時要指定欲運行的 Service 型態，以及要 Host 的位置。
 
@@ -100,8 +100,8 @@ host.Close();
 
 像這樣的程式運行起來會連帶將 WCF Service 給帶起。
 
-![/images/posts/WCFSelfHosting/2.png](/images/posts/WCFSelfHosting/2.png)
+![2.png](/images/posts/WCFSelfHosting/2.png)
 
 此時開啟瀏覽器做個簡單的測試，若是服務正常運作，應可看到該服務頁面。
 
-![/images/posts/WCFSelfHosting/3.png](/images/posts/WCFSelfHosting/3.png)
+![3.png](/images/posts/WCFSelfHosting/3.png)

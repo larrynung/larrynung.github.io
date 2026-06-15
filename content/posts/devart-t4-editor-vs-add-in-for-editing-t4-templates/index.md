@@ -11,29 +11,29 @@ Devart T4 Template 是ㄧ Visual Studio 的擴充套件，能解決這些煩人�
 
 套件可至 [Download Devart T4 Editor](http://www.devart.com/t4-editor/download.html) 這邊下載安裝。
 
-![/images/posts/DevartT4Editor/1.png](/images/posts/DevartT4Editor/1.png)
+![1.png](/images/posts/DevartT4Editor/1.png)
 
-![/images/posts/DevartT4Editor/2.png](/images/posts/DevartT4Editor/2.png)
+![2.png](/images/posts/DevartT4Editor/2.png)
 
-![/images/posts/DevartT4Editor/3.png](/images/posts/DevartT4Editor/3.png)
+![3.png](/images/posts/DevartT4Editor/3.png)
 
-![/images/posts/DevartT4Editor/4.png](/images/posts/DevartT4Editor/4.png)
+![4.png](/images/posts/DevartT4Editor/4.png)
 
-![/images/posts/DevartT4Editor/5.png](/images/posts/DevartT4Editor/5.png)
+![5.png](/images/posts/DevartT4Editor/5.png)
 
-![/images/posts/DevartT4Editor/6.png](/images/posts/DevartT4Editor/6.png)
+![6.png](/images/posts/DevartT4Editor/6.png)
 
 安裝完重啟 Visual Studio，開啟 T4 Template 檔案，可以看到 Syntax Highlighting 已被支援。
 
-![/images/posts/DevartT4Editor/7.png](/images/posts/DevartT4Editor/7.png)
+![7.png](/images/posts/DevartT4Editor/7.png)
 
 Intrllisense 支援。
 
-![/images/posts/DevartT4Editor/8.png](/images/posts/DevartT4Editor/8.png)
+![8.png](/images/posts/DevartT4Editor/8.png)
 
 除錯上也更為方便。
 
-![/images/posts/DevartT4Editor/9.png](/images/posts/DevartT4Editor/9.png)
+![9.png](/images/posts/DevartT4Editor/9.png)
 
 其它還有 Format 程式碼等。
 

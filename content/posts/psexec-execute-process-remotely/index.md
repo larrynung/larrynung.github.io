@@ -8,7 +8,7 @@ PsExec 是一命令列工具，可讓我們執行遠端電腦的程式。
 
 使用前請先至 [PsExec](https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx) 下載。
 
-![/images/posts/PsExec/1.png](/images/posts/PsExec/1.png)
+![1.png](/images/posts/PsExec/1.png)
 
 使用方式如下。
 
@@ -16,7 +16,7 @@ psexec [\computer[,computer2[,...] | @file]][-u user [-p psswd][-n s][-r service
 
 常用的參數有 -c、-i、-l、-w、-s、-u、-p，更多細節可直接輸入 psexec 命令查閱。
 
-![/images/posts/PsExec/2.png](/images/posts/PsExec/2.png)
+![2.png](/images/posts/PsExec/2.png)
 
 簡單的說，呼叫時要指定欲操作的遠端電腦，依需求帶入命令與參數就可以了。
 
@@ -24,7 +24,7 @@ psexec [\computer[,computer2[,...] | @file]][-u user [-p psswd][-n s][-r service
 
 psexec \TWDT092 cmd /c dir d:
 
-![/images/posts/PsExec/3.png](/images/posts/PsExec/3.png)
+![3.png](/images/posts/PsExec/3.png)
 
 命令第一次使用會跳授權視窗，如果要跳過授權視窗，可帶上 /accepteula。
 
@@ -34,7 +34,7 @@ psexec \TWDT092 /accepteula cmd /c dir d:
 
 psexec \TWDT092 -s ipconfig /all
 
-![/images/posts/PsExec/4.png](/images/posts/PsExec/4.png)
+![4.png](/images/posts/PsExec/4.png)
 
 要執行遠端電腦指定位置的檔案的話：
 
@@ -52,11 +52,11 @@ psexec \TWDT092 ipconfig /all -u larrynung -p 123456
 
 psexec \TWDT092 cmd
 
-![/images/posts/PsExec/5.png](/images/posts/PsExec/5.png)
+![5.png](/images/posts/PsExec/5.png)
 
 下完命令後 psexec 會連到遠端電腦的命令提示字元，使用上就像是在本地叫用命令一般，直到我們輸入 exit 退出。
 
-![/images/posts/PsExec/6.png](/images/posts/PsExec/6.png)
+![6.png](/images/posts/PsExec/6.png)
 
 最後我們可以看個 YouTube 的教學體驗一下 PsExec 的使用。
 

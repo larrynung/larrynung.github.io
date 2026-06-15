@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Keys lt;=gt; Char"
 date: "2010-04-27 11:46:52"
-description: "[VB.NET]Keys &lt;=&gt; Char"
+description: "[VB.NET]Keys <=> Char"
 tags: [VB.NET]
 ---
 

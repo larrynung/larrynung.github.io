@@ -13,7 +13,7 @@ filebeat.prospectors:
 
 - input_type: log
 paths:
-- E:\AgileSlot\Log\*\*Full*log*
+- E:\AgileSlot\Log**Full*log*
 ```
 可以設定 Log 資料要怎樣切割傳送，像是若使用 Log4Net 去記錄 Log，不特別調整格式的話 Log 前面一定會有 Log 的時間，就可以以 Log 時間當作切割傳送的依據。
 ```yaml
@@ -94,7 +94,7 @@ filebeat.prospectors:
 
 - input_type: log
 paths:
-- E:\AgileSlot\Log\*\*Full*log*
+- E:\AgileSlot\Log**Full*log*
 
 # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
 multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}'
@@ -206,7 +206,7 @@ filebeat.prospectors:
 
 - input_type: log
 paths:
-- E:\AgileSlot\Log\*\*Full*log*
+- E:\AgileSlot\Log**Full*log*
 exclude_files: ["\.zip$","\.7z$"]
 
 document_type: applog

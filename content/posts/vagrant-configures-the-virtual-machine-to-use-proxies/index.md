@@ -11,7 +11,7 @@ tags: [Vagrant]
 
 vagrant plugin install vagrant-proxyconf
 
-![/images/posts/ConfigVagrantProxy/1.png](/images/posts/ConfigVagrantProxy/1.png)
+![1.png](/images/posts/ConfigVagrantProxy/1.png)
 
 套件安裝完畢後，我們可以修改 Vagrantfile 做 proxy 的設定。像是下面這樣：
 

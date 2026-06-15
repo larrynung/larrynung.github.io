@@ -11,7 +11,7 @@ tags: [.NET]
 
 將 Assembly.vs 檔開啟，視需求將 AssemblyVersion 的 Build 或 Revision Number 部份用 * 替換。並將 AssemblyFileVersion 設定移除。
 
-![/images/posts/AutoAssignAssemblyVersion/1.png](/images/posts/AutoAssignAssemblyVersion/1.png)
+![1.png](/images/posts/AutoAssignAssemblyVersion/1.png)
 
 接著存檔建置，即會發現每次建置的版號會有所不同。
 

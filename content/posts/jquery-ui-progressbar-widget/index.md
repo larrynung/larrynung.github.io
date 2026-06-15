@@ -24,7 +24,7 @@ description: "JQuery UI - Progressbar Widget"
   });
 ```
 
-![/images/posts/JQueryUIProgressbar/1.png](/images/posts/JQueryUIProgressbar/1.png)
+![1.png](/images/posts/JQueryUIProgressbar/1.png)
 
 若要做些細部設定，progressbar 有提供些 options 可供我們使用，像是 max 可以設定 progressbar 的最大值、value 可設定 progressbar 的當前值。  
 
@@ -38,7 +38,7 @@ description: "JQuery UI - Progressbar Widget"
   });
 ```
 
-![/images/posts/JQueryUIProgressbar/2.png](/images/posts/JQueryUIProgressbar/2.png)
+![2.png](/images/posts/JQueryUIProgressbar/2.png)
 
 若要主動觸發 progressbar，也提供了些 methods 讓我們使用，像是 value。 
 
@@ -55,7 +55,7 @@ description: "JQuery UI - Progressbar Widget"
   });
 ```
 
-![/images/posts/JQueryUIProgressbar/3.png](/images/posts/JQueryUIProgressbar/3.png)
+![3.png](/images/posts/JQueryUIProgressbar/3.png)
 
 此外，也有提供些事件讓我們監聽，像是 change。  
 
@@ -79,7 +79,7 @@ description: "JQuery UI - Progressbar Widget"
   });
 ```
 
-![/images/posts/JQueryUIProgressbar/4.png](/images/posts/JQueryUIProgressbar/4.png)
+![4.png](/images/posts/JQueryUIProgressbar/4.png)
 
 最後這邊附上測試用的範例： 
 

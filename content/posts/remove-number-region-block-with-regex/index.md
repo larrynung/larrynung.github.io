@@ -10,7 +10,7 @@ description: "Remove #region block with Regex"
 
 ^[ 	]*\#(region|endregion).*
 
-![/images/posts/RemovingRegionBlock/1.png](/images/posts/RemovingRegionBlock/1.png)
+![1.png](/images/posts/RemovingRegionBlock/1.png)
 
 Link
 ----

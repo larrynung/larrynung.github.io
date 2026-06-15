@@ -3,7 +3,8 @@ title: "Linq To Excel Provider"
 date: "2010-12-04 11:49:31"
 description: "Linq To Excel Provider"
 tags: [CSharp,Linq]
----Linq To Excel Provider跟Linq To Excel開放源始碼函式庫一樣都是用來對Excel做查詢用途，不同的是Linq To Excel Provider使用方式跟Linq To SQL有些接近，2.5版以後更具備更新、插入、與刪除等功能，這是Linq To Excel開放源始碼函式庫目前尚無法做到的一塊，也因如此Linq To Excel Provider在使用上就變得比Linq To Excel開放源始碼函式庫來得複雜許多，也多了些限制存在。
+---
+Linq To Excel Provider跟Linq To Excel開放源始碼函式庫一樣都是用來對Excel做查詢用途，不同的是Linq To Excel Provider使用方式跟Linq To SQL有些接近，2.5版以後更具備更新、插入、與刪除等功能，這是Linq To Excel開放源始碼函式庫目前尚無法做到的一塊，也因如此Linq To Excel Provider在使用上就變得比Linq To Excel開放源始碼函式庫來得複雜許多，也多了些限制存在。
 
 Linq To Excel Provider在官網有公開下載Source Code，使用前需先至官網下載，並將其加入專案，再把LinqToExcel命名空間加入使用。下載下來的Source Code雖然只有一個檔案，但裡面卻內含有使用範例，像是Person類別與啟始函式Main，在使用時我們可開啟Source Code先將裡面的範例拿掉。
 

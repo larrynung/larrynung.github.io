@@ -9,39 +9,39 @@ tags: [PostSharp]
 
 使用上只要在要加入檢查的參數上面按下滑鼠右鍵，然後在彈出的滑鼠右鍵快顯選單中，選取 `Require a non-null and non whitespace value` 這個選單選項。
 
-![/images/posts/PostSharpContracts/1.png](/images/posts/PostSharpContracts/1.png)
+![1.png](/images/posts/PostSharpContracts/1.png)
 
 接著 PostSharp 擴充套件會帶出精靈視窗，第一頁是 Summary 頁面，這邊只是告訴我們繼續下去會做什麼事，不外乎就是加入套件引用與加上對應的 RequiredAttribute，這邊直接 Next。
 
-![/images/posts/PostSharpContracts/2.png](/images/posts/PostSharpContracts/2.png)
+![2.png](/images/posts/PostSharpContracts/2.png)
 
 如 Summary 頁面所提，要處理的東西有點多，進度要稍微跑一下。
 
-![/images/posts/PostSharpContracts/3.png](/images/posts/PostSharpContracts/3.png)
+![3.png](/images/posts/PostSharpContracts/3.png)
 
 進度跑完後按下 Finish 按鈕結束精靈視窗即可。
 
 可以看到專案已套上對應的修改，已將該引用的套件引用、RequiredAttribute 也已正確的加上。
 
-![/images/posts/PostSharpContracts/4.png](/images/posts/PostSharpContracts/4.png)
+![4.png](/images/posts/PostSharpContracts/4.png)
 
 滑鼠移上去再次確認，沒意外的話就會看到確實已經套用完成(若沒有這畫面可能是因為資料還未更新完成，可嘗試重建專案看看)。
 
-![/images/posts/PostSharpContracts/5.png](/images/posts/PostSharpContracts/5.png)
+![5.png](/images/posts/PostSharpContracts/5.png)
 
-![/images/posts/PostSharpContracts/6.png](/images/posts/PostSharpContracts/6.png)
+![6.png](/images/posts/PostSharpContracts/6.png)
 
 運行後可看到帶入空值時確實會做參數的檢查，得到了預期的 ArgunemtNullException。
 
-![/images/posts/PostSharpContracts/7.png](/images/posts/PostSharpContracts/7.png)
+![7.png](/images/posts/PostSharpContracts/7.png)
 
 除了 RequiredAttribute 外，PostSharp 也內建了許多其它常用的 Contract。若要套用可在要加入的參數上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中，選取 `Add another aspect...` 選單選項。
 
-![/images/posts/PostSharpContracts/8.png](/images/posts/PostSharpContracts/8.png)
+![8.png](/images/posts/PostSharpContracts/8.png)
 
 從這邊的精靈介面我們可以看到許多內建的 Contract 可供選取，像是檢查 URL、檢查 Email Address、檢查 Phone Number ...等。依需求選取後將精靈跑完運行即可。
 
-![/images/posts/PostSharpContracts/9.png](/images/posts/PostSharpContracts/9.png)
+![9.png](/images/posts/PostSharpContracts/9.png)
 
 最後一提，除了方法的參數外，PostSharp 的 Contract 也可以套用在 Field 與 Property 上，使用方式是一樣的。
 

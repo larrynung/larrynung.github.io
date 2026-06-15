@@ -54,8 +54,8 @@ Console.WriteLine(p.ToString());
 
 運行結果：
 
-![/images/posts/ExpressionBodiedMembers/1.png](/images/posts/ExpressionBodiedMembers/1.png)
+![1.png](/images/posts/ExpressionBodiedMembers/1.png)
 
 不免俗的反組譯看一下，其實就只是簡單的語法糖，在編譯時都已經幫我們轉成本來屬性與方法的寫法。
 
-![/images/posts/ExpressionBodiedMembers/2.png](/images/posts/ExpressionBodiedMembers/2.png)
+![2.png](/images/posts/ExpressionBodiedMembers/2.png)

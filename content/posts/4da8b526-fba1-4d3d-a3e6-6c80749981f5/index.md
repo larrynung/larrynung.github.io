@@ -4,7 +4,8 @@ slug: "[CSharp]平行處理網路傳輸時因連線數不足發生連線Timeout�
 date: "2013-11-06 12:00:00"
 description: "[C#]平行處理網路傳輸時因連線數不足發生連線Timeout的解決方案"
 tags: [CSharp]
----最近專案程式發生了一個很奇妙的BUG，專案程式在某些情況下網路傳輸會發生Timeout的現象，而且一發生就是一連串的網路傳輸都連帶Timeout。這問題很難重現，程式看起來邏輯都對，在大部分的情況下都看不到這種現象，開發團隊的電腦也沒有一台發生。後來查了一下網路文章，大膽推測是因為連線數過多造成的，可能是某些狀況下程式會同時有多個網路傳輸的連線，導致超過可容納的連線數造成等待而Timeout。
+---
+最近專案程式發生了一個很奇妙的BUG，專案程式在某些情況下網路傳輸會發生Timeout的現象，而且一發生就是一連串的網路傳輸都連帶Timeout。這問題很難重現，程式看起來邏輯都對，在大部分的情況下都看不到這種現象，開發團隊的電腦也沒有一台發生。後來查了一下網路文章，大膽推測是因為連線數過多造成的，可能是某些狀況下程式會同時有多個網路傳輸的連線，導致超過可容納的連線數造成等待而Timeout。
 
 MSDN中的ServicePointManager.DefaultConnectionLimit 屬性這篇有提到，ServicePointManager.DefaultConnectionLimit在一般的WinForm程式中預設是2，而在ASP.NET中預設是10，而ServicePointManager.DefaultConnectionLimit這個屬性值又是HttpWebRequet.ServicePoint.ConnectionLimit的預設值，也就是說在WinForm下同時只能服務兩個連線數，超過兩個以上的連線自然就會被卡住而最後導致Timeout。
 

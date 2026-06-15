@@ -3,7 +3,8 @@ title: "[VB.NET]用Extension Method取得CustomAttributes"
 date: "2010-10-18 09:02:31"
 description: "[VB.NET]用Extension Method取得CustomAttributes"
 tags: [VB.NET]
----整理一下自己用來取得CustomAttributes的擴充方法。
+---
+整理一下自己用來取得CustomAttributes的擴充方法。
 
 ## EnumExtension
 Imports System.Runtime.CompilerServices

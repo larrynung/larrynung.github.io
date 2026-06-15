@@ -7,7 +7,7 @@ tags: [Visual Studio]
 
 .NET Portability Analyzer Extension 是微軟出的 Visual Studio 擴充套件，能偵測程式是否具備 Portability，並針對不具 Portability 的地方提供對應的修改建議，讓開發人員在做跨平臺的開發上更加的便利。
 
-![/images/posts/PortabilityAnalyzerExtension/1.png](/images/posts/PortabilityAnalyzerExtension/1.png)
+![1.png](/images/posts/PortabilityAnalyzerExtension/1.png)
 
 Channel9 這邊有相關的介紹影片，建議可以稍微瀏覽一下，可以幫助我們快速上手。
 
@@ -15,23 +15,23 @@ Channel9 這邊有相關的介紹影片，建議可以稍微瀏覽一下，可�
 
 裝好後需先至 Options 這邊設定所要分析的平臺。
 
-![/images/posts/PortabilityAnalyzerExtension/2.png](/images/posts/PortabilityAnalyzerExtension/2.png)
+![2.png](/images/posts/PortabilityAnalyzerExtension/2.png)
 
 在使用上，該擴充套件有兩種不同的使用方式。一種是對選取的組件進行分析，透過 [Analyze/Analyze Assembly Portability...] 主選單選項去觸發。
 
-![/images/posts/PortabilityAnalyzerExtension/3.png](/images/posts/PortabilityAnalyzerExtension/3.png)
+![3.png](/images/posts/PortabilityAnalyzerExtension/3.png)
 
-![/images/posts/PortabilityAnalyzerExtension/4.png](/images/posts/PortabilityAnalyzerExtension/4.png)
+![4.png](/images/posts/PortabilityAnalyzerExtension/4.png)
 
 產生的報表能顯示出程式在各平台的支援程度，及細部的支援比較。
-![/images/posts/PortabilityAnalyzerExtension/5.png](/images/posts/PortabilityAnalyzerExtension/5.png)
+![5.png](/images/posts/PortabilityAnalyzerExtension/5.png)
 
 另一種則是對選取的專案進行分析，透過方案總管的滑鼠右鍵選單選項觸發。
 
-![/images/posts/PortabilityAnalyzerExtension/6.png](/images/posts/PortabilityAnalyzerExtension/6.png)
+![6.png](/images/posts/PortabilityAnalyzerExtension/6.png)
 
 一樣會產生類似的報表，但是因為透過專案的方式觸發有程式原碼，所以報表還會進一步的給予我們對應的修改建議，Error List 工具視窗這邊也會顯示出對應的訊息。
-![/images/posts/PortabilityAnalyzerExtension/7.png](/images/posts/PortabilityAnalyzerExtension/7.png)
+![7.png](/images/posts/PortabilityAnalyzerExtension/7.png)
 
 Link
 ----

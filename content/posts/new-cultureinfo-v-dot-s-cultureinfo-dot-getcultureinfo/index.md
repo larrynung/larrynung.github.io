@@ -46,8 +46,8 @@ return sw.ElapsedMilliseconds;
 
 可以看到 CultureInfo.GetCultureInfo 有著較佳的效能。
 
-![/images/posts/CultureInfoTest/1.png](/images/posts/CultureInfoTest/1.png)
+![1.png](/images/posts/CultureInfoTest/1.png)
 
 最後這邊附上實驗的數據。
 
-![/images/posts/CultureInfoTest/2.png](/images/posts/CultureInfoTest/2.png)
+![2.png](/images/posts/CultureInfoTest/2.png)

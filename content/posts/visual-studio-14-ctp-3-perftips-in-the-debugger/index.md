@@ -11,21 +11,21 @@ PerfTips 是 Visual Studio 14 (CTP3 以後釋出)的新功能，能讓開發人�
 
 PerfTips 使用上很簡單，只要設定斷點進行除錯，看你是要 Step Into、Step Over、Step Out、或是直接 F5 跳到下一個斷點，PerfTips 都會自動在後面跳出上一步到這一步之間的耗時。
 
-![/images/posts/PerfTips/1.png](/images/posts/PerfTips/1.png)
+![1.png](/images/posts/PerfTips/1.png)
 
 預設這邊只有開啟耗時的部份，若要查閱 CPU 的耗費，我們可以將滑鼠移至 PerfTips 上面，彈出的 ToolTip 會有這方面的資訊。
 
-![/images/posts/PerfTips/2.png](/images/posts/PerfTips/2.png)
+![2.png](/images/posts/PerfTips/2.png)
 
 或者也可以點擊 PerfTips 叫出對應的選項設定。
 
-![/images/posts/PerfTips/3.png](/images/posts/PerfTips/3.png)
+![3.png](/images/posts/PerfTips/3.png)
 
 將 CPU 耗費的顯示給開啟，或是設定 PerfTips 要大於等於多少才顯示。
 
-![/images/posts/PerfTips/4.png](/images/posts/PerfTips/4.png)
+![4.png](/images/posts/PerfTips/4.png)
 
-![/images/posts/PerfTips/5.png](/images/posts/PerfTips/5.png)
+![5.png](/images/posts/PerfTips/5.png)
 
 Link
 ----

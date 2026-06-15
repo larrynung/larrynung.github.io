@@ -25,7 +25,7 @@ add_months(sysdate, -3)
 
 使用上會像下面這樣：
 
-![/images/posts/AddMonthsFunction/1.png](/images/posts/AddMonthsFunction/1.png)
+![1.png](/images/posts/AddMonthsFunction/1.png)
 
 Link
 ----

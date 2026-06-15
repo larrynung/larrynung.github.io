@@ -1,9 +1,10 @@
 ---
-title: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs amp; ErrorProvider.HasError"
+title: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
 date: "2010-04-26 11:37:16"
-description: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs &amp; ErrorProvider.HasError"
+description: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
 tags: [VB.NET]
----GetErrorMsgs擴充方法可找出介面上所有有用ErrorProvider顯示的錯誤訊息，HasError可以判斷介面上是否有任何用ErrorProvider顯示的錯誤訊息，程式碼如下：
+---
+GetErrorMsgs擴充方法可找出介面上所有有用ErrorProvider顯示的錯誤訊息，HasError可以判斷介面上是否有任何用ErrorProvider顯示的錯誤訊息，程式碼如下：
 ```
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms

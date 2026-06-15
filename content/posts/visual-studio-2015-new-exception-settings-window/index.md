@@ -13,19 +13,19 @@ tags: [Visual Studio]
 
 舉個例子來說，今天我們的程式碰到了個不如預期的問題，我們的程式會被導到例外被攔截的位置。
 
-![/images/posts/ExceptionSettingWindowInVS2015/1.png](/images/posts/ExceptionSettingWindowInVS2015/1.png)
+![1.png](/images/posts/ExceptionSettingWindowInVS2015/1.png)
 
 但例外被攔截的位置並非我們所關注的地方，此時我們會調整 Exception Setting 讓 `Common Language Runtime Exceptions` 設定被勾選，這樣因為可以攔截到 First chance exception，所以程式會改停在錯誤實際發生的位置。
 
-![/images/posts/ExceptionSettingWindowInVS2015/2.png](/images/posts/ExceptionSettingWindowInVS2015/2.png)
+![2.png](/images/posts/ExceptionSettingWindowInVS2015/2.png)
 
 若要細部指定特定的例外，像是 NullReferenceException，可以直接透過搜尋找到對應的設定。
 
-![/images/posts/ExceptionSettingWindowInVS2015/3.png](/images/posts/ExceptionSettingWindowInVS2015/3.png)
+![3.png](/images/posts/ExceptionSettingWindowInVS2015/3.png)
 
 針對非系統提供的例外，這邊也允許自行加入設定。
 
-![/images/posts/ExceptionSettingWindowInVS2015/4.png](/images/posts/ExceptionSettingWindowInVS2015/4.png)
+![4.png](/images/posts/ExceptionSettingWindowInVS2015/4.png)
 
 Link
 ----

@@ -40,7 +40,7 @@ return false;
 }
 ```
 
-![/images/posts/ContainsDuplicateIII/1.png](/images/posts/ContainsDuplicateIII/1.png)
+![1.png](/images/posts/ContainsDuplicateIII/1.png)
 
 Link
 ----

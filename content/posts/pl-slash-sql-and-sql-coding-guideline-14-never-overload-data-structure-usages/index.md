@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 14 - Never overload data structure usages"
+title: "PL/SQL & SQL CODING GUIDELINE 14 - Never overload data structure usages"
 date: "2015-11-27 05:47:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 14 - Never overload data structure usages"
+description: "PL/SQL & SQL CODING GUIDELINE 14 - Never overload data structure usages"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

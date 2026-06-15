@@ -29,7 +29,7 @@ Console.WriteLine(value.ToString());
 }
 ```
 
-![/images/posts/CSharp7Binaryliterals/1.png](/images/posts/CSharp7Binaryliterals/1.png)
+![1.png](/images/posts/CSharp7Binaryliterals/1.png)
 
 Link
 ----

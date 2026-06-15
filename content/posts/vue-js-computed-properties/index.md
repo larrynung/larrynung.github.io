@@ -2,7 +2,8 @@
 title: "Vue.js - Computed properties"
 date: "2017-05-11 23:49:09"
 tags: [Vue.js]
----Vue.js 的計算屬性(Computed properties)可以設定經過運算而來的屬性，有點類似其它程式語言的屬性(Property)，而一般的 Vue.js 屬性則是類似其它程式語言的欄位(Field)。
+---
+Vue.js 的計算屬性(Computed properties)可以設定經過運算而來的屬性，有點類似其它程式語言的屬性(Property)，而一般的 Vue.js 屬性則是類似其它程式語言的欄位(Field)。
 
 使用上只要在建構 Vue 建立時設定 computed 物件，裡面放置計算屬性的方法，這樣在使用計算屬性時就會去調用計算屬性定義的方法去運算。
 

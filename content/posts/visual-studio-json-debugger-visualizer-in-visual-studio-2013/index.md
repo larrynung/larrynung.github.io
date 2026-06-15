@@ -11,23 +11,23 @@ Visual Studio 2013 Update 2 CTP 後 Visual Studio 加入了 JSON Debugger Visual
 
 它提供了較為友善的除錯界面，將 JSON 資料展開用樹狀結構呈現。不管是否是 Format 過的資料，都是一樣的呈現方式。
 
-![/images/posts/JSONDebugVisualizer/1.png](/images/posts/JSONDebugVisualizer/1.png)
+![1.png](/images/posts/JSONDebugVisualizer/1.png)
 
-![/images/posts/JSONDebugVisualizer/2.png](/images/posts/JSONDebugVisualizer/2.png)
+![2.png](/images/posts/JSONDebugVisualizer/2.png)
 
 透過樹狀結構的呈現方式， JSON Debugger Visualizer 清楚的表達了 JSON 資料的階層性與其值。
 
 若是 JSON 內資料多到不易找尋，它也提供了搜尋的功能，能輔助我們快速的從 JSON 資料中找出感興趣的部分...
 
-![/images/posts/JSONDebugVisualizer/3.png](/images/posts/JSONDebugVisualizer/3.png)
+![3.png](/images/posts/JSONDebugVisualizer/3.png)
 
 找到感興趣的資料後，若有需要我們可以在上面按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中有提供一些複製的功能，像是複製該資料的路徑、Key、Value、或是 Key 跟 Value 一起複製。
 
-![/images/posts/JSONDebugVisualizer/4.png](/images/posts/JSONDebugVisualizer/4.png)
+![4.png](/images/posts/JSONDebugVisualizer/4.png)
 
 最後一提，要是這邊所查閱的資料是非 JSON 格式的，或是格式有誤。 JSON Debugger Visualizer 會改以純文字的方式呈現，並告知我們該資料不是 JSON 格式。
 
-![/images/posts/JSONDebugVisualizer/5.png](/images/posts/JSONDebugVisualizer/5.png)
+![5.png](/images/posts/JSONDebugVisualizer/5.png)
 
 Link
 ----

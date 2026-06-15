@@ -4,7 +4,8 @@ slug: "[CSharp]Json.NET - A high performance Json library"
 date: "2013-11-06 12:00:00"
 description: "[C#]Json.NET - A high performance Json library"
 tags: [CSharp]
----Json.NET是一個高效能的Json函式庫，提供開發人員針對Json格式開發所需的功能。該函式庫具備有以下的特點：
+---
+Json.NET是一個高效能的Json函式庫，提供開發人員針對Json格式開發所需的功能。該函式庫具備有以下的特點：
 Flexible JSON serializer for converting between .NET objects and JSON LINQ to JSON for manually reading and writing JSON High performance, faster than .NET's built-in JSON serializers Write indented, easy to read JSON Convert JSON to and from XML Supports .NET 2, .NET 3.5, .NET 4, Silverlight, Windows Phone and Windows 8 Metro.
 
 簡單的說該函式庫提供了像是將物件序列化成Json字串、將Json字串解序列化為物件、Linq to Json、Json與Xml格式互相轉換...等功能。

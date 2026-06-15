@@ -48,7 +48,7 @@ return n == 1;
 }
 ```
 
-![/images/posts/PowerOfTwo/1.png](/images/posts/PowerOfTwo/1.png)
+![1.png](/images/posts/PowerOfTwo/1.png)
 
 或者也可以判斷數值是否大於零，且是否可整除 1073741824 即可。1073741824 是來自 2^30，為最大的 2 冪次整數，如果某數值可以將之整除，即代表該數值為 2 的冪次。
 
@@ -60,7 +60,7 @@ return n > 0 && 1073741824 % n == 0;
 }
 ```
 
-![/images/posts/PowerOfTwo/2.png](/images/posts/PowerOfTwo/2.png)
+![2.png](/images/posts/PowerOfTwo/2.png)
 
 Link
 ----

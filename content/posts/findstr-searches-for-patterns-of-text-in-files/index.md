@@ -75,25 +75,25 @@ findstr /i /c:"[SearchText]" [SearchFile]
 
 findstr /s /c:"[SearchText]" [SearchFile]
 
-![/images/posts/Findstr/1.png](/images/posts/Findstr/1.png)
+![1.png](/images/posts/Findstr/1.png)
 
 要在搜尋結果加入行號顯示，可帶入參數/n：
 
 findstr /n /c:"[SearchText]" [SearchFile]
 
-![/images/posts/Findstr/2.png](/images/posts/Findstr/2.png)
+![2.png](/images/posts/Findstr/2.png)
 
 要在搜尋結果加入字元位移量顯示，可帶入參數/o：
 
 findstr /o /c:"[SearchText]" [SearchFile]
 
-![/images/posts/Findstr/3.png](/images/posts/Findstr/3.png)
+![3.png](/images/posts/Findstr/3.png)
 
 若搜尋結果顯示的顏色不夠明顯想要變更，可帶入參數/A指定：
 
 findstr /A:[Color] /c:"[SearchText]" [SearchFile]
 
-![/images/posts/Findstr/4.png](/images/posts/Findstr/4.png)
+![4.png](/images/posts/Findstr/4.png)
 
 若要從檔案讀出要比對的字串以及要比對的檔案：
 
@@ -103,7 +103,7 @@ findstr /g:[SearchTextFile] /f:filelist.txt
 
 findstr /s /m "[SearchText]" *.*
 
-![/images/posts/Findstr/4.png](/images/posts/Findstr/4.png)
+![4.png](/images/posts/Findstr/4.png)
 
 若比對時要用正規表示式去比對，Findstr也可以支援。
 

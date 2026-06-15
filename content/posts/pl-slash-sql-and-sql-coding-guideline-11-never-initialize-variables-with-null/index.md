@@ -1,7 +1,7 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
+title: "PL/SQL & SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
 date: "2015-11-25 05:44:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
+description: "PL/SQL & SQL CODING GUIDELINE 11 - Never initialize variables with NULL"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

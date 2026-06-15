@@ -32,4 +32,4 @@ ShowMessage("test");
 ShowMessage(123);
 ```
 
-![/images/posts/TypeScriptGenerics/1.png](/images/posts/TypeScriptGenerics/1.png)
+![1.png](/images/posts/TypeScriptGenerics/1.png)
