@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL amp; SQL CODING GUIDELINE 15 - Never use quoted identifiers"
 date: "2015-12-05 18:42:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 15 - Never use quoted identifiers"
+description: "PL/SQL & SQL CODING GUIDELINE 15 - Never use quoted identifiers"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

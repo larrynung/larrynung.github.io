@@ -9,14 +9,14 @@ Visual Studio 15 Preview 針對 Code Style 做了些強化。
 
 在 Visual Studio 2015 Update 2 中，Code Style 只有少少的幾個項目可供設定：
 
-![/images/posts/VS15PreviewCodeStyleEnhancement/1.png](/images/posts/VS15PreviewCodeStyleEnhancement/1.png)
+![1.png](/images/posts/VS15PreviewCodeStyleEnhancement/1.png)
 
 在 Visual Studio 15 Preview 中這功能完整了許多，添加許多的設定項目，相似的設定會被群組在一起，而且改用下拉清單取代本來的勾選框，設定上也更為清楚直覺。
 
-![/images/posts/VS15PreviewCodeStyleEnhancement/2.png](/images/posts/VS15PreviewCodeStyleEnhancement/2.png)
+![2.png](/images/posts/VS15PreviewCodeStyleEnhancement/2.png)
 
-![/images/posts/VS15PreviewCodeStyleEnhancement/3.png](/images/posts/VS15PreviewCodeStyleEnhancement/3.png)
+![3.png](/images/posts/VS15PreviewCodeStyleEnhancement/3.png)
 
 有些設定還可套上嚴重程度，這邊視個人需要下去調整即可，看覺得是 None，Info，Warning，Error 哪個層級都可。
 
-![/images/posts/VS15PreviewCodeStyleEnhancement/4.png](/images/posts/VS15PreviewCodeStyleEnhancement/4.png)
+![4.png](/images/posts/VS15PreviewCodeStyleEnhancement/4.png)

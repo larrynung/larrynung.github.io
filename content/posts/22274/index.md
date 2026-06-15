@@ -4,7 +4,8 @@ slug: "[CSharp]RSS 資料讀取"
 date: "2011-04-04 09:50:45"
 description: "[C#]RSS 資料讀取"
 tags: [CSharp]
----RSS訂閱資訊是透過XML技術實現的，其XML格式欄位對應可參閱RSS 2.0 at Harvard Law這網站。
+---
+RSS訂閱資訊是透過XML技術實現的，其XML格式欄位對應可參閱RSS 2.0 at Harvard Law這網站。
 
 這邊以點部落-最新文章 的資訊提供來做練習，檢視一下該RSS的XML，發現RSS XML的架構大概就是RSS Channel下面會含許多的RSS Channel Item，RSS Channel用來描述該RSS的識別資訊，RSS Channel Item用來描述RSS所要提供給訂閱者的資訊。
 

@@ -31,7 +31,7 @@ return length - sum;
 }
 ```
 
-![/images/posts/MissingNumber/1.png](/images/posts/MissingNumber/1.png)
+![1.png](/images/posts/MissingNumber/1.png)
 
 Link
 ----

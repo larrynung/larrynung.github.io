@@ -8,8 +8,8 @@ Visual Studio 2013 Preview在使用Peek Definition時，我們可以使用滑鼠
 
 若是使用滑鼠右鍵快顯選單重複查看同一個定義，會發現Peek Definition Window會關閉後再開。
 
-![](/images/posts/1429285b-8d54-42c9-853d-01c368f5b004/)
+![201375135839367.gif](/images/posts/1429285b-8d54-42c9-853d-01c368f5b004/201375135839367.gif)
 
 但是若是用熱鍵Alt+F12重複查看同一個定義，則會看到Peek Definition Window會開啟分頁去顯示相同的定義
 
-![](/images/posts/1429285b-8d54-42c9-853d-01c368f5b004/)
+![20137514726430.gif](/images/posts/1429285b-8d54-42c9-853d-01c368f5b004/20137514726430.gif)

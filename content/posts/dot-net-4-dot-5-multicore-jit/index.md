@@ -11,17 +11,17 @@ tags: [CSharp, JIT]
 
 微軟官方也有提供一些比較數據可供參考。
 
-![/images/posts/MultiCoreJIT/1.png](/images/posts/MultiCoreJIT/1.png)
+![1.png](/images/posts/MultiCoreJIT/1.png)
 
-![/images/posts/MultiCoreJIT/2.png](/images/posts/MultiCoreJIT/2.png)
+![2.png](/images/posts/MultiCoreJIT/2.png)
 
 Multicore JIT 的運作原理主要是將運行分為兩種 Mode。一個是 Recording mode，於程式第一次運行時啟動，會將跟 Compile 要求的編譯紀錄到指定的 Profile 檔案。
 
-![/images/posts/MultiCoreJIT/3.png](/images/posts/MultiCoreJIT/3.png)
+![3.png](/images/posts/MultiCoreJIT/3.png)
 
 一個是 Plackback mode，會依照 Recording mode 所紀錄的 Profile 用另外一個 CPU 下去在背景編譯。
 
-![/images/posts/MultiCoreJIT/4.png](/images/posts/MultiCoreJIT/4.png)
+![4.png](/images/posts/MultiCoreJIT/4.png)
 
 以程式面來說，Asp.Net 4.5 與 Silverlight 5 這邊會自動啟用 Multicore JIT 功能，不需要做什麼特別的設定，如果有需要也可以修改 web.config 去將之關閉。
 ```xml

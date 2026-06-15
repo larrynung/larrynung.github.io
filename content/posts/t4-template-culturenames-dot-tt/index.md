@@ -14,7 +14,7 @@ currentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-tw");
 ...
 ```
 
-![/images/posts/T4CultureNames/1.png](/images/posts/T4CultureNames/1.png)
+![1.png](/images/posts/T4CultureNames/1.png)
 
 這邊筆者做了個 T4 Template，期望能解決這樣的問題。  
 
@@ -1106,4 +1106,4 @@ Console.WriteLine(currentThread.CurrentCulture.Name);
 ...
 ```
 
-![/images/posts/T4CultureNames/2.png](/images/posts/T4CultureNames/2.png)
+![2.png](/images/posts/T4CultureNames/2.png)

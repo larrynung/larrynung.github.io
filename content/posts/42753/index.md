@@ -3,7 +3,8 @@ title: "[C++]C++ Nativated Property With Event Code Snippet"
 date: "2011-10-14 12:47:10"
 description: "[C++]C++ Nativated Property With Event Code Snippet"
 tags: [C++]
----筆者在[C++]C++ Nativated Property Code Snippet這篇整理過了Nativated Property的程式碼片斷，但只是便於建立很單純的屬性，若要在屬性中觸發事件就必須要自己下去處理。這邊筆者也稍微將這樣的需求整理一下，程式碼片段的XML內容如下：
+---
+筆者在[C++]C++ Nativated Property Code Snippet這篇整理過了Nativated Property的程式碼片斷，但只是便於建立很單純的屬性，若要在屬性中觸發事件就必須要自己下去處理。這邊筆者也稍微將這樣的需求整理一下，程式碼片段的XML內容如下：
 
 ```
 

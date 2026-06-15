@@ -12,7 +12,7 @@ Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能
 
 如果不會編譯的也沒關係，可到 [mozjpeg | binaries](http://mozjpeg.codelove.de/binaries.html) 這邊直接下載別人編譯好的檔案來用。
 
-![/images/posts/Mozjpeg/1.png](/images/posts/Mozjpeg/1.png)
+![1.png](/images/posts/Mozjpeg/1.png)
 
 檔案取得後，我們會看到裡面有四個執行檔，一個Dll。四個執行檔各自有不同的功用，像是壓縮、解壓縮、轉換...之類的，使用上可參閱 [usage.txt](https://github.com/mozilla/mozjpeg/blob/master/usage.txt)。
 
@@ -22,7 +22,7 @@ Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能
 
 cjpeg -?
 
-![/images/posts/Mozjpeg/2.png](/images/posts/Mozjpeg/2.png)
+![2.png](/images/posts/Mozjpeg/2.png)
 
 使用上大概是遵循下面這樣的方式去叫用：
 cjpeg [switches] -outfile jpegfile  imagefile	' Support all systems

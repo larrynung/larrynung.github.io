@@ -3,7 +3,8 @@ title: "[Visual Studio]Visual Studio 2010切換VC++專案使用的.NET版本"
 date: "2010-07-09 12:56:04"
 description: "[Visual Studio]Visual Studio 2010切換VC++專案使用的.NET版本"
 tags: [Visual Studio]
----在VS2010中，開啟VC++專案的屬性頁，選取[通用屬性]→[架構和參考]，我們可以發現在Visual Studio前一版還可以切換的.NET Framework版本，已經變得固定不能透過IDE去切換了。
+---
+在VS2010中，開啟VC++專案的屬性頁，選取[通用屬性]→[架構和參考]，我們可以發現在Visual Studio前一版還可以切換的.NET Framework版本，已經變得固定不能透過IDE去切換了。
 
 若要切換.NET Framework版本，需去修改vcxproj專案檔，可以透過方案總管卸載專案後開啟編輯，或是透過檔案總管自行打開編輯。打開專案檔後可看到下面設定TargetFrameworkVersion Xml元素標籤的部份，若無該Xml元素標籤可自行附加上去。
 

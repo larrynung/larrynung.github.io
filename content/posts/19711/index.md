@@ -3,7 +3,8 @@ title: "PermissionController權限管理類別"
 date: "2010-11-25 12:59:28"
 description: "PermissionController權限管理類別"
 tags: [VB.NET]
----由於權限控管功能很常被用到，因此又重新挖出了水瓶大Enum 的設計與應用 - 簡易權限設計這篇，想辦法整理一個不需更動又能重複使用的類別出來，最後結合泛型與反射做出了權限管理類別的雛型，這邊將該類別暫定為PermissionController。
+---
+由於權限控管功能很常被用到，因此又重新挖出了水瓶大Enum 的設計與應用 - 簡易權限設計這篇，想辦法整理一個不需更動又能重複使用的類別出來，最後結合泛型與反射做出了權限管理類別的雛型，這邊將該類別暫定為PermissionController。
  
 PermissionController能透過泛型決定要拿來做權限管理的權限列舉，該列舉需經Flag Attribute修飾過，並以2的次方做為列舉值的編碼。PermissionController建構時可將初始權限帶入，這時PermissionController會做一些條件上的判斷，像是列舉是否有經Flag Attribute修飾等，並會設定最高權限供後續內部使用。
  
@@ -151,7 +152,7 @@ End Class
 
 類別圖如下：
 
-![](/images/posts/19711/)
+![image_thumb_1.png](/images/posts/19711/image_thumb_1.png)
 
 裡面只有簡單的幾個方法與屬性，Permission屬性是當前的權限，AllPermission是最高權限，AddPermission是用來增加權限，ContainsPermission用來判斷是否有特定的權限，RemovePermission可移除特定權限，LoadPermission用以設定當前權限。
 
@@ -189,7 +190,7 @@ End Module
 
 運行結果：
 
-![](/images/posts/19711/)
+![image_thumb_2.png](/images/posts/19711/image_thumb_2.png)
 
 ## Link
 

@@ -3,11 +3,12 @@ title: "[VB.NET]調整TreeView或TreeNode下的節點"
 date: "2010-02-09 10:10:25"
 description: "[VB.NET]調整TreeView或TreeNode下的節點"
 tags: [VB.NET]
----整理一下網友問題。據網友開的需求，希望將本來長成像下面這樣的節點：
-![](/images/posts/13552/)
+---
+整理一下網友問題。據網友開的需求，希望將本來長成像下面這樣的節點：
+![image_thumb.png](/images/posts/13552/image_thumb.png)
 
 整理成像下面這個樣子：
-![](/images/posts/13552/)
+![image_thumb_1.png](/images/posts/13552/image_thumb_1.png)
 
 這樣的需求我們可以先找出所有節點，找出後用巢狀迴圈去合併具有相同的FullPath的節點：
 ```

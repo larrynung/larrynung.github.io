@@ -36,7 +36,7 @@ return (new int[]{carry}).Concat(result).ToArray();
 }
 ```
 
-![/images/posts/PlusOne/1.png](/images/posts/PlusOne/1.png)
+![1.png](/images/posts/PlusOne/1.png)
 
 Link
 ----

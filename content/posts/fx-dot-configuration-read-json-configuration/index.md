@@ -50,7 +50,7 @@ Console.WriteLine(config.Setting2);
 }
 ```
 
-![/images/posts/FxConfigurationReadJSONConfig/1.png](/images/posts/FxConfigurationReadJSONConfig/1.png)
+![1.png](/images/posts/FxConfigurationReadJSONConfig/1.png)
 
 Link
 -----

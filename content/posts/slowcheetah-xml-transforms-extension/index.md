@@ -11,33 +11,33 @@ Web.Config Transformation 功能在我們有多個環境需要部署時很方便
 
 若是使用 SlowCheetah 這個 Visual Studio 擴充套件相較起來就簡單了許多，可以很輕易的為設定檔加上建置時轉換。
 
-![/images/posts/SlowCheetah/1.png](/images/posts/SlowCheetah/1.png)
+![1.png](/images/posts/SlowCheetah/1.png)
 
 SlowCheetah 可直接透過 Extension Manager 進行安裝。
 
-![/images/posts/SlowCheetah/2.png](/images/posts/SlowCheetah/2.png)
+![2.png](/images/posts/SlowCheetah/2.png)
 
-![/images/posts/SlowCheetah/3.png](/images/posts/SlowCheetah/3.png)
+![3.png](/images/posts/SlowCheetah/3.png)
 
-![/images/posts/SlowCheetah/4.png](/images/posts/SlowCheetah/4.png)
+![4.png](/images/posts/SlowCheetah/4.png)
 
-![/images/posts/SlowCheetah/5.png](/images/posts/SlowCheetah/5.png)
+![5.png](/images/posts/SlowCheetah/5.png)
 
 使用時只要在方案總管中找到欲加入建置轉換的設定檔，按下滑鼠右鍵，在彈出的滑鼠右鍵選單中選取 `Add Transform` 滑鼠右鍵選單選項。
 
-![/images/posts/SlowCheetah/6.png](/images/posts/SlowCheetah/6.png)
+![6.png](/images/posts/SlowCheetah/6.png)
 
 在彈出的確認視窗中按下 `Yes` 按鈕繼續。
 
-![/images/posts/SlowCheetah/7.png](/images/posts/SlowCheetah/7.png)
+![7.png](/images/posts/SlowCheetah/7.png)
 
 對應的轉換檔即會幫我們產生。
 
-![/images/posts/SlowCheetah/8.png](/images/posts/SlowCheetah/8.png)
+![8.png](/images/posts/SlowCheetah/8.png)
 
 專案檔中也會做對應的修改，會加入 SlowCheetah 自己的 Targets 去做轉換，而非使用現成的 Microsoft.WebApplication.targets。
 
-![/images/posts/SlowCheetah/9.png](/images/posts/SlowCheetah/9.png)
+![9.png](/images/posts/SlowCheetah/9.png)
 
 Link
 ----

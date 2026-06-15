@@ -1,7 +1,7 @@
 ---
 title: "Specify  Nugetrsquo;s packages folder location"
 date: "2013-11-06 12:00:00"
-description: "Specify  Nuget&rsquo;s packages folder location"
+description: "Specify  Nuget’s packages folder location"
 tags: [NuGet]
 ---
 

@@ -15,7 +15,7 @@ Exception filters 能讓開發人員很容易的在攔截例外時順帶做些�
 
 以往我們必須要先將例外攔截，接著進行比對過濾，最後將符合的例外做對應的處理，不符合的例外繼續讓它向外擴出。但是這樣的作法會讓例外呼叫堆疊看不到實際發生的例外點，只看到重新擴出例外的點，造成除錯上的困難。
 
-![/images/posts/ExceptionFilters/1.png](/images/posts/ExceptionFilters/1.png)
+![1.png](/images/posts/ExceptionFilters/1.png)
 
 Exception filters 的出現能幫助開發人員解決這樣的問題。
 
@@ -27,11 +27,11 @@ try {...} catch(Exception e) if (...) {...}
 
 反組譯看一下，可以看到 Exception filters 這邊會被編譯成 filter 區塊的部份，從 IL 這邊就直接支援。
 
-![/images/posts/ExceptionFilters/2.png](/images/posts/ExceptionFilters/2.png)
+![2.png](/images/posts/ExceptionFilters/2.png)
 
 這樣的寫法不僅直覺，且不會對例外呼叫堆疊造成不良的影響。
 
-![/images/posts/ExceptionFilters/3.png](/images/posts/ExceptionFilters/3.png)
+![3.png](/images/posts/ExceptionFilters/3.png)
 
 最後這邊做個新舊方法的測試比較：
 

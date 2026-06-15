@@ -11,7 +11,7 @@ tags: [CSharp]
 
 首先將 `Microsoft Terminal Servics control` 這個 Com 元件加入工具箱，並將之拖曳至設計頁面擺放至適當的位置。
 
-![/images/posts/MicrosoftTerminalServicesControl/1.png](/images/posts/MicrosoftTerminalServicesControl/1.png)
+![1.png](/images/posts/MicrosoftTerminalServicesControl/1.png)
 
 然後接著進行程式的開發動作。
 
@@ -33,7 +33,7 @@ tags: [CSharp]
 
 運行起來會像下面這樣：
 
-![/images/posts/MicrosoftTerminalServicesControl/2.png](/images/posts/MicrosoftTerminalServicesControl/2.png)
+![2.png](/images/posts/MicrosoftTerminalServicesControl/2.png)
 
 若有需要，範例程式也可至 [larrynung / RDPDemo](https://github.com/larrynung/RDPDemo) 這邊下載。
 

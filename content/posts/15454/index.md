@@ -3,7 +3,8 @@ title: "[VB.NET]使用Win32 API擷取滑鼠游標位置的顏色"
 date: "2010-05-26 10:50:32"
 description: "[VB.NET]使用Win32 API擷取滑鼠游標位置的顏色"
 tags: [VB.NET]
----要使用Win32 API擷取滑鼠游標位置的顏色，主要可分為三個步驟：
+---
+要使用Win32 API擷取滑鼠游標位置的顏色，主要可分為三個步驟：
 呼叫GetDC API取得畫布 呼叫GetPixel API取得畫布上指定位置的像素 呼叫ReleaseDC API釋放畫布
 
 使用上可以直接透過下面整理過的函式：

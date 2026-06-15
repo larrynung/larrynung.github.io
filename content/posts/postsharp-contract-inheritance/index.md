@@ -64,7 +64,7 @@ Console.WriteLine(String.Format("== {0} =={1}{2}", title, Environment.NewLine, c
 
 當我們呼叫 Blog.Write 時，因為 Blog 類別從 IWritable 介面繼承了 Write 方法及其 Contract，所以叫用時若帶的是空值就會丟出例外。
 
-![/images/posts/PostSharpContractInheritance/1.png](/images/posts/PostSharpContractInheritance/1.png)
+![1.png](/images/posts/PostSharpContractInheritance/1.png)
 
 Link
 ----

@@ -3,7 +3,8 @@ title: ".NET 4.0 New Feature - String.Concat"
 date: "2010-11-23 12:26:01"
 description: ".NET 4.0 New Feature - String.Concat"
 tags: [CSharp]
----.NET Framework 4.0新增了兩個String.Concat的多載函式Concat(IEnumerable)、與Concat(IEnumerable)。
+---
+.NET Framework 4.0新增了兩個String.Concat的多載函式Concat(IEnumerable)、與Concat(IEnumerable)。
 
 這兩個新的多載函式跟String.Join的新多載函式類似，能幫我們串連IEnumerable集合中的元素，不必預先將元素轉換為字串後再處理，同時也支援更多的集合類型。
 

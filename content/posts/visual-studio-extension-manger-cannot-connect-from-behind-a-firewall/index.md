@@ -7,15 +7,15 @@ tags: [Visual Studio]
 
 筆者工作環境的電腦，Visual Studio 內的 Extension Manager 無法正常的運作，查了一下才知道這是因為防火牆擋住了 100-Continue 的訊息發送所導致。
 
-![/images/posts/VSExpect100Continue/1.png](/images/posts/VSExpect100Continue/1.png)
+![1.png](/images/posts/VSExpect100Continue/1.png)
 
 因此要將 `Common7\IDE` 下的 `devenv.exe.config` 開啟調整，將 100-Continue 這個 Feature 關閉才可正常運作。
 
-![/images/posts/VSExpect100Continue/2.png](/images/posts/VSExpect100Continue/2.png)
+![2.png](/images/posts/VSExpect100Continue/2.png)
 
 檔案開啟後，在 system.net 的節點內加入 ``，將 100-Continue 這個 Feature 給關閉就可以了。
 
-![/images/posts/VSExpect100Continue/3.png](/images/posts/VSExpect100Continue/3.png)
+![3.png](/images/posts/VSExpect100Continue/3.png)
 
 Link
 ----

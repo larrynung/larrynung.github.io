@@ -13,7 +13,7 @@ FLOOR( number )
 
 使用上會像下面這樣：
 
-![/images/posts/FloorFunction/1.png](/images/posts/FloorFunction/1.png)
+![1.png](/images/posts/FloorFunction/1.png)
 
 Link
 ----

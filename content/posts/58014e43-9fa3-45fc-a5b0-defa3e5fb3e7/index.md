@@ -4,7 +4,8 @@ slug: "[CSharp]如何使用TraceListener實作類似Visual Studio的輸出視窗
 date: "2013-11-06 12:00:00"
 description: "[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗"
 tags: [CSharp]
----前陣子花了點時間在為開發中的產品加強除錯的功能，想要讓開發上發生的問題能直接在產品上就一目而然的看到，而不用另行開啟DebugView或是Log來看。簡單地說想要為產品加上類似是Visual Studio的輸出視窗，或者是DebugView類似的功能，能夠很即時的偵測並顯示出系統發出的Debug或是Trace訊息。為了達到這個需求，筆者用內建的TraceListener簡單的試做了一下，這篇隨手紀錄一下。
+---
+前陣子花了點時間在為開發中的產品加強除錯的功能，想要讓開發上發生的問題能直接在產品上就一目而然的看到，而不用另行開啟DebugView或是Log來看。簡單地說想要為產品加上類似是Visual Studio的輸出視窗，或者是DebugView類似的功能，能夠很即時的偵測並顯示出系統發出的Debug或是Trace訊息。為了達到這個需求，筆者用內建的TraceListener簡單的試做了一下，這篇隨手紀錄一下。
 
 要達到類似DebugView的效果，代表著我們必須要能擷取到Debug.WriteLine或是Trace.WriteLine的訊息，為此我們必須要建立一個TraceListener，繼承自DefaultTraceListener，並覆寫它的WriteLine方法。在覆寫的WriteLine方法中我們可以將收到的訊息做些處理，像是把它顯示到ListBox之類的。
 

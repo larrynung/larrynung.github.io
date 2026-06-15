@@ -4,7 +4,8 @@ slug: "[CSharp]HashSet 集合型別"
 date: "2009-05-02 04:39:12"
 description: "[C#]HashSet 集合型別"
 tags: [CSharp]
----##
+---
+##
 Namespace
 
 System.Collections.Generic

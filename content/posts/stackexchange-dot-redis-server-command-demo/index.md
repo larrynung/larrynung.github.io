@@ -40,4 +40,4 @@ Console.WriteLine(new string('=', 78));
 
 運行結果如下：
 
-![/images/posts/ServerCommandInStackExchange.Redis/1.png](/images/posts/ServerCommandInStackExchange.Redis/1.png)
+![1.png](/images/posts/ServerCommandInStackExchange.Redis/1.png)

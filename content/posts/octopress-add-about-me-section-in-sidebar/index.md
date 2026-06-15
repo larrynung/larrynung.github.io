@@ -7,19 +7,19 @@ tags: [Octopress]
 
 新增 About Me 檔，檔案位置存放在 `source/_includes/custom/asides` 下。
 
-![/images/posts/OctopressAboutMe/1.png](/images/posts/OctopressAboutMe/1.png)
+![1.png](/images/posts/OctopressAboutMe/1.png)
 
 編輯後存檔退出。
 
-![/images/posts/OctopressAboutMe/2.png](/images/posts/OctopressAboutMe/2.png)
+![2.png](/images/posts/OctopressAboutMe/2.png)
 
 接著開啟 `_config.yml` 設定檔找到 `blog_index_asides` 設定，將剛編輯好的 About Me 檔設上。
 
-![/images/posts/OctopressAboutMe/3.png](/images/posts/OctopressAboutMe/3.png)
+![3.png](/images/posts/OctopressAboutMe/3.png)
 
 存檔退出，編譯網頁後啟用預覽功能，即會看到側欄這邊多出剛我們設在 About Me 檔的內容。
 
-![/images/posts/OctopressAboutMe/4.png](/images/posts/OctopressAboutMe/4.png)
+![4.png](/images/posts/OctopressAboutMe/4.png)
 
 Link
 ----

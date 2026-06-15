@@ -7,7 +7,7 @@ tags: [Bootstrap]
 
 當我們透過 Bower 來使用 Bootstrap Glyphicons。
 
-![/images/posts/GlyphiconsWithBower/1.png](/images/posts/GlyphiconsWithBower/1.png)
+![1.png](/images/posts/GlyphiconsWithBower/1.png)
 
 下載下來的 Glyphicons CSS 內會用相對路徑指定所要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。
 
@@ -22,7 +22,7 @@ src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-op
 ...
 ```
 
-![/images/posts/GlyphiconsWithBower/2.png](/images/posts/GlyphiconsWithBower/2.png)
+![2.png](/images/posts/GlyphiconsWithBower/2.png)
 
 當然我們可以透過 Grunt、Gupl 之類的自動化工具將路徑改掉，但這樣的做法感覺並不是很好，因此這邊筆者是使用自己的 CSS 將 Font 的位置改掉。
 
@@ -37,6 +37,6 @@ src: url('/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#ie
 ...
 ```
 
-![/images/posts/GlyphiconsWithBower/3.png](/images/posts/GlyphiconsWithBower/3.png)
+![3.png](/images/posts/GlyphiconsWithBower/3.png)
 
 這樣改完後 Glyphicons 就可以正常使用。

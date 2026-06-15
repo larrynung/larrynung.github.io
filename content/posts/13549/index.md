@@ -3,7 +3,8 @@ title: "[VB.NET]取得TreeView或TreeNode下的所有節點"
 date: "2010-02-09 09:39:37"
 description: "[VB.NET]取得TreeView或TreeNode下的所有節點"
 tags: [VB.NET]
----```
+---
+```
 若要取得TreeView或TreeNode下的所有節點，可以透過遞迴的方式把所有節點給找出來。像是下面這樣：
 Private Function GetAllNodes(ByVal treeOrNode As Object) As TreeNode()
 If Not TypeOf treeOrNode Is TreeNode AndAlso Not TypeOf treeOrNode Is TreeView Then

@@ -92,4 +92,4 @@ var p = new Larry();
 alert(p.SayHello());
 ```
 
-![/images/posts/TypeScriptClass/1.png](/images/posts/TypeScriptClass/1.png)
+![1.png](/images/posts/TypeScriptClass/1.png)

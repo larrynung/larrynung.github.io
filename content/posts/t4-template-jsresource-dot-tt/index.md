@@ -159,14 +159,14 @@ var  = {};
 
 像是這邊筆者準備了不同的資源檔。  
 
-![/images/posts/T4JSResource/1.png](/images/posts/T4JSResource/1.png)
+![1.png](/images/posts/T4JSResource/1.png)
 
 透過 T4 會產生對應的 js 檔。  
 
-![/images/posts/T4JSResource/2.png](/images/posts/T4JSResource/2.png)
+![2.png](/images/posts/T4JSResource/2.png)
 
 只要將 js 檔引用進來就可以直接使用。  
 
-![/images/posts/T4JSResource/3.png](/images/posts/T4JSResource/3.png)
+![3.png](/images/posts/T4JSResource/3.png)
 
-![/images/posts/T4JSResource/4.png](/images/posts/T4JSResource/4.png)
+![4.png](/images/posts/T4JSResource/4.png)

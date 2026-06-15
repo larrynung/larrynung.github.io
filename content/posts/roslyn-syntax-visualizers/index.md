@@ -9,33 +9,33 @@ tags: [Roslyn, Visual Studio]
 
 所以開發前我們要到 [.NET Compiler Platform Syntax Visualizer extension](http://visualstudiogallery.msdn.microsoft.com/70e184da-9b3a-402f-b210-d62a898e2887) 這邊下載 Roslyn Syntax Visualizer。
 
-![/images/posts/RoslynSyntaxVisualizer/1.png](/images/posts/RoslynSyntaxVisualizer/1.png)
+![1.png](/images/posts/RoslynSyntaxVisualizer/1.png)
 
 下載完後進行安裝。
 
-![/images/posts/RoslynSyntaxVisualizer/2.png](/images/posts/RoslynSyntaxVisualizer/2.png)
+![2.png](/images/posts/RoslynSyntaxVisualizer/2.png)
 
-![/images/posts/RoslynSyntaxVisualizer/3.png](/images/posts/RoslynSyntaxVisualizer/3.png)
+![3.png](/images/posts/RoslynSyntaxVisualizer/3.png)
 
 安裝完我們可以透過 Visual Studio 的主選單選項(View\Other Windows\Roslyn Syntax Visualizer)將 Roslyn Syntax Visualizer Tool Window 叫出。
 
-![/images/posts/RoslynSyntaxVisualizer/4.png](/images/posts/RoslynSyntaxVisualizer/4.png)
+![4.png](/images/posts/RoslynSyntaxVisualizer/4.png)
 
 叫出後 Roslyn Syntax Visualizer 後，它會偵測目前所編輯的程式碼，將之解析成語法樹。且會偵測編輯區的選取，反映在語法樹上。
 
-![/images/posts/RoslynSyntaxVisualizer/5.png](/images/posts/RoslynSyntaxVisualizer/5.png)
+![5.png](/images/posts/RoslynSyntaxVisualizer/5.png)
 
 反之亦然。
 
-![/images/posts/RoslynSyntaxVisualizer/6.png](/images/posts/RoslynSyntaxVisualizer/6.png)
+![6.png](/images/posts/RoslynSyntaxVisualizer/6.png)
 
 語法樹上的節點有做顏色的區分，可以透過上方的 Legend 按鈕查閱各顏色所代表的意義。
 
-![/images/posts/RoslynSyntaxVisualizer/7.png](/images/posts/RoslynSyntaxVisualizer/7.png)
+![7.png](/images/posts/RoslynSyntaxVisualizer/7.png)
 
 語法樹上節點的滑鼠右鍵快顯選單也有提供一些功能，像是可以用更直覺的圖形方式呈現。
 
-![/images/posts/RoslynSyntaxVisualizer/8.png](/images/posts/RoslynSyntaxVisualizer/8.png)
+![8.png](/images/posts/RoslynSyntaxVisualizer/8.png)
 
 Link
 ----

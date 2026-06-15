@@ -40,7 +40,7 @@ return value;
 }
 ```
 
-![/images/posts/AddDigits/1.png](/images/posts/AddDigits/1.png)
+![1.png](/images/posts/AddDigits/1.png)
 
 但比較漂亮的解法是像下面這樣：
 
@@ -52,7 +52,7 @@ return (num - 1) % 9 + 1;
 }
 ```
 
-![/images/posts/AddDigits/2.png](/images/posts/AddDigits/2.png)
+![2.png](/images/posts/AddDigits/2.png)
 
 Link
 ----

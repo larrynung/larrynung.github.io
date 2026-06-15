@@ -21,7 +21,7 @@ next_day(sysdate, 'SUNDAY')
 
 使用上會像下面這樣：
 
-![/images/posts/NextDayFunction/1.png](/images/posts/NextDayFunction/1.png)
+![1.png](/images/posts/NextDayFunction/1.png)
 
 Link
 ----

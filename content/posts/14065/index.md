@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature ndash; Add Reference Dialog Improvements"
 date: "2010-03-16 09:42:05"
-description: "[Visual Studio]Visual Studio 2010 New Feature &ndash; Add Reference Dialog Improvements"
+description: "[Visual Studio]Visual Studio 2010 New Feature – Add Reference Dialog Improvements"
 tags: [Visual Studio]
 ---
 
@@ -9,6 +9,6 @@ VS2010在加入參考對話框上也做了兩項加強。在以往的版本，�
 
 VS2010解決了這樣的問題，預設開啟的頁面被改為Projects頁面，而Projects頁面多半要顯示的資料是最少的，因此開啟時不需要花費太多時間在做載入的動作，能夠快速的進入加入參考對話框。
 
-![](/images/posts/14065/)
+![image_thumb.png](/images/posts/14065/image_thumb.png)
 
 另外加入參考對話框內資料載入的動作，在VS2010中改為用非同步的方式來處理，操作上更為快速順暢，也能在載入的同時做頁面的切換，或是關閉加入參考對話框。

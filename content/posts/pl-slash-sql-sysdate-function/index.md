@@ -15,7 +15,7 @@ Sysdate
 
 像是這樣：
 
-![/images/posts/SysdateFunction/1.png](/images/posts/SysdateFunction/1.png)
+![1.png](/images/posts/SysdateFunction/1.png)
 
 Link
 ----

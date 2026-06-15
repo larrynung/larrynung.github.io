@@ -7,17 +7,17 @@ tags: [Jil]
 
 Jil 是 JSON 處理的套件，號稱比 JSON.NET 更快，甚至是當前套件中處理起來第二快的，僅次於 Protobuf。
 
-![/images/posts/Jil/1.png](/images/posts/Jil/1.png)
+![1.png](/images/posts/Jil/1.png)
 
-![/images/posts/Jil/2.png](/images/posts/Jil/2.png)
+![2.png](/images/posts/Jil/2.png)
 
-![/images/posts/Jil/3.png](/images/posts/Jil/3.png)
+![3.png](/images/posts/Jil/3.png)
 
-![/images/posts/Jil/4.png](/images/posts/Jil/4.png)
+![4.png](/images/posts/Jil/4.png)
 
-![/images/posts/Jil/5.png](/images/posts/Jil/5.png)
+![5.png](/images/posts/Jil/5.png)
 
-![/images/posts/Jil/6.png](/images/posts/Jil/6.png)
+![6.png](/images/posts/Jil/6.png)
 
 只要加入 NuGet 參考，Using Jil 命名空間即可開始使用。
 
@@ -78,7 +78,7 @@ public String NickName { get; set; }
 }
 }
 ```
-![/images/posts/Jil/7.png](/images/posts/Jil/7.png)
+![7.png](/images/posts/Jil/7.png)
 
 接著我們看一下序列化時效能上的比較：
 ```c#
@@ -142,9 +142,9 @@ public String NickName { get; set; }
 }
 }
 ```
-![/images/posts/Jil/10.png](/images/posts/Jil/10.png)
+![10.png](/images/posts/Jil/10.png)
 
-![/images/posts/Jil/11.png](/images/posts/Jil/11.png)
+![11.png](/images/posts/Jil/11.png)
 
 可以看到 Jil 在 JSON 的處理上的確有著較佳的效率。
 

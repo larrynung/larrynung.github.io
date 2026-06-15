@@ -11,4 +11,4 @@ Bower 套件在使用時若有需要，Bower 會將套件快取在本地，像�
 
 像是筆者前面安裝了 Bootstrap，用 bower cache list 查看就會查閱到 Bootstrap 與 jQuery 已經進行了本地快取。
 
-![/images/posts/BowerCacheList/1.png](/images/posts/BowerCacheList/1.png)
+![1.png](/images/posts/BowerCacheList/1.png)

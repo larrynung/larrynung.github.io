@@ -28,7 +28,7 @@ return count;
 }
 ```
 
-![/images/posts/NumberOf1Bits/1.png](/images/posts/NumberOf1Bits/1.png)
+![1.png](/images/posts/NumberOf1Bits/1.png)
 
 Link
 ----

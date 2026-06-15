@@ -120,7 +120,7 @@ this.Url = url;
 ```
 運行結果如下：
 
-![/images/posts/IndexInitializers/1.png](/images/posts/IndexInitializers/1.png)
+![1.png](/images/posts/IndexInitializers/1.png)
 
 Link
 ----

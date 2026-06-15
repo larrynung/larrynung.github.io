@@ -3,7 +3,8 @@ title: "[VB.NET]取得TreeView或TreeNode下的樹葉節點"
 date: "2010-02-09 09:45:26"
 description: "[VB.NET]取得TreeView或TreeNode下的樹葉節點"
 tags: [VB.NET]
----若要取得TreeView或TreeNode下的樹葉節點，我們可以先找出所有的節點後，再去挑出Nodes.Count為0的節點：
+---
+若要取得TreeView或TreeNode下的樹葉節點，我們可以先找出所有的節點後，再去挑出Nodes.Count為0的節點：
 ```
 Private Function GetAllLeafNodes(ByVal treeOrNode As Object) As TreeNode()
 Return (From tn In GetAllNodes(treeOrNode) Where tn.Nodes.Count = 0 Select tn).ToArray

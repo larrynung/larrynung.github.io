@@ -3,7 +3,8 @@ title: "How to use MetaWeblogSharp"
 date: "2013-11-06 12:00:00"
 description: "How to use MetaWeblogSharp"
 tags: [CSharp]
----簡單紀錄一下怎樣使用MetaWeblogSharp去操控支援MetaWeblog api的Blog。
+---
+簡單紀錄一下怎樣使用MetaWeblogSharp去操控支援MetaWeblog api的Blog。
 
 首先使用NuGet將MetaWeblogSharp組件參考加入。
 

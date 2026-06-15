@@ -3,7 +3,8 @@ title: "[VB.NET]密碼框顯示程式探討與其簡易的保護之道"
 date: "2010-04-24 12:17:10"
 description: "[VB.NET]密碼框顯示程式探討與其簡易的保護之道"
 tags: [VB.NET]
----相信大家都看過甚至用過密碼顯示工具，其原理Rico大[C#][WinForm]擺脫密碼透視小工具這篇已經把概念給帶出來了，主要是要過濾WM_GETTEXT與WM_SETTEXT兩個訊息(WM_SETTEXT過濾的原因不詳，這邊直接沿用)，但除了取得密碼外，也有的工具是可以讓密碼直接顯示的，那要怎摸做呢？很簡單，其實密碼框是透過設定EM_SETPASSWORDCHAR屬性來達到用星號隱藏密碼的效果，因此我們只要利用PostMessage把密碼框的EM_SETPASSWORDCHAR屬性給取消即可，簡易的程式如下。
+---
+相信大家都看過甚至用過密碼顯示工具，其原理Rico大[C#][WinForm]擺脫密碼透視小工具這篇已經把概念給帶出來了，主要是要過濾WM_GETTEXT與WM_SETTEXT兩個訊息(WM_SETTEXT過濾的原因不詳，這邊直接沿用)，但除了取得密碼外，也有的工具是可以讓密碼直接顯示的，那要怎摸做呢？很簡單，其實密碼框是透過設定EM_SETPASSWORDCHAR屬性來達到用星號隱藏密碼的效果，因此我們只要利用PostMessage把密碼框的EM_SETPASSWORDCHAR屬性給取消即可，簡易的程式如下。
 _
 Private Shared Function WindowFromPoint(ByVal Point As Point) As IntPtr
 End Function

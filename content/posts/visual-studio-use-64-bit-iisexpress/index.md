@@ -7,7 +7,7 @@ tags: [Visual Studio]
 
 雖然 .Net 程式支援位元適應性，Visual Studio 也允許我們做 64 位元的網站開發，但 Visual Studio 預設啟用的 IISExpress 是 32位元的。
 
-![/images/posts/x64IISExpress/1.png](/images/posts/x64IISExpress/1.png)
+![1.png](/images/posts/x64IISExpress/1.png)
 
 所以當在做 64 位元的網站開發時，在本地端測試我們會發現網站會跑不起來，因為 64 位元的網站無法跑在 32 位元的 IISExpress 上。
 
@@ -17,8 +17,8 @@ reg add HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0\WebProjects /v Us
 
 注意到這邊，登錄檔位置依 Visual Studio 版本不同會有所差異，可參閱 [Microsoft Visual Studio - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Microsoft_Visual_Studio) 內的 Internal version 部分下去調整。
 
-![/images/posts/x64IISExpress/2.png](/images/posts/x64IISExpress/2.png)
+![2.png](/images/posts/x64IISExpress/2.png)
 
 設定完後重起 Visual Studio，再次運行跑起來的就會是 64 位元的 IIS Express。
 
-![/images/posts/x64IISExpress/3.png](/images/posts/x64IISExpress/3.png)
+![3.png](/images/posts/x64IISExpress/3.png)

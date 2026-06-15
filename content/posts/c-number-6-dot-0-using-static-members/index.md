@@ -21,4 +21,4 @@ Using static members 能讓開發人員更方便的對指定類別的靜態成�
 
 反組譯看一下，可以發現其實該語法也只是編譯器幫我們在編譯時做了些處理。
 
-![/images/posts/UsingStaticMembers/1.png](/images/posts/UsingStaticMembers/1.png)
+![1.png](/images/posts/UsingStaticMembers/1.png)

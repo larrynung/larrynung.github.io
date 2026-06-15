@@ -17,15 +17,15 @@ number 是要做四捨五入的值，decimal_places 是要做四捨五入的位�
 
 寫起來就像下面這樣：
 
-![/images/posts/RoundFunction/1.png](/images/posts/RoundFunction/1.png)
+![1.png](/images/posts/RoundFunction/1.png)
 
-![/images/posts/RoundFunction/2.png](/images/posts/RoundFunction/2.png)
+![2.png](/images/posts/RoundFunction/2.png)
 
-![/images/posts/RoundFunction/3.png](/images/posts/RoundFunction/3.png)
+![3.png](/images/posts/RoundFunction/3.png)
 
-![/images/posts/RoundFunction/4.png](/images/posts/RoundFunction/4.png)
+![4.png](/images/posts/RoundFunction/4.png)
 
-![/images/posts/RoundFunction/5.png](/images/posts/RoundFunction/5.png)
+![5.png](/images/posts/RoundFunction/5.png)
 
 Link
 ----

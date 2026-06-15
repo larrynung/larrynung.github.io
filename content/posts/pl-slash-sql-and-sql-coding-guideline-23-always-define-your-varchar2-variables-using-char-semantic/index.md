@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL amp; SQL CODING GUIDELINE 23 - Always define your VARCHAR2 variables using CHAR SEMANTIC"
 date: "2015-12-16 05:40:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 23 - Always define your VARCHAR2 variables using CHAR SEMANTIC"
+description: "PL/SQL & SQL CODING GUIDELINE 23 - Always define your VARCHAR2 variables using CHAR SEMANTIC"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

@@ -3,7 +3,8 @@ title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.As
 date: "2010-09-19 12:17:30"
 description: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.Assert & Contract.Assume"
 tags: [CSharp]
----斷言(Assertions)合約主要用於描述某一特定程式點所需滿足的驗證條件，可透過Contract.Assert方法表示，使用上可直接帶入驗證條件：
+---
+斷言(Assertions)合約主要用於描述某一特定程式點所需滿足的驗證條件，可透過Contract.Assert方法表示，使用上可直接帶入驗證條件：
 
 Contract.Assert(this.privateField > 0);
 

@@ -4,7 +4,8 @@ slug: "[CSharp]Everything SDK"
 date: "2011-03-14 12:51:09"
 description: "[C#]Everything SDK"
 tags: [CSharp]
----用過Everything也好一陣子了，一直以來都對他的快速搜尋有相當深刻的印象，但也只限於當作搜尋的工具之用，看了保哥介紹好用工具：Everything search engine (檔名搜尋工具)的這篇，發現原來該套軟體也有SDK可以使用，可藉由他的強大搜尋功能用來開發自己的工具，花點時間試著玩了一下，順手記錄一下。
+---
+用過Everything也好一陣子了，一直以來都對他的快速搜尋有相當深刻的印象，但也只限於當作搜尋的工具之用，看了保哥介紹好用工具：Everything search engine (檔名搜尋工具)的這篇，發現原來該套軟體也有SDK可以使用，可藉由他的強大搜尋功能用來開發自己的工具，花點時間試著玩了一下，順手記錄一下。
 
 SDK可在Download Everything這邊下載，內含C與C#的範例程式、DLL檔、以及C開發要用的標頭檔之類的檔案。Everything提供的是IPC類型的API，API的使用可參閱SDK - Wiki。這邊需注意到由於是IPC類型的API，故在使用時需確保Everything程式有被開啟。另外就是要確認SDK內的dll\Everything.dll是否有跟自己開發的程式放在一起。
 
@@ -327,7 +328,7 @@ listBox1.Items.Add(item);
 
 運行結果如下：
 
-![](/images/posts/21824/)
+![image_thumb.png](/images/posts/21824/image_thumb.png)
 
 ##
 Download

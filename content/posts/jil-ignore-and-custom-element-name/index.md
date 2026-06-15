@@ -1,7 +1,7 @@
 ---
 title: "Jil - Ignore amp; Custom Element Name"
 date: "2015-10-02 00:11:00"
-description: "Jil - Ignore &amp; Custom Element Name"
+description: "Jil - Ignore & Custom Element Name"
 tags: [Jil]
 ---
 
@@ -73,7 +73,7 @@ public String NickName { get; set ; }
 }
 ```
 
-![/images/posts/JilIgnoreAndCustomElement/1.png](/images/posts/JilIgnoreAndCustomElement/1.png)
+![1.png](/images/posts/JilIgnoreAndCustomElement/1.png)
 
 如果要客製輸出的 Element 名稱，則直接透過 JilDirectiveAttribute 帶入指定的名稱：
 
@@ -109,4 +109,4 @@ public String NickName { get; set ; }
 }
 ```
 
-![/images/posts/JilIgnoreAndCustomElement/2.png](/images/posts/JilIgnoreAndCustomElement/2.png)
+![2.png](/images/posts/JilIgnoreAndCustomElement/2.png)

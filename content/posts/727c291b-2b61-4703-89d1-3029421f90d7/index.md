@@ -4,7 +4,8 @@ slug: "[CSharp]如何取出最近在Windows上所使用的文件檔案"
 date: "2013-11-06 12:00:00"
 description: "[C#]如何取出最近在Windows上所使用的文件檔案"
 tags: [CSharp]
----最近在評估一個功能，希望能用Windows最近使用的文件檔案做些對應的處理，這邊不想用監控整個檔案系統的方式，也不想要像防毒軟體一樣Hook，因此想到在Windows中有Recent Items這樣的東西，假設我能取得這邊的資訊，應該也就夠我做些處理了。
+---
+最近在評估一個功能，希望能用Windows最近使用的文件檔案做些對應的處理，這邊不想用監控整個檔案系統的方式，也不想要像防毒軟體一樣Hook，因此想到在Windows中有Recent Items這樣的東西，假設我能取得這邊的資訊，應該也就夠我做些處理了。
 
 稍微花點時間研究了一下，發現Recent Items的資料主要是由"%appdata%\Microsoft\Windows\Recent"這邊來的。
 

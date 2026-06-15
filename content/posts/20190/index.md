@@ -1,9 +1,10 @@
 ---
 title: ".NET 4.0 New Feature - IObservablelt;Tgt; amp; IObserverlt;Tgt;"
 date: "2010-12-16 09:00:01"
-description: ".NET 4.0 New Feature - IObservable&lt;T&gt; &amp; IObserver&lt;T&gt;"
+description: ".NET 4.0 New Feature - IObservable<T> & IObserver<T>"
 tags: [CSharp]
----IObservable & IObserver為一種推入型通知的通用機制，為觀察者模式的實現，在.NET 4.0開始加入到BCL中 ，跟以往IEnumerable與IEnumerator這種拉出型通知的通用機制有所不同。
+---
+IObservable & IObserver為一種推入型通知的通用機制，為觀察者模式的實現，在.NET 4.0開始加入到BCL中 ，跟以往IEnumerable與IEnumerator這種拉出型通知的通用機制有所不同。
 
 IEnumerable & IEnumerator這種迭代器模式屬於拉出型通知的通用機制，也就是說資料需由消費者自行從提供者拉出，就像是我們在食堂點餐必需排隊取餐，取餐的速度取決於食堂生產的速度，只要還沒排到或還在準備，我們都只能站在隊伍中繼續等候，待拿到餐點才能離開對伍找位置坐下開動，而IObservable & IObserver這種觀察者模式屬於推入型通知的通用機制，資料可由提供者主動推向給消費者，就像是在餐廳吃飯，我們點好餐點就可以開始聊天或做些其它事情，餐點完成服務員會主動奉上，拿到餐點後我們就可以開始開動。
 

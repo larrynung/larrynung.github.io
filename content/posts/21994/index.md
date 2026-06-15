@@ -4,7 +4,8 @@ slug: "[CSharp]取得檔案內容中的詳細資料"
 date: "2011-03-21 10:16:06"
 description: "[C#]取得檔案內容中的詳細資料"
 tags: [CSharp]
----這邊記錄ㄧ下要如何取得檔案內容中的詳細資料 ...
+---
+這邊記錄ㄧ下要如何取得檔案內容中的詳細資料 ...
 
 首先我們必須將Microsoft Shell Controls and Automation加入參考。
 

@@ -7,11 +7,11 @@ tags: [log4net]
 
 log4net 在使用 RollingFileAppender 去做 Log 的紀錄時，我們需要注意 CountDirection 的設定。設定值大於 0，表示以遞增的方式 Rolling。反之，表示以遞減的方式 Rolling。
 
-![/images/posts/Log4NetCountDirection/1.png](/images/posts/Log4NetCountDirection/1.png)
+![1.png](/images/posts/Log4NetCountDirection/1.png)
 
 該設定預設值為 -1，所以當新的檔案要產生時，他需要先用 Rename 將檔案往後擠才行，可以想見這樣會有不必要的效能耗費。透過 Process Monitor 可以很清楚的看到背後的運作。
 
-![/images/posts/Log4NetCountDirection/2.png](/images/posts/Log4NetCountDirection/2.png)
+![2.png](/images/posts/Log4NetCountDirection/2.png)
 
 所以可以的話，我們可以將設定值改為 1，用以取得較好的效能。
 
@@ -54,19 +54,19 @@ return sw.ElapsedMilliseconds;
 ```
 可以看到若不設定 CountDirection，連續產生 39 個檔案時它的耗時為 586 ms。
 
-![/images/posts/Log4NetCountDirection/3.png](/images/posts/Log4NetCountDirection/3.png)
+![3.png](/images/posts/Log4NetCountDirection/3.png)
 
 若設定 CountDirection 為 1，則耗時為 332 ms。
 
-![/images/posts/Log4NetCountDirection/4.png](/images/posts/Log4NetCountDirection/4.png)
+![4.png](/images/posts/Log4NetCountDirection/4.png)
 
 當連續產生 77 個檔案時，不設定 CountDirection 耗時為 3061 ms。
 
-![/images/posts/Log4NetCountDirection/5.png](/images/posts/Log4NetCountDirection/5.png)
+![5.png](/images/posts/Log4NetCountDirection/5.png)
 
 設定為 1，則耗時為 518 ms。
 
-![/images/posts/Log4NetCountDirection/6.png](/images/posts/Log4NetCountDirection/6.png)
+![6.png](/images/posts/Log4NetCountDirection/6.png)
 
 可以看到這小小的效能差異累積起來其實也是很可觀的。
 

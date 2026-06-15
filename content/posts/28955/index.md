@@ -7,7 +7,7 @@ tags: [.NET Concept]
 
 相信大家在開發時都曾注意到過在專案屬性頁面之中，有個跟位元有關的編譯設定，其預設值為Any CPU。
 
-![](/images/posts/28955/)
+![image_thumb.png](/images/posts/28955/image_thumb.png)
 
 在大多數的情況下，我們不需要更改其設定值。因為這樣的設定會讓我們的程式享有.Net程式的Automatic bitness(自動位元適應)特性，可讓我們的應用程式能夠自動適應不同位元環境，在不同位元的環境之下都能正常運作。
 

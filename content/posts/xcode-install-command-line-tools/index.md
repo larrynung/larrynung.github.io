@@ -6,12 +6,12 @@ description: "Xcode - Install Command Line Tools"
 
 在 MAC 上使用，有時候執行某些篇開發人員的程式時會要求安裝 Xcode 的 Command Line Tool。
 
-![/images/posts/InstallCommandLineTool/1.png](/images/posts/InstallCommandLineTool/1.png)
+![1.png](/images/posts/InstallCommandLineTool/1.png)
 
 要安裝 Xcode 的 Command Line Tool，我們可以先將 Xcode 開啟，點選上方的 [Xcode | Preferences...] 選單選項。
 
-![/images/posts/InstallCommandLineTool/2.png](/images/posts/InstallCommandLineTool/2.png)
+![2.png](/images/posts/InstallCommandLineTool/2.png)
 
 Preferences 對話框開啟後，切至 Downloads 頁面，找到 Components 下的 Command Line Tools，按下後方的下載按鈕即可安裝。
 
-![/images/posts/InstallCommandLineTool/3.png](/images/posts/InstallCommandLineTool/3.png)
+![3.png](/images/posts/InstallCommandLineTool/3.png)

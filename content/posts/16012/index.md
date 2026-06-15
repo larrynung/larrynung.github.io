@@ -3,7 +3,8 @@ title: "用Extension Method在執行階段進行控制項的拖曳"
 date: "2010-06-20 10:02:40"
 description: "用Extension Method在執行階段進行控制項的拖曳"
 tags: [VB.NET]
----整理一下拖曳控制項用的Extension Method，簡單紀錄如下：
+---
+整理一下拖曳控制項用的Extension Method，簡單紀錄如下：
 ```
 Imports System.Runtime.CompilerServices
 
@@ -80,6 +81,6 @@ End Class
 ```
 執行後表單中的控制項就可以直接透過滑鼠拖曳。
 
-![](/images/posts/16012/)
+![image_thumb.png](/images/posts/16012/image_thumb.png)
 
-![](/images/posts/16012/)
+![image_thumb_1.png](/images/posts/16012/image_thumb_1.png)

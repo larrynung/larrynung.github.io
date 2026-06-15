@@ -3,7 +3,8 @@ title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: static_assert"
 date: "2011-08-22 01:11:12"
 description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: static_assert"
 tags: [Visual Studio,C++]
----Visual studio 2010為C++的開發人員新增了static_assert這個C++0x的功能，能為程式提供編譯時期的斷言，相較於以往的assert，斷言動作是編譯時期觸發，非運行時期觸發，故不會有性能上的損耗，且在編譯後就能知道程式是否滿足運行的條件，不需像舊有的運行時斷言需將程式運行起來，且要執行到斷言的位置才能發現問題。適用於可在編譯時期做的檢查動作。
+---
+Visual studio 2010為C++的開發人員新增了static_assert這個C++0x的功能，能為程式提供編譯時期的斷言，相較於以往的assert，斷言動作是編譯時期觸發，非運行時期觸發，故不會有性能上的損耗，且在編譯後就能知道程式是否滿足運行的條件，不需像舊有的運行時斷言需將程式運行起來，且要執行到斷言的位置才能發現問題。適用於可在編譯時期做的檢查動作。
 
 static_assert的函式原型如下:
 

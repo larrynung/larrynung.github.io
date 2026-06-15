@@ -11,12 +11,12 @@ tags: [MediaWiki]
 
 一種是進到 Wiki 的 Version 頁面查閱(搜尋框輸入Special:Version)。
 
-![/images/posts/CheckMediaWikiVersion/1.png](/images/posts/CheckMediaWikiVersion/1.png)
+![1.png](/images/posts/CheckMediaWikiVersion/1.png)
 
 或是透過網頁原始碼查閱。
 
-![/images/posts/CheckMediaWikiVersion/2.png](/images/posts/CheckMediaWikiVersion/2.png)
+![2.png](/images/posts/CheckMediaWikiVersion/2.png)
 
 抑或是透過 DefaultSettings.php 檔的 $wgVersion 設定也可得知。
 
-![/images/posts/CheckMediaWikiVersion/3.png](/images/posts/CheckMediaWikiVersion/3.png)
+![3.png](/images/posts/CheckMediaWikiVersion/3.png)

@@ -15,7 +15,7 @@ Plug-in is useful in cases when the Visual Studio is unloaded from the RAM.
 
 有興趣試用看看的可透過Extension Manager搜尋unswap關鍵字找到該外掛元件。
 
-![](/images/posts/51662/)
+![image_thumb.png](/images/posts/51662/image_thumb.png)
 
 ## Link
 

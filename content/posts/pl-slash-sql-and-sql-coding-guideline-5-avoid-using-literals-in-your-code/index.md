@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL amp; SQL CODING GUIDELINE 5 - Avoid using literals in your code"
 date: "2015-09-21 00:17:00"
-description: "PL/SQL &amp; SQL CODING GUIDELINE 5 - Avoid using literals in your code"
+description: "PL/SQL & SQL CODING GUIDELINE 5 - Avoid using literals in your code"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

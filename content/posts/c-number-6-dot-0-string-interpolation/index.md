@@ -57,11 +57,11 @@ public string Url { get; set; }
 
 運行結果如下：
 
-![/images/posts/StringInterpolation/1.png](/images/posts/StringInterpolation/1.png)
+![1.png](/images/posts/StringInterpolation/1.png)
 
 反組譯看一下，其實背後也是將其編譯成 String.Format。
 
-![/images/posts/StringInterpolation/2.png](/images/posts/StringInterpolation/2.png)
+![2.png](/images/posts/StringInterpolation/2.png)
 
 Link
 ----
