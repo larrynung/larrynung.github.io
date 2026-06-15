@@ -13,20 +13,20 @@ tags: [Disruptor]
 
 像是如果要在收到資料時顯示一些相關的訊息在主控台上，我們就可像下面這樣撰寫 EventHandler：
 ```c#
-...
-public class Data {
-public string Value { get; set; }
-}
-public class DataEventHandler : IEventHandler
-{
-public string Name { get; private set; }
-public DataEventHandler(string name) {
-this.Name = name;
-}
-public void OnEvent(Data data, long sequence, bool endOfBatch) {
-Console.WriteLine("Thread = {0}, Handler = {1}, Sequence = {2}, Value = {3}", Thread.CurrentThread.ManagedThreadId.ToString(), this.Name, sequence, data.Value);
-}
-}
+... 
+public class Data { 
+    public string Value { get; set; } 
+} 
+public class DataEventHandler : IEventHandler<Data> 
+{ 
+    public string Name { get; private set; } 
+    public DataEventHandler(string name) { 
+        this.Name = name; 
+    } 
+    public void OnEvent(Data data, long sequence, bool endOfBatch) { 
+        Console.WriteLine("Thread = {0}, Handler = {1}, Sequence = {2}, Value = {3}", Thread.CurrentThread.ManagedThreadId.ToString(), this.Name, sequence, data.Value); 
+    } 
+} 
 ...
 ```
 EventHandler 好了，接著就是撰寫 Producer 生產資料的部分以及資料怎樣在 Consumer 間流動。
@@ -39,24 +39,24 @@ DSL 的寫法比較簡潔，首先要告訴 Disruptor 怎樣初始 Ringbuffer �
 
 程式寫起來就像下面這樣：
 ```c#
-...
-var disruptor = new Disruptor.Dsl.Disruptor(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default);
+... 
+var disruptor = new Disruptor.Dsl.Disruptor<Data>(() => new Data(), (int)Math.Pow(2,4), TaskScheduler.Default); 
 
-disruptor.HandleEventsWith(new DataEventHandler("Handler1"));
+disruptor.HandleEventsWith(new DataEventHandler("Handler1")); 
 
-var ringBuffer = disruptor.Start();
-var sequenceNo = ringBuffer.Next();
-var data = ringBuffer[sequenceNo];
+var ringBuffer = disruptor.Start(); 
+var sequenceNo = ringBuffer.Next(); 
+var data = ringBuffer[sequenceNo]; 
 
-data.Value = "Hello";
-ringBuffer.Publish(sequenceNo);
-sequenceNo = ringBuffer.Next();
+data.Value = "Hello"; 
+ringBuffer.Publish(sequenceNo); 
+sequenceNo = ringBuffer.Next(); 
 
-data = ringBuffer[sequenceNo];
-data.Value = "World";
-ringBuffer.Publish(sequenceNo);
+data = ringBuffer[sequenceNo]; 
+data.Value = "World"; 
+ringBuffer.Publish(sequenceNo); 
 
-disruptor.Shutdown();
+disruptor.Shutdown(); 
 ...
 ```
 ![3.png](/images/posts/DisruptorGettingStarted/3.png)
@@ -67,26 +67,26 @@ Non-DSL 寫起來相對複雜些，一樣要告訴 Disruptor 怎樣初始 Ringbu
 
 程式寫起來就像下面這樣：
 ```c#
-...
-var ringBuffer = RingBuffer.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4));
-var barrier = ringBuffer.NewBarrier();
-var eventProcessor = new BatchEventProcessor(ringBuffer, barrier, new DataEventHandler("Handler1"));
+... 
+var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
+var barrier = ringBuffer.NewBarrier(); 
+var eventProcessor = new BatchEventProcessor<Data>(ringBuffer, barrier, new DataEventHandler("Handler1")); 
 
-Task.Factory.StartNew(() => eventProcessor.Run());
+Task.Factory.StartNew(() => eventProcessor.Run()); 
 
-var sequenceNo = ringBuffer.Next();
-var data = ringBuffer[sequenceNo];
-data.Value = "Hello";
-ringBuffer.Publish(sequenceNo);
+var sequenceNo = ringBuffer.Next(); 
+var data = ringBuffer[sequenceNo]; 
+data.Value = "Hello"; 
+ringBuffer.Publish(sequenceNo); 
 
-sequenceNo = ringBuffer.Next();
-data = ringBuffer[sequenceNo];
-data.Value = "World";
-ringBuffer.Publish(sequenceNo);
+sequenceNo = ringBuffer.Next(); 
+data = ringBuffer[sequenceNo]; 
+data.Value = "World"; 
+ringBuffer.Publish(sequenceNo); 
 
-eventProcessor.Halt();
+eventProcessor.Halt(); 
 
-Application.DoEvents();
+Application.DoEvents(); 
 ...
 ```
 ![5.png](/images/posts/DisruptorGettingStarted/5.png)

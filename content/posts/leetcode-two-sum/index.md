@@ -30,7 +30,33 @@ Output: index1=1, index2=2
 ```c#
 public class Solution {
 public int[] TwoSum(int[] nums, int target) {
-for(var num1Idx = 0; num1Idx ();
+for(var num1Idx = 0; num1Idx < nums.Length; ++num1Idx)
+{
+var num1 = nums[num1Idx];
+for(var num2Idx = num1Idx; num2Idx < nums.Length; ++num2Idx)
+{
+var num2 = nums[num2Idx];
+
+if(num1 + num2 == target)
+return new int[] { num1, num2 };
+}
+}
+throw new ArgumentException("Invalid argument.");
+}
+}
+```
+
+但是這樣的寫法效能不彰，會超時時間限制...
+
+![1.png](/images/posts/TwoSum/1.png)
+
+要改善的話我們可以用迴圈搭配 Dictionary，每跑一個數就去判斷 Dictionary 是否有資料，如果有則將資料取出與當前索引一併加一回傳，如果沒有則將 目標數 - 當前數 做 Key 值，把目前索引存放在 Dictionary 中。
+
+```c#
+public class Solution {
+public int[] TwoSum(int[] nums, int target) {
+var length = nums.Length;
+var dict = new Dictionary<int, int>();
 for(var idx = 0; idx < length; ++idx)
 {
 var num = nums[idx];

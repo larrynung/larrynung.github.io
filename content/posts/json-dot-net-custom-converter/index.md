@@ -18,28 +18,28 @@ using Newtonsoft.Json;
 
 namespace LevelUp.Converter
 {
-public class ConcreteTypeConverter : JsonConverter
-{
-public override bool CanConvert( Type objectType)
-{
-return true ;
-}
+    public class ConcreteTypeConverter<TConcrete> : JsonConverter
+    {
+        public override bool CanConvert( Type objectType)
+        {
+            return true ;
+        }
 
-public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-{
-return serializer.Deserialize(reader);
-}
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            return serializer.Deserialize<TConcrete>(reader);
+        }
 
-public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer)
-{
-serializer.Serialize(writer, value);
-}
-}
+        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            serializer.Serialize(writer, value);
+        }
+    }
 }
 ```
 當我們在序列化物件時，若物件的成員屬性是 Interface，就可以用來指定序列化與解序列化時實際所要用的型態。
 ```c#
-[JsonConverter(typeof(ConcreteTypeConverter))]
+[JsonConverter(typeof(ConcreteTypeConverter<DecisionNode[]>))]
 IDecisionNode[] Nodes { get ; }
 ```
 或者是像下面這段用來處理 Dictionary 的序列話與解序列化的 Converter 程式，裡面會用 JsonWriter 去處理序列化的動作、用 JsonReader 去處理解序列化的動作，寫起來比較複雜些，但可進行比較進階的處理。
@@ -53,67 +53,67 @@ using Newtonsoft.Json;
 
 namespace LevelUp.Converter
 {
-public class DictionaryConverter : JsonConverter
-{
-#region  Methods
-private static bool TypeImplementsGenericInterface( Type concreteType, Type interfaceType)
-{
-return concreteType.GetInterfaces()
-.Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == interfaceType);
-}
-public override bool CanConvert( Type objectType)
-{
-return (typeof (IDictionary).IsAssignableFrom(objectType) ||
-TypeImplementsGenericInterface(objectType, typeof(IDictionary )));
-}
+    public class DictionaryConverter<TKey, TValue> : JsonConverter
+    {
+        #region  Methods
+        private static bool TypeImplementsGenericInterface( Type concreteType, Type interfaceType)
+        {
+            return concreteType.GetInterfaces()
+                   .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == interfaceType);
+        }
+        public override bool CanConvert( Type objectType)
+        {
+            return (typeof (IDictionary).IsAssignableFrom(objectType) ||
+                    TypeImplementsGenericInterface(objectType, typeof(IDictionary <,>)));
+        }
 
-public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-{
-if (reader.TokenType == JsonToken.None) return null ;
+        public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            if (reader.TokenType == JsonToken.None) return null ;
 
-var dict = new Dictionary();
+            var dict = new Dictionary<TKey, TValue>();
 
-reader.Read();
+            reader.Read();
 
-while (reader.TokenType == JsonToken.StartArray)
-{
-reader.Read();
+            while (reader.TokenType == JsonToken.StartArray)
+            {
+                reader.Read();
 
-var key = serializer.Deserialize(reader);
+                var key = serializer.Deserialize<TKey>(reader);
 
-reader.Read();
-var value = serializer.Deserialize(reader);
+                reader.Read();
+                var value = serializer.Deserialize<TValue>(reader);
 
-reader.Read();
-reader.Read();
+                reader.Read();
+                reader.Read();
 
-dict.Add(key, value);
-}
+                dict.Add(key, value);
+            }
 
-return dict;
-}
+            return dict;
+        }
 
-public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer)
-{
-var dict = value as IDictionary;
-var keys = dict.Keys;
-var values = dict.Values;
-var valueEnumerator = values.GetEnumerator();
+        public override void WriteJson( JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            var dict = value as IDictionary;
+            var keys = dict.Keys;
+            var values = dict.Values;
+            var valueEnumerator = values.GetEnumerator();
 
-writer.WriteStartArray();
-foreach (var key in keys)
-{
-valueEnumerator.MoveNext();
+            writer.WriteStartArray();
+            foreach (var key in keys)
+            {
+                valueEnumerator.MoveNext();
 
-writer.WriteStartArray();
-serializer.Serialize(writer, key);
-serializer.Serialize(writer, valueEnumerator.Current);
-writer.WriteEndArray();
-}
-writer.WriteEndArray();
-}
-#endregion  Methods
-}
+                writer.WriteStartArray();
+                serializer.Serialize(writer, key);
+                serializer.Serialize(writer, valueEnumerator.Current);
+                writer.WriteEndArray();
+            }
+            writer.WriteEndArray();
+        }
+        #endregion  Methods
+    }
 }
 ```
 Link

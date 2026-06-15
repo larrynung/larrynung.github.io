@@ -8,12 +8,26 @@ MethodTimer.Fody 能透過 Fody 在程式編譯時將用來計算時間的程式
 
 使用時需先引用 MethodTimer.Fody 套件。
 ```xml
+<Project Sdk="Microsoft.NET.Sdk">
 
-Exe
-netcoreapp2.2
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="MethodTimer.Fody" Version="3.0.0" PrivateAssets="All" />
+    </ItemGroup>
+
+</Project>
 ```
 然後加入 FodyWeavers.xml 檔，檔案內容如下，指示 Fody 要使用 MethodTimer。
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FodyWeavers.xsd">
+  <MethodTimer />
+</Weavers>
 ```
 接著在 MethodTimeLogger 的 Log 方法撰寫時間計算的部分。
 ```c#

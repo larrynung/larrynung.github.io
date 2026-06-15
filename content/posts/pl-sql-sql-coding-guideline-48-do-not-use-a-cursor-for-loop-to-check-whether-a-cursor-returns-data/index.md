@@ -9,15 +9,15 @@ tags: [PL/SQL and SQL Coding Guidelines]
 像是下面這段程式片巡走訪 CURSOR 以確認是否含有資料，這樣並不是很好的寫法。
 
 ```psql
-DECLARE
-l_employee_found BOOLEAN := FALSE;
-…
-BEGIN
->
-FOR r_employee IN c_employee
-LOOP
-l_employee_found := TRUE;
-END LOOP check_employees;
+DECLARE 
+  l_employee_found BOOLEAN := FALSE; 
+  … 
+BEGIN 
+  <<check_employees>> 
+  FOR r_employee IN c_employee 
+  LOOP 
+    l_employee_found := TRUE; 
+  END LOOP check_employees; 
 END;
 ```
 

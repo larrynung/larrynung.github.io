@@ -18,86 +18,97 @@ using Grpc.Core.Interceptors;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
+
 namespace GrpcServiceInterceptor
 {
-public class LoggerInterceptor : Interceptor
-{
-private readonly ILogger _logger;
+    public class LoggerInterceptor : Interceptor
+    {
+        private readonly ILogger<LoggerInterceptor> _logger;
 
-public LoggerInterceptor(ILogger logger)
-{
-_logger = logger;
-}
 
-public override async Task UnaryServerHandler(
-TRequest request,
-ServerCallContext context,
-UnaryServerMethod continuation)
-{
-var response = await base.UnaryServerHandler(request, context, continuation);
-Log(MethodType.Unary, request, response, context);
+        public LoggerInterceptor(ILogger<LoggerInterceptor> logger)
+        {
+            _logger = logger;
+        }
 
-return response;
-}
 
-public override async Task ClientStreamingServerHandler(
-IAsyncStreamReader requestStream,
-ServerCallContext context,
-ClientStreamingServerMethod continuation)
-{
-var response = await base.ClientStreamingServerHandler(requestStream, context, continuation);
-Log(MethodType.ClientStreaming, requestStream, response, context);
+        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(
+            TRequest request,
+            ServerCallContext context,
+            UnaryServerMethod<TRequest, TResponse> continuation)
+        {
+            var response = await base.UnaryServerHandler(request, context, continuation);
+            Log(MethodType.Unary, request, response, context);
 
-return response;
-}
 
-public override Task ServerStreamingServerHandler(
-TRequest request,
-IServerStreamWriter responseStream,
-ServerCallContext context,
-ServerStreamingServerMethod continuation)
-{
-Log(MethodType.ServerStreaming, request, responseStream, context);
+            return response;
+        }
 
-return base.ServerStreamingServerHandler(request, responseStream, context, continuation);
-}
 
-public override Task DuplexStreamingServerHandler(
-IAsyncStreamReader requestStream,
-IServerStreamWriter responseStream,
-ServerCallContext context,
-DuplexStreamingServerMethod continuation)
-{
-Log(MethodType.DuplexStreaming, requestStream, responseStream, context);
+        public override async Task<TResponse> ClientStreamingServerHandler<TRequest, TResponse>(
+            IAsyncStreamReader<TRequest> requestStream,
+            ServerCallContext context,
+            ClientStreamingServerMethod<TRequest, TResponse> continuation)
+        {
+            var response = await base.ClientStreamingServerHandler(requestStream, context, continuation);
+            Log(MethodType.ClientStreaming, requestStream, response, context);
 
-return base.DuplexStreamingServerHandler(requestStream, responseStream, context, continuation);
-}
 
-private void Log(MethodType methodType, TRequest request, TResponse response,
-ServerCallContext context)
-{
-_logger.LogInformation(
-$"gRPC call. Type: {methodType}. Request: {request.ToString()}. Response: {response.ToString()}");
-}
-}
+            return response;
+        }
+
+
+        public override Task ServerStreamingServerHandler<TRequest, TResponse>(
+            TRequest request,
+            IServerStreamWriter<TResponse> responseStream,
+            ServerCallContext context,
+            ServerStreamingServerMethod<TRequest, TResponse> continuation)
+        {
+            Log(MethodType.ServerStreaming, request, responseStream, context);
+
+
+            return base.ServerStreamingServerHandler(request, responseStream, context, continuation);
+        }
+
+
+        public override Task DuplexStreamingServerHandler<TRequest, TResponse>(
+            IAsyncStreamReader<TRequest> requestStream,
+            IServerStreamWriter<TResponse> responseStream,
+            ServerCallContext context,
+            DuplexStreamingServerMethod<TRequest, TResponse> continuation)
+        {
+            Log(MethodType.DuplexStreaming, requestStream, responseStream, context);
+
+
+            return base.DuplexStreamingServerHandler(requestStream, responseStream, context, continuation);
+        }
+
+
+        private void Log<TRequest, TResponse>(MethodType methodType, TRequest request, TResponse response,
+            ServerCallContext context)
+        {
+            _logger.LogInformation(
+                $"gRPC call. Type: {methodType}. Request: {request.ToString()}. Response: {response.ToString()}");
+        }
+    }
 }
 ```
 Interceptor 寫好後掛載進去。
 ```c#
 ...
-public class Startup
-{
-public void ConfigureServices(IServiceCollection services)
-{
-services.AddGrpc(options =>
-{
-var interceptors = options.Interceptors;
-interceptors.Add();
-...
-});
-}
-...
-}
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddGrpc(options =>
+            {
+                var interceptors = options.Interceptors;
+                interceptors.Add<LoggerInterceptor>();
+                ...
+            });
+        }
+        ...
+    }
 ...
 ```
 ![1.png](1.png)

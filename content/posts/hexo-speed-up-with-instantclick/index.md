@@ -14,8 +14,8 @@ tags: [InstantClick, Hexo]
 
 接著修改 Hexo 的 theme 讓 InstantClick 得以啟動。以 next theme 為例，可開啟 next theme 的 layout\_layout.swig，將 InstantClick 啟動的程式插入即可。
 ```js
-
-InstantClick.init();
+<script type="text/javascript" src= "js/instantclick.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
 ```
 ![3.png](3.png)
 

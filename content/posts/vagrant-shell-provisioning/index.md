@@ -20,13 +20,15 @@ end
 也可以先抽成方法後指給 inline 參數。
 
 ```rb
-$script =  /etc/vagrant_provisioned_at
-SCRIPT
+$script = <<SCRIPT 
+    echo I am provisioning... 
+    date > /etc/vagrant_provisioned_at 
+SCRIPT 
 
-Vagrant.configure("2") do |config|
-...
-config.vm.provision "shell", inline: $script
-...
+Vagrant.configure("2") do |config| 
+    ... 
+    config.vm.provision "shell", inline: $script 
+    ... 
 end
 ```
 

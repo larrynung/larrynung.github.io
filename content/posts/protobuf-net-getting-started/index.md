@@ -54,10 +54,9 @@ Serializer.Serialize(file, person);
 解序列化時調用 Serializer.Deserialize 帶入 Stream，並用泛型指定解序列化回來的型態即可。
 
 ```C#
-Person newPerson;
-using (var file = File.OpenRead("person.bin")) {
-newPerson = Serializer.Deserialize
-(file);
+Person newPerson; 
+using (var file = File.OpenRead("person.bin")) { 
+    newPerson = Serializer.Deserialize<Person>(file); 
 }
 ```
 

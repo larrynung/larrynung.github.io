@@ -19,24 +19,24 @@ PostSharp 內建的 Contracts 能支援我們做些常見的檢查，若是內�
 
 筆者這邊以建立個 RegexMatch 的 Contract 為例，讓使用上可以帶上不同的正規表示式進行驗證。建立個繼承自 LocationContractAttribute 的類別 ，因為這邊要檢查的參數型態為字串，故還要實作 ILocationValidationAspect\ 介面，在 ValudateValue 方法中會去判斷值是否符合我們設定的 Pattern，若否則叫用 CreateArgumentException 丟出例外。
 ```c#
-public class RegexMatchAttribute : LocationContractAttribute , ILocationValidationAspect
-{
-public String Pattern { get; set; }
+    public class RegexMatchAttribute : LocationContractAttribute , ILocationValidationAspect <string>
+    {
+        public String Pattern { get; set; }
 
-public RegexMatchAttribute(string pattern)
-: base()
-{
-this.Pattern = pattern;
-}
+        public RegexMatchAttribute(string pattern)
+            : base()
+        {
+            this.Pattern = pattern;
+        }
 
-public Exception ValidateValue(string value, string locationName, PostSharp.Reflection.LocationKind locationKind)
-{
-if (Regex .IsMatch(value, this.Pattern))
-return null ;
+        public Exception ValidateValue(string value, string locationName, PostSharp.Reflection.LocationKind locationKind)
+        {
+            if (Regex .IsMatch(value, this.Pattern))
+                return null ;
 
-return this .CreateArgumentException(value, locationName, locationKind);
-}
-}
+            return this .CreateArgumentException(value, locationName, locationKind);
+        }
+    }
 ```
 寫完後就可以實際套用到程式中去做參數的驗證。
 ```c#

@@ -21,39 +21,39 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 
 ```c#
 public class Solution {
-public bool IsValid(string s) {
-var validChars = new Dictionary()
-{
-{'(', ')'},
-{'{', '}'},
-{'[', ']'}
-};
-var length = s.Length;
-var st = new Stack(length + 1);
+    public bool IsValid(string s) {
+        var validChars = new Dictionary<char, char>()
+		{
+			{'(', ')'},
+			{'{', '}'},
+			{'[', ']'}
+		};
+		var length = s.Length;
+		var st = new Stack<char>(length + 1);
+		
+		st.Push(' ');
+		
+		for (var idx = 0; idx < length; ++idx)
+		{
+			var current = s[idx];
+			var top = st.Peek();
+				
+			if(validChars.ContainsKey(top))
+			{
+				var closeChar = validChars[top];
+				
+				if (current == closeChar)
+				{
+					 st.Pop();
+					 continue;
+				}
+			}
+			
+			st.Push(current);
+		}
 
-st.Push(' ');
-
-for (var idx = 0; idx < length; ++idx)
-{
-var current = s[idx];
-var top = st.Peek();
-
-if(validChars.ContainsKey(top))
-{
-var closeChar = validChars[top];
-
-if (current == closeChar)
-{
-st.Pop();
-continue;
-}
-}
-
-st.Push(current);
-}
-
-return st.Count == 1;
-}
+		return st.Count == 1;
+    }
 }
 ```
 

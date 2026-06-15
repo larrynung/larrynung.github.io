@@ -12,32 +12,32 @@ tags: [CSharp, CSharp 6.0]
 >
 ```c#
 ...
-var blog1 = new Dictionary()
+var blog1 = new Dictionary<string , string >()
 {
-{ "Name", "Level Up" },
-{ "Url", "http://larrynung.github.io/index.html" }
+    { "Name", "Level Up" },
+    { "Url", "http://larrynung.github.io/index.html" }
 };
 ...
 ```
 但並不是所有的情況下都可以用 Collection Initializer 來做 Index 的初始，所以在 C# 6.0 導入了 Index initializers，寫起來會像下面這樣，就像透過索引子塞值一般：
 ```c#
 ...
-var blog = new Dictionary()
+var blog = new Dictionary<string , string >()
 {
-[ "Name"] = "Level Up" ,
-[ "Url"] = "http://larrynung.github.io/index.html"
+    [ "Name"] = "Level Up" ,
+    [ "Url"] = "http://larrynung.github.io/index.html"
 };
 
 ...
 
 var larry = new Person()
 {
-Name = "Larry Nung",
-Blogs = new Blogs()
-{
-[ "Level Up 1"] = new Blog ("Level Up 1" , "http://www.dotblogs.com.tw/larrynung" ),
-[ "Level Up 2"] = new Blog ("Level Up 2" , "http://larrynung.github.io" )
-}
+    Name = "Larry Nung",
+    Blogs = new Blogs()
+    {
+        [ "Level Up 1"] = new Blog ("Level Up 1" , "http://www.dotblogs.com.tw/larrynung" ),
+        [ "Level Up 2"] = new Blog ("Level Up 2" , "http://larrynung.github.io" )
+     }
 };
 ...
 ```
@@ -50,72 +50,80 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+
 public class Program
 {
-static void Main(string[] args)
-{
-var larry = new Person()
-{
-Name = "Larry Nung",
-Blogs = new Blogs()
-{
-[ "Level Up 1"] = new Blog ("Level Up 1" , "http://www.dotblogs.com.tw/larrynung" ),
-[ "Level Up 2"] = new Blog ("Level Up 2" , "http://larrynung.github.io" )
-}
-};
-DumpPeron(larry);
+    static void Main(string[] args)
+    {
+        var larry = new Person()
+        {
+            Name = "Larry Nung",
+            Blogs = new Blogs()
+            {
+                [ "Level Up 1"] = new Blog ("Level Up 1" , "http://www.dotblogs.com.tw/larrynung" ),
+                [ "Level Up 2"] = new Blog ("Level Up 2" , "http://larrynung.github.io" )
+            }
+        };
+        DumpPeron(larry);
+    }
+
+
+    private static void DumpPeron( Person person)
+    {
+        Console.WriteLine(person.Name);
+
+
+        foreach ( Blog blog in person.Blogs)
+            Console.WriteLine(blog.Name + " (" + blog.Url + ")" );
+    }
 }
 
-private static void DumpPeron( Person person)
-{
-Console.WriteLine(person.Name);
-
-foreach ( Blog blog in person.Blogs)
-Console.WriteLine(blog.Name + " (" + blog.Url + ")" );
-}
-}
 
 class Person
 {
-public string Name { get; set; }
-public Blogs Blogs { get; set; }
+    public string Name { get; set; }
+    public Blogs Blogs { get; set; }
 }
 
-class Blogs : IEnumerable
-{
-private Dictionary m_Pool { get; set; } = new Dictionary();
 
-public Blog this[string name]
+class Blogs : IEnumerable <Blog >
 {
-get
-{
-return m_Pool[name];
-}
-set
-{
-m_Pool[name] = value;
-}
+    private Dictionary< string, Blog> m_Pool { get; set; } = new Dictionary<string , Blog>();
+
+
+    public Blog this[string name]
+    {
+        get
+        {
+            return m_Pool[name];
+        }
+        set
+        {
+            m_Pool[name] = value;
+        }
+    }
+
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+    public IEnumerator< Blog> GetEnumerator()
+    {
+        return (( IEnumerable<Blog >)m_Pool.Values).GetEnumerator();
+    }
 }
 
-IEnumerator IEnumerable.GetEnumerator()
-{
-return GetEnumerator();
-}
-public IEnumerator GetEnumerator()
-{
-return (( IEnumerable)m_Pool.Values).GetEnumerator();
-}
-}
 
 class Blog
 {
-public string Name { get; set; }
-public string Url { get; set; }
-public Blog(string name, string url)
-{
-this.Name = name;
-this.Url = url;
-}
+    public string Name { get; set; }
+    public string Url { get; set; }
+    public Blog(string name, string url)
+    {
+        this.Name = name;
+        this.Url = url;
+    }
 }
 ```
 運行結果如下：

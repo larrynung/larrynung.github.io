@@ -23,33 +23,34 @@ Input is guaranteed to be within the range from 1 to 3999.
 
 ```c#
 public class Solution {
-public int RomanToInt(string s) {
-var dict = new Dictionary()
-{
-{'I', 1},
-{'V', 5},
-{'X', 10},
-{'L', 50},
-{'C', 100},
-{'D', 500},
-{'M', 1000},
-};
+    public int RomanToInt(string s) {
+        var dict = new Dictionary<char, int>()
+		{
+			{'I', 1},
+			{'V', 5},
+			{'X', 10},
+			{'L', 50},
+			{'C', 100},
+			{'D', 500},
+			{'M', 1000},
+		};
 
-var ret = 0;
-var prev = -1;
-for(var idx = s.Length - 1; idx >= 0; --idx)
-{
-var current = dict[s[idx]];
+		var ret = 0;
+		var prev = -1;
+		for(var idx = s.Length - 1; idx >= 0; --idx)
+		{	
+			var current = dict[s[idx]];
+	
+			if(prev > current)
+				ret -= current;
+			else
+				ret += current;
 
-if(prev > current)
-ret -= current;
-else
-ret += current;
 
-prev  = current;
-}
-return ret;
-}
+			prev  = current;
+		}
+		return ret;
+    }
 }
 ```
 

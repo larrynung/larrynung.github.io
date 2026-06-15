@@ -33,26 +33,26 @@ gRPC Service 內建的 log 可透過 appsettings.json 控制 log 層級。
 
 ```c#
 ...
-public class Program
-{
-...
-public static IHostBuilder CreateHostBuilder(string[] args) =>
-Host.CreateDefaultBuilder(args)
-.ConfigureLogging(logging =>
-{
-logging.AddFilter("Grpc", LogLevel.Debug);
-})
-.ConfigureWebHostDefaults(webBuilder =>
-{
-webBuilder.ConfigureKestrel(options =>
-{
-// Setup a HTTP/2 endpoint without TLS.
-options.ListenLocalhost(5000, o => o.Protocols =
-HttpProtocols.Http2);
-});
-webBuilder.UseStartup();
-});
-}
+    public class Program
+    {
+        ...
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(logging =>
+                {
+                    logging.AddFilter("Grpc", LogLevel.Debug);
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        // Setup a HTTP/2 endpoint without TLS.
+                        options.ListenLocalhost(5000, o => o.Protocols =
+                            HttpProtocols.Http2);
+                    });
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
 ...
 ```
 

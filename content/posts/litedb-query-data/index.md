@@ -9,10 +9,10 @@ tags: [LiteDB]
 ...
 using (var db = new LiteDatabase(dbFile))
 {
-var collection = db.GetCollection(collectionName);
-...
-var collectionItems = collection.FindAll();
-...
+  var collection = db.GetCollection<T>(collectionName);
+  ...
+  var collectionItems = collection.FindAll();
+  ...
 }
 ```
 ```C#
@@ -20,39 +20,40 @@ using System;
 
 namespace LiteDB.Demo8
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons"); 
 
-foreach (var person in persons.FindAll())
-{
-Console.WriteLine(person.NickName);
-}
-}
-}
+                foreach (var person in persons.FindAll())
+                {
+                    Console.WriteLine(person.NickName);
+                }
+            }
+        }
+    }
+
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
-}
 ```
 要找尋滿足特定條件的資料的話，可以調用 Collection.Find 方法，並用 Lambda 帶入要過濾的條件。
 ```C#
 ...
 using (var db = new LiteDatabase(dbFile))
-{
-var collection = db.GetCollection(collectionName);
-...
-var collectionItems = collection.Find(item => filter(item));
-...
+{ 
+  var collection = db.GetCollection<T>(collectionName);
+  ...
+  var collectionItems = collection.Find(item => filter(item));
+  ...
 }
 ```
 ```C#
@@ -60,18 +61,39 @@ using System;
 
 namespace LiteDB.Demo8
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons"); 
 
-foreach (var person in persons.Find(item => item.ID (collectionName);
+                foreach (var person in persons.Find(item => item.ID < 10))
+                {
+                    Console.WriteLine(person.NickName);
+                }
+            }
+        }
+    }
+
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
+}
+```
+如果要過濾的資料只有單筆的話，可以調用 Collection.FindOne 方法。
+```C#
 ...
-var collectionItem = collection.FindOne(item => filter(item));
-...
+using (var db = new LiteDatabase(dbFile))
+{ 
+  var collection = db.GetCollection<T>(collectionName);
+  ...
+  var collectionItem = collection.FindOne(item => filter(item));
+  ...
 }
 ```
 ```C#
@@ -79,37 +101,37 @@ using System;
 
 namespace LiteDB.Demo8
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons"); 
 
-var larry = persons.FindOne(item => item.ID == 1);
-Console.WriteLine(larry.NickName);
-}
-}
-}
+                var larry = persons.FindOne(item => item.ID == 1);
+                Console.WriteLine(larry.NickName);
+            }
+        }
+    }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 ```
 要過濾出指定索引資料的話，可帶入要抓取資料的索引值去調用 Collection.FindById。
 ```C#
 ...
-using (var db = new LiteDatabase(dbFile))
-{
-var collection = db.GetCollection(collectionName);
-...
-var collectionItem = collection.FindById(itemIdx);
-...
+using (var db = new LiteDatabase(dbFile)) 
+{ 
+  var collection = db.GetCollection<T>(collectionName); 
+  ...
+  var collectionItem = collection.FindById(itemIdx);
+  ...
 }
 ```
 ```C#
@@ -117,25 +139,25 @@ using System;
 
 namespace LiteDB.Demo8
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons"); 
 
-var larry = persons.FindById(1);
-Console.WriteLine(larry.NickName);
-}
-}
-}
+                var larry = persons.FindById(1);
+                Console.WriteLine(larry.NickName);
+            }
+        }
+    }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 ```

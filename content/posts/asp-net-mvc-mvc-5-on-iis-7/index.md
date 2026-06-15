@@ -11,9 +11,12 @@ tags: [ASP.NET MVC]
 這邊可以在 Web.Config 的 modules 這邊加上 `runAllManagedModulesForAllRequests="true"` 設定，並為網站加上 `UrlRoutingModule-4.0` 模組。
 ```html
 ...
-
-...
-
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      ...
+      <remove name="UrlRoutingModule-4.0"></remove>
+      <add name="UrlRoutingModule-4.0" type="System.Web.Routing.UrlRoutingModule" preCondition=""></add>
+    </modules>
 ...
 ```
 沒意外的話就會運作正常了。

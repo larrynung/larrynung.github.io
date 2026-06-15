@@ -57,36 +57,36 @@ AppBar({Key key, Widget leading, bool automaticallyImplyLeading: true, Widget ti
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new DefaultTabController(
-length: 2,
-child: new Scaffold(
-appBar: new AppBar(
-leading: new IconButton(
-icon: const Icon(Icons.arrow_back),
-onPressed: () {},
-),
-title: new Text('Welcome to Flutter'),
-actions: [
-new IconButton(
-icon: new Icon(Icons.add),
-),
-],
-bottom: new TabBar(
-tabs: [
-new Tab(icon: new Icon(Icons.home)),
-new Tab(icon: new Icon(Icons.favorite)),
-],
-),
-),
-body: new TabBarView(
-children: [
-new Icon(Icons.directions_car),
-new Icon(Icons.directions_transit)
-],
-),
-))));
-}
+  runApp(new MaterialApp(
+      home: new DefaultTabController(
+          length: 2,
+          child: new Scaffold(
+            appBar: new AppBar(
+              leading: new IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {},
+              ),
+              title: new Text('Welcome to Flutter'),
+              actions: <Widget>[
+                new IconButton(
+                  icon: new Icon(Icons.add),
+                ),
+              ],
+              bottom: new TabBar(
+                tabs: [
+                  new Tab(icon: new Icon(Icons.home)),
+                  new Tab(icon: new Icon(Icons.favorite)),
+                ],
+              ),
+            ),
+            body: new TabBarView(
+              children: [
+                new Icon(Icons.directions_car),
+                new Icon(Icons.directions_transit)
+              ],
+            ),
+          ))));
+} 
 ```
 ![2.png](2.png)
 

@@ -49,22 +49,22 @@ Column({Key key, MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start, M
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(
-new Container(
-child: new Column(
-mainAxisSize: MainAxisSize.min,
-mainAxisAlignment: MainAxisAlignment.center,
-children: [
-new Text('Hello, world!', textDirection: TextDirection.ltr),
-new Container(
-color: Colors.blue,
-width: 48.0,
-height: 48.0
-)
-],
-)
-),
-);
+  runApp(
+    new Container(
+        child: new Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text('Hello, world!', textDirection: TextDirection.ltr),
+            new Container(
+              color: Colors.blue,
+              width: 48.0,
+              height: 48.0
+            )
+          ],
+        )
+      ),
+  );
 }
 ```
 ![1.png](1.png)

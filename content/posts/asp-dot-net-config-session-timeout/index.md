@@ -9,7 +9,11 @@ ASP.Net Website 若未做任何的設定，預設的 Timeout 時間為 20 分鐘
 若有調整的需要，可開啟 Web.config ， 在 system.web element 內加入 sessionState tag ，並指定 timeout 的值。像是下面這樣：
 
 ```xml
-
+<configuration>
+    <system.web>
+        <sessionState mode="InProc" cookieless="true" timeout="１" /> 
+    </system.web>
+</configuration>
 ```
 
 timeout 值的設定以分鐘為單位，最大上限值為 525,600 分鐘 (1 年) 。

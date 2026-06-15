@@ -7,13 +7,16 @@ description: "JQuery UI - Datepicker Widget"
 要使用 JQuery UI 的 Datepicker Widget，首先必須引用 JQuery、JQueryUI。  
 
 ```html
-
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jqueryui/style.css">
 ```
 
 接著在畫面上放入一個 input element。  
 
 ```html
-Date：
+<p>Date：<input type="text" id="datepicker"></p>
 ```
 
 在 Javascript 中用 JQuery 找到該 input element，並叫用 datapicker 方法即可將該 input element 設為 Datepicker。  
@@ -60,7 +63,14 @@ Date：
 最後這邊附上測試用的範例：  
 
 ```html
-
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <script>
   $(function() {
     $("#datepicker").datepicker(
     {
@@ -76,11 +86,16 @@ Date：
     	$("#datepicker").datepicker('show');
     });
   });
+  </script>
+</head>
+<body>
+ 
+<p>Date：<input type="text" id="datepicker"></p>
 
-Date：
-
-Open
-
+<button id="open">Open</button>
+ 
+</body>
+</html>			
 ```
 
 Link

@@ -15,24 +15,102 @@ tags: [T4, CSharp]
 
 然後將其程式碼替換成下面這樣。
 ```c#
-
+<#@ template debug ="true" hostspecific="True" language= "C#" #>
+<#@ assembly name ="EnvDTE" #>
+<#@ assembly name ="System.Core.dll" #>
+<#@ assembly name ="System.Configuration" #>
+<#@ assembly name ="System.Xml" #>
+<#@ import namespace ="System.Collections.Generic" #>
+<#@ import namespace ="System.Configuration" #>
+<#@ import namespace ="EnvDTE" #>
+<#@ import namespace ="System.Xml" #>
+<#@ output extension =".cs" #>
 using System.Configuration;
 
-namespace
-{
-public class ConnectionStrings
-{
 
-public static string
+namespace <#=GetDefaultNamespace()#>
 {
-get
-{
-return ConfigurationManager.ConnectionStrings["  "].ConnectionString;
-}
+    public class ConnectionStrings
+    {
+<#
+        var configFile = new ExeConfigurationFileMap();
+       configFile.ExeConfigFilename = GetConfigPath();
+        var config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFile, ConfigurationUserLevel.None);
+        var connectionStrings = config.ConnectionStrings.ConnectionStrings;
+        foreach (ConnectionStringSettings connectionString in connectionStrings)
+       {
+#>
+           public static string <#= connectionString.Name#>
+           {
+              get
+              {
+                     return ConfigurationManager.ConnectionStrings[" <#= connectionString.Name#> "].ConnectionString;
+              }
+           }
+<#
+  }
+#>
+    }
 }
 
+
+<#+
+private string GetDefaultNamespace()
+{
+        var project = GetCurrentProject();
+        return project.Properties.Item("DefaultNamespace").Value.ToString();
 }
+private EnvDTE.Project GetCurrentProject()
+{
+        var hostServiceProvider = (IServiceProvider)this.Host;
+       
+        if (hostServiceProvider == null)
+           throw new Exception("Host property returned unexpected value (null)");
+       
+       EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof (EnvDTE.DTE));
+        if (dte == null )
+           throw new Exception("Unable to retrieve EnvDTE.DTE");
+       
+       Array activeSolutionProjects = (Array)dte.ActiveSolutionProjects;
+        if (activeSolutionProjects == null)
+           throw new Exception("DTE.ActiveSolutionProjects returned null");
+       
+       EnvDTE.Project dteProject = (EnvDTE.Project)activeSolutionProjects.GetValue(0);
+        if (dteProject == null )
+           throw new Exception("DTE.ActiveSolutionProjects[0] returned null");
+       
+        return dteProject;
 }
+
+
+private string GetProjectPath()
+ {
+       EnvDTE.Project project = GetCurrentProject();
+    System.IO.FileInfo info = new System.IO.FileInfo(project.FullName);
+    return info.Directory.FullName;
+}
+
+
+private string GetConfigPath()
+{
+       EnvDTE.Project project = GetCurrentProject();
+    foreach (EnvDTE.ProjectItem item in project.ProjectItems)
+    {
+               // if it is the app.config file, then open it up
+        if (string .Compare(item.Name, "App.config", true ) == 0)
+        {
+            return GetProjectPath() + "\\" + item.Name;
+        }
+       
+        // if it is the web.config file, then open it up
+        if (string .Compare(item.Name, "Web.config", true ) == 0)
+        {
+            return GetProjectPath() + "\\" + item.Name;
+        }
+    }
+    return "" ;
+}
+#>
 ```
 存檔運行，沒意外的話應該可以看到對應的強型別物件被產生了出來。
 

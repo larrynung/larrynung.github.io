@@ -8,17 +8,27 @@ Vue.js 的 .lazy modifier 可以讓繫結的資料在資料改變後才進行同
 
 像是下面這樣的程式：
 ```html
-
-Vue - Hello World
-
-{{message}}
-
-new Vue({
-el: '#app',
-data:{
-message: "Hello World"
-}
-})
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model.lazy="message">
+    <p>{{message}}</p>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        message: "Hello World"
+      }      
+    })
+  </script>
+</body>
+</html>
 ```
 運行起來會像下面這樣，資料在輸入時並不會被同步。
 

@@ -46,7 +46,22 @@ var value2 = value;
 }
 static long DoTest(int count, Action action) {
 var sw = Stopwatch.StartNew();
-for (int i = 0; i  {
+for (int i = 0; i < count; ++i) action();
+return sw.ElapsedMilliseconds;
+}
+}
+```
+![3.png](/images/posts/BoxingUnBoxing/3.png)
+
+到這邊你可能會說，其實我很少宣告成 Object，也不會這樣塞值。但真的是這樣嗎？看看以下例子：
+```c#
+using System;
+using System.Diagnostics;
+internal class Program {
+private static void Main(string[] args) {
+var count = 1000000000;
+Console.WriteLine("Boxing: {0} ms",
+DoTest(count, () => {
 var value = 123;
 var value2 = string.Format("{0}", value);
 }));

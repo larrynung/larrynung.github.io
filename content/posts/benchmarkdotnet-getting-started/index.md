@@ -29,14 +29,14 @@ m_Program.Test();
 ```
 benchmark 程式寫好後撰寫 benchmark 運行的部份，只要透過 BenchmarkRunner.Run 帶入 benchmark 類別就可以了。
 ```c#
-using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Running; 
 …
-public class Program {
-static void Main(string[] args) {
-var summary = BenchmarkRunner.Run();
-}
-public void Test() {… }
-}
+  public class Program { 
+    static void Main(string[] args) { 
+      var summary = BenchmarkRunner.Run<ProgramBenchmarker>(); 
+    } 
+    public void Test() {… } 
+  } 
 …
 }
 ```
@@ -47,27 +47,27 @@ using BenchmarkDotNet.Running;
 
 namespace ConsoleApplication2
 {
-public class Program
-{
-static void Main(string[] args)
-{
-var summary = BenchmarkRunner.Run();
-}
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var summary = BenchmarkRunner.Run<ProgramBenchmarker>();
+        }
 
-public void Test()
-{
-}
-}
-public class ProgramBenchmarker
-{
-protected Program m_Program { get; set; } = new Program();
+        public void Test()
+        {
+        }
+    }
+    public class ProgramBenchmarker
+    {
+        protected Program m_Program { get; set; } = new Program();
 
-[Benchmark]
-public void Test()
-{
-m_Program.Test();
-}
-}
+        [Benchmark]
+        public void Test()
+        {
+            m_Program.Test();
+        }
+    }
 }
 ```
 運行結果如下：

@@ -24,9 +24,7 @@ const $ = cheerio.load(html)
 ```js
 
 const cheerio = require('cheerio');
-const $ = cheerio.load('
-## Hello world
-')
+const $ = cheerio.load('<h2 class="title">Hello world</h2>')
 
 console.log($('h2').text());
 ```
@@ -35,9 +33,7 @@ console.log($('h2').text());
 使用起來跟在一般網頁上用 jQuery 是差不多的。更多操作可參閱 [cheeriojs/cheerio: Fast, flexible, and lean implementation of core jQuery designed specifically for the server.](https://github.com/cheeriojs/cheerio) 這邊。
 ```js
 const cheerio = require('cheerio');
-const $ = cheerio.load('
-## Hello world
-')
+const $ = cheerio.load('<div class="title"><h2>Hello world</h2></div>')
 
 console.log($('.title').html());
 console.log($('h2').text());

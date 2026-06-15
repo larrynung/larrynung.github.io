@@ -20,15 +20,15 @@ END;
 因此要像下面這樣將宣告與初始拆開處理。
 
 ```psql
-DECLARE
-v_str VARCHAR2(30);
-BEGIN
->
-BEGIN
-v_str := util_pck.get_company_name(inId => 47);
-EXCEPTION
-WHEN VALUE_ERROR THEN
-...
-END init;
+DECLARE 
+	 v_str VARCHAR2(30); 
+BEGIN 
+	<<init>> 
+	BEGIN 
+		v_str := util_pck.get_company_name(inId => 47); 
+	EXCEPTION 
+		WHEN VALUE_ERROR THEN 
+			...
+	END init; 
 END;
 ```

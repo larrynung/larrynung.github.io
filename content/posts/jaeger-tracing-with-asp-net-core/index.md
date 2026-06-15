@@ -6,36 +6,41 @@ tags: [Jaeger]
 
 要使用 Jaeger 追蹤 ASP.NET Core 的程式，可先加入 Jaeger 與 OpenTracing.Contrib.NetCore 套件。
 ```xml
-
-...
-
-...
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    ...
+    <ItemGroup>
+      <PackageReference Include="Jaeger" Version="0.3.6" />
+      <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.6.2" />
+    </ItemGroup>
+    ...
+</Project>
 ```
 ![1.png](1.png)
 
 修改 Startup.ConfigureServices 啟用。
 ```c#
 ...
-public class Startup
-{
-...
-public void ConfigureServices(IServiceCollection services)
-{
-...
-services.AddOpenTracing();
+    public class Startup
+    {
+        ...
+        public void ConfigureServices(IServiceCollection services)
+        {
+            ...
+            services.AddOpenTracing();
+            
+            var serviceName = AppDomain.CurrentDomain.FriendlyName;
+            var tracer = new Tracer.Builder(serviceName)
+                .WithSampler(new ConstSampler(true))
+                .Build();
 
-var serviceName = AppDomain.CurrentDomain.FriendlyName;
-var tracer = new Tracer.Builder(serviceName)
-.WithSampler(new ConstSampler(true))
-.Build();
 
-GlobalTracer.Register(tracer);
+            GlobalTracer.Register(tracer);
 
-services.AddSingleton(tracer);
-...
-}
-...
-}
+            services.AddSingleton<ITracer>(tracer);
+	    ...
+        }
+	...
+    }
 ...
 ```
 到這邊程式 Controller 的 Action 已經會送到 Jaeger 可被 Tracing 了。
@@ -43,23 +48,23 @@ services.AddSingleton(tracer);
 若要增加額外的 Tracing 的資訊，可透過 DI 或是 GlobalTracer.Instance 取得 Tracer，有了 Tracer 就可以建立 Span，或是用 ActiveSpan 取得當前的 Span，並透過 Span 加上 Tag 或 Log。
 ```c#
 ...
-[HttpGet]
-public IEnumerable Get()
-{
-var tracer = GlobalTracer.Instance;
-var span = tracer.ActiveSpan;
-span.Log("Start");
+       [HttpGet]
+        public IEnumerable<WeatherForecast> Get()
+        {
+            var tracer = GlobalTracer.Instance;
+            var span = tracer.ActiveSpan;
+            span.Log("Start");
 
-...
+            ...
 
-span.Log(Environment.GetEnvironmentVariables()
-.OfType()
-.ToDictionary(item => item.Key.ToString(), item => item.Value));
+            span.Log(Environment.GetEnvironmentVariables()
+                .OfType<DictionaryEntry>()
+                .ToDictionary(item => item.Key.ToString(), item => item.Value));
 
-span.Log("End");
+            span.Log("End");
 
-return data;
-}
+            return data;
+        }
 ...
 ```
 ![2.png](2.png)

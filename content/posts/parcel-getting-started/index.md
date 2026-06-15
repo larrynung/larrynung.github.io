@@ -22,6 +22,11 @@ npm install -g parcel-bundler
 
 Index.html 檔案內容為：
 ```html
+<html>
+<body>
+  <script src="./index.js"></script>
+</body>
+</html>
 ```
 Index.js 檔案內容為：
 ```js

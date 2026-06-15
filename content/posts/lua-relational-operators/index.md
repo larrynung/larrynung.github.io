@@ -17,8 +17,10 @@ Lua 的 Relational operators 有 ==、~=、、=，這些運算符可用來處理
 ```Lua
 print(1 == 2)
 print(1 ~= 2)
-print(1  2)
-print(1 = 2)
+print(1 < 2)
+print(1 > 2)
+print(1 <= 2)
+print(1 >= 2)
 ```
 ![1.png](1.png)
 

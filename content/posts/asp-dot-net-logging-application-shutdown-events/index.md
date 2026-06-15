@@ -48,15 +48,15 @@ m_Logger.Info (string. Format(" {0}{1}{2}", message, Environment .NewLine, stack
 使用時只要在 Application_End 中呼叫即可：
 
 ```c#
-///
-/// Application_s the end.
-///
-protected void Application_End()
-{
-m_Logger.Info ("Application End...");
+        /// <summary>
+        /// Application_s the end.
+        /// </summary>
+        protected void Application_End()
+        {
+            m_Logger.Info ("Application End...");
 
-LogShutDownInfo();
-}
+            LogShutDownInfo();
+        }
 ...
 ```
 

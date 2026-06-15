@@ -10,10 +10,10 @@ GitLab Runner 設定好後，可以開始使用 GitLab CI 來建置我們的專�
 
 ```yml
 stages:
-- build
+    - build
 job:
-stage: build
-script: '"C:\Windows\Microsoft.NET\Framework644.0.30319\msbuild.exe" "Project.sln"'
+    stage: build
+    script: '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" "Project.sln"'
 ```
 
 因為筆者已經有現成的批次檔，所以設定檔這邊只是很單純的調用批次檔。

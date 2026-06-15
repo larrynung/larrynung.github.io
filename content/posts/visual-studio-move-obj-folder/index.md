@@ -9,15 +9,14 @@ Visual Studio 的專案在建置 .NET 專案時會自動建立 Obj 目錄放置�
 如果想要調整該目錄位置，可設定 Project 檔案，在欲生效的 PropertyGroup 中加入 BaseIntermediateOutputPath 元素去指定位置。
 
 ```XML
-...
-
-...
-..\..\Obj
-
-...
+  ...
+  <PropertyGroup>
+    ...
+    <BaseIntermediateOutputPath>..\..\Obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  ...
+```
 
 ![1.png](1.png)
-
-```
 
 Link

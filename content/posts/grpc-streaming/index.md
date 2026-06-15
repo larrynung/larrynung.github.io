@@ -52,10 +52,10 @@ await stream.ForEachAsync(item => ...);
 ```
 抑或是直接透過 ToListAsync() 取得全部資料。
 ```c#
-using Grpc.Core;
+using Grpc.Core;                           
 using Grpc.Core.Utils;
 ...
-var data = await stream.ToListAsync();
+var data = await stream.ToListAsync<...>();
 ...
 ```
 所以假設我們有個 proto 如下:
@@ -91,28 +91,28 @@ using Grpc.Core;
 
 namespace GrpcService_CSharp1
 {
-public class GreeterService : Greeter.GreeterBase
-{
-public override async Task SayHellos(IAsyncStreamReader requestStream, IServerStreamWriter responseStream, ServerCallContext context)
-{
-while (await requestStream.MoveNext())
-{
-var request = requestStream.Current;
-await responseStream.WriteAsync(new HelloReply
-{
-Message = "Hello " + request.Name
-};
-}
-}
+    public class GreeterService : Greeter.GreeterBase
+    {
+        public override async Task SayHellos(IAsyncStreamReader<HelloRequest> requestStream, IServerStreamWriter<HelloReply> responseStream, ServerCallContext context)
+        {
+            while (await requestStream.MoveNext())
+            {
+                var request = requestStream.Current;
+                await responseStream.WriteAsync(new HelloReply
+                {
+                    Message = "Hello " + request.Name
+                };
+            }
+        }
 
-public override Task SayHello(HelloRequest request, ServerCallContext context)
-{
-return Task.FromResult(new HelloReply
-{
-Message = "Hello " + request.Name
-});
-}
-}
+        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new HelloReply
+            {
+                Message = "Hello " + request.Name
+            });
+        }
+    }
 }
 ```
 ![2.png](2.png)

@@ -8,21 +8,29 @@ Radio 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性，
 
 像是下面這樣的程式：
 ```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="radio" value="Male" v-model="sex">Male<br/>
+    <input type="radio" value="Female" v-model="sex">Female<br/>
+    {{ sex }}
+  </div>
 
-Vue - Hello World
-
-Male
-
-Female
-
-{{ sex }}
-
-new Vue({
-el: '#app',
-data:{
-sex: "Male"
-}
-})
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        sex: "Male"
+      }      
+    })
+  </script>
+</body>
+</html>
 ```
 其運行結果如下：
 

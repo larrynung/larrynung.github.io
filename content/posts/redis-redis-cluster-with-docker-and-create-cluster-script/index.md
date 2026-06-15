@@ -23,7 +23,17 @@ HOSTS=""
 ENDPORT=$((PORT+NODES))
 CURRENTPORT=$PORT
 
-while [ $((CURRENTPORT
+while [ $((CURRENTPORT < ENDPORT)) != "0" ]; do
+echo "Starting $CURRENTPORT"
+
+redis-server --port $CURRENTPORT --cluster-enabled yes --cluster-config-file nodes-${CURRENTPORT}.conf --logfile ${CURRENTPORT}.log --daemonize yes
+
+HOSTS="$HOSTS $CLUSTER_HOST:$CURRENTPORT"
+CURRENTPORT=$((CURRENTPORT+1))
+done
+echo "yes"| redis-cli --cluster create $HOSTS --cluster-replicas $REPLICAS
+```
+![1.png](1.png)
 
 Docker-Compose 檔這邊記得將 create-cluster 掛入，透過環境變數指定 Host 與 Port，開通容器的 Port，並設定容器啟動時運行 create-cluster 腳本。
 ```

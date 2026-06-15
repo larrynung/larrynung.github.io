@@ -20,17 +20,17 @@ System.IO.IOException: Failed to bind to address https://localhost:5001.
 ```c#
 ...
 public static IHostBuilder CreateHostBuilder(string[] args) =>
-Host.CreateDefaultBuilder(args)
-.ConfigureWebHostDefaults(webBuilder =>
-{
-webBuilder.ConfigureKestrel(options =>
-{
-// Setup a HTTP/2 endpoint without TLS.
-options.ListenLocalhost(5000, o => o.Protocols =
-HttpProtocols.Http2);
-});
-webBuilder.UseStartup();
-});
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.ConfigureKestrel(options =>
+            {
+                // Setup a HTTP/2 endpoint without TLS.
+                options.ListenLocalhost(5000, o => o.Protocols =
+                    HttpProtocols.Http2);
+            });
+            webBuilder.UseStartup<Startup>();
+        });
 ...
 ```
 

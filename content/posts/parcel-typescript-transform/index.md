@@ -8,6 +8,11 @@ Parcel 支援 TypeScript 的轉換。
 
 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面引用了 index.ts。
 ```html
+<html>
+<body>
+  <script src="./index.ts"></script>
+</body>
+</html>
 ```
 ![1.png](1.png)
 

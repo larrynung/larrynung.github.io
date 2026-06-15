@@ -12,11 +12,11 @@ tags: [Web API]
 ```c#
 public static class HttpRequestMessageExtensions
 {
-public static bool IsLocal(this HttpRequestMessage request)
-{
-var localFlag = request.Properties["MS_IsLocal"] as Lazy;
-return localFlag != null && localFlag.Value;
-}
+   public static bool IsLocal(this HttpRequestMessage request)
+   {
+      var localFlag = request.Properties["MS_IsLocal"] as Lazy<bool>;
+      return localFlag != null && localFlag.Value;
+   }
 }
 ```
 

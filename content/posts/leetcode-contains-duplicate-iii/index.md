@@ -15,28 +15,34 @@ Given an array of integers, find out whether there are two distinct indices i an
 
 ```c#
 public class Solution {
-public bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-var length = nums.Length;
-var dict = new Dictionary(k);
-for(var idx = 0; idx  k) dict.Remove(idx - k -1);
-var num = nums[idx];
-
-if(dict.Count > 0)
-{
-var greater = dict.Where(item => item.Value >= num).Take(1).ToArray();
-if(greater.Any()){
-var diff = greater[0].Value - num;
-if(diff  num >= item.Value).Take(1).ToArray();
-if(smaller.Any()){
-var diff = num - smaller[0].Value;
-if(diff <= t)
-return true;
-}
-}
-dict[idx] = num;
-}
-return false;
-}
+	    public bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        var length = nums.Length;
+        var dict = new Dictionary<int, long>(k);
+        for(var idx = 0; idx < length; ++idx)
+        {
+            if(idx > k) dict.Remove(idx - k -1);
+            var num = nums[idx];
+            
+            if(dict.Count > 0)
+            {
+                var greater = dict.Where(item => item.Value >= num).Take(1).ToArray();
+                if(greater.Any()){
+                    var diff = greater[0].Value - num;
+                    if(diff <= t)
+                        return true;
+                }
+                
+                var smaller = dict.Where(item => num >= item.Value).Take(1).ToArray();
+                if(smaller.Any()){
+                    var diff = num - smaller[0].Value;
+                    if(diff <= t)
+                        return true;
+                }
+            }
+            dict[idx] = num;
+        }
+        return false;
+    }
 }
 ```
 

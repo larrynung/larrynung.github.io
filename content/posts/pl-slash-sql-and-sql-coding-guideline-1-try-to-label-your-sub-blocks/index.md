@@ -25,12 +25,12 @@ End;
 ```psql
 SET SERVEROUTPUT ON
 Begin
-DBMS_OUTPUT.put_line('Start');
-
-Begin
-DBMS_OUTPUT.put_line('Processing...');
-End Processing;
-DBMS_OUTPUT.put_line('End');
+    DBMS_OUTPUT.put_line('Start');
+    <<Processing>>
+    Begin 
+        DBMS_OUTPUT.put_line('Processing...');
+    End Processing;
+    DBMS_OUTPUT.put_line('End');
 End;
 ```
 

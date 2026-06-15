@@ -30,7 +30,7 @@ var json = JSON.Serialize(larry);
 解序列化時，可將 JSON 字串帶入 JSON.Deserialize，並利用範型指定所要解回的物件型態即可。
 ```c#
 ...
-larry = JSON.Deserialize(json);
+larry = JSON.Deserialize<Person>(json);
 ...
 ```
 此外，它也支援動態解析的能力，使用上只要將 JSON 字串帶入 JSON.DeserializeDynamic 即會回傳 Dynamic 物件。
@@ -46,36 +46,38 @@ using System;
 
 namespace ConsoleApplication5
 {
-class Program
-{
-static void Main(string[] args)
-{
-var larry = new Person
-{
-Name = "Larry Nung",
-NickName = "Larry"
-};
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var larry = new Person
+            {
+                Name = "Larry Nung",
+                NickName = "Larry"
+            };
 
-var json = JSON.Serialize(larry);
+            var json = JSON.Serialize(larry);
 
-Console.WriteLine(json);
+            Console.WriteLine(json);
 
-larry = JSON.Deserialize(json);
 
-Console.WriteLine("{0} ({1})", larry.Name, larry.NickName);
+            larry = JSON.Deserialize<Person>(json);
 
-var person = JSON.DeserializeDynamic(json);
+            Console.WriteLine("{0} ({1})", larry.Name, larry.NickName);
 
-Console.WriteLine("{0} ({1})", person.Name, person["NickName"]);
-}
-}
+          
+            var person = JSON.DeserializeDynamic(json);
 
-public class Person
-{
-public String Name { get; set; }
+            Console.WriteLine("{0} ({1})", person.Name, person["NickName"]);
+        }
+    }
 
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public String Name { get; set; }
+
+        public String NickName { get; set; }
+    }
 }
 ```
 ![7.png](/images/posts/Jil/7.png)
@@ -115,14 +117,54 @@ var json = JSON.Serialize(Larry);
 static long DoTest(int count, Action action)
 {
 var sw = Stopwatch.StartNew();
-for (int i = 0; i
+for (int i = 0; i < count; ++i) action();
+return sw.ElapsedMilliseconds;
+}
+}
+
+public class Person
 {
-var person = JsonConvert.DeserializeObject(json);
+public String Name { get; set; }
+
+public String NickName { get; set; }
+}
+}
+```
+![8.png](/images/posts/Jil/8.png)
+
+![9.png](/images/posts/Jil/9.png)
+
+接著看一下解列化時的效能比較：
+```c#
+using Jil;
+using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.IO;
+
+namespace ConsoleApplication5
+{
+class Program
+{
+static void Main(string[] args)
+{
+Person Larry = new Person
+{
+Name = "Larry Nung",
+NickName = "蹂躪"
+};
+
+var json = JsonConvert.SerializeObject(Larry);
+var count = 1000000;
+
+Console.WriteLine("Newtonsoft: {0} ms", DoTest(count, () =>
+{
+var person = JsonConvert.DeserializeObject<Person>(json);
 }));
 
 Console.WriteLine("Jil: {0} ms", DoTest(count, () =>
 {
-var person = JSON.Deserialize(json);
+var person = JSON.Deserialize<Person>(json);
 }));
 }
 

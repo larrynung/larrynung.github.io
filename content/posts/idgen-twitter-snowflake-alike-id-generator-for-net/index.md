@@ -56,6 +56,20 @@ var generator = IdGenerator.CreateThreadSpecificGenerator();
 ```
 最後一種建構方式是透過 Config 建構，可在 Config 檔先做好設定。
 ```xml
+<configuration>
+  <configSections>
+    <section name="idGenSection" type="IdGen.Configuration.IdGeneratorsSection, IdGen" />
+  </configSections>
+
+  <idGenSection>
+    <idGenerators>
+      <idGenerator name="foo" id="123"  epoch="2016-01-02T12:34:56" timestampBits="39" generatorIdBits="11" sequenceBits="13" />
+      <idGenerator name="bar" id="987"  epoch="2016-02-01 01:23:00:45" timestampBits="20" generatorIdBits="21" sequenceBits="22" />
+      <idGenerator name="baz" id="2047" epoch="2016-02-29"          timestampBits="21" generatorIdBits="21" sequenceBits="21" />
+    </idGenerators>
+  </idGenSection>
+
+</configuration>
 ```
 然後調用 GetFromConfig，帶入 Generator 的名稱。
 ```c#

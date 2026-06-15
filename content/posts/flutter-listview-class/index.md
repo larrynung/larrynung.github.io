@@ -53,21 +53,21 @@ ListView.custom({Key key, Axis scrollDirection: Axis.vertical, bool reverse: fal
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new ListView(
-padding: const EdgeInsets.all(20.0),
-children: [
-new Card(
-child: const Text('1. one')
-),
-new Card(
-child: const Text('2. two')
-),
-new Card(
-child: const Text('3. three')
-)
-],
-)));
+  runApp(new MaterialApp(
+      home: new ListView(
+    padding: const EdgeInsets.all(20.0),
+    children: <Widget>[
+      new Card(
+        child: const Text('1. one')
+      ),
+      new Card(
+        child: const Text('2. two')
+      ),
+      new Card(
+        child: const Text('3. three')
+      )
+    ],
+  )));
 }
 ```
 ![1.png](1.png)

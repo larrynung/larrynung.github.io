@@ -32,8 +32,8 @@ bower install instantclick
 
 下載下來後放置專案中像下面這樣調用即可。
 ```js
-
-InstantClick.init();
+<script type="text/javascript" src= "js/instantclick.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
 ```
 最後提醒一下，InstantClick 的預載行為可能會造成其它套件的異常，可能要自行視情況修正將問題排除。
 

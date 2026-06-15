@@ -32,9 +32,25 @@ lvTable.ItemsSource = dt.DefaultView;
 ```
 那麼 XAML 這邊就會是像這個樣子
 ```xml
+<ListView x :Name="lvTable" Margin="0">
+  <ListView.View>
+    <GridView>
+      <GridViewColumn Header ="Key" DisplayMemberBinding ="{Binding Key}"/>
+      <GridViewColumn Header ="Value" DisplayMemberBinding="{Binding Value}"/>
+    </GridView>
+  </ListView.View>
+</ListView>
 ```
 你也可以像下面這樣稍微包裝一下，將 ListView 的 ItemSource 與 DefaultView 繫結...
 ```xml
+<ListView x :Name="lvTable" Margin="0" ItemsSource="{Binding DefaultView}">
+  <ListView.View>
+    <GridView>
+      <GridViewColumn Header ="Key" DisplayMemberBinding ="{Binding Key}"/>
+      <GridViewColumn Header ="Value" DisplayMemberBinding="{Binding Value}"/>
+    </GridView>
+  </ListView.View>
+</ListView>
 ```
 這樣在 Binding 時只要直接塞 DataTable 給 ListView 就好了...
 

@@ -8,9 +8,12 @@ tags: [Parcel]
 
 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面載入了 profile.jpg 且連結了 hello.html 頁面。
 ```html
-
-![](./images/profile.jpg)
-[Say Hello](./hello.html)
+<html>
+    <body>
+      <img src="./images/profile.jpg">
+      <a href="./hello.html">Say Hello</a>
+    </body>
+</html>
 ```
 ![1.png](1.png)
 
@@ -20,8 +23,12 @@ profile.jpg 是很單純的大頭照。
 
 hello.html 內引用了 hello.js 並輸出 Hello World 字樣。
 ```html
-
-Hello World
+<html>
+    <body>
+      <script src="./scripts/hello.js"></script>
+      Hello World
+    </body>
+</html>
 ```
 ![3.png](3.png)
 

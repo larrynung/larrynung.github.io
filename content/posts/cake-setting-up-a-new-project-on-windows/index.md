@@ -34,7 +34,7 @@ RunTarget(target);
 
 ./build.ps1
 
-{% asset_img 4.png%}
+![4.png](4.png)
 
 Link
 ----

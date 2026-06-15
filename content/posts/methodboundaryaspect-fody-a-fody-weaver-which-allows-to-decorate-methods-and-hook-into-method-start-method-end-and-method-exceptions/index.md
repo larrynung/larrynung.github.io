@@ -8,14 +8,30 @@ MethodBoundaryAspect.Fody 能透過 Fody 在程式編譯時將進出方法與方
 
 使用時需先引用 MethodBoundaryAspect.Fody 套件。
 ```xml
+<Project Sdk="Microsoft.NET.Sdk">
 
-Exe
-netcoreapp2.2
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.113" />
+    </ItemGroup>
+
+
+</Project>
 ```
 ![1.png](1.png)
 
 然後加入 FodyWeavers.xml 檔，指示 Fody 要使用 MethodBoundaryAspect。
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FodyWeavers.xsd">
+  <MethodBoundaryAspect />
+</Weavers>
 ```
 ![2.png](2.png)
 

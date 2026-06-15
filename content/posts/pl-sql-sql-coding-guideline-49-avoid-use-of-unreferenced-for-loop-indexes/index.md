@@ -10,16 +10,16 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 ```psql
 DECLARE
-...
+    ...
 BEGIN
-l_row := co_lower_bound;
-l_value := co_first_value;
->
-FOR i IN co_lower_bound .. co_upper_bound LOOP
-sys.dbms_output.put_line(l_row || co_delimiter || l_value);
-l_row := l_row + co_row_incr;
-l_value := l_value + co_value_incr;
-END LOOP for_loop;
+    l_row := co_lower_bound;
+    l_value := co_first_value;
+    <<for_loop>>
+    FOR i IN co_lower_bound .. co_upper_bound LOOP
+        sys.dbms_output.put_line(l_row || co_delimiter || l_value); 
+        l_row := l_row + co_row_incr;
+        l_value := l_value + co_value_incr;
+   END LOOP for_loop;
 END;
 ```
 
@@ -27,12 +27,12 @@ END;
 
 ```psql
 DECLARE
-...
+    ...
 BEGIN
->
-FOR i IN co_lower_bound .. co_upper_bound
-LOOP
-sys.dbms_output.put_line(i || co_delimiter || to_char(co_first_value + i * co_value_incr));
-END LOOP for_loop;
+    <<for_loop>>
+    FOR i IN co_lower_bound .. co_upper_bound 
+    LOOP
+        sys.dbms_output.put_line(i || co_delimiter || to_char(co_first_value + i * co_value_incr));
+    END LOOP for_loop;
 END;
 ```

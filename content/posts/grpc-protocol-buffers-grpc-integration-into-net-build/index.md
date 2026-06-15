@@ -22,7 +22,9 @@ proto 檔放在上上層的 proto 目錄下。
 那在 GRPC.Message 的專案檔中可以像下面這樣加入  設定，會用 Include 指定 proto 檔、ProtoRoot 指定 proto 檔中 import 語法的參考位置、OutputDir 指定輸出位置、GrpcService 指定要編譯 gRPC 的 server 還是 client...等。
 ```xml
 ...
-
+<ItemGroup>
+    <Protobuf Include="../../**/*.proto" OutputDir="%(RelativePath)" CompileOutputs="false" GrpcService="both" />
+</ItemGroup>
 ...
 ```
 ![2.png](2.png)
@@ -30,13 +32,17 @@ proto 檔放在上上層的 proto 目錄下。
 像是如果只要產生 Server 需要使用的類別就可以像這樣設定。
 ```C#
 ...
-
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Server" />
+</ItemGroup>
 ...
 ```
 如果只要產生 Client 需要使用的類別就可以像這樣設定。
 ```C#
 ...
-
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Client" />
+</ItemGroup>
 ...
 ```
 設定可參閱：

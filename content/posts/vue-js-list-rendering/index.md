@@ -9,11 +9,17 @@ Vue.js 要渲染多個元素，可使用 v-for。
 像是要渲染陣列元素，就可以像下面這樣處理。  
 
 ```html
-
-  Vue - Hello World
-
-{{item}}
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-for="item in items">{{item}}</p>
+  </div>
+  <script>
     new Vue({
       el: '#app',
       data:{
@@ -26,7 +32,9 @@ Vue.js 要渲染多個元素，可使用 v-for。
         ]
       }
     })
-
+  </script>
+</body>
+</html>
 ```
 
 ![1.png](1.png)
@@ -34,11 +42,17 @@ Vue.js 要渲染多個元素，可使用 v-for。
 若有需要索引值，v-for 也有索引值可供使用。  
 
 ```html
-
-  Vue - Hello World
-
-{{index + 1}}. {{item}}
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-for="(item, index) in items">{{index + 1}}. {{item}}</p>
+  </div>
+  <script>
     new Vue({
       el: '#app',
       data:{
@@ -51,7 +65,9 @@ Vue.js 要渲染多個元素，可使用 v-for。
         ]
       }      
     })
-
+  </script>
+</body>
+</html>
 ```
 
 ![2.png](2.png)
@@ -59,17 +75,25 @@ Vue.js 要渲染多個元素，可使用 v-for。
 除了陣列元素外，v-for 也支援 range 的方式，可明確指定循環的次數。  
 
 ```html
-
-  Vue - Hello World
-
-{{n}}. Hello World
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-for="n in 5">{{n}}. Hello World</p>
+  </div>
+  <script>
     new Vue({
       el: '#app',
       data:{
       }
     })
-
+  </script>
+</body>
+</html>
 ```
 
 ![3.png](3.png)
@@ -77,11 +101,17 @@ Vue.js 要渲染多個元素，可使用 v-for。
 也可以用來遍巡物件元素的值。  
 
 ```html
-
-  Vue - Hello World
-
-{{item}}
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-for="item in data">{{item}}</p>
+  </div>
+  <script>
     new Vue({
       el: '#app',
       data:{
@@ -90,7 +120,9 @@ Vue.js 要渲染多個元素，可使用 v-for。
         }
       }      
     })
-
+  </script>
+</body>
+</html>
 ```
 
 ![4.png](4.png)

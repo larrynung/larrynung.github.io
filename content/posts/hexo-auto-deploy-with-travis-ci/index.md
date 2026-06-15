@@ -34,8 +34,8 @@ language: node_js
 node_js:
 - '0.12'
 branches:
-only:
-- hexo
+  only:
+  - hexo
 before_install:
 - npm install -g hexo-cli
 install:
@@ -44,8 +44,8 @@ script:
 - hexo clean
 - hexo generate
 after_success:
-- git config --global user.name ""
-- git config --global user.email ""
+- git config --global user.name "<Name>"
+- git config --global user.email "<Email>"
 - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
 ```

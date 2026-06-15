@@ -6,9 +6,14 @@ description: "JQuery UI - Spinner Widget"
 
 要使用 JQuery UI 的 Spinner Widget，首先必須引用 JQuery、JQueryUI。
 ```html
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jqueryui/style.css">
 ```
 接著在畫面上放入一個 input element。
 ```html
+<input id="spinner">
 ```
 在 Javascript 中用 JQuery 找到該 input element，並叫用 spinner 方法即可將該 input element 設為 spinner。
 ```js
@@ -38,16 +43,31 @@ $("#spinner").spinner("value", 0);
 ```
 最後這邊附上測試用的範例：
 ```html
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <script>
+  $(function() {
+    $("#spinner").spinner(
+    {
+    	min:0,
+        max:100,
+        step:10
+    });
+    $("#spinner").spinner("value", 0);
+  });
+  </script>
+</head>
+<body>
 
-$(function() {
-$("#spinner").spinner(
-{
-min:0,
-max:100,
-step:10
-});
-$("#spinner").spinner("value", 0);
-});
+<input id="spinner">
+
+</body>
+</html>     
 ```
 Link
 ----

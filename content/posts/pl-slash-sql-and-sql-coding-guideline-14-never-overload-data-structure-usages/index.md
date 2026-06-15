@@ -10,16 +10,16 @@ tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 像是下面這樣外層與內層宣告了一樣名稱的變數，是不建議的寫法。
 
 ```psql
-
-DECLARE
-v_str VARCHAR2(30);
-BEGIN
->
-DECLARE
-v_str VARCHAR2(4000) ;
-BEGIN
-…
-END sub;
+<<main>> 
+DECLARE 
+	 v_str VARCHAR2(30); 
+BEGIN 
+	<<sub>> 
+	DECLARE 
+		 v_str VARCHAR2(4000) ; 
+	BEGIN 
+		…
+	END sub; 
 END main;
 ```
 

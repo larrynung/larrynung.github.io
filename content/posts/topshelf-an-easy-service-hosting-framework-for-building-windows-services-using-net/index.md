@@ -15,51 +15,51 @@ Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Servi
 
 若是進一步來看，可再細分為兩種撰寫方式。一種是像下面這樣用委派的方式將怎樣建立服務、服務怎樣啟動、服務怎樣停止...等對應的設定設上去。
 ```c#
-using System;
+using System; 
 using Topshelf;
 …
-class Program {
-static void Main(string[] args) {
-HostFactory.Run(x => {
-x.Service(s => {
-s.ConstructUsing(name => new Program());
-s.WhenStarted(p => p.Start());
-s.WhenStopped(p => p.Stop());
-});
-});
-}
+class Program { 
+  static void Main(string[] args) { 
+    HostFactory.Run(x => { 
+      x.Service<Program>(s => { 
+        s.ConstructUsing(name => new Program()); 
+        s.WhenStarted(p => p.Start()); 
+        s.WhenStopped(p => p.Stop());
+      }); 
+    }); 
+} 
 
-public void Start() {
-Console.WriteLine("Service start...");
-}
+  public void Start() { 
+    Console.WriteLine("Service start..."); 
+  } 
 
-public void Stop() {
-Console.WriteLine("Service stop...");
-}
-}
+  public void Stop() { 
+    Console.WriteLine("Service stop..."); 
+  }
+} 
 ```
 一種則是實作 ServiceControl，將 Service 的動作都寫在 ServiceControl 中。
 ```c#
-using System;
+using System; 
 using Topshelf;
-...
-class Program {
-static void Main(string[] args) {
-HostFactory.Run(x => {
-x.Service();
-});
-}
-}
-class ProgramService : ServiceControl {
-public bool Start(HostControl hostControl) {
-Console.WriteLine("Service start...");
-return true;
-}
-public bool Stop(HostControl hostControl) {
-Console.WriteLine("Service stop...");
-return true;
-}
-}
+... 
+class Program { 
+  static void Main(string[] args) { 
+    HostFactory.Run(x => { 
+      x.Service<ProgramService>(); 
+    }); 
+  } 
+} 
+class ProgramService : ServiceControl { 
+  public bool Start(HostControl hostControl) { 
+    Console.WriteLine("Service start..."); 
+    return true; 
+  } 
+  public bool Stop(HostControl hostControl) { 
+     Console.WriteLine("Service stop..."); 
+    return true; 
+  } 
+} 
 ...
 ```
 除了 Start 與 Stop，還有很多東西可以設定，像是 Service 的名稱，Service 的描述...等等，這邊不多作闡述，有興趣可參閱[官方文件](https://topshelf.readthedocs.io/en/latest/index.html)。

@@ -10,42 +10,50 @@ tags: [PL/SQL and SQL Coding Guidelines]
 ```psql
 ...
 i := co_min_value;
->
-WHILE (i  co_max_value;
+<<while_loop>>
+WHILE (i <= co_max_value)
+LOOP
+  i := i + co_increment;
+  EXIT while_loop WHEN i > co_max_value;
 END LOOP while_loop;
 
->
+<<for_loop>>
 FOR i IN co_min_value..co_max_value
 LOOP
-...
-EXIT for_loop WHEN i = co_max_value;
+  ...
+  EXIT for_loop WHEN i = co_max_value;
 END LOOP for_loop;
 
->
+<<process_employees>>
 FOR r_employee IN (SELECT last_name FROM employees)
 LOOP
-...
-EXIT process_employees;
+  ...
+  EXIT process_employees;
 END LOOP process_employees;
 ...
 ```
 若使用非 basic loop，建議使用邊界條件來跳離迴圈。而 basic loop 因為沒有邊界條件的設定，因此也只能使用 EXIT 來跳離迴圈。
 ```psql
->
-WHILE (i >
+<<while_loop>>
+WHILE (i <= co_max_value)
 LOOP
-EXIT basic_loop;
+  i := i + co_increment;
+END LOOP while_loop;
+
+<<basic_loop>>
+LOOP
+  EXIT basic_loop;
 END LOOP basic_loop;
 
->
+<<for_loop>>
 FOR i IN co_min_value..co_max_value
 LOOP
-...
+  ...
 END LOOP for_loop;
 
->
+<<process_employees>>
 FOR r_employee IN (SELECT last_name FROM employees)
 LOOP
-...
+  ...
 END LOOP process_employees;
 ```

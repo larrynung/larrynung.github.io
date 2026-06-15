@@ -9,23 +9,23 @@ tags: [FX.Configuration]
 
 接著在 Application Configuration 中設定資料。
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <appSettings>
-    <add key="Setting1" value="Value1" />
-    <add key="Setting2" value="Value2" />
-  </appSettings>
+<?xml version="1.0" encoding="utf-8" ?> 
+<configuration> 
+    <appSettings> 
+        <add key="Setting1" value="Larry Nung"/> 
+        <add key="Setting2" value="Level Up (http://larrynung.github.io/index.html)"/> 
+    </appSettings> 
 </configuration>
 ```
 再來要設定 Application Configuration 對應的存取類別，這邊跟一般的 Model 實作類似，只是要類別需繼承自 AppConfiguration。
 ```c#
-using FX.Configuration;
+using FX.Configuration; 
 
-namespace ConsoleApplication12 {
-    public class MyAppConfig: AppConfiguration {
-        public string Setting1 { get; private set; }
-        public string Setting2 { get; private set; }
-    }
+namespace ConsoleApplication12 { 
+    public class MyAppConfig: AppConfiguration{ 
+        public string Setting1 { get; private set; } 
+        public string Setting2 { get; private set; } 
+    } 
 }
 ```
 準備好後就只要將類別實體化即可透過成員屬性取得 Application Configuration 的設定值。
