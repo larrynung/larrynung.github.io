@@ -10,15 +10,21 @@ tags: [CSharp]
 
 這幾天看到論壇有人問到合併圖片的作法，直覺的想到了以前看過的歐大文章。人老了記憶不好就回去翻了一下順便復習。突然就蹦出了用FlowLayoutPanel控制項來實作的想法，順手做了個實驗並記錄一下。
 
-使用FlowLayouyPanel控制項來合併大量圖片，純粹好玩、寫起來方便快速，可是可能會造成使用物件過多、記憶體用量過高等情況，效能方面也未做過比較，若要使用請自行評估仔細。
+> 使用FlowLayouyPanel控制項來合併大量圖片，純粹好玩、寫起來方便快速，可是可能會造成使用物件過多、記憶體用量過高等情況，效能方面也未做過比較，若要使用請自行評估仔細。
 
 ## 實作步驟
 
 用FlowLayoutPanel控制項來合併大量圖片，基本上大概可分為下列幾步驟：
-放入FlowLayoutPanel到表單，設定AutoSize屬性為True載入圖片時把圖片載入到PictureBox，設定Margin=new Padding(0)、SizeMode=AutoSize，並把PictureBox放入FlowLayoutPanel利用DrawToBitmap截取FlowLayoutPanel的畫面
 
-## 完整程式範例 
+1. 放入FlowLayoutPanel到表單，設定AutoSize屬性為True
+2. 載入圖片時把圖片載入到PictureBox，設定Margin=new Padding(0)、SizeMode=AutoSize，並把PictureBox放入FlowLayoutPanel
+3. 利用DrawToBitmap截取FlowLayoutPanel的畫面
 
+![image_thumb.png](/images/posts/9758/image_thumb.png)
+
+## 完整程式範例
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,23 +71,40 @@ namespace WindowsFormsApplication5
         }
     }
 }
+```
 
 ## 操作步驟與執行結果
-Step1.開啟程式，並按下[Load Photo]按鈕
- 
-Step2.選取圖片後按下[開啟]
+
+**Step1.開啟程式，並按下[Load Photo]按鈕**
+
+![image_thumb_1.png](/images/posts/9758/image_thumb_1.png)
+
+**Step2.選取圖片後按下[開啟]**
+
+![image_thumb_3.png](/images/posts/9758/image_thumb_3.png)
 
 程式會顯示所選取的所有圖片路徑
 
-Step3.按下[合併]按鈕 
+![image_thumb_10.png](/images/posts/9758/image_thumb_10.png)
+
+**Step3.按下[合併]按鈕**
+
 合併完後會圖片會顯示在下方的FlowLayoutPanel區域
 
-Step5.按下[Save]按鈕，在彈出的視窗選取存檔位置並按下儲存即可
+![image_thumb_8.png](/images/posts/9758/image_thumb_8.png)
+
+**Step5.按下[Save]按鈕，在彈出的視窗選取存檔位置並按下儲存即可**
+
+![image_thumb_12.png](/images/posts/9758/image_thumb_12.png)
 
 儲存的檔案會像下面這樣合併完成
 
+![image_thumb_6.png](/images/posts/9758/image_thumb_6.png)
+
 ## Download
- MergePhoto.zip   
- 
+
+[MergePhoto.zip](http://Files.Dotblogs.com.tw/larrynung/0907/20097319119466.zip)
+
 ## Link
-.NET菜鳥自救會-[C#]大量圖片合併程式
+
+* [.NET菜鳥自救會-[C#]大量圖片合併程式](http://www.dotblogs.com.tw/chou/archive/2009/02/11/7118.aspx)

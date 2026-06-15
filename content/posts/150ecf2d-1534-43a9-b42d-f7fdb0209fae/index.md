@@ -7,37 +7,47 @@ tags: [CSharp]
 ---
 
 要使用DropNet下載DropBox內存放的檔案，我們可以透過DropNetClient.GetFile來做，將我們想要下載的檔案位置帶入該函式，會將指定檔案的內容回傳，因此成式撰寫起來會像下面這樣：
-  			...
-			var selectedNode = treeView1.SelectedNode;
-			if (selectedNode == null)
-				return;
 
-			var metaData = selectedNode.Tag as MetaData;
-			if(metaData == null)
-				return;
+```csharp
+...
+var selectedNode = treeView1.SelectedNode;
+if (selectedNode == null)
+	return;
 
-			using (var saveFileDialog = new SaveFileDialog())
-			{
-				saveFileDialog.FileName = metaData.Name;
+var metaData = selectedNode.Tag as MetaData;
+if(metaData == null)
+	return;
 
-				if(saveFileDialog.ShowDialog() == DialogResult.OK)
-				{
-					var fileData = m_DropNetClient.GetFile(metaData.Path);
-					File.WriteAllBytes(saveFileDialog.FileName, fileData);
-				}
-			}
-			...
+using (var saveFileDialog = new SaveFileDialog())
+{
+	saveFileDialog.FileName = metaData.Name;
+
+	if(saveFileDialog.ShowDialog() == DialogResult.OK)
+	{
+		var fileData = m_DropNetClient.GetFile(metaData.Path);
+		File.WriteAllBytes(saveFileDialog.FileName, fileData);
+	}
+}
+...
+```
 
 實際運作起來會像下面這樣，假設我嚐試要抓取的是Batch目錄下的Close.bat檔。
 
-下載時會先詢問要存放的檔案位置，這邊為了方便就先將檔案放在桌面上。 
+![image_thumb.png](/images/posts/150ecf2d-1534-43a9-b42d-f7fdb0209fae/image_thumb.png)
 
-按下儲存後桌面上會有我們剛剛所選取的檔案，將檔案開起來查驗，可以看到檔案確確實實的下載下來了。 
+下載時會先詢問要存放的檔案位置，這邊為了方便就先將檔案放在桌面上。
 
-筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫GetFileAsync就可以了。
+![image_thumb_1.png](/images/posts/150ecf2d-1534-43a9-b42d-f7fdb0209fae/image_thumb_1.png)
+
+按下儲存後桌面上會有我們剛剛所選取的檔案，將檔案開起來查驗，可以看到檔案確確實實的下載下來了。
+
+![image_thumb_2.png](/images/posts/150ecf2d-1534-43a9-b42d-f7fdb0209fae/image_thumb_2.png)
+
+筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫`GetFileAsync就可以了。`
 
 最後一樣附上完整的使用範例：
 
+```c
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -227,3 +237,4 @@ namespace DropNetDemo
 		}
 	}
 }
+```

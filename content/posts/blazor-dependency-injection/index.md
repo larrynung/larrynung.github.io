@@ -13,6 +13,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace WebApplication1.Data
 {
     public class WeatherForecastService
@@ -22,7 +23,8 @@ namespace WebApplication1.Data
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        public Task GetForecastAsync(DateTime startDate)
+
+        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
         {
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -46,7 +48,7 @@ public class Startup
     ...
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton();
+        services.AddSingleton<WeatherForecastService>();
     }
     ...
 }
@@ -65,6 +67,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApplication1.Data;
 
+
 namespace WebApplication1
 {
     public class Startup
@@ -74,7 +77,9 @@ namespace WebApplication1
             Configuration = configuration;
         }
 
+
         public IConfiguration Configuration { get; }
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -82,8 +87,9 @@ namespace WebApplication1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton();
+            services.AddSingleton<WeatherForecastService>();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -99,10 +105,13 @@ namespace WebApplication1
                 app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+
             app.UseRouting();
+
 
             app.UseEndpoints(endpoints =>
             {
@@ -135,36 +144,46 @@ namespace WebApplication1
 @using WebApplication1.Data
 @inject WeatherForecastService ForecastService
 
-# Weather forecast
 
-This component demonstrates fetching data from a service.
+<h1>Weather forecast</h1>
+
+
+<p>This component demonstrates fetching data from a service.</p>
+
 
 @if (forecasts == null)
 {
-    Loading...
+    <p><em>Loading...</em></p>
 }
 else
 {
-
-                Date
-                Temp. (C)
-                Temp. (F)
-                Summary
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach (var forecast in forecasts)
             {
-                
-                    @forecast.Date.ToShortDateString()
-                    @forecast.TemperatureC
-                    @forecast.TemperatureF
-                    @forecast.Summary
-                
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
             }
-
+        </tbody>
+    </table>
 }
+
 
 @code {
     WeatherForecast[] forecasts;
+
 
     protected override async Task OnInitAsync()
     {

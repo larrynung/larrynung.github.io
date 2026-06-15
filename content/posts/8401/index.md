@@ -6,7 +6,11 @@ tags: [VB.NET]
 ---
 
 ## Abstract
-Introduction使用方式特色呼叫不具回傳值的副程式
+
+* Introduction
+* 使用方式
+* 特色
+* 呼叫不具回傳值的副程式
 
 ## Introduction
 
@@ -20,33 +24,41 @@ Function (參數) 運算式
 
 簡易的宣告範例
 
+```
+Function (num As Integer) num + 1
+```
+
 若要重覆利用呼叫，可以將函式指派為變數名稱。
+
+```
+Dim add1 = Function(num As Integer) num + 1
+```
 
 要使用時就可以直接叫用。
 
+```
+Console.WriteLine(add1(5))
+```
+
 或是在宣告時直接叫用。
 
+```
+Console.WriteLine((Function(num As Integer) num + 1)(5))
+```
+
 # 特色
-Lambda 運算式沒有名稱。
-Lambda 運算式不能有修飾詞 (Modifier)，例如 Overloads 或 Overrides。
 
-Lambda 運算式不會使用 As 子句指定函式的傳回型別。而是從 Lambda 運算式評估之主體的值來推斷型別。例如，如果 Lambda 運算式的主體是 Where cust.City = "London"，其傳回型別為 Boolean。
-
-函式的主體必須是運算式，而不是陳述式。主體可以由對函式程序的呼叫組成，但不可由對子程序的呼叫組成。
-
-沒有 Return 陳述式。函式傳回的值就是函式主體中運算式的值。
-
-沒有 End Function 陳述式。
-
-所有參數都必須具有指定的資料型別，不然所有參數就都必須經過推斷。
-
-不允許使用 Optional 和 Paramarray 參數。
-
-不允許使用泛型參數。
-
-只支援單行運算式(C#支援多行運算式)。
-
-Lambda 運算式不能直接呼叫不具回傳值的副程式(C#可以)。
+* Lambda 運算式沒有名稱。
+* Lambda 運算式不能有修飾詞 (Modifier)，例如 Overloads 或 Overrides。
+* Lambda 運算式不會使用 As 子句指定函式的傳回型別。而是從 Lambda 運算式評估之主體的值來推斷型別。例如，如果 Lambda 運算式的主體是 Where cust.City = "London"，其傳回型別為 Boolean。
+* 函式的主體必須是運算式，而不是陳述式。主體可以由對函式程序的呼叫組成，但不可由對子程序的呼叫組成。
+* 沒有 Return 陳述式。函式傳回的值就是函式主體中運算式的值。
+* 沒有 End Function 陳述式。
+* 所有參數都必須具有指定的資料型別，不然所有參數就都必須經過推斷。
+* 不允許使用 Optional 和 Paramarray 參數。
+* 不允許使用泛型參數。
+* 只支援單行運算式(C#支援多行運算式)。
+* Lambda 運算式不能直接呼叫不具回傳值的副程式(C#可以)。
 
 ## 呼叫不具回傳值的副程式
 
@@ -54,16 +66,72 @@ Lambda 運算式的特點之一就是不能直接呼叫不具回傳值的副程�
 
 我們先來看一下程式碼。
 
+![image_thumb.png](/images/posts/8401/image_thumb.png)
+
 由上圖可以看出，若在Lambda運算示中欲直接呼叫不具回傳值的副程式，將會產生"運算式沒有產生值"的錯誤。
 
 那是否就不行叫用不具回傳值的副程式了呢？其實換個想法，若我們可以讓不具回傳值的副程式，透過某些方法，把它變成具有回傳值的函式，那一切不就解決了嗎？
 
 為此，我們可以透過CallByName函式來達到此需求。
 
+![image_thumb_1.png](/images/posts/8401/image_thumb_1.png)
+
 完整程式碼如下
 
+```
+Module Module1
+
+    Sub Main()
+        Dim obj As New OutputClass
+        Dim Output = Function(msg As String) CallByName(obj, "WriteLine", CallType.Method, msg)
+        Output("Test")
+    End Sub
+
+End Module
+
+Class OutputClass
+    public Sub WriteLine(ByVal msg As String)
+        Console.WriteLine(msg)
+    End Sub
+End Class
+```
+
 執行結果
+
+![image_thumb_2.png](/images/posts/8401/image_thumb_2.png)
 
 Lambda運算式透過上面的小技巧，已能呼叫不具回傳值的副程式。使用上因此變得更具彈性。如下範例，我們可用Lambda運算式做更多的應用。
 
+```
+Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    GO()
+End Sub
+
+Private Sub GO()
+    Dim f As New Form
+    Dim b As New Button
+    Dim lst As New ListBox
+
+    With lst
+        .Items.Add("Double Click Me")
+        .Dock = DockStyle.Fill
+    End With
+    AddHandler lst.DoubleClick, Function(sender As Object, e As EventArgs) CallByName(b, "PerformClick", CallType.Method, Nothing)
+
+    With b
+        .Text = "Ok"
+        .DialogResult = Windows.Forms.DialogResult.OK
+        .Dock = DockStyle.Bottom
+    End With
+    AddHandler b.Click, Function(sender As Object, e As EventArgs) MsgBox("You Click Me")
+
+    With f
+        .Controls.AddRange(New Control() {lst, b})
+        .ShowDialog()
+    End With
+End Sub
+```
+
 執行結果
+
+![image_thumb_3.png](/images/posts/8401/image_thumb_3.png)

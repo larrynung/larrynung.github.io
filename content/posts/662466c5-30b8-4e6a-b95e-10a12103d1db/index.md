@@ -6,14 +6,28 @@ description: "[Win8]如何關閉Windows 8作業系統"
 
 很多人在使用Windows 8都會碰到一個問題，那就是開始功能表不見了，本來都從開始功能表選取關機的，現在換用Windows 8後電腦要怎麼關機呢？要在Windows 8下進行關機的動作大概約有五種方法，一種是先按Windows鍵將Windows 8切換至Metro mode，找到右上角的使用者帳號與圖示，滑鼠點選，在彈出的快顯選單中選取登出的選單選項。
 
+![image_thumb.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb.png)
+
 登出後我們會看到像下面這樣的畫面，右下角有個Power的圖示，這邊可以做關機的動作。
+
+![image_thumb_8.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_8.png)
 
 這個方法是稍嫌麻煩了點，除了這個方法外，我們也可以透過設定頁面去做關機的動作，可以將滑鼠移至桌面右下方，或是按下熱建Win + C，透過彈出的Charms Bar，選取設定進入設定頁面。
 
+![image_thumb_10.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_10.png)
+
 這邊也可以直接按下熱建Win + I進入設定頁面，進入設定頁面後可以在下方看到個[開啟/關閉]的按鈕，一樣也可以讓我們做關機的動作。
+
+![image_thumb_9.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_9.png)
 
 到這邊為止介紹了兩種關機方式，這兩種關機方式可說是Windows 8新出來的關機方式，下面開始要帶一下從以前就有而現在仍能使用的關機方式，像是進階使用者可以透過Win + R叫出執行對話框，在裡面用shutdown的命令要求OS去做關機的動作。
 
+![image_thumb_7.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_7.png)
+
 以往的Alt + F4的關機方式在Windows 8仍舊能運作，而且算是比較方便的關機方式之一。
 
+![image_thumb_5.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_5.png)
+
 最後則是設定電源選項，要求按下電腦的電源按鈕時去做關機的動作，這種關機方式在平板裝置上特別適用。
+
+![image_thumb_6.png](/images/posts/662466c5-30b8-4e6a-b95e-10a12103d1db/image_thumb_6.png)

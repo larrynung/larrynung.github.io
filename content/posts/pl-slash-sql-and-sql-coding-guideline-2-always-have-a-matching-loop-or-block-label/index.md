@@ -26,13 +26,13 @@ End;
 ```psql
 SET SERVEROUTPUT ON
 DECLARE
-i PLS_INTEGER;
+    i PLS_INTEGER;
 Begin
-
-FOR i IN 1..10
-LOOP
-DBMS_OUTPUT.put_line('i =' || i);
-End LOOP Print1To10;
+    <<Print1To10>>
+    FOR i IN 1..10
+    LOOP
+        DBMS_OUTPUT.put_line('i =' || i);
+    End LOOP Print1To10;
 End;
 ```
 

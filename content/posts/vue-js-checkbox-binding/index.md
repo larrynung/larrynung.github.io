@@ -11,19 +11,26 @@ Checkbox 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性
 像是下面這樣的程式：  
 
 ```html
-
-  Vue - Hello World
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="checkbox" v-model="checked">
     {{ checked }}
+    <br/><br/>
 
-    option1  
-
-    option2  
-
-    option3  
-
+    <input type="checkbox" value="option1" v-model="options">option1<br/>
+    <input type="checkbox" value="option2" v-model="options">option2<br/>
+    <input type="checkbox" value="option3" v-model="options">option3<br/>
+    <br/>
     {{ options }}
+  </div>
 
+  <script>
     new Vue({
       el: '#app',
       data:{
@@ -31,7 +38,9 @@ Checkbox 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性
         options: ["option2"]
       }      
     })
-
+  </script>
+</body>
+</html>
 ```
 
 其運行結果如下：  

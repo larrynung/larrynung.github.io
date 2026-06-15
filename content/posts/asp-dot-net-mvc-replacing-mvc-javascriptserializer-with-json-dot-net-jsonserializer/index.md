@@ -17,80 +17,80 @@ return new JsonResult(model);
 
 Json.Net 提供了 JsonNetResult 可解決這樣的問題，可將程式直接加到專案內使用。
 ```c#
-///
-/// Simple Json Result that implements the Json.NET serialiser offering more versatile serialisation
-///
-public class JsonNetResult : ActionResult
-{
-public JsonNetResult()
-{
-}
+/// <summary> 
+/// Simple Json Result that implements the Json.NET serialiser offering more versatile serialisation 
+/// </summary> 
+public class JsonNetResult : ActionResult 
+{ 
+    public JsonNetResult() 
+    { 
+    }
 
-public JsonNetResult (object responseBody)
-{
-ResponseBody = responseBody;
-}
+    public JsonNetResult (object responseBody) 
+    { 
+        ResponseBody = responseBody; 
+    }
 
-public JsonNetResult(object responseBody, JsonSerializerSettings settings)
-{
-Settings = settings;
-}
+    public JsonNetResult(object responseBody, JsonSerializerSettings settings) 
+    { 
+        Settings = settings; 
+    }
 
-/// Gets or sets the serialiser settings
-public JsonSerializerSettings Settings { get; set; }
+    /// <summary>Gets or sets the serialiser settings</summary> 
+    public JsonSerializerSettings Settings { get; set; }
 
-/// Gets or sets the encoding of the response
-public Encoding ContentEncoding { get; set; }
+    /// <summary>Gets or sets the encoding of the response</summary> 
+    public Encoding ContentEncoding { get; set; }
 
-/// Gets or sets the content type for the response
-public string ContentType { get; set; }
+    /// <summary>Gets or sets the content type for the response</summary> 
+    public string ContentType { get; set; }
 
-/// Gets or sets the body of the response
-public object ResponseBody { get; set; }
+    /// <summary>Gets or sets the body of the response</summary> 
+    public object ResponseBody { get; set; }
 
-/// Gets the formatting types depending on whether we are in debug mode
-private Formatting Formatting
-{
-get
-{
-return Debugger.IsAttached ? Formatting.Indented : Formatting.None;
-}
-}
+    /// <summary>Gets the formatting types depending on whether we are in debug mode</summary> 
+    private Formatting Formatting 
+    { 
+        get 
+        { 
+            return Debugger.IsAttached ? Formatting.Indented : Formatting.None; 
+        } 
+    }
 
-///
-/// Serialises the response and writes it out to the response object
-///
-/// The execution context
-public override void ExecuteResult(ControllerContext context)
-{
-if (context == null)
-{
-throw new ArgumentNullException("context");
-}
+    /// <summary> 
+    /// Serialises the response and writes it out to the response object 
+    /// </summary> 
+    /// <param name="context">The execution context</param> 
+    public override void ExecuteResult(ControllerContext context) 
+    { 
+        if (context == null) 
+        { 
+            throw new ArgumentNullException("context"); 
+        }
 
-HttpResponseBase response = context.HttpContext.Response;
+        HttpResponseBase response = context.HttpContext.Response;
 
-// set content type
-if (!string.IsNullOrEmpty(ContentType))
-{
-response.ContentType = ContentType;
-}
-else
-{
-response.ContentType = "application/json";
-}
+        // set content type 
+        if (!string.IsNullOrEmpty(ContentType)) 
+        { 
+            response.ContentType = ContentType; 
+        } 
+        else 
+        { 
+            response.ContentType = "application/json"; 
+        }
 
-// set content encoding
-if (ContentEncoding != null)
-{
-response.ContentEncoding = ContentEncoding;
-}
+        // set content encoding 
+        if (ContentEncoding != null) 
+        { 
+            response.ContentEncoding = ContentEncoding; 
+        }
 
-if (ResponseBody != null)
-{
-response.Write(JsonConvert.SerializeObject(ResponseBody, Formatting, Settings));
-}
-}
+        if (ResponseBody != null) 
+        { 
+            response.Write(JsonConvert.SerializeObject(ResponseBody, Formatting, Settings));             
+        } 
+    } 
 }
 ```
 使用上把本來的 JsonResult 替換成 JsonNetResult 就可以了。

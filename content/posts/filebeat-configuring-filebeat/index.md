@@ -12,8 +12,8 @@ Filebeat 的設定檔為 filebeat.yml，可以設定資料的輸入與輸出，�
 filebeat.prospectors:
 
 - input_type: log
-paths:
-- E:\AgileSlot\Log**Full*log*
+  paths:
+    - E:\AgileSlot\Log\*\*Full*log*
 ```
 可以設定 Log 資料要怎樣切割傳送，像是若使用 Log4Net 去記錄 Log，不特別調整格式的話 Log 前面一定會有 Log 的時間，就可以以 Log 時間當作切割傳送的依據。
 ```yaml
@@ -93,57 +93,58 @@ logging.files:
 filebeat.prospectors:
 
 - input_type: log
-paths:
-- E:\AgileSlot\Log**Full*log*
+  paths:
+    - E:\AgileSlot\Log\*\*Full*log*
 
-# The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
-multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}'
+  # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}'
 
-# Defines if the pattern set under pattern should be negated or not. Default is false.
-multiline.negate: true
+  # Defines if the pattern set under pattern should be negated or not. Default is false.
+  multiline.negate: true
 
-# Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
-# that was (not) matched before or after or as long as a pattern is not matched based on negate.
-# Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
-multiline.match: after
-
-ignore_older: 24h
+  # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
+  # that was (not) matched before or after or as long as a pattern is not matched based on negate.
+  # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
+  multiline.match: after
+  
+  ignore_older: 24h
 #----------------------------- Logstash output --------------------------------
 output.logstash:
+ 
+  # The Logstash hosts
+  hosts: ["172.16.49.172:5044","172.16.49.116:5044"]
 
-# The Logstash hosts
-hosts: ["172.16.49.172:5044","172.16.49.116:5044"]
+  # Number of workers per Logstash host.
+  worker: 2
 
-# Number of workers per Logstash host.
-worker: 2
+  # Set gzip compression level.
+  #compression_level: 3
 
-# Set gzip compression level.
-#compression_level: 3
+  # Optional load balance the events between the Logstash hosts
+  loadbalance: true
 
-# Optional load balance the events between the Logstash hosts
-loadbalance: true
+  # Number of batches to be send asynchronously to logstash while processing
+  # new batches.
+  #pipelining: 0
 
-# Number of batches to be send asynchronously to logstash while processing
-# new batches.
-#pipelining: 0
-
-# Optional index name. The default index name is set to name of the beat
-# in all lowercase.
-index: "cas-agileslot-dev"
-
+  # Optional index name. The default index name is set to name of the beat
+  # in all lowercase.
+  index: "cas-agileslot-dev"
+  
 shipper:
-tags: ["CAS","AgileSlot","DEV"]
+  tags: ["CAS","AgileSlot","DEV"]
+
 
 # Logging to rotating files files. Set logging.to_files to false to disable logging to
 # files.
 logging.to_files: true
 logging.files:
-# Configure the path where the logs are written. The default is the logs directory
-# under the home path (the binary location).
-#path: /var/log/filebeat
-
-# The name of the files where the logs are written to.
-#name: filebeat
+  # Configure the path where the logs are written. The default is the logs directory
+  # under the home path (the binary location).
+  #path: /var/log/filebeat
+  
+  # The name of the files where the logs are written to.
+  #name: filebeat
 ```
 如果資料可能有多個輸入，設定這邊可用上述介紹的方式撰寫，只要設定多組 paths。但若想更好維護與管理，建議是使用 filebeat.config_dir 來將設定做個切分。
 
@@ -189,7 +190,7 @@ logging.files:
 
 ![1.png](1.png)
 ```yaml
-##################$$$###### Filebeat Configuration ############################
+  ##################$$$###### Filebeat Configuration ############################
 
 # This file is a full configuration example documenting all non-deprecated
 # options in comments. For a shorter configuration example, that contains only
@@ -205,24 +206,24 @@ logging.files:
 filebeat.prospectors:
 
 - input_type: log
-paths:
-- E:\AgileSlot\Log**Full*log*
-exclude_files: ["\.zip$","\.7z$"]
+  paths:
+    - E:\AgileSlot\Log\*\*Full*log*
+  exclude_files: ["\.zip$","\.7z$"]
+  
+  document_type: applog
 
-document_type: applog
+  # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}'
 
-# The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
-multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}'
+  # Defines if the pattern set under pattern should be negated or not. Default is false.
+  multiline.negate: true
 
-# Defines if the pattern set under pattern should be negated or not. Default is false.
-multiline.negate: true
-
-# Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
-# that was (not) matched before or after or as long as a pattern is not matched based on negate.
-# Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
-multiline.match: after
-
-ignore_older: 24h
+  # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
+  # that was (not) matched before or after or as long as a pattern is not matched based on negate.
+  # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
+  multiline.match: after
+  
+  ignore_older: 24h
 ```
 若欲得知更多詳細的設定，請參閱 [Configuring Filebeat | Filebeat Reference [5.3] | Elastic](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html)。
 

@@ -32,4 +32,16 @@ Windows 下設定如下：
 "version": "0.1.0",
 "command": "Chrome",
 "windows": {
-"command": "C:\Program Files (x86)\Google\Chrome\Application
+"command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+},
+"args": ["${file}"]
+}
+```
+
+![4.png](4.png)
+
+設定完後存檔，重啟 Visual Studio Code，就可以將檔案用瀏覽器帶起運行 (MAC 下按 'CMD + Shift + B'，Windows 下按 'Ctrl+Shift+B')。
+
+Link
+----
+* [How to Launch Files in a Browser from Visual Studio Code - Webucator Blog](https://www.webucator.com/blog/2016/06/launch-files-browser-visual-studio-code/)

@@ -15,7 +15,8 @@ tags: [CSharp]
 這樣的功能在實作上就會碰到一些難題，像是要怎樣才能找到滑鼠游標指到的視窗，以及要怎樣才能取得其Process Name。
 
 第一個問題我們可以透過WindowFromPoint API下去處理，帶入滑鼠游標當前位置，該API就會返回視窗的Handle。
-```
+
+```csharp
 #region DllImport
 [DllImport("user32.dll")]
 static extern IntPtr WindowFromPoint(Point point);
@@ -23,10 +24,12 @@ static extern IntPtr WindowFromPoint(Point point);
 ...
 var handle = WindowFromPoint(MousePosition);
 ```
+
 取得了視窗的Handle後，第二個問題就可透過遍尋所有的Process，找到MainWindowHandle跟上面取出的視窗Handle一樣的Process。
-```
+
+```csharp
 var handle = WindowFromPoint(MousePosition);
 ProcessName = (from item in Process.GetProcesses()
-where item.MainWindowHandle == handle
-select item.ProcessName).FirstOrDefault();
+						   where item.MainWindowHandle == handle
+						   select item.ProcessName).FirstOrDefault();
 ```

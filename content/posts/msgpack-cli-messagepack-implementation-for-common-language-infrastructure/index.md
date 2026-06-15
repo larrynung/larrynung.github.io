@@ -11,24 +11,24 @@ Install-Package MsgPack.Cli
 使用時先引用 MsgPack.Serialization 命名空間，然後透過 SerializationContext.Default.GetSerializer 取得 Serializer，用取得的 Serializer 帶入 stream 與要序列化的物件去調用 Pack 方法即可將物件序列化。
 ```
 using MsgPack.Serialization;
-...
-public static byte[] Serialize(T thisObj) {
-var serializer = SerializationContext.Default.GetSerializer();
-using (var ms = new MemoryStream()) {
-serializer.Pack(ms, thisObj);
-return ms.ToArray();
-}
-}
+... 
+public static byte[] Serialize<T>(T thisObj) {
+  var serializer = SerializationContext.Default.GetSerializer<T>();
+  using (var ms = new MemoryStream()) {
+    serializer.Pack(ms, thisObj); 
+    return ms.ToArray(); 
+  } 
+} 
 ...
 ```
 要解序列化則是透過取得的 Serializer 將 Stream 帶入調用 Unpack 方法。
 ```
-...
-public static T Deserialize(byte[] bytes) {
-var serializer = SerializationContext.Default.GetSerializer();
-using (var byteStream = new MemoryStream(bytes)) {
-return serializer.Unpack(byteStream);
-}
+... 
+public static T Deserialize<T>(byte[] bytes) { 
+  var serializer = SerializationContext.Default.GetSerializer<T>(); 
+  using (var byteStream = new MemoryStream(bytes)) { 
+    return serializer.Unpack(byteStream); 
+  } 
 }
 ...
 ```
@@ -55,12 +55,12 @@ public String NickName { get; set; }
 像是假設本來的物件只有 Name 與 NickName 兩個屬性，後來增加了 ID 的屬性，經由 MessagePackMember 設定 ID 後，也能正常的將資料解序列化。
 ```c#
 …
-var larry = new OldPerson {
-Name = "Larry Nung",
-NickName = "Larry"
-};
-var bytes = Serialize(larry);
-var person = Deserialize(bytes);
+var larry = new OldPerson { 
+  Name = "Larry Nung", 
+  NickName = "Larry" 
+}; 
+var bytes = Serialize(larry); 
+var person = Deserialize<NewPerson>(bytes); 
 Console.WriteLine("{0} ({1})", person.NickName, person.Name);
 …
 ```

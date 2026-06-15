@@ -10,7 +10,36 @@ tags: [T4, CSharp]
 這邊筆者嘗試使用 T4 來解決這樣的問題。  
 
 ```c#
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ assembly name="System.Windows.Forms" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="EnvDTE" #>
+<#@ assembly name="Microsoft.VisualStudio.OLE.Interop" #>
+<#@ assembly name="Microsoft.VisualStudio.Shell" #>
+<#@ assembly name="Microsoft.VisualStudio.Shell.Interop" #>
+<#@ assembly name="Microsoft.VisualStudio.Shell.Interop.8.0" #>
+<#@ import namespace="System.Resources" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Microsoft.VisualStudio.Shell" #>
+<#@ import namespace="Microsoft.VisualStudio.Shell.Interop" #>
+<#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
+<#@ output extension=".js"#>
 
+<#
+var path = Path.GetDirectoryName(Host.TemplateFile) + "/App_GlobalResources/";
+var resourceFiles= Directory.GetFiles(path, "*.resx");
+foreach (var resourceFile in resourceFiles) {
+	var fileName = Path.GetFileNameWithoutExtension(resourceFile);
+    var resourceName = Regex.Match(fileName, "([^.]*)").Groups[1].Value;
+#>
 /**
 * Resources
 * ---------
@@ -19,11 +48,24 @@ tags: [T4, CSharp]
 * 2016 LarryNung
 **/
 
-var  = {};
+var <#=resourceName #> = {};
 
-. = "";
-
- __savedOutputs = new List();
+<#
+var resxSet = new ResXResourceSet(Host.ResolvePath(resourceFile));
+foreach (DictionaryEntry item in resxSet) {
+#>
+<#=resourceName#>.<#=item.Key.ToString() #> = "<#=resxSet.GetString(item.Key.ToString()).Replace("\r\n", string.Empty).Replace("'","\\'")#>";
+<#
+ }
+#>
+<#
+SaveOutput(fileName + ".js");
+}
+DeleteOldOutputs();
+#>
+<#+
+ 
+    List<string> __savedOutputs = new List<string>();
     Engine __engine = new Engine();
 
     void DeleteOldOutputs()

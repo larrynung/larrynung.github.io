@@ -55,7 +55,16 @@ Console.WriteLine(DoTest(count, ()=> { DateTimeOffset.UtcNow.ToUnixTimeSeconds()
 private static long DoTest(int count, Action action)
 {
 var sw = Stopwatch.StartNew();
-for (var i = 0; i
+for (var i = 0; i < count; ++i)
+{
+action();
+}
+
+return sw.ElapsedMilliseconds;
+}
+}
+}
+```
 
 透過運行的結果可以看到值跟 DateTimeOffset 內建的 ToUnixTimeSeconds 是一致的，但速度上會比 DateTimeOffset 內建的 ToUnixTimeSeconds 還要快一點點，這部分應該是因為 DateTimeOffset 要多處理 TimeZone 的原因。
 

@@ -10,14 +10,14 @@ tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 
 ```psql
 ...
-BEGIN
->
-LOOP
-FETCH c_employees INTO r_employee;
-EXIT read_employees WHEN c_employees%NOTFOUND;
-…
-END LOOP read_employees;
-CLOSE c_employees;
+BEGIN 
+  <<read_employees>> 
+  LOOP
+    FETCH c_employees INTO r_employee;  
+	EXIT read_employees WHEN c_employees%NOTFOUND;
+    … 	
+  END LOOP read_employees; 
+  CLOSE c_employees;
 END;
 ```
 
@@ -25,12 +25,12 @@ END;
 
 ```psql
 ...
-BEGIN
->
-FOR r_employee IN c_employee
-LOOP
-…
-END LOOP read_employees;
+BEGIN 
+  <<read_employees>> 
+  FOR r_employee IN c_employee 
+  LOOP 
+    … 
+  END LOOP read_employees; 
 END;
 
 ```

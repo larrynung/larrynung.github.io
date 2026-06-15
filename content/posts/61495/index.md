@@ -8,73 +8,84 @@ tags: [CSharp,Control]
 
 筆者在前一家公司時是做自動儀器控制的，有些地方會要用類似像指撥開關這樣的設計給使用者跟真實世界一致的體驗，當初筆者有將這部分獨立出來做成可重用的元件，對其背後的實現概念有些許的體會，這邊簡單的摘錄其概念與簡單的實作範例。
 
-	所謂指撥開關指的是有點像家裡總電源那樣的開關，會有凸出一根讓使用者用指頭去撥他，用以切換開關狀態，用在小型電器上通常往上代表是開，往下是關。要做這樣的元件就要利用.NET控制項本身的Dock屬性，將Button Dock在上方表示開啟，Dock在下方表示關閉，Button被點擊時改變Dock狀態，並在整個控制項大小調整時讓用來指撥的按鈕維持整個控制項一半的高度就可以了。
+所謂指撥開關指的是有點像家裡總電源那樣的開關，會有凸出一根讓使用者用指頭去撥他，用以切換開關狀態，用在小型電器上通常往上代表是開，往下是關。要做這樣的元件就要利用.NET控制項本身的Dock屬性，將Button Dock在上方表示開啟，Dock在下方表示關閉，Button被點擊時改變Dock狀態，並在整個控制項大小調整時讓用來指撥的按鈕維持整個控制項一半的高度就可以了。
 
-	實作時我們可以開個使用者控制項，將其BorderStyle設為Fixed3D，這樣指撥開關元件看起來會比較有感覺。接著在裡面放個Button給使用者指撥用，Button的文字要清除，並將Dock設為Bottom，表示一開始是關閉的狀態。
+實作時我們可以開個使用者控制項，將其BorderStyle設為Fixed3D，這樣指撥開關元件看起來會比較有感覺。接著在裡面放個Button給使用者指撥用，Button的文字要清除，並將Dock設為Bottom，表示一開始是關閉的狀態。
 
-	再來必須要讓指撥按鈕隨著控制項變更大小，這只要在控制項大小改變時調整尺寸為控制項高度的一半就可以了。
+![image_thumb_2.png](/images/posts/61495/image_thumb_2.png)
 
-        private void SwitchButton_SizeChanged(object sender, EventArgs e)
-        {
-            OnOffButton.Height = this.Height / 2;
-        }
+再來必須要讓指撥按鈕隨著控制項變更大小，這只要在控制項大小改變時調整尺寸為控制項高度的一半就可以了。
 
-	到了這邊就完成一大半了，整個元件外觀都出來了，只是沒有指撥的效果。所以我們要再幫他加入指撥效果，這邊筆者開個列舉跟屬性，用以表示目前指撥開關的狀態，在指撥狀態改變時會去調整指撥按鈕的位置。
+```csharp
+private void SwitchButton_SizeChanged(object sender, EventArgs e)
+{
+    OnOffButton.Height = this.Height / 2;
+}
+```
 
-        public enum SwitchState
-        {
-            On,
-            Off
-        }
+到了這邊就完成一大半了，整個元件外觀都出來了，只是沒有指撥的效果。所以我們要再幫他加入指撥效果，這邊筆者開個列舉跟屬性，用以表示目前指撥開關的狀態，在指撥狀態改變時會去調整指撥按鈕的位置。
 
-        private SwitchState _state;
-        public SwitchState State 
-        {
-            get
-            {
-                return _state;
-            }
-            set
-            {
-                if (_state == value)
-                    return;
-                _state = value;
-                AdjustOnOffButton();
-            }
-        }
-        private void AdjustOnOffButton()
-        {
-            switch (State)
-            {
-                case SwitchState.On:
-                    OnOffButton.Dock = DockStyle.Top;
-                    break;
-                case SwitchState.Off:
-                    OnOffButton.Dock = DockStyle.Bottom;
-                    break;
-                default:
-                    break;
-            }
-        }
+```csharp
+public enum SwitchState
+{
+    On,
+    Off
+}
 
-	此時整個控制項已經能讓使用者透過程式的方式控制指撥狀態了，尚缺的部分就是當使用者在界面上按下指撥按鈕時不會有任何效果，這也很好處理，只要繫結指撥按鈕的點擊事件，在其事件處理常式中做狀態的切換就可以了。
+private SwitchState _state;
+public SwitchState State
+{
+    get
+    {
+        return _state;
+    }
+    set
+    {
+        if (_state == value)
+            return;
+        _state = value;
+        AdjustOnOffButton();
+    }
+}
+private void AdjustOnOffButton()
+{
+    switch (State)
+    {
+        case SwitchState.On:
+            OnOffButton.Dock = DockStyle.Top;
+            break;
+        case SwitchState.Off:
+            OnOffButton.Dock = DockStyle.Bottom;
+            break;
+        default:
+            break;
+    }
+}
+```
 
-        public void Toggle()
-        {
-            State = State == SwitchState.On? SwitchState.Off: SwitchState.On;
-        }
+此時整個控制項已經能讓使用者透過程式的方式控制指撥狀態了，尚缺的部分就是當使用者在界面上按下指撥按鈕時不會有任何效果，這也很好處理，只要繫結指撥按鈕的點擊事件，在其事件處理常式中做狀態的切換就可以了。
 
-        private void OnOffButton_Click(object sender, EventArgs e)
-        {
-            Toggle();
-        }
+```csharp
+public void Toggle()
+{
+    State = State == SwitchState.On? SwitchState.Off: SwitchState.On;
+}
 
-	實作完成你可以看到類似下面的運行效果。
+private void OnOffButton_Click(object sender, EventArgs e)
+{
+    Toggle();
+}
+```
 
-	這邊帶的只是個很簡單的範例，實際運用上若有需求也可以再進一步替換指撥按鈕的外觀，讓整個控制項更為美觀。
+實作完成你可以看到類似下面的運行效果。
 
-	最後這邊附上完整的控制項程式碼：
+![image_thumb_3.png](/images/posts/61495/image_thumb_3.png)
 
+這邊帶的只是個很簡單的範例，實際運用上若有需求也可以再進一步替換指撥按鈕的外觀，讓整個控制項更為美觀。
+
+最後這邊附上完整的控制項程式碼：
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,7 +108,7 @@ namespace WindowsFormsApplication3
         }
 
         private SwitchState _state;
-        public SwitchState State 
+        public SwitchState State
         {
             get
             {
@@ -149,3 +160,4 @@ namespace WindowsFormsApplication3
         }
     }
 }
+```

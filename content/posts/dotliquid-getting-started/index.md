@@ -34,44 +34,45 @@ using System.Threading.Tasks;
 
 namespace DotLiquid.GettingStarted
 {
-class Program
-{
-static void Main(string[] args)
-{
-var result = GenerateHelloWorld("Larry", "Mylin", "Andrew");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var result = GenerateHelloWorld("Larry", "Mylin", "Andrew");
 
-Console.WriteLine(result);
-}
+            Console.WriteLine(result);
+        }
 
-static string Generate(string templateContext, object model)
-{
-var template = Template.Parse(templateContext);
-return template.Render(Hash.FromAnonymousObject(model));
-}
+        static string Generate(string templateContext, object model)
+        {
+            var template = Template.Parse(templateContext);
+            return template.Render(Hash.FromAnonymousObject(model));
+        }
 
-static string GenerateHelloWorld(params string[] names)
-{
-var templateContext = ReadContentFromResource("DotLiquid.GettingStarted.Template.HelloWorld.tpl");
-var model = new {names = names};
+        static string GenerateHelloWorld(params string[] names)
+        {
+            var templateContext = ReadContentFromResource("DotLiquid.GettingStarted.Template.HelloWorld.tpl");
+            var model = new {names = names};
 
-return Generate(templateContext, model);
-}
+            return Generate(templateContext, model);
+        }
+        
+        private static string ReadContentFromResource(string resourceName)
+        {
+            return ReadContentFromResourceAsync(resourceName).Result;
+        }
 
-private static string ReadContentFromResource(string resourceName)
-{
-return ReadContentFromResourceAsync(resourceName).Result;
-}
-
-private static async Task ReadContentFromResourceAsync(string resourceName)
-{
-var assembly = Assembly.GetExecutingAssembly();
-using (var stream = assembly.GetManifestResourceStream(resourceName))
-using (var reader = new StreamReader(stream))
-{
-return await reader.ReadToEndAsync();
-}
-}
-}
+        
+        private static async Task<string> ReadContentFromResourceAsync(string resourceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            using (var reader = new StreamReader(stream))
+            {
+                return await reader.ReadToEndAsync();
+            }
+        }
+    }
 }
 ```
 範本部分也稍微複雜了些，帶入了迴圈的處理，允許帶入多個名字進入範本，該範本會依序對這些名字打招呼。

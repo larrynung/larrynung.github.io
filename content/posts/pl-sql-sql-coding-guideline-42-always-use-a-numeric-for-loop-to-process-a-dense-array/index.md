@@ -10,13 +10,13 @@ tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 
 ```psql
 ...
-BEGIN
-
-LOOP
-EXIT process_employees WHEN i > t_employees.COUNT();
-…
-i := i + 1;
-END LOOP process_employees;
+BEGIN 
+  <<process_employees>> 
+  LOOP 
+    EXIT process_employees WHEN i > t_employees.COUNT();
+    … 
+    i := i + 1;
+  END LOOP process_employees; 
 END;
 ```
 
@@ -24,11 +24,11 @@ END;
 
 ```psql
 ...
-BEGIN
-
-FOR i IN 1..t_employees.COUNT()
-LOOP
-…
-END LOOP process_employees;
+BEGIN 
+  <<process_employees>> 
+  FOR i IN 1..t_employees.COUNT() 
+  LOOP 
+    … 
+  END LOOP process_employees; 
 END;
 ```

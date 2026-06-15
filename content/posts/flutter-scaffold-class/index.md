@@ -103,20 +103,20 @@ child: new Icon(Icons.add),
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-bottomNavigationBar: new BottomNavigationBar(
-items: [
-new BottomNavigationBarItem(
-icon: new Icon(Icons.home),
-title: new Text("Left"),
-),
-new BottomNavigationBarItem(
-icon: new Icon(Icons.search),
-title: new Text("Right"),
-),
-],
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          bottomNavigationBar: new BottomNavigationBar(
+    items: <BottomNavigationBarItem>[
+      new BottomNavigationBarItem(
+        icon: new Icon(Icons.home),
+        title: new Text("Left"),
+      ),
+      new BottomNavigationBarItem(
+        icon: new Icon(Icons.search),
+        title: new Text("Right"),
+      ),
+    ],
+  ))));
 }
 ```
 ![7.png](7.png)
@@ -128,32 +128,32 @@ title: new Text("Right"),
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-appBar: new AppBar(
-title: new Text('Welcome to Flutter'),
-),
-drawer: new Drawer(
-child: new ListView(
-padding: EdgeInsets.zero,
-children: [
-new DrawerHeader(
-child: new Text('Drawer Header'),
-decoration: new BoxDecoration(
-color: Colors.blue,
-),
-),
-new ListTile(
-title: new Text('Item 1'),
-onTap: () {},
-),
-new ListTile(
-title: new Text('Item 2'),
-onTap: () {},
-),
-],
-),
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Welcome to Flutter'),
+          ),
+          drawer: new Drawer(
+            child: new ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                new DrawerHeader(
+                  child: new Text('Drawer Header'),
+                  decoration: new BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                ),
+                new ListTile(
+                  title: new Text('Item 1'),
+                  onTap: () {},
+                ),
+                new ListTile(
+                  title: new Text('Item 2'),
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ))));
 }
 ```
 ![9.png](9.png)

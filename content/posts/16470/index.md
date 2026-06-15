@@ -4,28 +4,43 @@ date: "2010-07-09 12:56:04"
 description: "[Visual Studio]Visual Studio 2010切換VC++專案使用的.NET版本"
 tags: [Visual Studio]
 ---
+
 在VS2010中，開啟VC++專案的屬性頁，選取[通用屬性]→[架構和參考]，我們可以發現在Visual Studio前一版還可以切換的.NET Framework版本，已經變得固定不能透過IDE去切換了。
+
+![image_thumb.png](/images/posts/16470/image_thumb.png)
 
 若要切換.NET Framework版本，需去修改vcxproj專案檔，可以透過方案總管卸載專案後開啟編輯，或是透過檔案總管自行打開編輯。打開專案檔後可看到下面設定TargetFrameworkVersion Xml元素標籤的部份，若無該Xml元素標籤可自行附加上去。
 
-{BE4F199C-A366-4307-A3B0-C310B14B5122}
-v4.0
-ManagedCProj
-tt2
+```xml
+<PropertyGroup Label="Globals">
+  <ProjectGuid>{BE4F199C-A366-4307-A3B0-C310B14B5122}</ProjectGuid>
+  <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  <Keyword>ManagedCProj</Keyword>
+  <RootNamespace>tt2</RootNamespace>
+</PropertyGroup>
+```
 
 這邊我們可以把TargetFrameworkVersion Xml元素標籤的值改為V3.5來切換至.NET Framework 3.5。
 
-{BE4F199C-A366-4307-A3B0-C310B14B5122}
-v3.5
-ManagedCProj
-tt2
+```c
+<PropertyGroup Label="Globals">
+  <ProjectGuid>{BE4F199C-A366-4307-A3B0-C310B14B5122}</ProjectGuid>
+  <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  <Keyword>ManagedCProj</Keyword>
+  <RootNamespace>tt2</RootNamespace>
+</PropertyGroup>
+```
 
 儲存後回到Visual Studio的屬性頁，可以看到所使用的.NET Framework版本已切換至3.5。
 
+![image_thumb_1.png](/images/posts/16470/image_thumb_1.png)
+
 接著需切換至[組態屬性]→[一般]，確定平台工具組是否也切換至正確的值。其下拉選項中的V90是.NET Framework 4.0以前用的，V100則是.NET Framework 4.0用的。
+
+![image_thumb_2.png](/images/posts/16470/image_thumb_2.png)
 
 值得注意的，要切換正確的平台工具組需安裝對應版本的Visual Studio，像是如果設定.NET Framework為2.0、3.0、或是3.5，平台工具組設為了V90，則您的電腦必需裝有Visual Studio 2008。
 
 ## Link
 
-How to: Modify the Target Framework and Platform Toolset
+* How to: Modify the Target Framework and Platform Toolset

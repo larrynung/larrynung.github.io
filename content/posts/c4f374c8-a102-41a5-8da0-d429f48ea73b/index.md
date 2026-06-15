@@ -27,6 +27,6 @@ description: "[C#]如何修正MDI父視窗受子視窗影響而無法正常關�
 ```csharp
 private void MDIParent1_FormClosing(object sender, FormClosingEventArgs e)
 {
-e.Cancel = false;
+    e.Cancel = false;
 }
 ```

@@ -46,23 +46,23 @@ BottomNavigationBar({Key key, @required List items, ValueChanged onTap, int curr
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-bottomNavigationBar: new BottomNavigationBar(
-fixedColor: Colors.blue,
-iconSize: 64.0,
-currentIndex: 1,
-items: [
-new BottomNavigationBarItem(
-icon: new Icon(Icons.arrow_left),
-title: new Text("Left"),
-),
-new BottomNavigationBarItem(
-icon: new Icon(Icons.arrow_right),
-title: new Text("Right"),
-),
-],
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          bottomNavigationBar: new BottomNavigationBar(
+    fixedColor: Colors.blue,
+    iconSize: 64.0,
+    currentIndex: 1,
+    items: <BottomNavigationBarItem>[
+      new BottomNavigationBarItem(
+        icon: new Icon(Icons.arrow_left),
+        title: new Text("Left"),
+      ),
+      new BottomNavigationBarItem(
+        icon: new Icon(Icons.arrow_right),
+        title: new Text("Right"),
+      ),
+    ],
+  ))));
 }
 ```
 ![1.png](1.png)

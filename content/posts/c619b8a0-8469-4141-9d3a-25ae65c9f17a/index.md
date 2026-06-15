@@ -10,29 +10,31 @@ tags: [CSharp]
 ```csharp
 private string GetValueFromUnicodeCharacter(string unicodeCharacter)
 {
-var match = Regex.Match(unicodeCharacter, @"\\u(?```` \d{4})");
-if (!match.Success)
-return string.Empty;
-var code = match.Groups["code"].Value;
-int value = Convert.ToInt32(code, 16);
-return ((char)value).ToString();
+	var match = Regex.Match(unicodeCharacter, @"\\u(?<code>\d{4})");
+
+	if (!match.Success)
+		return string.Empty;
+
+	var code = match.Groups["code"].Value;
+	int value = Convert.ToInt32(code, 16);
+	return ((char)value).ToString();
 }
-``` ````
+```
 
 也可以用Regex.Replace將裡面所有的Unicode Character都替換。
 
 ```csharp
 private string DecodeUnicodeCharacter(string unicodeCharacter)
 {
-MatchEvaluator matchAction = (match) =>
-{
-var code = match.Groups["code"].Value;
-int value = Convert.ToInt32(code, 16);
-return ((char)value).ToString();
-};
-return Regex.Replace(unicodeCharacter, @"\\u(?```` \d{4})", matchAction);
+	MatchEvaluator matchAction = (match) =>
+		{
+			var code = match.Groups["code"].Value;
+			int value = Convert.ToInt32(code, 16);
+			return ((char)value).ToString();
+		};
+	return Regex.Replace(unicodeCharacter, @"\\u(?<code>\d{4})", matchAction);
 }
-``` ````
+```
 
 為什麼會這樣轉換也可以參閱ASCII表，搭配上面的程式與說明應該不難理解為什麼可以這樣處理。
 
@@ -50,30 +52,35 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+
 namespace WindowsFormsApplication35
 {
-public partial class Form1 : Form
-{
-public Form1()
-{
-InitializeComponent();
+	public partial class Form1 : Form
+	{
+		public Form1()
+		{
+			InitializeComponent();
+		}
+
+		private string GetValueFromUnicodeCharacter(string unicodeCharacter)
+		{
+			var match = Regex.Match(unicodeCharacter, @"\\u(?<code>\d{4})");
+
+			if (!match.Success)
+				return string.Empty;
+
+			var code = match.Groups["code"].Value;
+			int value = Convert.ToInt32(code, 16);
+			return ((char)value).ToString();
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			label1.Text = GetValueFromUnicodeCharacter(textBox1.Text);
+		}
+	}
 }
-private string GetValueFromUnicodeCharacter(string unicodeCharacter)
-{
-var match = Regex.Match(unicodeCharacter, @"\\u(?```` \d{4})");
-if (!match.Success)
-return string.Empty;
-var code = match.Groups["code"].Value;
-int value = Convert.ToInt32(code, 16);
-return ((char)value).ToString();
-}
-private void textBox1_TextChanged(object sender, EventArgs e)
-{
-label1.Text = GetValueFromUnicodeCharacter(textBox1.Text);
-}
-}
-}
-``` ````
+```
 
 運行畫面如下：
 
@@ -81,5 +88,5 @@ label1.Text = GetValueFromUnicodeCharacter(textBox1.Text);
 
 ## Link
 
-- How to decode “\u0026” in a URL?
-- Unicode Character Value Table - Other Punctuations
+* How to decode “\u0026” in a URL?
+* Unicode Character Value Table - Other Punctuations

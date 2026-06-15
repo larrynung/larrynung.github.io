@@ -14,12 +14,12 @@ tags: [CSharp]
 ```csharp
 private void dataGridView1_Paint(object sender, PaintEventArgs e)
 {
-var columnOffset = 0;
-foreach (DataGridViewColumn column in dataGridView1.Columns)
-{
-columnOffset += column.Width;
-e.Graphics.DrawLine(new Pen(Color.Black), columnOffset + 1, 0, columnOffset + 1, dataGridView1.Height);
-}
+	var columnOffset = 0;
+	foreach (DataGridViewColumn column in dataGridView1.Columns)
+	{
+		columnOffset += column.Width;
+		e.Graphics.DrawLine(new Pen(Color.Black), columnOffset + 1, 0, columnOffset + 1, dataGridView1.Height);
+	}
 }
 ```
 
@@ -29,4 +29,4 @@ e.Graphics.DrawLine(new Pen(Color.Black), columnOffset + 1, 0, columnOffset + 1,
 
 ## Link
 
-- [RESOLVED] Datagridview vertical lines
+* [RESOLVED] Datagridview vertical lines

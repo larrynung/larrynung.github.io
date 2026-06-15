@@ -9,38 +9,44 @@ tags: [CSharp]
 筆者在[C#]DropBox開發系列 - 使用DropNet進行DropBox的OAuth認證這篇稍稍介紹了一下怎樣用DropNet去登入DropBox帳號，並授權給應用程式存取DropBox。這樣的登入與授權的動作在應用程式中不會每次都做，通常是第一次做了取得Token後，再次登入時就改成用帶入Token的方式去做認證，只要Token尚未過期基本上都不會再次要求授權。
 
 使用DropNet進行這樣的處理很簡單，DropNetClient類別有兩個建構子，有個建構子允許我們帶入userToken與userSecret。
-  		public DropNetClient(string apiKey, string appSecret);
-		public DropNetClient(string apiKey, string appSecret, string userToken, string userSecret);
+
+```csharp
+public DropNetClient(string apiKey, string appSecret);
+public DropNetClient(string apiKey, string appSecret, string userToken, string userSecret);
+```
 
 而我們再做完OAuth認證後取得的AccessToken就內含userToken與userSecret這兩個值，我們只需要在第一次做完認證時將這兩個值儲存起來，在下次認證時一併帶入建構子中建立DropNetClient就可以了。或是後續再透過DropNetClient.UserLogin來設定也可以。
 
 像是下面這樣：
 
-			...
-			if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
-			{
-				m_DropNetClient.UserLogin = new UserLogin() 
-				{
-					Secret = Properties.Settings.Default.SECRET,
-					Token = Properties.Settings.Default.TOKEN
-				};
+```csharp
+...
+if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
+{
+	m_DropNetClient.UserLogin = new UserLogin()
+	{
+		Secret = Properties.Settings.Default.SECRET,
+		Token = Properties.Settings.Default.TOKEN
+	};
 
-				return;
-			}
-			
-			...
-			if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
-			{
-				var accessToken = m_DropNetClient.GetAccessToken();
-				Properties.Settings.Default.SECRET = accessToken.Secret;
-				Properties.Settings.Default.TOKEN = accessToken.Token;
-				Properties.Settings.Default.Save();
-			}
+	return;
+}
+
+...
+if (DoOAuth(callbackUrl, cancelCallbackUrl, size) == DialogResult.OK)
+{
+	var accessToken = m_DropNetClient.GetAccessToken();
+	Properties.Settings.Default.SECRET = accessToken.Secret;
+	Properties.Settings.Default.TOKEN = accessToken.Token;
+	Properties.Settings.Default.Save();
+}
+```
 
 這邊的程式筆者是在取得AccessToken後將Secret與Token存入設定檔中，下次認證時若是設定檔中有就直接取用。
 
 最後一樣附上完整的範例程式：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,7 +96,7 @@ namespace DropNetDemo
 		{
 			if (!String.IsNullOrEmpty(Properties.Settings.Default.SECRET) && !String.IsNullOrEmpty(Properties.Settings.Default.TOKEN))
 			{
-				m_DropNetClient.UserLogin = new UserLogin() 
+				m_DropNetClient.UserLogin = new UserLogin()
 				{
 					Secret = Properties.Settings.Default.SECRET,
 					Token = Properties.Settings.Default.TOKEN
@@ -149,3 +155,4 @@ namespace DropNetDemo
 		}
 	}
 }
+```

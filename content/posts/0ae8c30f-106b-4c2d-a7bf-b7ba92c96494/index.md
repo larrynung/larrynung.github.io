@@ -6,19 +6,22 @@ description: "XMind出現_JVM terminated. Exit code 1_異常訊息的修復方�
 
 這一兩天我的Xmind每次開啟就會出現"JVM terminated. Exit code 1"的異常訊息，畫面如下方所示：
 
-	這樣的錯誤會讓整個程式無法開啟，重灌後仍然是異常的，最後找到網路上的解法才得以修復，解決方法是將Xmind安裝目錄下的XMind.ini文件(預設路徑為C:\Program Files\XMind\xmind.ini)開啟。
+![image_thumb.png](/images/posts/0ae8c30f-106b-4c2d-a7bf-b7ba92c96494/image_thumb.png)
 
-	開啟後將下面這三行自XMind.ini中刪除。
+這樣的錯誤會讓整個程式無法開啟，重灌後仍然是異常的，最後找到網路上的解法才得以修復，解決方法是將Xmind安裝目錄下的XMind.ini文件(預設路徑為C:\Program Files\XMind\xmind.ini)開啟。
 
-	-Xms128m  
+![image_thumb_2.png](/images/posts/0ae8c30f-106b-4c2d-a7bf-b7ba92c96494/image_thumb_2.png)
 
-	-Xmx512m  
+開啟後將下面這三行自XMind.ini中刪除。
 
-	-XX:MaxPermSize=256m
+-Xms128m
+-Xmx512m
+-XX:MaxPermSize=256m
 
-	儲存後關閉問題就會修復了。
+![image_thumb_1.png](/images/posts/0ae8c30f-106b-4c2d-a7bf-b7ba92c96494/image_thumb_1.png)
 
-## 
-	Link
+儲存後關閉問題就會修復了。
 
-		安裝後無法執行程式: JVM terminated. Exit code =-1
+## Link
+
+* 安裝後無法執行程式: JVM terminated. Exit code =-1

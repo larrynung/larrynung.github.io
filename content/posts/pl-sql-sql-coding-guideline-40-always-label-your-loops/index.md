@@ -20,12 +20,12 @@ END;
 可以像下面這樣改寫，在 loop 的前面加上 Label，然後在 End 後加上 Label Name。
 
 ```psql
-BEGIN
-
-FOR r_employee IN (SELECT * FROM emp)
-LOOP
-…
-END LOOP process_employees;
+BEGIN 
+  <<process_employees>> 
+  FOR r_employee IN (SELECT * FROM emp) 
+  LOOP 
+    … 
+  END LOOP process_employees; 
 END;
 ```
 

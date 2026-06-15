@@ -9,18 +9,18 @@ tags: [ASP.NET]
 
 ```xml
 ...
-
+<system.web>
 ...
-
+<pages enableViewState= "false"/>
 ...
-
+</system.web>
 ...
 ```
 
 若要在單一頁面禁用，可以在該檔案最前面加入...
 
 ```xml
-
+<%@ Page EnableViewState= "true" ViewStateMode= "Disabled" .. . %>
 ...
 ```
 
@@ -28,15 +28,15 @@ tags: [ASP.NET]
 
 ```xml
 ...
-
+<asp:GridView ID= "gdvCustomers" runat= "server" DataSourceID= "mySqlDataSource" AllowPaging="True" EnableViewState ="false"/>
 ...
 ```
 
 若要針對單一控制項啟用，頁面上其餘的控制項禁用，可以像下面這樣處理...
 
 ```xml
-
+<%@ Page EnableViewState= "true" ViewStateMode= "Disabled" .. . %>
 ...
-
+<asp:GridView ID= "gdvCustomers" runat= "server" DataSourceID= "mySqlDataSource" AllowPaging="True" ViewStateMode= "Enabled"/>
 ...
 ```

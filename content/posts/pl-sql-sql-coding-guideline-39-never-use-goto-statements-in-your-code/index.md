@@ -10,26 +10,26 @@ tags: [PL/SQL]
 ```psql
 ...
 BEGIN
-...
->
-FOR i IN co_lower_bound .. l_len_array
-LOOP
->
-FOR j IN co_lower_bound .. l_len_pw
-LOOP
-IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
-l_isdigit := TRUE;
-GOTO check_other_things;
-END IF;
-END LOOP check_pw_char;
-END LOOP check_digit;
+  ...
+  <<check_digit>>
+  FOR i IN co_lower_bound .. l_len_array
+  LOOP
+      <<check_pw_char>>
+      FOR j IN co_lower_bound .. l_len_pw
+      LOOP
+          IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
+            l_isdigit := TRUE;
+            GOTO check_other_things;
+          END IF;
+      END LOOP check_pw_char;
+  END LOOP check_digit;
 
->
-NULL;
+  <<check_other_things>>
+  NULL;
 
-IF NOT l_isdigit THEN
-raise_application_error(co_errno, co_errmsg);
-END IF;
+  IF NOT l_isdigit THEN
+    raise_application_error(co_errno, co_errmsg);
+  END IF;
 END password_check;
 ...
 ```
@@ -37,26 +37,26 @@ END password_check;
 ```psql
 ...
 BEGIN
-...
->
-FOR i IN co_lower_bound .. l_len_array
-LOOP
->
-FOR j IN co_lower_bound .. l_len_pw
-LOOP
-IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
-l_isdigit := TRUE;
-exit check_digit;
-END IF;
-END LOOP check_pw_char;
-END LOOP check_digit;
+  ...
+  <<check_digit>>
+  FOR i IN co_lower_bound .. l_len_array
+  LOOP
+      <<check_pw_char>>
+      FOR j IN co_lower_bound .. l_len_pw
+      LOOP
+          IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
+            l_isdigit := TRUE;
+            exit check_digit;
+          END IF;
+      END LOOP check_pw_char;
+  END LOOP check_digit;
 
->
-NULL;
+  <<check_other_things>>
+  NULL;
 
-IF NOT l_isdigit THEN
-raise_application_error(co_errno, co_errmsg);
-END IF;
+  IF NOT l_isdigit THEN
+    raise_application_error(co_errno, co_errmsg);
+  END IF;
 END password_check;
 ...
 ```

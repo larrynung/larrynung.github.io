@@ -9,6 +9,11 @@ tags: [FX.Configuration]
 
 接著在 Application Configuration 中設定資料。
 ```xml
+<?xml version="1.0" encoding="utf-8" ?> 
+<configuration> 
+    <appSettings> 
+        <add key="Setting1" value="Larry Nung"/>    </appSettings> 
+</configuration>
 ```
 以及在 JSON Configuration 中設定資料。
 ```json

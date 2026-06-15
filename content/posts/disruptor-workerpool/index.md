@@ -13,20 +13,20 @@ Disruptor 的 EventHandler，Consumer 間會相互合作，會依序消費收到
 ...
 public class Data
 {
-public string Value { get; set; }
+    public string Value { get; set; }
 }
 
-public class DataWorkHandler : IWorkHandler
+public class DataWorkHandler : IWorkHandler<Data >
 {
-public string Name { get; private set; }
-public DataWorkHandler( string name)
-{
-this.Name = name;
-}
-public void OnEvent( Data @event)
-{
-Console.WriteLine( "Thread = {0}, Handler = {1}, Value = {2} ", Thread.CurrentThread.ManagedThreadId.ToString(), this.Name, @event.Value);
-}
+    public string Name { get; private set; }
+    public DataWorkHandler( string name)
+    {
+        this.Name = name;
+    }
+    public void OnEvent( Data @event)
+    {
+        Console.WriteLine( "Thread = {0}, Handler = {1}, Value = {2} ", Thread.CurrentThread.ManagedThreadId.ToString(), this.Name, @event.Value);
+    }
 }
 ...
 ```
@@ -34,24 +34,24 @@ Console.WriteLine( "Thread = {0}, Handler = {1}, Value = {2} ", Thread.CurrentTh
 這邊建造多個 WorkerHandler，帶入 Disruptor 的 HandleEventsWithWorkerPool 方法。
 ```c#
 ...
-var disruptor = new Disruptor.Dsl. Disruptor(() => new Data(), (int)Math .Pow(2, 10), TaskScheduler.Default, ProducerType.SINGLE, new YieldingWaitStrategy());
+var disruptor = new Disruptor.Dsl. Disruptor< Data>(() => new Data(), (int)Math .Pow(2, 10), TaskScheduler.Default, ProducerType.SINGLE, new YieldingWaitStrategy());
 
-var workers = new IWorkHandler[]{
-new DataWorkHandler("Handler1"),
-new DataWorkHandler("Handler2"),
-new DataWorkHandler("Handler3")};
+var workers = new IWorkHandler<Data>[]{
+    new DataWorkHandler("Handler1"),
+    new DataWorkHandler("Handler2"),
+    new DataWorkHandler("Handler3")};
 
 disruptor.HandleEventsWithWorkerPool(workers);
 
 var ringBuffer = disruptor.Start();
-
+            
 while (true)
 {
-var sequenceNo = ringBuffer.Next();
-var data = ringBuffer[sequenceNo];
-data.Value = sequenceNo.ToString();
-ringBuffer.Publish(sequenceNo);
-Thread.Sleep(250);
+    var sequenceNo = ringBuffer.Next();
+    var data = ringBuffer[sequenceNo];
+    data.Value = sequenceNo.ToString();
+    ringBuffer.Publish(sequenceNo);
+    Thread.Sleep(250);
 }
 
 disruptor.Shutdown();

@@ -26,47 +26,51 @@ exec('ALTER DATABASE ' + @dbname + ' SET MULTI_USER');
 
 ```sql
 declare @TableName Nvarchar (4000),
-@ColumnName Nvarchar(4000 ),
-@CharacterMaxLen Nvarchar(4000 ),
-@CollationName Nvarchar(4000 ),
-@IsNullable Nvarchar(4000 ),
-@DataType Nvarchar(4000 ),
-@SQLText Nvarchar(4000 )
-
+      @ColumnName Nvarchar(4000 ),
+      @CharacterMaxLen Nvarchar(4000 ),
+      @CollationName Nvarchar(4000 ),
+      @IsNullable Nvarchar(4000 ),
+      @DataType Nvarchar(4000 ),
+      @SQLText Nvarchar(4000 )
+ 
 SET @CollationName = 'SQL_Latin1_General_CP1_CI_AS'
-
+ 
 declare MyTableCursor cursor for
-SELECT name FROM sys. Tables
-
+       SELECT name FROM sys. Tables
+ 
 OPEN MyTableCursor
+
 
 FETCH NEXT FROM MyTableCursor INTO @TableName
 WHILE @@FETCH_STATUS = 0
-BEGIN
-DECLARE MyColumnCursor Cursor
-FOR
-SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH ,
-IS_NULLABLE from information_schema .columns
-WHERE table_name = @TableName AND  (Data_Type LIKE '%char%'
-OR Data_Type LIKE '%text%') AND COLLATION_NAME  @CollationName
-ORDER BY ordinal_position
-Open MyColumnCursor
+    BEGIN
+        DECLARE MyColumnCursor Cursor
+        FOR
+        SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH ,
+            IS_NULLABLE from information_schema .columns
+            WHERE table_name = @TableName AND  (Data_Type LIKE '%char%'
+            OR Data_Type LIKE '%text%') AND COLLATION_NAME <> @CollationName
+            ORDER BY ordinal_position
+        Open MyColumnCursor
 
-FETCH NEXT FROM MyColumnCursor INTO @ColumnName, @DataType,
-@CharacterMaxLen , @IsNullable
-WHILE @@FETCH_STATUS = 0
-BEGIN
-SET @SQLText = 'ALTER TABLE ' + @TableName + ' ALTER COLUMN [' + @ColumnName + '] ' +
-@DataType + '(' + CASE WHEN @CharacterMaxLen = -1 THEN 'MAX' ELSE @CharacterMaxLen END +
-') COLLATE ' + @CollationName + ' ' +
-CASE WHEN @IsNullable = 'NO' THEN 'NOT NULL' ELSE 'NULL' END
-PRINT @SQLText
 
-FETCH NEXT FROM MyColumnCursor INTO @ColumnName, @DataType,
-@CharacterMaxLen , @IsNullable
-END
-CLOSE MyColumnCursor
-DEALLOCATE MyColumnCursor
+        FETCH NEXT FROM MyColumnCursor INTO @ColumnName, @DataType,
+              @CharacterMaxLen , @IsNullable
+        WHILE @@FETCH_STATUS = 0
+            BEGIN
+            SET @SQLText = 'ALTER TABLE ' + @TableName + ' ALTER COLUMN [' + @ColumnName + '] ' +
+              @DataType + '(' + CASE WHEN @CharacterMaxLen = -1 THEN 'MAX' ELSE @CharacterMaxLen END +
+              ') COLLATE ' + @CollationName + ' ' +
+              CASE WHEN @IsNullable = 'NO' THEN 'NOT NULL' ELSE 'NULL' END
+            PRINT @SQLText
+
+
+        FETCH NEXT FROM MyColumnCursor INTO @ColumnName, @DataType,
+              @CharacterMaxLen , @IsNullable
+        END
+        CLOSE MyColumnCursor
+        DEALLOCATE MyColumnCursor
+
 
 FETCH NEXT FROM MyTableCursor INTO @TableName
 END

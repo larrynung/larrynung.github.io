@@ -41,24 +41,24 @@ ButtonBar 使用上要將需要水平排列的按鈕設置在 children 屬性，
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(
-new MaterialApp(
-home:  new ButtonBar(
-children: [
-new FlatButton(
-child: new Text('OK', style: new TextStyle(color: Colors.white)),
-onPressed: () {},
-color: Colors.blue,
-),
-new FlatButton(
-child: new Text('Cancel', style: new TextStyle(color: Colors.white)),
-onPressed: () {},
-color: Colors.blue,
-),
-],
-),
-)
-);
+  runApp(
+    new MaterialApp(
+      home:  new ButtonBar(
+          children: <Widget>[
+            new FlatButton(
+              child: new Text('OK', style: new TextStyle(color: Colors.white)),
+              onPressed: () {},
+              color: Colors.blue,
+            ),
+            new FlatButton(
+              child: new Text('Cancel', style: new TextStyle(color: Colors.white)),
+              onPressed: () {},
+              color: Colors.blue,
+            ),
+          ],
+        ),
+    )
+  );
 }
 ```
 ![1.png](1.png)

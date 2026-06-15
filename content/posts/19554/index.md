@@ -12,12 +12,15 @@ tags: [CSharp]
 ![image_thumb.png](/images/posts/19554/image_thumb.png)
 
 並在程式碼上方加入Microsoft.VisualBasic與Microsoft.VisualBasic.CompilerServices這兩個命名空間
-```
+
+```csharp
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 ```
+
 就可以透過Versioned類別的CallByName方法使用VB.NET的CallByName函式，就像下面這樣：
-```
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,20 +31,20 @@ using System.Data;
 
 namespace ConsoleApplication1
 {
-class Program
-{
-static void Main(string[] args)
-{
-DataTable dt = new DataTable();
-...
-foreach (DataRow dr in dt.Rows)
-{
-foreach (DataColumn dc in dt.Columns)
-{
-Versioned.CallByName(obj, dc.ColumnName, CallType.Set, dr(dc.ColumnName));
-}
-}
-}
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DataTable dt = new DataTable();
+	    ...
+            foreach (DataRow dr in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    Versioned.CallByName(obj, dc.ColumnName, CallType.Set, dr(dc.ColumnName));
+                }
+            }
+        }
+    }
 }
 ```

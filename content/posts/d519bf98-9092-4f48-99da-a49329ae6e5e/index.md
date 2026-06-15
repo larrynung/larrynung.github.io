@@ -9,40 +9,46 @@ tags: [CSharp]
 有時候我們使用ListBox元件會想要針對Item的新增、插入、與刪除做些反應，可能像是有個Item插入時我們會想把游標移到最下面之類的。但內建的ListBox並未將這樣的訊息開放出來，所以我們無法直接的去做這樣的處理，必須要自行去接收視窗訊息才行。
 
 我們可以建立個控制項，繼承自ListBox，並視需要來接收想要處理的視窗訊息。像是想要偵測Item新增的話我們可以偵測LB_ADDSTRING、想要偵測Item插入的話可以偵測LB_INSERTSTRING、想要偵測Item刪除的話可以偵測LB_DELETESTRING。
-  			private const int LB_ADDSTRING = 0x180;
-			private const int LB_INSERTSTRING = 0x181;
-			private const int LB_DELETESTRING = 0x182; 
+
+```csharp
+private const int LB_ADDSTRING = 0x180;
+private const int LB_INSERTSTRING = 0x181;
+private const int LB_DELETESTRING = 0x182;
+```
 
 偵測時需覆寫WndProc方法，並在方法內判斷Msg是否是我們所感興趣的訊息。有的訊息會內含較為詳細的資訊，像是Item的索引與值，若有需要可從wparam與lparam中擷取。
 
-			protected override void WndProc(ref Message m)
-			{
-				var itemIndex = 0;
-				var itemValue = string.Empty;
+```csharp
+protected override void WndProc(ref Message m)
+{
+	var itemIndex = 0;
+	var itemValue = string.Empty;
 
-				switch (m.Msg)
-				{
-					case LB_ADDSTRING:
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemAdded(EventArgs.Empty);
-						break;
-					case LB_INSERTSTRING:
-						itemIndex = (int)m.WParam;
-						itemValue = Marshal.PtrToStringUni(m.LParam);
-						OnItemInserted(EventArgs.Empty);
-						break;
-					case LB_DELETESTRING:
-						itemIndex = (int)m.WParam;
-						OnItemDeleted(EventArgs.Empty);
-						break;
-					default:
-						break;
-				}
-				base.WndProc(ref m);
-			} 
+	switch (m.Msg)
+	{
+		case LB_ADDSTRING:
+			itemValue = Marshal.PtrToStringUni(m.LParam);
+			OnItemAdded(EventArgs.Empty);
+			break;
+		case LB_INSERTSTRING:
+			itemIndex = (int)m.WParam;
+			itemValue = Marshal.PtrToStringUni(m.LParam);
+			OnItemInserted(EventArgs.Empty);
+			break;
+		case LB_DELETESTRING:
+			itemIndex = (int)m.WParam;
+			OnItemDeleted(EventArgs.Empty);
+			break;
+		default:
+			break;
+	}
+	base.WndProc(ref m);
+}
+```
 
 這邊附上較為完整的測試範例：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +69,7 @@ namespace WindowsFormsApplication4
 			#region Const
 			private const int LB_ADDSTRING = 0x180;
 			private const int LB_INSERTSTRING = 0x181;
-			private const int LB_DELETESTRING = 0x182; 
+			private const int LB_DELETESTRING = 0x182;
 			#endregion
 
 			#region Event
@@ -118,12 +124,12 @@ namespace WindowsFormsApplication4
 						break;
 				}
 				base.WndProc(ref m);
-			} 
+			}
 			#endregion
 		}
 
 		#region Var
-		private ListBoxEx _listBox; 
+		private ListBoxEx _listBox;
 		#endregion
 
 		#region Private Property
@@ -131,12 +137,12 @@ namespace WindowsFormsApplication4
 		{
 			get
 			{
-				return _listBox ?? (_listBox = new ListBoxEx() 
+				return _listBox ?? (_listBox = new ListBoxEx()
 				{
 					Dock = DockStyle.Fill
 				});
 			}
-		} 
+		}
 		#endregion
 
 		#region Constructor
@@ -149,7 +155,7 @@ namespace WindowsFormsApplication4
 			m_ListBox.ItemInserted += m_ListBox_ItemInserted;
 
 			this.panel1.Controls.Add(m_ListBox);
-		} 
+		}
 		#endregion
 
 		#region Event Process
@@ -184,19 +190,19 @@ namespace WindowsFormsApplication4
 		void m_ListBox_ItemAdded(object sender, EventArgs e)
 		{
 			lbxLog.Items.Add("Item added");
-		} 
+		}
 		#endregion
 	}
 }
+```
 
 運行後的結果如下，新增、插入、與刪除都能夠即時的偵測。
 
+![image_thumb.png](/images/posts/d519bf98-9092-4f48-99da-a49329ae6e5e/image_thumb.png)
+
 ## Link
 
-  How to detect if items are added to a ListBox (or CheckedListBox) control
-
-  LB_ADDSTRING message (Windows)
-
-  LB_DELETESTRING message (Windows)
-
-  LB_INSERTSTRING message (Windows)
+* How to detect if items are added to a ListBox (or CheckedListBox) control
+* LB_ADDSTRING message (Windows)
+* LB_DELETESTRING message (Windows)
+* LB_INSERTSTRING message (Windows)

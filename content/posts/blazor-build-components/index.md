@@ -10,20 +10,23 @@ Blazor component 以 razor 為副檔名，它跟 ASP.NET MVC 的 Razor page 很�
 
 這邊可參閱 Blazor 範本的 Counter 程式。程式碼那邊定義了一個 currentCount 的變數，以及一個 IncrementCount 方法，IncrementCount 方法只是很單純的將 currentCount 變數值加一。畫面這邊透過 @onclick="@IncrementCount" 指定畫面元素被按下時調用 IncrementCount 方法，並透過 @currentCount 將變數的值呈現在畫面上。
 ```html
+<h1>Counter</h1>
 
-# Counter
 
-Current count: @currentCount
+<p>Current count: @currentCount</p>
 
-Click me
+
+<button class="btn btn-primary" @onclick="@IncrementCount">Click me</button>
+
 
 @code {
-private int currentCount = 0;
+    private int currentCount = 0;
 
-private void IncrementCount()
-{
-currentCount++;
-}
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
 }
 ```
 ![1.png](1.png)
@@ -32,9 +35,14 @@ Blazor component 做好後，可以直接將它當成 HTML element 使用，像�
 ```html
 @page "/"
 
-# Hello, world!
+
+<h1>Hello, world!</h1>
+
 
 Welcome to your new app.
+
+
+<Counter/>
 ```
 ![2.png](2.png)
 

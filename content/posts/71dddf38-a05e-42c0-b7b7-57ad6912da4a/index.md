@@ -8,12 +8,17 @@ tags: [CSharp]
 
 認證的開發介紹完了，這邊要介紹一下如何遍巡DropBox內存放的檔案，使用DropNet去實做這個功能也很簡單，只需要透過DropNetClient.GetMetaData這個函式帶入要查閱的路徑就可以了。若是要查閱的是根目錄，可帶入"/"去做查閱，但需注意申請App Key時必需要允許對整個DropBox做控制才可以，不然只能針對該App的目錄下去巡覽。
 
-	用DropNetClient.GetMetaData問回來的資料是MetaData型態。DropNet將DropBox內的檔案都視為是MetaData，MetaData內會有檔案名稱、大小、是否是目錄之類的相關資訊。
+用DropNetClient.GetMetaData問回來的資料是MetaData型態。DropNet將DropBox內的檔案都視為是MetaData，MetaData內會有檔案名稱、大小、是否是目錄之類的相關資訊。
 
-	若MetaData是目錄的話，目錄下的存放的檔案資料會在Contents屬性中，我們只要遞迴去遍巡處理就可以了。但這邊需要特別留意的是，為了速度考量DropNet預設只會抓指定那層的資料，超過指定那層Contents屬性會是Null，因此再往下層處理時記得要再次叫用DropNetClient.GetMetaData。
+![image_thumb_1.png](/images/posts/71dddf38-a05e-42c0-b7b7-57ad6912da4a/image_thumb_1.png)
 
-	處理起來會像下面這樣：
+若MetaData是目錄的話，目錄下的存放的檔案資料會在Contents屬性中，我們只要遞迴去遍巡處理就可以了。但這邊需要特別留意的是，為了速度考量DropNet預設只會抓指定那層的資料，超過指定那層Contents屬性會是Null，因此再往下層處理時記得要再次叫用DropNetClient.GetMetaData。
 
+![image_thumb_2.png](/images/posts/71dddf38-a05e-42c0-b7b7-57ad6912da4a/image_thumb_2.png)
+
+處理起來會像下面這樣：
+
+```csharp
 ...
 private void btnLogin_Click(object sender, EventArgs e)
 {
@@ -93,13 +98,17 @@ private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
 	FillDirOrFileToTreeView(node, m_DropNetClient.GetMetaData("/" + node.FullPath));
 }
 ...
+```
 
-	運行後可以看到我們確實的將整個DropBox內的內容都抓出來了。
+運行後可以看到我們確實的將整個DropBox內的內容都抓出來了。
 
-	筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫GetMetaDataAsync就可以了。
+![image_thumb.png](/images/posts/71dddf38-a05e-42c0-b7b7-57ad6912da4a/image_thumb.png)
 
-	最後一樣附上完整的範例程式碼：
+筆者在撰寫時為了方便都是以同步的方式下去做說明，實際使用時若有需要可以考慮用非同步的方式叫用，將程式改呼叫`GetMetaDataAsync就可以了。`
 
+最後一樣附上完整的範例程式碼：
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -266,3 +275,4 @@ namespace DropNetDemo
 		}
 	}
 }
+```

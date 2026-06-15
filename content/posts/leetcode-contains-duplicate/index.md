@@ -15,18 +15,18 @@ Given an array of integers, find if the array contains any duplicates. Your func
 
 ```c#
 public class Solution {
-public bool ContainsDuplicate(int[] nums) {
-var length = nums.Length;
-var hs = new HashSet();
-for(var idx = 0; idx < length; ++idx)
-{
-var num = nums[idx];
-if(hs.Contains(num))
-return true;
-hs.Add(num);
-}
-return false;
-}
+    public bool ContainsDuplicate(int[] nums) {
+        var length = nums.Length;
+        var hs = new HashSet<int>();
+        for(var idx = 0; idx < length; ++idx)
+        {
+            var num = nums[idx];
+            if(hs.Contains(num))
+                return true;
+            hs.Add(num);
+        }
+        return false;
+    }
 }
 ```
 

@@ -7,9 +7,9 @@ tags: [Fody]
 MethodBoundaryAspect.Fody 要修改非同步方法的回傳值，可在 OnExit 方法實作時將 MethodExecutionArgs.ReturnValue 屬性值轉回 Task，用 ContinueWith 串接處理，並將之塞回 MethodExecutionArgs.ReturnValue。
 
 ```c#
-if (args.ReturnValue is Task t)
+if (args.ReturnValue is Task<...> t)
 {
-args.ReturnValue = t.ContinueWith(...);
+    args.ReturnValue = t.ContinueWith(...);
 }
 ```
 
@@ -19,22 +19,23 @@ args.ReturnValue = t.ContinueWith(...);
 using System.Threading.Tasks;
 using MethodBoundaryAspect.Fody.Attributes;
 
+
 namespace MethodBoundaryAspect.Fody.Demo
 {
-public sealed class UpperAttribute : OnMethodBoundaryAspect
-{
-public override void OnExit(MethodExecutionArgs args)
-{
-if (args.ReturnValue is Task t)
-{
-args.ReturnValue = t.ContinueWith(task => t.Result.ToUpper());
-}
-else
-{
-args.ReturnValue = (args.ReturnValue as string).ToUpper();
-}
-}
-}
+    public sealed class UpperAttribute : OnMethodBoundaryAspect
+    {
+        public override void OnExit(MethodExecutionArgs args)
+        {
+            if (args.ReturnValue is Task<string> t)
+            {
+                args.ReturnValue = t.ContinueWith(task => t.Result.ToUpper());
+            }
+            else
+            {
+                args.ReturnValue = (args.ReturnValue as string).ToUpper();
+            }
+        }
+    }
 }
 ```
 
@@ -46,28 +47,30 @@ args.ReturnValue = (args.ReturnValue as string).ToUpper();
 using System;
 using System.Threading.Tasks;
 
+
 namespace MethodBoundaryAspect.Fody.Demo
 {
-class Program
-{
-[Log]
-static void Main(string[] args)
-{
-Console.WriteLine(GetDataAsync().Result);
-}
+    class Program
+    {
+        [Log]
+        static void Main(string[] args)
+        {
+            Console.WriteLine(GetDataAsync().Result);
+        }
 
-[Upper]
-static Task GetDataAsync()
-{
-return Task.FromResult("hello world!");
-}
 
-[Upper]
-static string GetData()
-{
-return "hello world!";
-}
-}
+        [Upper]
+        static Task<string> GetDataAsync()
+        {
+            return Task.FromResult("hello world!");
+        }
+
+        [Upper]
+        static string GetData()
+        {
+            return "hello world!";
+        }
+    }
 }
 ```
 

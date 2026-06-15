@@ -18,26 +18,26 @@ tags: [Disruptor]
 透過 DSL 的方式撰寫的話會像下面這樣：
 ```c#
 ...
-using Disruptor;
-namespace ConsoleApplication29 {
-…
-class Program {
-static void Main( string[] args) {
-var disruptor = new Disruptor.Dsl. Disruptor(() => new Data(), (int)Math .Pow(2,4), TaskScheduler.Default);
-disruptor.HandleEventsWith(new DataEventHandler("Handler1”));
-var ringBuffer = disruptor.Start();
-var idx = 0;
-while ( true) {
-var sequenceNo = ringBuffer.Next();
-var data = ringBuffer[sequenceNo];
-data.Value = idx++.ToString();
-ringBuffer.Publish(sequenceNo);
-Thread.Sleep(250);
-}
-disruptor.Shutdown();
-}
-}
-}
+using Disruptor; 
+namespace ConsoleApplication29 { 
+    …
+    class Program { 
+        static void Main( string[] args) { 
+            var disruptor = new Disruptor.Dsl. Disruptor<Data>(() => new Data(), (int)Math .Pow(2,4), TaskScheduler.Default); 
+            disruptor.HandleEventsWith(new DataEventHandler("Handler1”)); 
+            var ringBuffer = disruptor.Start(); 
+            var idx = 0; 
+            while ( true) { 
+                var sequenceNo = ringBuffer.Next(); 
+                var data = ringBuffer[sequenceNo]; 
+                data.Value = idx++.ToString(); 
+                ringBuffer.Publish(sequenceNo); 
+                Thread.Sleep(250); 
+             } 
+            disruptor.Shutdown(); 
+        } 
+    } 
+} 
 ```
 若是改用 Non-DSL 撰寫的話，依賴關係圖形會像下面這樣：
 
@@ -45,15 +45,15 @@ disruptor.Shutdown();
 
 程式撰寫起來會像下面這樣：
 ```c#
-...
-var ringBuffer = RingBuffer.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4));
-var barrier = ringBuffer.NewBarrier();
-var eventProcessor = new BatchEventProcessor(ringBuffer, barrier, new DataEventHandler("Handler1"));
+... 
+var ringBuffer = RingBuffer<Data>.CreateSingleProducer(() => new Data(), (int)Math.Pow(2, 4)); 
+var barrier = ringBuffer.NewBarrier(); 
+var eventProcessor = new BatchEventProcessor<Data>(ringBuffer, barrier, new DataEventHandler("Handler1")); 
 
-Task.Factory.StartNew(() => eventProcessor.Run());
-...
-eventProcessor.Halt();
-...
+Task.Factory.StartNew(() => eventProcessor.Run()); 
+... 
+eventProcessor.Halt(); 
+... 
 ```
 運行起來可以看到我們只有一個 Handler，這個 Handler 會在一個執行緒上循序地消費 Producer 產生的資料。
 ![4.png](/images/posts/DisruptorUnicast1P1C/4.png)

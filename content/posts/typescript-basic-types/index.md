@@ -19,9 +19,9 @@ var booleanVariable: boolean;
 var numberVariable: number;
 var stringVariable: string;
 var arrayVariable1: number[];
-var arrayVariable2: Array;
+var arrayVariable2: Array<number>;
 var anyVariable: any;
-var enumVariable: enumName;
+var enumVariable: enumName; 
 ```
 宣告指定的型態後，該變數就只能賦予相同型態的值，像是 Boolean 型態就只能賦予 true/false、Number 型態只能賦予數值、String 型態只能賦予字串值。若真的有需要讓變數支援賦予多種不同型態的值，只要將變數宣告成 Any 型態即可。
 
@@ -48,16 +48,16 @@ var booleanVariable: boolean = true;
 var numberVariable: number = 1;
 var stringVariable: string = "test";
 var arrayVariable1: number[] = [123];
-var arrayVariable2: Array = arrayVariable1;
+var arrayVariable2: Array<number> = arrayVariable1;
 var anyVariable: any = 1;
-var enumVariable: Color;
+var enumVariable: Color; 
 
-var colorName:string = Color[2];
+var colorName:string = Color[2]; 
 var colorValue:number = Color.Green;
 
-function log(msg:any): void
+function log(msg:any): void 
 {
-console.log(msg);
+	console.log(msg);
 }
 
 log(colorName);

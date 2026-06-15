@@ -60,47 +60,48 @@ using DotLiquid.LiquidType.Model;
 
 namespace DotLiquid.LiquidType
 {
-class Program
-{
-static void Main(string[] args)
-{
-Template.NamingConvention = new NamingConventions.CSharpNamingConvention();
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Template.NamingConvention = new NamingConventions.CSharpNamingConvention();
+            
+            var larry = new Person("Larry");
+            var result = GenerateHelloWorld(larry);
 
-var larry = new Person("Larry");
-var result = GenerateHelloWorld(larry);
+            Console.WriteLine(result);
+        }
 
-Console.WriteLine(result);
-}
+        static string Generate(string templateContext, object model)
+        {
+            var template = Template.Parse(templateContext);
+            return template.Render(Hash.FromAnonymousObject(model));
+        }
 
-static string Generate(string templateContext, object model)
-{
-var template = Template.Parse(templateContext);
-return template.Render(Hash.FromAnonymousObject(model));
-}
+        static string GenerateHelloWorld(params Person[] persons)
+        {
+            var templateContext = ReadContentFromResource("DotLiquid.LiquidType.Template.HelloWorld.tpl");
+            var model = new {persons = persons};
 
-static string GenerateHelloWorld(params Person[] persons)
-{
-var templateContext = ReadContentFromResource("DotLiquid.LiquidType.Template.HelloWorld.tpl");
-var model = new {persons = persons};
+            return Generate(templateContext, model);
+        }
+        
+        private static string ReadContentFromResource(string resourceName)
+        {
+            return ReadContentFromResourceAsync(resourceName).Result;
+        }
 
-return Generate(templateContext, model);
-}
-
-private static string ReadContentFromResource(string resourceName)
-{
-return ReadContentFromResourceAsync(resourceName).Result;
-}
-
-private static async Task ReadContentFromResourceAsync(string resourceName)
-{
-var assembly = Assembly.GetExecutingAssembly();
-using (var stream = assembly.GetManifestResourceStream(resourceName))
-using (var reader = new StreamReader(stream))
-{
-return await reader.ReadToEndAsync();
-}
-}
-}
+        
+        private static async Task<string> ReadContentFromResourceAsync(string resourceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            using (var reader = new StreamReader(stream))
+            {
+                return await reader.ReadToEndAsync();
+            }
+        }
+    }
 }
 ```
 

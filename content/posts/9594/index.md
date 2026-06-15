@@ -6,3 +6,5 @@ tags: [Other]
 ---
 
 活動網址: TechNet Taiwan官方部落格
+
+![image_thumb.png](/images/posts/9594/image_thumb.png)

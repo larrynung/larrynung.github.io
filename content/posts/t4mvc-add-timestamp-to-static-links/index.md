@@ -11,7 +11,7 @@ T4MVC 除了解決 ASP.NET MVC Magic String 的問題外，還能解決常見的
 
 ```xml
 ...
-True
+<AddTimestampToStaticLinks>True</AddTimestampToStaticLinks>
 ...
 ```
 

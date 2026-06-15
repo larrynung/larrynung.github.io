@@ -7,14 +7,19 @@ tags: [CSharp]
 
 大家都知道在.Net程式中有所謂的 Boxing與UnBoxing，也都知道 Boxing與UnBoxing會讓程式有效能上的損耗，那麼要怎樣才能有效率的抓出程式中的Boxing與UnBoxing呢 ?
 
-	以前筆者還沒有比較好的方式，也找不太到現成的FxCop rule。所以是比較笨拙的先將程式組件反組譯成IL碼，再下去查閱box的操作。
+以前筆者還沒有比較好的方式，也找不太到現成的FxCop rule。所以是比較笨拙的先將程式組件反組譯成IL碼，再下去查閱box的操作。
 
-	這樣雖然可以解決問題，但是真的很麻煩，每次都要重新反組譯dump成IL，再去找Boxing與UnBoxing，找到後還要從IL推斷出是哪個程式檔案的哪個位置，才能做修正的動作。
+![image_thumb_2.png](/images/posts/b596ddd9-c2bd-4f31-8a6a-8b04462a06b7/image_thumb_2.png)
 
-	後來筆者找到了BoxCop，問題就變得簡單了許多。(雖然它只能支援.Net Framework 3.5以前的程式，不支援的版本會出現像下圖的錯誤)
+這樣雖然可以解決問題，但是真的很麻煩，每次都要重新反組譯dump成IL，再去找Boxing與UnBoxing，找到後還要從IL推斷出是哪個程式檔案的哪個位置，才能做修正的動作。
 
-	透過BoxCop ，開發人員只要帶入組件讓BoxCop分析，就可以很容易的找到程式有Boxing與UnBoxing的地方。像是下面這樣一段簡單也算是很常見的程式碼片段，就有著Boxing的動作，因為這邊的範例把數值直接塞到object去了。
+後來筆者找到了BoxCop，問題就變得簡單了許多。(雖然它只能支援.Net Framework 3.5以前的程式，不支援的版本會出現像下圖的錯誤)
 
+![image_thumb.png](/images/posts/b596ddd9-c2bd-4f31-8a6a-8b04462a06b7/image_thumb.png)
+
+透過BoxCop ，開發人員只要帶入組件讓BoxCop分析，就可以很容易的找到程式有Boxing與UnBoxing的地方。像是下面這樣一段簡單也算是很常見的程式碼片段，就有著Boxing的動作，因為這邊的範例把數值直接塞到object去了。
+
+```csharp
 using System;
 
 namespace ConsoleApplication25
@@ -31,14 +36,15 @@ namespace ConsoleApplication25
 		}
 	}
 }
+```
 
-	試想著這樣類似的程式碼片佈在你的程式之中會多麼難察覺。還好透過BoxCop來偵測這樣的問題還滿簡單的，運行起來會像下面這樣:
+試想著這樣類似的程式碼片佈在你的程式之中會多麼難察覺。還好透過BoxCop來偵測這樣的問題還滿簡單的，運行起來會像下面這樣:
 
-	是哪個程式檔案、哪個類別、哪一行會有 Boxing與UnBoxing都一清二楚。雖然它的column好像不太準確，但起碼我們可以準確地抓到問題發生的行數，只要再確認一下那行程式哪個運算有問題就可以了。
+![image_thumb_1.png](/images/posts/b596ddd9-c2bd-4f31-8a6a-8b04462a06b7/image_thumb_1.png)
 
-## 
-	Link
+是哪個程式檔案、哪個類別、哪一行會有 Boxing與UnBoxing都一清二楚。雖然它的column好像不太準確，但起碼我們可以準確地抓到問題發生的行數，只要再確認一下那行程式哪個運算有問題就可以了。
 
-		BoxCop – Static Assembly Analyzer tool
-	
-		BoxCop – Static Assembly Analyzer tool
+## Link
+
+* BoxCop – Static Assembly Analyzer tool
+* BoxCop – Static Assembly Analyzer tool

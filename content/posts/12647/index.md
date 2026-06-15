@@ -11,27 +11,32 @@ tags: [VB.NET]
 
 看看MSDN就可以發現一點端倪。
 
+![image_thumb.png](/images/posts/12647/image_thumb.png)
+
 函式的說明寫的是"是否可做為數字來評估"。因此看起來，我們一般常見能經過處理變為數值的字串，呼叫IsNumeric函式，都會回傳True。
 
 .NET內建的IsNumeric會接受","當作千位分隔符號、接受"+"與"-"當作正負號、接受字串中含有一個逗點當作小數點、接受"e"當作科學符號、接受括弧、與八進制和十六進制的數值字串。
 
-  測試Code如下：      
-      Sub Main()
-        Dim testStrings() As String = {"123,，", "1,，23", "123,", "123，", "123,000", "1.23", "+123", "-123", "12e3", "2d3", "&H0A", "&6", "(123)", "￥12.3"}
-        Dim value As Decimal
-        For Each testString As String In testStrings
-            Console.Write(testString & " : ")
-            Console.Write(IsNumeric(testString).ToString() & vbTab)
-            Console.WriteLine("value : " & If(Decimal.TryParse(testString, value), value.ToString, String.Empty))
-        Next
-    End Sub
+測試Code如下：
 
-運行結果如下： 
+```csharp
+Sub Main()
+    Dim testStrings() As String = {"123,，", "1,，23", "123,", "123，", "123,000", "1.23", "+123", "-123", "12e3", "2d3", "&H0A", "&6", "(123)", "￥12.3"}
+    Dim value As Decimal
+    For Each testString As String In testStrings
+        Console.Write(testString & " : ")
+        Console.Write(IsNumeric(testString).ToString() & vbTab)
+        Console.WriteLine("value : " & If(Decimal.TryParse(testString, value), value.ToString, String.Empty))
+    Next
+End Sub
+```
+
+運行結果如下：
+
+![image_thumb_1.png](/images/posts/12647/image_thumb_1.png)
 
 ## Link
 
-  IsNumeric 函式 (Visual Basic) 
-
-  我认为isnumeric()函数有bug,不知大家以为如何,有例子 
-
-  让我意外的IsNumeric()函数
+* IsNumeric 函式 (Visual Basic)
+* 我认为isnumeric()函数有bug,不知大家以为如何,有例子
+* 让我意外的IsNumeric()函数

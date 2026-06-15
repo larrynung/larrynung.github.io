@@ -40,17 +40,17 @@ options.SendMaxMessageSize = sendMsgLimit;
 ...
 public class Startup
 {
-public void ConfigureServices(IServiceCollection services)
-{
-...
-services.AddGrpc().AddServiceOptions(options =>
-{
-options.ReceiveMaxMessageSize = receiveMsgLimit;
-options.SendMaxMessageSize = sendMsgLimit;
-});
-...
-}
-...
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+        services.AddGrpc().AddServiceOptions<GreeterService>(options =>
+        {
+            options.ReceiveMaxMessageSize = receiveMsgLimit;
+            options.SendMaxMessageSize = sendMsgLimit;
+        });
+        ...
+    }
+   ...
 }
 ```
 

@@ -20,7 +20,7 @@ tags: [gRPC]
 
 編譯檔案時會將 Proto 編譯成對應的程式碼，產生在 obj 下。
 
-{% asset_img 5.png%}
+![5.png](5.png)
 
 另外是 .NET Core 3.0 的 gRPC Service 已經被整進 ASP.NET Core 去了，只要在 Startup.cs 中的 ConfigServices 將 gRPC 服務開啟。
 ```C#
@@ -36,8 +36,8 @@ services.AddGrpc();
 ...
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
-...
-app.UseRouting(routes => { routes.MapGrpcService(); });
+    ...
+    app.UseRouting(routes => { routes.MapGrpcService<GreeterService>(); });
 }
 ...
 ```

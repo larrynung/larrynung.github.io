@@ -11,8 +11,8 @@ tags: [CSharp]
 ...
 using (var image = Bitmap.FromFile(file))
 {
-var size = image.Size;
-...
+	var size = image.Size;
+	...
 }
 ...
 ```
@@ -35,6 +35,7 @@ using System.Windows.Media;
 ...
 var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
 var frame = decoder.Frames.FirstOrDefault();
+
 var size = new Size(frame.PixelWidth, frame.PixelHeight);
 ...
 ```
@@ -56,52 +57,62 @@ using System.Drawing.Imaging;
 using System.Windows.Threading;
 using System.Windows.Media;
 using System.Diagnostics;
+
 namespace WindowsFormsApplication32
 {
-public partial class Form1 : Form
-{
-public Form1()
-{
-InitializeComponent();
-}
-private long StopwatchMethod(Action act, int testCount, Boolean returnAverageValue = false)
-{
-var sw = Stopwatch.StartNew();
-for (int i = 0; i < testCount;++i )
-act();
-sw.Stop();
-var elapsedMilliseconds = sw.ElapsedMilliseconds;
-return (returnAverageValue) ? elapsedMilliseconds / testCount : elapsedMilliseconds;
-}
-public Size GetImageSize1(string file)
-{
-var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
-var frame = decoder.Frames.FirstOrDefault();
-return new Size(frame.PixelWidth, frame.PixelHeight);
-}
-public Size GetImageSize2(string file)
-{
-using (var image = Bitmap.FromFile(file))
-{
-return image.Size;
-}
-}
-private void button1_Click(object sender, EventArgs e)
-{
-if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-{
-var file = openFileDialog1.FileName;
-GetImageSize1(file);
-GetImageSize2(file);
-textBox1.Clear();
-textBox1.Text += "BitmapDecoder" + Environment.NewLine;
-textBox1.Text += StopwatchMethod(() => GetImageSize1(file), 10).ToString() + Environment.NewLine;
-textBox1.Text += Environment.NewLine;
-textBox1.Text += "Bitmap" + Environment.NewLine;
-textBox1.Text += StopwatchMethod(() => GetImageSize2(file), 10).ToString() + Environment.NewLine;
-}
-}
-}
+	public partial class Form1 : Form
+	{
+		public Form1()
+		{
+			InitializeComponent();
+		}
+
+		private long StopwatchMethod(Action act, int testCount, Boolean returnAverageValue = false)
+		{
+			var sw = Stopwatch.StartNew();
+			for (int i = 0; i < testCount;++i )
+				act();
+
+			sw.Stop();
+			var elapsedMilliseconds = sw.ElapsedMilliseconds;
+			return (returnAverageValue) ? elapsedMilliseconds / testCount : elapsedMilliseconds;
+		}
+
+		public Size GetImageSize1(string file)
+		{
+			var decoder = BitmapDecoder.Create(new Uri(file), BitmapCreateOptions.DelayCreation, BitmapCacheOption.None);
+			var frame = decoder.Frames.FirstOrDefault();
+
+			return new Size(frame.PixelWidth, frame.PixelHeight);
+		}
+
+		public Size GetImageSize2(string file)
+		{
+			using (var image = Bitmap.FromFile(file))
+			{
+				return image.Size;
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				var file = openFileDialog1.FileName;
+
+				GetImageSize1(file);
+				GetImageSize2(file);
+
+				textBox1.Clear();
+				textBox1.Text += "BitmapDecoder" + Environment.NewLine;
+				textBox1.Text += StopwatchMethod(() => GetImageSize1(file), 10).ToString() + Environment.NewLine;
+
+				textBox1.Text += Environment.NewLine;
+				textBox1.Text += "Bitmap" + Environment.NewLine;
+				textBox1.Text += StopwatchMethod(() => GetImageSize2(file), 10).ToString() + Environment.NewLine;
+			}
+		}
+	}
 }
 ```
 
@@ -111,6 +122,6 @@ textBox1.Text += StopwatchMethod(() => GetImageSize2(file), 10).ToString() + Env
 
 ## Link
 
-- Determining height and width of an image without loading it into memory?
-- Reading Image Headers to Get Width and Height
-- Getting image dimensions without reading the entire file
+* Determining height and width of an image without loading it into memory?
+* Reading Image Headers to Get Width and Height
+* Getting image dimensions without reading the entire file

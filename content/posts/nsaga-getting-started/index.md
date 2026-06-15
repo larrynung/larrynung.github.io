@@ -35,14 +35,14 @@ public class SagaMessage: ISagaMessage
 ```C#
 public class SagaData
 {
-    public List Executed { get; } = new List();
+    public List<string> Executed { get; } = new List<string>();
 }
 ```
 
 再來要定義 Transaction，也就是 NSaga 中的 Saga。造一個專屬的 Saga Class，實作 ISaga、InitatedBy、ConsumerOf 介面。  
 
 ```C#
-public class Saga: ISaga, InitiatedBy, ConsumerOf
+public class Saga: ISaga<SagaData>, InitiatedBy<StartSagaMessage>, ConsumerOf<SagaMessage>
 {
     ...
 }
@@ -65,10 +65,10 @@ public OperationResult Initiate(StartSagaMessage message)
 像是下面這樣：  
 
 ```C#
-public class Saga: ISaga, InitiatedBy, ConsumerOf
+public class Saga: ISaga<SagaData>, InitiatedBy<StartSagaMessage>, ConsumerOf<SagaMessage>
 {
     public Guid CorrelationId { get; set; }
-    public Dictionary Headers { get; set; }
+    public Dictionary<string, string> Headers { get; set; }
     public SagaData SagaData { get; set; }
     public OperationResult Initiate(StartSagaMessage message)
     {
@@ -113,7 +113,7 @@ mediator.Consume(new StartSagaMessage()
 
 ```C#
 ...
-var saga = repository.Find(correlationId);
+var saga = repository.Find<Saga>(correlationId);
 ...
 ```
 
@@ -144,7 +144,7 @@ namespace NSaga.Demo
                 CorrelationId = correlationId
             });
 
-            var saga = repository.Find(correlationId);
+            var saga = repository.Find<Saga>(correlationId);
 
             Console.WriteLine(string.Join(", ", saga.SagaData.Executed.ToArray()));
         }

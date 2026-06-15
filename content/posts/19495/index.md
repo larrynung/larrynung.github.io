@@ -4,6 +4,7 @@ date: "2010-11-16 08:51:46"
 description: "Linq to GPU (Brahma)"
 tags: [CSharp,Linq]
 ---
+
 Brahma為一C#開源庫，可用以撰寫高階Linq語法，將處理分散給GPU平行運算，實現Linq to GPU的功能。其主要類別有ComputationProvider、DataParallelArray、CompiledQuery 。
 
 ComputationProvider為Brahma核心類別，具DirectX與OpenGL兩個版本。DirectX版本的ComputationProvider需裝有DirectX SDK或是DirectX end-user redistributable才可使用，可幫我們將程式碼轉換成HLSL(High Level Shading Language)交由DirectX去做處理。OpenGL版本的ComputationProvider則需在裝有Tao OpenGL bindings for .NET/Mono的環境下執行，可將程式碼轉換成OpenGL Shading Languag交由OpenGL去做處理。
@@ -13,40 +14,51 @@ DataParallelArray類別為處理運算的主要資料結構，有一維與二維
 而CompiledQuery類別則是用以存放呼叫ComputationProvider.Compile後預先編譯的查詢。
 
 使用上我們需先加入下列參考：
-Brahma.dll Brahma.DirectX.dll or Brahma.OpenGL.dll Microsoft.DirectX.dll Microsoft.DirectX.Direct3D.dll
+
+1. Brahma.dll
+2. Brahma.DirectX.dll or Brahma.OpenGL.dll
+3. Microsoft.DirectX.dll
+4. Microsoft.DirectX.Direct3D.dll
 
 並加入以下命名空間：
-Brahma Brahma.DirectX or Brahma.OpenGL
+
+1. Brahma
+2. Brahma.DirectX or Brahma.OpenGL
 
 接著建立ComputationProvider物件實體與運算要用的DataParallelArray資料，透過ComputationProvider.Compile預先將運算編譯成CompiledQuery，再把預先編譯的CompiledQuery運算與要做運算的DataParallelArray資料帶入ComputationProvider.Run就可以了。
 
 這邊直接來看一下Brahma網站中提供的使用範例：
+
+```csharp
 // Create the computation provider
-var computationProvider = new ComputationProvider();
+ var computationProvider = new ComputationProvider();
 
-// Create a data-parallel array and fill it with data
-var data = new DataParallelArray(computationProvider,
-new[] { 0f, 1f, 2f, 3f, 4f, 5f, 6f });
+ // Create a data-parallel array and fill it with data
+ var data = new DataParallelArray<float>(computationProvider,
+     new[] { 0f, 1f, 2f, 3f, 4f, 5f, 6f });
 
-// Compile the query
-CompiledQuery query = computationProvider.Compile>
-(
-d => from value in d
-select value * 2f
-);
+ // Compile the query
+ CompiledQuery query = computationProvider.Compile<DataParallelArray<float>>
+ (
+     d => from value in d
+          select value * 2f
+ );
 
-// Run the query on this data
-IQueryable result = computationProvider.Run(query, data);
+ // Run the query on this data
+ IQueryable result = computationProvider.Run(query, data);
 
-// Print out the results
-foreach (float value in result)
-Console.WriteLine(value);
+ // Print out the results
+ foreach (float value in result)
+     Console.WriteLine(value);
 
-// Get rid of all the stuff we created
-computationProvider.Dispose();
-data.Dispose();
+ // Get rid of all the stuff we created
+ computationProvider.Dispose();
+ data.Dispose();
+```
 
 運行後可看到如下執行結果：
+
+![2010-11-16_173821_thumb.png](/images/posts/19495/2010-11-16_173821_thumb.png)
 
 若要進一步學習可翻閱Brahma專案中所附的三個範例專案。
 
@@ -54,18 +66,11 @@ data.Dispose();
 
 ## Link
 
-your first brahma program
-
-使用Brahma在GPU上運行LINQ
-
-Frequently Asked Questions
-
-brahma quick reference
-
-getting started
-
-output size considerations
-
-computation provider
-
-a parallel array
+* your first brahma program
+* 使用Brahma在GPU上運行LINQ
+* Frequently Asked Questions
+* brahma quick reference
+* getting started
+* output size considerations
+* computation provider
+* a parallel array

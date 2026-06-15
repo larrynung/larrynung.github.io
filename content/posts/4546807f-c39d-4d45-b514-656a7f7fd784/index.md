@@ -6,37 +6,47 @@ description: "GAE's webapp_webapp2 framework"
 
 在開發GAE程式時，我們可以像下面這樣撰寫：
 
-	app.yaml這邊的設定要注意到的是threadsafe要為no，而script這邊要設定運行python檔名。
+![image_thumb.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb.png)
 
-	參閱筆者Run application with Google App Engine Launcher這篇將其運行起來，就可以看到運行後的結果。
+app.yaml這邊的設定要注意到的是threadsafe要為no，而script這邊要設定運行python檔名。
 
-	但這樣的寫法不是很好，且在程式複雜的情況下就不太適用。
+![image_thumb_1.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_1.png)
 
-	比較好的作法是採用Google App Engine內建的wpbapp與webapp2這兩個精簡的框架，使用WSGI (Web Server Gateway Interface)的架構下去建構。
+參閱筆者Run application with Google App Engine Launcher這篇將其運行起來，就可以看到運行後的結果。
 
-	在python 2.5我們必須使用webapp來改寫，同樣的程式寫起來會像下面這樣。一開始我們要先將webapp與run_wsgi_app import進來，然後建立繼承至webapp.RequestHandler的Handler。接著依需求覆寫get或post方法，在方法裡面透過self.response.headers["Content-Type"]去設定Header的ContentType，並透過self.response.write將要呈現的內容回傳出去。最後再透過webapp.WSGIApplication去設定router，決定指定的網址要交由哪個Handler去處理，並在__name__ == "__main__"時將其回傳值帶入run_wsgi_app方法。
+![image_thumb_2.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_2.png)
 
-	若是在python 2.7須改用webapp2來改寫，寫法跟webapp大同小異，簡單的說來只是自不同的位置import、類別名稱改為webapp2、以及最後不需要另行叫用run_wsgi_app方法。
+但這樣的寫法不是很好，且在程式複雜的情況下就不太適用。
 
-	程式修改完後，app.yaml這邊的設定也要跟著調整，將threadsafe設為yes、加入webapp2 library的宣告、script這邊改為main.application (因為上面在用webapp2.WSGIApplication設定router時用application變數去接收回傳值)。
+比較好的作法是採用Google App Engine內建的wpbapp與webapp2這兩個精簡的框架，使用WSGI (Web Server Gateway Interface)的架構下去建構。
 
-	運行起來可以看到一樣的結果
+在python 2.5我們必須使用webapp來改寫，同樣的程式寫起來會像下面這樣。一開始我們要先將webapp與run_wsgi_app import進來，然後建立繼承至webapp.RequestHandler的Handler。接著依需求覆寫get或post方法，在方法裡面透過self.response.headers["Content-Type"]去設定Header的ContentType，並透過self.response.write將要呈現的內容回傳出去。最後再透過webapp.WSGIApplication去設定router，決定指定的網址要交由哪個Handler去處理，並在__name__ == "__main__"時將其回傳值帶入run_wsgi_app方法。
 
-	因為剛剛在設定router時順便多設了'/hello'，所以順便看一下http://localhost:8080/hello，可以看到一樣的畫面 (因為上面我們的程式是交由相同的Handler處理)。
+![image_thumb_6.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_6.png)
 
-	到這邊我們應該可以看到透過WSGI架構下去處理，整個程式會變得彈性的許多，在擴充上我們只需要建立對應的Handler並設定網址與用來處理的Handler就可以了。
+若是在python 2.7須改用webapp2來改寫，寫法跟webapp大同小異，簡單的說來只是自不同的位置import、類別名稱改為webapp2、以及最後不需要另行叫用run_wsgi_app方法。
 
-## 
-	Link
+![image_thumb_3.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_3.png)
 
-		Hello CGI App
-	
-		Webapp2
-	
-		Migrating to Python 2.7
-	
-		Explaining the webapp2 Framework
-	
-		Handling Forms with webapp2
-	
-		webapp Overview
+程式修改完後，app.yaml這邊的設定也要跟著調整，將threadsafe設為yes、加入webapp2 library的宣告、script這邊改為main.application (因為上面在用webapp2.WSGIApplication設定router時用application變數去接收回傳值)。
+
+![image_thumb_4.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_4.png)
+
+運行起來可以看到一樣的結果
+
+![image_thumb_2.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_2.png)
+
+因為剛剛在設定router時順便多設了'/hello'，所以順便看一下http://localhost:8080/hello，可以看到一樣的畫面 (因為上面我們的程式是交由相同的Handler處理)。
+
+![image_thumb_5.png](/images/posts/4546807f-c39d-4d45-b514-656a7f7fd784/image_thumb_5.png)
+
+到這邊我們應該可以看到透過WSGI架構下去處理，整個程式會變得彈性的許多，在擴充上我們只需要建立對應的Handler並設定網址與用來處理的Handler就可以了。
+
+## Link
+
+* Hello CGI App
+* Webapp2
+* Migrating to Python 2.7
+* Explaining the webapp2 Framework
+* Handling Forms with webapp2
+* webapp Overview

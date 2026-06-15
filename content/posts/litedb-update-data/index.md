@@ -8,13 +8,13 @@ tags: [LiteDB]
 
 ```C#
 …
-using (var db = new LiteDatabase(dbFile))
-{
-var collection = db.GetCollection(collectionName);
-...
-collectionItem.Property = newValue;
-collection.Update(collectionItem);
-}
+using (var db = new LiteDatabase(dbFile)) 
+{ 
+  var collection = db.GetCollection<T>(collectionName); 
+  ...
+  collectionItem.Property = newValue;
+  collection.Update(collectionItem); 
+} 
 ```
 
 像是下面這個範例就會將資料寫入，將塞入的資料做個變更。
@@ -24,30 +24,29 @@ using System;
 
 namespace LiteDB.Demo2
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection
-("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
 
-var firstPerson = collection.FindById(1);
+                var firstPerson = collection.FindById(1);
 
-firstPerson.Name = "Larry Nung";
-firstPerson.NickName = "Larry";
-persons.Update(firstPerson);
-}
-}
-}
+                firstPerson.Name = "Larry Nung";
+                firstPerson.NickName = "Larry";
+                persons.Update(firstPerson);
+            }
+        }
+    }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 ```
 
@@ -58,30 +57,29 @@ using System;
 
 namespace LiteDB.Demo2
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection
-("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
 
-persons.Update(1, new Person()
-{
-Name = "Larry Nung",
-NickName = "Larry Nung"
-});
-}
-}
-}
+                persons.Update(1, new Person()
+                {
+                    Name = "Larry Nung",
+                    NickName = "Larry Nung"
+                });
+            }
+        }
+    }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 ```
 
@@ -90,30 +88,29 @@ using System;
 
 namespace LiteDB.Demo2
 {
-class Program
-{
-static void Main(string[] args)
-{
-using (var db = new LiteDatabase("Person.db"))
-{
-var persons = db.GetCollection
-("persons");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new LiteDatabase("Person.db"))
+            {
+                var persons = db.GetCollection<Person>("persons");
 
-persons.Update(new Person()
-{
-ID = 1,
-Name = "Larry Nung",
-NickName = "Larry Nung"
-});
-}
-}
-}
+                persons.Update(new Person()
+                {
+                    ID = 1,
+                    Name = "Larry Nung",
+                    NickName = "Larry Nung"
+                });
+            }
+        }
+    }
 
-public class Person
-{
-public int ID { get; set; }
-public String Name { get; set; }
-public String NickName { get; set; }
-}
+    public class Person
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String NickName { get; set; }
+    }
 }
 ```

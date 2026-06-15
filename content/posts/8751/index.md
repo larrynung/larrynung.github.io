@@ -6,7 +6,25 @@ tags: [.NET Resource]
 ---
 
 ## Overview
-The Microsoft .NET Framework 4 provides the following new features and improvements:The .NET Framework 4 works side by side with the Framework version 3.5 SP1. Applications that are based on earlier versions of the Framework will continue to run on that version. Just a subset of functionality is shared by all versions of the Framework.Innovations in the Visual Basic and C# languages, for example statement lambdas, implicit line continuations, dynamic dispatch, and named/optional parameters.The ADO.NET Entity Framework, which simplifies how developers program against relational databases by raising the level of abstraction, has many new features. These includes persistence ignorance and POCO support, lazy loading, test-driven development support, functions in model, and new LINQ operators.Enhancements to ASP.NET: New JavaScript UI Templates and databinding capabilities for AJAX.New ASP.NET chart control.Improvements in WPF: Added support in Windows Presentation Foundation (WPF) for Windows 7 multi-touch, ribbon controls, and taskbar extensibility features.Added support in WPF for Surface 2.0 SDK.New line-of-business controls including charting control, smart edit, data grid, and others that improve the experience for developers who build data centric applications.Improvements in performance and scalability.Visual improvements in text clarity, layout pixel snapping, localization, and interoperability.Improvements to Windows Workflow (WF) that let developers to better host and interact with workflows. These include an improved activity programming model, an improved designer experience, a new flowchart modeling style, an expanded activity palette, workflow-rules integration, and new message correlation features. The .NET Framework also offers significant performance gains for WF-based workflows.Improvements to Windows Communication Foundation (WCF) such as support for WCF Workflow Services enabling workflow programs with messaging activities, correlation support, durable two-way communication and rich hosting capabilities. Additionally, .NET Framework 4 provides new WCF features such as service discovery, router service, simplified configuration and a number of improvements to queuing, REST support, diagnostics, and performance.Innovative new parallel programming features such as parallel loop support, Task Parallel Library (TPL), Parallel LINQ (PLINQ), and coordination data structures which let developers harness the power of multi-core processors.
+
+The Microsoft .NET Framework 4 provides the following new features and improvements:
+
+* The .NET Framework 4 works side by side with the Framework version 3.5 SP1. Applications that are based on earlier versions of the Framework will continue to run on that version. Just a subset of functionality is shared by all versions of the Framework.
+* Innovations in the Visual Basic and C# languages, for example statement lambdas, implicit line continuations, dynamic dispatch, and named/optional parameters.
+* The ADO.NET Entity Framework, which simplifies how developers program against relational databases by raising the level of abstraction, has many new features. These includes persistence ignorance and POCO support, lazy loading, test-driven development support, functions in model, and new LINQ operators.
+* Enhancements to ASP.NET:
+  * New JavaScript UI Templates and databinding capabilities for AJAX.
+  * New ASP.NET chart control.
+* Improvements in WPF:
+  * Added support in Windows Presentation Foundation (WPF) for Windows 7 multi-touch, ribbon controls, and taskbar extensibility features.
+  * Added support in WPF for Surface 2.0 SDK.
+  * New line-of-business controls including charting control, smart edit, data grid, and others that improve the experience for developers who build data centric applications.
+  * Improvements in performance and scalability.
+  * Visual improvements in text clarity, layout pixel snapping, localization, and interoperability.
+* Improvements to Windows Workflow (WF) that let developers to better host and interact with workflows. These include an improved activity programming model, an improved designer experience, a new flowchart modeling style, an expanded activity palette, workflow-rules integration, and new message correlation features. The .NET Framework also offers significant performance gains for WF-based workflows.
+* Improvements to Windows Communication Foundation (WCF) such as support for WCF Workflow Services enabling workflow programs with messaging activities, correlation support, durable two-way communication and rich hosting capabilities. Additionally, .NET Framework 4 provides new WCF features such as service discovery, router service, simplified configuration and a number of improvements to queuing, REST support, diagnostics, and performance.
+* Innovative new parallel programming features such as parallel loop support, Task Parallel Library (TPL), Parallel LINQ (PLINQ), and coordination data structures which let developers harness the power of multi-core processors.
 
 ## Link
-Microsoft .NET Framework 4 Beta 1
+
+[Microsoft .NET Framework 4 Beta 1](http://www.microsoft.com/downloads/details.aspx?familyid=EE2118CC-51CD-46AD-AB17-AF6FFF7538C9&displaylang=en)

@@ -8,18 +8,29 @@ tags: [CSharp]
 
 最近在開發程式時，突然發現我的電腦跑起來怪怪的，Visual Studio開啟時會跳出錯誤訊息。
 
-	方案中的安裝專案建置起來會出現IOException例外，且某專案在程式中建立PerformanceCounterCategory也會出現IOException，更奇怪的是IOException的描述竟然是The file exists，到底是什麼樣的檔案已經存在了，我又不是在做檔案儲存動作。
+![image_thumb_2.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_2.png)
 
-	找了一下Google才發現原來該例外是由GetTempFileName所拋出的，MSDN的Path.GetTempFileName 方法 (System.IO)這篇也有提到這個問題，簡單的說該問題是因為用了GetTempFileName建立多於65535個暫存檔卻沒殺掉所造成的。(至於VB.NET特有的My.Computer.FileSystem.GetTempFileName，雖然MSDN中沒有提到，但也會發生這樣的問題)
+方案中的安裝專案建置起來會出現IOException例外，且某專案在程式中建立PerformanceCounterCategory也會出現IOException，更奇怪的是IOException的描述竟然是The file exists，到底是什麼樣的檔案已經存在了，我又不是在做檔案儲存動作。
 
-	這邊寫個簡單的範例來實驗一下，果然會發生這樣的問題。
+![image_thumb_4.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_4.png)
 
-	這時候去看Temp資料夾的屬性，檔案個數超過65535，那...它限制的65535是什麼東西?!這是魔術數字嗎?!
+找了一下Google才發現原來該例外是由GetTempFileName所拋出的，MSDN的Path.GetTempFileName 方法 (System.IO)這篇也有提到這個問題，簡單的說該問題是因為用了GetTempFileName建立多於65535個暫存檔卻沒殺掉所造成的。(至於VB.NET特有的My.Computer.FileSystem.GetTempFileName，雖然MSDN中沒有提到，但也會發生這樣的問題)
 
-	其實可以注意一下上面提到的範例，我們可以看到temp file的命名規則是tmp1.tmp~tmoFFFF.tmp，猜測這就是這邊會限制為65535的原因。有興趣的可以在建置出65535個暫存檔後，在tmp1.tmp~tmoFFFF.tmp裡面找個檔案刪除，再次運行程式測試，就會發現本來會例外的程式就正常了。
+![image_thumb_1.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_1.png)
 
-	以筆者個人來說是不太難接受這個限制理由，既然不是受限於作業系統內資料夾可存放的檔案數，因為其實作的演算法這樣去限制temp file的數量感覺就有些奇怪，而且既然是產生tmp1.tmp~tmoFFFF.tmp，演算法上應該是循序去找是不是有存在的檔案，因此直覺可能暫存檔的多寡會對效能造成影響，這邊用個簡單的程式碼片段來測試這樣的狀況：
+這邊寫個簡單的範例來實驗一下，果然會發生這樣的問題。
 
+![image_thumb.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb.png)
+
+這時候去看Temp資料夾的屬性，檔案個數超過65535，那...它限制的65535是什麼東西?!這是魔術數字嗎?!
+
+![image_thumb_3.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_3.png)
+
+其實可以注意一下上面提到的範例，我們可以看到temp file的命名規則是tmp1.tmp~tmoFFFF.tmp，猜測這就是這邊會限制為65535的原因。有興趣的可以在建置出65535個暫存檔後，在tmp1.tmp~tmoFFFF.tmp裡面找個檔案刪除，再次運行程式測試，就會發現本來會例外的程式就正常了。
+
+以筆者個人來說是不太難接受這個限制理由，既然不是受限於作業系統內資料夾可存放的檔案數，因為其實作的演算法這樣去限制temp file的數量感覺就有些奇怪，而且既然是產生tmp1.tmp~tmoFFFF.tmp，演算法上應該是循序去找是不是有存在的檔案，因此直覺可能暫存檔的多寡會對效能造成影響，這邊用個簡單的程式碼片段來測試這樣的狀況：
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,20 +57,21 @@ namespace ConsoleApplication9
 		}
 	}
 }
+```
 
-	實際運作快慢差異其實還滿大的。
+實際運作快慢差異其實還滿大的。
 
-	不過既然MSDN上都明文寫該方法只能建立65535個檔案了，就不算是BUG，就接受它吧。
+![image_thumb_5.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_5.png)
 
-	這邊筆者只是將此問題做個簡單的整理，希望開發人員以後碰到這樣的問題不要再被它搞到。GetTempFileName那段程式不一定是自己寫的，但使用某些元件或是團隊合作中都可能都會間接的碰到這樣的問題，所以對此問題的症狀要有些印象，另外還有就是在使用GetTempFileName時最好在不用時記得要把暫存檔案給刪掉。
+![image_thumb_6.png](/images/posts/6f8d2948-a3b2-47a7-a009-a2ce6b32377d/image_thumb_6.png)
 
-## 
-	Link
+不過既然MSDN上都明文寫該方法只能建立65535個檔案了，就不算是BUG，就接受它吧。
 
-		Path.GetTempFileName 方法 (System.IO)
-	
-		My.Computer.FileSystem.GetTempFileName 方法
-	
-		‘The file exists’ and Path.GetTempFileName Exception
-	
-		Path.GetTempFileName throws Exception (The file exists)
+這邊筆者只是將此問題做個簡單的整理，希望開發人員以後碰到這樣的問題不要再被它搞到。GetTempFileName那段程式不一定是自己寫的，但使用某些元件或是團隊合作中都可能都會間接的碰到這樣的問題，所以對此問題的症狀要有些印象，另外還有就是在使用GetTempFileName時最好在不用時記得要把暫存檔案給刪掉。
+
+## Link
+
+* Path.GetTempFileName 方法 (System.IO)
+* My.Computer.FileSystem.GetTempFileName 方法
+* ‘The file exists’ and Path.GetTempFileName Exception
+* Path.GetTempFileName throws Exception (The file exists)

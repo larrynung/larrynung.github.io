@@ -7,7 +7,9 @@ tags: [Jaeger, gRPC]
 要使用 Jaeger 追蹤 gRPC service 程式，可先加入 Jaeger 與 OpenTracing.Contrib.Grpc 套件。
 ```xml
 ...
-
+    <PackageReference Include="Jaeger" Version="0.3.6" />
+    <PackageReference Include="OpenTracing.Contrib.Grpc" Version="0.2.0" />
+  </ItemGroup>
 ...
 ```
 ![1.png](1.png)
@@ -17,19 +19,19 @@ tags: [Jaeger, gRPC]
 ...
 services.AddGrpc(options =>
 {
-var serviceName = AppDomain.CurrentDomain.FriendlyName;
-var tracer = new Tracer.Builder(serviceName)
-.WithSampler(new ConstSampler(true))
-.Build();
+    var serviceName = AppDomain.CurrentDomain.FriendlyName;
+    var tracer = new Tracer.Builder(serviceName)
+        .WithSampler(new ConstSampler(true))
+        .Build();
 
-GlobalTracer.Register(tracer);
+    GlobalTracer.Register(tracer);
 
-services.AddSingleton(tracer);
+    services.AddSingleton<ITracer>(tracer);
 
-var interceptors = options.Interceptors;
-interceptors.Add(tracer);
+    var interceptors = options.Interceptors;
+    interceptors.Add<ServerTracingInterceptor>(tracer);
 
-...
+    ...
 });
 ...
 ```

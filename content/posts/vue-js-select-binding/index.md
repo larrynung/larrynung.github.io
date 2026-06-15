@@ -11,21 +11,32 @@ Select 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性�
 像是下面這樣的程式：  
 
 ```html
-
-  Vue - Hello World
-
-      option1
-      option2
-      option3
-    
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <select v-model="option">
+      <option>option1</option>
+      <option>option2</option>
+      <option>option3</option>
+    </select>
     {{ option }}
+    <br/><br/>
 
-      option1
-      option2
-      option3
-
+    <select v-model="options" multiple>
+      <option>option1</option>
+      <option>option2</option>
+      <option>option3</option>
+    </select>
+    <br/>
     {{ options }}
+  </div>
 
+  <script>
     new Vue({
       el: '#app',
       data:{
@@ -33,7 +44,9 @@ Select 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性�
         options: []
       }      
     })
-
+  </script>
+</body>
+</html>
 ```
 
 運行起來就會像下面這樣：  

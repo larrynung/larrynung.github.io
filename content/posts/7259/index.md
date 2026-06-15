@@ -7,15 +7,37 @@ tags: [CSharp,VB.NET,.NET Concept]
 
 一般舊的程式語言在當把浮點數轉成整數時，通常會採用『四捨五入』的方式去做轉換的動作。顧名思義，就是當小數位數小於5的話則捨棄小數(四捨)、大於或等於5的話則進位(五入)。而這種年代久遠的處理方式其實存在著一個問題，就是其實它是不公平的，因為它進位的機率高於捨棄(見下圖)，在統計學上會產生偏差。
 
+![image_thumb.png](/images/posts/7259/image_thumb.png)
+
 所以為了避免偏差的問題，在.NET這種新的語言多半會使用『四捨六入五成雙』的方法來處理轉換的動作。所謂的『四捨六入五成雙』簡單的說起來就是當數值小於5的話則捨棄小數(四捨)、大於5的話則進位(六入)、等於5的話則依最接近的雙數來決定是進位或捨去(五成雙)。若要測試這種現象可使用下列程式碼。
 
 VB.NET
 
+```
+Private Sub ShowDoubleToInt(ByVal n As Double)
+    MsgBox(CInt(n))
+End Sub
+```
+
 C#
+
+```
+private void ShowDoubleToInt(double n)
+{
+    MessageBox .Show (Convert .ToInt32 (n).ToString ());
+}
+```
 
 雖然.NET在轉換上預設使用了『四捨六入五成雙』的方式，但不表示我們就不能使用『四捨五入』的方式。.NET仍很貼心的為我們準備了許多函式可以做『四捨五入』，像是Round()、ToString()...等，若有需求可自行參考藍色小舖討論串。
 
 值得注意的是，在C#中有兩種不同的轉換方式，其所使用的進位方式並不相同，這也是上面C#範例會使用System.Convert的原因，使用上須特別注意。
 
+```
+Console.WriteLine(((int)numericUpDown1 .Value).ToString ());   //無條件捨去
+Console.WriteLine(Convert .ToInt32 (numericUpDown1.Value).ToString());   //四捨六入五成雙
+```
+
 ## 參考資料
-程式設計俱樂部 - System.Convert 為何是五捨六入?藍色小鋪 - C#沒有四捨五入？只有五捨六入的涵數？
+
+1. 程式設計俱樂部 - System.Convert 為何是五捨六入?
+2. [藍色小鋪 - C#沒有四捨五入？只有五捨六入的涵數？](http://www.blueshop.com.tw/board/show.asp?subcde=BRD200511221010158DG&fumcde=FUM20050124192253INM)

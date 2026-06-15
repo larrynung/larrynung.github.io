@@ -10,11 +10,11 @@ tags: [PL/SQL and SQL Coding Guidelines]
 
 ```psql
 BEGIN
->
-FOR i IN 1..5
-LOOP
-sys.dbms_output.put_line(i);
-END LOOP for_loop;
+    <<for_loop>>
+    FOR i IN 1..5
+    LOOP
+        sys.dbms_output.put_line(i); 
+    END LOOP for_loop;
 END;
 ```
 
@@ -22,13 +22,13 @@ END;
 
 ```psql
 DECLARE
-co_lower_bound CONSTANT SIMPLE_INTEGER := 1;
-co_upper_bound CONSTANT SIMPLE_INTEGER := 5;
+    co_lower_bound CONSTANT SIMPLE_INTEGER := 1; 
+    co_upper_bound CONSTANT SIMPLE_INTEGER := 5;
 BEGIN
->
-FOR i IN co_lower_bound..co_upper_bound
-LOOP
-sys.dbms_output.put_line(i);
-END LOOP for_loop;
+    <<for_loop>>
+    FOR i IN co_lower_bound..co_upper_bound 
+    LOOP
+        sys.dbms_output.put_line(i); 
+    END LOOP for_loop;
 END;
 ```

@@ -17,22 +17,28 @@ Blazor component 在未加掛 @page directive 時只能像 HTML element 一樣�
 ```html
 @page "/counter"
 
-# Counter
 
-Current count: @currentCount
+<h1>Counter</h1>
 
-Click me
+
+<p>Current count: @currentCount</p>
+
+
+<button class="btn btn-primary" @onclick="@IncrementCount">Click me</button>
+
 
 @code {
-int currentCount = 0;
+    int currentCount = 0;
 
-[Parameter]
-private int IncrementAmount { get; set; } = 1;
 
-void IncrementCount()
-{
-currentCount += IncrementAmount;
-}
+    [Parameter]
+    private int IncrementAmount { get; set; } = 1;
+
+
+    void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
 }
 ```
 ![2.png](2.png)

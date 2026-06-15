@@ -7,13 +7,17 @@ description: "JQuery UI - Progressbar Widget"
 要使用 JQuery UI 的 Progressbar Widget，首先必須引用 JQuery、JQueryUI。  
 
 ```html
-
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jqueryui/style.css">
 ```
 
 接著在畫面上放入一個 div element。   
 
 ```html
-
+<div id="pb">
+</div>
 ```
 
 在 Javascript 中用 JQuery 找到該 div element，並叫用 progressbar 方法即可將該 div element 設為 progressbar。  
@@ -84,7 +88,14 @@ description: "JQuery UI - Progressbar Widget"
 最後這邊附上測試用的範例： 
 
 ```html
-
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <script>
   $(function() {
     $("#pb").progressbar(
     {
@@ -104,11 +115,18 @@ description: "JQuery UI - Progressbar Widget"
         $("#pb").progressbar("value", value);
     });
   });
+  </script>
+</head>
+<body>
+ 
+<div id="percentage">0%</div>
+<div id="pb">
+</div>
 
-0%
-
-Increase
-
+<button id="increase">Increase</button>
+ 
+</body>
+</html>		
 ```
 
 Link

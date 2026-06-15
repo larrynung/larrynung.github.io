@@ -12,104 +12,140 @@ Web storage可依其儲存特性再被細分為sessionStorage與localStorage。�
 
 Web Storage實作了Storage介面，這個介面資料的儲存與操作都是以key/value成對的方式下去做處理，類似一般我們所常見的字典檔的架構。
 
+```xml
 interface Storage {
-readonly attribute unsigned long length;
-getter DOMString key(in unsigned long index);
-getter any getItem(in DOMString key);
-setter creator void setItem(in DOMString key, in any data);
-deleter void removeItem(in DOMString key);
-void clear();
+  readonly attribute unsigned long length;
+  getter DOMString key(in unsigned long index);
+  getter any getItem(in DOMString key);
+  setter creator void setItem(in DOMString key, in any data);
+  deleter void removeItem(in DOMString key);
+  void clear();
 };
+```
 
 不論是sessionStorage還是localStorage皆遵循這樣的介面，因此使用起來十分的相似，並沒有太大的差異。像是設定資料時可透過setItem方法，將key與value成對帶入，即可將資料存放至Web Storage：
 
+```xml
 sessionStorage.setItem(key, value);
 localStorage.setItem(key, value);
+```
 
 除此之外也可以直接將key值當作成員變數來存取：
 
+```xml
 sessionStorage.key = value;
 localStorage.key = value;
+```
 
 要取得存放的資料時可透過getItem方法，帶入存放資料時所設定的key值，即可回傳所存放的資料值：
 
+```xml
 value = sessionStorage.getItem(key);
 value = localStorage.getItem(key);
+```
 
 同樣的這也支援將key值當作成員變數來存取的操作方式：
 
+```xml
 value = sessionStorage.key;
 value = localStorage.key;
+```
 
 當有移除某特定資料的需求時，可帶入要刪除的資料key值，像是下面這樣：
 
+```xml
 sessionStorage.removeItem(key);
 localStorage.removeItem(key);
+```
 
 也可以透過叫用clear方法清除所有存放在Web Storage內的資料：
 
+```xml
 sessionStorage.clear();
 localStorage.clear();
+```
 
 到這邊應該可以看出來因為是實作相同Interface的關係，sessionStorage跟localStorage的存取方式幾乎沒有差異，只是針對不同的類別下去存取。
 
 這邊實際寫個示範用的範例，該範例可以將按鈕的點擊次數資料存放在Web Storage中
 
+```xml
+<!DOCTYPE html>
+<html>
+<head>
+<script>
 function clickCounter()
 {
-var key = "clickcount";
-var value = localStorage.getItem(key);
-if (value)
-{
-localStorage.setItem(key, Number(value)+1);
+  var key   = "clickcount";
+  var value = localStorage.getItem(key);
+  if (value)
+    {
+    localStorage.setItem(key, Number(value)+1);
+    }
+  else
+    {
+    localStorage.setItem(key, 1);
+    }
+  document.getElementById("result").innerHTML="You have clicked the button " + localStorage.clickcount + " time(s).";
 }
-else
-{
-localStorage.setItem(key, 1);
-}
-document.getElementById("result").innerHTML="You have clicked the button " + localStorage.clickcount + " time(s).";
-}
-
-Click me!
-
-Click the button to see the counter increase.
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+</body>
+</html>
+```
 
 運行後結果會像下面這樣，點擊按鈕會累加點擊次數，而點擊次數會存放在localStorage中，因此下次再開啟相同的頁面仍能繼續累加。有興趣的可以將範例的localStorage字樣全部取代為sessionStorage，這樣運行起來點擊的次數就會在每次重開啟時重新計算。
 
+![image_thumb_1.png](/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb_1.png)
+
+![image_thumb_2.png](/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb_2.png)
+
 最後這邊再補充一下，上面有提到Web Storage是實作自Storage介面，因此我們可以透過這個特性下去做瀏覽器支援與否的判斷，判斷Storage是否沒有被定義，若有定義則代表該瀏覽器支援Web Storage，若是undefined則代表該瀏覽器不支援Web Storage。
 
+```xml
 function checkWebStorageSupportable()
 {
-return (typeof(Storage)!=="undefined");
+    return (typeof(Storage)!=="undefined");
 }
+```
 
 這邊一樣也提供個簡單的示範：
 
+```xml
+<!DOCTYPE html>
+<html>
+<body onLoad = "OnLoad();">
+<div id="result"></div>
+</body>
+</html>
+
+<script>
 function OnLoad()
 {
-document.getElementById("result").innerHTML = checkWebStorageSupportable()?"Support":"UnSupport";
+    document.getElementById("result").innerHTML = checkWebStorageSupportable()?"Support":"UnSupport";
 }
 
 function checkWebStorageSupportable()
 {
-return (typeof(Storage)!=="undefined");
+    return (typeof(Storage)!=="undefined");
 }
+</script>
+```
 
 運行後會像下面這樣，會顯示出瀏覽器是否支援Web Storage。
 
-##
-Link
+![image_thumb.png](/images/posts/803f8361-2722-4fdf-b66c-8ad9553664bf/image_thumb.png)
 
-Web Storage
+## Link
 
-Web storage
-
-HTML5 Web Storage
-
-JavaScript Web Storage (DOM Storage)
-
-Web Storage 使用經驗
-
-WebStorage API 簡介
-
-[HTML5]簡述HTML5的Client端暫存-localStorage/sessionStorage
+* Web Storage
+* Web storage
+* HTML5 Web Storage
+* JavaScript Web Storage (DOM Storage)
+* Web Storage 使用經驗
+* WebStorage API 簡介
+* [HTML5]簡述HTML5的Client端暫存-localStorage/sessionStorage

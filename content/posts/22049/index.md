@@ -10,47 +10,59 @@ tags: [CSharp]
 
 MIME Content Type資訊存放在登錄檔中的HKEY_CLASSES_ROOT\[副檔名]\Content Type下
 
+![image_thumb_1.png](/images/posts/22049/image_thumb_1.png)
+
 因此由指定檔案的附檔名可以找到HKEY_CLASSES_ROOT下對應的機碼，再取得機碼下的Content Type值就可以了：
-  private static string GetContentTypeForFileName(string fileName)     
-{      
-    string ext = System.IO.Path.GetExtension(fileName);      
-    using (Microsoft.Win32.RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext))      
-    {      
-        if (registryKey == null)      
-            return null;      
-        var value = registryKey.GetValue("Content Type");      
-        return (value == null) ? string.Empty : value.ToString();      
-    }      
-}      
+
+```
+private static string GetContentTypeForFileName(string fileName)
+{
+    string ext = System.IO.Path.GetExtension(fileName);
+    using (Microsoft.Win32.RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext))
+    {
+        if (registryKey == null)
+            return null;
+        var value = registryKey.GetValue("Content Type");
+        return (value == null) ? string.Empty : value.ToString();
+    }
+}
+```
 
 完整範例如下：
-  using System;     
-using System.Collections.Generic;      
-using System.Linq;      
-using System.Text;      
-namespace ConsoleApplication10      
-{      
-    class Program      
-    {      
-        static void Main(string[] args)      
-        {      
-            const string file = @"C:\Users\Public\Music\Sample Music\Sleep Away.mp3";      
-            Console.WriteLine(GetContentTypeForFileName(file));      
-        }      
-        private static string GetContentTypeForFileName(string fileName)      
-        {      
-            string ext = System.IO.Path.GetExtension(fileName);      
-            using (Microsoft.Win32.RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext))      
-            {      
-                if (registryKey == null)      
-                    return null;      
-                var value = registryKey.GetValue("Content Type");      
-                return (value == null) ? string.Empty : value.ToString();      
-            }      
-        }    }      
-}  
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const string file = @"C:\Users\Public\Music\Sample Music\Sleep Away.mp3";
+            Console.WriteLine(GetContentTypeForFileName(file));
+        }
+        private static string GetContentTypeForFileName(string fileName)
+        {
+            string ext = System.IO.Path.GetExtension(fileName);
+            using (Microsoft.Win32.RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext))
+            {
+                if (registryKey == null)
+                    return null;
+                var value = registryKey.GetValue("Content Type");
+                return (value == null) ? string.Empty : value.ToString();
+            }
+        }    }
+}
+```
 
 運行結果：
 
+![image_thumb.png](/images/posts/22049/image_thumb.png)
+
 ## Link
-     MIME     MIME Reference
+
+* [MIME](http://zh.wikipedia.org/wiki/MIME)
+* [MIME Reference](http://www.w3schools.com/media/media_mimeref.asp)

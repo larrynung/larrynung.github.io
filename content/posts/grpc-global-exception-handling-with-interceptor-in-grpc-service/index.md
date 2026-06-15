@@ -16,31 +16,34 @@ using Grpc.Core;
 using Grpc.Core.Interceptors;
 using Microsoft.Extensions.Logging;
 
+
 namespace GrpcServiceInterceptor
 {
-public class ExceptionInterceptor : Interceptor
-{
-public override async Task UnaryServerHandler(TRequest request,
-ServerCallContext context,
-UnaryServerMethod continuation)
-{
-try
-{
-return await base.UnaryServerHandler(request, context, continuation);
-}
-catch (Exception e)
-{
-Console.WriteLine(e.ToString());
+    public class ExceptionInterceptor : Interceptor
+    {
+        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request,
+            ServerCallContext context,
+            UnaryServerMethod<TRequest, TResponse> continuation)
+        {
+            try
+            {
+                return await base.UnaryServerHandler(request, context, continuation);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
 
-var obj = (TResponse) Activator.CreateInstance(typeof(TResponse));
-var prop = typeof(TResponse).GetProperty("Message");
 
-prop.SetValue(obj, e.Message, null);
+                var obj = (TResponse) Activator.CreateInstance(typeof(TResponse));
+                var prop = typeof(TResponse).GetProperty("Message");
 
-return obj;
-}
-}
-}
+                prop.SetValue(obj, e.Message, null);
+
+
+                return obj;
+            }
+        }
+    }
 }
 ```
 ![1.png](1.png)
@@ -49,16 +52,16 @@ Interceptor 寫好後要掛載進去。
 ```c#
 public class Startup
 {
-// This method gets called by the runtime. Use this method to add services to the container.
-// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-public void ConfigureServices(IServiceCollection services)
-{
-services.AddGrpc(options =>
-{
-options.Interceptors.Add();
-});
-}
-…
+    // This method gets called by the runtime. Use this method to add services to the container.
+    // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddGrpc(options =>
+        {
+            options.Interceptors.Add<ExceptionInterceptor>();
+        });
+    }
+    …
 }
 ```
 ![2.png](2.png)

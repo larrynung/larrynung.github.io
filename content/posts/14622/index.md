@@ -4,27 +4,31 @@ date: "2010-04-16 12:16:19"
 description: "[Extension Method][VB.NET]使用擴充方法過濾出組件內的特定類別"
 tags: [VB.NET]
 ---
+
 今天把之前的[C#][VB.NET]取得專案內所有表單名稱這篇程式給修了一下，順便把其概念提出成擴充方法，整理如下：
-```
+
+```vb
 Imports System.Reflection
 Imports System.Runtime.CompilerServices
 
 Module AssembleExtension
-_
-Public Function GetTypes(ByVal asm As Assembly, ByVal filterTypeName As String, Optional ByVal includeSubClass As Boolean = False) As Type()
-Return GetTypes(asm, Type.GetType(filterTypeName), includeSubClass)
-End Function
+    <Extension()> _
+    Public Function GetTypes(ByVal asm As Assembly, ByVal filterTypeName As String, Optional ByVal includeSubClass As Boolean = False) As Type()
+        Return GetTypes(asm, Type.GetType(filterTypeName), includeSubClass)
+    End Function
 
-_
-Public Function GetTypes(ByVal asm As Assembly, ByVal filterType As Type, Optional ByVal includeSubClass As Boolean = False) As Type()
-Dim linq = From t In asm.GetTypes Where t Is filterType OrElse (includeSubClass AndAlso t.IsSubclassOf(filterType)) Select t
-Return linq.ToArray
-End Function
+    <Extension()> _
+    Public Function GetTypes(ByVal asm As Assembly, ByVal filterType As Type, Optional ByVal includeSubClass As Boolean = False) As Type()
+        Dim linq = From t In asm.GetTypes Where t Is filterType OrElse (includeSubClass AndAlso t.IsSubclassOf(filterType)) Select t
+        Return linq.ToArray
+    End Function
 End Module
 ```
+
 使用上取得Assembly物件後，呼叫GetTypes，並傳入要過濾的型態等參數，即可取得過濾完的類型。
 
 舉個例子來看，假設還是要取得專案中所有表單的話，程式可以簡化成下面這樣：
-```
+
+```vb
 Dim formTypes() as Type = Assembly.GetExecutingAssembly.GetTypes(GetType(Form), True)
 ```

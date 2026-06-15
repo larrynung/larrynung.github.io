@@ -40,5 +40,5 @@ description: "[Visual Studio]使用者控制項測試容器(User Control Test Co
 
 ## Link
 
-- [How to: Test the Run-Time Behavior of a UserControl](http://msdn.microsoft.com/en-us/library/ms171738.aspx)
-- [HOW TO：測試 UserControl 的執行階段行為](http://msdn.microsoft.com/zh-tw/library/ms171738(VS.80).aspx)
+* [How to: Test the Run-Time Behavior of a UserControl](http://msdn.microsoft.com/en-us/library/ms171738.aspx)
+* [HOW TO：測試 UserControl 的執行階段行為](http://msdn.microsoft.com/zh-tw/library/ms171738(VS.80).aspx)

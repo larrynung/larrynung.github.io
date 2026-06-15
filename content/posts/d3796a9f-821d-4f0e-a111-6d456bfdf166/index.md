@@ -19,24 +19,26 @@ tags: [CSharp]
 [ContractClass(typeof(IFooContract))]
 interface IFoo
 {
-int Count { get; }
-void Put(int value);
+    int Count { get; }
+    void Put(int value);
 }
+
 [ContractClassFor(typeof(IFoo))]
 abstract class IFooContract : IFoo
 {
-int IFoo.Count
-{
-get
-{
-Contract.Ensures(0 <= Contract.Result());
-return default(int); // dummy return
-}
-}
-void IFoo.Put(int value)
-{
-Contract.Requires(0 <= value);
-}
+    int IFoo.Count
+    {
+        get
+        {
+            Contract.Ensures(0 <= Contract.Result<int>());
+            return default(int); // dummy return
+        }
+    }
+
+    void IFoo.Put(int value)
+    {
+        Contract.Requires(0 <= value);
+    }
 }
 ```
 
@@ -48,24 +50,26 @@ Contract.Requires(0 <= value);
 [ContractClass(typeof(FooContract))]
 abstract class Foo
 {
-public abstract int Count { get; }
-public abstract void Put(int value);
+    public abstract int Count { get; }
+    public abstract void Put(int value);
 }
+
 [ContractClassFor(typeof(Foo))]
 abstract class FooContract : Foo
 {
-public override int Count
-{
-get
-{
-Contract.Ensures(0 <= Contract.Result());
-return default(int); // dummy return
-}
-}
-public override void Put(int value)
-{
-Contract.Requires(0 <= value);
-}
+    public override int Count
+    {
+        get
+        {
+            Contract.Ensures(0 <= Contract.Result<int>());
+            return default(int); // dummy return
+        }
+    }
+
+    public override void Put(int value)
+    {
+        Contract.Requires(0 <= value);
+    }
 }
 ```
 

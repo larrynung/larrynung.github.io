@@ -18,6 +18,13 @@ background-image: url('../images/Profile.jpg');
 ```
 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面引用了 index.css。
 ```html
+<html>
+  <head>
+    <link rel="stylesheet" href="./style/index.css">
+  </head>
+  <body>
+  </body>
+</html>
 ```
 ![1.png](1.png)
 

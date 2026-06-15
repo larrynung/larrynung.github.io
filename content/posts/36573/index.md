@@ -11,9 +11,14 @@ tags: [Visual Studio]
 
 這邊我們來回顧一下以前搜尋框那邊所用的正規表示式。
 
+![image_thumb_1.png](/images/posts/36573/image_thumb_1.png)
+
 再來看一下Visual Studio 2011 Preview所用的正規表示式，這些符號是不是熟悉的多了呢？
 
-  有興趣更進一步了解的，可參閱Using Regular Expressions in Visual Studio，裡面有詳細的新舊正規表示式比對。  
+![image_thumb.png](/images/posts/36573/image_thumb.png)
+
+有興趣更進一步了解的，可參閱[Using Regular Expressions in Visual Studio](http://msdn.microsoft.com/en-us/library/2k3te2cs(v=VS.110).aspx)，裡面有詳細的新舊正規表示式比對。
 
 ## Link
-     Using Regular Expressions in Visual Studio
+
+* [Using Regular Expressions in Visual Studio](http://msdn.microsoft.com/en-us/library/2k3te2cs(v=VS.110).aspx)

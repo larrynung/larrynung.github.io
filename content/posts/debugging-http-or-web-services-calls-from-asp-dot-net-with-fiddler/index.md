@@ -8,7 +8,11 @@ description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 
 ```xml
 ...
-
+<system.net>
+  <defaultProxy>
+    <proxy  proxyaddress="http://127.0.0.1:8888" />
+  </defaultProxy>
+</system.net>
 ...
 ```
 

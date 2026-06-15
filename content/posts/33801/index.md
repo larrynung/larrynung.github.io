@@ -4,16 +4,20 @@ date: "2011-08-22 01:11:12"
 description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: static_assert"
 tags: [Visual Studio,C++]
 ---
+
 Visual studio 2010為C++的開發人員新增了static_assert這個C++0x的功能，能為程式提供編譯時期的斷言，相較於以往的assert，斷言動作是編譯時期觸發，非運行時期觸發，故不會有性能上的損耗，且在編譯後就能知道程式是否滿足運行的條件，不需像舊有的運行時斷言需將程式運行起來，且要執行到斷言的位置才能發現問題。適用於可在編譯時期做的檢查動作。
 
 static_assert的函式原型如下:
 
+```c
 static_assert( constant-expression, string-literal );
+```
 
 constant-expression是用作斷言的判斷式，描述在這個時間點所應滿足的條件。string-literal是斷言觸發時所要顯式的提示訊息，使用上跟舊有的assert類似。
 
 這邊來看個較為完整的範例，可以看到static_assert可以用於判別前置處理器的值、指標的大小、常數的大小、樣版的參數...等，所有在編譯時期可以判斷出來的資訊都可以拿來作為斷言的條件。
 
+```c
 // test static_assert.cpp : Defines the entry point for the console application.
 //
 
@@ -26,37 +30,37 @@ const int VALUE = 10;
 
 struct MyStruct
 {
-char data[1024];
+    char data[1024];
 };
 
-template
+template < class T, int Size >
 class Vector
 {
-static_assert(Size > 0, "Vector size must be bigger than zero!");
+   static_assert(Size > 0, "Vector size must be bigger than zero!");
 
-T m_values[Size];
+   T m_values[Size];
 };
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-static_assert( sizeof(void *) == 4, "64-bit code generation is not supported.");
-static_assert( MAX_VALUE > DEFAULT_VALUE, "DEFAULT_VALUE must be smaller than MAX_VALUE" );
-static_assert( MAX_VALUE > VALUE, "VALUE must be smaller than MAX_VALUE" );
-static_assert( sizeof( MyStruct ) intArray;
-return 0;
+	static_assert( sizeof(void *) == 4, "64-bit code generation is not supported.");
+	static_assert( MAX_VALUE > DEFAULT_VALUE, "DEFAULT_VALUE must be smaller than MAX_VALUE" );
+	static_assert( MAX_VALUE > VALUE, "VALUE must be smaller than MAX_VALUE" );
+    static_assert( sizeof( MyStruct ) < 1024*1024, "The structure size exceeds stack size" );
+	Vector<int, 10> intArray;
+	return 0;
 }
+```
 
 ##
 
 編譯後若斷言判斷出當下的設定不符合預期，編譯會失敗，並像下面這樣將在撰寫斷言時所提供的提示顯示在錯誤清單中。
 
-##
-Link
+![image_thumb.png](/images/posts/33801/image_thumb.png)
 
-static_assert
+## Link
 
-C++ static_assert, a niche feature
-
-VS2010 中的C++ 0x 新特性：Lambdas、auto 和static_assert
-
-C++ 0x: Visual Studio 2010 – Static assert (static_assert)
+* static_assert
+* C++ static_assert, a niche feature
+* VS2010 中的C++ 0x 新特性：Lambdas、auto 和static_assert
+* C++ 0x: Visual Studio 2010 – Static assert (static_assert)

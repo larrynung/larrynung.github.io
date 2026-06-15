@@ -30,4 +30,4 @@ description: "Flickr開發系列 - 應用程式與API Key的申請"
 
 ## Link
 
-- [App Garden建立應用程式](http://www.flickr.com/services/apps/create/)
+* [App Garden建立應用程式](http://www.flickr.com/services/apps/create/)

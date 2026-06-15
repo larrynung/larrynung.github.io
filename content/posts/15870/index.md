@@ -9,12 +9,24 @@ tags: [Software]
 
 要透過Google Chrome瀏覽器同步書籤，需要點選上方工具列上的設定按鈕，選取[同步化我的書籤]選項。
 
+![image_thumb.png](/images/posts/15870/image_thumb.png)
+
 在彈出的同步化我的書籤對話框中，輸入自己的Google帳號與密碼，按下登入按鈕。
+
+![image_thumb_1.png](/images/posts/15870/image_thumb_1.png)
 
 書籤會開始進行同步化的動作，此時若之前已有同步過書籤，且本地書籤內容與之前同步的書籤有所差異，系統會提示書籤必須做合併的動作，此時可按下合併與同步化按鈕繼續同步。
 
+![image_thumb_2.png](/images/posts/15870/image_thumb_2.png)
+
 同步完成後，我們可看到同步成功的提示對話框，關閉後在Google Chrome瀏覽器的書籤列就會看到同步後的書籤，後續對本地書籤的新增、刪除、修改也都會做同步的動作。
+
+![image_thumb_3.png](/images/posts/15870/image_thumb_3.png)
 
 若要關閉同步書籤的功能，只要透過點選上方工具列的設定按鈕，點選[已啟用書籤同步功能]選項，在彈出的Google瀏覽器選項對話框中，按下[停止同步處理這個帳戶]按鈕就可以了。
 
+![image_thumb_5.png](/images/posts/15870/image_thumb_5.png)
+
 另外一提，Google Chrome瀏覽器的同步化書籤功能其實是透過Google文件達成的，啟用了同步化功能，瀏覽器會把本地的書籤上傳至Google文件，因此在Google文件中可以看到同步化過後的書籤，在沒有安裝Google Chrome瀏覽器時，可直接連至Google文件找到自己的書籤。
+
+![image_thumb_4.png](/images/posts/15870/image_thumb_4.png)

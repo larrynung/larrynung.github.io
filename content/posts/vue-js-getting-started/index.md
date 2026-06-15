@@ -18,17 +18,27 @@ simple 範本建立出來的專案就只有一個 index.html 檔，裡面已經�
 
 這邊筆者將檔案修改成下面這樣：
 ```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{message}}</h1>
+  </div>
 
-Vue - Hello World
-
-# {{message}}
-
-new Vue({
-el: '#app',
-data: {
-message: 'Hello World',
-}
-})
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+      }      
+    })
+  </script>
+</body>
+</html>
 ```
 ![3.png](3.png)
 

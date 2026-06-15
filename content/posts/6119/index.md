@@ -7,14 +7,22 @@ tags: [Other]
 
 這幾天剛殺了一台VAIO，由於公司無線網路只能用XP。因此把作業系統從Vista降回XP。沒想到這看似簡單的小動作卻讓我重灌了5~6次。
 
-      這5~6次的重灌，每次灌完XP後要灌某些程式總是會彈出 "無法開啟此封裝。請確認是否為正常的Windows Installer封裝。" 對話框，試了很多方法像是重灌WindowsInstaller、用Cmd下"msiexec.exe /unregister"、檢查帳號與修改登錄檔的權限...等等，就是無法搞定。且每次重灌後該問題必會發生。而我同事用一樣的OS用一樣的Driver也都不會有我這種問題。最後切到Administrator測試無此問題，又新建個"test"帳號也無此問題，我才發現問題出在我的使用者帳號太特殊導致。因為我重灌5~6次用的帳號都是 "o`.'o"。後來重灌第7次時換個正常點的帳號就無此問題了。
+      這5~6次的重灌，每次灌完XP後要灌某些程式總是會彈出 "無法開啟此封裝。請確認是否為正常的Windows Installer封裝。" 對話框，試了很多方法像是重灌WindowsInstaller、用Cmd下"msiexec.exe /unregister"、檢查帳號與修改登錄檔的權限...等等，就是無法搞定。且每次重灌後該問題必會發生。而我同事用一樣的OS用一樣的Driver也都不會有我這種問題。最後切到Administrator測試無此問題，又新建個"test"帳號也無此問題，我才發現問題出在我的使用者帳號太特殊導致。因為我重灌5~6次用的帳號都是 "o`.'o"。後來重灌第7次時換個正常點的帳號就無此問題了。
 
-      雖然找到了問題，但如果是帳號內含會出問題的特殊字元導致的話，OS不就應該在我建立帳號的時候擋掉嗎？怎麼還讓人建立帳號呢？害我為了這個問題搞了好久。So...這個故事告訴我們，使用Window不要用太特殊的帳號。
+      雖然找到了問題，但如果是帳號內含會出問題的特殊字元導致的話，OS不就應該在我建立帳號的時候擋掉嗎？怎麼還讓人建立帳號呢？害我為了這個問題搞了好久。So...這個故事告訴我們，使用Window不要用太特殊的帳號。
 
-      後記:回到家中用家裡電腦建立個新的"o`.'o"帳號，卻無此問題發生。該問題可能只會發生在剛灌好XP時，XP強迫使用者建立的第一個帳號。
+      後記:回到家中用家裡電腦建立個新的"o`.'o"帳號，卻無此問題發生。該問題可能只會發生在剛灌好XP時，XP強迫使用者建立的第一個帳號。
 
-相關連結
+## **相關連結**
+
 網路上的解決方法
-MyChat 數位男女-windows installer 錯誤筆記: 解決無法使用Windows Installer的方法Gary Blah! Blah! Blah!-Windows Installer死掉了嗎？关于windows installer出错的解决方案
+
+* MyChat 數位男女-windows installer 錯誤
+* [筆記: 解決無法使用Windows Installer的方法](http://hz-studio.com/hz/2007/07/-windows-installer.html)
+* [Gary Blah! Blah! Blah!-Windows Installer死掉了嗎？](http://garywlee.blogspot.com/2007/03/windows-installer.html)
+* [关于windows installer出错的解决方案](http://www.ii.gov.cn/news/zsyd/2006227100041.htm)
+
 WindowsInstaller
-WindowsInstaller 3.1WindowsInstaller 4.5
+
+* [WindowsInstaller 3.1](http://www.microsoft.com/downloads/details.aspx?displaylang=zh-tw&FamilyID=889482fc-5f56-4a38-b838-de776fd4138c)
+* [WindowsInstaller 4.5](http://www.microsoft.com/downloads/details.aspx?familyid=5A58B56F-60B6-4412-95B9-54D056D6F9F4&displaylang=zh-tw)

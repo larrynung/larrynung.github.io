@@ -6,27 +6,45 @@ description: "[C#]DictService"
 tags: [CSharp]
 ---
 
-DictService是一個免費的Web Service，可用來做單字與單字的定義查詢，允許非商業與商業使用。    
- 
-  有興趣的可先至Definition Lookup網站上使用看看，輸入關鍵字並選取想要查詢的字典，按下[Search]按鈕搜尋的結果就會顯示在下方。這個Web Service所能提供給我們開發人員的就是這些資訊，像是字典有哪些、搜尋的內容、單字的定義...等。    
+DictService是一個免費的Web Service，可用來做單字與單字的定義查詢，允許非商業與商業使用。
+
+![image_thumb.png](/images/posts/32134/image_thumb.png)
+
+有興趣的可先至[Definition Lookup](http://services.aonaware.com/DictService/)網站上使用看看，輸入關鍵字並選取想要查詢的字典，按下[Search]按鈕搜尋的結果就會顯示在下方。這個Web Service所能提供給我們開發人員的就是這些資訊，像是字典有哪些、搜尋的內容、單字的定義...等。
+
+![image_thumb_6.png](/images/posts/32134/image_thumb_6.png)
 
 使用時，我們需先將Web Service加入。可在方案總管上面點選滑鼠右鍵，在滑鼠右鍵選單中選取[Add Service Reference...]。
 
+![image_thumb_1.png](/images/posts/32134/image_thumb_1.png)
+
 在[Add Service Reference]對話框中點擊左下方的[Advanced...]按鈕。
+
+![image_thumb_2.png](/images/posts/32134/image_thumb_2.png)
 
 在[Service Reference Settings]對話框中點擊左下方的[Add Web Reference...]按鈕。
 
-  在[Add Web Reference]對話框中輸入Web Service的網址(http://services.aonaware.com/DictService/DictService.asmx)，再點擊[Add Reference]按鈕將Web Service加入專案參考。    
+![image_thumb_3.png](/images/posts/32134/image_thumb_3.png)
+
+在[Add Web Reference]對話框中輸入Web Service的網址(<http://services.aonaware.com/DictService/DictService.asmx>)，再點擊[Add Reference]按鈕將Web Service加入專案參考。
+
+![image_thumb_4.png](/images/posts/32134/image_thumb_4.png)
 
 專案參考加入後，在程式中加入DictServceDemo.com.aonaware.services命名空間。
-  using DictServceDemo.com.aonaware.services;
+
+```csharp
+using DictServceDemo.com.aonaware.services;
+```
 
 再建立DictService物件就可以使用了。像是DictService.DictionaryList()可以取得字典的列表、DictService.DictionaryInfo()可以取得字典的描述、DictService.Match()與DictService.MatchInDict()可以查詢符合的單字、DictService.Define()與DictService.DefineInDict()可以查詢單字的定義。
 
 這邊示範一個較為完整的使用範例，運行畫面如下：
 
+![image_thumb_5.png](/images/posts/32134/image_thumb_5.png)
+
 完整的程式碼如下：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +71,7 @@ namespace DictServceDemo
             {
                 if (_dictService == null)
                     _dictService = new DictService();
-                return _dictService; 
+                return _dictService;
             }
         }
         #endregion
@@ -62,7 +80,7 @@ namespace DictServceDemo
         public Form1()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         #region Event Process
@@ -111,13 +129,17 @@ namespace DictServceDemo
 
             lbxResult.DisplayMember = "Word";
             lbxResult.DataSource = m_DictService.MatchInDict(dict.Id, tbxKeyword.Text, strategy.Id);
-        } 
+        }
         #endregion
     }
 }
+```
 
 看到這邊可能有人會覺得這不會用到，因為字典內的定義資料並不會是我所想要的呈現方式，但是其實他的單字匹配功能倒是滿實用的，像是如果想要檢查單字或是在輸入時給些提示時，這服務就能派上用場，像是下面簡陋的範例一樣。
 
+![image_thumb_7.png](/images/posts/32134/image_thumb_7.png)
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -133,7 +155,7 @@ namespace WindowsFormsApplication6
     public partial class Form1 : Form
     {
 
-        #region Var      
+        #region Var
         private AutoCompleteStringCollection _autoCompleteSource;
         private DictService _dictService;
         #endregion
@@ -199,6 +221,7 @@ namespace WindowsFormsApplication6
 
     }
 }
+```
 
 ## Download
 
@@ -206,8 +229,6 @@ DictServceDemo.zip
 
 ## Link
 
-  DictService 
-
-  Sample Dictionary Service Client Application 
-
-  Definition Lookup
+* DictService
+* Sample Dictionary Service Client Application
+* Definition Lookup

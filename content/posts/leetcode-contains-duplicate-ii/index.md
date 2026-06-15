@@ -15,22 +15,22 @@ Given an array of integers and an integer k, find out whether there there are tw
 
 ```c#
 public class Solution {
-public bool ContainsNearbyDuplicate(int[] nums, int k) {
-var length = nums.Length;
-var dict = new Dictionary();
-for(var idx = 0; idx < length; ++idx)
-{
-var num = nums[idx];
-var prevIdx = -1;
-if(dict.TryGetValue(num, out prevIdx))
-{
-if(idx - prevIdx <= k)
-return true;
-}
-dict[num] = idx;
-}
-return false;
-}
+    public bool ContainsNearbyDuplicate(int[] nums, int k) {
+        var length = nums.Length;
+        var dict = new Dictionary<int, int>();
+        for(var idx = 0; idx < length; ++idx)
+        {
+            var num = nums[idx];
+            var prevIdx = -1;
+            if(dict.TryGetValue(num, out prevIdx))
+            {
+                if(idx - prevIdx <= k)
+                    return true;
+            }
+            dict[num] = idx;
+        }
+        return false;
+    }
 }
 ```
 

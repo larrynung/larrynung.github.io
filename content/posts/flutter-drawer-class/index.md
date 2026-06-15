@@ -60,23 +60,23 @@ drawer: new Drawer())));
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-appBar: new AppBar(
-title: new Text('Welcome to Flutter'),
-),
-drawer: new Drawer(
-child: new ListView(
-children: [
-new ListTile(
-leading: const Icon(Icons.home),
-title: new Text('Home')),
-new ListTile(
-leading: const Icon(Icons.favorite),
-title: new Text('Favorite')),
-],
-),
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Welcome to Flutter'),
+          ),
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+                new ListTile(
+                    leading: const Icon(Icons.home), 
+                    title: new Text('Home')),
+                new ListTile(
+                    leading: const Icon(Icons.favorite),
+                    title: new Text('Favorite')),
+              ],
+            ),
+          ))));
 }
 ```
 ![4.png](4.png)
@@ -88,31 +88,31 @@ title: new Text('Favorite')),
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-appBar: new AppBar(
-title: new Text('Welcome to Flutter'),
-),
-drawer: new Drawer(
-child: new ListView(
-children: [
-new DrawerHeader(
-child: new Text('Drawer Header'),
-decoration: new BoxDecoration(
-color: Colors.blue,
-),
-),
-new ListTile(
-leading: const Icon(Icons.home),
-title: new Text('Home')
-),
-new ListTile(
-leading: const Icon(Icons.favorite),
-title: new Text('Favorite')
-),
-],
-),
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Welcome to Flutter'),
+          ),
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+                new DrawerHeader(
+                  child: new Text('Drawer Header'),
+                  decoration: new BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.home),
+                  title: new Text('Home')
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.favorite),
+                  title: new Text('Favorite')
+                ),
+              ],
+            ),
+          ))));
 }
 ```
 ![6.png](6.png)
@@ -124,28 +124,28 @@ title: new Text('Favorite')
 import 'package:flutter/material.dart';
 
 void main() {
-runApp(new MaterialApp(
-home: new Scaffold(
-appBar: new AppBar(
-title: new Text('Welcome to Flutter'),
-),
-drawer: new Drawer(
-child: new ListView(
-children: [
-new UserAccountsDrawerHeader(
-accountName: new Text('LarryNung'),
-accountEmail: new Text('email@example.com')),
-new ListTile(
-leading: const Icon(Icons.home),
-title: new Text('Home')
-),
-new ListTile(
-leading: const Icon(Icons.favorite),
-title: new Text('Favorite')
-),
-],
-),
-))));
+  runApp(new MaterialApp(
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Welcome to Flutter'),
+          ),
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+                new UserAccountsDrawerHeader(
+                    accountName: new Text('LarryNung'),
+                    accountEmail: new Text('email@example.com')),
+                new ListTile(
+                  leading: const Icon(Icons.home),
+                  title: new Text('Home')
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.favorite),
+                  title: new Text('Favorite')
+                ),
+              ],
+            ),
+          ))));
 }
 ```
 ![8.png](8.png)

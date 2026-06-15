@@ -30,19 +30,19 @@ END;
 如果改用 cursor-anchored records 去實作，就可以省去一些不必要的變數宣告。
 
 ```psql
-DECLARE
-CURSOR c_user IS
-SELECT user_id, firstname, lastname
-FROM user;
-r_user c_user%ROWTYPE;
-BEGIN
-OPEN c_user;
-FETCH c_user INTO r_user;
-
-WHILE c_user%FOUND
-LOOP
-FETCH c_user INTO r_user;
-END LOOP process_user;
-CLOSE c_user;
+DECLARE 
+    CURSOR c_user IS 
+        SELECT user_id, firstname, lastname 
+        FROM user; 
+    r_user c_user%ROWTYPE; 
+BEGIN 
+    OPEN c_user; 
+    FETCH c_user INTO r_user; 
+    <<process_user>> 
+    WHILE c_user%FOUND 
+    LOOP 
+        FETCH c_user INTO r_user; 
+    END LOOP process_user; 
+    CLOSE c_user; 
 END;
 ```

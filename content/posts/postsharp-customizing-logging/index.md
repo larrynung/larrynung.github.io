@@ -43,6 +43,13 @@ Summary 頁面這邊只是告訴我們繼續下去會做什麼事，不外乎就
 
 開啟副檔名為 pssln 的設定檔，可看到剛所設定的 Profile 資訊會放置在裡面。
 ```xml
+<? xml version="1.0 " encoding=" utf-8"?>
+< Project xmlns="http://schemas.postsharp.org/1.0/configuration " xmlns:d="clr-namespace:PostSharp.Patterns.Diagnostics;assembly:PostSharp.Patterns.Diagnostics " xmlns:p=" http://schemas.postsharp.org/1.0/configuration ">
+  < Property Name="LoggingEnabled " Value="{has-plugin('PostSharp.Patterns.Diagnostics')} " Deferred=" true" />
+  < d:LoggingProfiles p:Condition="{$LoggingEnabled} ">
+    < d:LoggingProfile Name="New profile " OnEntryOptions=" IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeThisArgument" OnSuccessOptions="IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeReturnValue | IncludeThisArgument" OnExceptionOptions="IncludeParameterType | IncludeParameterName | IncludeParameterValue | IncludeThisArgument" />
+  </ d:LoggingProfiles>
+</ Project>
 ```
 運行後 Log 會送入對應的服務。
 

@@ -13,38 +13,42 @@ tags: [CSharp]
 這種物件引用方式特別適用與大型且僅偶爾會使用的物件，因為這種物件若是使用強引用成員變數，會讓一大塊記憶體長時間被系統所佔用，若使用強引用區域變數，則每次執行皆會生成一大塊記憶體垃圾。而採用弱引用來改寫，會有點類似快取的意味存在，在偶爾特別頻繁的使用下，程式能重用之前所建立的物件實體，而在長時間沒使用的狀況下，物件實體又可以被垃圾收集器給回收，減少記憶體的耗費。
 
 使用上我們可以透過System.WeakReference類別來撰寫弱引用，透過判斷WeakReference.Target是否為null來確定物件是否被垃圾收集器給回收，簡單的使用範例如下：
+
 ```
+
 ```
-```
+
+```csharp
 static WeakReference _objectCache;
 
 private static WeakReference m_ObjectCache
 {
-get
-{
-if (_objectCache == null)
-_objectCache = new WeakReference(null);
-return _objectCache;
-}
+    get
+    {
+        if (_objectCache == null)
+            _objectCache = new WeakReference(null);
+        return _objectCache;
+    }
 }
 
 private static Object m_Cache
 {
-get
-{
-if (m_ObjectCache.Target == null)
-m_ObjectCache.Target = CreateBigObj();
-return m_ObjectCache.Target;
-}
+    get
+    {
+        if (m_ObjectCache.Target == null)
+            m_ObjectCache.Target = CreateBigObj();
+        return m_ObjectCache.Target;
+    }
 }
 
 static void Main(string[] args)
 {
-Console.WriteLine(m_Cache);
-Console.WriteLine(m_Cache);
-GC.Collect();
-Console.WriteLine(m_Cache);
+    Console.WriteLine(m_Cache);
+    Console.WriteLine(m_Cache);
+    GC.Collect();
+    Console.WriteLine(m_Cache);
 }
 ...
 ```
+
 值得注意的是，弱引用並不適用於實作有IDisposable介面的類別，因為當IDisposable.Dispose方法被叫用時，物件所使用的非托管資源會被釋放，不易於被重用。就算沒有這樣的問題，你也不知何時要呼叫弱引用的Dispose方法。

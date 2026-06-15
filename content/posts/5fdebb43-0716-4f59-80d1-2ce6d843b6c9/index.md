@@ -5,220 +5,262 @@ date: "2013-11-06 12:00:00"
 description: "[C#]Json.NET - A high performance Json library"
 tags: [CSharp]
 ---
+
+![image3_thumb.png](/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image3_thumb.png)
+
 Json.NET是一個高效能的Json函式庫，提供開發人員針對Json格式開發所需的功能。該函式庫具備有以下的特點：
-Flexible JSON serializer for converting between .NET objects and JSON LINQ to JSON for manually reading and writing JSON High performance, faster than .NET's built-in JSON serializers Write indented, easy to read JSON Convert JSON to and from XML Supports .NET 2, .NET 3.5, .NET 4, Silverlight, Windows Phone and Windows 8 Metro.
+
+* Flexible JSON serializer for converting between .NET objects and JSON
+* LINQ to JSON for manually reading and writing JSON
+* High performance, faster than .NET's built-in JSON serializers
+* Write indented, easy to read JSON
+* Convert JSON to and from XML
+* Supports .NET 2, .NET 3.5, .NET 4, Silverlight, Windows Phone and Windows 8 Metro.
 
 簡單的說該函式庫提供了像是將物件序列化成Json字串、將Json字串解序列化為物件、Linq to Json、Json與Xml格式互相轉換...等功能。
 
 這些功能可能部分可以用現成BCL的功能下去處理，但是據Json.NET官方的資料來看，它能提供較好的效能，像是下圖的官方效能比較圖，它的的確確是比內建的DataContractJsonSerializer與JavaScriptSerializer快了好幾倍。
 
-Json.NET在使用前，如同一般的第三方元件，我們必須要將對應的組件加入參考，這動作可以直接透過NuGet下去完成，在Manage NuGet Packages對話框中的搜尋框輸入json.net的關鍵字，點擊Json.NET後方的install按鈕後按下ok離開即可。這邊沒安裝NuGet的也可以直接到Json.NET官方網站下載，並將對應的組件加入參考。
+![image2_thumb.png](/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image2_thumb.png)
+
+Json.NET在使用前，如同一般的第三方元件，我們必須要將對應的組件加入參考，這動作可以直接透過NuGet下去完成，在Manage NuGet Packages對話框中的搜尋框輸入json.net的關鍵字，點擊Json.NET後方的install按鈕後按下ok離開即可。這邊沒安裝NuGet的也可以直接到[Json.NET官方網站](http://json.codeplex.com/)下載，並將對應的組件加入參考。
+
+![image_thumb.png](/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image_thumb.png)
 
 Json.NET在使用上也十分簡單，若要做物件的序列化，或是要將Json字串解序列化回物件，我們首先必須要有用來作序列化處理的物件，然後透過JsonConvert.SerializeObject與JsonConvert.DeserializeObject這兩道方法下去處理。
+
+```csharp
 ...
 var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
 ...
-var person = JsonConvert.DeserializeObject(json);
+var person = JsonConvert.DeserializeObject<Person>(json);
 ...
+```
 
 這邊簡單的以幾個小小的程式碼片段來做些說明，假設今天我們有個Person類別，裡面有Name、NickName、Birthday、與Age這幾個成員屬性，對應到現實中，代表的就是一個人的名字、暱稱、生日、與年齡。
 
+```csharp
 public class Person
 {
-public String Name { get; set; }
+	public String Name { get; set; }
 
-public String NickName { get; set; }
+	public String NickName { get; set; }
 
-public DateTime Birthday { get; set; }
+	public DateTime Birthday { get; set; }
 
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+	public int Age
+	{
+		get
+		{
+			return (int)((DateTime.Now - Birthday).TotalDays / 365);
+		}
+	}
 }
-}
-}
+```
 
 以Person類別建立物件實體後，填入成員屬性值，再呼叫JsonConvert.SerializeObject將物件序列化為json字串。
 
+```csharp
 ...
 DateTime date = DateTime.Now;
 
 Person Larry = new Person
-{,
-Nick,
-Birthday = new DateTime(1980,4,19)
+{
+	Name = "Larry Nung",
+	NickName = "蹂躪",
+	Birthday = new DateTime(1980,4,19)
 };
 
 var json = JsonConvert.SerializeObject(Larry, Formatting.Indented);
 ...
-var person = JsonConvert.DeserializeObject(json);
+var person = JsonConvert.DeserializeObject<Person>(json);
 ...
+```
 
 運行後我們可以看到序列化出來的Json字串會像下面這樣：
 
+```csharp
 {
-"Name": "Larry Nung",
-"NickName": "蹂躪",
-"Birthday": "1980-04-19T00:00:00",
-"Age": 31
+  "Name": "Larry Nung",
+  "NickName": "蹂躪",
+  "Birthday": "1980-04-19T00:00:00",
+  "Age": 31
 }
+```
 
 在拿來序列化的類別未附加有什麼特別的Attribute時，預設是所有的成員屬性都會被序列化。它的效果就跟在類別前面附加[JsonObject(MemberSerialization.OptOut)]是一樣的，適合用於類別中大部分的成員屬性都想要被序列化的情境。
 
+```csharp
 [JsonObject(MemberSerialization.OptOut)]
 public class Person
 {
-public String Name { get; set; }
+	public String Name { get; set; }
 
-public String NickName { get; set; }
+	public String NickName { get; set; }
 
-public DateTime Birthday { get; set; }
+	public DateTime Birthday { get; set; }
 
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+	public int Age
+	{
+		get
+		{
+			return (int)((DateTime.Now - Birthday).TotalDays / 365);
+		}
+	}
 }
-}
-}
+```
 
 若是部分屬性不想被序列化，像是這邊的Age成員屬性就可以透過Birthday下去推算，可以忽略不序列化，這時我們可為其加上JsonIgnoreAttribure，指定該成員屬性在序列化時忽略不處理。
 
+```csharp
 [JsonObject(MemberSerialization.OptOut)]
 public class Person
 {
-public String Name { get; set; }
+	public String Name { get; set; }
 
-public String NickName { get; set; }
+	public String NickName { get; set; }
 
-public DateTime Birthday { get; set; }
+	public DateTime Birthday { get; set; }
 
-[JsonIgnore]
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+	[JsonIgnore]
+	public int Age
+	{
+		get
+		{
+			return (int)((DateTime.Now - Birthday).TotalDays / 365);
+		}
+	}
 }
-}
-}
+```
 
 序列化出來的Json字串就不會含有該成員屬性的部分。
 
+```csharp
 {
-"Name": "Larry Nung",
-"NickName": "蹂躪",
-"Birthday": "1980-04-19T00:00:00"
+  "Name": "Larry Nung",
+  "NickName": "蹂躪",
+  "Birthday": "1980-04-19T00:00:00"
 }
+```
 
 那若是今天有個類別，它大部分的成員屬性我們都不想序列化時要怎麼辦？Json.NET也提供對應的設定，在類別前面附加[JsonObject(MemberSerialization.OptIn)]就可以了，這樣在序列化時就只有附加有JsonPropertyAttribute的成員屬性才會被序列化。
 
+```csharp
 [JsonObject(MemberSerialization.OptIn)]
 public class Person
 {
-[JsonProperty]
-public String Name { get; set; }
+	[JsonProperty]
+	public String Name { get; set; }
 
-[JsonProperty]
-public String NickName { get; set; }
+	[JsonProperty]
+	public String NickName { get; set; }
 
-[JsonProperty]
-public DateTime Birthday { get; set; }
+	[JsonProperty]
+	public DateTime Birthday { get; set; }
 
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+	public int Age
+	{
+		get
+		{
+			return (int)((DateTime.Now - Birthday).TotalDays / 365);
+		}
+	}
 }
-}
-}
+```
 
 若有需要也可以直接用BCL現有的DataContractAttribute與DataMemberAttribute，Json.NET也認得這兩個Attribute，運作起來的效果是一樣的。
 
+```csharp
 [DataContract]
 public class Person
 {
-[DataMember]
-public String Name { get; set; }
+	[DataMember]
+	public String Name { get; set; }
 
-[DataMember]
-public String NickName { get; set; }
+	[DataMember]
+	public String NickName { get; set; }
 
-[DataMember]
-public DateTime Birthday { get; set; }
+	[DataMember]
+	public DateTime Birthday { get; set; }
 
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+	public int Age
+	{
+		get
+		{
+			return (int)((DateTime.Now - Birthday).TotalDays / 365);
+		}
+	}
 }
-}
-}
+```
 
 除了使用對應的類別下去做序列化與解序列化的處理，Json.NET也能用內建的JObject、JProperty、與JArray動態的去處理，使用上不需要為Json產生對應的類別，用起來跟Linq to Xml很類似。
 
+```csharp
 ...
 var Larry = new JObject(
-new JProperty("Name", "Larry Nung"),
-new JProperty("NickName", "蹂躪")
-);
+	new JProperty("Name", "Larry Nung"),
+	new JProperty("NickName", "蹂躪")
+	);
 
 json = JsonConvert.SerializeObject(Larry, Formatting.Indented);
 Console.WriteLine(json);
 ...
+```
 
 這樣的動態處理方式支援Linq的查詢操作，可以撰寫類似下面的程式語法透過Linq去做些過濾。
 
+```csharp
 var dotBlog = new
 {
-Blogers = new List{
-new Person()
-{,
-Nick
-},
-new Person()
-{,
-Nick
-}
-}
+	Blogers = new List<Person>{
+		new Person()
+		{
+			Name = "Larry Nung",
+			NickName = "蹂躪"
+		},
+		new Person()
+		{
+			Name = "Bill Chung",
+			NickName = "Bill uncle"
+		}
+	}
 };
 
 var linq = from item in JObject.FromObject(dotBlog)["Blogers"]
-select item;
+		   select item;
 
 foreach (var item in linq)
 {
-Console.WriteLine(item.ToString());
+	Console.WriteLine(item.ToString());
 }
+```
 
 若覺得以上的Json字串處理方式太過高階，覺得無法有效的控制建置的細節的話，Json.NET也可以使用類似XmlTextWriter的方式下去組成Json字串，使用起來是會較上面的方法還要麻煩些，但能做較為細微的操作。
 
+```csharp
 ...
 StringBuilder sb = new StringBuilder();
 StringWriter sw = new StringWriter(sb);
 
 using (JsonWriter jsonWriter = new JsonTextWriter(sw))
 {
-jsonWriter.Formatting = Formatting.Indented;
+	jsonWriter.Formatting = Formatting.Indented;
 
-jsonWriter.WriteStartObject();
-jsonWriter.WritePropertyName("Name");
-jsonWriter.WriteValue("Larry Nung");
-jsonWriter.WritePropertyName("NickName");
-jsonWriter.WriteValue("蹂躪");
-jsonWriter.WriteEndObject();
+	jsonWriter.WriteStartObject();
+	jsonWriter.WritePropertyName("Name");
+	jsonWriter.WriteValue("Larry Nung");
+	jsonWriter.WritePropertyName("NickName");
+	jsonWriter.WriteValue("蹂躪");
+	jsonWriter.WriteEndObject();
 }
 var json = sb.ToString();
 Console.WriteLine(json);
 ...
+```
 
 除了以上介紹的基本操作外，Json.NET也提供了許多其他的Attribute，像是OnSerializingAttribute、OnSerializedAttribute...等，能指定在序列化、解序列化、序列化錯誤之類的動作被觸發時所要執行的Callback方法，這邊筆者就不多做介紹了，可直接參閱Json.NET - Quick Starts & API Documentation官方文件。最後附上筆者在測試用的範例程式，有興趣的可以拿來做些修改測試看看：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -233,160 +275,164 @@ using System.Collections;
 
 namespace ConsoleApplication7
 {
-class Program
-{
-[DataContract]
-public class Person
-{
-[DataMember]
-public String Name { get; set; }
+	class Program
+	{
+		[DataContract]
+		public class Person
+		{
+			[DataMember]
+			public String Name { get; set; }
 
-[DataMember]
-public String NickName { get; set; }
+			[DataMember]
+			public String NickName { get; set; }
 
-[DataMember]
-public DateTime Birthday { get; set; }
+			[DataMember]
+			public DateTime Birthday { get; set; }
 
-public int Age
-{
-get
-{
-return (int)((DateTime.Now - Birthday).TotalDays / 365);
+			public int Age
+			{
+				get
+				{
+					return (int)((DateTime.Now - Birthday).TotalDays / 365);
+				}
+			}
+
+			private void ShowMessage(string eventName, StreamingContext context)
+			{
+				Console.WriteLine("{0}...", eventName);
+				Console.WriteLine("Context: {0}", context.Context);
+				Console.WriteLine("State: {0}", context.State);
+				Console.WriteLine();
+			}
+
+			[OnSerializing]
+			internal void OnSerializingMethod(StreamingContext context)
+			{
+				ShowMessage("OnSerializingMethod", context);
+			}
+
+			[OnSerialized]
+			internal void OnSerializedMethod(StreamingContext context)
+			{
+				ShowMessage("OnSerializedMethod", context);
+			}
+
+			[OnDeserializing]
+			internal void OnDeserializingMethod(StreamingContext context)
+			{
+				ShowMessage("OnDeserializingMethod", context);
+			}
+
+			[OnDeserialized]
+			internal void OnDeserializedMethod(StreamingContext context)
+			{
+				ShowMessage("OnDeserializedMethod", context);
+			}
+
+			[OnError]
+			internal void OnError(StreamingContext context, ErrorContext errorContext)
+			{
+				ShowMessage("OnError", context);
+			}
+		}
+
+		static void Main(string[] args)
+		{
+			DateTime date = DateTime.Now;
+
+			Person Larry1 = new Person
+			{
+				Name = "Larry Nung",
+				NickName = "蹂躪",
+				Birthday = new DateTime(1980,4,19)
+			};
+
+			var json = JsonConvert.SerializeObject(Larry1, Formatting.Indented);
+			Console.WriteLine("Serialized json string...");
+			Console.WriteLine(json);
+			Console.WriteLine();
+
+			var person = JsonConvert.DeserializeObject<Person>(json);
+			Console.WriteLine("Deserialized person name...");
+			Console.WriteLine(person.Name);
+
+			var Larry2 = new JObject(
+				new JProperty("Name", "Larry Nung"),
+				new JProperty("NickName", "蹂躪")
+				);
+
+			json = JsonConvert.SerializeObject(Larry2, Formatting.Indented);
+			Console.WriteLine("Serialized json string...");
+			Console.WriteLine(json);
+			Console.WriteLine();
+
+			var dotBlog = new
+			{
+				Blogers = new List<Person>{
+					new Person()
+					{
+						Name = "Larry Nung",
+						NickName = "蹂躪"
+					},
+					new Person()
+					{
+						Name = "Bill Chung",
+						NickName = "Bill uncle"
+					}
+				}
+			};
+
+			var linq = from item in JObject.FromObject(dotBlog)["Blogers"]
+					   select item;
+
+			foreach (var item in linq)
+			{
+				Console.WriteLine(item.ToString());
+			}
+
+			StringBuilder sb = new StringBuilder();
+			StringWriter sw = new StringWriter(sb);
+
+			using (JsonWriter jsonWriter = new JsonTextWriter(sw))
+			{
+				jsonWriter.Formatting = Formatting.Indented;
+
+				jsonWriter.WriteStartObject();
+				jsonWriter.WritePropertyName("Name");
+				jsonWriter.WriteValue("Larry Nung");
+				jsonWriter.WritePropertyName("NickName");
+				jsonWriter.WriteValue("蹂躪");
+				jsonWriter.WriteEndObject();
+			}
+			Console.WriteLine("Serialized json string...");
+			Console.WriteLine(sb.ToString());
+			Console.WriteLine();
+
+			try
+			{
+				person = JsonConvert.DeserializeObject<Person>(@"{""Name"": ""Larry Nung"",""NickName"": [蹂躪,拉力]}",new JsonSerializerSettings()
+				{
+					Error = (sender, e)=>
+					{
+						Console.WriteLine("Serialize error!!");
+						e.ErrorContext.Handled = true;
+					}
+				});
+			}
+			catch
+			{
+			}
+		}
+	}
 }
-}
-
-private void ShowMessage(string eventName, StreamingContext context)
-{
-Console.WriteLine("{0}...", eventName);
-Console.WriteLine("Context: {0}", context.Context);
-Console.WriteLine("State: {0}", context.State);
-Console.WriteLine();
-}
-
-[OnSerializing]
-internal void OnSerializingMethod(StreamingContext context)
-{
-ShowMessage("OnSerializingMethod", context);
-}
-
-[OnSerialized]
-internal void OnSerializedMethod(StreamingContext context)
-{
-ShowMessage("OnSerializedMethod", context);
-}
-
-[OnDeserializing]
-internal void OnDeserializingMethod(StreamingContext context)
-{
-ShowMessage("OnDeserializingMethod", context);
-}
-
-[OnDeserialized]
-internal void OnDeserializedMethod(StreamingContext context)
-{
-ShowMessage("OnDeserializedMethod", context);
-}
-
-[OnError]
-internal void OnError(StreamingContext context, ErrorContext errorContext)
-{
-ShowMessage("OnError", context);
-}
-}
-
-static void Main(string[] args)
-{
-DateTime date = DateTime.Now;
-
-Person Larry1 = new Person
-{,
-Nick,
-Birthday = new DateTime(1980,4,19)
-};
-
-var json = JsonConvert.SerializeObject(Larry1, Formatting.Indented);
-Console.WriteLine("Serialized json string...");
-Console.WriteLine(json);
-Console.WriteLine();
-
-var person = JsonConvert.DeserializeObject(json);
-Console.WriteLine("Deserialized person name...");
-Console.WriteLine(person.Name);
-
-var Larry2 = new JObject(
-new JProperty("Name", "Larry Nung"),
-new JProperty("NickName", "蹂躪")
-);
-
-json = JsonConvert.SerializeObject(Larry2, Formatting.Indented);
-Console.WriteLine("Serialized json string...");
-Console.WriteLine(json);
-Console.WriteLine();
-
-var dotBlog = new
-{
-Blogers = new List{
-new Person()
-{,
-Nick
-},
-new Person()
-{,
-Nick
-}
-}
-};
-
-var linq = from item in JObject.FromObject(dotBlog)["Blogers"]
-select item;
-
-foreach (var item in linq)
-{
-Console.WriteLine(item.ToString());
-}
-
-StringBuilder sb = new StringBuilder();
-StringWriter sw = new StringWriter(sb);
-
-using (JsonWriter jsonWriter = new JsonTextWriter(sw))
-{
-jsonWriter.Formatting = Formatting.Indented;
-
-jsonWriter.WriteStartObject();
-jsonWriter.WritePropertyName("Name");
-jsonWriter.WriteValue("Larry Nung");
-jsonWriter.WritePropertyName("NickName");
-jsonWriter.WriteValue("蹂躪");
-jsonWriter.WriteEndObject();
-}
-Console.WriteLine("Serialized json string...");
-Console.WriteLine(sb.ToString());
-Console.WriteLine();
-
-try
-{
-person = JsonConvert.DeserializeObject(@"{""Name"": ""Larry Nung"",""NickName"": [蹂躪,拉力]}",new JsonSerializerSettings()
-{
-Error = (sender, e)=>
-{
-Console.WriteLine("Serialize error!!");
-e.ErrorContext.Handled = true;
-}
-});
-}
-catch
-{
-}
-}
-}
-}
+```
 
 運行結果如下：
 
+![image_thumb_1.png](/images/posts/5fdebb43-0716-4f59-80d1-2ce6d843b6c9/image_thumb_1.png)
+
 ## Link
 
-Json.NET
-
-Json.NET - Quick Starts & API Documentation
-
-CODE-使用JSON.NET處理動態物件屬性
+* Json.NET
+* Json.NET - Quick Starts & API Documentation
+* CODE-使用JSON.NET處理動態物件屬性

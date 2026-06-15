@@ -7,16 +7,28 @@ tags: [Mac]
 
 若想要在MAC上切換桌面的背景，我們可在桌面上叫出滑鼠右鍵選單，並按下滑鼠右鍵選單中的"Change Desktop Background..."選單選項，叫出Desktop & Screen Saver對話視窗。
 
-	Desktop & Screen Saver對話視窗的界面分成左右兩塊，左側是桌布圖片的來源，右側是圖片來源所提供的桌布圖片。
+![screenshot(14)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2814%29_thumb.png)
 
-	以左側的桌布圖片來源來說，上方的Apple節點下主要是Apple本身系統所提供的一些桌布來源。裡面內建了一些不錯的桌布可供選用，直接選取圖片，桌布就會立即切換，使用者可以立即看到該桌布套用的感覺。
+Desktop & Screen Saver對話視窗的界面分成左右兩塊，左側是桌布圖片的來源，右側是圖片來源所提供的桌布圖片。
 
-	若是有很多張圖片都覺得不錯，都想要拿來當作桌布的話。MAC系統也提供了類似幻燈片的效果，可設定要間隔多久的時間去切換一張圖片當作桌布。
+以左側的桌布圖片來源來說，上方的Apple節點下主要是Apple本身系統所提供的一些桌布來源。裡面內建了一些不錯的桌布可供選用，直接選取圖片，桌布就會立即切換，使用者可以立即看到該桌布套用的感覺。
 
-	以及設定是否要隨機挑選圖片去做桌布的切換。
+![screenshot(16)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2816%29_thumb.png)
 
-	除了預設提供的圖片可讓使用者當做桌布外，MAC系統也提供了指定單一色塊的方式。
+若是有很多張圖片都覺得不錯，都想要拿來當作桌布的話。MAC系統也提供了類似幻燈片的效果，可設定要間隔多久的時間去切換一張圖片當作桌布。
 
-	若是系統預設的圖片不怎麼喜歡，也不想使用單一色塊來做桌布，這邊我們也可以使用自己拍的照片當作桌布。
+![screenshot(39)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2839%29_thumb.png)
 
-	桌布圖片來源的部分注意到左側Folders下方有個預設的Pictures節點，可以提供存放在Pictures的圖片，只要將我們想要設定的圖片放在Pictures下，左側切換到Pictures就可以看到了。若是在Pictures下沒有想要的圖片，也不想將圖片複製到這個位置，我們也可以按下下方的"+"按鈕，將自己存放圖片的位置加進去當作桌面圖片的來源(像這邊筆者就把Dropbox下的Camera Uploads加進去當作桌面圖片的來源)。至於桌布圖片的設定方面跟預設的來源沒什麼不同，這邊就不多做贅述。
+以及設定是否要隨機挑選圖片去做桌布的切換。
+
+![screenshot(40)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2840%29_thumb.png)
+
+除了預設提供的圖片可讓使用者當做桌布外，MAC系統也提供了指定單一色塊的方式。
+
+![screenshot(41)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2841%29_thumb.png)
+
+若是系統預設的圖片不怎麼喜歡，也不想使用單一色塊來做桌布，這邊我們也可以使用自己拍的照片當作桌布。
+
+桌布圖片來源的部分注意到左側Folders下方有個預設的Pictures節點，可以提供存放在Pictures的圖片，只要將我們想要設定的圖片放在Pictures下，左側切換到Pictures就可以看到了。若是在Pictures下沒有想要的圖片，也不想將圖片複製到這個位置，我們也可以按下下方的"+"按鈕，將自己存放圖片的位置加進去當作桌面圖片的來源(像這邊筆者就把Dropbox下的Camera Uploads加進去當作桌面圖片的來源)。至於桌布圖片的設定方面跟預設的來源沒什麼不同，這邊就不多做贅述。
+
+![screenshot(43)_thumb.png](/images/posts/007fcd73-eb66-4710-901c-f8a24ce09652/screenshot%2843%29_thumb.png)

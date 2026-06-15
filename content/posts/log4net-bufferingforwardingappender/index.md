@@ -25,10 +25,43 @@ namespace ConsoleApplication27
             var logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             
             var sw = Stopwatch.StartNew();
-            for (var idx = 0; idx 
+            for (var idx = 0; idx < count; ++idx)
+            {
+                logger.Debug(idx.ToString());
+            }
 
+            Console.WriteLine(sw.ElapsedMilliseconds);
+        }
+    }
+}
+```
+
+![1.png](/images/posts/log4netBufferingForwardingAppender/1.png)
+
+套上 BufferingForwardingAppender。  
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" />
+  </configSections>
+  <log4net>
+    <root>
+      <level value="ALL"/>
+      <appender-ref ref="BufferingForwardingAppender"/>
+    </root>
+    
+    <appender name="BufferingForwardingAppender" type="log4net.Appender.BufferingForwardingAppender">
+      <bufferSize value="512" />
+      <appender-ref ref="RollingFileAppender" />
+    </appender>
+    
+    <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
       ...
-
+    </appender>
+  </log4net>
+</configuration>
 ```
 
 整個性能反而嚴重下降。  

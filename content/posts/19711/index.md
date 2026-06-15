@@ -4,147 +4,149 @@ date: "2010-11-25 12:59:28"
 description: "PermissionController權限管理類別"
 tags: [VB.NET]
 ---
+
 由於權限控管功能很常被用到，因此又重新挖出了水瓶大Enum 的設計與應用 - 簡易權限設計這篇，想辦法整理一個不需更動又能重複使用的類別出來，最後結合泛型與反射做出了權限管理類別的雛型，這邊將該類別暫定為PermissionController。
- 
+
 PermissionController能透過泛型決定要拿來做權限管理的權限列舉，該列舉需經Flag Attribute修飾過，並以2的次方做為列舉值的編碼。PermissionController建構時可將初始權限帶入，這時PermissionController會做一些條件上的判斷，像是列舉是否有經Flag Attribute修飾等，並會設定最高權限供後續內部使用。
- 
+
 PermissionController程式碼如下：
-```
+
+```vb
 ''' <summary>
 '''
 ''' </summary>
-''' <typeparam></typeparam>
+''' <typeparam name="T"></typeparam>
 Public Class PermissionController(Of T)
 
 #Region "Var"
-Private _allPermission As T
-Private _permission As T
+    Private _allPermission As T
+    Private _permission As T
 #End Region
 
 #Region "Public Property"
-Public Property AllPermission() As T
-Get
-Return _allPermission
-End Get
-Private Set(ByVal value As T)
-_allPermission = value
-End Set
-End Property
+    Public Property AllPermission() As T
+        Get
+            Return _allPermission
+        End Get
+        Private Set(ByVal value As T)
+            _allPermission = value
+        End Set
+    End Property
 
-''' <summary>
-''' Gets the permission.
-''' </summary>
-''' <value>The permission.</value>
-Public Property Permission() As T
-Get
-Return _permission
-End Get
-Private Set(ByVal value As T)
-_permission = value
-End Set
-End Property
+    ''' <summary>
+    ''' Gets the permission.
+    ''' </summary>
+    ''' <value>The permission.</value>
+    Public Property Permission() As T
+        Get
+            Return _permission
+        End Get
+        Private Set(ByVal value As T)
+            _permission = value
+        End Set
+    End Property
 
 #End Region
 
 #Region "Constructor"
-''' <summary>
-''' Initializes a new instance of the <see cref="PermissionController(Of T)" /> class.
-''' </summary>
-''' <param>The permission.</param>
-Public Sub New(ByVal permission As T)
-Dim permissionType As Type = GetType(T)
+    ''' <summary>
+    ''' Initializes a new instance of the <see cref="PermissionController(Of T)" /> class.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    Public Sub New(ByVal permission As T)
+        Dim permissionType As Type = GetType(T)
 
-If Not (permissionType.IsSubclassOf(GetType(System.Enum))) Then
-Throw New ArgumentException("permissionEnum must be a enum")
-End If
+        If Not (permissionType.IsSubclassOf(GetType(System.Enum))) Then
+            Throw New ArgumentException("permissionEnum must be a enum")
+        End If
 
-If permissionType.GetCustomAttributes(GetType(FlagsAttribute), False).Length = 0 Then
-Throw New ArgumentException("permissionEnum must be a flag enum")
-End If
+        If permissionType.GetCustomAttributes(GetType(FlagsAttribute), False).Length = 0 Then
+            Throw New ArgumentException("permissionEnum must be a flag enum")
+        End If
 
-LoadPermission(permission)
-End Sub
+        LoadPermission(permission)
+    End Sub
 #End Region
 
 #Region "Private Method"
-''' <summary>
-''' Prepares all permission.
-''' </summary>
-Private Sub PrepareAllPermission()
-Dim allPermissionValue As Integer = 0
-For Each value As Integer In [Enum].GetValues(Permission.[GetType]())
-allPermissionValue = allPermissionValue Or value
-Next
-AllPermission = ConvertToEnum(allPermissionValue)
-End Sub
+    ''' <summary>
+    ''' Prepares all permission.
+    ''' </summary>
+    Private Sub PrepareAllPermission()
+        Dim allPermissionValue As Integer = 0
+        For Each value As Integer In [Enum].GetValues(Permission.[GetType]())
+            allPermissionValue = allPermissionValue Or value
+        Next
+        AllPermission = ConvertToEnum(allPermissionValue)
+    End Sub
 
-''' <summary>
-''' Converts to value.
-''' </summary>
-''' <param>The permission.</param>
-''' <returns></returns>
-Private Function ConvertToValue(ByVal permission As T) As Integer
-Return CInt(TryCast(permission, Object))
-End Function
+    ''' <summary>
+    ''' Converts to value.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    ''' <returns></returns>
+    Private Function ConvertToValue(ByVal permission As T) As Integer
+        Return CInt(TryCast(permission, Object))
+    End Function
 
-''' <summary>
-''' Converts to enum.
-''' </summary>
-''' <param>The permission value.</param>
-''' <returns></returns>
-Private Function ConvertToEnum(ByVal permissionValue As Integer) As T
-Return DirectCast(TryCast(permissionValue, Object), T)
-End Function
+    ''' <summary>
+    ''' Converts to enum.
+    ''' </summary>
+    ''' <param name="permissionValue">The permission value.</param>
+    ''' <returns></returns>
+    Private Function ConvertToEnum(ByVal permissionValue As Integer) As T
+        Return DirectCast(TryCast(permissionValue, Object), T)
+    End Function
 #End Region
 
 #Region "Protected Method"
-''' <summary>
-''' Returns a <see cref="System.String" /> that represents this instance.
-''' </summary>
-''' <returns>
-''' A <see cref="System.String" /> that represents this instance.
-''' </returns>
-Public Overrides Function ToString() As String
-Return Me.Permission.ToString()
-End Function
+    ''' <summary>
+    ''' Returns a <see cref="System.String" /> that represents this instance.
+    ''' </summary>
+    ''' <returns>
+    ''' A <see cref="System.String" /> that represents this instance.
+    ''' </returns>
+    Public Overrides Function ToString() As String
+        Return Me.Permission.ToString()
+    End Function
 #End Region
 
 #Region "Public Method"
-''' <summary>
-''' Loads the permission.
-''' </summary>
-''' <param>The permission.</param>
-Public Sub LoadPermission(ByVal permission As T)
-Me.Permission = permission
-PrepareAllPermission()
-End Sub
+    ''' <summary>
+    ''' Loads the permission.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    Public Sub LoadPermission(ByVal permission As T)
+        Me.Permission = permission
+        PrepareAllPermission()
+    End Sub
 
-''' <summary>
-''' Adds the permission.
-''' </summary>
-''' <param>The permission.</param>
-Public Sub AddPermission(ByVal permission As T)
-Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) Or ConvertToValue(permission))
-End Sub
+    ''' <summary>
+    ''' Adds the permission.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    Public Sub AddPermission(ByVal permission As T)
+        Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) Or ConvertToValue(permission))
+    End Sub
 
-''' <summary>
-''' Removes the permission.
-''' </summary>
-''' <param>The permission.</param>
-Public Sub RemovePermission(ByVal permission As T)
-Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) And (ConvertToValue(AllPermission) Xor ConvertToValue(permission)))
-End Sub
+    ''' <summary>
+    ''' Removes the permission.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    Public Sub RemovePermission(ByVal permission As T)
+        Me.Permission = ConvertToEnum(ConvertToValue(Me.Permission) And (ConvertToValue(AllPermission) Xor ConvertToValue(permission)))
+    End Sub
 
-''' <summary>
-''' Determines whether the specified permission contains permission.
-''' </summary>
-''' <param>The permission.</param>
-''' <returns>
-''' <c>true</c> if the specified permission contains permission; otherwise, <c>false</c>.
-''' </returns>
-Public Function ContainsPermission(ByVal permission As T) As Boolean
-Return (ConvertToValue(Me.Permission) And ConvertToValue(permission)) = ConvertToValue(permission)
-End Function
+    ''' <summary>
+    ''' Determines whether the specified permission contains permission.
+    ''' </summary>
+    ''' <param name="permission">The permission.</param>
+    ''' <returns>
+    ''' <c>true</c> if the specified permission contains permission; otherwise, <c>false</c>.
+    ''' </returns>
+    Public Function ContainsPermission(ByVal permission As T) As Boolean
+        Return (ConvertToValue(Me.Permission) And ConvertToValue(permission)) = ConvertToValue(permission)
+    End Function
 #End Region
 
 End Class
@@ -158,32 +160,32 @@ End Class
 
 完整的使用範例：
 
-```
+```vb
 Module Module1
 
-<Flags()> _
-Enum Permission
-None = 0
-Create = 1
-Read = 2
-End Enum
+    <Flags()> _
+    Enum Permission
+        None = 0
+        Create = 1
+        Read = 2
+    End Enum
 
-Sub Main()
-Dim PermissionAgent As New PermissionController(Of Permission)(Permission.Create)
-Console.WriteLine("所有權限: {0}", PermissionAgent.AllPermission.ToString)
-Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
-Console.WriteLine("是否含權限{0}: {1}", Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))
-Console.WriteLine("加入權限{0}...", Permission.Read)
-PermissionAgent.AddPermission(Permission.Read)
-Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
-Console.WriteLine("是否含權限{0}: {1}", Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))
-Console.WriteLine("移除權限{0}...", Permission.Read)
-PermissionAgent.RemovePermission(Permission.Read)
-Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
-Console.WriteLine("移除權限{0}...", Permission.Create)
-PermissionAgent.RemovePermission(Permission.Create)
-Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
-End Sub
+    Sub Main()
+        Dim PermissionAgent As New PermissionController(Of Permission)(Permission.Create)
+        Console.WriteLine("所有權限: {0}", PermissionAgent.AllPermission.ToString)
+        Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
+        Console.WriteLine("是否含權限{0}: {1}", Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))
+        Console.WriteLine("加入權限{0}...", Permission.Read)
+        PermissionAgent.AddPermission(Permission.Read)
+        Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
+        Console.WriteLine("是否含權限{0}: {1}", Permission.Read, PermissionAgent.ContainsPermission(Permission.Read))
+        Console.WriteLine("移除權限{0}...", Permission.Read)
+        PermissionAgent.RemovePermission(Permission.Read)
+        Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
+        Console.WriteLine("移除權限{0}...", Permission.Create)
+        PermissionAgent.RemovePermission(Permission.Create)
+        Console.WriteLine("當前權限: {0}", PermissionAgent.Permission.ToString)
+    End Sub
 
 End Module
 ```
@@ -194,4 +196,4 @@ End Module
 
 ## Link
 
-- Enum 的設計與應用 - 簡易權限設計
+* Enum 的設計與應用 - 簡易權限設計

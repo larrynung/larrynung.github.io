@@ -8,7 +8,9 @@ tags: [.NET Concept]
 對於程式功能的啟用，我想多半一開始大家接觸到的寫法就是用個Flag去判斷功能是否啟用，如果啟用就做某些動作，這樣的程式多半會在主要的程式邏輯中加入If判斷，這樣的寫法雖然在Flag有設的狀態才會執行主要功能，但若Flag未設定，該If判斷多少也都會對其效能造成影響，而且會讓程式的邏輯與新功能的程式混在一起，變得不易理解。因此這邊記錄一下另一種寫法，純粹是個人的小小經驗，小小體會。
 
 這邊簡單的來看個例子：
-  Class Executor
+
+```vb
+Class Executor
 
     Private _enableLogData As Boolean
     Public Property EnableLogData() As Boolean
@@ -42,26 +44,32 @@ tags: [.NET Concept]
         Next
     End Sub
 End Class
+```
 
 這樣的程式若用下面程式去做測試
 
-    Sub Main()
-        Dim executor As New Executor
-        Dim sw As Stopwatch = Stopwatch.StartNew
-        executor.GoExecute()
-        Console.WriteLine(sw.ElapsedMilliseconds.ToString)
+```vb
+Sub Main()
+    Dim executor As New Executor
+    Dim sw As Stopwatch = Stopwatch.StartNew
+    executor.GoExecute()
+    Console.WriteLine(sw.ElapsedMilliseconds.ToString)
 
-        executor.EnableLogData = True
-        sw.Reset()
-        sw.Start()
-        executor.GoExecute()
-        Console.WriteLine(sw.ElapsedMilliseconds.ToString)
-    End Sub
+    executor.EnableLogData = True
+    sw.Reset()
+    sw.Start()
+    executor.GoExecute()
+    Console.WriteLine(sw.ElapsedMilliseconds.ToString)
+End Sub
+```
 
 輸出的結果如下
 
+![image_thumb_5.png](/images/posts/16631/image_thumb_5.png)
+
 以這個例子來看，若換個想法改用事件動態繫結的方式去做，當啟動功能時才把功能的動作繫上，當關閉功能時把功能的動作給卸下，功能的動作就可以跟主要的邏輯分開，少了不必要的If判斷，同一個事件也可以繫上不同功能的動作。
 
+```vb
 Class Executor
 
     Private _enableLogData As Boolean
@@ -108,7 +116,7 @@ Class Executor
     End Sub
 
     Private Sub LogData(ByVal sender As Object, ByVal e As System.EventArgs)
-        '紀錄動作，這邊為了看出差異，故不做動作        
+        '紀錄動作，這邊為了看出差異，故不做動作
     End Sub
 
     Private Sub Executor_EnableLogDataChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.EnableLogDataChanged
@@ -118,3 +126,6 @@ Class Executor
         End If
     End Sub
 End Class
+```
+
+![image_thumb_4.png](/images/posts/16631/image_thumb_4.png)

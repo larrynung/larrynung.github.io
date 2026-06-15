@@ -13,4 +13,107 @@ Windows Vista 後的作業系統開始導入 UAC ，在運行某些操作時必�
 :: BatchGotAdmin
 :-------------------------------------
 REM --> Check for permissions
->nul 2>&1 "%SYSTEMROOT%\system32
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+echo Requesting administrative privileges...
+goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+"%temp%\getadmin.vbs"
+exit /B
+
+:gotAdmin
+if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
+pushd "%CD%"
+CD /D "%~dp0"
+:--------------------------------------
+```
+
+使用時只要將它附加在批次檔的開頭，運行時就會嘗試去提升至管理者的權限。
+
+這邊筆者稍稍將之做些修改調整...
+
+```bat
+:TryToRunAsAdmin
+    set GetAdminScriptFile="%temp%\getadmin.vbs"
+
+    REM  --> Check for permissions
+    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+    REM --> If error flag set, we do not have admin.
+    if '%errorlevel%' NEQ '0' (
+        echo Requesting administrative privileges...
+        call:UACPrompt
+        set ERRORLEVEL=1
+    ) else ( 
+        if exist %GetAdminScriptFile% ( del %GetAdminScriptFile% )
+        set ERRORLEVEL=0
+    )
+    goto :eof
+
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > %GetAdminScriptFile%
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> %GetAdminScriptFile%
+
+    call %GetAdminScriptFile%
+    goto :eof
+```
+
+使用時只要在開頭處加入對應的呼叫與中止的判斷處理即可
+
+```bat
+    ...
+    call:TryToRunAsAdmin
+
+    if %ERRORLEVEL%==1 exit /B
+    ...
+```
+
+像是下面這樣...
+
+```bat
+@echo off
+
+call:TryToRunAsAdmin
+
+if %ERRORLEVEL%==1 exit /B
+    
+echo got administrative privileges...
+goto :eof
+
+:TryToRunAsAdmin
+    set GetAdminScriptFile="%temp%\getadmin.vbs"
+
+    REM  --> Check for permissions
+    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+    REM --> If error flag set, we do not have admin.
+    if '%errorlevel%' NEQ '0' (
+        echo Requesting administrative privileges...
+        call:UACPrompt
+        set ERRORLEVEL=1
+    ) else ( 
+        if exist %GetAdminScriptFile% ( del %GetAdminScriptFile% )
+        set ERRORLEVEL=0
+    )
+    goto :eof
+
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > %GetAdminScriptFile%
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> %GetAdminScriptFile%
+
+    call %GetAdminScriptFile%
+    goto :eof
+```
+
+Link
+----
+* [BatchGotAdmin](https://sites.google.com/site/eneerge/scripts/batchgotadmin)

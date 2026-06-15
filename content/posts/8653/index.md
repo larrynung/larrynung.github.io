@@ -14,22 +14,427 @@ tags: [CSharp,VB.NET]
 
 VB.NET
 
+```
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+'Author: Larry Nung
+'Date: 2009/6/2
+'File:
+'Memo:
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+''' <summary>
+'''
+''' </summary>
+''' <remarks></remarks>
+Public Class Form1
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Handles the Click event of the Button1 control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
+    ''' <remarks></remarks>
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Me.PictureBox1.Image = GetRedBitmap(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Gets the red bitmap.
+    ''' </summary>
+    ''' <param name="file">The file.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetRedBitmap(ByVal file As String) As Bitmap
+        Dim bmp As Bitmap = New Bitmap(file)
+        For x As Integer = 0 To bmp.Width - 1
+            For y As Integer = 0 To bmp.Height - 1
+                Dim color As Color = bmp.GetPixel(x, y)
+                bmp.SetPixel(x, y, color.FromArgb(color.R, 0, 0))
+            Next
+        Next
+        Return bmp
+    End Function
+
+End Class
+```
+
 C#
 
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //Author: Larry Nung
+    //Date: 2009/6/2
+    //File:
+    //Memo:
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    /// <summary>
+    ///
+    /// </summary>
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Handles the Click event of the button1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = GetRedBitmap(openFileDialog1.FileName);
+            }
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Gets the red bitmap.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <returns></returns>
+        private Bitmap GetRedBitmap(string file)
+        {
+            Bitmap bmp = new Bitmap(file);
+            for (int x = 0; x < bmp.Width; x++)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    Color color = bmp.GetPixel(x, y);
+                    bmp.SetPixel(x, y, Color.FromArgb(color.R, 0, 0));
+                }
+            }
+            return bmp;
+        }
+    }
+}
+```
+
 執行結果：
+
+![image_thumb.png](/images/posts/8653/image_thumb.png)
 
 ## 綠色濾鏡
 
 VB.NET
 
+```
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+'Author: Larry Nung
+'Date: 2009/6/2
+'File:
+'Memo:
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+''' <summary>
+'''
+''' </summary>
+''' <remarks></remarks>
+Public Class Form1
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Handles the Click event of the Button1 control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
+    ''' <remarks></remarks>
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Me.PictureBox1.Image = GetGreenBitmap(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Gets the green bitmap.
+    ''' </summary>
+    ''' <param name="file">The file.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetGreenBitmap(ByVal file As String) As Bitmap
+        Dim bmp As Bitmap = New Bitmap(file)
+        For x As Integer = 0 To bmp.Width - 1
+            For y As Integer = 0 To bmp.Height - 1
+                Dim color As Color = bmp.GetPixel(x, y)
+                bmp.SetPixel(x, y, color.FromArgb(0, color.G, 0))
+            Next
+        Next
+        Return bmp
+    End Function
+
+End Class
+```
+
 C#
 
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //Author: Larry Nung
+    //Date: 2009/6/2
+    //File:
+    //Memo:
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    /// <summary>
+    ///
+    /// </summary>
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Handles the Click event of the button1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = GetGreenBitmap(openFileDialog1.FileName);
+            }
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Gets the green bitmap.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <returns></returns>
+        private Bitmap GetGreenBitmap(string file)
+        {
+            Bitmap bmp = new Bitmap(file);
+            for (int x = 0; x < bmp.Width; x++)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    Color color = bmp.GetPixel(x, y);
+                    bmp.SetPixel(x, y, Color.FromArgb(0, color.G, 0));
+                }
+            }
+            return bmp;
+        }
+    }
+}
+```
+
 執行結果：
+
+![image_thumb_1.png](/images/posts/8653/image_thumb_1.png)
 
 ## 藍色濾鏡
 
 VB.NET
 
+```
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+'Author: Larry Nung
+'Date: 2009/6/2
+'File:
+'Memo:
+'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+''' <summary>
+'''
+''' </summary>
+''' <remarks></remarks>
+Public Class Form1
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Handles the Click event of the Button1 control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
+    ''' <remarks></remarks>
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Me.PictureBox1.Image = GetBlueBitmap(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    '***************************************************************************
+    'Author: Larry Nung
+    'Date: 2009/6/2
+    'Purpose:
+    'Memo:
+    '***************************************************************************
+    ''' <summary>
+    ''' Gets the blue bitmap.
+    ''' </summary>
+    ''' <param name="file">The file.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetBlueBitmap(ByVal file As String) As Bitmap
+        Dim bmp As Bitmap = New Bitmap(file)
+        For x As Integer = 0 To bmp.Width - 1
+            For y As Integer = 0 To bmp.Height - 1
+                Dim color As Color = bmp.GetPixel(x, y)
+                bmp.SetPixel(x, y, color.FromArgb(0, 0, color.B))
+            Next
+        Next
+        Return bmp
+    End Function
+
+End Class
+```
+
 C#
 
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //Author: Larry Nung
+    //Date: 2009/6/2
+    //File:
+    //Memo:
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    /// <summary>
+    ///
+    /// </summary>
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Handles the Click event of the button1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = GetBlueBitmap(openFileDialog1.FileName);
+            }
+        }
+
+        //***************************************************************************
+        //Author: Larry Nung
+        //Date: 2009/6/2
+        //Purpose:
+        //Memo:
+        //***************************************************************************
+        /// <summary>
+        /// Gets the blue bitmap.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <returns></returns>
+        private Bitmap GetBlueBitmap(string file)
+        {
+            Bitmap bmp = new Bitmap(file);
+            for (int x = 0; x < bmp.Width; x++)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    Color color = bmp.GetPixel(x, y);
+                    bmp.SetPixel(x, y, Color.FromArgb(0, 0, color.B));
+                }
+            }
+            return bmp;
+        }
+    }
+}
+```
+
 執行結果：
+
+![image_thumb_2.png](/images/posts/8653/image_thumb_2.png)

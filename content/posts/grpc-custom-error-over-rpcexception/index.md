@@ -16,15 +16,16 @@ using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
 
+
 namespace GrpcService_CSharp1
 {
-public class GreeterService : Greeter.GreeterBase
-{
-public override Task SayHello(HelloRequest request, ServerCallContext context)
-{
-throw new MyException("ERROR2020");
-}
-}
+    public class GreeterService : Greeter.GreeterBase
+    {
+        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+        {
+          throw new MyException("ERROR2020");
+        }
+    }
 }
 ```
 ![1.png](1.png)
@@ -36,36 +37,39 @@ using System.Threading.Tasks;
 using Grpc.Core;
 using Grpc.Core.Interceptors;
 
+
 namespace GrpcService_CSharp1
 {
-public class ExceptionInterceptor: Interceptor
-{
-public override async Task UnaryServerHandler(TRequest request,
-ServerCallContext context,
-UnaryServerMethod continuation)
-{
-try
-{
-return await base.UnaryServerHandler(request, context, continuation);
-}
-catch (Exception e)
-{
-Console.WriteLine(e.ToString());
+    public class ExceptionInterceptor: Interceptor
+    {
+        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request,
+            ServerCallContext context,
+            UnaryServerMethod<TRequest, TResponse> continuation)
+        {
+            try
+            {
+                return await base.UnaryServerHandler(request, context, continuation);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
 
-if (e is RpcException)
-throw;
 
-var myException = e as MyException ?? new MyException("ERROR9999");
+                if (e is RpcException)
+                    throw;
 
-var rpcException = new RpcException(new Status(StatusCode.Internal, myException.StatusCode), new Metadata
-{
-{nameof(request), request.ToString()}
-});
 
-throw rpcException;
-}
-}
-}
+                var myException = e as MyException ?? new MyException("ERROR9999");
+
+                var rpcException = new RpcException(new Status(StatusCode.Internal, myException.StatusCode), new Metadata
+                {
+                    {nameof(request), request.ToString()}
+                });
+
+                throw rpcException;
+            }
+        }
+    }
 }
 ```
 ![2.png](2.png)

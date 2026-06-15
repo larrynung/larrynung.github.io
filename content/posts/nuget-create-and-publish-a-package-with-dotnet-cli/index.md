@@ -6,10 +6,10 @@ tags: [NuGet]
 
 要建立 NuGet 套件，需先確認專案檔內有設計 NuGet 套件所需之資訊，像是套件識別碼、版本、作者、公司等。
 ```xml
-AppLogger
-1.0.0
-your_name
-your_company
+<PackageId>AppLogger</PackageId>
+<Version>1.0.0</Version>
+<Authors>your_name</Authors>
+<Company>your_company</Company>
 ```
 ![1.png](1.png)
 
@@ -21,7 +21,7 @@ dotnet pack
 
 或是在專案檔內加設定 GeneratePackageOnBuild，讓專案在建置時自動產生。
 ```xml
-true
+<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 ![3.png](3.png)
 

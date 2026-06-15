@@ -8,40 +8,40 @@ tags: [.NET, CSharp]
 想要用實現有限狀態機的功能，看了一下網路上的解決方案以及 State Pattern，覺得都不怎麼適用，因此利用 Tuple 與 Dictionary 去實作了一個簡易又可重複使用的 State Machine：  
 
 ```c# 
-public sealed class StateMachine
+public sealed class StateMachine<TState, TCommand>
 {
     #region  Fields
-    Dictionary, TState> _transitions;
+    Dictionary<Tuple<TState, TCommand>, TState> _transitions;
     #endregion  Fields
 
     #region  Properties
-    /// 
+    /// <summary>
     /// Gets the m_ transitions.
-    /// 
-    /// 
+    /// </summary>
+    /// <value>
     /// The m_ transitions.
-    /// 
-    private Dictionary, TState> m_Transitions
+    /// </value>
+    private Dictionary<Tuple<TState, TCommand>, TState> m_Transitions
     {
         get
         {
-            return _transitions ?? (_transitions = new Dictionary, TState>());
+            return _transitions ?? (_transitions = new Dictionary<Tuple<TState, TCommand>, TState>());
         }
     }
-    /// 
+    /// <summary>
     /// Gets the state of the current.
-    /// 
-    /// 
+    /// </summary>
+    /// <value>
     /// The state of the current.
-    /// 
+    /// </value>
     public TState CurrentState { get; private set; }
     #endregion  Properties
 
     #region  Constructors
-    /// 
-    /// Initializes a new instance of the  class.
-    /// 
-    ///  The state.
+    /// <summary>
+    /// Initializes a new instance of the <see cref="StateMachine{TState, TCommand}"/> class.
+    /// </summary>
+    /// <param name="state"> The state.</param>
     public StateMachine(TState state)
     {
         this.CurrentState = state;
@@ -49,16 +49,16 @@ public sealed class StateMachine
     #endregion  Constructors
 
     #region  Methods
-    /// 
+    /// <summary>
     /// Adds the translation.
-    /// 
-    ///  State of the base.
-    ///  The command.
-    ///  State of the target.
-    /// 
-    public StateMachine AddTranslation(TState baseState, TCommand command, TState targetState)
+    /// </summary>
+    /// <param name="baseState"> State of the base.</param>
+    /// <param name="command"> The command.</param>
+    /// <param name="targetState"> State of the target.</param>
+    /// <returns></returns>
+    public StateMachine<TState, TCommand> AddTranslation(TState baseState, TCommand command, TState targetState)
     {
-        var key = new Tuple(baseState, command);
+        var key = new Tuple<TState, TCommand>(baseState, command);
 
         if (m_Transitions.ContainsKey(key))
             throw new Exception("Duplicated translation!!");
@@ -68,13 +68,13 @@ public sealed class StateMachine
         return this;
     }
 
-    /// 
+    /// <summary>
     /// Triggers the command.
-    /// 
-    ///  The command.
+    /// </summary>
+    /// <param name="command"> The command.</param>
     public void Trigger(TCommand command)
     {
-        var key = new Tuple(this.CurrentState, command);
+        var key = new Tuple<TState, TCommand>(this.CurrentState, command);
 
         if (!m_Transitions.ContainsKey(key))
             throw new Exception("Translation not found!!");
@@ -104,7 +104,7 @@ public enum State
 }
 
 ...
-var stateMachine = new StateMachine(State.State1)
+var stateMachine = new StateMachine<State, Command>(State.State1)
     .AddTranslation(State.State1, Command.Reset, State.State1)
     .AddTranslation(State.State2, Command.Reset, State.State1)
     .AddTranslation(State.State3, Command.Reset, State.State1)

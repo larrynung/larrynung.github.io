@@ -15,86 +15,81 @@ rush -- a cross-platform command-line tool for executing jobs in parallel
 
 Version: 0.1.9
 
-Author: Wei Shen
+Author: Wei Shen <shenwei356@gmail.com>
 
 Homepage: https://github.com/shenwei356/rush
 
 Usage:
-rush [flags] [command] [args of command...]
+  rush [flags] [command] [args of command...]
 
 Examples:
-1. simple run, quoting is not necessary
-$ seq 1 10 | rush echo {}
-2. keep order
-$ seq 1 10 | rush 'echo {}' -k
-3. timeout
-$ seq 1 | rush 'sleep 2; echo {}' -t 1
-4. retry
-$ seq 1 | rush 'python script.py' -r 3
-5. dirname & basename & remove suffix
-$ echo dir/file_1.txt.gz | rush 'echo {/} {%} {^_1.txt.gz}'
-dir file.txt.gz dir/file
-6. basename without last or any extension
-$ echo dir.d/file.txt.gz | rush 'echo {.} {:} {%.} {%:}'
-dir.d/file.txt dir.d/file file.txt file
-7. job ID, combine fields and other replacement strings
-$ echo 12 file.txt dir/s_1.fq.gz | rush 'echo job {#}: {2} {2.} {3%:^_1}'
-job 1: file.txt file s
-8. capture submatch using regular expression
-$ echo read_1.fq.gz | rush 'echo {@(.+)_\d}'
-read
-9. custom field delimiter
-$ echo a=b=c | rush 'echo {1} {2} {3}' -d =
-a b c
-10. custom record delimiter
-$ echo a=b=c | rush -D "=" -k 'echo {}'
-a
-b
-c
-$ echo abc | rush -D "" -k 'echo {}'
-a
-b
-c
-11. assign value to variable, like "awk -v"
-$ seq 1 | rush 'echo Hello, {fname} {lname}!' -v fname=Wei -v lname=Shen
-Hello, Wei Shen!
-12. preset variable (Macro)
-# equal to: echo read_1.fq.gz | rush 'echo {:^_1} {:^_1}_2.fq.gz'
-$ echo read_1.fq.gz | rush -g -v p={:^_1} 'echo {p} {p}_2.fq.gz'
-read read_2.fq.gz
-13. save successful commands to continue in NEXT run
-$ seq 1 3 | rush 'sleep {}; echo {}' -c -t 2
-[INFO] ignore cmd #1: sleep 1; echo 1
-[ERRO] run cmd #1: sleep 2; echo 2: time out
-[ERRO] run cmd #2: sleep 3; echo 3: time out
-
-More examples: https://github.com/shenwei356/rush
-
-Flags:
--v, --assign stringSlice        assign the value val to the variable var (format: var=val, val also supports replacement strings)
--c, --continue                  continue jobs. NOTES: 1) successful commands are saved in file (given by flag -C/--succ-cmd-file); 2) if the file does not exist, rush saves data so we can continue jobs next time; 3) if the file exists, rush ignores jobs in it and update the file
---dry-run                   print command but not run
--d, --field-delimiter string    field delimiter in records, support regular expression (default "\s+")
--i, --infile stringSlice        input data file, multi-values supported
--j, --jobs int                  run n jobs in parallel (default value depends on your device) (default 4)
--k, --keep-order                keep output in order of input
--n, --nrecords int              number of records sent to a command (default 1)
--o, --out-file string           out file ("-" for stdout) (default "-")
--D, --record-delimiter string   record delimiter (default is "
-") (default "
-")
--J, --records-join-sep string   record separator for joining multi-records (default is "
-") (default "
-")
--r, --retries int               maximum retries (default 0)
---retry-interval int        retry interval (unit: second) (default 0)
--e, --stop-on-error             stop all processes on first error(s)
--C, --succ-cmd-file string      file for saving successful commands (default "successful_cmds.rush")
--t, --timeout int               timeout of a command (unit: second, 0 for no timeout) (default 0)
--T, --trim string               trim white space ("
-") in input (available values: "l" for left, "r" for right, "lr", "rl", "b" for both side)
---verbose                   print verbose information
--V, --version                   print version information and check for update
+  1. simple run, quoting is not necessary
+      $ seq 1 10 | rush echo {}
+  2. keep order
+      $ seq 1 10 | rush 'echo {}' -k
+  3. timeout
+      $ seq 1 | rush 'sleep 2; echo {}' -t 1
+  4. retry
+      $ seq 1 | rush 'python script.py' -r 3
+  5. dirname & basename & remove suffix
+      $ echo dir/file_1.txt.gz | rush 'echo {/} {%} {^_1.txt.gz}'
+          dir file.txt.gz dir/file
+      6. basename without last or any extension
+          $ echo dir.d/file.txt.gz | rush 'echo {.} {:} {%.} {%:}'
+          dir.d/file.txt dir.d/file file.txt file
+      7. job ID, combine fields and other replacement strings
+          $ echo 12 file.txt dir/s_1.fq.gz | rush 'echo job {#}: {2} {2.} {3%:^_1}'
+          job 1: file.txt file s
+      8. capture submatch using regular expression
+          $ echo read_1.fq.gz | rush 'echo {@(.+)_\d}'
+          read
+      9. custom field delimiter
+          $ echo a=b=c | rush 'echo {1} {2} {3}' -d =
+          a b c
+      10. custom record delimiter
+          $ echo a=b=c | rush -D "=" -k 'echo {}'
+          a
+          b
+          c
+          $ echo abc | rush -D "" -k 'echo {}'
+          a
+          b
+          c
+      11. assign value to variable, like "awk -v"
+          $ seq 1 | rush 'echo Hello, {fname} {lname}!' -v fname=Wei -v lname=Shen
+          Hello, Wei Shen!
+      12. preset variable (Macro)
+          # equal to: echo read_1.fq.gz | rush 'echo {:^_1} {:^_1}_2.fq.gz'
+          $ echo read_1.fq.gz | rush -g -v p={:^_1} 'echo {p} {p}_2.fq.gz'
+          read read_2.fq.gz
+      13. save successful commands to continue in NEXT run
+          $ seq 1 3 | rush 'sleep {}; echo {}' -c -t 2
+          [INFO] ignore cmd #1: sleep 1; echo 1
+          [ERRO] run cmd #1: sleep 2; echo 2: time out
+          [ERRO] run cmd #2: sleep 3; echo 3: time out
+    
+      More examples: https://github.com/shenwei356/rush
+    
+    Flags:
+      -v, --assign stringSlice        assign the value val to the variable var (format: var=val, val also supports replacement strings)
+      -c, --continue                  continue jobs. NOTES: 1) successful commands are saved in file (given by flag -C/--succ-cmd-file); 2) if the file does not exist, rush saves data so we can continue jobs next time; 3) if the file exists, rush ignores jobs in it and update the file
+          --dry-run                   print command but not run
+      -d, --field-delimiter string    field delimiter in records, support regular expression (default "\\s+")
+      -i, --infile stringSlice        input data file, multi-values supported
+      -j, --jobs int                  run n jobs in parallel (default value depends on your device) (default 4)
+      -k, --keep-order                keep output in order of input
+      -n, --nrecords int              number of records sent to a command (default 1)
+      -o, --out-file string           out file ("-" for stdout) (default "-")
+      -D, --record-delimiter string   record delimiter (default is "\n") (default "\n")
+      -J, --records-join-sep string   record separator for joining multi-records (default is "\n") (default "\n")
+      -r, --retries int               maximum retries (default 0)
+          --retry-interval int        retry interval (unit: second) (default 0)
+      -e, --stop-on-error             stop all processes on first error(s)
+      -C, --succ-cmd-file string      file for saving successful commands (default "successful_cmds.rush")
+      -t, --timeout int               timeout of a command (unit: second, 0 for no timeout) (default 0)
+      -T, --trim string               trim white space (" \t\r\n") in input (available values: "l" for left, "r" for right, "lr", "rl", "b" for both side)
+          --verbose                   print verbose information
+      -V, --version                   print version information and check for update
 ```
 比較重要的參數有 -D、-k、-T。
 

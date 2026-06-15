@@ -5,8 +5,16 @@ description: "[Investment]理財致富的四個存摺"
 tags: [Investment]
 ---
 
+![image_thumb_1.png](/images/posts/6969/image_thumb_1.png)
+
 ## Abstract
-工作存摺理財存摺投資存摺快樂存摺ConclusionReference
+
+* 工作存摺
+* 理財存摺
+* 投資存摺
+* 快樂存摺
+* Conclusion
+* Reference
 
 ## 工作存摺
 
@@ -28,5 +36,11 @@ tags: [Investment]
 
 簡單來說，這四個存摺主要分為工作、理財、投資、快樂。四個存摺相輔相成。其中工作存摺是最基本的。因為有了穩定的工作自然就會有穩定的收入來源，有了穩定的收入來源自然就會有錢可以理財與投資。而投資金額的多寡端看理財的成效而訂。理財理的好則自然有充足的資金投資，讓錢滾錢達到增值的效果。當然，光是照著目標長期的投資理財總是會疲累的，適時的給予自己投資理財的獎勵，累積快樂存摺，有了快樂的加持才能有充足的動力支持你執行長期理財致富的計劃。
 
+![image_thumb_3.png](/images/posts/6969/image_thumb_3.png)
+
 ## Reference
-四個存摺 快樂賺百萬Nick-Q寶貝成長日記 - 憨薪水拼百萬(摘要)富足人生俱樂部-理財教育系列講座Smart智富121期封面故事 - 憨薪水 拼百萬 實用4存摺，把薪水變活又變大
+
+1. [四個存摺 快樂賺百萬](http://nomadicbaby.com/winni_page.asp?pid2=43)
+2. [Nick-Q寶貝成長日記 - 憨薪水拼百萬(摘要)](http://tw.myblog.yahoo.com/kenchou-winnie/article?mid=1780&prev=1781&next=-1)
+3. [富足人生俱樂部-理財教育系列講座](http://www.wretch.cc/blog/tonydream/10541674)
+4. Smart智富121期封面故事 - 憨薪水 拼百萬 實用4存摺，把薪水變活又變大

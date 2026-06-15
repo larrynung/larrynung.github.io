@@ -6,3 +6,5 @@ tags: [Visual Studio]
 ---
 
 Tool window search是Visual Studio 2011 Preview的新功能，這個新功能算是滿小的修改，只是在一些常用的工具視窗上加入搜尋過濾的功能，像是在工具箱、方案總管、Team總管、與錯誤清單視窗上方都可以看到新的開發環境多了一個搜尋框，讓開發人員可以很快速的找到感興趣的部分。
+
+![image_thumb.png](/images/posts/36674/image_thumb.png)

@@ -7,11 +7,19 @@ tags: [gRPC]
 要建立 gRPC 的 Client，須先將 GRPC.Tools、GRPC.Core、Google.Protobuf 這三個 NuGet 套件加入參考。
 ```C#
 ...
-
+<ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.20.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.0" />
+</ItemGroup>
 ...
 ```
 然後設定從 Proto 檔產生需要的程式部分。
 ```C#
+<ItemGroup>
+    <Protobuf Include="../../proto/*.proto" GrpcServices="Client" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+</ItemGroup>
 ```
 ![1.png](1.png)
 

@@ -3,21 +3,26 @@ title: "[Wix]Wix製作安裝包時為特定檔案指定使用NGen產生Native Im
 date: "2013-11-06 12:00:00"
 description: "[Wix]Wix製作安裝包時為特定檔案指定使用NGen產生Native Image"
 ---
+
 使用Wix製作安裝包時，若想要指定某些特定檔案，為其產生Native Image的話，可以將安裝專案加入WixNetFxExtension.dll組件參考。
+
+![image_thumb.png](/images/posts/d0cc6895-2f08-4bd1-bec3-a874fefdf6a2/image_thumb.png)
 
 並在wxs file內的Wix element加上netfx命名空間(xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension")。
 
-然後找到想要產生Native Image的檔案設定，在File element中間穿插，像是下面這樣：
+![2013-01-22_111614_thumb.jpg](/images/posts/d0cc6895-2f08-4bd1-bec3-a874fefdf6a2/2013-01-22_111614_thumb.jpg)
+
+然後找到想要產生Native Image的檔案設定，在File element中間穿插<netfx:NativeImage Id="ngen_MyApplication.exe" Platform="32bit" Priority="0"/>，像是下面這樣：
+
+![image_thumb_3.png](/images/posts/d0cc6895-2f08-4bd1-bec3-a874fefdf6a2/image_thumb_3.png)
 
 這樣設定完後所產生的安裝包在安裝時就會為指定的檔案產生Native Image。若是不放心，這邊我們可以透過Process Explorer來驗證一下，如果Process運行時所加載的組件位置是C:\Windows\Assembly\NativateImagex...的話，就代表我們在安裝專案中所做的設定正確無誤，所以運行時會改呼叫Native Image，而不會在運行時才Compile。
 
-##
-Link
+![image_thumb_2.png](/images/posts/d0cc6895-2f08-4bd1-bec3-a874fefdf6a2/image_thumb_2.png)
 
-How To: NGen Managed Assemblies During Installation
+## Link
 
-NGen: Creating Setup Projects
-
-How to NGEN files in an MSI-based setup package using WiX
-
-NGen support in WiX
+* How To: NGen Managed Assemblies During Installation
+* NGen: Creating Setup Projects
+* How to NGEN files in an MSI-based setup package using WiX
+* NGen support in WiX

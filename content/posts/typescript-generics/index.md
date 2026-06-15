@@ -8,28 +8,28 @@ tags: [TypeScript]
 TypeScript 支援泛型語法，使用方式如下：
 
 ```js
-function GenericsFunction(param:T) {
+function GenericsFunction<T>(param:T) { 
+	 ...
+} 
 ...
-}
-...
-class GenericsClass
+class GenericsClass<T>
 {
-GenericsField:T;
-GenericsMethod(param:T) {
-...
-}
+	GenericsField:T;
+	GenericsMethod(param:T) { 
+		...
+	} 
 }
 ```
 
 最後附上個簡單的使用範例：
 
 ```js
-function ShowMessage(message:T) {
-alert(message);
-}
+function ShowMessage<T>(message:T) { 
+	alert(message); 
+} 
 
-ShowMessage("test");
-ShowMessage(123);
+ShowMessage<string>("test"); 
+ShowMessage<number>(123);
 ```
 
 ![1.png](/images/posts/TypeScriptGenerics/1.png)

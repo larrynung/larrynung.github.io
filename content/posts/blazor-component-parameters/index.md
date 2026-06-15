@@ -19,29 +19,35 @@ private int IncrementAmount { get; set;     } = 1;
 在畫面上就可以透過 Component parameter 對 Component 做些設定。
 ```html
 ...
-
+<Counter IncrementAmount="10" />
 ...
 ```
 像是 Blazor 範本的 Counter component 可以改成像下面這樣:
 ```html
 @page "/counter"
 
-# Counter
 
-Current count: @currentCount
+<h1>Counter</h1>
 
-Click me
+
+<p>Current count: @currentCount</p>
+
+
+<button class="btn btn-primary" @onclick="@IncrementCount">Click me</button>
+
 
 @code {
-int currentCount = 0;
+    int currentCount = 0;
 
-[Parameter]
-private int IncrementAmount { get; set; } = 1;
 
-void IncrementCount()
-{
-currentCount += IncrementAmount;
-}
+    [Parameter]
+    private int IncrementAmount { get; set; } = 1;
+
+
+    void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
 }
 ```
 ![1.png](1.png)
@@ -52,9 +58,14 @@ Component parameter 開好後，畫面可直接設定 Parameter 的值。像是�
 ```html
 @page "/"
 
-# Hello, world!
+
+<h1>Hello, world!</h1>
+
 
 Welcome to your new app.
+
+
+<Counter IncrementAmount="10" />
 ```
 ![2.png](2.png)
 

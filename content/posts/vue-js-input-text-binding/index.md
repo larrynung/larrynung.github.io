@@ -8,17 +8,28 @@ tags: [Vue.js]
 
 像是下面這樣的程式：
 ```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Hello World</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model="message">
+    <p>{{message}}</p>
+  </div>
 
-Vue - Hello World
-
-{{message}}
-
-new Vue({
-el: '#app',
-data:{
-message: "Hello World"
-}
-})
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        message: "Hello World"
+      }      
+    })
+  </script>
+</body>
+</html>
 ```
 其運行結果如下，在輸入框中輸入什麼，下方就會顯示什麼。
 
