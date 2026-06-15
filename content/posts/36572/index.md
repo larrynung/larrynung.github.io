@@ -9,13 +9,29 @@ tags: [Visual Studio]
 
 使用上可透過熱鍵Ctrl + `，將焦點帶至Visual Studio右上方的Quick Launch搜尋框，鍵入關鍵字後按下Enter即可。
 
+![image_thumb.png](/images/posts/36572/image_thumb.png)
+
 下面是筆者開啟自己的專案後搜尋sql關鍵字的效果。可以看到搜尋出的結果有分三個區塊，分別是筆者前面所提到的選單命令、選項設定、與已開啟的程式碼檔案，用滑鼠或是用鍵盤選取感興趣的部分，Visual Studio會幫你執行選取的選單命令、帶出選項設定、或是切換至指定的程式碼檔案。這邊特別注意一下搜尋結果的最下方，會看到有一行提示訊息，提示我們能透過一樣的熱鍵(Ctrl + `)切換搜尋結果，在搜尋結果很多時這樣的功能能將我們的焦點集中在所關注的部分，相信是相當的實用。
+
+![image_thumb_2.png](/images/posts/36572/image_thumb_2.png)
 
 實際切換看看，可以看到像下面這樣的效果，搜尋的結果會依Commands→Options→Open Documents→All...的順序切換。
 
+![image_thumb_3.png](/images/posts/36572/image_thumb_3.png)
+
+![image_thumb_4.png](/images/posts/36572/image_thumb_4.png)
+
+![image_thumb_5.png](/images/posts/36572/image_thumb_5.png)
+
 另外也可以點選 [Tools\Options...] 叫出Options對話方塊，切至 [Environment\Quick Launch] 頁面設定是否啟用Quick Launch功能，以及Quick Launch能搜尋的範圍。
+
+![image_thumb_1.png](/images/posts/36572/image_thumb_1.png)
 
 注意到Quick Launch設定這邊，後方有提示可以使用的Shortcut，像是Most Recently Used是@mru、Commands是@cmd、Options是@opt、Open Documents是@doc。能方便我們搜尋特定的範圍，只要在搜尋框帶入即可指搜尋特定的範圍。
 
+![image_thumb_6.png](/images/posts/36572/image_thumb_6.png)
+
 ## Link
-     Quick Launch in Visual Studio 2011 Developer Preview    Visual Studio 11 Developer Preview: Quick Launch
+
+* [Quick Launch in Visual Studio 2011 Developer Preview](http://dailydotnettips.com/2011/10/15/quick-launch-in-visual-studio-2011-developer-preview/)
+* [Visual Studio 11 Developer Preview: Quick Launch](http://blogs.msdn.com/b/visualstudio/archive/2011/09/27/visual-studio-11-developer-preview-quick-launch.aspx)

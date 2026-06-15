@@ -5,73 +5,124 @@ description: "C++/CLI Managed Natived語法對應"
 tags: [C++]
 ---
 
-Natived
- 			
-				Managed
-				Pointer
-```cpp
-NativedClass* obj = new NativedClass();
-```
-
-```cpp
-ManagedClass^ obj = gcnew ManagedClass();
-```
-				Call By Reference
-```cpp
-void Method(int& value)
+<table border="0" cellpadding="2" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top" width="50%">
+				 </td>
+<td valign="top" width="50%">
+				Natived</td>
+<td valign="top" width="299">
+				Managed</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Pointer</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:bbbd12b3-b7a7-43f5-9d81-71a1c81e8b1a" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
+NativedClass* obj = new NativedClass();</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d7f2af6d-8d56-4a81-9077-0a80f5626841" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
+ManagedClass^ obj = gcnew ManagedClass();</pre>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Call By Reference</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:6403b0b8-ce6c-4303-aeba-8c811a5e6ee7" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
+void Method(int&amp; value)
 {
-}
-```
-
-```cpp
+}</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7735ecf8-a381-4a0b-a5b6-c5d6f8dbf9a1" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 void Method(int% value)
 {
-}
-```
-				Enum
-```cpp
+}</pre>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Enum</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0985e71a-caa4-4093-a2dc-32bfddce8c36" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 enum
-{	
+{
     Element1,
     Element2
-};
-```
-
-```cpp
+};</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:2c9154e9-a64e-4212-8672-d406f4552452" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 enum class EnumName
-{	
+{
     Element1,
     Element2
-};
-```
-				Class
-```cpp
+};</pre>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Class</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:7e445159-c2ca-4475-85ed-34b66146a30b" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 class ClassName
 {
-};
-```
-
-```cpp
+};</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:60bdb507-0866-400f-a186-a1b0a73f4313" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 ref class ClassName
 {
-};
-```
-				Struct
-```cpp
+};</pre>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Struct</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:175df77b-7dd4-4742-9c68-5a7b61a65b18" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 struct StructName
 {
     int m_nElement1;
-}
-```
-
-```cpp
+}</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:e6dfc678-540c-41db-a17b-f2731dc43c4d" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 ref struct StructName
 {
     int m_nElement1;
-}
-```
-				Property
-```cpp
+}</pre>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="58">
+				Property</td>
+<td valign="top" width="311">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:1d07d0f2-bafd-4e0b-906a-b6c33ce36519" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 private:
 	bool _propertyValue;
 public:
@@ -85,10 +136,12 @@ public:
 	bool GetPropertyValue()
 	{
 		return _propertyValue;
-	}
-```
-
-```cpp
+	}</pre>
+</div>
+</td>
+<td valign="top" width="299">
+<div class="wlWriterEditableSmartContent" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:9e9db983-7aee-4b8e-a6bc-bb8515d0e028" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px">
+<pre class="c:nocontrols" name="code">
 private:
 	System::Boolean _propertyValue;
 public:
@@ -102,77 +155,9 @@ public:
 		{
 			_propertyValue = value;
 		}
-	}
-```
-
-void Method(int% value)
-{
-}
-
-				Enum
-
-enum
-{	
-    Element1,
-    Element2
-};
-
-enum class EnumName
-{	
-    Element1,
-    Element2
-};
-
-				Class
-
-class ClassName
-{
-};
-
-ref class ClassName
-{
-};
-
-				Struct
-
-struct StructName
-{
-    int m_nElement1;
-}
-
-ref struct StructName
-{
-    int m_nElement1;
-}
-
-				Property
-
-private:
-	bool _propertyValue;
-public:
-	__declspec(property(get=GetPropertyValue,put=SetPropertyValue))
-		bool m_propertyValue;
-public:
-	void SetPropertyValue(bool value)
-	{
-		_propertyValue = value;
-	}
-	bool GetPropertyValue()
-	{
-		return _propertyValue;
-	}
-
-private:
-	System::Boolean _propertyValue;
-public:
-	property System::Boolean PropertyValue
-	{
-		System::Boolean get()
-		{
-			return _propertyValue;
-		}
-		void set(System::Boolean value)
-		{
-			_propertyValue = value;
-		}
-	}
+	}</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>

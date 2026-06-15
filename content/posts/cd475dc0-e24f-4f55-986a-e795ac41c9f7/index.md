@@ -11,14 +11,14 @@ Caller Information在使用上很簡單，我們只要為方法中加入對應�
 
 ```csharp
 private void TraceMessage(string message,
-[CallerMemberName] string memberName = "",
-[CallerFilePath] string sourceFilePath = "",
-[CallerLineNumber] int sourceLineNumber = 0)
+    [CallerMemberName] string memberName = "",
+    [CallerFilePath] string sourceFilePath = "",
+    [CallerLineNumber] int sourceLineNumber = 0)
 {
-Console.WriteLine("message: " + message);
-Console.WriteLine("member name: " + memberName);
-Console.WriteLine("source file path: " + sourceFilePath);
-Console.WriteLine("source line number: " + sourceLineNumber);
+    Console.WriteLine("message: " + message);
+    Console.WriteLine("member name: " + memberName);
+    Console.WriteLine("source file path: " + sourceFilePath);
+    Console.WriteLine("source line number: " + sourceLineNumber);
 }
 ```
 
@@ -27,7 +27,7 @@ Console.WriteLine("source line number: " + sourceLineNumber);
 ```csharp
 public CallerTestClass()
 {
-TraceMessage("Constructor");
+    TraceMessage("Constructor");
 }
 ```
 
@@ -69,83 +69,98 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace ConsoleApplication1
 {
-class Program
-{
-static void Main(string[] args)
-{
-var obj = new CallerTestClass();
-}
-}
-class CallerTestClass
-{
-event EventHandler Event;
-private Boolean _temp = TraceMessage("Init temp var");
-private int _property;
-public int Property
-{
-get
-{
-TraceMessage("getProperty");
-return _property;
-}
-set
-{
-TraceMessage("setProperty");
-_property = value;
-}
-}
-static CallerTestClass()
-{
-TraceMessage("Static Constructor");
-}
-public CallerTestClass()
-{
-TraceMessage("Constructor");
-Property = 0;
-Method();
-Event += CallerTestClass_Event;
-OnEvent(EventArgs.Empty);
-var temp = !this;
-}
-void CallerTestClass_Event(object sender, EventArgs e)
-{
-TraceMessage("CallerTestClass_Event");
-}
-~CallerTestClass()
-{
-TraceMessage("DeConstructor");
-}
-protected void OnEvent(EventArgs e)
-{
-if (Event == null)
-return;
-TraceMessage("OnEvent");
-Event(this, e);
-}
-public void Method()
-{
-TraceMessage("Method");
-}
-private static bool TraceMessage(string message,
-[CallerMemberName] string memberName = "",
-[CallerFilePath] string sourceFilePath = "",
-[CallerLineNumber] int sourceLineNumber = 0)
-{
-Console.WriteLine("message: " + message);
-Console.WriteLine("member name: " + memberName);
-Console.WriteLine("source file path: " + sourceFilePath);
-Console.WriteLine("source line number: " + sourceLineNumber);
-Console.WriteLine();
-return true;
-}
-public static CallerTestClass operator !(CallerTestClass obj)
-{
-TraceMessage("Operator !");
-return null;
-}
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var obj = new CallerTestClass();
+        }
+    }
+
+    class CallerTestClass
+    {
+        event EventHandler Event;
+
+        private Boolean _temp = TraceMessage("Init temp var");
+        private int _property;
+
+        public int Property
+        {
+            get
+            {
+                TraceMessage("getProperty");
+                return _property;
+            }
+            set
+            {
+                TraceMessage("setProperty");
+                _property = value;
+            }
+        }
+
+        static CallerTestClass()
+        {
+            TraceMessage("Static Constructor");
+        }
+
+        public CallerTestClass()
+        {
+            TraceMessage("Constructor");
+            Property = 0;
+            Method();
+
+            Event += CallerTestClass_Event;
+            OnEvent(EventArgs.Empty);
+
+            var temp = !this;
+        }
+
+        void CallerTestClass_Event(object sender, EventArgs e)
+        {
+            TraceMessage("CallerTestClass_Event");
+        }
+
+        ~CallerTestClass()
+        {
+            TraceMessage("DeConstructor");
+        }
+
+        protected void OnEvent(EventArgs e)
+        {
+            if (Event == null)
+                return;
+
+            TraceMessage("OnEvent");
+            Event(this, e);
+        }
+
+        public void Method()
+        {
+            TraceMessage("Method");
+        }
+
+        private static bool TraceMessage(string message,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string sourceFilePath = "",
+            [CallerLineNumber] int sourceLineNumber = 0)
+        {
+            Console.WriteLine("message: " + message);
+            Console.WriteLine("member name: " + memberName);
+            Console.WriteLine("source file path: " + sourceFilePath);
+            Console.WriteLine("source line number: " + sourceLineNumber);
+            Console.WriteLine();
+            return true;
+        }
+
+        public static CallerTestClass operator !(CallerTestClass obj)
+        {
+            TraceMessage("Operator !");
+            return null;
+        }
+    }
 }
 ```
 
@@ -157,4 +172,4 @@ return null;
 
 ## Link
 
-- Caller Information (C# and Visual Basic)
+* Caller Information (C# and Visual Basic)

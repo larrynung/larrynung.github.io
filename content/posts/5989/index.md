@@ -7,7 +7,10 @@ tags: [VB.NET, CSharp]
 ---
 
 ## Abstract
-Introduction自製桌面小玩意Conclusion
+
+* Introduction
+* 自製桌面小玩意
+* Conclusion
 
 ## Introduction
 
@@ -17,91 +20,124 @@ Introduction自製桌面小玩意Conclusion
 
 Step1.首先，打開一個Window Form專案。
 
+![image_thumb.png](/images/posts/5989/image_thumb.png)
+
 Step2.設定其表單的FormBorderStyle屬性值為None，你會發現設完後其表單的標題列與視窗本來的邊框都不見了。
+
+![image_thumb_1.png](/images/posts/5989/image_thumb_1.png)
 
 Step3.在表單中放入PictureBox，用以顯示桌面小玩意的外觀圖片。
 
+![image_thumb_3.png](/images/posts/5989/image_thumb_3.png)
+
 Step4.設定PictureBox的影象內容為桌面小玩意的外觀圖片。把調整大小模式設為AutoSize，並啟動停駐父容器。
+
+![image_thumb_7.png](/images/posts/5989/image_thumb_7.png)
 
 Step5.將表單的AutoSize屬性設為True，並把AutoSizeMode設為GrowAndShrink。讓表單大小可以自動隨著圖片大小變化。
 
+![image_thumb_8.png](/images/posts/5989/image_thumb_8.png)
+
 Step6.將表單的TransparencyKey設為Control，這樣可以去掉桌面小玩意外圍多餘的部份。以下圖為例，我們可以藉由設定該屬性去去掉彎彎旁邊的顏色。
+
+![image_thumb_9.png](/images/posts/5989/image_thumb_9.png)
 
 Step7.把Form.ShowInTaskBar設為False。
 
+![image_thumb_12.png](/images/posts/5989/image_thumb_12.png)
+
 Step8.在表單中放入ContextMenuStript，並予以設定其選單的選項。
 
+![image_thumb_10.png](/images/posts/5989/image_thumb_10.png)
+
 Step9.把表單的ContextMenuStrip屬性設為上一步設好的ContextMenuStrip。
+
+![image_thumb_11.png](/images/posts/5989/image_thumb_11.png)
 
 Step10.加入ContextMenuStrip選項按下時對應的程式碼
 
 VB.NET
 
+```vb
 Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
 End Sub
+```
 
 C#
 
+```csharp
 private void ExitToolStripMenuItem_Click(object sender, System.EventArgs e)
 {
     this.Close();
 }
+```
 
 Step11.加入托曳桌面小玩意的程式碼
 
 VB.NET
 
-  Private Sub PictureBox1_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
-        '紀錄滑鼠點選時的視窗位置與滑鼠點選位置  
-        nOldWndLeft = Me.Left
-        nOldWndTop = Me.Top
-        nClickX = e.X
-        nClickY = e.Y
-    End Sub
+```vb
+Private Sub PictureBox1_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
+      '紀錄滑鼠點選時的視窗位置與滑鼠點選位置
+      nOldWndLeft = Me.Left
+      nOldWndTop = Me.Top
+      nClickX = e.X
+      nClickY = e.Y
+  End Sub
 
-    Private Sub PictureBox1_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
-        If PictureBox1.Capture = True Then      '如果滑鼠按著拖曳  
-            '設定新的視窗位置  
-            Me.Top = e.Y + nOldWndTop - nClickY
-            Me.Left = e.X + nOldWndLeft - nClickX
-            '更新紀錄的視窗位置  
-            nOldWndLeft = Me.Left
-            nOldWndTop = Me.Top
-        End If
-    End Sub
+  Private Sub PictureBox1_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
+      If PictureBox1.Capture = True Then      '如果滑鼠按著拖曳
+          '設定新的視窗位置
+          Me.Top = e.Y + nOldWndTop - nClickY
+          Me.Left = e.X + nOldWndLeft - nClickX
+          '更新紀錄的視窗位置
+          nOldWndLeft = Me.Left
+          nOldWndTop = Me.Top
+      End If
+  End Sub
+```
 
 C#
 
-private void PictureBox1_MouseDown(object sender, MouseEventArgs e)  
-{  
-    //紀錄滑鼠點選時的視窗位置與滑鼠點選位置  
-    nOldWndLeft = this.Left;  
-    nOldWndTop = this.Top;  
-    nClickX = e.X;  
-    nClickY = e.Y;  
-}  
-  
-private void PictureBox1_MouseMove(object sender, MouseEventArgs e)  
-{  
-    if (pnlTitleBar.Capture == true)        //如果滑鼠按著拖曳  
-    {  
-        //'設定新的視窗位置  
-        this.Top = e.Y + nOldWndTop - nClickY;  
-        this.Left = e.X + nOldWndLeft - nClickX;  
-        //更新紀錄的視窗位置  
-        nOldWndLeft = this.Left;  
-        nOldWndTop = this.Top;  
-    }  
-  
-}  
+```csharp
+private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
+{
+    //紀錄滑鼠點選時的視窗位置與滑鼠點選位置
+    nOldWndLeft = this.Left;
+    nOldWndTop = this.Top;
+    nClickX = e.X;
+    nClickY = e.Y;
+}
+
+private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+{
+    if (pnlTitleBar.Capture == true)        //如果滑鼠按著拖曳
+    {
+        //'設定新的視窗位置
+        this.Top = e.Y + nOldWndTop - nClickY;
+        this.Left = e.X + nOldWndLeft - nClickX;
+        //更新紀錄的視窗位置
+        nOldWndLeft = this.Left;
+        nOldWndTop = this.Top;
+    }
+
+}
+```
 
 Step12.完成
+
+![image_thumb_2.png](/images/posts/5989/image_thumb_2.png)
+
+![image_thumb_5.png](/images/posts/5989/image_thumb_5.png)
+
+![image_thumb_4.png](/images/posts/5989/image_thumb_4.png)
 
 完整範例如下:
 
 VB.NET
 
+```vb
 Public Class Form1
     Dim nOldWndLeft As Integer
     Dim nOldWndTop As Integer
@@ -113,7 +149,7 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
-        '紀錄滑鼠點選時的視窗位置與滑鼠點選位置  
+        '紀錄滑鼠點選時的視窗位置與滑鼠點選位置
         nOldWndLeft = Me.Left
         nOldWndTop = Me.Top
         nClickX = e.X
@@ -121,19 +157,21 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
-        If PictureBox1.Capture = True Then      '如果滑鼠按著拖曳  
-            '設定新的視窗位置  
+        If PictureBox1.Capture = True Then      '如果滑鼠按著拖曳
+            '設定新的視窗位置
             Me.Top = e.Y + nOldWndTop - nClickY
             Me.Left = e.X + nOldWndLeft - nClickX
-            '更新紀錄的視窗位置  
+            '更新紀錄的視窗位置
             nOldWndLeft = Me.Left
             nOldWndTop = Me.Top
         End If
     End Sub
 End Class
+```
 
 C#
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -150,8 +188,8 @@ namespace WindowsFormsApplication1
         int nOldWndLeft;
         int nOldWndTop;
         int nClickX;
-        int nClickY;  
-  
+        int nClickY;
+
         public Form1()
         {
             InitializeComponent();
@@ -163,30 +201,31 @@ namespace WindowsFormsApplication1
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {          
-            //紀錄滑鼠點選時的視窗位置與滑鼠點選位置  
+        {
+            //紀錄滑鼠點選時的視窗位置與滑鼠點選位置
             nOldWndLeft = this.Left;
             nOldWndTop = this.Top;
             nClickX = e.X;
-            nClickY = e.Y;  
+            nClickY = e.Y;
 
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (pictureBox1.Capture == true)        //如果滑鼠按著拖曳  
+            if (pictureBox1.Capture == true)        //如果滑鼠按著拖曳
             {
-                //'設定新的視窗位置  
+                //'設定新的視窗位置
                 this.Top = e.Y + nOldWndTop - nClickY;
                 this.Left = e.X + nOldWndLeft - nClickX;
-                //更新紀錄的視窗位置  
+                //更新紀錄的視窗位置
                 nOldWndLeft = this.Left;
                 nOldWndTop = this.Top;
-            }  
+            }
         }
-     
+
     }
 }
+```
 
 ## Conclusion
 

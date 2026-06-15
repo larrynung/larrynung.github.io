@@ -26,7 +26,7 @@ Contract.Requires(x != null );
 像是若要限定帶入方法或屬性的參數x不可為空引用，否則丟出ArguementNullException例外，並顯示x is null的訊息，可以如下撰寫：
 
 ```csharp
-Contract.Requires(x != null, "x is null");
+Contract.Requires<ArgumentNullException>(x != null, "x is null");
 ```
 
 若程式中含有先前已撰寫的if-than-throw參數判斷，Code Contract也提供了Contract.EndContractBlock方法，可將其加在舊有的if-than-throw參數判斷後面，如此Code Contract即會將舊有的if-than-throw參數判斷視為前置條件合約處理。像是：
@@ -51,7 +51,7 @@ Contract.Ensures( this .F > 0 );
 例外後置條件是用來驗證方法或屬性在擲回特定例外狀況時所需滿足的需求條件，使用上透過Contract.EnsuresOnThrow 方法表示，像是：
 
 ```csharp
-Contract.EnsuresOnThrow( this.F > 0 );
+Contract.EnsuresOnThrow<T>( this.F > 0 );
 ```
 
 特殊後置條件則是指方法傳回值、前置狀態值、與輸出參數這三種輔助後置條件用的語法。
@@ -59,16 +59,16 @@ Contract.EnsuresOnThrow( this.F > 0 );
 特殊後置條件中的方法傳回值指的是呼叫方法時其所要回傳給呼叫端的返回值，在無傳回值的副程式中無法使用，使用上透過Contract. Result<T>表示。像是：
 
 ```csharp
-Contract.Ensures(0 < Contract.Result());
+Contract.Ensures(0 < Contract.Result<int>());
 ```
 
 而特殊後置條件中的前置狀態值所要表示的是一開始進入方法或屬性的值 ，可用 Contract.OldValue<T>(T t) 表示 。像是：
 
 ```csharp
 void IArray.Insert(int index, Object value){
-Contract.Requires(index >= 0);
-Contract.Requires(index <= ((IArray)this).Count);
-Contract.Ensures(((IArray)this).Count == Contract.OldValue(((IArray)this).Count) + 1);
+	Contract.Requires(index >= 0);
+	Contract.Requires(index <= ((IArray)this).Count);
+	Contract.Ensures(((IArray)this).Count == Contract.OldValue(((IArray)this).Count) + 1);
 }
 ```
 
@@ -77,13 +77,13 @@ Contract.Ensures(((IArray)this).Count == Contract.OldValue(((IArray)this).Count)
 需特別注意的是前置狀態值語法在使用上有些限制存在，像是前置狀態值不得參考方法的傳回值與用傳址方式帶入的參數：
 
 ```csharp
-Contract.OldValue(Contract.Result() + x) // ERROR
+Contract.OldValue(Contract.Result<int>() + x) // ERROR
 ```
 
 如數量詞範圍相依於方法傳回值，前置狀態值也不得相依於數量詞的繫結變數：
 
 ```csharp
-Contract. ForAll (0,Contract. Result(),i => Contract.OldValue(xs[i]) > 3 ); // ERROR
+Contract. ForAll (0,Contract. Result<int>(),i => Contract.OldValue(xs[i]) > 3 ); // ERROR
 ```
 
 還有就是前置狀態值除非是當方法呼叫的索引子或引數使用，否則不得在 ForAll 或 Exists 呼叫中參考匿名委派的參數：
@@ -103,8 +103,8 @@ Method( ... (T t) => Contract.OldValue(... t ...) ... ); // ERROR
 
 ```csharp
 public void OutParam(out int x) {
-Contract.Ensures(Contract.ValueAtReturn(out x) == 3);
-x = 3;
+	Contract.Ensures(Contract.ValueAtReturn(out x) == 3);
+	x = 3;
 }
 ```
 
@@ -116,20 +116,22 @@ x = 3;
 
 ```csharp
 public int MyProperty { get; set; }
+
 [ContractInvariantMethod]
 void ObjectInvariant()
 {
-Contract.Invariant(MyProperty >= 0);
+    Contract.Invariant(MyProperty >= 0);
 }
 public int MyProperty { get; set; }
+
 [ContractInvariantMethod]
 void ObjectInvariant()
 {
-Contract.Invariant(MyProperty >= 0);
+    Contract.Invariant(MyProperty >= 0);
 }
 ```
 
-這邊我們來反組譯了解一下其運作原理，反組譯後可發現Code Contract偷偷的幫我們在裡面造了兩個私有欄位<MyProperty>k\_backingField與$evaluatingInvariant$。
+這邊我們來反組譯了解一下其運作原理，反組譯後可發現Code Contract偷偷的幫我們在裡面造了兩個私有欄位<MyProperty>k_backingField與$evaluatingInvariant$。
 
 ![clip_image002_2.jpg](/images/posts/17516/clip_image002_2.jpg)
 
@@ -138,29 +140,30 @@ Contract.Invariant(MyProperty >= 0);
 ```csharp
 public int MyProperty
 {
-[CompilerGenerated]
-get
-{
-int Contract.Result = this.k__BackingField;
-if (!this.$evaluatingInvariant$)
-{
-__ContractsRuntime.Ensures(Contract.Result >= 0, null, "MyProperty >= 0");
-}
-return Contract.Result;
-}
-[CompilerGenerated]
-set
-{
-if (!this.$evaluatingInvariant$)
-{
-__ContractsRuntime.Requires(value >= 0, null, "MyProperty >= 0");
-}
-this.k__BackingField = value;
-if (!this.$evaluatingInvariant$)
-{
-}
-this.$InvariantMethod$();
-}
+    [CompilerGenerated]
+    get
+    {
+        int Contract.Result = this.<MyProperty>k__BackingField;
+        if (!this.$evaluatingInvariant$)
+        {
+            __ContractsRuntime.Ensures(Contract.Result >= 0, null, "MyProperty >= 0");
+        }
+        return Contract.Result;
+    }
+
+    [CompilerGenerated]
+    set
+    {
+        if (!this.$evaluatingInvariant$)
+        {
+            __ContractsRuntime.Requires(value >= 0, null, "MyProperty >= 0");
+        }
+        this.<MyProperty>k__BackingField = value;
+        if (!this.$evaluatingInvariant$)
+        {
+        }
+        this.$InvariantMethod$();
+    }
 }
 ```
 
@@ -169,14 +172,15 @@ this.$InvariantMethod$();
 ```csharp
 public int MyProperty { get; set; }
 public int MyProperty1 { get; set; }
+
 [ContractInvariantMethod]
 void ObjectInvariant()
 {
-Contract.Invariant(MyProperty >= 0);
+    Contract.Invariant(MyProperty >= 0);
 }
 ```
 
-反組譯後可看到有趣的現象，沒用來設定物件非變異的屬性也被加入了對應的私有欄位<MyProperty1>k\_backingField。
+反組譯後可看到有趣的現象，沒用來設定物件非變異的屬性也被加入了對應的私有欄位<MyProperty1>k_backingField。
 
 `![image_thumb.png](/images/posts/17516/image_thumb.png)`
 
@@ -185,23 +189,24 @@ Contract.Invariant(MyProperty >= 0);
 ```csharp
 public int MyProperty1
 {
-[CompilerGenerated]
-get
-{
-int Contract.Result = this.k__BackingField;
-if (!this.$evaluatingInvariant$)
-{
-}
-return Contract.Result;
-}
-[CompilerGenerated]
-set
-{
-this.k__BackingField = value;
-if (!this.$evaluatingInvariant$)
-{
-}
-this.$InvariantMethod$();
-}
+    [CompilerGenerated]
+    get
+    {
+        int Contract.Result = this.<MyProperty1>k__BackingField;
+        if (!this.$evaluatingInvariant$)
+        {
+        }
+        return Contract.Result;
+    }
+
+    [CompilerGenerated]
+    set
+    {
+        this.<MyProperty1>k__BackingField = value;
+        if (!this.$evaluatingInvariant$)
+        {
+        }
+        this.$InvariantMethod$();
+    }
 }
 ```

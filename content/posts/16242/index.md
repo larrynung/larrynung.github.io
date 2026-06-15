@@ -6,33 +6,39 @@ tags: [VB.NET]
 ---
 
 最近試著把MDI視窗加上Thumbnail Preview功能，找來找去找不到相關的技術文件，只好硬幹處理，這邊簡單記錄一下簡陋的作法。
-  
+
 要為MDI視窗加上Thumbnail Preview功能，必須知道如何透過複寫ProcessCmdKey把Ctrl+Tab切換MDI子視窗的動作給過濾掉，就像下面這樣：
-      Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
-        If keyData = (Keys.Control Or Keys.Tab) Then
-            Return True
-        End If
-        Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function
+
+```vb
+Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+    If keyData = (Keys.Control Or Keys.Tab) Then
+        Return True
+    End If
+    Return MyBase.ProcessCmdKey(msg, keyData)
+End Function
+```
 
 了解如何過濾掉預設的切換動作後，我們必須改寫讓系統先彈出Thumbnail Preview對話盒，把對話盒放至中間，在Thumbnail Preview對話盒關閉時，把子視窗切至Thumbnail Preview對話盒最後選取的子視窗，像是下面這樣：
 
-    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
-        If keyData = (Keys.Control Or Keys.Tab) Then
-            Dim thumbnailDlg As New ThumbnailDialog(Me)
-            thumbnailDlg.ShowInTaskbar = False
-            thumbnailDlg.Location = New Point(Me.Width / 2 - thumbnailDlg.Width / 2, Me.Height / 2 - thumbnailDlg.Height / 2)
-            If thumbnailDlg.ShowDialog() = DialogResult.Cancel Then
-                Return MyBase.ProcessCmdKey(msg, keyData)
-            End If
-            thumbnailDlg.SelectedChildForm.Activate()
-            Return True
+```vb
+Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+    If keyData = (Keys.Control Or Keys.Tab) Then
+        Dim thumbnailDlg As New ThumbnailDialog(Me)
+        thumbnailDlg.ShowInTaskbar = False
+        thumbnailDlg.Location = New Point(Me.Width / 2 - thumbnailDlg.Width / 2, Me.Height / 2 - thumbnailDlg.Height / 2)
+        If thumbnailDlg.ShowDialog() = DialogResult.Cancel Then
+            Return MyBase.ProcessCmdKey(msg, keyData)
         End If
-        Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function
+        thumbnailDlg.SelectedChildForm.Activate()
+        Return True
+    End If
+    Return MyBase.ProcessCmdKey(msg, keyData)
+End Function
+```
 
 至於Thumbnail Preview對話盒則必須要做到放開Ctrl就關閉，與按下Ctrl + Tab切換子視窗選項的功能，簡單的範例如下：
 
+```vb
 Imports System.Windows.Forms
 
 Public Class ThumbnailDialog
@@ -113,8 +119,11 @@ Public Class ThumbnailDialog
         PictureBox1.Image = thumbnailImage
     End Sub
 End Class
+```
 
 下面是醜醜的執行範例圖(美工部分請自行補強)：
+
+![image_thumb.png](/images/posts/16242/image_thumb.png)
 
 ## Download
 

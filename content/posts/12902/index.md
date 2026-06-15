@@ -7,10 +7,11 @@ tags: [CSharp,Performance]
 
 絕對值的取得大概有兩種方法，一種是利用.NET Framework內建的Math.Abs函式；一種則是自行判斷是否為負，若為負則把它變正。稍微比較了一下兩者的速度差異，記錄如下。
 
-  測試介面      
+測試介面
+![image_thumb_1.png](/images/posts/12902/image_thumb_1.png)
 
-  測試程式碼      
-  
+測試程式碼
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -57,54 +58,53 @@ namespace WindowsFormsApplication35
             sw.Stop();
             textBox1.AppendText("ABS2: " + sw.ElapsedMilliseconds + Environment.NewLine);
             textBox1.AppendText(new string('=', 10) + Environment.NewLine);
-        } 
+        }
     }
 }
 ```
 
 測試結果
 
-      Count
+<table border="1" cellpadding="2" cellspacing="0" width="400"><tbody>
+<tr>
+<td valign="top" width="133">Count</td>
+<td valign="top" width="133">ABS1</td>
+<td valign="top" width="133">ABS2</td>
+</tr>
+<tr>
+<td valign="top" width="133">10000</td>
+<td valign="top" width="133">0</td>
+<td valign="top" width="133">1</td>
+</tr>
+<tr>
+<td valign="top" width="133">100000</td>
+<td valign="top" width="133">2</td>
+<td valign="top" width="133">2</td>
+</tr>
+<tr>
+<td valign="top" width="133">1000000</td>
+<td valign="top" width="133">22</td>
+<td valign="top" width="133">29</td>
+</tr>
+<tr>
+<td valign="top" width="133">10000000</td>
+<td valign="top" width="133">221</td>
+<td valign="top" width="133">296</td>
+</tr>
+<tr>
+<td valign="top" width="133">100000000</td>
+<td valign="top" width="133">1820</td>
+<td valign="top" width="133">2155</td>
+</tr>
+</tbody></table>
 
-      ABS1
+實驗數據圖
 
-      ABS2
-
-      10000
-
-      0
-
-      1
-
-      100000
-
-      2
-
-      2
-
-      1000000
-
-      22
-
-      29
-
-      10000000
-
-      221
-
-      296
-
-      100000000
-
-      1820
-
-      2155
-
-實驗數據圖 
+![image_thumb_2.png](/images/posts/12902/image_thumb_2.png)
 
 本來還十分不解為何會有這樣的情形，經網友提醒才注意到原來是因為少判斷了臨界值所導致。
 
-再簡單的試驗一下，若使用checked來檢查，仍會稍微快一點。 
+再簡單的試驗一下，若使用checked來檢查，仍會稍微快一點。
 
 ```csharp
 using System;
@@ -118,42 +118,44 @@ namespace ConsoleApplication31
     class Program
     {
 
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
             int count = 1000000000;
             int value = -123;// -2147483648;
             int absValue;
-            Stopwatch sw = Stopwatch.StartNew(); 
-            for (int idx = 0; idx < count; ++idx) 
-               absValue= ABS1(value); 
-            sw.Stop(); 
-            Console.WriteLine(sw.ElapsedMilliseconds); 
-            sw.Reset(); 
-            sw.Start(); 
+            Stopwatch sw = Stopwatch.StartNew();
             for (int idx = 0; idx < count; ++idx)
-                absValue=ABS2(value); 
-            sw.Stop(); 
-            Console.WriteLine(sw.ElapsedMilliseconds);             
+               absValue= ABS1(value);
+            sw.Stop();
+            Console.WriteLine(sw.ElapsedMilliseconds);
+            sw.Reset();
+            sw.Start();
+            for (int idx = 0; idx < count; ++idx)
+                absValue=ABS2(value);
+            sw.Stop();
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
-        } 
+        }
 
         static int ABS1(int value)
         {
             checked
             {
                 return value < 0 ? -value : value;
-            }            
-        } 
-        static int ABS2(int value) 
-        { 
-            return Math.Abs(value); 
-        } 
+            }
+        }
+        static int ABS2(int value)
+        {
+            return Math.Abs(value);
+        }
 
     }
 }
 ```
 
 運行1000000000次的結果如下：
+
+![image_thumb.png](/images/posts/12902/image_thumb.png)
 
 而若是自行用if判斷臨界值，經我測試是會變得比較慢。
 

@@ -28,5 +28,5 @@ JSON Viewer就會跑出來，整個除錯的畫面會像下面這樣，這樣除
 
 ## Link
 
-- [JSON Viewer](http://jsonviewer.codeplex.com/)
-- [JSON Debugger visualizer in Visual Studio 2012](http://weblogs.asp.net/soever/archive/2013/03/03/json-debugger-visualizer-in-visual-studio-2012.aspx)
+* [JSON Viewer](http://jsonviewer.codeplex.com/)
+* [JSON Debugger visualizer in Visual Studio 2012](http://weblogs.asp.net/soever/archive/2013/03/03/json-debugger-visualizer-in-visual-studio-2012.aspx)

@@ -24,4 +24,4 @@ Find Unused Files就會開始進行分析，分析出來畫面會像下面這樣
 
 ## Link
 
-- [Find unused files in projects](http://www.codeproject.com/Articles/555489/Findplusunusedplusfilesplusinplusprojects)
+* [Find unused files in projects](http://www.codeproject.com/Articles/555489/Findplusunusedplusfilesplusinplusprojects)

@@ -5,23 +5,25 @@ date: "2013-11-06 12:00:00"
 description: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 tags: [CSharp]
 ---
+
 有使用過.NET程式做視窗訊息的接收的應該都會知道，好像沒有比較直接的方法去設定視窗的ClassName。就算去覆寫Form.CreateParams也不太行，若是指定的ClassName沒有註冊過，運行起來會丟出例外。
+
 ```csharp
 public partial class Form1 : Form
 {
-public Form1()
-{
-InitializeComponent();
-}
+    public Form1()
+    {
+        InitializeComponent();
+    }
 
-protected override CreateParams CreateParams
-{
-get
-{
-base.CreateParams.Class;
-return base.CreateParams;
-}
-}
+    protected override CreateParams CreateParams
+    {
+        get
+        {
+            base.CreateParams.ClassName = "test";
+            return base.CreateParams;
+        }
+    }
 }
 ```
 
@@ -31,11 +33,11 @@ return base.CreateParams;
 ...
 protected override CreateParams CreateParams
 {
-get
-{
-base.CreateParams.Class;
-return base.CreateParams;
-}
+    get
+    {
+        base.CreateParams.ClassName = "Button";
+        return base.CreateParams;
+    }
 }
 ...
 ```
@@ -49,280 +51,280 @@ return base.CreateParams;
 為了解決這樣的問題我們得使用比較低階的方法，去跟作業系統註冊視窗的名稱，然後建立視窗出來。這邊筆者稍微整理了一個簡單的MessageReceiver類別以方便使用：
 
 ```csharp
-public class MessageReceiver : IDisposable
-{
-#region Struct
-[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-struct WNDCLASS
-{
-public uint style;
-public WndProcDelegate lpfnWndProc;
-public int cbClsExtra;
-public int cbWndExtra;
-public IntPtr hInstance;
-public IntPtr hIcon;
-public IntPtr hCursor;
-public IntPtr hbrBackground;
-[MarshalAs(UnmanagedType.LPWStr)]
-public string lpszMenuName;
-[MarshalAs(UnmanagedType.LPWStr)]
-public string lpszClassName;
-}
-#endregion
+	public class MessageReceiver : IDisposable
+    {
+        #region Struct
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        struct WNDCLASS
+        {
+            public uint style;
+            public WndProcDelegate lpfnWndProc;
+            public int cbClsExtra;
+            public int cbWndExtra;
+            public IntPtr hInstance;
+            public IntPtr hIcon;
+            public IntPtr hCursor;
+            public IntPtr hbrBackground;
+            [MarshalAs(UnmanagedType.LPWStr)]
+            public string lpszMenuName;
+            [MarshalAs(UnmanagedType.LPWStr)]
+            public string lpszClassName;
+        }
+        #endregion
 
-#region Delegate
-delegate IntPtr WndProcDelegate(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
-#endregion
+        #region Delegate
+        delegate IntPtr WndProcDelegate(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+        #endregion
 
-#region DllImport
-/// <summary>
-/// Registers the class W.
-/// </summary>
-/// <param>The lp WND class.</param>
-/// <returns></returns>
-[DllImport("user32.dll", SetLastError = true)]
-static extern UInt16 RegisterClassW(
-[In] ref WNDCLASS lpWndClass
-);
+        #region DllImport
+        /// <summary>
+        /// Registers the class W.
+        /// </summary>
+        /// <param name="lpWndClass">The lp WND class.</param>
+        /// <returns></returns>
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern UInt16 RegisterClassW(
+            [In] ref WNDCLASS lpWndClass
+        );
 
-/// <summary>
-/// Creates the window ex W.
-/// </summary>
-/// <param>The dw ex style.</param>
-/// <param>Name of the lp class.</param>
-/// <param>Name of the lp window.</param>
-/// <param>The dw style.</param>
-/// <param>The x.</param>
-/// <param>The y.</param>
-/// <param>Width of the n.</param>
-/// <param>Height of the n.</param>
-/// <param>The h WND parent.</param>
-/// <param>The h menu.</param>
-/// <param>The h instance.</param>
-/// <param>The lp param.</param>
-/// <returns></returns>
-[DllImport("user32.dll", SetLastError = true)]
-static extern IntPtr CreateWindowExW(
-UInt32 dwExStyle,
-[MarshalAs(UnmanagedType.LPWStr)]
-string lpClassName,
-[MarshalAs(UnmanagedType.LPWStr)]
-string lpWindowName,
-UInt32 dwStyle,
-Int32 x,
-Int32 y,
-Int32 nWidth,
-Int32 nHeight,
-IntPtr hWndParent,
-IntPtr hMenu,
-IntPtr hInstance,
-IntPtr lpParam
-);
+        /// <summary>
+        /// Creates the window ex W.
+        /// </summary>
+        /// <param name="dwExStyle">The dw ex style.</param>
+        /// <param name="lpClassName">Name of the lp class.</param>
+        /// <param name="lpWindowName">Name of the lp window.</param>
+        /// <param name="dwStyle">The dw style.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="nWidth">Width of the n.</param>
+        /// <param name="nHeight">Height of the n.</param>
+        /// <param name="hWndParent">The h WND parent.</param>
+        /// <param name="hMenu">The h menu.</param>
+        /// <param name="hInstance">The h instance.</param>
+        /// <param name="lpParam">The lp param.</param>
+        /// <returns></returns>
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr CreateWindowExW(
+           UInt32 dwExStyle,
+           [MarshalAs(UnmanagedType.LPWStr)]
+       string lpClassName,
+           [MarshalAs(UnmanagedType.LPWStr)]
+       string lpWindowName,
+           UInt32 dwStyle,
+           Int32 x,
+           Int32 y,
+           Int32 nWidth,
+           Int32 nHeight,
+           IntPtr hWndParent,
+           IntPtr hMenu,
+           IntPtr hInstance,
+           IntPtr lpParam
+        );
 
-/// <summary>
-/// Defs the window proc W.
-/// </summary>
-/// <param>The h WND.</param>
-/// <param>The MSG.</param>
-/// <param>The w param.</param>
-/// <param>The l param.</param>
-/// <returns></returns>
-[DllImport("user32.dll", SetLastError = true)]
-static extern IntPtr DefWindowProcW(
-IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam
-);
+        /// <summary>
+        /// Defs the window proc W.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="msg">The MSG.</param>
+        /// <param name="wParam">The w param.</param>
+        /// <param name="lParam">The l param.</param>
+        /// <returns></returns>
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr DefWindowProcW(
+            IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam
+        );
 
-/// <summary>
-/// Destroys the window.
-/// </summary>
-/// <param>The h WND.</param>
-/// <returns></returns>
-[DllImport("user32.dll", SetLastError = true)]
-static extern bool DestroyWindow(
-IntPtr hWnd
-);
-#endregion
+        /// <summary>
+        /// Destroys the window.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns></returns>
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool DestroyWindow(
+            IntPtr hWnd
+        );
+        #endregion
 
-#region Const
-private const int ERROR_CLASS_ALREADY_EXISTS = 1410;
-#endregion
+        #region Const
+        private const int ERROR_CLASS_ALREADY_EXISTS = 1410;
+        #endregion
 
-#region Static Var
-private static Dictionary<IntPtr, MessageReceiver> _receiverPool;
-#endregion
+        #region Static Var
+        private static Dictionary<IntPtr, MessageReceiver> _receiverPool;
+        #endregion
 
-#region Private Static Property
-/// <summary>
-/// Gets the m_ receiver pool.
-/// </summary>
-/// <value>
-/// The m_ receiver pool.
-/// </value>
-public static Dictionary<IntPtr, MessageReceiver> m_ReceiverPool
-{
-get
-{
-return _receiverPool ?? (_receiverPool = new Dictionary<IntPtr, MessageReceiver>());
-}
-}
-#endregion
+        #region Private Static Property
+        /// <summary>
+        /// Gets the m_ receiver pool.
+        /// </summary>
+        /// <value>
+        /// The m_ receiver pool.
+        /// </value>
+        public static Dictionary<IntPtr, MessageReceiver> m_ReceiverPool
+        {
+            get
+            {
+                return _receiverPool ?? (_receiverPool = new Dictionary<IntPtr, MessageReceiver>());
+            }
+        }
+        #endregion
 
-#region Private Property
-/// <summary>
-/// Gets or sets a value indicating whether [m_ disposed].
-/// </summary>
-/// <value>
-/// <c>true</c> if [m_ disposed]; otherwise, <c>false</c>.
-/// </value>
-private bool m_Disposed { get; set; }
+        #region Private Property
+        /// <summary>
+        /// Gets or sets a value indicating whether [m_ disposed].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [m_ disposed]; otherwise, <c>false</c>.
+        /// </value>
+        private bool m_Disposed { get; set; }
 
-/// <summary>
-/// Gets or sets the M_HWND.
-/// </summary>
-/// <value>
-/// The M_HWND.
-/// </value>
-private IntPtr m_Hwnd { get; set; }
-#endregion
+        /// <summary>
+        /// Gets or sets the M_HWND.
+        /// </summary>
+        /// <value>
+        /// The M_HWND.
+        /// </value>
+        private IntPtr m_Hwnd { get; set; }
+        #endregion
 
-#region Event
-public event EventHandler<MessageEventArgs> WndProc;
-#endregion
+        #region Event
+        public event EventHandler<MessageEventArgs> WndProc;
+        #endregion
 
-#region Constructor
-/// <summary>
-/// Initializes a new instance of the <see cref="MessageReceiver" /> class.
-/// </summary>
-/// <param>Name of the class.</param>
-/// <param>The title.</param>
-/// <exception cref="System.Exception">Could not register window class</exception>
-public MessageReceiver(string className, string title)
-{
-if (string.IsNullOrEmpty(className))
-class
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageReceiver" /> class.
+        /// </summary>
+        /// <param name="className">Name of the class.</param>
+        /// <param name="title">The title.</param>
+        /// <exception cref="System.Exception">Could not register window class</exception>
+        public MessageReceiver(string className, string title)
+        {
+            if (string.IsNullOrEmpty(className))
+                className = Guid.NewGuid().ToString();
 
-// Create WNDCLASS
-var wnd WNDCLASS()
-{
-lpszClass
-lpfnWndProc = CustomWndProc
-};
+            // Create WNDCLASS
+            var wndClass = new WNDCLASS()
+            {
+                lpszClassName = className,
+                lpfnWndProc = CustomWndProc
+            };
 
-UInt16 class_atom = RegisterClassW(ref wndClass);
+            UInt16 class_atom = RegisterClassW(ref wndClass);
 
-int last_error = Marshal.GetLastWin32Error();
+            int last_error = Marshal.GetLastWin32Error();
 
-if (class_atom == 0 && last_error != ERROR_CLASS_ALREADY_EXISTS)
-{
-throw new System.Exception("Could not register window class");
-}
+            if (class_atom == 0 && last_error != ERROR_CLASS_ALREADY_EXISTS)
+            {
+                throw new System.Exception("Could not register window class");
+            }
 
-// Create window
-m_Hwnd = CreateWindowExW(
-0,
-className,
-title,
-0,
-0,
-0,
-0,
-0,
-IntPtr.Zero,
-IntPtr.Zero,
-IntPtr.Zero,
-IntPtr.Zero
-);
+            // Create window
+            m_Hwnd = CreateWindowExW(
+                0,
+                className,
+                title,
+                0,
+                0,
+                0,
+                0,
+                0,
+                IntPtr.Zero,
+                IntPtr.Zero,
+                IntPtr.Zero,
+                IntPtr.Zero
+            );
 
-if (m_Hwnd == IntPtr.Zero)
-return;
+            if (m_Hwnd == IntPtr.Zero)
+                return;
 
-m_ReceiverPool[m_Hwnd] = this;
-}
-#endregion
+            m_ReceiverPool[m_Hwnd] = this;
+        }
+        #endregion
 
-#region Private Static Method
-/// <summary>
-/// Customs the WND proc.
-/// </summary>
-/// <param>The h WND.</param>
-/// <param>The MSG.</param>
-/// <param>The w param.</param>
-/// <param>The l param.</param>
-/// <returns></returns>
-private static IntPtr CustomWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
-{
-if (m_ReceiverPool.ContainsKey(hWnd))
-m_ReceiverPool[hWnd].OnWndProc(new MessageEventArgs(msg, wParam, lParam));
+        #region Private Static Method
+        /// <summary>
+        /// Customs the WND proc.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="msg">The MSG.</param>
+        /// <param name="wParam">The w param.</param>
+        /// <param name="lParam">The l param.</param>
+        /// <returns></returns>
+        private static IntPtr CustomWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        {
+            if (m_ReceiverPool.ContainsKey(hWnd))
+                m_ReceiverPool[hWnd].OnWndProc(new MessageEventArgs(msg, wParam, lParam));
 
-return DefWindowProcW(hWnd, msg, wParam, lParam);
-}
-#endregion
+            return DefWindowProcW(hWnd, msg, wParam, lParam);
+        }
+        #endregion
 
-#region Private Method
-private void Dispose(bool disposing)
-{
-if (!m_Disposed)
-{
-if (disposing)
-{
-// Dispose managed resources
-}
+        #region Private Method
+        private void Dispose(bool disposing)
+        {
+            if (!m_Disposed)
+            {
+                if (disposing)
+                {
+                    // Dispose managed resources
+                }
 
-// Dispose unmanaged resources
-if (m_Hwnd != IntPtr.Zero)
-{
-m_ReceiverPool.Remove(m_Hwnd);
-DestroyWindow(m_Hwnd);
-m_Hwnd = IntPtr.Zero;
-}
-m_Disposed = true;
-}
-}
-#endregion
+                // Dispose unmanaged resources
+                if (m_Hwnd != IntPtr.Zero)
+                {
+                    m_ReceiverPool.Remove(m_Hwnd);
+                    DestroyWindow(m_Hwnd);
+                    m_Hwnd = IntPtr.Zero;
+                }
+                m_Disposed = true;
+            }
+        }
+        #endregion
 
-#region Protected Method
-/// <summary>
-/// Raises the <see cref="E:WndProc" /> event.
-/// </summary>
-/// <param>The <see cref="MessageEventArgs" /> instance containing the event data.</param>
-protected void OnWndProc(MessageEventArgs e)
-{
-if (WndProc == null)
-return;
-WndProc(this, e);
-}
-#endregion
+        #region Protected Method
+        /// <summary>
+        /// Raises the <see cref="E:WndProc" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="MessageEventArgs" /> instance containing the event data.</param>
+        protected void OnWndProc(MessageEventArgs e)
+        {
+            if (WndProc == null)
+                return;
+            WndProc(this, e);
+        }
+        #endregion
 
-#region Public Method
-/// <summary>
-/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-/// </summary>
-public void Dispose()
-{
-Dispose(true);
-GC.SuppressFinalize(this);
-}
-#endregion
-}
+        #region Public Method
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
+	}
 ```
 
 ```csharp
 public class MessageEventArgs : EventArgs
 {
-#region Property
-public uint Message { get; set; }
-public IntPtr wParam { get; set; }
-public IntPtr lParam { get; set; }
-#endregion
+    #region Property
+    public uint Message { get; set; }
+    public IntPtr wParam { get; set; }
+    public IntPtr lParam { get; set; }
+    #endregion
 
-#region Constructor
-public MessageEventArgs(uint message, IntPtr wparam, IntPtr lparam)
-{
-Message = message;
-wParam = wparam;
-lParam = lparam;
-}
-#endregion
+    #region Constructor
+    public MessageEventArgs(uint message, IntPtr wparam, IntPtr lparam)
+    {
+        Message = message;
+        wParam = wparam;
+        lParam = lparam;
+    }
+    #endregion
 }
 ```
 
@@ -331,37 +333,37 @@ lParam = lparam;
 ```csharp
 public partial class Form1 : Form
 {
-[DllImport("user32.dll", SetLastError = true)]
-public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+    [DllImport("user32.dll", SetLastError = true)]
+    public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-[DllImport("user32.dll")]
-public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+    [DllImport("user32.dll")]
+    public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
 
-MessageReceiver m_receiver = new MessageReceiver("testClassName", "testWindowName");
-public Form1()
-{
-InitializeComponent();
+    MessageReceiver m_receiver = new MessageReceiver("testClassName", "testWindowName");
+    public Form1()
+    {
+        InitializeComponent();
 
-m_receiver.WndProc += m_receiver_WndProc;
-}
+        m_receiver.WndProc += m_receiver_WndProc;
+    }
 
-void m_receiver_WndProc(object sender, MessageEventArgs e)
-{
-if ((int)e.Message == 0x401)
-{
-listBox1.Items.Add("Received Message: 0x401");
-}
-}
+    void m_receiver_WndProc(object sender, MessageEventArgs e)
+    {
+        if ((int)e.Message == 0x401)
+        {
+            listBox1.Items.Add("Received Message: 0x401");
+        }
+    }
 
-private void button1_Click(object sender, EventArgs e)
-{
-var handle = FindWindow("testClassName", null);
+    private void button1_Click(object sender, EventArgs e)
+    {
+        var handle = FindWindow("testClassName", null);
 
-if (handle == IntPtr.Zero)
-return;
+        if (handle == IntPtr.Zero)
+            return;
 
-SendMessage(handle, 0x401, IntPtr.Zero, IntPtr.Zero);
-}
+        SendMessage(handle, 0x401, IntPtr.Zero, IntPtr.Zero);
+    }
 }
 ```
 

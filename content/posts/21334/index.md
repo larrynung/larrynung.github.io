@@ -8,9 +8,10 @@ tags: [CSharp]
 
 .NET托管程式因為有GC會自動幫我們找到並回收不必要的物件，因此大多數時候我們不需要像C語言一樣很明確的手動釋放資源，也不會因為忘了釋放資源造成資源的洩漏，是很好的記憶體管理機制。雖然在開發上GC的出現可以讓我們開發人員將記憶體管理交由GC去自動處理。但是開發人員仍應該有個認知是GC在處理資源的分配和物件的銷毀都需要耗費花費額外的處理時間，要回收的物件越多，回收的時間勢必會隨之拉長。因此在開發上我們應該盡可能的減少物件的數量，像是程式中若有過多的物件、不必要的物件、在函式中建立過多的參考物件，我們開發人員都該關注到並試圖避免。
 
-	舉個例子來說，當我們需要在畫面上繪圖時，我們可能會像下面這樣覆寫OnPaint事件處理函式，並在事件處理函式裡面建立字型物件來繪製圖型。
+舉個例子來說，當我們需要在畫面上繪圖時，我們可能會像下面這樣覆寫OnPaint事件處理函式，並在事件處理函式裡面建立字型物件來繪製圖型。
 
-	protected override void OnPaint(PaintEventArgs e)
+```csharp
+protected override void OnPaint(PaintEventArgs e)
         {
             using(Font myFont = new Font("Arial", 10.0f))
             {
@@ -18,23 +19,27 @@ tags: [CSharp]
             }
             base.OnPaint (e);
         }
+```
 
-	這樣的作法是可以正常運行，但有個問題是OnPaint事件處理函式是頻繁叫用的，當畫面需要更新時就會觸發事件，因此在裡面建立字型物件的動作也會很頻繁，而這些建立的字型物件在離開OnPaint事件處理函式隨即變成記憶體中的垃圾，故會產生大量的記憶體垃圾等待GC回收處理，造成GC很大的負擔。
+這樣的作法是可以正常運行，但有個問題是OnPaint事件處理函式是頻繁叫用的，當畫面需要更新時就會觸發事件，因此在裡面建立字型物件的動作也會很頻繁，而這些建立的字型物件在離開OnPaint事件處理函式隨即變成記憶體中的垃圾，故會產生大量的記憶體垃圾等待GC回收處理，造成GC很大的負擔。
 
-	這時我們應該將參考類型的建立從函式中提取出來，將之提取為類別的成員變數，即可避免這樣的問題。
+這時我們應該將參考類型的建立從函式中提取出來，將之提取為類別的成員變數，即可避免這樣的問題。
 
-	Font myFont = new Font("Arial", 10.0f);
+```csharp
+Font myFont = new Font("Arial", 10.0f);
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.DrawString(DateTime.Now.ToString(), myFont, Brushes.Black, new PointF(0, 0));
             base.OnPaint (e);
         }
+```
 
-	這邊需特別注意的是，若提取為成員變數的類別實作有IDIsposable介面，則類別本身應隨之實作IDIsposable介面去釋放該成員變數的資源。
+這邊需特別注意的是，若提取為成員變數的類別實作有IDIsposable介面，則類別本身應隨之實作IDIsposable介面去釋放該成員變數的資源。
 
-	另外對於會共用的資料我們也可將之提為靜態成員變數或是建造個靜態的輔助類來使用，像是.NET BCL中的Burshes就是很好的例子，假設今天我們在撰寫程式時，繪製介面都需要使用到Black的筆刷，若照上述說的將筆刷的物件實體提為成員變數，當建立多個物件實體時仍就各自會存留ㄧ份筆刷，形成不必要的記憶體浪費，若是改用靜態的成員變數則可讓所有物件共享同一份筆刷。需注意的是，這邊的靜態成員變數需採用Lazy Evaluation的方式實現，當第一次使用時才建立出物件實體，避免不必要的記憶體浪費。
+另外對於會共用的資料我們也可將之提為靜態成員變數或是建造個靜態的輔助類來使用，像是.NET BCL中的Burshes就是很好的例子，假設今天我們在撰寫程式時，繪製介面都需要使用到Black的筆刷，若照上述說的將筆刷的物件實體提為成員變數，當建立多個物件實體時仍就各自會存留ㄧ份筆刷，形成不必要的記憶體浪費，若是改用靜態的成員變數則可讓所有物件共享同一份筆刷。需注意的是，這邊的靜態成員變數需採用Lazy Evaluation的方式實現，當第一次使用時才建立出物件實體，避免不必要的記憶體浪費。
 
-	private static Brush _blackBrush;
+```csharp
+private static Brush _blackBrush;
         public static Brush Black
         {
             get
@@ -46,39 +51,46 @@ tags: [CSharp]
                 return _blackBrush;
             }
         }
+```
 
-	最後對於常數參考類型的建立上，我們也應該特別的留意，以下面這個例子來看，用了最基本的"+"去做字串的合併。
+最後對於常數參考類型的建立上，我們也應該特別的留意，以下面這個例子來看，用了最基本的"+"去做字串的合併。
 
-	string msg = "Hello,";
+```csharp
+string msg = "Hello,";
 msg += thisUser.Name;
 msg += ". Today is";
 msg += System.DateTime.Now.Tostring();
+```
 
-	由於字串是常數參考類型的關係，這樣的寫法會在背後會建立許多多餘的字串，會產生許多記憶體垃圾，在效能上也不是很好。
+由於字串是常數參考類型的關係，這樣的寫法會在背後會建立許多多餘的字串，會產生許多記憶體垃圾，在效能上也不是很好。
 
-	string msg = "Hello,";
+```csharp
+string msg = "Hello,";
 string temp1 = new String(msg + thisUser.Name);
 msg = temp1;
 string temp2 = new String(msg + ". Today is";);
 msg = temp2;
 string temp3 = new String(msg + System.DateTime.Now.ToString());
 msg = temp3；
+```
 
-	作者建議若是較為簡單的字串處理，我們可將之用String.Format改寫成像下面這樣：
+作者建議若是較為簡單的字串處理，我們可將之用String.Format改寫成像下面這樣：
 
-	string msg = string.Format("Hello, {0}.Today is {1}", thisUser.Name, DateTime.Now.ToString());
+```csharp
+string msg = string.Format("Hello, {0}.Today is {1}", thisUser.Name, DateTime.Now.ToString());
+```
 
-	較為複雜的字串處理則改用StringBuilder輔助類別去建立。
+較為複雜的字串處理則改用StringBuilder輔助類別去建立。
 
-	StringBuilder msg = new StringBuilder("Hello, ");
+```csharp
+StringBuilder msg = new StringBuilder("Hello, ");
 msg.Append(thisUser.Name);
 msg.Append(". Today is ");
 msg.Append(DateTime.Now.ToString());
 string finalMsg = msg.ToString();
+```
 
-## 
-	Link
+## Link
 
-		Effective C# Item 16: Minimize Garbage
-	
-		《Effective C#》Item 16：尽量减少垃圾产生的数量
+* Effective C# Item 16: Minimize Garbage
+* 《Effective C#》Item 16：尽量减少垃圾产生的数量

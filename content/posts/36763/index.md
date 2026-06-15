@@ -11,14 +11,30 @@ Visual Studio 2011 Preview提供了File preview功能，解決了這樣的問題
 
 使用上我們必須先至 Tools\Options... 中設定，切至 Environment→Tabs and Windows 設定頁面，在中間偏下的地方會看到Preview Tab設定，將Allow new files to be opened in the preview tab與Single-click opens files in the preview tab for supported tool windows這兩個選項給打勾，完成使用前的前置設定。
 
+![image_thumb.png](/images/posts/36763/image_thumb.png)
+
 File preview功能主要可在方案總管與搜尋結果這兩個工具視窗中使用，另外在移至定義時也可以使用。以方案總管為例，點選方案總管內的檔案，當點選的檔案尚未被開啟的話，File preview功能會被驅動，像是下圖的示範一樣，當File preview驅動後可以看到編輯區上方出現了一個靠右排列的頁面，這就是File preview功能的預覽頁面。當切換不同的檔案，預覽頁面會切換對應的預覽內容。
+
+![image_thumb_1.png](/images/posts/36763/image_thumb_1.png)
+
+![image_thumb_2.png](/images/posts/36763/image_thumb_2.png)
 
 同樣的File Preview也可以用在搜尋結果的工具視窗上。
 
+![image_thumb_5.png](/images/posts/36763/image_thumb_5.png)
+
 當透過預覽頁面預覽內容後發現就是自己感興趣的話，可按下預覽頁面頁籤中間的Promote按鈕，將預覽頁面的檔案直接開啟程新的頁面。當然你也可以直接在預覽頁面中直接進行修改，效果跟按下Promote按鈕一樣。
+
+![image_thumb_3.png](/images/posts/36763/image_thumb_3.png)
+
+![image_thumb_4.png](/images/posts/36763/image_thumb_4.png)
 
 若滑鼠的點選純粹是想選取，不想要驅動File preview功能的話，可在選取時按住Alt鍵。但目前這效果看起來有點小問題，只能在方案總管中有效果。
 
 此外，File Preview功能也能支援在多個螢幕下使用，因為方案總管在Visual Studio 2011 Preview可以多開，File Preview功能又能認方案總管最後附著的編輯區，像是如果自主視窗多開了個方案總管的話，會變多個方案總管共用主視窗的預覽頁面。
 
+![image_thumb_7.png](/images/posts/36763/image_thumb_7.png)
+
 因此每個螢幕的編輯區附著上方案總管後，皆能夠有各自的File Preview。
+
+![image_thumb_6.png](/images/posts/36763/image_thumb_6.png)

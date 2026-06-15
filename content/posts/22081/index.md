@@ -17,5 +17,4 @@ MSDN上有提到這網站可用來了解C#新的非同步特性，實際用起�
 
 ## Link
 
--
-101 Async Sample in C# and Visual Basic
+* 101 Async Sample in C# and Visual Basic

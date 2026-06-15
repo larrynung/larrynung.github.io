@@ -28,4 +28,4 @@ v1.2版的UI外觀如下，Filter的浮水印終於加上去了...orz，上方�
 
 ## Link
 
-- [[Visual Studio]Process Pro Extension v1.0](http://www.dotblogs.com.tw/larrynung/archive/2013/03/13/96406.aspx)
+* [[Visual Studio]Process Pro Extension v1.0](http://www.dotblogs.com.tw/larrynung/archive/2013/03/13/96406.aspx)

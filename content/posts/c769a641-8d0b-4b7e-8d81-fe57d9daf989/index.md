@@ -18,22 +18,33 @@ using AppLimit.NetSparkle;
 ...
 private Sparkle m_Sparkle { get; set; }
 ...
-m_Sparkle = new Sparkle("https://yourspace/YourUpdateFeed.xml");
+m_Sparkle =  new Sparkle("https://yourspace/YourUpdateFeed.xml");
 ```
 
 這邊的RSS網址我們需要自行準備好，RSS網址的XML文件格式會像下面這樣，Follow格式去調整就可以了，基本上要注意的就是應用程式的Release Note的網頁位置、應用程式的版號、以及應用程式的下載位置這些要記得設定。
 
 ```xml
-xml version="1.0" encoding="utf-8"?
+<?xml version="1.0" encoding="utf-8"?>
 
-Sparkle Update
-https://yourspace/YourUpdateFeed.xml
-en
-
-Version 1.0.1
-http://YourReleaseNote
-Sun, 31 Oct 2010 10:21:11 +0000
-
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Sparkle Update</title>
+    <link>https://yourspace/YourUpdateFeed.xml</link>
+    <description></description>
+    <language>en</language>
+    <item>
+      <title>Version 1.0.1</title>
+      <sparkle:releaseNotesLink>http://YourReleaseNote</sparkle:releaseNotesLink>
+      <pubDate>Sun, 31 Oct 2010 10:21:11 +0000</pubDate>
+      <enclosure
+          url="http://YourAppFile.exe
+          length="5120"
+          type="application/octet-stream"
+          sparkle:version="1.0.1"
+            />
+    </item>
+  </channel>
+</rss>
 ```
 
 接著我們可以呼叫Sparkle.StartLoop讓NetSparkle自動檢查更新(這邊筆者一開始很混淆StartLoop是什麼?是要Loop什麼?!)，它具有以下幾個多載版本。簡單的來說doInitialCheck是表示啟動自動更新檢查的同時是否要開始檢查是否有更新，若是true則是啟動的同時就會開始檢查更新，false則會等設定的檢查週期到了才檢查；forceInitialCheck是表示是否要強制檢查，若是true則是不管有沒有關掉或是延遲通知更新對話框，只要開啟時有檢查到更新就會要求使用者更新，若是false則是關掉或是延遲通知更新對話框，下次開啟時設定的檢查週期還沒到就不會要求使用者更新；checkFrequency是給使用者設定檢查週期的，若沒特別指定預設是24小時檢查一次。
@@ -63,21 +74,25 @@ m_Sparkle.StartLoop(true, timeSpan);
 ```csharp
 private Boolean IsUpdateRequired(out NetSparkleAppCastItem latestVersion)
 {
-return m_Sparkle.IsUpdateRequired(m_Spakle.GetApplicationConfig(),
-out latestVersion);
+	return m_Sparkle.IsUpdateRequired(m_Spakle.GetApplicationConfig(),
+		out latestVersion);
 }
+
 ...
+
 public bool HasUpdate()
 {
-var versionInfo = new NetSparkleAppCastItem();
-return IsUpdateRequired(out versionInfo);
+	var versionInfo = new NetSparkleAppCastItem();
+	return IsUpdateRequired(out versionInfo);
 }
+
 ...
+
 public void CheckUpdate()
 {
-var versionInfo = new NetSparkleAppCastItem();
-IsUpdateRequired(out versionInfo);
-m_Sparkle.ShowUpdateNeededUI(versionInfo);
+	var versionInfo = new NetSparkleAppCastItem();
+	IsUpdateRequired(out versionInfo);
+	m_Sparkle.ShowUpdateNeededUI(versionInfo);
 }
 ```
 
@@ -85,7 +100,7 @@ m_Sparkle.ShowUpdateNeededUI(versionInfo);
 
 ![image_thumb_3.png](/images/posts/c769a641-8d0b-4b7e-8d81-fe57d9daf989/image_thumb_3.png)
 
-更新視窗的Icon若有需要可以透過m\_Sparkle.ApplicationIcon與m\_Sparkle.ApplicationWindowIcon來設定。其中的m\_Sparkle.ApplicationWindowIcon是用來設定視窗標題列的圖示，而m\_Sparkle.ApplicationIcon是設定內容區塊左上方那塊圖示(NetSparkle對於更新對話框與更新的流程不能做些客制，不動到原始碼的話，能改的只有Icon)。
+更新視窗的Icon若有需要可以透過m_Sparkle.ApplicationIcon與m_Sparkle.ApplicationWindowIcon來設定。其中的m_Sparkle.ApplicationWindowIcon是用來設定視窗標題列的圖示，而m_Sparkle.ApplicationIcon是設定內容區塊左上方那塊圖示(NetSparkle對於更新對話框與更新的流程不能做些客制，不動到原始碼的話，能改的只有Icon)。
 
 ```csharp
 Icon icon = null;
@@ -94,7 +109,7 @@ m_Sparkle.ApplicationIcon = icon;
 m_Sparkle.ApplicationWindowIcon = icon;
 ```
 
-若在使用NetSparkle位應用程式加入自動更新機制的同時碰到了些不如預期的問題，NetSparkle也提供了一些除錯的資訊可幫助開發人員排除，透過m\_Sparkle.ShowDiagnosticWindow屬性我們可以將NetSparkle的除錯視窗給開出來輔助除錯。
+若在使用NetSparkle位應用程式加入自動更新機制的同時碰到了些不如預期的問題，NetSparkle也提供了一些除錯的資訊可幫助開發人員排除，透過m_Sparkle.ShowDiagnosticWindow屬性我們可以將NetSparkle的除錯視窗給開出來輔助除錯。
 
 ```xml
 m_Sparkle.ShowDiagnosticWindow = true;
@@ -123,10 +138,11 @@ m_Sparkle.ShowDiagnosticWindow = true;
 ```csharp
 public NetSparkleMainWindows()
 {
-// init ui
-InitializeComponent();
-// init logfile
-sw = File.CreateText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NetSparkle.log"));
+    // init ui
+    InitializeComponent();
+
+    // init logfile
+    sw = File.CreateText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NetSparkle.log"));
 }
 ```
 
@@ -144,6 +160,6 @@ sw = new StreamWriter(fs);
 
 ## Link
 
-- I get an STOP: Sparkle is missing the company or productname tag error when trying to run my app.
-- NetSparkle - AutoUpdate for .NET Developer
-- Automatische Updates
+* I get an STOP: Sparkle is missing the company or productname tag error when trying to run my app.
+* NetSparkle - AutoUpdate for .NET Developer
+* Automatische Updates

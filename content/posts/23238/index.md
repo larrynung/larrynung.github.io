@@ -10,11 +10,13 @@ tags: [CSharp]
 
 ...
 
+```
 void WebBrowser1_NewWindow(object sender, System.ComponentModel.CancelEventArgs e)
 {
-    e.Cancel = true;
-    var newUrl = this.Document.ActiveElement.GetAttribute("href");
-    (sender as WebBrowser).Navigate(newUrl);
+    e.Cancel = true;
+    var newUrl = this.Document.ActiveElement.GetAttribute("href");
+    (sender as WebBrowser).Navigate(newUrl);
 }
+```
 
 ...

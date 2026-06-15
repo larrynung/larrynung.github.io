@@ -20,57 +20,57 @@ tags: [CSharp]
 這邊來看個例子會更為清楚。我們撰寫了一道方法如下：
 
 ```csharp
-void Test(List array, int index, object value)
+void Test(List<object> array, int index, object value)
 {
-Contract.Requires(index >= 0);
-Contract.Ensures(array.Count == Contract.OldValue(array.Count) + 1);
-array.Insert(index, value);
+    Contract.Requires(index >= 0);
+    Contract.Ensures(array.Count == Contract.OldValue(array.Count) + 1);
+    array.Insert(index, value);
 }
 ```
 
 方法中內含前置條件與後置條件，編譯後用Reflactor開啟，可發現方法在有啟動Code Contract執行階段驗證的情況下，程式碼會被改為如下這般：
 
 ```csharp
-private void Test(List array, int index, object value)
+private void Test(List<object> array, int index, object value)
 {
-List Contract.Old(array);
-int Contract.Old(Count);
-__ContractsRuntime.Requires(index >= 0, null, "index >= 0");
-try
-{
-Contract.Old(array) = array;
-}
-catch (Exception exception1)
-{
-if (exception1 == null)
-{
-throw;
-}
-}
-try
-{
-Contract.Old(Count) = array.Count;
-}
-catch (Exception exception2)
-{
-if (exception2 == null)
-{
-throw;
-}
-}
-array.Insert(index, value);
-if (__ContractsRuntime.insideContractEvaluation <= 4)
-{
-try
-{
-__ContractsRuntime.insideContractEvaluation++;
-__ContractsRuntime.Ensures(Contract.Old(array).Count == (Contract.Old(Count) + 1), null, "array.Count == Contract.OldValue(array.Count) + 1");
-}
-finally
-{
-__ContractsRuntime.insideContractEvaluation--;
-}
-}
+    List<object> Contract.Old(array);
+    int Contract.Old(Count);
+    __ContractsRuntime.Requires(index >= 0, null, "index >= 0");
+    try
+    {
+        Contract.Old(array) = array;
+    }
+    catch (Exception exception1)
+    {
+        if (exception1 == null)
+        {
+            throw;
+        }
+    }
+    try
+    {
+        Contract.Old(Count) = array.Count;
+    }
+    catch (Exception exception2)
+    {
+        if (exception2 == null)
+        {
+            throw;
+        }
+    }
+    array.Insert(index, value);
+    if (__ContractsRuntime.insideContractEvaluation <= 4)
+    {
+        try
+        {
+            __ContractsRuntime.insideContractEvaluation++;
+            __ContractsRuntime.Ensures(Contract.Old(array).Count == (Contract.Old(Count) + 1), null, "array.Count == Contract.OldValue(array.Count) + 1");
+        }
+        finally
+        {
+            __ContractsRuntime.insideContractEvaluation--;
+        }
+    }
 }
 ```
 
@@ -80,12 +80,7 @@ __ContractsRuntime.insideContractEvaluation--;
 
 程式碼合約雖是.NET Framework 4.0的新功能，但其實只是在4.0以後把它從Microsoft Research專案給整合到.NET Framework中，因此要在.NET Framework 4.0以前使用仍舊是可以的，但需注意到在不同環境條件下，我們必需參考使用不同的組件。
 
-|  |  |
-| --- | --- |
-| 環境 | 參考組件 |
-| .NET Framework 4.0以前 | %PROGRAMFILES%/Microsoft/Contracts/PublicAssemblies/Microsoft.Contracts.dll |
-| .NET Framework 4.0以後 | 已含進mscorlib.dll中，無需特別加入參考。 |
-| Windows Phone 7 | %PROGRAMFILES%/Microsoft/Contracts/PublicAssemblies/Silverlight3/Microsoft.Contracts.dll |
+<table border="1" cellpadding="2" cellspacing="0"><tbody> <tr> <td valign="top">環境</td> <td valign="top">參考組件</td> </tr> <tr> <td valign="top">.NET Framework 4.0以前</td> <td valign="top">%PROGRAMFILES%/Microsoft/Contracts/PublicAssemblies/Microsoft.Contracts.dll</td> </tr> <tr> <td valign="top">.NET Framework 4.0以後</td> <td valign="top">已含進mscorlib.dll中，無需特別加入參考。</td> </tr> <tr> <td valign="top" width="76">Windows Phone 7</td> <td valign="top" width="343">%PROGRAMFILES%/Microsoft/Contracts/PublicAssemblies/Silverlight3/Microsoft.Contracts.dll</td> </tr> </tbody></table>
 
 ## 命名空間
 
@@ -122,17 +117,18 @@ System.Diagnostics.Contracts
 
 這邊值得注意的是，若在屬性頁中未勾選Assert On Contract Failure選項，執行階段驗證失敗時會觸發例外。而若有勾選該選項，執行階段驗證失敗時則會彈出斷言錯誤對話框。
 
- ![clip_image002%5B4%5D_thumb.jpg](/images/posts/420f1e7d-3a75-437d-9361-8ecf79231634/clip_image002%5B4%5D_thumb.jpg)
+![clip_image002%5B4%5D_thumb.jpg](/images/posts/420f1e7d-3a75-437d-9361-8ecf79231634/clip_image002%5B4%5D_thumb.jpg)
 
 ### 文件產生
 
-在文件產生方面，跟自動測試功能相似，Code Contract的設定可以提供文件產生器一些額外的資訊，讓支援Code Contract的文件產生器能透過Code Contract所提供的合約資訊，產生較為詳細的文件，像是Sandcastle就是支援Code Contract的文件產生器。   
+在文件產生方面，跟自動測試功能相似，Code Contract的設定可以提供文件產生器一些額外的資訊，讓支援Code Contract的文件產生器能透過Code Contract所提供的合約資訊，產生較為詳細的文件，像是Sandcastle就是支援Code Contract的文件產生器。
+
 ## Link
 
-- [Design by contract - Wikipedia](http://en.wikipedia.org/wiki/Design_by_contract)
-- [契約式設計 - 維基百科](http://zh.wikipedia.org/zh-hk/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1)
-- [Contract 類別](http://msdn.microsoft.com/zh-tw/library/system.diagnostics.contracts.contract.aspx)
-- [Contracts - Microsoft Research](http://research.microsoft.com/en-us/projects/contracts/)
-- [Code Contracts User Manua](http://research.microsoft.com/en-us/projects/contracts/userdoc.pdf)
-- [Pex, Automated White box Testing for .NET - Microsoft Research](http://research.microsoft.com/en-us/projects/pex/)
-- [Pex for fun - from Microsoft Research](http://www.pexforfun.com/)
+* [Design by contract - Wikipedia](http://en.wikipedia.org/wiki/Design_by_contract)
+* [契約式設計 - 維基百科](http://zh.wikipedia.org/zh-hk/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1)
+* [Contract 類別](http://msdn.microsoft.com/zh-tw/library/system.diagnostics.contracts.contract.aspx)
+* [Contracts - Microsoft Research](http://research.microsoft.com/en-us/projects/contracts/)
+* [Code Contracts User Manua](http://research.microsoft.com/en-us/projects/contracts/userdoc.pdf)
+* [Pex, Automated White box Testing for .NET - Microsoft Research](http://research.microsoft.com/en-us/projects/pex/)
+* [Pex for fun - from Microsoft Research](http://www.pexforfun.com/)

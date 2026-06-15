@@ -5,33 +5,41 @@ description: "[VB.NET]ASCII String與Hex String的互轉"
 tags: [VB.NET]
 ---
 
-ASCII要轉Hex，可透過ToString函式帶入"X2"，或是用Hex函式。因此ASCII String轉Hex String可寫成：     
-        Public Function AsciiStringToHexString(ByVal asciiString As String) As String
-        Dim ascii() As Byte = System.Text.Encoding.Default.GetBytes(asciiString)
-        Dim count As Integer = ascii.Length
-        Dim hexArray(count - 1) As String
-        For idx As Integer = 0 To count - 1
-            hexArray(idx) = ascii(idx).ToString("x2")
-        Next
-        Return String.Join(" ", hexArray)
-    End Function
+ASCII要轉Hex，可透過ToString函式帶入"X2"，或是用Hex函式。因此ASCII String轉Hex String可寫成：
+
+```vb
+Public Function AsciiStringToHexString(ByVal asciiString As String) As String
+    Dim ascii() As Byte = System.Text.Encoding.Default.GetBytes(asciiString)
+    Dim count As Integer = ascii.Length
+    Dim hexArray(count - 1) As String
+    For idx As Integer = 0 To count - 1
+        hexArray(idx) = ascii(idx).ToString("x2")
+    Next
+    Return String.Join(" ", hexArray)
+End Function
+```
 
 而Hex要轉ASCII，可在前面帶入"&h"字串，轉成int後再轉為char。因此Hex String轉ASCII String可寫成:
 
-      Public Function HexStringToAsciiString(ByVal hexString As String) As String 
-        Dim array() As String = hexString.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries) 
-        For idx As Integer = 0 To array.Length - 1 
-            array(idx) = Chr(CInt(String.Format("&h{0}", array(idx)))) 
-        Next 
-        Return String.Join(String.Empty, array) 
-    End Function
+```vb
+Public Function HexStringToAsciiString(ByVal hexString As String) As String
+    Dim array() As String = hexString.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries)
+    For idx As Integer = 0 To array.Length - 1
+        array(idx) = Chr(CInt(String.Format("&h{0}", array(idx))))
+    Next
+    Return String.Join(String.Empty, array)
+End Function
+```
 
 ## 程式範例
 
 範例介面
 
+![image_thumb.png](/images/posts/12874/image_thumb.png)
+
 完整範例如下：
 
+```vb
 Public Class Form1
 
     Public Function AsciiStringToHexString(ByVal asciiString As String) As String
@@ -64,3 +72,4 @@ Public Class Form1
         End If
     End Sub
 End Class
+```

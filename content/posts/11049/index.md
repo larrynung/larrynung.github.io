@@ -22,7 +22,7 @@ public MyData GetData()
 MyData data= GetData();
 ```
 
-這邊如果MyData是值類型，返回值將複製一份到data所在的空間。但是如果MyData是參考類型，則會把內部變數的參考曝露給外界，造成外界的變動連帶影響類別內部的變數。這樣的程式具備著一定的風險，也違反了類別封裝的原則。但如果把上面代碼做點調整：
+這邊如果MyData是值類型，返回值將複製一份到data所在的空間。但是，如果MyData是參考類型，則會把內部變數的參考曝露給外界，造成外界的變動連帶影響類別內部的變數。這樣的程式具備著一定的風險，也違反了類別封裝的原則。但如果把上面代碼做點調整：
 
 ```csharp
 private MyData _myData;
@@ -40,7 +40,7 @@ MyData data= GetData();
 private MyData _myData;
 public IMyInterface GetData()
 {
-    return _myData as IMyInterface 
+    return _myData as IMyInterface
 }
 
 IMyInterface data= GetData();

@@ -6,26 +6,58 @@ description: "[Win8]如何將Win8切換至指定的語系以及對應輸入法�
 
 要將Win8切換至指定的語系，我們可以按下熱鍵Win + I，點選進入控制台設定。
 
+![image_thumb.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb.png)
+
 控制台開啟後，點選時鐘、語言和區域下方的新增語言。
+
+![image_thumb_21.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_21.png)
 
 您會看到像是下圖的語言設定頁面，裡面會顯示當前在使用的語系，以筆者電腦來說就是中文(台灣)的語系，輸入法部份是用微軟新注音。這邊筆者是示範如何從中文語系切換至英文語系，而英文語系是本來沒有在系統裡面的，故這邊必需要先點選上方的新增語言。
 
+![image_thumb_3.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_3.png)
+
 新增語言對話框出來後我們可以看到很多可以選用的語系，預設是照筆畫排序，若不習慣也可以切換以文字系統的方式排序。
+
+![image_thumb_4.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_4.png)
 
 這邊先找到我們要新增的語系英文，因為英文語系有很多子語系，所以這邊可以看到英文語系的方塊有多個方塊疊在一起的感覺。
 
+![image_thumb_5.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_5.png)
+
 點選英文語系後我們可以看到很多子語系可以選取，這邊筆者選取的是一般我們比較常用的英文(美國)。
+
+![image_thumb_6.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_6.png)
 
 都選取完後回到語言設定對話框，我們可以看到現在系統中有兩個可用語系了，但是注意到英文語系的部份後面提示是可供下載，所以這語系的檔案還沒下載至本機，也還不能切換過去該語系，要在點選後方的選項處理一下。
 
+![image_thumb_8.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_8.png)
+
 進入語言選項後點選下載並安裝語言套件安裝指定的語系。
+
+![image_thumb_9.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_9.png)
+
+![image_thumb_10.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_10.png)
+
+![image_thumb_11.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_11.png)
 
 安裝完畢後可以看到語系狀態從可供下載變為可用，代表我們真正可以設定該語系為系統使用的語系。我們可以直接在語言設定對話框中，用上方的上移與下移調整順序，最上方可用的語言就會是系統的語系。
 
+![image_thumb_12.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_12.png)
+
 也可以進入語言選項點選"使此項目成為主要語言"。
+
+![image_thumb_13.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_13.png)
 
 設定完後重新啟動系統就會被切換至指定的語系。
 
+![image_thumb_14.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_14.png)
+
 另外一提，語言選項這邊也能提供輸入法的設定，可以點選"新增輸入法"去加入我們在該語系所要使用的輸入法。
 
+![image_thumb_18.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_18.png)
+
+![image_thumb_19.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_19.png)
+
 輸入法的細部設定也可以透過輸入法後方的選項去做調整。
+
+![image_thumb_15.png](/images/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/image_thumb_15.png)

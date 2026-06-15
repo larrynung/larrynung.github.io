@@ -5,6 +5,8 @@ description: "[Investment]房仲好、壞識人術"
 tags: [Investment]
 ---
 
+## ![image_thumb.png](/images/posts/8516/image_thumb.png)
+
 ## Introduction
 
 以下內容轉載自2009/5/16自由時報週末生活版。
@@ -124,3 +126,5 @@ tags: [Investment]
 好房仲 => 會誠實回答大概賣了幾天，並告知約有幾組客戶看過。
 
 壞房仲 => 僅強調「才剛釋出不久，但有好幾組客人已預約要看屋，喜歡就要快，好房子不等人」等類似話語，不斷鼓舞誘惑你盡快出價。
+
+![image_thumb_1.png](/images/posts/8516/image_thumb_1.png)

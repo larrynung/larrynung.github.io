@@ -9,27 +9,39 @@ tags: [VB.NET]
 
 使用上需先加入System.Numerics.dll組件參考
 
+![image_thumb.png](/images/posts/18718/image_thumb.png)
+
 並將System.Numerics命名空間匯入
-  Imports System.Numerics
+
+```vb
+Imports System.Numerics
+```
 
 加入了參考與命名空間後，我們就可以開始來使用Complex型別了。首先，我們必需建立Complex型別變數。
 
 Complex型別變數有三種建立方式，一種是透過Complex的建構子將數值的實數部份與虛數部份帶入建構子建構。
 
+```vb
 Dim c As New Complex(12, 6)
+```
 
 一種則是先宣告出Complex變數，在將值塞入後使用。
 
+```vb
 Dim c As Complex = 3.14
+```
 
 這邊需注意到的是，由於Complex是用以表示複數，而複數是由實數部份與虛數部份所構成，因此採用這種直接把值塞入的作法，只能設定到複數的實數部份，虛數部份會被設定為0。
 
 最後一種則是透過Complex.FromPolarCoordinates靜態方法來從極座標建立Complex變數
 
+```vb
 Dim c As Complex = Complex.FromPolarCoordinates(10, .524)
+```
 
 建立完後可對其做些運算處理，這邊不一一詳述，自行參閱下方整理的範例：
 
+```vb
 Imports System.Numerics
 Module Module1
 
@@ -97,9 +109,11 @@ Module Module1
     End Sub
 
 End Module
+```
 
 運行結果如下：
 
+```xml
 Complex.Zero: (0, 0)
 Real: 0
 Imaginary: 0
@@ -154,13 +168,11 @@ Complex.Tanh((1, 2)) = (1.16673625724092, -0.243458201185725)
 Complex.Asin((1, 2)) = (0.427078586392476, 1.528570919481)
 Complex.Acos((1, 2)) = (1.14371774040242, -1.528570919481)
 Complex.Atan((1, 2)) = (1.33897252229449, 0.402359478108525)
+```
 
 ## Link
 
-  Complex 結構 
-
-  Complex 成員 
-
-  .Net Framework 4.0: Complex numbers 
-
-  C# 4.0/BCL 4 Series: Complex numeric type
+* Complex 結構
+* Complex 成員
+* .Net Framework 4.0: Complex numbers
+* C# 4.0/BCL 4 Series: Complex numeric type

@@ -10,8 +10,11 @@ tags: [CSharp]
 
 這邊一樣是用WPF內的BitmapDecoder來取用圖檔內含的縮圖。若是Window Form程式的話我們必須額外將PresentationCore.dll、System.Xaml、與WindowsBase.dll加入參考。
 
-  實際的程式撰寫部份跟[C#]使用BitmapDecoder快速讀取圖檔的大小這篇類似，用BitmapDecoder.Create將要讀取的圖檔位置帶入，然後取得第一個Frame，裡面的Thumbnail就是我們所需要的縮圖圖檔。這邊要注意到的是，Thumbnail屬性的型態是BitmapSource，若是在Window Form程式中使用必須將BitmapSource轉換成Bitmap才能使用。  
-   
+![image_thumb_2.png](/images/posts/1a7e9067-1d43-442b-8abc-ade0e9502262/image_thumb_2.png)
+
+實際的程式撰寫部份跟[[C#]使用BitmapDecoder快速讀取圖檔的大小這篇類似，用BitmapDecoder.Create將要讀取的圖檔位置帶入，然後取得第一個Frame，裡面的Thumbnail就是我們所需要的縮圖圖檔。這邊要注意到的是，Thumbnail屬性的型態是BitmapSource，若是在Window Form程式中使用必須將BitmapSource轉換成Bitmap才能使用。](http://www.dotblogs.com.tw/larrynung/archive/2012/09/05/74627.aspx)
+
+```csharp
 ...
 public static Bitmap GetBitmap(this BitmapSource bitmapsource)
 {
@@ -35,9 +38,11 @@ public Image GetThumbnail(string file)
 	return (frame.Thumbnail == null) ? null : frame.Thumbnail.GetBitmap();
 }
 ...
+```
 
 完整的程式範例如下：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,7 +84,9 @@ namespace WindowsFormsApplication33
 		}
 	}
 }
+```
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,7 +110,12 @@ public static class BitmapSourceExtension
 		return bitmap;
 	}
 }
+```
 
 程式運作起來會像下面這樣，可以看到抓取4-5 MB的圖檔只需花費43ms。
 
+![image_thumb.png](/images/posts/1a7e9067-1d43-442b-8abc-ade0e9502262/image_thumb.png)
+
 以這張圖片來說縮圖的大小也有160X120。
+
+![image_thumb_1.png](/images/posts/1a7e9067-1d43-442b-8abc-ade0e9502262/image_thumb_1.png)

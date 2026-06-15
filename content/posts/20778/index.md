@@ -4,110 +4,132 @@ date: "2011-01-13 12:43:04"
 description: ".NET 4.0 New Feature - System.Device.Location"
 tags: [CSharp]
 ---
+
 .NET 4.0 BCL中新增了System.Device.Location命名空間，該命名空間內提供許多類別允許應用程式開發人員在Windows 7以後的作業系統使用單一 API 輕鬆存取裝置位置，開發人員不需去考量電腦中可以使用的位置提供者，也不需要為多個位置提供者排定彼此的優先權與中間的轉換，透過這個命名空間開發人員可以更專注於位置取得程式的撰寫，而不需花費心思考量各式各樣的位置提供者。
 
 在使用System.Device.Location命名空間前，我們必須知道裝置位置的資訊是由位置提供者提供的，位置提供者的位置資訊可能是由GPS，或是由IP位置去查詢，甚至是用Wifi、手機基地台的訊號做三角定位取得，在Windows 7中我們可透過控制台中的Location and Other Sensors設定位置提供者。
 
+![image_thumb_5.png](/images/posts/20778/image_thumb_5.png)
+
 若在作業系統安裝完後沒設定過的話，開啟時應該是像下面一樣是沒有Sensor的
+
+![image_thumb_8.png](/images/posts/20778/image_thumb_8.png)
 
 左下角有個"Default Location"連結可供設定預設位置提供者的位置資訊，當裝置中未安裝有位置提供者時，會嚐試由預設位置取得位置資訊。
 
+![image1_thumb.png](/images/posts/20778/image1_thumb.png)
+
 若沒設定預設位置提供者的位置資訊，且在沒有其它位置提供者的環境下試圖運行程式取得裝置位置，則會彈出"Enter a default location"對話框請求設定預設位置提供者的位置資訊。
 
-預設位置的設定能在沒位置提供者的狀態下提供位置資訊，但這樣的位置資訊一定是不準的，也無法自動偵測到當前的位置資訊，想要自動提供正確的位置資訊還是必須藉由位置提供者的幫助，若在裝置中沒有GPS這類精準度較高的位置提供者，我們可以透過安裝GeoSense For Windows來由無線網路去做粗略的定位。
+![image_thumb.png](/images/posts/20778/image_thumb.png)
+
+預設位置的設定能在沒位置提供者的狀態下提供位置資訊，但這樣的位置資訊一定是不準的，也無法自動偵測到當前的位置資訊，想要自動提供正確的位置資訊還是必須藉由位置提供者的幫助，若在裝置中沒有GPS這類精準度較高的位置提供者，我們可以透過安裝[GeoSense For Windows](http://geosenseforwindows.com/)來由無線網路去做粗略的定位。
+
+![image4_thumb.png](/images/posts/20778/image4_thumb.png)
+
+![image_thumb_1.png](/images/posts/20778/image_thumb_1.png)
+
+![image_thumb_2.png](/images/posts/20778/image_thumb_2.png)
+
+![image_thumb_4.png](/images/posts/20778/image_thumb_4.png)
 
 安裝完後我們可在"Location and Other Sensors"看到會新增一個Geosense Location Sensor，這邊記得要把它啟動後套用(不是開發用也可以安裝，有些應用程式會依此資訊提供在地化服務)。
 
+![image_thumb_3.png](/images/posts/20778/image_thumb_3.png)
+
 設定完位置提供者後，在開始使用System.Device.Location前，我們還必須要將System.Device.dll加入專案參考。
 
+![image_thumb_6.png](/images/posts/20778/image_thumb_6.png)
+
 System.Device.Location命名空間內含有GeoCoordinateWatcher、GeoCoordinate 、CivicAddressResolver、與CivicAddress這幾個比較重要的類別。下面是摘錄自MSDN上的說明：
-Name Description GeoCoordinateWatcher 提供以經度和緯度座標為基礎的位置資料 GeoCoordinate 表示緯度與經度座標所決定的地理位置。 這個值也可能包含高度、精確度、速度和路線等資訊 CivicAddressResolver 提供能夠從座標位置解析實體位址的功能 CivicAddress 表示實體地址。 實體地址可以包含如街道地址、郵遞區號、省份及國家或地區等欄位
+
+<table border="1" cellpadding="2" cellspacing="0" width="514"><tbody> <tr> <td valign="top" width="166">Name</td> <td valign="top" width="346">Description</td> </tr> <tr> <td valign="top" width="170">GeoCoordinateWatcher</td> <td valign="top" width="346">提供以經度和緯度座標為基礎的位置資料</td> </tr> <tr> <td valign="top" width="174">GeoCoordinate </td> <td valign="top" width="346">表示緯度與經度座標所決定的地理位置。 這個值也可能包含高度、精確度、速度和路線等資訊</td> </tr> <tr> <td valign="top" width="177">CivicAddressResolver</td> <td valign="top" width="346">提供能夠從座標位置解析實體位址的功能</td> </tr> <tr> <td valign="top" width="179">CivicAddress</td> <td valign="top" width="346">表示實體地址。 實體地址可以包含如街道地址、郵遞區號、省份及國家或地區等欄位</td> </tr> </tbody></table>
 
 GeoCoordinateWatcher類別可主動提供從位置提供者那邊取得的裝置位置資訊，也可以設定想要的定位精準度與位置變更的通知頻率；GeoCoordinate類別可取得裝置所在的經度、緯度、高度，與其速度與路線等資訊,也可以計算兩個裝置位置間的距離；CivicAddressResolver能將GeoCoordinate型態的經緯度位置資訊轉換為CivicAddress型態的實體位置資訊；CivicAddress類別為實體位置資訊，提供街道地址、郵遞區號、省份及國家或地區等真實地址。
 
 使用上我們需要先建立GeoCoordinateWatcher類別的物件實體，呼叫Start或是TryStart開始截取GeoCoordinate型態的位置資訊，若進一步需要實體位置資訊，可再建立CivicAddressResolver物件實體，將從GeoCoordinateWatcher取得的GeoCoordinate帶入ResolveAddress或是ResolveAddressAsync方法以取得CivicAddress物件。
 
 實際來看個使用範例：
+
+```csharp
 using (GeoCoordinateWatcher watcher = new GeoCoordinateWatcher())
 {
-watcher.MovementThreshold = 1.0;
-watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
+    watcher.MovementThreshold = 1.0;
+    watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
 
-GeoCoordinate location = watcher.Position.Location;
-if (location.IsUnknown)
-return;
+    GeoCoordinate location = watcher.Position.Location;
+    if (location.IsUnknown)
+        return;
 
-Console.WriteLine("Time: {0}", e.Position.Timestamp);
-Console.WriteLine("Longitude: {0}", location.Longitude); //經度
-Console.WriteLine("Latitude: {0}", location.Latitude); //緯度
-Console.WriteLine("Altitude: {0}", location.Altitude); //高度
-Console.WriteLine("Course: {0}", location.Course); //角度
-Console.WriteLine("Speed: {0}", location.Speed); //速度
+    Console.WriteLine("Time: {0}", e.Position.Timestamp);
+    Console.WriteLine("Longitude: {0}", location.Longitude);    //經度
+    Console.WriteLine("Latitude: {0}", location.Latitude);      //緯度
+    Console.WriteLine("Altitude: {0}", location.Altitude);      //高度
+    Console.WriteLine("Course: {0}", location.Course);          //角度
+    Console.WriteLine("Speed: {0}", location.Speed);            //速度
 
-CivicAddressResolver resolver = new CivicAddressResolver();
-CivicAddress realLocation = m_addressResolver.ResolveAddress(location);
+    CivicAddressResolver resolver = new CivicAddressResolver();
+    CivicAddress realLocation = m_addressResolver.ResolveAddress(location);
 
-if (realLocation.IsUnknown)
-return;
+    if (realLocation.IsUnknown)
+        return;
 
-Console.WriteLine("Address1: {0}", realLocation.AddressLine1); //實際地址
-Console.WriteLine("Address2: {0}", realLocation.AddressLine2);
-Console.WriteLine("Building: {0}", realLocation.Building); //門牌號碼
-Console.WriteLine("City: {0}", realLocation.City); //縣市
-Console.WriteLine("CountryRegion: {0}", realLocation.CountryRegion); //國家
-Console.WriteLine("PostalCode: {0}", realLocation.PostalCode); //郵遞區號
-Console.WriteLine("StateProvince: {0}", realLocation.StateProvince); //省份
-Console.WriteLine("FloorLevel: {0}", realLocation.FloorLevel); //樓層
+    Console.WriteLine("Address1: {0}", realLocation.AddressLine1);          //實際地址
+    Console.WriteLine("Address2: {0}", realLocation.AddressLine2);
+    Console.WriteLine("Building: {0}", realLocation.Building);              //門牌號碼
+    Console.WriteLine("City: {0}", realLocation.City);                      //縣市
+    Console.WriteLine("CountryRegion: {0}", realLocation.CountryRegion);    //國家
+    Console.WriteLine("PostalCode: {0}", realLocation.PostalCode);          //郵遞區號
+    Console.WriteLine("StateProvince: {0}", realLocation.StateProvince);    //省份
+    Console.WriteLine("FloorLevel: {0}", realLocation.FloorLevel);          //樓層
 }
+```
 
 這邊示範的是使用GeoCoordinateWatcher.TryStart方法同步截取位置資訊，若需非同步去截取位置資訊可如下採用GeoCoordinateWatcher.Start搭配事件的方式處理：
 
+```csharp
 static void Main(string[] args)
 {
-using (GeoCoordinateWatcher watch = new GeoCoordinateWatcher())
-{
-watch.Start();
-watch.PositionChanged += new EventHandler>(watch_PositionChanged);
-Console.Read();
-}
+    using (GeoCoordinateWatcher watch = new GeoCoordinateWatcher())
+    {
+        watch.Start();
+        watch.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(watch_PositionChanged);
+        Console.Read();
+    }
 }
 
 static CivicAddressResolver m_addressResolver = new CivicAddressResolver();
-static void watch_PositionChanged(object sender, GeoPositionChangedEventArgs e)
+static void watch_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
 {
-var location = e.Position.Location;
-Console.WriteLine("Time: {0}", e.Position.Timestamp);
-Console.WriteLine("Longitude: {0}", location.Longitude); //經度
-Console.WriteLine("Latitude: {0}", location.Latitude); //緯度
-Console.WriteLine("Altitude: {0}", location.Altitude); //高度
-Console.WriteLine("Course: {0}", location.Course); //角度
-Console.WriteLine("Speed: {0}", location.Speed); //速度
+    var location = e.Position.Location;
+    Console.WriteLine("Time: {0}", e.Position.Timestamp);
+    Console.WriteLine("Longitude: {0}", location.Longitude);    //經度
+    Console.WriteLine("Latitude: {0}", location.Latitude);      //緯度
+    Console.WriteLine("Altitude: {0}", location.Altitude);      //高度
+    Console.WriteLine("Course: {0}", location.Course);          //角度
+    Console.WriteLine("Speed: {0}", location.Speed);            //速度
 
-var realLocation = m_addressResolver.ResolveAddress(location);
-Console.WriteLine("Address1: {0}", realLocation.AddressLine1); //實際地址
-Console.WriteLine("Address2: {0}", realLocation.AddressLine2);
-Console.WriteLine("Building: {0}", realLocation.Building); //門牌號碼
-Console.WriteLine("City: {0}", realLocation.City); //縣市
-Console.WriteLine("CountryRegion: {0}", realLocation.CountryRegion); //國家
-Console.WriteLine("PostalCode: {0}", realLocation.PostalCode); //郵遞區號
-Console.WriteLine("StateProvince: {0}", realLocation.StateProvince); //省份
-Console.WriteLine("FloorLevel: {0}", realLocation.FloorLevel); //樓層
+    var realLocation = m_addressResolver.ResolveAddress(location);
+    Console.WriteLine("Address1: {0}", realLocation.AddressLine1);          //實際地址
+    Console.WriteLine("Address2: {0}", realLocation.AddressLine2);
+    Console.WriteLine("Building: {0}", realLocation.Building);              //門牌號碼
+    Console.WriteLine("City: {0}", realLocation.City);                      //縣市
+    Console.WriteLine("CountryRegion: {0}", realLocation.CountryRegion);    //國家
+    Console.WriteLine("PostalCode: {0}", realLocation.PostalCode);          //郵遞區號
+    Console.WriteLine("StateProvince: {0}", realLocation.StateProvince);    //省份
+    Console.WriteLine("FloorLevel: {0}", realLocation.FloorLevel);          //樓層
 
-Console.WriteLine();
+    Console.WriteLine();
 }
+```
 
 要特別注意的是，System.Device.Location命名空間的裝置定位機制只支援Windows 7以後的作業系統版本，因為只有Windows 7以後的作業系統有得設定位置提供者，在 Windows 7之前的 Windows 版本，雖然仍然可以建立System.Device.Location命名空間內的GeoCoordinateWatcher物件，但 Status 屬性會是 Disabled，Position 之 Location 屬性也會是 Unknown，而且不會引發位置變更的事件，簡單的說就是不能使用。
 
 ## Link
 
-System.Device.Location 命名空間 
-
-.NET Framework 4.0: Access the computer location using System.Device.Location Namespace
-
-.NET 4 Baby Steps - Part X: Location, Location, Location 
-
-Using the Windows 7 Sensor and Location Platform from C# 
-
-[WPF] GeoSense 來做到wifi location 
-
-GeoSense For Windows
+* System.Device.Location 命名空間
+* .NET Framework 4.0: Access the computer location using System.Device.Location Namespace
+* .NET 4 Baby Steps - Part X: Location, Location, Location
+* Using the Windows 7 Sensor and Location Platform from C#
+* [WPF] GeoSense 來做到wifi location
+* GeoSense For Windows

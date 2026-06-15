@@ -7,7 +7,7 @@ tags: [CSharp]
 ---
 
 有時候我們會有需要能精確的控制元件是否顯示插入符號，這時可以使用ShowCaret與HideCaret兩個Win32 API來達成這個目的，這兩個API的宣告方式如下：
- 
+
 ```csharp
 [DllImport("user32.dll")]
 static extern bool ShowCaret(IntPtr hWnd);
@@ -16,7 +16,7 @@ static extern bool ShowCaret(IntPtr hWnd);
 static extern bool HideCaret(IntPtr hWnd);
 ```
 
- 使用上只要帶入元件的handle就可以了，像是想要控制TextBox的插入符號，可以像下面這樣撰寫：
+使用上只要帶入元件的handle就可以了，像是想要控制TextBox的插入符號，可以像下面這樣撰寫：
 
 ```csharp
 ...
@@ -26,7 +26,7 @@ HideCaret(textBox1.Handle);
 ...
 ```
 
- 最後這邊附上比較完整的使用範例：
+最後這邊附上比較完整的使用範例：
 
 ```csharp
 using System;
@@ -41,19 +41,18 @@ using System.Runtime.InteropServices;
 
 namespace WindowsFormsApplication22
 {
- 	public partial class Form1 : Form
- 	{
- 		[DllImport("user32.dll")]
- 		static extern bool ShowCaret(IntPtr hWnd);
+	public partial class Form1 : Form
+	{
+		[DllImport("user32.dll")]
+		static extern bool ShowCaret(IntPtr hWnd);
 
- 		[DllImport("user32.dll")]
- 		static extern bool HideCaret(IntPtr hWnd);
+		[DllImport("user32.dll")]
+		static extern bool HideCaret(IntPtr hWnd);
 
- 		public Form1()
- 		{
- 			InitializeComponent();
- 		}
-```
+		public Form1()
+		{
+			InitializeComponent();
+		}
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
@@ -68,11 +67,13 @@ namespace WindowsFormsApplication22
 		}
 	}
 }
+```
 
 運行的畫面像下面這樣，可以分別選取Show caret與Hide caret兩個選項，並在上方的TextBox點選，讓TextBox取得焦點，仔細觀察插入符號在這兩種狀況下的運行狀況，應該可以發現在選取Hide caret時插入符號一下就會消失，而在選取Show caret時就跟一般的使用無異。
 
+![image_thumb.png](/images/posts/0492cdeb-069f-4f5b-a9cc-3fad64e5bba8/image_thumb.png)
+
 ## Link
 
-  HideCaret function
-
-  ShowCaret function
+* HideCaret function
+* ShowCaret function

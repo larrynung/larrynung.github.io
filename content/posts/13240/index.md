@@ -5,24 +5,26 @@ date: "2010-01-24 12:00:24"
 description: "[C#][VB.NET]FullScreen the winform"
 tags: [VB.NET,CSharp]
 ---
+
 在.NET程式中，若想要把視窗設為全螢幕，我們可以很簡單的透過FormBorderStyle與WindowState兩個屬性來完成。只要把視窗的FormBorderStyle屬性設為None，並把WindowState屬性設為Maximized，視窗就會變為全螢幕顯示。程式碼如下：
-C# 
+
+C#
 
 ```csharp
 frm.FormBorderStyle = FormBorderStyle.None;
 frm.WindowState = FormWindowState.Maximized;
 ```
 
-VB.NET 
+VB.NET
 
-```vbnet
+```vb
 frm.FormBorderStyle = FormBorderStyle.None
 frm.WindowState = FormWindowState.Maximized
 ```
 
 但在我的電腦使用，當把視窗最大化後在全螢幕的話，效果會不如我所預期。也許是全螢幕功能要由非最大化切到最大化時才會觸發，因此這邊我把程式改為下面這樣：
 
-C# 
+C#
 
 ```csharp
 frm.FormBorderStyle = FormBorderStyle.None;
@@ -30,9 +32,9 @@ frm.WindowState = FormWindowState.Normal;
 frm.WindowState = FormWindowState.Maximized;
 ```
 
-VB.NET 
+VB.NET
 
-```vbnet
+```vb
 frm.FormBorderStyle = FormBorderStyle.None
 frm.WindowState = FormWindowState.Normal
 frm.WindowState = FormWindowState.Maximized
@@ -40,23 +42,23 @@ frm.WindowState = FormWindowState.Maximized
 
 若要把表單從全螢幕還原，我們也只要把上面設定的兩個屬性調回即可。
 
-C# 
+C#
 
 ```csharp
-frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+frm.FormBorderStyle = FormBorderStyle.Sizable;
 frm.WindowState = FormWindowState.Normal;
 ```
 
-VB.NET 
+VB.NET
 
-```vbnet
-frm.FormBorderStyle = FormBorderStyle.FixedSingle
+```vb
+frm.FormBorderStyle = FormBorderStyle.Sizable
 frm.WindowState = FormWindowState.Normal
 ```
 
 為了方便使用，我把它整理程了擴充方法，程式碼如下：
 
-C# 
+C#
 
 ```csharp
 using System;
@@ -96,6 +98,7 @@ static class FullScreenExtension
             return _fullScreenDataPool;
         }
     }
+
     #endregion
 
     #region Public Method
@@ -122,14 +125,14 @@ static class FullScreenExtension
 }
 ```
 
-VB.NET 
+VB.NET
 
-```vbnet
+```vb
 Imports System.Runtime.CompilerServices
 
 Module FullScreenExtension
 
-    #Region "Structure"
+#Region "Structure"
     Structure FullScreenData
         Private _formBorderStyle As FormBorderStyle
         Private _windowState As FormWindowState
@@ -159,13 +162,13 @@ Module FullScreenExtension
             End With
         End Sub
     End Structure
-    #End Region
+#End Region
 
-    #Region "Var"
+#Region "Var"
     Private _fullScreenDataPool As Dictionary(Of Form, FullScreenData)
-    #End Region
+#End Region
 
-    #Region "Private Property"
+#Region "Private Property"
     Private ReadOnly Property m_FullScreenDataPool() As Dictionary(Of Form, FullScreenData)
         Get
             If _fullScreenDataPool Is Nothing Then
@@ -174,9 +177,9 @@ Module FullScreenExtension
             Return _fullScreenDataPool
         End Get
     End Property
-    #End Region
+#End Region
 
-    #Region "Public Method"
+#Region "Public Method"
     <Extension()> _
     Sub FullScreen(ByVal frm As Form)
         If m_FullScreenDataPool.ContainsKey(frm) Then
@@ -202,14 +205,14 @@ Module FullScreenExtension
             m_FullScreenDataPool.Remove(frm)
         End With
     End Sub
-    #End Region
+#End Region
 
 End Module
 ```
 
 使用上就可像下面這樣呼叫：
 
-C# 
+C#
 
 ```csharp
 using System;
@@ -239,9 +242,9 @@ namespace FullScreenExtensionDemo
 }
 ```
 
-VB.NET 
+VB.NET
 
-```vbnet
+```vb
 Public Class FullScreenExtensionDemo
 
     Private Sub btnFullScreen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFullScreen.Click

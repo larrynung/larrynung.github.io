@@ -7,7 +7,11 @@ tags: [CSharp,VB.NET]
 ---
 
 ## Abstract
-IntroductionExampleConclusionDownload
+
+* Introduction
+* Example
+* Conclusion
+* Download
 
 ## Introduction
 
@@ -25,7 +29,20 @@ IntroductionExampleConclusionDownload
 
 VB.NET
 
+```
+Public Class Data
+...
+    Public Sub SetValue(ByVal val As Object)
+        _val = val
+        GC.Collect()
+    End Sub
+...
+End Class
+```
+
 C#
+
+```csharp
 class Data
 {
 ...
@@ -36,12 +53,28 @@ public void SetValue(Object val)
 }
 ...
 }
+```
 
 則下列這段Code的執行結果，將會依據介面上控制項的多寡而定。
 
 VB.NET
 
+```
+Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Me.Button1.Enabled = False
+    Dim sw As Stopwatch = Stopwatch.StartNew
+    For i As Integer = 1 To 1000
+        Dim d As New Data
+        d.SetValue("test")
+    Next
+    Me.TextBox1.Text = String.Format("花費時間: {0} ms", sw.ElapsedMilliseconds.ToString)
+    Me.Button1.Enabled = True
+End Sub
+```
+
 C#
+
+```csharp
 private void Button1_Click(object sender, EventArgs e)
 {
     this.Button1.Enabled = false;
@@ -54,12 +87,20 @@ private void Button1_Click(object sender, EventArgs e)
     this.TextBox1.Text = String.Format("花費時間: {0} ms", sw.ElapsedMilliseconds.ToString());
     this.Button1.Enabled = true;
 }
+```
 
 執行結果如下:
+
+![image_thumb.png](/images/posts/6985/image_thumb.png)
+
+![image_thumb_1.png](/images/posts/6985/image_thumb_1.png)
+
+![image_thumb_2.png](/images/posts/6985/image_thumb_2.png)
 
 ## Conclusion
 
 一般說來，若非必要普遍都不建議程式設計師下GC.Collect，但畢竟是開出來的函式，仍是不能避免有人會使用GC.Collect，因此我們必須要了解使用GC.Collect可能會產生的現象與濫用的徵兆(執行效能會因控制項或是記憶體中的物件量而變化)，碰到這類問題時才能發現問題的所在。
 
 ## Download
-TestGC.zip
+
+[TestGC.zip](http://Files.Dotblogs.com.tw/larrynung/0901/2009130225417553.zip)

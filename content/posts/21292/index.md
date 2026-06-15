@@ -8,11 +8,12 @@ tags: [CSharp]
 
 非拖管資源故名思義該資源是非拖管的，跟一般的托管資源不同的是，這些非拖管資源在建立後必須自行去作釋放的動作，不然會產生資源洩漏。為解決這樣的問題，在.NET BCL提供IDisposable介面，提供.NET程式非拖管資源釋放的標準做法，藉由呼叫該介面的Dispose()方法，我們可以對非拖管的系統資源進行釋放的動作。在一般狀況下，這樣的釋放動作應由使用者自行叫用，也就是說當在程式中使用實作有IDisposable介面的類別時，需記得自行呼叫Dispose()方法去釋放資源。若忘了呼叫在釋放的動作，在標準的IDisposable介面實作上也提供了額外的保險措施，會在IDisposable介面實作時為解構子加入Dispose()方法的調用。因此若使用者忘了自行呼叫Dispose()方法釋放資源，在物件解構時仍會將資源給釋放掉。
 
-	雖然IDisposable介面標準的實作會加入保險措施，但是若使用的是第三方元件或是別的來源取得的程式，我們並不能保證撰寫的人會遵循應有的規則，因此我們使用到的是有可能沒有保險措施的類別。就算有加入保險措施，透過解構子去釋放物件存留在記憶體中的時間也會比較長，因此最好還是盡可能的自行手動釋放。
+雖然IDisposable介面標準的實作會加入保險措施，但是若使用的是第三方元件或是別的來源取得的程式，我們並不能保證撰寫的人會遵循應有的規則，因此我們使用到的是有可能沒有保險措施的類別。就算有加入保險措施，透過解構子去釋放物件存留在記憶體中的時間也會比較長，因此最好還是盡可能的自行手動釋放。
 
-	但若很單純的直接呼叫Dispose()方法釋放資源，其實也是有些問題存在，像是下面這個例子雖然在程式的後面有自行呼叫Dispose()方法釋放資源，但若運行到cmd.ExecuteNonQuery()這行，在執行SQL語法時發生了例外，則後面的Dispose()方法將永遠不會被調用到。
+但若很單純的直接呼叫Dispose()方法釋放資源，其實也是有些問題存在，像是下面這個例子雖然在程式的後面有自行呼叫Dispose()方法釋放資源，但若運行到cmd.ExecuteNonQuery()這行，在執行SQL語法時發生了例外，則後面的Dispose()方法將永遠不會被調用到。
 
-	public void ExecuteCommand(string connString, string CommandString)
+```csharp
+public void ExecuteCommand(string connString, string CommandString)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(CommandString, conn);
@@ -23,10 +24,12 @@ tags: [CSharp]
             cmd.Dispose();
             conn.Dispose();
         }
+```
 
-	.NET語言的設計者為此提供了using與try/finally兩種語法，開發人員可藉由這兩種語法來避開這類問題。以上面的例子來看，用using語法可改寫為這樣：
+.NET語言的設計者為此提供了using與try/finally兩種語法，開發人員可藉由這兩種語法來避開這類問題。以上面的例子來看，用using語法可改寫為這樣：
 
-	public void ExecuteCommand(string connString, string CommandString)
+```csharp
+public void ExecuteCommand(string connString, string CommandString)
         {
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -37,10 +40,12 @@ tags: [CSharp]
                 }
             }
         }
+```
 
-	也可以用try/finally語法去改寫：
+也可以用try/finally語法去改寫：
 
-	public void ExecuteCommand(string connString, string CommandString)
+```csharp
+public void ExecuteCommand(string connString, string CommandString)
         {
             SqlConnection conn = null;
             SqlCommand cmd = null;
@@ -61,26 +66,27 @@ tags: [CSharp]
                     conn.Dispose();
             }
         }
+```
 
-	using適用於只有少數物件需要釋放的情況，try/finally語法則適用於多個物件需要釋放的情況。這兩種語法是等價的，在編譯時編譯器會將using改為try/finally的寫法，故這兩種寫法皆可確保資源能有效的被釋放。
+using適用於只有少數物件需要釋放的情況，try/finally語法則適用於多個物件需要釋放的情況。這兩種語法是等價的，在編譯時編譯器會將using改為try/finally的寫法，故這兩種寫法皆可確保資源能有效的被釋放。
 
-	若遇有不確定是否實作有IDisposable介面的情形時，可用as輔助using語法來作釋放的動作。像是：
+若遇有不確定是否實作有IDisposable介面的情形時，可用as輔助using語法來作釋放的動作。像是：
 
-	Object obj = GetObject();
+```csharp
+Object obj = GetObject();
             using (obj as IDisposable)
             {
                 ...
             }
+```
 
-	利用as輔助當類別未實作IDisposable介面時，等同撰寫using (null)這樣的語句，只是不會作任何動作；若類別有時作IDisposable介面，則資源會被using語法給釋放。
+利用as輔助當類別未實作IDisposable介面時，等同撰寫using (null)這樣的語句，只是不會作任何動作；若類別有時作IDisposable介面，則資源會被using語法給釋放。
 
-	若是類別含有Close()方法且實作有IDisposable介面，優先叫用Dispose()方法，因為叫用Close()方法物件仍會存留在終結佇列中，而若是呼叫Dispose()方法，除了會去作Close()方法的動作，也會在裡面叫用GC.SuppressFinalize()方法去停止終結操作。
+若是類別含有Close()方法且實作有IDisposable介面，優先叫用Dispose()方法，因為叫用Close()方法物件仍會存留在終結佇列中，而若是呼叫Dispose()方法，除了會去作Close()方法的動作，也會在裡面叫用GC.SuppressFinalize()方法去停止終結操作。
 
-	另外ㄧ提，在呼叫Dispose()方法並不會將物件至記憶體中回收，只是會去釋放物件的非拖管資源，故當我們呼叫Dispose()方法釋放時，需確保物件不會再被使用，不然可能會出現難以偵測的問題。
+另外ㄧ提，在呼叫Dispose()方法並不會將物件至記憶體中回收，只是會去釋放物件的非拖管資源，故當我們呼叫Dispose()方法釋放時，需確保物件不會再被使用，不然可能會出現難以偵測的問題。
 
-## 
-	Link
+## Link
 
-		《Effective C#》Item 15：利用using和try-finally来释放资源
-	
-		IDisposable 介面
+* 《Effective C#》Item 15：利用using和try-finally来释放资源
+* IDisposable 介面

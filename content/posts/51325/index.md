@@ -9,11 +9,22 @@ Visual Studio是一個很大的程式，絕大部分採用Managed Code，由很�
 
 要使用時按下快速鍵[Ctrl + Shift + Alt + F12]兩次，或是建立個工具列按鈕讓它執行ToolsForceGC的Command就可以了。
 
+![image_thumb.png](/images/posts/51325/image_thumb.png)
+
 這邊筆者實際測試一下，使用Visual Studio開啟一個幾乎是空的WPF專案，光專案開起來記憶體就佔用了145,732K，實體記憶體也總共用了65%。
+
+![image_thumb_1.png](/images/posts/51325/image_thumb_1.png)
 
 將專案關閉，可以看到記憶體的耗費仍是不變。
 
+![image_thumb_2.png](/images/posts/51325/image_thumb_2.png)
+
 強制Visual Studio進行垃圾回收後，記憶體佔用變為121,836K，實體記憶體總佔用量降為63%。
 
+![image_thumb_3.png](/images/posts/51325/image_thumb_3.png)
+
 ## Link
-     VS.NET consumes too much memory? Force a GC!     Force VS to garbage collect     Force VS to garbage collect
+
+* [VS.NET consumes too much memory? Force a GC!](http://dotneteers.net/blogs/petersm/archive/2010/12/16/vs-net-consumes-too-much-memory-force-a-gc.aspx)
+* [Force VS to garbage collect](http://blogs.msdn.com/b/camerons/archive/2010/12/15/force-vs-to-garbage-collect.aspx)
+* [Force VS to garbage collect](http://jasper-net.blogspot.com/2010/12/force-vs-to-garbage-collect.html)

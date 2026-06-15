@@ -10,11 +10,14 @@ tags: [CSharp]
 
 動態繫結是C# 4.0的特色之一，其功能在現階段與晚期繫結大同小異。有用過VB.NET晚期繫結的，相信都能很快速的上手。主要能讓程式在執行階段才指定型別，並進行動態叫用。
 
-VB.NET在VB2005 (VB 7.0)開始支援晚期繫結 (Late-Binding)
+> VB.NET在VB2005 (VB 7.0)開始支援晚期繫結 (Late-Binding)
 
 ## Support
-C# 4.0 or latter  
-動態繫結
+
+* C# 4.0 or latter
+
+## 動態繫結
+
 動態繫結最大的功能就是能在執行階段才決定指定的型態，並在執行階段做型別檢查，且可動態叫用函示、運算、索引子、屬性、與欄位。不論你的物件是從COM、IronPython、HTML DOM、或是reflection所取得，動態繫結允許你採用一至的方法動態的去叫用它。
 
 此外，使用動態繫結還有個好處，就是可以精簡程式碼。
@@ -52,7 +55,7 @@ dynamic calc = GetCalculator();
 int sum = calc.Add(10, 20);
 ```
 
-在使用動態繫結時，IDE的IntelliSense功能會無法提示。不用太在意，直接輸入就可以了。若輸入錯誤或該成員不存在，則程式會在執行階段做告知的動作。
+> 在使用動態繫結時，IDE的IntelliSense功能會無法提示。不用太在意，直接輸入就可以了。若輸入錯誤或該成員不存在，則程式會在執行階段做告知的動作。
 
 ## 使用方式
 
@@ -62,7 +65,7 @@ int sum = calc.Add(10, 20);
 dynamic d = GetDynamicObject(…);
 d.M(7); // calling methods
 d.f = d.P; // getting and settings fields and properties
-d["one"] = d["two"]; // getting and setting thorugh indexers
+d[“one”] = d[“two”]; // getting and setting thorugh indexers
 int i = d + 3; // calling operators
 string s = d(5,7); // invoking as a delegate
 ```
@@ -94,7 +97,7 @@ namespace ConsoleApplication16
     }
     class Person
     {
-        public string Name { get; set; }        
+        public string Name { get; set; }
     }
 }
 ```
@@ -159,10 +162,10 @@ namespace ConsoleApplication19
 
 ## Link
 
-- [C# 4.0（VB 10）與CLR 4.0之驚鴻一瞥](http://blog.miniasp.com/post/2009/02/CSharp-40-VB-10-CLR-4.aspx)
-- [C# 4.0 新特性：動態型別、選用參數、具名參數](http://blog.miniasp.com/post/2009/02/CSharp-40-New-Features-Dynamic-Lookup-and-Named-and-Optional-Arguments.aspx)
-- [New Features in C# 4.0](http://code.msdn.microsoft.com/csharpfuture/Release/ProjectReleases.aspx?ReleaseId=1686)
-- [C# 4.0 Dynamic Lookup - Are You Kidding Me?](http://www.dev102.com/2008/11/03/c-40-dynamic-lookup-are-you-kidding-me/)
-- [C# 4.0's New Features Explained](http://www.codeproject.com/KB/cs/CSharp4Features.aspx?msg=3110596)
-- [C# 4.0 新功能：動態繫結](http://huan-lin.blogspot.com/2009/02/dynamic-binding-in-csharp-4.html)
-- [Dynamic Lookup & dynamic Type, C# 4.0 Part 1](http://towardsnext.wordpress.com/2009/03/16/dynamic-lookup-dynamic-type-c-40-part-1/)
+* [C# 4.0（VB 10）與CLR 4.0之驚鴻一瞥](http://blog.miniasp.com/post/2009/02/CSharp-40-VB-10-CLR-4.aspx)
+* [C# 4.0 新特性：動態型別、選用參數、具名參數](http://blog.miniasp.com/post/2009/02/CSharp-40-New-Features-Dynamic-Lookup-and-Named-and-Optional-Arguments.aspx)
+* [New Features in C# 4.0](http://code.msdn.microsoft.com/csharpfuture/Release/ProjectReleases.aspx?ReleaseId=1686)
+* [C# 4.0 Dynamic Lookup - Are You Kidding Me?](http://www.dev102.com/2008/11/03/c-40-dynamic-lookup-are-you-kidding-me/)
+* [C# 4.0's New Features Explained](http://www.codeproject.com/KB/cs/CSharp4Features.aspx?msg=3110596)
+* [C# 4.0 新功能：動態繫結](http://huan-lin.blogspot.com/2009/02/dynamic-binding-in-csharp-4.html)
+* [Dynamic Lookup & dynamic Type, C# 4.0 Part 1](http://towardsnext.wordpress.com/2009/03/16/dynamic-lookup-dynamic-type-c-40-part-1/)

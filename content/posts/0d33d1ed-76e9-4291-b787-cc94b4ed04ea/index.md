@@ -10,6 +10,6 @@ description: "Visual Studio 2013 Preview New Feature - XAML editor's smart comme
 
 我們只能自行手動將這些程式碼分批、分段註解...
 
-在Visual Studio 2013 Preview 後，不用再那麼麻煩了，Visual Studio 2013 Preview 改進了XAML程式碼註解的功能，會自動幫我們將這樣的動作處理好，像是下面這樣：
+在Visual Studio 2013 Preview 後，不用再那麼麻煩了，Visual Studio 2013 Preview 改進了XAML程式碼註解的功能，會自動幫我們將這樣的動作處理好，像是下面這樣：
 
 ![2013829134830908.gif](/images/posts/0d33d1ed-76e9-4291-b787-cc94b4ed04ea/2013829134830908.gif)

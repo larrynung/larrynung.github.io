@@ -12,21 +12,22 @@ tags: [C++]
 而要撰寫C++/CLI Managed類別的解構子，我們可以用"!類別名()"。
 
 簡單的範例如下：
-```
+
+```c
 ref class TestObj
 {
 public:
-//Dispose
-~TestObj()
-{
-//Release resource
-...
-}
+	//Dispose
+	~TestObj()
+	{
+		//Release resource
+		...
+	}
 
-//Deconstructer
-!TestObj()
-{
-~TestObj();
-}
+	//Deconstructer
+	!TestObj()
+	{
+		~TestObj();
+	}
 };
 ```

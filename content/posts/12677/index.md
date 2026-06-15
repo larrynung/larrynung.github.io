@@ -11,4 +11,5 @@ Strong Password Generator是ㄧ個用以產生強密碼的線上服務。
 ![image_thumb.png](/images/posts/12677/image_thumb.png)
 
 ## Link
-- Strong Password Generator
+
+* [Strong Password Generator](http://www.mytsoftware.com/dailyproject/PassGen/PassGen.html)

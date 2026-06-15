@@ -5,34 +5,43 @@ date: "2011-12-06 01:15:51"
 description: "[C#][WPF]WPF程式接收視窗訊息"
 tags: [CSharp,WPF]
 ---
+
 WinForm程式可以透過覆寫Window.WndProc去接收視窗訊息，而在WPF程式中的處理方法跟WinForm程式有些出入，首先必須要繫上SourceInitialized事件。
+
+```csharp
 public MainWindow()
 {
-InitializeComponent();
-this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
+    InitializeComponent();
+    this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
 }
+```
 
 在被繫上SourceInitialized事件的事件處理常式中將WndProc函式繫上。
 
+```csharp
 void MainWindow_SourceInitialized(object sender, EventArgs e)
 {
-IntPtr hwnd = new WindowInteropHelper(this).Handle;
-HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
+    IntPtr hwnd = new WindowInteropHelper(this).Handle;
+    HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
 }
+```
 
 在WndProc函式我們就可以收到視窗訊息並做些自己想要的處理。
 
+```csharp
 IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
 {
-switch (msg)
-{
-...
+    switch (msg)
+    {
+        ...
+    }
+    return IntPtr.Zero;
 }
-return IntPtr.Zero;
-}
+```
 
 完整的範例程式如下：
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,34 +59,35 @@ using System.Windows.Interop;
 
 namespace WpfApplication2
 {
-///
-/// Interaction logic for MainWindow.xaml
-///
-public partial class MainWindow : Window
-{
-public MainWindow()
-{
-InitializeComponent();
-this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
-}
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
+        }
 
-void MainWindow_SourceInitialized(object sender, EventArgs e)
-{
-IntPtr hwnd = new WindowInteropHelper(this).Handle;
-HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
-}
+        void MainWindow_SourceInitialized(object sender, EventArgs e)
+        {
+            IntPtr hwnd = new WindowInteropHelper(this).Handle;
+            HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
+        }
 
-IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-{
-switch (msg)
-{
-//...
+        IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            switch (msg)
+            {
+                //...
+            }
+            return IntPtr.Zero;
+        }
+    }
 }
-return IntPtr.Zero;
-}
-}
-}
+```
 
 ## Link
 
-Attaching to WndProc in WPF
+* Attaching to WndProc in WPF

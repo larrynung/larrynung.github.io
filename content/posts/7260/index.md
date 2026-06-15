@@ -10,3 +10,21 @@ tags: [.NET Concept,VB.NET]
 發現後覺得很神奇，因為我一直以為寫成『字串 = Nothing』會編譯錯誤的，沒想到它竟然能過。但也由於它能過的關係，導致找了半天找不到問題所在。而問題就在於若是使用『字串 is Nothing』來判斷的話，須要字串的值真的是Nothing才會成立。而使用『字串 = Nothing』來判斷的話，則判斷時會把Nothing與String.Empty視為相等，因此就算是字串為空字串該判斷條件也會成立。
 
 簡單的示意範例如下:
+
+```
+Public Class Form1
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        MsgBox(IsStringNothing1(""))
+        MsgBox(IsStringNothing2(""))
+    End Sub
+
+    Private Function IsStringNothing1(ByVal str As String) As Boolean
+        Return str = Nothing
+    End Function
+
+    Private Function IsStringNothing2(ByVal str As String) As Boolean
+        Return str Is Nothing
+    End Function
+End Class
+```

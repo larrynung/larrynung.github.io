@@ -5,13 +5,22 @@ description: "[VB.NET]MDI表單在開啟時做語系切換的注意事項"
 tags: [VB.NET]
 ---
 
-記得在[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換這篇提過兩種已開啟表單的語系切換方法，一種是透過遞迴搭配ComponentResourceManager，一種是把元件移除後再呼叫InitializeComponent。這兩種方法在一般表單下運作良好，但在MDI表單上使用就必須特別的留意。   
+記得在[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換這篇提過兩種已開啟表單的語系切換方法，一種是透過遞迴搭配ComponentResourceManager，一種是把元件移除後再呼叫InitializeComponent。這兩種方法在一般表單下運作良好，但在MDI表單上使用就必須特別的留意。
+
 先讓我們來看一下在MDI表單上使用會發生的問題。這邊使用內建的MDI Parent，在其工具列上放了兩個按鈕，分別對應上面提到的兩個切換語系的寫法。
-      
+
+![image_thumb.png](/images/posts/14799/image_thumb.png)
+
 接著建立要拿來開啟的MDI子表單，其上放了個測試用的選單選項，設好其選單選項的合併設定與中文語系要顯示的字串，並跟MDI主表單一樣也放置兩個切換語系按鈕。
-       
+
+![image_thumb_2.png](/images/posts/14799/image_thumb_2.png) ![image_thumb_3.png](/images/posts/14799/image_thumb_3.png)
+
 當子表單被叫起時，子表單的選單選項就會被合併至主表單的選單上。
-      
+
+![image_thumb_4.png](/images/posts/14799/image_thumb_4.png)
+
 在切換語系時就會發現第一種切換語系的方法，不論在子視窗抑或是在主視窗都無法使用。而第二種切換語系的方法，則是在主視窗切換會把所有子視窗都關閉，在子視窗切換會有錯誤的結果。
-      
+
+![image_thumb_5.png](/images/posts/14799/image_thumb_5.png)
+
 會有這樣的現象，是因為子視窗選單選項被主視窗合併，導致子視窗選單找不到任何選單選項，而主視窗選單雖然找的到子視窗的選單選項，卻不知道他是子視窗的選單選項。就算知道，該選單選項的資源也不在主視窗上。目前知道的解法就是讓選單先離開合併狀態，切換語系後再合併選單。

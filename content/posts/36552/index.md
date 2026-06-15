@@ -7,7 +7,7 @@ tags: [Visual Studio]
 
 相信很多開發人員所處的工作環境多半對於新技術都會先觀望，如果案子用不到新的語法特性，就算已有更新的IDE釋出，多半會趨於保守沿用舊的開發工具，也不會想去了解有何新增加的功能，會不會增加開發的速度。像是如果案子是用.NET 3.5開發的，用不到.NET 4.0的新功能，就不會考慮升級到Visual Studio 2010。但就以Visual Studio IDE來看，新的版本推出都會提供一些新的IDE特性，多半是能增加程式撰寫與除錯上的便利性。且自Visual Studio 2010開始所用的IDE跟專案要運行在幾版的.NET Framework已經不是很有關係了，所以筆者還是強烈建議對於新的開發環境有哪些特性還是要花點時間熟悉。
 
-  以往在那樣的環境下，可能會有些積極的開發人員選用新版的IDE，有些則沿用舊版的IDE，所以可能會透過一些轉換工具，像是CodeProject上的SolutionConverter，讓一個專案同時具有不同版本的方案檔。  
+以往在那樣的環境下，可能會有些積極的開發人員選用新版的IDE，有些則沿用舊版的IDE，所以可能會透過一些轉換工具，像是CodeProject上的SolutionConverter，讓一個專案同時具有不同版本的方案檔。
 
 但是這樣的做法也會有些問題，就是Project檔還是必須經過轉換的動作，專案檔必須轉換為新版IDE的專案檔，且每個開發人員電腦內都必須要安裝有新版的IDE才能認得新版IDE的專案檔。
 
@@ -15,11 +15,20 @@ tags: [Visual Studio]
 
 這邊筆者準備了一個專案來看一下這個新功能，專案檔是Visual Studio 2010以前的專案檔，方案檔有2003、2005、2008、2010四種。
 
+![image16_thumb.png](/images/posts/36552/image16_thumb.png)
+
 透過Visual Studio 2011 Preview去開啟2010的方案檔，IDE偵測到專案檔必須做轉換的動作，會彈出像下面這樣的視窗讓開發人員決定是否要做轉換的動作。
+
+![image19_thumb.png](/images/posts/36552/image19_thumb.png)
 
 而若是筆者先行用Visual Studio 2010將其專案開啟並轉換為Visual Studio 2010的專案檔，再用Visual Studio 2011 Preview去開啟的話，IDE偵測到專案檔不需作轉換的動作，會彈出像下面的對話框告知，按下Continue按鈕繼續開啟動作就可以了，下次再開啟相同方案也不會再次彈出該對話框警示開發人員。
 
+![image13_thumb.png](/images/posts/36552/image13_thumb.png)
+
 再回過來用檔案總管來看一下方案檔，Visual Studio 2010的方案檔透過Visual Studio 2011 Preview開啟後，不僅不需要轉換就可以開啟，方案檔前方的圖示仍是2010的圖示，檔案也未被修改。而至於Visual Studio 2010以前的方案檔透過Visual Studio 2011 Preview開啟後，雖然專案檔不需轉換也能開啟，但是方案檔會被轉換成2011的圖示(參閱下圖的MyDataBase 2008.sln)。
 
+![image_thumb.png](/images/posts/36552/image_thumb.png)
+
 ## Link
-     Installing Visual Studio Versions Side-by-Side
+
+* [Installing Visual Studio Versions Side-by-Side](http://msdn.microsoft.com/en-us/library/ms246609(v=VS.110).aspx)

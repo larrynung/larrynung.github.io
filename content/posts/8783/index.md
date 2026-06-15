@@ -13,4 +13,59 @@ tags: [VB.NET]
 
 ## 範例
 
+![image_thumb.png](/images/posts/8783/image_thumb.png)
+
 VB.NET
+
+```
+Public Class Form1
+
+    Dim dbA As New UseDB.AccessDB("A.mdb")
+    Dim dbB As New UseDB.AccessDB("B.mdb")
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        LoadADB()
+        LoadBDB()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        WriteToDB(dbA)
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        LoadADB()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        WriteToDB(dbB)
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        LoadBDB()
+    End Sub
+
+    Private Sub LoadADB()
+        Me.DataGridView1.DataSource = dbA.GetDataTable("Select * from test")
+    End Sub
+
+    Private Sub LoadBDB()
+        Me.DataGridView2.DataSource = dbB.GetDataTable("Select * from test")
+    End Sub
+
+    Private Sub WriteToDB(ByVal db As UseDB.AccessDB)
+        Dim table As DataTable = DirectCast(Me.DataGridView1.DataSource, DataTable)
+        Dim changeTable As DataTable = table.GetChanges
+        If changeTable Is Nothing Then
+            MsgBox("Without Change")
+            Return
+        End If
+        db.WriteDataFromDataTable(changeTable, "Test")
+        table.AcceptChanges()
+        If db Is dbA Then
+            LoadADB()
+        Else
+            LoadBDB()
+        End If
+    End Sub
+End Class
+```

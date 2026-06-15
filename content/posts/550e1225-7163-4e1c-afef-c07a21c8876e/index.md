@@ -13,11 +13,19 @@ Pull Requests的功能對筆者而言就如同它字面所呈現的意思一樣�
 
 這邊實際的帶一遍運作流程，當我們為要加的Feature開好了一個獨立的Branch後，我們就可以將Github切到剛建立的Branch，然後按下上方的Pull Request按鈕發起Pull Requests的要求，讓有興趣的團隊成員可以先開始關注。
 
+![image_thumb_6.png](/images/posts/550e1225-7163-4e1c-afef-c07a21c8876e/image_thumb_6.png)
+
 發起Pull Requests會要指定最後要合併回哪個分支，通常這邊都是直接指定開發主線就好，下方還要記得填寫這個Pull Requests的名稱即細部的描述，都完成後按下下方的Send pull request按鈕就可以了。
+
+![image_thumb_2.png](/images/posts/550e1225-7163-4e1c-afef-c07a21c8876e/image_thumb_2.png)
 
 到這邊Pull Requests已經成功的發起，每當對應的分支有上Git的Commit，都可以在Pull Requests上看到，團隊成員可以很即時的透過Pull Requests查看到底改了些什麼。(這邊必須要注意到，上面提過的要指定一個團隊成員為這個Feature做最後的背書與負責合併回開發主線，也是透過這邊去指定。)
 
+![image_thumb_5.png](/images/posts/550e1225-7163-4e1c-afef-c07a21c8876e/image_thumb_5.png)
+
 也可以在上面針對修改的內容作些討論。
+
+![image_thumb_4.png](/images/posts/550e1225-7163-4e1c-afef-c07a21c8876e/image_thumb_4.png)
 
 若Feature開發告一段落，而團隊成員對於修改也沒有什麼意見，那負責背書與合併回開發主線的團隊成員就可以直接將頁面捲動到最下面，按下Merge按鈕Pull Requests就會自動的將分支併回開發主線，只有發生衝突無法自動合併，才需要自己手動使用Git排解。
 

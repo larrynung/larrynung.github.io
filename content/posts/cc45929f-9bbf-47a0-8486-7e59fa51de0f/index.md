@@ -30,4 +30,4 @@ description: "Pocket開發系列- 開發前準備"
 
 ## Link
 
-- [Pocket: Developer API](http://getpocket.com/developer/)
+* [Pocket: Developer API](http://getpocket.com/developer/)

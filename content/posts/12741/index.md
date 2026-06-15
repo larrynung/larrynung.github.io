@@ -9,8 +9,12 @@ tags: [Performance]
 
 測試UI如下：
 
+![image_thumb.png](/images/posts/12741/image_thumb.png)
+
 測試程式碼如下：
-  Public Class Form1
+
+```vb
+Public Class Form1
 
     Dim _f As New Form
     Private Sub btnSetByPoint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetByPoint.Click
@@ -37,17 +41,28 @@ tags: [Performance]
     End Sub
 
 End Class
+```
 
 測試結果如下：
 
 當測試次數為10000時
 
+![image_thumb_10.png](/images/posts/12741/image_thumb_10.png) ![image_thumb_11.png](/images/posts/12741/image_thumb_11.png)
+
 當測試次數為100000時
+
+![image_thumb_14.png](/images/posts/12741/image_thumb_14.png) ![image_thumb_13.png](/images/posts/12741/image_thumb_13.png)
 
 當測試次數為1000000時
 
+![image_thumb_15.png](/images/posts/12741/image_thumb_15.png) ![image_thumb_16.png](/images/posts/12741/image_thumb_16.png)
+
 當測試次數為10000000時
 
+![image_thumb_17.png](/images/posts/12741/image_thumb_17.png) ![image_thumb_18.png](/images/posts/12741/image_thumb_18.png)
+
 統計一下測試結果
+
+![image_thumb_1.png](/images/posts/12741/image_thumb_1.png)
 
 依以上的測試，我們可以看到直接指定Location會比透過屬性設定表單位置來得有效率。

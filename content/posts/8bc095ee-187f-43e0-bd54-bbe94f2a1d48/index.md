@@ -8,7 +8,11 @@ Visual Studio 2013 Preview參考Productivity Power Tools針對捲軸部分做了
 
 首先捲軸上面的滑鼠右鍵快顯選單多了一個捲軸選項，可以很快速的開啟選項對話框並切換到捲軸的設定頁面。
 
+![image_thumb_1.png](/images/posts/8bc095ee-187f-43e0-bd54-bbe94f2a1d48/image_thumb_1.png)
+
 捲軸的設定部分可以決定是否顯示捲軸、是否在捲軸上顯示註釋、是否啟動垂直捲軸地圖模式等等。
+
+![image_thumb_2.png](/images/posts/8bc095ee-187f-43e0-bd54-bbe94f2a1d48/image_thumb_2.png)
 
 是否顯示捲軸設定，這部分應該是不太有調的必要性...
 
@@ -16,7 +20,13 @@ Visual Studio 2013 Preview參考Productivity Power Tools針對捲軸部分做了
 
 以變更來說，只要存檔後有修改過的部分就會出現記號，像是下圖中正在輸入的Modify就是變更的部分，前面會有高亮記號，捲軸的左側也會有一樣的記號。標記部分就好玩一點了，它包含了搜尋到的結果、中斷點、與書籤，捲軸的中間會有對應的記號(顏色稍有不同)。錯誤的部份我們看到圖中正在編輯的地方，因為還沒編輯完，所以該行程式會是錯的，下行連帶也被影響，在編輯區有小蝌蚪出現，捲軸的右側也會有對應的記號。插入號位置部分指的就是我們的鍵盤游標位置，在捲軸中會以一條橫線表示。
 
+![image_thumb_4.png](/images/posts/8bc095ee-187f-43e0-bd54-bbe94f2a1d48/image_thumb_4.png)
+
 至於垂直捲軸地圖模式功能，若是開啟的話，垂直捲軸會變得像下圖這樣，可以在捲軸上看到整個程式碼的全貌。捲軸的寬度不太習慣，在原始檔概觀那邊可以做些調整。若是捲軸上的程式碼全貌不易找尋要捲至的位置，這邊可以開啟顯示預覽工具提示功能，開啟後滑鼠移到垂直捲軸上會像下圖一樣浮現個預覽框，方便我們確定要捲至的位置。
 
+![image_thumb_3.png](/images/posts/8bc095ee-187f-43e0-bd54-bbe94f2a1d48/image_thumb_3.png)
+
 ## Link
-     How to: Track Your Code by Customizing the Scrollbar    Visual Studio 2013 Preview: Enhanced Scroll Bar
+
+* [How to: Track Your Code by Customizing the Scrollbar](http://msdn.microsoft.com/en-us/library/dn237345(v=vs.120).aspx)
+* [Visual Studio 2013 Preview: Enhanced Scroll Bar](http://blogs.msdn.com/b/zainnab/archive/2013/07/02/visual-studio-2013-preview-enhanced-scroll-bar.aspx)

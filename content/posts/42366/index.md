@@ -4,65 +4,65 @@ date: "2011-10-13 12:39:34"
 description: "[C++]C++ Nativated Property Code Snippet"
 tags: [C++]
 ---
+
 Visual Studio 2011 Preview開始支援C++的Code Snippet，開發人員可以將自己常用的功能寫成Code Snippet加速專案的開發。由於筆者在開發Nativated C++時，常會需要撰寫Nativated Property，故將其整理為Code Snippet，Code Snippet內容如下：
 
-```
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<CodeSnippets>
-<CodeSnippet Format="1.0.0">
-<Header>
-<Title>Nativated Property</Title>
-<Shortcut>nprop</Shortcut>
-<Description>Nativated Property</Description>
-<Author>Larry Nung</Author>
-<SnippetTypes>
-<SnippetType>Expansion</SnippetType>
-</SnippetTypes>
-</Header>
-<Snippet>
-<Declarations>
-<Literal>
-<ID>type</ID>
-<ToolTip>Type of property</ToolTip>
-<Default>int</Default>
-</Literal>
-<Literal Editable="true">
-<ID>field</ID>
-<Type></Type>
-<ToolTip></ToolTip>
-<Default>nValue</Default>
-<Function></Function>
-</Literal>
-</Declarations>
-<Code Language="Cpp"><![CDATA[#pragma region Var
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Nativated Property</Title>
+      <Shortcut>nprop</Shortcut>
+      <Description>Nativated Property</Description>
+      <Author>Larry Nung</Author>
+      <SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+	<Literal>
+	  <ID>type</ID>
+	  <ToolTip>Type of property</ToolTip>
+	  <Default>int</Default>
+	</Literal>
+        <Literal Editable="true">
+          <ID>field</ID>
+          <Type></Type>
+          <ToolTip></ToolTip>
+          <Default>nValue</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="Cpp"><![CDATA[#pragma region Var
 private:
-$type$ _$field$;
+	$type$ _$field$;
 #pragma endregion
 
-#pragma region Public Property
+#pragma region Public  Property
 public:
-__declspec(property(get=Get_$field$,put=Set_$field$))
-$type$ m_$field$;
+	__declspec(property(get=Get_$field$,put=Set_$field$))
+		$type$ m_$field$;
 #pragma endregion
 
 #pragma region Property Process Method
 public:
-inline $type$ Get_$field$()
-{
-return _$field$;
-}
+	inline $type$ Get_$field$()
+	{
+		return _$field$;
+	}
 
-inline void Set_$field$($type$ value)
-{
-if(_$field$ == value)
-return;
+	inline void Set_$field$($type$ value)
+	{
+		if(_$field$ == value)
+			return;
 
-_$field$ = value;
-}
+		_$field$ = value;
+	}
 #pragma endregion]]></Code>
-</Snippet>
-</CodeSnippet>
+    </Snippet>
+  </CodeSnippet>
 </CodeSnippets>
 ```
 

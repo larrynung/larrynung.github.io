@@ -19,11 +19,52 @@ RNGCryptoServiceProvider類別是Thread Safe型別，是使用由密碼編譯服
 
 在RNGCryptoServiceProvider的成員中，其主要方法有兩個 ：
 
-|  |  |  |
-| --- | --- | --- |
-|  | 名稱 | 說明 |
-| ![ctd75hw2.pubmethod(zh-tw,VS.80).gif](/images/posts/12883/ctd75hw2.pubmethod(zh-tw,VS.80).gif) ![ctd75hw2.CFW(zh-tw,VS.80).gif](/images/posts/12883/ctd75hw2.CFW(zh-tw,VS.80).gif) | GetBytes | 覆寫。 在位元組陣列中填入在密碼編譯方面強式的隨機值序列。 |
-| ![ctd75hw2.pubmethod(zh-tw,VS.80).gif](/images/posts/12883/ctd75hw2.pubmethod(zh-tw,VS.80).gif) ![ctd75hw2.CFW(zh-tw,VS.80).gif](/images/posts/12883/ctd75hw2.CFW(zh-tw,VS.80).gif) | GetNonZeroBytes | 覆寫。 在位元組陣列中填入在密碼編譯方面強式的隨機非零值序列。 |
+<table border="1" cellpadding="2" cellspacing="0" width="601">
+<tbody>
+<tr>
+<td valign="top" width="49">
+<p>
+					 </p>
+</td>
+<td valign="top" width="150">
+<p>
+					名稱</p>
+</td>
+<td valign="top" width="400">
+<p>
+					說明</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="49">
+<p>
+<img alt="Public method" src="/images/posts/12883/ctd75hw2.pubmethod%28zh-tw,VS.80%29.gif"/> <img alt="Supported by the .NET Compact Framework" src="/images/posts/12883/ctd75hw2.CFW%28zh-tw,VS.80%29.gif"/></p>
+</td>
+<td valign="top" width="150">
+<p>
+					GetBytes</p>
+</td>
+<td valign="top" width="400">
+<p>
+					覆寫。 在位元組陣列中填入在密碼編譯方面強式的隨機值序列。</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="49">
+<p>
+<img alt="Public method" src="/images/posts/12883/ctd75hw2.pubmethod%28zh-tw,VS.80%29.gif"/> <img alt="Supported by the .NET Compact Framework" src="/images/posts/12883/ctd75hw2.CFW%28zh-tw,VS.80%29.gif"/></p>
+</td>
+<td valign="top" width="150">
+<p>
+					GetNonZeroBytes</p>
+</td>
+<td valign="top" width="400">
+<p>
+					覆寫。 在位元組陣列中填入在密碼編譯方面強式的隨機非零值序列。</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 兩者的用法都是傳入一個Byte陣列，用法大同小異。主要只是差在GetNonZeroBytes所產的隨機值是不為零的而已。
 
@@ -40,12 +81,12 @@ RNGCryptoServiceProvider類別是Thread Safe型別，是使用由密碼編譯服
 ```csharp
 static void Main(string[] args)
 {
-RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-byte[] random = new Byte[100];
-rng.GetBytes (random);
-foreach (byte b in random)
-Console.Write(b.ToString() + " ");
-Console.WriteLine();
+    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+    byte[] random = new Byte[100];
+    rng.GetBytes (random);
+    foreach (byte b in random)
+        Console.Write(b.ToString() + " ");
+    Console.WriteLine();
 }
 ```
 
@@ -57,19 +98,20 @@ Console.WriteLine();
 ```csharp
 static void Main(string[] args)
 {
-RNGCryptoServiceProvider rng1 = new RNGCryptoServiceProvider();
-RNGCryptoServiceProvider rng2 = new RNGCryptoServiceProvider();
-PrintRandomNumber(rng1);
-Console.WriteLine(new string('=',70));
-PrintRandomNumber(rng2);
+    RNGCryptoServiceProvider rng1 = new RNGCryptoServiceProvider();
+    RNGCryptoServiceProvider rng2 = new RNGCryptoServiceProvider();
+    PrintRandomNumber(rng1);
+    Console.WriteLine(new string('=',70));
+    PrintRandomNumber(rng2);
 }
+
 static void PrintRandomNumber(RNGCryptoServiceProvider rng)
 {
-byte[] random = new Byte[100];
-rng.GetBytes(random);
-foreach (byte b in random)
-Console.Write(b.ToString() + " ");
-Console.WriteLine();
+    byte[] random = new Byte[100];
+    rng.GetBytes(random);
+    foreach (byte b in random)
+        Console.Write(b.ToString() + " ");
+    Console.WriteLine();
 }
 ```
 
@@ -83,45 +125,47 @@ Console.WriteLine();
 ```csharp
 using System;
 using System.Security.Cryptography;
-///
+
+/// <summary>
 /// 使用 RNGCryptoServiceProvider 產生由密碼編譯服務供應者 (CSP) 提供的亂數產生器。
-///
+/// </summary>
 public static class RNG
 {
-private static RNGCryptoServiceProvider rngp = new RNGCryptoServiceProvider();
-private static byte[] rb = new byte[4];
-///
-/// 產生一個非負數的亂數
-///
-public static int Next()
-{
-rngp.GetBytes(rb);
-int value = BitConverter.ToInt32(rb, 0);
-if (value < 0) value = -value;
-return value;
-}
-///
-/// 產生一個非負數且最大值 max 以下的亂數
-///
-/// 最大值
-public static int Next(int max)
-{
-rngp.GetBytes(rb);
-int value = BitConverter.ToInt32(rb, 0);
-value = value % (max + 1);
-if (value < 0) value = -value;
-return value;
-}
-///
-/// 產生一個非負數且最小值在 min 以上最大值在 max 以下的亂數
-///
-/// 最小值
-/// 最大值
-public static int Next(int min, int max)
-{
-int value = Next(max - min) + min;
-return value;
-}
+    private static RNGCryptoServiceProvider rngp = new RNGCryptoServiceProvider();
+    private static byte[] rb = new byte[4];
+
+    /// <summary>
+    /// 產生一個非負數的亂數
+    /// </summary>
+    public static int Next()
+    {
+        rngp.GetBytes(rb);
+        int value = BitConverter.ToInt32(rb, 0);
+        if (value < 0) value = -value;
+        return value;
+    }
+    /// <summary>
+    /// 產生一個非負數且最大值 max 以下的亂數
+    /// </summary>
+    /// <param name="max">最大值</param>
+    public static int Next(int max)
+    {
+        rngp.GetBytes(rb);
+        int value = BitConverter.ToInt32(rb, 0);
+        value = value % (max + 1);
+        if (value < 0) value = -value;
+        return value;
+    }
+    /// <summary>
+    /// 產生一個非負數且最小值在 min 以上最大值在 max 以下的亂數
+    /// </summary>
+    /// <param name="min">最小值</param>
+    /// <param name="max">最大值</param>
+    public static int Next(int min, int max)
+    {
+        int value = Next(max - min) + min;
+        return value;
+    }
 }
 ```
 
@@ -130,38 +174,40 @@ return value;
 ```csharp
 using System;
 using System.Security.Cryptography;
-///
+
+/// <summary>
 /// 使用 RNGCryptoServiceProvider 產生由密碼編譯服務供應者 (CSP) 提供的亂數產生器。
-///
+/// </summary>
 public static class RNGCryptoServiceProviderExtensions
 {
-private static byte[] rb = new byte[4];
-///
-/// 產生一個非負數的亂數
-///
-public static int Next(this RNGCryptoServiceProvider rngp)
-{
-rngp.GetBytes(rb);
-int value = BitConverter.ToInt32(rb, 0);
-return (value < 0)?-value:value;
-}
-///
-/// 產生一個非負數且最大值 max 以下的亂數
-///
-/// 最大值
-public static int Next(this RNGCryptoServiceProvider rngp,int max)
-{
-return Next(rngp) % (max + 1);
-}
-///
-/// 產生一個非負數且最小值在 min 以上最大值在 max 以下的亂數
-///
-/// 最小值
-/// 最大值
-public static int Next(this RNGCryptoServiceProvider rngp,int min, int max)
-{
-return Next(rngp, max - min) + min;
-}
+    private static byte[] rb = new byte[4];
+
+    /// <summary>
+    /// 產生一個非負數的亂數
+    /// </summary>
+    public static int Next(this RNGCryptoServiceProvider rngp)
+    {
+        rngp.GetBytes(rb);
+        int value = BitConverter.ToInt32(rb, 0);
+        return (value < 0)?-value:value;
+    }
+    /// <summary>
+    /// 產生一個非負數且最大值 max 以下的亂數
+    /// </summary>
+    /// <param name="max">最大值</param>
+    public static int Next(this RNGCryptoServiceProvider rngp,int max)
+    {
+        return Next(rngp) %  (max + 1);
+    }
+    /// <summary>
+    /// 產生一個非負數且最小值在 min 以上最大值在 max 以下的亂數
+    /// </summary>
+    /// <param name="min">最小值</param>
+    /// <param name="max">最大值</param>
+    public static int Next(this RNGCryptoServiceProvider rngp,int min, int max)
+    {
+        return Next(rngp, max - min) + min;
+    }
 }
 ```
 
@@ -174,6 +220,6 @@ Console.WriteLine (rng.Next(10, 15));
 
 ## Link
 
-- RNGCryptoServiceProvider 類別
-- 亂數產生器：Random 與 RNGCryptoServiceProvider
-- 生成安全的随机数
+* RNGCryptoServiceProvider 類別
+* 亂數產生器：Random 與 RNGCryptoServiceProvider
+* 生成安全的随机数

@@ -16,4 +16,4 @@ description: "[Visual Studio]當建置發生\"Object reference not set to an ins
 
 ## Link
 
-- Object reference not set to an instance of an object in resx resource file
+* Object reference not set to an instance of an object in resx resource file

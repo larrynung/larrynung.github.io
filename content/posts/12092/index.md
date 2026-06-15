@@ -11,10 +11,10 @@ tags: [Other]
 
 說穿了其實就是ㄧ些Office2007的資源，像是範本、教學、相容性套件、密技等等。這邊微軟通通幫你整理的好好的。
 
- ![image_thumb_1.png](/images/posts/12092/image_thumb_1.png)
+![image_thumb_1.png](/images/posts/12092/image_thumb_1.png)
 
 有興趣的可以到官方網站下載檔案，或是填寫申請表取得光碟。
 
 ## Link
 
-- [Office 2007 一次搞定包](http://www.microsoft.com/taiwan/promo/officeonestop/default.htm)
+* [Office 2007 一次搞定包](http://www.microsoft.com/taiwan/promo/officeonestop/default.htm)

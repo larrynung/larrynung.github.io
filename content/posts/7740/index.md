@@ -9,11 +9,23 @@ tags: [VB.NET]
 
 該Library基本上可控制的資料庫有Access、MySql、與Sql，由下圖命名空間應該很容易知道何時該使用哪個類別。
 
+![image_thumb_3.png](/images/posts/7740/image_thumb_3.png)
+
 使用上最主要只有兩個函式，一個是GetDataTable，主要是用來取得資料表，使用上只要傳入Sql查詢語法就可取得查詢後的資料表。第二個函式是Execute，是用來執行不會回傳資料的Sql語法用，像是Sql的新增、刪除、修改語法就是要用Execute函式呼叫，使用上也是只要傳入Sql語法即可。
 
 簡單的使用範例如下：
 
+```
+Dim db As New MyDatabase.UseDB.SqlDB("NORTHWND.MDF")
+ Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+     Me.DataGridView1.DataSource = db.GetDataTable("Select * from Orders")
+ End Sub
+```
+
 執行結果如下：
 
+![image_thumb.png](/images/posts/7740/image_thumb.png)
+
 ## Download
-MyDataBase.zip
+
+[MyDataBase.zip](http://Files.Dotblogs.com.tw/larrynung/0903/200932995349182.zip)

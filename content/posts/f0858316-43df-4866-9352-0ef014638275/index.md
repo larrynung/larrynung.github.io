@@ -15,31 +15,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+
 namespace ConsoleApplication1
 {
-public static class StringExtension
-{
-public static Boolean IsNull(this string str)
-{
-return str == null;
-}
-public static Boolean IsNullOrEmpty(this string str)
-{
-return string.IsNullOrEmpty(str);
-}
-public static Boolean IsNullOrWhiteSpace(this string str)
-{
-return string.IsNullOrWhiteSpace(str);
-}
-public static bool IsMatch(this string str, string pattern)
-{
-if (str.IsNullOrEmpty())
-throw new ArgumentNullException("str");
-if (pattern.IsNullOrEmpty())
-throw new ArgumentNullException("pattern");
-return Regex.IsMatch(str, pattern);
-}
-}
+    public static class StringExtension
+    {
+        public static Boolean IsNull(this string str)
+        {
+            return str == null;
+        }
+
+        public static Boolean IsNullOrEmpty(this string str)
+        {
+            return string.IsNullOrEmpty(str);
+        }
+
+        public static Boolean IsNullOrWhiteSpace(this string str)
+        {
+            return string.IsNullOrWhiteSpace(str);
+        }
+
+        public static bool IsMatch(this string str, string pattern)
+        {
+            if (str.IsNullOrEmpty())
+                throw new ArgumentNullException("str");
+            if (pattern.IsNullOrEmpty())
+                throw new ArgumentNullException("pattern");
+            return Regex.IsMatch(str, pattern);
+        }
+    }
 }
 ```
 
@@ -52,32 +56,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace ConsoleApplication1
 {
-class Program
-{
-static void Main(string[] args)
-{
-string nullStr = null;
-string emptyStr = string.Empty;
-string whiteSpaceStr = new string(' ', 10);
-string matchStr = @"http://www.dotblogs.com.tw/larrynung";
-string matchPattern = ".*dotblogs.*";
-Console.WriteLine("nullStr.IsNull: " + nullStr.IsNull().ToString());
-Console.WriteLine("nullStr.IsNullOrEmpty: " + nullStr.IsNullOrEmpty().ToString());
-Console.WriteLine("nullStr.IsNullOrWhiteSpace: " + nullStr.IsNullOrWhiteSpace().ToString());
-Console.WriteLine();
-Console.WriteLine("emptyStr.IsNull: " + emptyStr.IsNull().ToString());
-Console.WriteLine("emptyStr.IsNullOrEmpty: " + emptyStr.IsNullOrEmpty().ToString());
-Console.WriteLine("emptyStr.IsNullOrWhiteSpace: " + emptyStr.IsNullOrWhiteSpace().ToString());
-Console.WriteLine();
-Console.WriteLine("whiteSpaceStr.IsNull: " + whiteSpaceStr.IsNull().ToString());
-Console.WriteLine("whiteSpaceStr.IsNullOrEmpty: " + whiteSpaceStr.IsNullOrEmpty().ToString());
-Console.WriteLine("whiteSpaceStr.IsNullOrWhiteSpace: " + whiteSpaceStr.IsNullOrWhiteSpace().ToString());
-Console.WriteLine();
-Console.WriteLine("{0} match {1}: {2}", matchStr, matchPattern, matchStr.IsMatch(matchPattern));
-}
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nullStr = null;
+            string emptyStr = string.Empty;
+            string whiteSpaceStr = new string(' ', 10);
+            string matchStr = @"http://www.dotblogs.com.tw/larrynung";
+            string matchPattern = ".*dotblogs.*";
+
+            Console.WriteLine("nullStr.IsNull: " + nullStr.IsNull().ToString());
+            Console.WriteLine("nullStr.IsNullOrEmpty: " + nullStr.IsNullOrEmpty().ToString());
+            Console.WriteLine("nullStr.IsNullOrWhiteSpace: " + nullStr.IsNullOrWhiteSpace().ToString());
+
+            Console.WriteLine();
+            Console.WriteLine("emptyStr.IsNull: " + emptyStr.IsNull().ToString());
+            Console.WriteLine("emptyStr.IsNullOrEmpty: " + emptyStr.IsNullOrEmpty().ToString());
+            Console.WriteLine("emptyStr.IsNullOrWhiteSpace: " + emptyStr.IsNullOrWhiteSpace().ToString());
+
+            Console.WriteLine();
+            Console.WriteLine("whiteSpaceStr.IsNull: " + whiteSpaceStr.IsNull().ToString());
+            Console.WriteLine("whiteSpaceStr.IsNullOrEmpty: " + whiteSpaceStr.IsNullOrEmpty().ToString());
+            Console.WriteLine("whiteSpaceStr.IsNullOrWhiteSpace: " + whiteSpaceStr.IsNullOrWhiteSpace().ToString());
+
+            Console.WriteLine();
+            Console.WriteLine("{0} match {1}: {2}", matchStr, matchPattern, matchStr.IsMatch(matchPattern));
+        }
+    }
 }
 ```
 

@@ -7,10 +7,11 @@ tags: [Python]
 
 Tkinter在做版面配置有三種方式，pack是其中一種。
 
-	使用pack來做版面配置，可以設定元件的內邊界、外邊界、是否塞滿、以及要停駐在哪邊。如果不做任何的停駐設定，預設元件是由上往下堆放。以其他程式語言來說，pack這種版面配置方式有點像是Dock與Stack兩種版面配置容器的結合。
+使用pack來做版面配置，可以設定元件的內邊界、外邊界、是否塞滿、以及要停駐在哪邊。如果不做任何的停駐設定，預設元件是由上往下堆放。以其他程式語言來說，pack這種版面配置方式有點像是Dock與Stack兩種版面配置容器的結合。
 
-	在使用時若直接呼叫pack方法，元件會由上到下堆放，元件的大小設定多大就是多大，不會隨著視窗大小變動。
+在使用時若直接呼叫pack方法，元件會由上到下堆放，元件的大小設定多大就是多大，不會隨著視窗大小變動。
 
+```python
 ...
 lbl = Label(form, text="pack test1", bg="red")
 lbl.pack()
@@ -21,11 +22,15 @@ lbl.pack()
 lbl = Label(form, text="pack test3", bg="blue")
 lbl.pack()
 ...
+```
 
-	若是叫用pack方法時帶入fill的值，則元件會依照帶入的值去做塞滿。像是帶入X則元件的寬度會塞滿容器，帶入Y則元件的高度會塞滿容器，帶入BOTH則元件的寬度與高度都會塞滿容器(expand記得要設，不然元件可能不會隨容器放大)。
+![image_thumb_1.png](/images/posts/9567980f-44b2-4322-851e-93c0223a0e47/image_thumb_1.png)
 
-	這邊也可以帶入side的值去指定元件要停駐在上(TOP)、下(BOTTOM)、左(LEFT)、右(RIGHT)。
+若是叫用pack方法時帶入fill的值，則元件會依照帶入的值去做塞滿。像是帶入X則元件的寬度會塞滿容器，帶入Y則元件的高度會塞滿容器，帶入BOTH則元件的寬度與高度都會塞滿容器(expand記得要設，不然元件可能不會隨容器放大)。
 
+這邊也可以帶入side的值去指定元件要停駐在上(TOP)、下(BOTTOM)、左(LEFT)、右(RIGHT)。
+
+```python
 ...
 lbl = Label(form, text="fill test1", bg="red")
 lbl.pack(fill=X)
@@ -36,9 +41,13 @@ lbl.pack(side=LEFT, fill=Y)
 lbl = Label(form, text="fill test2", bg="blue")
 lbl.pack(fill=BOTH, expand=1)
 ...
+```
 
-	如果要設定元件的內外邊界，我們可以在呼叫pack時帶入padx、pady、ipadx、ipady這幾的設定值，padx、pady是外邊界(相當於我們一般所說的margin)，ipadx、ipady是內邊界(相當於我們一般所說的padding)。
+![image_thumb_3.png](/images/posts/9567980f-44b2-4322-851e-93c0223a0e47/image_thumb_3.png) ![image_thumb_4.png](/images/posts/9567980f-44b2-4322-851e-93c0223a0e47/image_thumb_4.png)
 
+如果要設定元件的內外邊界，我們可以在呼叫pack時帶入padx、pady、ipadx、ipady這幾的設定值，padx、pady是外邊界(相當於我們一般所說的margin)，ipadx、ipady是內邊界(相當於我們一般所說的padding)。
+
+```python
 ...
 lbl = Label(form, text="pad test", bg="green")
 lbl.pack(fill=X, padx=5, pady=5)
@@ -46,8 +55,10 @@ lbl.pack(fill=X, padx=5, pady=5)
 lbl = Label(form, text="ipad test", bg="blue")
 lbl.pack(fill=X, ipadx=5, ipady=5)
 ...
+```
 
-## 
-	Link
+![image_thumb_5.png](/images/posts/9567980f-44b2-4322-851e-93c0223a0e47/image_thumb_5.png)
 
-		Layout Managers / Geometry Manager
+## Link
+
+* Layout Managers / Geometry Manager

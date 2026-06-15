@@ -7,56 +7,95 @@ tags: [Python]
 
 要使用Tkinter的MessageBox，首先要先將tkMessageBox package import進來。
 
+```python
 import tkMessageBox
+```
 
-	tkMessageBox的用法大概像下面這樣，依使用需求呼叫不同的方法，並帶入訊息視窗的標題、內文、以及一些額外的參數就可以了。
+tkMessageBox的用法大概像下面這樣，依使用需求呼叫不同的方法，並帶入訊息視窗的標題、內文、以及一些額外的參數就可以了。
 
+```python
 tkMessageBox.FunctionName(title, message [, options])
+```
 
-	可以呼叫的方法有showinfo...
+可以呼叫的方法有showinfo...
 
+```python
 tkMessageBox.showinfo("showinfo demo", "Info")
+```
 
-	showwarning...
+![image_thumb.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb.png)
 
+showwarning...
+
+```python
 tkMessageBox.showwarning("showwarning demo", "Warning")
+```
 
-	showerror...
+![image_thumb_1.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_1.png)
 
+showerror...
+
+```python
 tkMessageBox.showerror("showerror demo", "Error")
+```
 
-	這些是用來提示使用者訊息用的訊息框，另外也有用來詢問使用者動作的訊息框。像是askquestion...
+![image_thumb_2.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_2.png)
 
+這些是用來提示使用者訊息用的訊息框，另外也有用來詢問使用者動作的訊息框。像是askquestion...
+
+```python
 tkMessageBox.askquestion("askquestion demo", "Sure?!")
+```
 
-	askokcancel...
+![image_thumb_3.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_3.png)
 
+askokcancel...
+
+```python
 tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!")
+```
 
-	askyesno...
+![image_thumb_4.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_4.png)
 
+askyesno...
+
+```python
 tkMessageBox.askyesno("askyesno demo", "Yes?! No?!")
+```
 
-	以及askretrycancel...
+![image_thumb_5.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_5.png)
 
+以及askretrycancel...
+
+```python
 tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!")
+```
 
-	在使用這種用來詢問使用者動作的訊息框時，我們可以帶入default參數下去指定預設選取的對話框按鈕。像是下面這樣：
+![image_thumb_6.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_6.png)
 
+在使用這種用來詢問使用者動作的訊息框時，我們可以帶入default參數下去指定預設選取的對話框按鈕。像是下面這樣：
+
+```python
 tkMessageBox.askquestion("askquestion demo", "Sure?!")
 tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
 tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
 tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")
+```
 
-	若是要知道使用者選取的結果，我們可以直接接方法的回傳值，除了askquest是回傳yes/no外，其它的方法在按下OK或是Yes按鈕時是回傳True，按下No與Cancel按鈕是回傳False。
+若是要知道使用者選取的結果，我們可以直接接方法的回傳值，除了askquest是回傳yes/no外，其它的方法在按下OK或是Yes按鈕時是回傳True，按下No與Cancel按鈕是回傳False。
 
+```python
 print "askquestion's dialogresult: %s" % tkMessageBox.askquestion("askquestion demo", "Sure?!")
 print "askokcancel's dialogresult: %s" % tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
 print "askyesno's dialogresult: %s" % tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
 print "askretrycancel's dialogresult: %s" % tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")
+```
 
-	最後附上完整的測試範例：
+![image_thumb_7.png](/images/posts/f8afb04c-a628-48db-a86a-fbc1a641f7a7/image_thumb_7.png)
 
+最後附上完整的測試範例：
+
+```python
 import tkMessageBox
 
 tkMessageBox.showinfo("showinfo demo", "Info")
@@ -67,12 +106,10 @@ print "askquestion's dialogresult: %s" % tkMessageBox.askquestion("askquestion d
 print "askokcancel's dialogresult: %s" % tkMessageBox.askokcancel("askokcancel demo", "OK?! CANCEL?!", default = "ok")
 print "askyesno's dialogresult: %s" % tkMessageBox.askyesno("askyesno demo", "Yes?! No?!", default = "no")
 print "askretrycancel's dialogresult: %s" % tkMessageBox.askretrycancel("askretrycancel demo", "Retry?! Cancel?!", default = "cancel")
+```
 
-## 
-	Link
+## Link
 
-		Standard Dialogs
-	
-		Python Tkinter tkMessageBox
-	
-		Tkinter 8.5 reference: a GUI for Python
+* Standard Dialogs
+* Python Tkinter tkMessageBox
+* Tkinter 8.5 reference: a GUI for Python

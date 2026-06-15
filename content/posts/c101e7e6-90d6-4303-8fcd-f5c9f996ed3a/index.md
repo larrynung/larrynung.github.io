@@ -34,4 +34,4 @@ Path這邊也要指到bin的位置。
 
 ## Link
 
-- [The Go Programming Language](http://golang.org/)
+* [The Go Programming Language](http://golang.org/)
