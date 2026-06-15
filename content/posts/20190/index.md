@@ -1,5 +1,5 @@
 ---
-title: ".NET 4.0 New Feature - IObservablelt;Tgt; amp; IObserverlt;Tgt;"
+title: ".NET 4.0 New Feature - IObservablelt;Tgt; & IObserverlt;Tgt;"
 date: "2010-12-16 09:00:01"
 description: ".NET 4.0 New Feature - IObservable<T> & IObserver<T>"
 tags: [CSharp]

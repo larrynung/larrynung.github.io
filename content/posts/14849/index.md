@@ -1,5 +1,5 @@
 ---
-title: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs amp; ErrorProvider.HasError"
+title: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
 date: "2010-04-26 11:37:16"
 description: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
 tags: [VB.NET]

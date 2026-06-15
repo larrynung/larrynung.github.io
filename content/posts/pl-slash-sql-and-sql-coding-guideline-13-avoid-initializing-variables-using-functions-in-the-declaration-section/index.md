@@ -1,5 +1,5 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 13 - Avoid initializing variables using functions in the declaration section"
+title: "PL/SQL & SQL CODING GUIDELINE 13 - Avoid initializing variables using functions in the declaration section"
 date: "2015-11-26 05:52:00"
 description: "PL/SQL & SQL CODING GUIDELINE 13 - Avoid initializing variables using functions in the declaration section"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]

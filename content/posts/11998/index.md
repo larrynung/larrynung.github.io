@@ -1,5 +1,5 @@
 ---
-title: "[VB.NET]Detect Design-Time amp; Run-Time"
+title: "[VB.NET]Detect Design-Time & Run-Time"
 date: "2009-11-16 01:22:12"
 description: "[VB.NET]Detect Design-Time & Run-Time"
 tags: [VB.NET]

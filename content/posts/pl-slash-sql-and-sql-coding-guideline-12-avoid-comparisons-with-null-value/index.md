@@ -1,5 +1,5 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
+title: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 date: "2015-11-26 01:12:00"
 description: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]

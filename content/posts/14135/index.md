@@ -1,5 +1,5 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 New Feature - Zoom-In amp; Zoom-Out"
+title: "[Visual Studio]Visual Studio 2010 New Feature - Zoom-In & Zoom-Out"
 date: "2010-03-21 12:02:08"
 description: "[Visual Studio]Visual Studio 2010 New Feature - Zoom-In & Zoom-Out"
 tags: [Visual Studio]

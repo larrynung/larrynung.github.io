@@ -1,5 +1,5 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 1 - Try to label your sub blocks"
+title: "PL/SQL & SQL CODING GUIDELINE 1 - Try to label your sub blocks"
 date: "2015-09-20 23:21:00"
 description: "PL/SQL & SQL CODING GUIDELINE 1 - Try to label your sub blocks"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]

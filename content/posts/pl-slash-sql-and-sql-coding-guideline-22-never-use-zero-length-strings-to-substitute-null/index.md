@@ -1,5 +1,5 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 22 - Never use zero-length strings to substitute NULL"
+title: "PL/SQL & SQL CODING GUIDELINE 22 - Never use zero-length strings to substitute NULL"
 date: "2015-12-15 05:11:00"
 description: "PL/SQL & SQL CODING GUIDELINE 22 - Never use zero-length strings to substitute NULL"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]

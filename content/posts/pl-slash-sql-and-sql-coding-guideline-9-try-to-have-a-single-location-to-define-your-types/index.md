@@ -1,5 +1,5 @@
 ---
-title: "PL/SQL amp; SQL CODING GUIDELINE 9 - Try to have a single location to define your types"
+title: "PL/SQL & SQL CODING GUIDELINE 9 - Try to have a single location to define your types"
 date: "2015-11-23 05:45:00"
 description: "PL/SQL & SQL CODING GUIDELINE 9 - Try to have a single location to define your types"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]

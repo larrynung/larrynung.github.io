@@ -1,5 +1,5 @@
 ---
-title: "IEnumerable amp; IEnumerator介面的實作"
+title: "IEnumerable & IEnumerator介面的實作"
 date: "2011-02-09 07:15:52"
 description: "IEnumerable & IEnumerator介面的實作"
 tags: [CSharp]

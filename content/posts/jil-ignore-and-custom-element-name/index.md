@@ -1,5 +1,5 @@
 ---
-title: "Jil - Ignore amp; Custom Element Name"
+title: "Jil - Ignore & Custom Element Name"
 date: "2015-10-02 00:11:00"
 description: "Jil - Ignore & Custom Element Name"
 tags: [Jil]
