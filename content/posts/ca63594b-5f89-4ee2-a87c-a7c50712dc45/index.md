@@ -5,135 +5,134 @@ description: "[C#]如何做出類似Facebook的web preview"
 tags: [CSharp]
 ---
 
-<p>因為不是走Web開發的，這塊對於筆者滿陌生的，一直滿好奇Facebook打入網址後會顯示的預覽畫面是怎樣做的。抽空參閱Creating a Facebook Like Website Previewer</a>這篇並試玩了一下，發現沒有想像中的困難，只是很單純的從網頁內容中擷取資訊而已，這邊稍稍對此做個整理。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1210/d736f1418485_E557/image_2.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb.png" width="667" height="340" /></a></p>  <p> </p>  <p>這邊我們可以先來檢視一下奇摩的原始碼，對照上圖在FB所擷取到的資訊，我們不難看出資訊都是從網頁原始碼中擷取出來的。</p>  <p><a href="http://files.dotblogs.com.tw/larrynung/1210/d736f1418485_E557/image_4.png"><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_1.png" width="691" height="577" /> </p>  <p> </p>  <p>其中網頁預覽中的標題部份對應到的是&lt;Title&gt;這個HTML標籤所包的值，可以用下面的正規表示式將之擷取出來：</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:0ebd5f0e-9265-4cf8-89d3-c4d8039438a8" class="wlWriterSmartContent"><pre name="code" class="c#">&lt;title&gt;\s*(?&lt;Title&gt;[^&lt;&gt;]+)\s*&lt;/title&gt;</pre></div>
+因為不是走Web開發的，這塊對於筆者滿陌生的，一直滿好奇Facebook打入網址後會顯示的預覽畫面是怎樣做的。抽空參閱Creating a Facebook Like Website Previewer這篇並試玩了一下，發現沒有想像中的困難，只是很單純的從網頁內容中擷取資訊而已，這邊稍稍對此做個整理。
 
-<p> </p>
+![image_thumb.png](/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb.png)
 
-<p>而網頁預覽中的網頁描述部份則是對應到name值為description的meta標籤，可以用下面的正規表示式將之擷取出來：</p>
+這邊我們可以先來檢視一下奇摩的原始碼，對照上圖在FB所擷取到的資訊，我們不難看出資訊都是從網頁原始碼中擷取出來的。
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:d701e22b-2fd3-4fe7-a73b-f72ad8d63d63" class="wlWriterSmartContent"><pre name="code" class="xml">&lt;meta\s+name="description"\s+content\s*=\s*"(?&lt;Description&gt;[^&lt;&gt;"]*)"</pre></div>
+![image_thumb_1.png](/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_1.png)
 
-<p> </p>
+其中網頁預覽中的標題部份對應到的是<Title>這個HTML標籤所包的值，可以用下面的正規表示式將之擷取出來：
 
-<p>至於網頁預覽中的縮圖部份，可能是來自rel值為image_src的link標籤或是來自img標籤，圖片的網址部份要盡可能完整才收進來，可以用下面的正規表示式將之擷取出來：</p>
+```csharp
+\s*(?<Title>[^<>]+)\s*
+```
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:5fd35181-1d20-4652-ae4b-b264fdbafd37" class="wlWriterSmartContent"><pre name="code" class="xml">&lt;(?:img\s+src\s*=|link\s+rel\s*=\s*"image_src"\s+ href\s*=)"(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))"</pre></div>
+而網頁預覽中的網頁描述部份則是對應到name值為description的meta標籤，可以用下面的正規表示式將之擷取出來：
 
-<p> </p>
+```xml
+[^<>"]*)"
+```
 
-<p>實際在做擷取時，就會像下面這樣：</p>
+至於網頁預覽中的縮圖部份，可能是來自rel值為image\_src的link標籤或是來自img標籤，圖片的網址部份要盡可能完整才收進來，可以用下面的正規表示式將之擷取出來：
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:733516b4-d7d4-4833-a3fa-df801be74f46" class="wlWriterSmartContent"><pre name="code" class="c#">...
+```xml
+<(?:img\s+src\s*=|link\s+rel\s*=\s*"image_src"\s+ href\s*=)"(?http://[\w/.]+(?:jpg|bmp|gif))"
+```
+
+實際在做擷取時，就會像下面這樣：
+
+```csharp
+...
 #region Const
-private const string TITLE_MATCH_PATTERN = @"&lt;title&gt;\s*(?&lt;Title&gt;[^&lt;&gt;]+)\s*&lt;/title&gt;";
-private const string DESCRIPTION_MATCH_PATTERN = @"&lt;meta\s+name=""description""\s+content\s*=\s*""(?&lt;Description&gt;[^&lt;&gt;""]*)""";
-private const string THUMBNAIL_MATCH_PATTERN = @"&lt;(?:img\s+src\s*=|link\s+rel\s*=\s*""image_src""\s+ href\s*=)""(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))""";
+private const string TITLE_MATCH_PATTERN = @"\s*(?<Title>[^<>]+)\s*";
+private const string DESCRIPTION_MATCH_PATTERN = @"[^<>""]*)""";
+private const string THUMBNAIL_MATCH_PATTERN = @"<(?:img\s+src\s*=|link\s+rel\s*=\s*""image_src""\s+ href\s*=)""(?http://[\w/.]+(?:jpg|bmp|gif))""";
 #endregion
 ...
 string htmlSourceCode;
 ...
 var title = Regex.Match(htmlSourceCode, TITLE_MATCH_PATTERN).Groups["Title"].Value;
 var description = Regex.Match(htmlSourceCode,DESCRIPTION_MATCH_PATTERN).Groups["Description"].Value;
-var thumbnailURLs = Regex.Matches(htmlSourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast&lt;Match&gt;().Select(m =&gt; m.Groups["Thumbnail"].Value);</pre></div>
+var thumbnailURLs = Regex.Matches(htmlSourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast().Select(m => m.Groups["Thumbnail"].Value);
+```
 
-<p> </p>
+這邊筆者在測試時隨手將這功能簡單的包了一下。
 
-<p>這邊筆者在測試時隨手將這功能簡單的包了一下。</p>
+```csharp
+public class WebPreview
+{
+#region Const
+private const string TITLE_MATCH_PATTERN = @"\s?(?<Title>[^<>]+)\s?";
+private const string DESCRIPTION_MATCH_PATTERN = @"[^<>""]*)"">";
+private const string THUMBNAIL_MATCH_PATTERN = @"<(?:img\s+src\s*=|link\s+rel\s*=\s*""image_src""\s+ href\s*=)""(?http://[\w/.]+(?:jpg|bmp|gif))""";
+#endregion
+#region Var
+private string _sourceCode;
+private string _title;
+private string _description;
+private IEnumerable _thumbnailURLs;
+#endregion
+#region Private Property
+public string m_SourceCode
+{
+get
+{
+return _sourceCode ?? (_sourceCode = GetHTMLSourceCode(URL));
+}
+}
+#endregion
+#region Public Property
+///
+/// Gets or sets the URL.
+///
+/// The URL.
+public string URL { get; private set; }
+///
+/// Gets the title.
+///
+/// The title.
+public string Title
+{
+get
+{
+return _title ?? (_title = Regex.Match(m_SourceCode, TITLE_MATCH_PATTERN).Groups["Title"].Value);
+}
+}
+///
+/// Gets the description.
+///
+/// The description.
+public string Description
+{
+get
+{
+return _description ?? (_description = Regex.Match(m_SourceCode,DESCRIPTION_MATCH_PATTERN).Groups["Description"].Value);
+}
+}
+public IEnumerable ThumbnailURLs
+{
+get
+{
+return _thumbnailURLs ?? (_thumbnailURLs = Regex.Matches(m_SourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast().Select(m => m.Groups["Thumbnail"].Value));
+}
+}
+#endregion
+#region Constructor
+public WebPreview (string url)
+{
+this.URL = url;
+}
+#endregion
+#region Private Method
+private string GetHTMLSourceCode(string url)
+{
+HttpWebRequest request = (WebRequest.Create (url)) as HttpWebRequest;
+HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+{
+return sr.ReadToEnd();
+}
+}
+#endregion
+}
+```
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:ce5ee1a2-9186-4032-9f4e-cc5f8e13c24a" class="wlWriterSmartContent"><pre name="code" class="c#">	public class WebPreview
-	{
-		#region Const
-		private const string TITLE_MATCH_PATTERN = @"&lt;title&gt;\s?(?&lt;Title&gt;[^&lt;&gt;]+)\s?&lt;/title&gt;";
-		private const string DESCRIPTION_MATCH_PATTERN = @"&lt;meta\s+name=""description""\s+content\s?=""(?&lt;Description&gt;[^&lt;&gt;""]*)""&gt;";
-		private const string THUMBNAIL_MATCH_PATTERN = @"&lt;(?:img\s+src\s*=|link\s+rel\s*=\s*""image_src""\s+ href\s*=)""(?&lt;Thumbnail&gt;http://[\w/.]+(?:jpg|bmp|gif))""";
-		#endregion
+使用起來就只要在建立物件時帶入網址就可以了。
 
-		#region Var
-		private string _sourceCode;
-		private string _title;
-		private string _description; 
-		private IEnumerable&lt;String&gt; _thumbnailURLs;
-		#endregion
-
-
-		#region Private Property
-		public string m_SourceCode
-		{ 
-			get
-			{
-				return _sourceCode ?? (_sourceCode = GetHTMLSourceCode(URL));
-			}
-		}
-		#endregion
-
-
-
-		#region Public Property
-		/// &lt;summary&gt;
-		/// Gets or sets the URL.
-		/// &lt;/summary&gt;
-		/// &lt;value&gt;The URL.&lt;/value&gt;
-		public string URL { get; private set; }
-
-		/// &lt;summary&gt;
-		/// Gets the title.
-		/// &lt;/summary&gt;
-		/// &lt;value&gt;The title.&lt;/value&gt;
-		public string Title
-		{
-			get
-			{
-				return _title ?? (_title = Regex.Match(m_SourceCode, TITLE_MATCH_PATTERN).Groups["Title"].Value);
-			}
-		}
-
-		/// &lt;summary&gt;
-		/// Gets the description.
-		/// &lt;/summary&gt;
-		/// &lt;value&gt;The description.&lt;/value&gt;
-		public string Description 
-		{ 
-			get
-			{
-				return _description ?? (_description = Regex.Match(m_SourceCode,DESCRIPTION_MATCH_PATTERN).Groups["Description"].Value);
-			}
-		}
-
-		public IEnumerable&lt;String&gt; ThumbnailURLs
-		{
-			get
-			{
-				return _thumbnailURLs ?? (_thumbnailURLs = Regex.Matches(m_SourceCode, THUMBNAIL_MATCH_PATTERN, RegexOptions.IgnorePatternWhitespace).Cast&lt;Match&gt;().Select(m =&gt; m.Groups["Thumbnail"].Value));
-			}
-		}
-		#endregion
-
-		#region Constructor
-		public WebPreview (string url)
-		{
-			this.URL = url;
-		}
-		#endregion
-
-
-		#region Private Method
-        private string GetHTMLSourceCode(string url)
-        {
-            HttpWebRequest request = (WebRequest.Create (url)) as HttpWebRequest;
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-            {
-                return sr.ReadToEnd();
-            }
-        }		
-		#endregion
-	}</pre></div>
-
-<p> </p>
-
-<p>使用起來就只要在建立物件時帶入網址就可以了。</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:812469c5-0cb0-4c63-8c15-c81123a09de7:cbcd43f8-9907-4680-a343-0605e79a913c" class="wlWriterSmartContent"><pre name="code" class="c#">using System;
+```csharp
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -141,73 +140,59 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 namespace WindowsFormsApplication36
 {
-	public partial class Form1 : Form
-	{
-		private int m_Index { get; set; }
-		private string[] m_ThumbnailURLs { get; set; }
+public partial class Form1 : Form
+{
+private int m_Index { get; set; }
+private string[] m_ThumbnailURLs { get; set; }
+public Form1()
+{
+InitializeComponent();
+}
+private void UpdateThumbnailIndexStatus()
+{
+lblIndexStatus.Text = string.Format("{0}/{1}", m_Index + 1, m_ThumbnailURLs.Length);
+}
+private void btnGO_Click(object sender, EventArgs e)
+{
+var preview = new WebPreview(tbxUrl.Text);
+lblTitle.Text = preview.Title;
+lblUrl.Text = preview.URL;
+lblDescription.Text = preview.Description;
+m_Index = 0;
+m_ThumbnailURLs = preview.ThumbnailURLs.ToArray();
+UpdateThumbnailIndexStatus();
+if (m_ThumbnailURLs.Length == 0)
+return;
+pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
+}
+private void btnNext_Click(object sender, EventArgs e)
+{
+if (m_Index == m_ThumbnailURLs.Length - 1)
+return;
+m_Index += 1;
+pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
+UpdateThumbnailIndexStatus();
+}
+private void btnPrevious_Click(object sender, EventArgs e)
+{
+if (m_Index == 0)
+return;
+m_Index -= 1;
+pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
+UpdateThumbnailIndexStatus();
+}
+}
+}
+```
 
-		public Form1()
-		{
-			InitializeComponent();
-		}
+運行的結果如下：
 
-		private void UpdateThumbnailIndexStatus()
-		{
-			lblIndexStatus.Text = string.Format("{0}/{1}", m_Index + 1, m_ThumbnailURLs.Length);
-		}
+![image_thumb_2.png](/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_2.png)
 
-		private void btnGO_Click(object sender, EventArgs e)
-		{
-			var preview = new WebPreview(tbxUrl.Text);
-			lblTitle.Text = preview.Title;
-			lblUrl.Text = preview.URL;
-			lblDescription.Text = preview.Description;
+![image_thumb_3.png](/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_3.png)
 
-			m_Index = 0;
-			m_ThumbnailURLs = preview.ThumbnailURLs.ToArray();
-			UpdateThumbnailIndexStatus();
+## Link
 
-			if (m_ThumbnailURLs.Length == 0)
-				return;
-
-			pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
-		}
-
-		private void btnNext_Click(object sender, EventArgs e)
-		{
-			if (m_Index == m_ThumbnailURLs.Length - 1)
-				return;
-			m_Index += 1;
-			pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
-			UpdateThumbnailIndexStatus();
-		}
-
-		private void btnPrevious_Click(object sender, EventArgs e)
-		{
-			if (m_Index == 0)
-				return;
-			m_Index -= 1;
-			pbxThumbnail.ImageLocation = m_ThumbnailURLs[m_Index];
-			UpdateThumbnailIndexStatus();
-		}
-	}
-}</pre></div>
-
-<p> </p>
-
-<p>運行的結果如下：</p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_2.png" width="468" height="223" /> </p>
-
-<p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image" src="/images/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/image_thumb_3.png" width="468" height="223" /> </p>
-
-<p> </p>
-
-<h2>Link</h2>
-
-<ul>
-  <li>Creating a Facebook Like Website Previewer</li>
-</ul>
+- Creating a Facebook Like Website Previewer
