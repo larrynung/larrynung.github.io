@@ -1,7 +1,7 @@
 ---
 title: "Check In to Team Fundation Service"
 date: "2013-11-06 12:00:00"
-description: "Check In to Team Fundation Service"
+description: "前面Connect to Team Fundation Service這篇，大致的帶過要如何使用Visual Studio連接Team Fundation Service。這邊稍微介紹一下要怎樣才能將我們的專案程式Check In進Team Fundation Service。"
 ---
 
 前面Connect to Team Fundation Service這篇，大致的帶過要如何使用Visual Studio連接Team Fundation Service。這邊稍微介紹一下要怎樣才能將我們的專案程式Check In進Team Fundation Service。

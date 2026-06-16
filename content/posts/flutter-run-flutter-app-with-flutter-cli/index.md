@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Run flutter app with flutter CLI"
 date: "2018-03-17 23:37:15"
+description: "要使用 Flutter CLI 運行 Flutter app，可以調用下列命令。 Flutter run 命令調用後會顯示運行時可供使用的功能。 且 Flutter app 會被運行起來。"
 tags: [Flutter]
 ---
 

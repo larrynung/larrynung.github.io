@@ -1,7 +1,7 @@
 ---
 title: "Bower - Using Bower in Visual Studio 2015"
 date: "2016-01-29 05:47:00"
-description: "Bower - Using Bower in Visual Studio 2015"
+description: "Visual Studio 2015 開始支援 Bower，使用時需先為專案加入 Bower Configuration File。 Bower Configuration File 加入後，也會順帶加入 .bowerrc 檔，這邊會指定 Bower 套件放置的位置。"
 tags: [Bower]
 ---
 

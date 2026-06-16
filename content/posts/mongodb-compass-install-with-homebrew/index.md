@@ -1,6 +1,7 @@
 ---
 title: "MongoDB Compass - Install with Homebrew"
 date: "2019-11-04 06:58:17"
+description: "要使用 Homebrew 安裝 MongoDB Compass，可以調用如下命令： brew cask install mongodb-compass 安裝完可以透過應用程式這邊啟動 MongoDB Compass。"
 tags: [MongoDB, MongoDB Compass, Homebrew]
 ---
 

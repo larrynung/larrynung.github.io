@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]追蹤點(Tracepoint)的使用"
 date: "2009-11-04 08:38:52"
-description: "[Visual Studio]追蹤點(Tracepoint)的使用"
+description: "追蹤點的設定與使用 追蹤點在使用上跟中斷點一樣簡單。在一般的情況下，欲設定追蹤點，我們只需在欲追蹤的地方按下滑鼠右建，點選Breakpoint，接者再點下Insert Tracepoint即可。 若是在欲設定中斷點的地方，已經有設定了中斷點。"
 tags: [Visual Studio]
 ---
 

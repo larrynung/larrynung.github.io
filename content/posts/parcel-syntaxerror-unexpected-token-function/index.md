@@ -1,6 +1,7 @@
 ---
 title: "'Parcel - SyntaxError: Unexpected token function'"
 date: "2017-12-24 23:49:23"
+description: "使用 Parcel 時若發生 SyntaxError: Unexpected token function 錯誤。 這是因為 Parcel 用到了 Node.js 8.x 的語法，確認 Node.js 是否已更新到指定版本，更新完後即可正常運行。"
 tags: [Parcel]
 ---
 

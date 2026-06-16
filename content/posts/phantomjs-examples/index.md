@@ -1,6 +1,7 @@
 ---
 title: "PhantomJS - Examples"
 date: "2017-10-20 23:07:42"
+description: "PhantomJS 下載下來解壓縮，裡面有個 examples 目錄，放置著 PhantomJS 提供的範例程式。 可透過 PhantomJS 將範例運行起來學習。 像是運行 hello.js 學習如何顯示訊息到主控台視窗。"
 tags: [PhantomJS]
 ---
 

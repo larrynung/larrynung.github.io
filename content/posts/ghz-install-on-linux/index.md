@@ -1,6 +1,7 @@
 ---
 title: "ghz - Install on Linux"
 date: "2019-07-06 11:06:04"
+description: "要在 Linux 安裝 ghz，可到 Release page 找到要使用的版本，然後下載下來。 wget $url 下載後解壓縮。 tar zxvf $file 就可以開始使用了。"
 tags: [ghz]
 ---
 

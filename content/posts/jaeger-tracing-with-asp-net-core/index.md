@@ -1,6 +1,7 @@
 ---
 title: "Jaeger - Tracing with ASP.NET Core"
 date: "2020-02-21 07:51:26"
+description: "要使用 Jaeger 追蹤 ASP.NET Core 的程式，可先加入 Jaeger 與 OpenTracing.Contrib.NetCore 套件。 修改 Startup.ConfigureServices 啟用。"
 tags: [Jaeger]
 ---
 

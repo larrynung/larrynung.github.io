@@ -1,7 +1,7 @@
 ---
 title: "Auto assign assembly's build/revision number"
 date: "2014-08-12 23:34:00"
-description: "Auto assign assembly's build/revision number"
+description: "在做軟體開發時，總是會碰到遞增產品版號的需求，通常這種時候我們會撰寫 Script 在建置之前對 Assembly.vs 檔內的版本資訊進行修改，以達到像這樣的需求。"
 tags: [.NET]
 ---
 

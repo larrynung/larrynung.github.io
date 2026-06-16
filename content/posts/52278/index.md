@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio][C++]使用/showIncludes編譯器選項查閱Header Include的狀況"
 date: "2011-11-05 11:21:59"
-description: "[Visual Studio][C++]使用/showIncludes編譯器選項查閱Header Include的狀況"
+description: "C++程式寫到後面，程式越寫越大，開發人員常會無法掌握每個Header實際Include的狀態，一不小心就會發生Redefine之類的錯誤。這時候我們可以開啟Visual Studio，打開專案屬性設定對話框，"
 tags: [Visual Studio,C++]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "tmux - Session operation"
 date: "2019-04-01 18:20:23"
+description: "要起用一個新的 tmux session，可直接調用 tmux 命令。 tmux tmux session 建立後會自動 attach。 可調用命令查閱 session。 tmux ls 要 detach session 可按下熱鍵 Ctrl + b，再按下 d，即可跳離 session。"
 tags: [tmux]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Getting started"
 date: "2016-06-10 18:39:27"
+description: "要使用 Hexo，我們需先確定已有安裝 Git & Node.js。 接著安裝 Hexo 的命令列程式。 npm install hexo-cli -g 與初始化部落格。 hexo init [Folder] 初始的動作會產生對應的目錄，並下載需要的檔案。 整個目錄結構會像下面這樣。"
 tags: [Hexo]
 ---
 

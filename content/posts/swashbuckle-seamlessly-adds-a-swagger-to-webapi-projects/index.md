@@ -1,6 +1,7 @@
 ---
 title: "Swashbuckle - Seamlessly adds a swagger to WebApi projects"
 date: "2016-10-04 23:46:05"
+description: "要在 Web API 加上 Swagger 支援，可以為專案裝上 Swashbuckle 套件。 Install-Package Swashbuckle 安裝完可以看到 App_Start 目錄下會多個 SwaggerConfig.cs 黨，我們需要依需求去做些設定上的調動。"
 tags: [Swashbuckle]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Web]tryGit - 簡易又實用的Git免費教學課程"
 date: "2013-11-06 12:00:00"
-description: "[Web]tryGit - 簡易又實用的Git免費教學課程"
+description: "今天筆者在網路上看到tryGit這個Git的免費教學課程，試玩了一下覺得十分的實用，簡單對此做個紀錄與介紹，希望能讓更多有心學習Git的同好。 tryGit這個免費教學課程它的課程內容與介紹如下，課程內容大概是教Init、Commit、Diff、Merge、Remote這些指令，"
 tags: [Git]
 ---
 

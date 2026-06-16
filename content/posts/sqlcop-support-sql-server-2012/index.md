@@ -1,6 +1,7 @@
 ---
 title: "SQLCop - Support SQL Server 2012"
 date: "2016-06-09 01:06:13"
+description: "SQLCop 若使用在 SQL Server 2012，會發現無法正常進行靜態分析。 這時我們需要開啟 SQLCop.xml 進行設定的調整。 開啟後我們可以看到預設分析的 Rule 只有支援 SQL 2005 與 2008。"
 ---
 
 SQLCop 若使用在 SQL Server 2012，會發現無法正常進行靜態分析。

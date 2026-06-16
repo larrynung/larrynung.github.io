@@ -1,7 +1,7 @@
 ---
 title: "MS-DOS - Merge files with copy command"
 date: "2013-12-18 23:07:00"
-description: "MS-DOS - Merge files with copy command"
+description: "若要在 MS-Dos 下撰寫 Script 去合併檔案，很直覺得會想到用 Type Command 將內容秀出並將之導到指定的檔案流做存放。 像是要將所有的 txt 檔進行合併並儲存到 outputFile.txt 的話，"
 tags: [MS-Dos]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Use pistachio to find out unused xaml resource"
 date: "2013-11-06 12:00:00"
-description: "Use pistachio to find out unused xaml resource"
+description: "程式開發時，程式架構常常會隨著開發做些調整，若開發的是WPF程式，這樣的動作很容易造成已經不用的resource殘留在xaml code中。這些resource多半開發者也搞不太清楚到底是不是還有用到，以至於不敢貿然的將之刪除，可能這些殘留的resource就這樣一直與程式共生。"
 ---
 
 程式開發時，程式架構常常會隨著開發做些調整，若開發的是WPF程式，這樣的動作很容易造成已經不用的resource殘留在xaml code中。這些resource多半開發者也搞不太清楚到底是不是還有用到，以至於不敢貿然的將之刪除，可能這些殘留的resource就這樣一直與程式共生。不僅增加程式閱讀上的難度，無形中也增加了不必要的耗費

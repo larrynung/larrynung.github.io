@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Container class"
 date: "2018-03-23 00:38:51"
+description: "Flutter 的 Container widget 是能用來繪製、設定位置/尺寸的容器 widget。 其建構子如下： Container({Key key, AlignmentGeometry alignment, EdgeInsetsGeometry padding, Color…"
 tags: [Flutter]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Investment]預售屋殺價撇步"
 date: "2009-06-02 09:30:59"
-description: "[Investment]預售屋殺價撇步"
+description: "Introduction 以下內容轉載自2009/5/31蘋果日報週日投資王。 預售屋殺價撇步 招數 說明 實例 修飾買方身份 預售屋業務人員較勢利，容易因衡量買方身家決定服務態度，建議適時展現購買實力，可獲得賣方較好的對待。"
 tags: [Investment]
 ---
 

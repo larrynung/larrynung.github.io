@@ -1,7 +1,7 @@
 ---
 title: "RAML Tools for .NET - Generate client from RAML"
 date: "2015-03-14 10:46:00"
-description: "RAML Tools for .NET - Generate client from RAML"
+description: "之前筆者在 RAML - RESTful API Modeling Language - Level Up 這篇介紹過的 RAML，近期推出了 RAML Tools for .NET，是一 Visual Studio 的擴充套件，"
 tags: [RAML]
 ---
 

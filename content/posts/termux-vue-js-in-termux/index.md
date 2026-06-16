@@ -1,6 +1,7 @@
 ---
 title: "Termux - Vue.js in Termux"
 date: "2018-10-16 19:37:07"
+description: "要在 Termux 內建立 Vue.js 環境，需要安裝 Vue CLI 到全域。 npm i vue-cli -g 安裝後透過 Vue CLI 初始 Vue 專案。 vue init webpack 進入初始完的專案目錄。 還原專案需要的套件。 yarn install 運行 Vue 專案。"
 tags: [Termux, Vue.js]
 ---
 

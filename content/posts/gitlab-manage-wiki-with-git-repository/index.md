@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Manage wiki with git repository"
 date: "2019-06-25 06:49:23"
+description: "GitLab wiki 其實背後是放在一個 Git repository 內，所以除了支援線上編輯外，也支援離線編輯。 要離線編輯我們先要找到 GitLab wiki repository 位置。 用 Git 將 GitLab wiki repository clone 下來。"
 tags: [GitLab]
 ---
 

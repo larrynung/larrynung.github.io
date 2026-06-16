@@ -1,6 +1,7 @@
 ---
 title: "TopShelf - An easy service hosting framework for building Windows services using .NET"
 date: "2016-10-17 22:38:46"
+description: "Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Services 程式，並將之 Hosting 起來運行。可以增加使用彈性、易於除錯、更可以跨平台運行。 首先開個主控台程式，將之安裝 Topshelf 套件。"
 ---
 
 Topshelf 是一 Hosting Framework，能讓我們很簡易的建造 Windows Services 程式，並將之 Hosting 起來運行。可以增加使用彈性、易於除錯、更可以跨平台運行。

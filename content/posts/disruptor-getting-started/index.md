@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - Getting started"
 date: "2016-03-13 17:51:00"
-description: "Disruptor - Getting started"
+description: "要使用 Disruptor 必須先將套件加入專案中，透過 NuGet 將之載入即可： 套件載入後我們就可以開始來使用 Disruptor 了。首先，必須要撰寫 EventHandler，用來消費生產者所生產的資料。"
 tags: [Disruptor]
 ---
 

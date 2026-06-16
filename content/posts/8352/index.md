@@ -1,7 +1,7 @@
 ---
 title: "[WPF]Canvas"
 date: "2009-05-08 12:31:46"
-description: "[WPF]Canvas"
+description: "Introduction Canvas容器可任意設置容器內部控制項的相對位置。 命名空間 System.Windows.Controls XMLNS http://schemas.microsoft.com/winfx/xaml/presentation Assemble…"
 tags: [WPF]
 ---
 

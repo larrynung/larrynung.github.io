@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower update"
 date: "2016-01-15 05:14:00"
-description: "Bower - Bower update"
+description: "Bower update 會根據 bower.json 的設定下去更新 bower 套件。 使用方式如下： bower update bower update 像是這邊筆者安裝了 jQuery 1.0.1 的版本，開啟 bower.json 將其版號改為 2.1.4，"
 tags: [Bower]
 ---
 

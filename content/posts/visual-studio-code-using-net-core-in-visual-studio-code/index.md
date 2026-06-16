@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Using .NET Core in Visual Studio Code"
 date: "2017-09-06 12:09:03"
+description: "要用 Visual Studio Code 開發 .NET Core，需先安裝 .NET Core SDK。 然後安裝 Visual Studio Code 的 C# Extension。 C# Extension 安裝後進行重啟。"
 tags: [Visual Studio Code]
 ---
 

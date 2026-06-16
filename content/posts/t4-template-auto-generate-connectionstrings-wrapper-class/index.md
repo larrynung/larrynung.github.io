@@ -1,7 +1,7 @@
 ---
 title: "T4 template - Auto generate ConnectionString's wrapper class"
 date: "2014-03-27 23:28:00"
-description: "T4 template - Auto generate ConnectionString's wrapper class"
+description: "在 .Net 程式中要使用資料庫的連線字串，多半我們會將資料庫的連線字串設定在 Config 檔中，然後透過 ConfigurationManager.ConnectionStrings 帶入對應的 Key 去將之取出來使用。"
 tags: [T4, CSharp]
 ---
 

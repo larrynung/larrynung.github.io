@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower help command"
 date: "2016-01-08 05:49:00"
-description: "Bower - Bower help command"
+description: "Bower help command 可以用來查詢 bower 的命令。 使用方式如下： bower help bower help 如果要查閱整個 Bower 有哪些命令可以使用，可直接叫用 bower help。"
 tags: [Bower]
 ---
 

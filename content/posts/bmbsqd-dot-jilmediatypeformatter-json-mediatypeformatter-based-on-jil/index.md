@@ -1,7 +1,7 @@
 ---
 title: "Bmbsqd.JilMediaTypeFormatter - Json MediaTypeFormatter based on JIL"
 date: "2015-10-03 00:40:00"
-description: "Bmbsqd.JilMediaTypeFormatter - Json MediaTypeFormatter based on JIL"
+description: "如果要將 Web API 的 JSON 處理改用 Jil 替換，我們可以使用 Bmbsqd.JilMediaTypeFormatter 這個 NuGet 套件。 套件安裝完後，開啟 WebApiConfig 將 JsonFormatter 換成 JilMediaTypeFormatter。"
 tags: [Jil]
 ---
 

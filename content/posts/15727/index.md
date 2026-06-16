@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]用ControlCollection.GetChildIndex取得表單元件的Z-Order"
 date: "2010-06-08 10:32:59"
-description: "[VB.NET]用ControlCollection.GetChildIndex取得表單元件的Z-Order"
+description: "若要取得表單上元件的Z-Order，我們可以透過ControlCollection.GetChildIndex去取得，取得的值越大，代表表單元件在越上面，越小，則代表表單元件在越下面。簡易範例程式如下： 運行後的效果如下： Download GetZOrder.zip"
 tags: [VB.NET]
 ---
 

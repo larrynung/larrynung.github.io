@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Card class"
 date: "2018-04-16 23:54:57"
+description: "Flutter 的 Card class 提供類似卡片的效果，該元件的四個角落為圓角，並具備有陰影的效果。 其建構子如下： Card({Key key, Color color, double elevation: 2.0, Widget child }) 屬性如下： | Name | Type…"
 tags: [Flutter]
 ---
 

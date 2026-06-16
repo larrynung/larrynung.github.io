@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - Install TensorFlow on MAC"
 date: "2018-05-25 00:16:26"
+description: "要在 MAC 下安裝 TensorFlow，可以直接透過 pip 安裝，也可以透過 Virtualenv 等方法安裝。 這邊筆者使用 Virtualenv，所以要先安裝 Virtualenv。 sudo pip install 00upgrade virtualenv 創建一個沙盒。"
 tags: [TensorFlow]
 ---
 

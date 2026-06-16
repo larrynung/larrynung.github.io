@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 1 - Try to label your sub blocks"
 date: "2015-09-20 23:21:00"
-description: "PL/SQL & SQL CODING GUIDELINE 1 - Try to label your sub blocks"
+description: "條款一，如果程式中有子 block，嘗試使用 label 讓他的區塊範圍更為清楚。 像是下面這樣的程式： 可以像下面這樣改寫，在子 Block 的 Begin 前面加上 Label，然後在 End 後加上 Label Name。 改完程式碼的區塊範圍清楚了許多。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern]Adapter模式"
 date: "2009-04-07 12:55:46"
-description: "[Design Pattern]Adapter模式"
+description: "字面意思 adapter[əˈdæptɚ] n. (名詞 noun) 改編者;改寫者 【機】接合器;轉接器 適應者;適應物 意圖 將一個類別的接口轉換成另一個接口。 使原本因接口而不能使用的類別轉換成可以使用的。 創建新的接口。 口訣 換個包裝二度利用。"
 tags: [Design Pattern]
 ---
 

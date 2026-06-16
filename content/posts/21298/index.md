@@ -1,7 +1,7 @@
 ---
 title: "IEnumerable & IEnumerator介面的實作"
 date: "2011-02-09 07:15:52"
-description: "IEnumerable & IEnumerator介面的實作"
+description: "實作IEnumerable & IEnumerator介面最主要的好處是該類別能被foreach直接遍巡處理，有鑒於網路上存在許多IEnulerable & IEnumerator介面的實作方式跟個人的理解有所出入，這邊將個人的理解稍作了整理。"
 tags: [CSharp]
 ---
 

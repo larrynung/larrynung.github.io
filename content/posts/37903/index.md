@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]VB 11.0 New Feature - Namespace Global"
 date: "2011-09-27 01:28:04"
-description: "[Visual Studio]VB 11.0 New Feature - Namespace Global"
+description: "Namespace Global是VB 11.0的新功能，該功能可想成所有命名空間的根命名空間，能解決以往存在VB.NET許久的命名空間問題。舉個例子來說，假設以往我們在自己的命名空間內有一個System的子命名空間，專案中也匯入了.NET Framework中的System命名空間，"
 tags: [VB.NET]
 ---
 

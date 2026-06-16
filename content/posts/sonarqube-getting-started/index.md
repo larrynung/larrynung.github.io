@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Getting started"
 date: "2016-06-09 16:06:02"
+description: "要試用 SonarQube 我們只需將 SonarQube distribution 下載下來解壓縮，並運行 StartSonar.bat。 這樣服務就運行起來了。 接著用瀏覽器瀏覽 http://localhost:9000 即可開始體驗 SonarQube。"
 tags: [SonarQube]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 5 - Avoid using literals in your code"
 date: "2015-09-21 00:17:00"
-description: "PL/SQL & SQL CODING GUIDELINE 5 - Avoid using literals in your code"
+description: "條款五，避免在程式中直接使用字串。 像是下面這樣的程式： 可以像下面這樣改寫，建立一個 Package 統一存放常數字串，呼叫端改透過 Package 叫用。 這樣常數字串的宣告會集中在 Package 內，修改上也比較方便。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

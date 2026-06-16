@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 34 - Avoid procedure or function calls between a SQL operation and an implicit cursor"
 date: "2016-08-13 07:55:57"
+description: "條款三十四，避免在 SQL 語句運行與 implicit cursor 中間使用 procedure 或是 function。 像是下面的例子，這邊先刪除了一些資料，後續要用 SQL%ROWCOUNT 去判斷刪除的筆數，但中間卻調用了其它 function，"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "T4 Template - T4Enum 1.0"
 date: "2016-03-22 21:38:00"
-description: "T4 Template - T4Enum 1.0"
+description: ".NET 列舉的很多操作都會有難以避免的 Boxing/UnBoxing，像是要取得特定列舉值的列舉名，取得所有的列舉名，取得所有的列舉值，取得列舉值的 Attribute，都無法避免 Boxing/UnBoxing 的發生。"
 tags: [T4, T4Enum]
 ---
 

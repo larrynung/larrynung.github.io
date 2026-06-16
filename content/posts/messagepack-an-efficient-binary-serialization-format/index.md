@@ -1,6 +1,7 @@
 ---
 title: "MessagePack - An efficient binary serialization format"
 date: "2017-06-09 13:22:18"
+description: "MessagePack 是一個有效率的二進制序列化格式，傳遞的資料內容有點像是 JSON，但是因為是二進制的序列化格式，所以資料量更快且更小。 像是下面這張官網的圖，可以看到 {\"compact\":true,\"schema\":0} 這樣的 JSON 資料換由 MessagePack 來處理，"
 tags: [MessagePack]
 ---
 

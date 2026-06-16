@@ -1,7 +1,7 @@
 ---
 title: "如何使用Firebug Lite來輔助偵錯網頁"
 date: "2013-11-06 12:00:00"
-description: "如何使用Firebug Lite來輔助偵錯網頁"
+description: "有使用FireFox來開發網頁的，應該都有聽說過Firebug這個擴充套件，它能提供開發人員在開發網頁時所需要的偵錯功能。這篇所要介紹的Firebug Lite則是能讓你在各式各樣的平台上使用類似Firebug這樣的功能，不管是在IE、Chrome...都可以使用。"
 ---
 
 有使用FireFox來開發網頁的，應該都有聽說過Firebug這個擴充套件，它能提供開發人員在開發網頁時所需要的偵錯功能。這篇所要介紹的Firebug Lite則是能讓你在各式各樣的平台上使用類似Firebug這樣的功能，不管是在IE、Chrome...都可以使用。

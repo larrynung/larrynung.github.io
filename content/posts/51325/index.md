@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]強制Visual Studio執行垃圾回收"
 date: "2011-11-03 09:58:50"
-description: "[Visual Studio]強制Visual Studio執行垃圾回收"
+description: "Visual Studio是一個很大的程式，絕大部分採用Managed Code，由很多不同的部門所共同開發，允許整合許多好用的外掛，有時候會吃掉很多的資源，這時我們可以透過Visual Studio內建的功能強制執行垃圾回收。"
 tags: [Visual Studio]
 ---
 

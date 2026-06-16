@@ -1,6 +1,7 @@
 ---
 title: "gollum - Start service"
 date: "2019-07-08 07:20:10"
+description: "gollum 安裝好後，可到 wiki 的 git repository 目錄下，調用命令啟動 gollum 服務。 gollum 服務預設監聽 4567 埠，服務啟動後可透過瀏覽器訪問 http://localhost:4567。"
 tags: [gollum]
 ---
 

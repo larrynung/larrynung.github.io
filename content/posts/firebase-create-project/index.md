@@ -1,6 +1,7 @@
 ---
 title: "Firebase - Create project"
 date: "2018-02-07 00:12:33"
+description: "Firebase 在使用前需先進入控制台。 新增一個對應的專案。 設定專案的名稱、ID、及服務想放置的地區。按下建立專案按鈕。 Firebase 即會建立專案並導到專案頁面，我們即可將連結應用程式做進一步的開發，或是使用該頁面針對 Firebase 所提供的服務進行操作。"
 tags: [Firebase]
 ---
 

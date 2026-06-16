@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Pull npm package from external registry"
 date: "2017-08-20 22:54:59"
+description: "要拉外部 registry 的 npm 套件到 ProGet 的 npm feed，可在 ProGet 的 npm feed 頁面按下 Add Package 按鈕。 點選 Pull from External Registry。"
 tags: [ProGet]
 ---
 

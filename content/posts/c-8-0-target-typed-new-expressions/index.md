@@ -1,6 +1,7 @@
 ---
 title: "'C# 8.0 - Target-typed new-expressions'"
 date: "2019-03-25 07:32:56"
+description: "C# 8.0 的 Target-typed new-expressions 能讓開發人員在使用 new 關鍵字建立物件實體時省略帶入型別，編譯器編譯時會依照 Context 幫我們帶入。"
 tags: [CSharp, CSharp 8.0]
 ---
 

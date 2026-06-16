@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Config MariaDB"
 date: "2019-07-29 22:26:35"
+description: "Flyway 要連結 MariaDB，可開啟 Flyway 設定檔。 vim conf/flyway.conf 設定 MariaDB 的位置與帳密。位置部分可遵循下列格式: jdbc:mariadb://host:port/database 設定上會像下面這樣:…"
 tags: [Flyway]
 ---
 

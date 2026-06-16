@@ -1,6 +1,7 @@
 ---
 title: "git - Check commit message with git hook"
 date: "2020-06-02 07:39:13"
+description: "要在 git commit 時去驗證 commit message，可在 commit 的 hook 加掛驗證的處理。 編輯 .git/hooks/commit-msg。 vim .git/hooks/commit-msg 加入驗證程式後存檔離開。"
 tags: [git]
 ---
 

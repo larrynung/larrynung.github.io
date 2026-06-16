@@ -1,7 +1,7 @@
 ---
 title: "[WLW]Polaroid Picture"
 date: "2009-09-14 01:18:40"
-description: "[WLW]Polaroid Picture"
+description: "Introduction Polaroid Picture是Windows Live Writer的外掛，其可以為您插入圖片，並添加特效，像是旋轉、文繞圖、圖片標題等。 安裝步驟 到微軟Live Gallery的Polaroid Picture頁面下載檔案後安裝。"
 tags: [WLW]
 ---
 

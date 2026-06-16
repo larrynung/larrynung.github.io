@@ -1,6 +1,7 @@
 ---
 title: "Redis - Redis cluster with docker and create-cluster script"
 date: "2020-02-01 16:04:53"
+description: "透過 Docker 去起 Redis cluster，多半網路上的做法都是用多個容器去做，這邊筆者考量測試與開發上的便利性，試著用一個容器搭配 create-cluster 腳本去起 Redis cluster。 為了整合 Docker，create-cluster 腳本筆者做了些調整。"
 tags: [Redis, Docker]
 ---
 

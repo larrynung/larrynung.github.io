@@ -1,6 +1,7 @@
 ---
 title: "Vault - Token authentication"
 date: "2019-12-27 08:11:53"
+description: "Vault 支援 Token 認證方式，在 Vault server 啟動後會顯示 Root token，可直接取用。 也可以透過 vault token create 命令建立新的 token 使用。"
 tags: [Vault]
 ---
 

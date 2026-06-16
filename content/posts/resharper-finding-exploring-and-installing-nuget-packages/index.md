@@ -1,6 +1,7 @@
 ---
 title: "'ReSharper - Finding, Exploring, and Installing NuGet Packages'"
 date: "2017-07-30 23:35:18"
+description: "ReSharper 的 NuGet browser 提供 NuGet 套件的搜尋、瀏覽、與安裝的功能。 若有需要可以直接開啟 NuGet browser 自行搜尋使用，也可以透過程式碼讓 ReSharper 幫我們帶出 NuGet browser 找尋遺失的 NuGet 套件。"
 tags: [ReSharper]
 ---
 

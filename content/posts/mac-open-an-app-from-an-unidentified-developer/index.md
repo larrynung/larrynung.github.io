@@ -1,6 +1,7 @@
 ---
 title: "Mac - Open an app from an unidentified developer"
 date: "2017-09-09 08:36:42"
+description: "在 Mac 上運行的程式若是 unidentified developers 的 app 的話，app 的運行可能會被擋住。 要繼續運行的話，可開啟 System Perferemces。 點選開啟 Security & Privacy。"
 tags: [Mac]
 ---
 

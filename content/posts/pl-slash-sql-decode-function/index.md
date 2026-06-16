@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - Decode function"
 date: "2015-07-11 20:33:00"
-description: "PL/SQL - Decode function"
+description: "Decode function 可用於取代簡單的 If-Then-Else 陳述式。 使用語法如下： DECODE( expression , search , result [, search , result]..."
 tags: [PL/SQL]
 ---
 

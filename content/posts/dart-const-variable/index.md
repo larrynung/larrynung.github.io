@@ -1,6 +1,7 @@
 ---
 title: "Dart - const variable"
 date: "2019-06-25 19:35:36"
+description: "Dart 的 const 關鍵字可用來指定編譯時常數，指定編譯後就不會變動的值。 使用時只要在變數宣告前面加上 const 關鍵字即可。 像是下面這樣的程式: 運行起來就會發生錯誤，因為透過 const 宣告的是常數，沒有 Setter 可以改變它的值。"
 tags: [Dart]
 ---
 

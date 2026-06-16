@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Shell module"
 date: "2017-05-26 13:25:56"
+description: "Ansible 的 Shell module 可以用來執行命令。 可用的參數如下： | parameter | required | default | choices | comments |…"
 tags: [Ansible]
 ---
 

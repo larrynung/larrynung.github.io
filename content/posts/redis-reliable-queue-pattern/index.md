@@ -1,6 +1,7 @@
 ---
 title: "Redis - Reliable queue pattern"
 date: "2019-05-23 22:50:34"
+description: "系統中如果有使用到 Redis，有時會碰到要將 Redis 內資料落地的情境。這時可能會用 Redis 的 List 做一個簡單的 Queue，將資料以先進先出的方式處理。 這樣的做法看似運作良好，但隱藏著一個潛在的問題。"
 tags: [Redis]
 ---
 

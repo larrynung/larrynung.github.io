@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Connectors"
 date: "2017-08-29 22:30:13"
+description: "ProGet Connector 允許 ProGet feed 取得其它來源的套件。 可從 Feed 管理頁面建立加入 Connector。 也可以在 Connectors 頁面建立 Connector。 然後在 Feed 管理頁面加入 Connector。"
 tags: [ProGet]
 ---
 

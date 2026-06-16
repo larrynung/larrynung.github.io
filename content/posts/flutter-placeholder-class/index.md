@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Placeholder class"
 date: "2018-03-31 22:20:40"
+description: "Flutter 的 Placeholder widget 主要用來標示後續會被其它 Widget 取代的地方。 其建構子如下： Placeholder({Key key, Color color: const Color(0xFF455A64), double strokeWidth: 2.0,…"
 tags: [Flutter]
 ---
 

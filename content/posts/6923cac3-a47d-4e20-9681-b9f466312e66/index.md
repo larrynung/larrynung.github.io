@@ -1,7 +1,7 @@
 ---
 title: "Regionerate - Code Layouts in a Snap"
 date: "2013-11-06 12:00:00"
-description: "Regionerate - Code Layouts in a Snap"
+description: "Regionerate 是一能將程式碼依照選取的排版樣式去自動排序，以及分類整理成 Region 的輔助工具。能自行擴充、定義排版樣式，及命令列的支援，使用上非常的彈性好用。對於個人自行用來整理程式，或是團隊用來統一程式的排版，該工具都非常的合用。"
 ---
 
 Regionerate 是一能將程式碼依照選取的排版樣式去自動排序，以及分類整理成 Region 的輔助工具。能自行擴充、定義排版樣式，及命令列的支援，使用上非常的彈性好用。對於個人自行用來整理程式，或是團隊用來統一程式的排版，該工具都非常的合用。

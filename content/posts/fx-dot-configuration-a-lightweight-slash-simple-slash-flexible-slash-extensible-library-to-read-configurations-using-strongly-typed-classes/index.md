@@ -1,7 +1,7 @@
 ---
 title: "FX.Configuration - A lightweight/simple/flexible/extensible library to read configurations using strongly typed classes"
 date: "2016-05-21 23:03:00"
-description: "FX.Configuration - A lightweight/simple/flexible/extensible library to read configurations using strongly typed classes"
+description: "FX.Configuration 是一號稱輕量，簡單，具彈性，可擴充的 Configuration 讀取套件，可以將 Configuration 讀取到對應的強型別類別中，便於後續 Configuration 設定值得取用。"
 tags: [FX.Configuration]
 ---
 

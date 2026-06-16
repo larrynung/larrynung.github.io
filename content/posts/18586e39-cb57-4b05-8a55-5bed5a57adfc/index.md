@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's tkFileDialog"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's tkFileDialog"
+description: "要使用Tkinter的tkFileDialog，首先要先將tkFileDialog package import進來。 tkFileDialog 的用法大概像下面這樣，依使用需求呼叫不同的方法，並帶入參數就可以了。"
 tags: [Python]
 ---
 

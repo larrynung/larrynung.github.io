@@ -1,6 +1,7 @@
 ---
 title: "Oracle - Generating HTML Reports from SQL*Plus"
 date: "2019-01-03 00:03:42"
+description: "要用 SQLPlus 將查詢的資料輸出成 HTML 報表，可以準備像下面這樣的 SQL 檔。 開啟 MARKUP HTML 與 SPOOL。 SET MARKUP HTML ON SPOOL ON 然後指定 SPOOL 要輸出的檔案。 SPOOL 接著撈出要產出的資料。"
 tags: [Oracle]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "SQL Server - Change Collation"
 date: "2014-03-21 23:04:00"
-description: "SQL Server - Change Collation"
+description: "要變更 Database Collation ，可以透過 GUI 開啟 Database Property 去調整 Collation 欄位值。 在調整之前必需先將 Restrict Access 欄位值為 SINGLE_USER，不然會無法切換 Collation。"
 tags: [SQL ]
 ---
 

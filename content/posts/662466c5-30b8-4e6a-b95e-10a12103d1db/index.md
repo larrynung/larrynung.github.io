@@ -1,7 +1,7 @@
 ---
 title: "[Win8]如何關閉Windows 8作業系統"
 date: "2013-11-06 12:00:00"
-description: "[Win8]如何關閉Windows 8作業系統"
+description: "很多人在使用Windows 8都會碰到一個問題，那就是開始功能表不見了，本來都從開始功能表選取關機的，現在換用Windows 8後電腦要怎麼關機呢？要在Windows 8下進行關機的動作大概約有五種方法，一種是先按Windows鍵將Windows 8切換至Metro mode，"
 ---
 
 很多人在使用Windows 8都會碰到一個問題，那就是開始功能表不見了，本來都從開始功能表選取關機的，現在換用Windows 8後電腦要怎麼關機呢？要在Windows 8下進行關機的動作大概約有五種方法，一種是先按Windows鍵將Windows 8切換至Metro mode，找到右上角的使用者帳號與圖示，滑鼠點選，在彈出的快顯選單中選取登出的選單選項。

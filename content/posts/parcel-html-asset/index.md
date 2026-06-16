@@ -1,6 +1,7 @@
 ---
 title: "Parcel - HTML asset"
 date: "2018-01-11 06:26:20"
+description: "除了 JavaScript 文件外，Parcel 也支援 HTML 文件的處理。 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面載入了 profile.jpg 且連結了 hello.html 頁面。 profile.jpg 是很單純的大頭照。"
 tags: [Parcel]
 ---
 

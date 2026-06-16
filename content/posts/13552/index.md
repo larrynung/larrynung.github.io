@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]調整TreeView或TreeNode下的節點"
 date: "2010-02-09 10:10:25"
-description: "[VB.NET]調整TreeView或TreeNode下的節點"
+description: "整理一下網友問題。據網友開的需求，希望將本來長成像下面這樣的節點： 整理成像下面這個樣子： 這樣的需求我們可以先找出所有節點，找出後用巢狀迴圈去合併具有相同的FullPath的節點： 使用上把TreeView或是TreeNode當作參數帶入即可，也可以整理成擴充方法使用："
 tags: [VB.NET]
 ---
 

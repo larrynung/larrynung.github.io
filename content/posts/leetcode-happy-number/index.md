@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Happy Number"
 date: "2015-09-18 10:06:00"
-description: "LeetCode - Happy Number"
+description: "LeetCode 的 Happy Number 題目如下： Write an algorithm to determine if a number is \"happy\"."
 tags: [LeetCode]
 ---
 

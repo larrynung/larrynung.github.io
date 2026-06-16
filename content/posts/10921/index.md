@@ -2,7 +2,7 @@
 title: "[C#]使用DebuggerDisplayAttribute自訂除錯監看訊息"
 slug: "[CSharp]使用DebuggerDisplayAttribute自訂除錯監看訊息"
 date: "2009-10-06 09:01:20"
-description: "[C#]使用DebuggerDisplayAttribute自訂除錯監看訊息"
+description: "Introduction DebuggerDisplayAttribute可為自己開發的類別，及其所包含的欄位與屬性，加上自訂的除錯監看訊息。 NameSpace System.Diagnostics Assembly mscorlib (in mscorlib.dll)…"
 tags: [CSharp]
 ---
 

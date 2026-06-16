@@ -1,7 +1,7 @@
 ---
 title: "[Web]IconLook設計師必備的圖庫搜尋引擎"
 date: "2009-06-15 04:21:13"
-description: "[Web]IconLook設計師必備的圖庫搜尋引擎"
+description: "Introduction 程式員在設計程式介面時，時常會需要搭配著美美的Icon來點綴介面。因此本篇將介紹一個簡單好用的Icon圖示搜尋網站。 IconLook 輸入IconLook的網址，連進網站後你將看到如下簡單清爽的網站頁面。 使用上就像一般的搜尋引擎一般簡單。"
 tags: [Web]
 ---
 

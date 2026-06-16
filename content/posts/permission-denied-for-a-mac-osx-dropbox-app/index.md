@@ -1,7 +1,7 @@
 ---
 title: "Permission denied for a Mac OSX Dropbox app"
 date: "2015-09-12 00:00:00"
-description: "Permission denied for a Mac OSX Dropbox app"
+description: "最近 Mac 的 Dropbox 突然出問題，可能是前陣子搬動家目錄所導致，想將他進行重裝還原，但過程中總是會跟我要求提升權限： 輸入密碼後權限好像都沒取道，怎樣都出現權限錯誤的問題。 查了一下要在 Terminal 下下列指令： 指令下完後重新安裝就可以了。"
 tags: [Mac, Dropbox]
 ---
 

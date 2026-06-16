@@ -1,7 +1,7 @@
 ---
 title: "ApacheBench - A simple stress testing tool for http server"
 date: "2015-03-02 08:36:00"
-description: "ApacheBench - A simple stress testing tool for http server"
+description: "ApacheBench 簡稱 ab，是 Apache 自帶的 HTTP 負載測試命令列工具，程式主檔在 Apache 安裝目錄下的 bin 目錄內，可安裝 Apache 後取出使用，或是下載 Standalone 版本 使用也可。"
 ---
 
 ApacheBench 簡稱 ab，是 Apache 自帶的 HTTP 負載測試命令列工具，程式主檔在 Apache 安裝目錄下的 bin 目錄內，可安裝 Apache 後取出使用，或是下載 [Standalone 版本](https://code.google.com/p/apachebench-standalone/) 使用也可。

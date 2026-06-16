@@ -1,6 +1,7 @@
 ---
 title: "PhantomJS - Remote debugging"
 date: "2018-11-30 23:04:21"
+description: "使用 PhantomJS 時，若是光靠訊息不好除錯，可進一步使用 PhantomJS 的遠端除錯。 使用上只要調用 PhantomJS 時帶入參數 --remote-debugger-port 去指定連結埠。"
 tags: [PhantomJS]
 ---
 

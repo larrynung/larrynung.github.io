@@ -2,7 +2,7 @@
 title: "[C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
 slug: "[CSharp]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
 date: "2009-10-07 09:04:23"
-description: "[C#]Effective C# 條款四： 使用ConditionalAttribute替代#if條件編譯"
+description: "Introduction 相信大多數的C#使用者，尤其是碰過C語言的開發者，多多少少應該都有用過#if/#endif條件編譯。#if條件編譯通常是用來讓同一份代碼產生不同的程式，最常見的就是拿來設定Debug版與Release版的不同。"
 tags: [CSharp]
 ---
 

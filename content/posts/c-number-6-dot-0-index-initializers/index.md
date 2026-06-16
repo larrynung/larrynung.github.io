@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Index initializers"
 date: "2015-01-15 23:32:00"
-description: "C# 6.0 - Index initializers"
+description: "以往我們在撰寫 C#，有 Object Initializer 與 Collection Initializer 可輔助我們作初始的動作，雖然可以初始大多數的資料，但在 Index 與 Event 這邊卻無法直接初始。"
 tags: [CSharp, CSharp 6.0]
 ---
 

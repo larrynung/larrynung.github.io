@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Configures the virtual machine to use proxies"
 date: "2015-10-20 04:26:00"
-description: "Vagrant - Configures the virtual machine to use proxies"
+description: "要讓 Vagrant 走 Proxy，我們可以借助 vagrant-proxyconf 套件。 用 vagrant plugin install 帶入套件名稱 vagrant-proxyconf 進行套件的安裝。"
 tags: [Vagrant]
 ---
 

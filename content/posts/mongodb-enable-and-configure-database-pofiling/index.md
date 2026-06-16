@@ -1,6 +1,7 @@
 ---
 title: "MongoDB - Enable and configure database pofiling"
 date: "2019-09-16 07:52:49"
+description: "要設定或啟用 MongoDB Profiler 功能去能監控較慢的運行，可先進入 MongoDB。 mongo 切到指定資料庫。 use $db 透過 db.setProfilingLevel 設定 Profiling 的層級與定義耗費多少毫秒是慢的處理。"
 tags: [MongoDB]
 ---
 

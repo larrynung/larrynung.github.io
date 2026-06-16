@@ -1,6 +1,7 @@
 ---
 title: "Vim - Install dart-vim-plugin with Vundle"
 date: "2019-06-21 16:17:07"
+description: "使用 Vim 撰寫 Dart，可透過 Vundle 安裝 dart-vim-plugin 套件。 開啟 ~/.vimrc 檔。 vim ~/.vimrc 設定 Vundle 與 dart-vim-plugin。 然後調用命令進行 Vim plugin 的安裝。"
 tags: [Vim, Dart]
 ---
 

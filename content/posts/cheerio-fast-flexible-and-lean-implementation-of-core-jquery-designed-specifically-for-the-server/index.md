@@ -1,6 +1,7 @@
 ---
 title: "Cheerio - Fast, flexible, and lean implementation of core jQuery designed specifically for the server"
 date: "2018-08-01 23:24:04"
+description: "cheerio 是一用來解析 HTML 的套件，該套件使用方式跟 jQuery 類似。 使用前需先用安裝套件。 npm install cherrio 安裝完後載入 cherrio 模組。"
 tags: [Node.js]
 ---
 

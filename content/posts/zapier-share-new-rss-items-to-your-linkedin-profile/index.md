@@ -1,6 +1,7 @@
 ---
 title: "Zapier - Share new RSS items to your LinkedIn profile"
 date: "2017-04-22 22:32:57"
+description: "要使用 Zapier 去觀察 RSS 的變化自動在 LinkedIn 貼文，可先找到對應的 Zap。 設置要連接 RSS。 按下 'Fetch & Continue' 按鈕測試 RSS 的擷取。 測試完成按下 'Continue' 按鈕繼續。 RSS 設完接著要設定 LinkedIn。"
 tags: [Zapier]
 ---
 

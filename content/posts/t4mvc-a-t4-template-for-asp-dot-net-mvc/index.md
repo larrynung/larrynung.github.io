@@ -1,7 +1,7 @@
 ---
 title: "T4MVC - A T4 template for ASP.NET MVC"
 date: "2014-07-17 13:04:00"
-description: "T4MVC - A T4 template for ASP.NET MVC"
+description: "玩過 ASP.Net MVC 的應該都有注意到，在寫 ASP.Net MVC 時會用到很多 Magic String。像是在取網址位置時，會需要帶入 Controller Name 以及 Action Name。"
 tags: [T4MVC, T4]
 ---
 

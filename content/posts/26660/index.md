@@ -1,7 +1,7 @@
 ---
 title: "[IADP]C++ Intel AppUp Application Develop Process"
 date: "2011-05-30 10:50:39"
-description: "[IADP]C++ Intel AppUp Application Develop Process"
+description: "在C++中開發IADP AppUp的應用程式，其程式的撰寫方式跟.NET程式很類似，使用的類別類似、認證程式碼類似、工具的使用上類似，所要特別注意的地方就是在C++中必須要設定一些lib、目錄、並加入一些標頭檔，並記得釋放掉資源。"
 tags: [C++]
 ---
 

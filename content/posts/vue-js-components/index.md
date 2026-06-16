@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Components"
 date: "2017-05-05 00:18:38"
+description: "Vue.js Component 可讓我們將畫面與程式封裝程可重用的元件。 可在建立 Vue 時透過 components 宣告，進行局部註冊。 也可以使用 Vue.component 宣告，進行全域註冊。"
 tags: [Vue.js]
 ---
 

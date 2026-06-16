@@ -1,7 +1,7 @@
 ---
 title: "PsExec - Execute process remotely"
 date: "2015-02-13 20:26:00"
-description: "PsExec - Execute process remotely"
+description: "PsExec 是一命令列工具，可讓我們執行遠端電腦的程式。 使用前請先至 PsExec 下載。 使用方式如下。 psexec [\\computer[,computer2[,...] | @file]][-u user [-p psswd][-n s][-r…"
 ---
 
 PsExec 是一命令列工具，可讓我們執行遠端電腦的程式。

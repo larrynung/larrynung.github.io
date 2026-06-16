@@ -2,7 +2,7 @@
 title: "[C#]使用InternetGetConnectedState API偵測目前電腦網路的連線狀態"
 slug: "[CSharp]使用InternetGetConnectedState API偵測目前電腦網路的連線狀態"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用InternetGetConnectedState API偵測目前電腦網路的連線狀態"
+description: "有時候我們會有需要為程式加入偵測網路連線的能力，也許是當網路不通時秀些提示，或是將某些程式的功能給停用。這時我們可能會傾向採用NetworkChange.NetworkAddressChanged與NetworkChange.NetworkAvailabilityChanged這兩個事件去偵測網路環…"
 tags: [CSharp]
 ---
 

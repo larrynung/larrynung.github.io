@@ -1,6 +1,7 @@
 ---
 title: "Kobo eReader - Adding books (EPUB files or PDFs) to your Kobo eReader using your Mac"
 date: "2019-01-02 00:07:15"
+description: "要將自己的電子書檔案放入 Kobo eReader，可用 USB 線連接 MAC 電腦與 Kobo eReader。 在 Kobo eReader 上按下 Connect 按鈕。 MAC 電腦會找到 Kobo eReader 裝置，將自己的電子書檔案透過 Finder 放入。"
 tags: [Kobo eReader]
 ---
 

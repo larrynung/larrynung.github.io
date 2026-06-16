@@ -1,6 +1,7 @@
 ---
 title: "Octopress - Read more excerpt link"
 date: "2013-11-13 20:57:00"
+description: "在Octopress上撰寫文章時，若不特別做些處理，在Blog分頁那邊會將所有文章的全文依序列出。 這樣的呈現方式很難被訪客所閱讀，通常我們會期望只顯示部分的文章內容，若有興趣在進ㄧ步的去閱讀全文，這樣文章也比較好找。"
 tags: [Octopress]
 ---
 

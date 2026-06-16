@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - .NET Framework regular expressions"
 date: "2011-09-18 12:43:51"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - .NET Framework regular expressions"
+description: "正規表示式是開發人員必學的技能之一，能簡化字串的處理，方便快速的判斷字串是否符合規格、擷取與取代感興趣的部分。在Visual Studio中也有整進正規表示式，將其與搜尋功能作完美的整合，強化搜尋與取代的功能。"
 tags: [Visual Studio]
 ---
 

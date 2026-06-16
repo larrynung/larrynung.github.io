@@ -1,6 +1,7 @@
 ---
 title: "ModuleInit.Fody - Adds a module initializer to an assembly"
 date: "2019-08-26 23:07:19"
+description: "ModuleInit.Fody 能透過 Fody 在程式編譯時將初始化處理掛入系統程式中，能在系統一開始運行時做初始的動作。 使用時需先引用 ModuleInit.Fody 套件。 然後加入 FodyWeavers.xml 檔，檔案內容如下，指示 Fody 要使用 ModuleInit。"
 tags: [Fody]
 ---
 

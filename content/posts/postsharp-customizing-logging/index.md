@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Customizing Logging"
 date: "2015-02-03 08:36:00"
-description: "PostSharp - Customizing Logging"
+description: "如果預設的 Log 設定不敷使用，像是 Log 的層級應該是 Error 而不是 Warning，或是 Log 應該含更多的資訊，這邊PostSharp 也支援我們有限幅度的客製。我們可以在類別上直接按下右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Add logging... 選單選項。"
 tags: [PostSharp]
 ---
 

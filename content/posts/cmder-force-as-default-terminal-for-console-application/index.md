@@ -1,6 +1,7 @@
 ---
 title: "Cmder - Force as default terminal for console application"
 date: "2018-01-26 23:02:47"
+description: "若要強制讓所有非由 Cmder 直接開啟的 Terminal 視窗都由 Cmder 開啟，可開啟 Cmder 的設定頁面。 切到 [Integration | Default term] 頁面，"
 tags: [Cmder]
 ---
 

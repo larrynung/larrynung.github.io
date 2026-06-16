@@ -1,7 +1,7 @@
 ---
 title: "Linq To Excel"
 date: "2010-12-02 08:20:00"
-description: "Linq To Excel"
+description: "Linq to Excel為一Open Source函式庫，該函式庫能讓我們使用Linq去對Excel與CSV做查詢的動作。 使用前需先將LinqToExcel.dll與Remotion.Data.Linq.dll這兩個組件檔給加入參考，"
 tags: [Linq, CSharp]
 ---
 

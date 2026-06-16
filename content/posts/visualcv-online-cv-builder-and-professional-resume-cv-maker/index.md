@@ -1,6 +1,7 @@
 ---
 title: "VisualCV - Online CV Builder and Professional Resume CV Maker"
 date: "2018-05-22 22:25:56"
+description: "VisualCV 能將 LinkedIn Profile 匯入套用模版變成漂亮的個人化履歷。 使用時可按下首頁的 Import from LinkedIn 按鈕。 登入 VisualCV。 然後就可以開始進行履歷的編輯。 如果有在使用 LinkedIn，這邊可以回到 Dashboard。"
 ---
 
 VisualCV 能將 LinkedIn Profile 匯入套用模版變成漂亮的個人化履歷。

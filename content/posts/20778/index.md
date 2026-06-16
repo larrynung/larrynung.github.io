@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - System.Device.Location"
 date: "2011-01-13 12:43:04"
-description: ".NET 4.0 New Feature - System.Device.Location"
+description: ".NET 4.0 BCL中新增了System.Device.Location命名空間，該命名空間內提供許多類別允許應用程式開發人員在Windows 7以後的作業系統使用單一 API 輕鬆存取裝置位置，開發人員不需去考量電腦中可以使用的位置提供者，也不需要為多個位置提供者排定彼此的優先權與中間的轉換，"
 tags: [CSharp]
 ---
 

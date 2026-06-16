@@ -1,6 +1,7 @@
 ---
 title: "Calibre Web - Upload book"
 date: "2017-10-24 23:51:16"
+description: "要上傳電子書到 Calibre Web，可在登入後點選右上角的 Upload 按鈕。 選取要上傳的電子書。 上傳後 Calibre Web 會嘗試從電子書擷取封面、名稱、作者、描述。。。等資訊。 不過因為能從電子書中擷取的資訊有限，這邊可以點選最下方的 Get metadata 按鈕。"
 tags: [Calibre Web]
 ---
 

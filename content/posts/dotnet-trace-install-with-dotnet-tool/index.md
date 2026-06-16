@@ -1,6 +1,7 @@
 ---
 title: "dotnet-trace - Install with dotnet tool"
 date: "2021-01-18 08:58:33"
+description: "要用 dotnet tool 安裝 dotnet-trace，可調用 dotnet tool install 帶入 --global 參數指定安裝至全域，並在最後帶入 dotnet-trace 指定安裝 dotnet-trace 套件。"
 tags: [dotnet-trace]
 ---
 

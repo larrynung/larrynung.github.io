@@ -1,7 +1,7 @@
 ---
 title: "Oracle SQL Developer - Custom date time format"
 date: "2016-05-13 23:37:00"
-description: "Oracle SQL Developer - Custom date time format"
+description: "Oracle SQL Developer 預設 Date Format 設定為 DD-MON-RR，顯示上是不含時間的部分。 若要顯示時間的部分，我們需點選 [Tools | Preference] 主選單選項，將開啟的 Preferences 對話框切至 [Database | NLS] 頁面，"
 tags: [Oracle SQL Developer]
 ---
 

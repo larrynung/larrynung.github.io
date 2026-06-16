@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Install Ansible via apt"
 date: "2017-05-16 23:58:57"
+description: "要在 Ubuntu 下使用 apt 安裝 Ansible。 可先用 apt-get 安裝 software-properties-common。 sudo apt-get install software-properties-common 然後進行 apt-get 的更新，"
 tags: [Ansible]
 ---
 

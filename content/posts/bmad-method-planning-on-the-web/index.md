@@ -1,6 +1,7 @@
 ---
 title: 'BMAD-METHOD - Planning on the Web'
 date: 2025-08-22T00:13:37+08:00
+description: "BAMD-METHOD 提供透過 Web 或 App 讓使用者隨時與 BAMD-METHOD 團隊進行規劃的方式，透過 Gemini Gem 或是 ChatGPT CustomGPT 都可以使用。"
 tags: ['BMAD-METHOD', 'Gemini', 'Gem']
 ---
 

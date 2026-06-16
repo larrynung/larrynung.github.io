@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 48 - Do not use a cursor FOR loop to check whether a cursor returns data"
 date: "2017-06-08 22:04:27"
+description: "條款四十八，不要遍巡 CURSOR 去確認是否含有資料。 像是下面這段程式片巡走訪 CURSOR 以確認是否含有資料，這樣並不是很好的寫法。 比較好的作法應該像是下面這段程式這樣，將 CURSOR 開啟，嘗試 Fetch 一筆資料，利用 CURSOR 的 %FOUND 去判斷是否含有資料，"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

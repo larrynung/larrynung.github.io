@@ -1,6 +1,7 @@
 ---
 title: "SikuliX - Getting started"
 date: "2016-10-29 23:21:37"
+description: "Sikulix IDE 打開後，左側有放一些常用命令，可以用來撰寫程式，若有需要也可以用 Python 或是 Ruby 輔助撰寫 (主要看安裝時選擇用哪個語言當作 scripting language)，像是加入函式，迴圈，或是條件式，或是更複雜的處理等。"
 tags: [SikuliX]
 ---
 

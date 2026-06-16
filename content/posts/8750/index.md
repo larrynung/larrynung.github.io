@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Visual Studio 2010 and .NET Framework 4 Training Kit"
 date: "2009-06-09 05:08:31"
-description: "[.NET Resource]Visual Studio 2010 and .NET Framework 4 Training Kit"
+description: "Overview The Visual Studio 2010 and .NET Framework 4 Training Kit includes presentations, hands-on labs, and demos."
 tags: [.NET Resource]
 ---
 

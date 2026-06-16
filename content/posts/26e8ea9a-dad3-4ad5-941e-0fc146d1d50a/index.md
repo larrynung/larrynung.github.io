@@ -1,7 +1,7 @@
 ---
 title: "Deploy Google App Engine's Application to cloud with appcfg.py"
 date: "2013-11-06 12:00:00"
-description: "Deploy Google App Engine's Application to cloud with appcfg.py"
+description: "參閱筆者Registering Google App Engine's Application這篇，當你跟Google App Engine註冊完一個Application後，用對應的網址連上去應該會像下面這張圖一樣回應Server Error。"
 ---
 
 參閱筆者Registering Google App Engine's Application這篇，當你跟Google App Engine註冊完一個Application後，用對應的網址連上去應該會像下面這張圖一樣回應Server Error。這是因為我們還未將Application佈署到Cloud上所導致。

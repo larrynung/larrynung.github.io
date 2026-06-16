@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource][Visual Studio]The Code Project Add-In for Visual Studio 2008"
 date: "2009-05-28 07:09:54"
-description: "[.NET Resource][Visual Studio]The Code Project Add-In for Visual Studio 2008"
+description: "Intordouction 最近上Code Project突然發現首頁左上方有個VS2008的Add-In，索性抓下裝來玩玩看。使用起來意外的順手，在此隨手記錄一下。 取得方式 可透過Code Project首頁左上方連結進入下載頁面 進入下載頁面後點選連結下載並安裝即可。"
 tags: [.NET Resource,Visual Studio]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "GAE's Mail Python API"
 date: "2013-11-06 12:00:00"
-description: "GAE's Mail Python API"
+description: "GAE提供Mail API可供開發人員撰寫寄信程式，這邊以Python為例稍微紀錄一下 首先將google.appengine.api.mail import進來。"
 tags: [Python]
 ---
 

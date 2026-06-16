@@ -1,7 +1,7 @@
 ---
 title: "[IADP]Beta Testing"
 date: "2013-11-06 12:00:00"
-description: "[IADP]Beta Testing"
+description: "應用程式被Rejected後，要將其送交去跑驗證流程時，想說測一下Beta Testing的功能，發現一些很難入手的地方，這邊將其記錄一下。 在做Beta Testing前，我們必須要在Uppload Info步驟中將應用程式安裝檔上傳，按下[Next]按鈕切到AppUp(SM) Center步驟，"
 ---
 
 應用程式被Rejected後，要將其送交去跑驗證流程時，想說測一下Beta Testing的功能，發現一些很難入手的地方，這邊將其記錄一下。

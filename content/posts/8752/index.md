@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource][Visual Studio]Visual Studio 2010 Beta 1"
 date: "2009-06-09 05:23:45"
-description: "[.NET Resource][Visual Studio]Visual Studio 2010 Beta 1"
+description: "Introduction Microsoft Visual Studio 2010 與 .NET Framework 4 是下一世代的軟體開發工具。 目前微軟已釋放出Bate版給程式設計師提前體驗，相關的網址整理如下，有興趣的可自行取用。"
 tags: [.NET Resource,Visual Studio]
 ---
 

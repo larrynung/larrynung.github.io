@@ -1,6 +1,7 @@
 ---
 title: "'C# 7.0 - More expression bodied members'"
 date: "2017-03-07 23:54:27"
+description: "C# 7.0 擴展了 Expression bodied。 開始支援建構子。 支援解構子。 支援 property accessors。 支援 event accessors。"
 tags: [CSharp, CSharp 7.0]
 ---
 

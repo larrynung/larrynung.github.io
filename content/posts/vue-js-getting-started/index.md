@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Getting started"
 date: "2017-05-03 00:09:16"
+description: "要使用 Vue.js 我們要將 Vue.js 載入，可以手動加入、用 npm 安裝套件、用 vue-cli、用 bower...等。 這邊筆者用 vue-cli 做個簡單的範例，用 simple 範本建立專案。"
 tags: [Vue.js]
 ---
 

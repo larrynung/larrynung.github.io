@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Setup robots.txt"
 date: "2016-07-18 23:43:41"
+description: "要為 Hexo 部落格加上 robots.txt，我們可以安裝 hexo-generator-robotstxt 套件。 npm install hexo-generator-robotstxt --save 安裝完後開啟站台設定檔，"
 tags: [Hexo]
 ---
 

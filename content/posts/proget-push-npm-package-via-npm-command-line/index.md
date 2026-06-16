@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Push npm package via npm command line"
 date: "2017-08-21 13:27:51"
+description: "要透過 npm 命令上傳 npm 套件到 ProGet 的 npm feed，可在 ProGet 的 npm feed 頁面按下 Add Package 按鈕。 點選 Push via npm (Command line)。"
 tags: [ProGet]
 ---
 

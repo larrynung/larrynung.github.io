@@ -1,6 +1,7 @@
 ---
 title: "Filebeat - Configuring Filebeat"
 date: "2017-04-27 13:23:52"
+description: "Filebeat 的設定檔為 filebeat.yml，可以設定資料的輸入與輸出，以及其它細項設定。 像是設定資料的輸入，可以指定要輸入的 Log 檔位置。 可以設定 Log 資料要怎樣切割傳送，像是若使用 Log4Net 去記錄 Log，不特別調整格式的話 Log 前面一定會有 Log 的時間，"
 tags: [Filebeat
 CAS,AgileSlot,DEV]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Creating a new box from an existing VM"
 date: "2015-10-17 18:06:00"
-description: "Vagrant - Creating a new box from an existing VM"
+description: "要將已經存在的 VM 匯出成 Vagrant Box，我們可以透過 Vagrant package 命令的 --base 參數。 參數使用方式官方的說明如下： --base NAME - Instead of packaging a VirtualBox machine that Vagrant…"
 tags: [Vagrant]
 ---
 

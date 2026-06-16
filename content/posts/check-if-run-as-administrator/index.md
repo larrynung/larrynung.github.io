@@ -1,7 +1,7 @@
 ---
 title: "Check if run as administrator"
 date: "2014-02-25 23:46:00"
-description: "Check if run as administrator"
+description: "要判斷當前使用者是否具有管理者權限，我們可以先取得當前使用的 WindowsIdenty。 var wi = WindowsIdentity.GetCurrent(); 接著帶入剛取得的 WindowsIdenty，建立對應的 WindowsPrinciple。"
 tags: [CSharp]
 ---
 

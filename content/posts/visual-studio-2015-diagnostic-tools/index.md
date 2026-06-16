@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2015 - Diagnostic Tools"
 date: "2015-08-17 21:54:00"
-description: "Visual Studio 2015 - Diagnostic Tools"
+description: "Diagnostic Tools 是 Visual Studio 2015 的新功能，能幫助開發人員快速的找出效能上的問題。 該功能預設除錯時會自動帶出，畫面會像下面這樣。 一邊運行，一邊就會將 CPU、記憶體、與 Event 的狀態帶出。有效能問題開發人員可以即早發現。"
 tags: [Visual Studio]
 ---
 

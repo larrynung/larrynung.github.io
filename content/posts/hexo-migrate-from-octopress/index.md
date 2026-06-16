@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Migrate from octopress"
 date: "2016-06-15 22:09:53"
+description: "要將 Octopress 部落格移至 Hexo 部落格，首先要將 Octopress source/_posts 下的文章移至 Hexo source/_posts 下。"
 tags: [Hexo]
 ---
 

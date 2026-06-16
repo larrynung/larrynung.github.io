@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 29 - Try to use anchored records as targets for your cursors"
 date: "2016-06-08 23:33:51"
+description: "條款二十九，Try to use anchored records as targets for your cursors。 像是下面這邊的程式就宣告了幾個變數，開啟 Cursor 後遍巡，將資料塞到變數後再進一步處理。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

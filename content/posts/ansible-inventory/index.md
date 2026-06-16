@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Inventory"
 date: "2017-05-22 23:44:35"
+description: "Ansible 的 Inventory 是 Ansible 的主機清單，紀錄著要被管理的主機資訊。 最簡單的設置方式就是直接將要被管理的主機 IP 逐一寫入。 Ansible 就可以透過 Inventory 找到要控制的機器做對應的操控。"
 tags: [Ansible]
 ---
 

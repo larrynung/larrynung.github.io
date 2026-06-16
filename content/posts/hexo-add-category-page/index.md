@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Add category page"
 date: "2016-06-15 21:13:22"
+description: "要為 Hexo 部落格建立分類頁面，首先要建立 categories 的頁面。 hexo n page categories 開啟剛產生的分類頁面，設定 type 為 categories。如果不希望能在分類頁面上留言的話，這邊也可以順便將 comments 為 false。"
 tags: [Hexo]
 ---
 

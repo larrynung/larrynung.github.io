@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Shell Provisioning"
 date: "2015-10-26 00:13:00"
-description: "Vagrant - Shell Provisioning"
+description: "要讓 Vagrant 在第一次啟動時透過 Shell Script 去做些設定，我們可以透過 Vagrant 的 Shell Provisioning。 若想在 Vagrantfile 內直接設定，可以使用 Inline 的方式撰寫。"
 tags: [Vagrant]
 ---
 

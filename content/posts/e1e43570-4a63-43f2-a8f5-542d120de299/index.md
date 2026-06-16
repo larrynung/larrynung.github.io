@@ -1,7 +1,7 @@
 ---
 title: "[HTML]HTML5 New Feature - progress tag"
 date: "2013-11-06 12:00:00"
-description: "[HTML]HTML5 New Feature - progress tag"
+description: "HTML新增了progress標籤，可在網頁中加入進度列，用以表示目前處理的進度，目前該標籤僅支援Firefox, Opera, 與 Chrome 該標籤主要有兩個可設定的attribute，一個是max，用以指定進度列最大的值，一個是value，用以指定進度列當前的進度值。"
 ---
 
 HTML新增了progress標籤，可在網頁中加入進度列，用以表示目前處理的進度，目前該標籤僅支援Firefox, Opera, 與 Chrome

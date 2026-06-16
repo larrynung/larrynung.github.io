@@ -1,6 +1,7 @@
 ---
 title: "Iedis - Configure server"
 date: "2019-03-25 15:02:09"
+description: "安裝完 Iedis 套件後，Rider 會多出 [View | Tool Windows | Redis Servers] 主選單選項，點選可帶出 Redis Servers Tool Window。 Redis Servers Tool Window 的 + 按鈕可用來新增 Redis 連線。"
 tags: [Iedis, Rider]
 ---
 

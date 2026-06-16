@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Peek Definition"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview New Feature - Peek Definition"
+description: "Peek Definition是Visual Studio 2013 Preview的新功能，支援C#,、Visual Basic,、與C++。以往我們在查閱定義時必須使用內建的移至定義功能跳至定義的地方，如果是定義在同一份文件，Visual Studio會將編輯區移至定義處，若是定義在別的文件中，"
 ---
 
 Peek Definition是Visual Studio 2013 Preview的新功能，支援C#,、Visual Basic,、與C++。以往我們在查閱定義時必須使用內建的移至定義功能跳至定義的地方，如果是定義在同一份文件，Visual Studio會將編輯區移至定義處，若是定義在別的文件中，則Visual Studio會開啟定義所在的文件，並將編輯區帶至定義處。這樣的作法很容易就造成程式編輯的動作被中斷，有時候可能只是要稍微看一下定義是放在哪邊，正在編輯的位置就被帶走，看完後可能又要找尋一下剛剛編到了哪邊。Peek Definition功能的出現改善了這個問題，定義的內容改以類似內嵌的方式呈現，可以以較不受打擾的方式同時查看目前所在編輯的程式以及定義的部分。

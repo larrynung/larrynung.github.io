@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept].NET 跨平台?!"
 date: "2009-01-23 10:45:22"
-description: "[.NET Concept].NET 跨平台?!"
+description: "一直以來，.NET所謂的跨平台一直被人所垢病，甚至被嘲諷只能跨Windows作業系統。而我一直以為.NET所謂的跨平台，只要是Window作業系統，再外加個.NET Framework就可以跑.NET程式了，身為微軟產品的愛好者，自然對此不以為意。"
 tags: [.NET Concept]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "NuGet - Package restore"
 date: "2013-12-11 22:04:00"
-description: "NuGet - Package restore"
+description: "使用 NuGet 安裝套件，使用到的 Nuget 套件資訊會被記載在 packages.config 檔案內，所以這些 Nuget 套件是可以被重新安裝復原的。因此一般在上版控時，會習慣性將這些套件排除 Commit ，待從版控 Pull 下來時再行 Nuget 套件的復原。"
 tags: [NuGet]
 ---
 

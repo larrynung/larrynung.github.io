@@ -2,7 +2,7 @@
 title: "[C#]使用GetSystemPowerStatus API查看目前電源使用狀態"
 slug: "[CSharp]使用GetSystemPowerStatus API查看目前電源使用狀態"
 date: "2009-10-02 09:01:15"
-description: "[C#]使用GetSystemPowerStatus API查看目前電源使用狀態"
+description: "Introduction 這篇簡單記錄一下，如何透過GetSystemPowerStatus API，來查看目前電源的使用狀態。 Library kernel32.dll GetSystemPowerStatus API 結構成員所代表的意義簡略如下： BatteryFlag 表示目前充電狀態。"
 tags: [CSharp]
 ---
 

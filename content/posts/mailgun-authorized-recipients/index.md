@@ -1,6 +1,7 @@
 ---
 title: "Mailgun - Authorized Recipients"
 date: "2018-01-31 23:43:03"
+description: "Mailgun 使用 Sandbox subdomain 時，預設只能發送訊息給自己的信箱，除非加上自己的 Domain 或是設定 Authorized recipients。"
 tags: [Mailgun]
 ---
 

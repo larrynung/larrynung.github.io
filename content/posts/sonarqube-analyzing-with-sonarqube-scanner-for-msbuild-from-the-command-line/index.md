@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Analyzing with SonarQube scanner for MSBuild from the command line"
 date: "2016-06-09 21:34:12"
+description: "要使用 SonarQube scanner for MSBuild 在命令列下進行程式碼的掃描，需先確保 .NET Framework 有到 4.5.2 以上的版本，以及 jre 有到 7u75 以上的版本。 接著下載 SonarQube scanner for MSBuild 後將其解壓縮。"
 tags: [SonarQube]
 ---
 

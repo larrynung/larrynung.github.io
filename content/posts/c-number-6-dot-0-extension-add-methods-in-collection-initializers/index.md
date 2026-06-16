@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Extension Add methods in collection initializers"
 date: "2015-01-22 00:27:00"
-description: "C# 6.0 - Extension Add methods in collection initializers"
+description: "C# 6.0 以前，集合類別可以像下面這樣透過 Collection Initializers 初始集合成員： 但無法像 VB 10 以後的版本一樣透過擴充方法客製處理 Collection Initializers 的動作，一直到 C# 6.0 才被加入 C# 內。"
 tags: [CSharp, CSharp 6.0]
 ---
 

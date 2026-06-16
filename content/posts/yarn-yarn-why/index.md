@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn why"
 date: "2017-07-09 23:14:07"
+description: "Yarn why 命令可用來查閱套件安裝的原因。 使用上只要用 yarn why 帶上套件的名稱即可。 yarn why 像是這邊安裝了 gulp 套件。 用 yarn why 查驗，就會看到是因為在 dependencies 設定的關係。"
 tags: [Yarn]
 ---
 

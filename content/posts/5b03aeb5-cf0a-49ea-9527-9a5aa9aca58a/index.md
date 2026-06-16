@@ -1,7 +1,7 @@
 ---
 title: "Using P4Merge with SVN"
 date: "2013-11-06 12:00:00"
-description: "Using P4Merge with SVN"
+description: "前面在P4Merge - Visual Merge and Diff Tools這篇稍微介紹了一下P4Merge的使用，這邊進一步若是要將P4Merge與TortiseSVN整合，使用P4Merge去做版控的比對或是合併，我們可以開啟TortiseSVN的設定對話框。"
 tags: [P4Merge]
 ---
 

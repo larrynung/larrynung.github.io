@@ -1,7 +1,7 @@
 ---
 title: "StackExchange.Redis - A high performance general purpose redis client for .NET languages"
 date: "2016-05-22 23:18:00"
-description: "StackExchange.Redis - A high performance general purpose redis client for .NET languages"
+description: "StackExchange.Redis 是 StackExchange 提供的 redis client 實作。 該套件具有以下特點： High performance multiplexed design, allowing for efficient use of shared…"
 tags: [StackExchange.Redis]
 ---
 

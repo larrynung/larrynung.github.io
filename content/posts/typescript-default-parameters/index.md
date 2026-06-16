@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Default Parameters"
 date: "2015-11-22 23:47:00"
-description: "TypeScript - Default Parameters"
+description: "TypeScript 的 Function 支援 Default Parameters，使用上只要在參數名稱後面帶入預設的參數值，當呼叫方法時忽略該參數，該參數則會以預設的參數值下去運行。 像是下面這樣："
 tags: [TypeScript]
 ---
 

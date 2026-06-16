@@ -1,6 +1,7 @@
 ---
 title: "MariaDB - Enable performance schema"
 date: "2019-07-18 22:03:47"
+description: "透過 MySQL CLI 查閱 Performance schema 的啟用狀態。 show variables like 'performance_schema'; 如果 Performance schema 未啟用，可開啟 MariaDB 的設定檔，"
 tags: [MariaDB]
 ---
 

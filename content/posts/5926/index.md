@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource].NET Runtime Debug Tool - Crack.NET"
 date: "2008-11-08 11:38:26"
-description: "[.NET Resource].NET Runtime Debug Tool - Crack.NET"
+description: "Abstract Introduction 系統需求 Link Introduction CrackNet釋出，不知對開發人員來說是好消息還是壞消息。該工具號稱可在Runtime階段做Debug的動作，記憶體中變數的值透過該工具可清楚的呈現。"
 tags: [.NET Resource]
 ---
 

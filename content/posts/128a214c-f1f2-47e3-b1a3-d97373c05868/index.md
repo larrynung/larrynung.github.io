@@ -1,7 +1,7 @@
 ---
 title: "Use Xaml Styler to style your xaml code"
 date: "2013-11-06 12:00:00"
-description: "Use Xaml Styler to style your xaml code"
+description: "筆者在Formatting XAML Code這篇介紹了一下要怎樣透過Visual Studio內建的功能讓XAML Code變得比較整齊好看，整理出來的結果已經相當的不錯了，但仍舊是有些美中不足的地方，因為內建的功能其實也只是讓XAML的Tag attribute換行對齊而已，"
 ---
 
 筆者在Formatting XAML Code這篇介紹了一下要怎樣透過Visual Studio內建的功能讓XAML Code變得比較整齊好看，整理出來的結果已經相當的不錯了，但仍舊是有些美中不足的地方，因為內建的功能其實也只是讓XAML的Tag attribute換行對齊而已，雖然看起來是好看了許多，但並未將attribute做個排序整理。所以可能有的元素相同的Attribute在前面，而有的會放在後面，相同性質的Attribute也不會自動群聚在一起，因此在XAML Code的瀏覽上還是有些不方便。

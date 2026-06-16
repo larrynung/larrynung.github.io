@@ -1,6 +1,7 @@
 ---
 title: "Termux - Setup Hexo blog"
 date: "2018-10-16 08:17:03"
+description: "在 Termux 使用 Hexo 並沒什麼特別之處。 一樣是要先將 Hexo CLI 安裝到全域。 npm install hexo-cli -g 接著初始化 Blog。 hexo init 進入剛初始化產出的目錄 運行 Hexo 服務。"
 tags: [Termux, Hexo]
 ---
 

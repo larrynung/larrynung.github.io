@@ -1,6 +1,7 @@
 ---
 title: "ghz - Benchmark with CLI"
 date: "2019-07-08 19:46:47"
+description: "要用 ghz CLI 打 Benchmark，可先參考 ghz CLI 的使用說明。 比較常用的有 --proto、--call、-d、-c、-n、--connections、-O、-o 這幾個參數。"
 tags: [ghz]
 ---
 

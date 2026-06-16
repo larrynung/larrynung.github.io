@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Center widget"
 date: "2018-03-19 23:38:07"
+description: "Flutter 的 Center widget 可用來做置中的呈現。 其建構子如下： Center({Key key, double widthFactor, double heightFactor, Widget child }) 屬性如下： | Name | Type |…"
 tags: [Flutter]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Vault - Your first secure"
 date: "2019-12-20 08:05:23"
+description: "Vault server 起動後，實際做些資料的操作看看。 透過 vault kv put 可將資料存放到指定的 kv store。 vault kv put secret/hello foo=world 支援存放多筆資料。"
 tags: [Vault]
 ---
 

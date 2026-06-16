@@ -1,6 +1,7 @@
 ---
 title: "'C# 7.0 - Throw expressions'"
 date: "2017-03-10 23:47:25"
+description: "C# 7.0 開始支援 Throw expressions。 三元運算中可以視需要直接丟出 exception。 ?? 運算式中也可以直接丟出 exception。 Expression bodied member 也可以丟出 exception。"
 tags: [CSharp, CSharp 7.0]
 ---
 

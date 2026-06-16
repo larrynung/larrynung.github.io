@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Improved Solution Explorer"
 date: "2011-09-18 10:27:23"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Improved Solution Explorer"
+description: "開啟Visual Studio 2011 Preview，大家應該都會注意到我們最常用的方案總管變了，這次的改變簡單的說，若是在Visual Studio 2010有用過Power Tools之類的外掛，可以想成是把裡面的Solution Navigator功能給整進至Visual Studio內，"
 tags: [Visual Studio]
 ---
 

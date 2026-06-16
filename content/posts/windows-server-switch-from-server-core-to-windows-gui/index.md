@@ -1,6 +1,7 @@
 ---
 title: "Windows Server - Switch from Server Core to Windows GUI"
 date: "2018-01-21 23:50:33"
+description: "Windows Server 有 Server Core 與 GUI 兩種模式，有時後玩一玩 Windows 會不知怎麼的從 GUI 模式變到 Server Core 模式，這時進到 Windows 就會看到空空的一遍，只有一個命令提示字元在上面。"
 ---
 
 Windows Server 有 Server Core 與 GUI 兩種模式，有時後玩一玩 Windows 會不知怎麼的從 GUI 模式變到 Server Core 模式，這時進到 Windows 就會看到空空的一遍，只有一個命令提示字元在上面。

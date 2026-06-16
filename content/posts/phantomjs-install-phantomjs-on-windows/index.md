@@ -1,6 +1,7 @@
 ---
 title: "PhantomJS - Install PhantomJS on Windows"
 date: "2017-10-18 23:40:20"
+description: "要在 Windows 上使用 PhantomJS，可到 PhantomJS 官網的下載頁面。 下載 PhantomJS Windows 版本。 下載下來後解壓縮。 運行 bin 下的 PhantomJS.exe。 進到交互模式確認運作正常即可。 Link"
 tags: [PhantomJS]
 ---
 

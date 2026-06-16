@@ -1,6 +1,7 @@
 ---
 title: "MariaDB - Secure MariaDB server with mysql_secure_installation command"
 date: "2019-06-24 13:21:22"
+description: "MariaDB 安裝完後可調用 mysql_secure_installation 命令進行一連串的安全性設定。 mysql_secure_installation 像是 root 的密碼。"
 tags: [MariaDB]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource].NET Version Detector"
 date: "2010-03-13 04:21:19"
-description: "[.NET Resource].NET Version Detector"
+description: ".NET Version Detector是輕量級的工具，可偵測電腦中.NET Framework的版本資訊、提供.NET Framework的下載位置、與幫助開啟.NET Framework的安裝位置。"
 tags: [.NET Resource]
 ---
 

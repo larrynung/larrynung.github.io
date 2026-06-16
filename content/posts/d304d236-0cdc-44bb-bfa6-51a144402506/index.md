@@ -1,7 +1,7 @@
 ---
 title: "Use Windows Error Reporting(WER) to collect user-mode dumps"
 date: "2013-11-06 12:00:00"
-description: "Use Windows Error Reporting(WER) to collect user-mode dumps"
+description: "在Windows Server 2008、Windows Vista with Service Pack 1 (SP1)以後，Windows Error Reporting(WER)具備了自動擷取並儲存user-mode dumps的能力。"
 tags: [CSharp]
 ---
 

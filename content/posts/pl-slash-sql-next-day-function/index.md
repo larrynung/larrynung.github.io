@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - NEXT_DAY function"
 date: "2015-07-15 21:49:00"
-description: "PL/SQL - NEXT_DAY function"
+description: "NEXT_DAY function returns the first weekday that is greater than a date。 使用語法如下： NEXT_DAY( date, weekday ) 其中 date 為基準日，weekday 指定要回傳的日期為星期幾。"
 tags: [PL/SQL]
 ---
 

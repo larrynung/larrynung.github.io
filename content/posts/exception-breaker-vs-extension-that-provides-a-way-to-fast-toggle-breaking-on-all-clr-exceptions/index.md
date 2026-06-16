@@ -1,6 +1,7 @@
 ---
 title: "Exception Breaker - VS extension that provides a way to fast toggle breaking on all CLR exceptions"
 date: "2017-08-16 13:13:40"
+description: "Exception Breaker 是 Visual Studio 的套件，能更方便快速的切換 CLR Exception 是否要中斷。 在開發時為了補獲 First chance exception 並中斷，時常要對 CLR Exception 的 Exception Setting 設定做切換，"
 tags: [Visual Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "tmux - Window operation"
 date: "2019-04-02 21:39:30"
+description: "要對 tmux window 做操作，需先進入 tmux session。 tmux 要建立新的 window，可按下熱鍵 Ctrl + b，再按下 c。 要切到上一個 window，可按下熱鍵 Ctrl + b，再按下 p。 切到下一個 window 可按下熱鍵 Ctrl + b，再按下 n。"
 tags: [tmux]
 ---
 

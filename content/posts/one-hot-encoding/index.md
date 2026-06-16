@@ -1,6 +1,7 @@
 ---
 title: "One-Hot Encoding"
 date: "2018-06-26 23:06:00"
+description: "One-Hot Encoding 是一編碼方式，使用 N 位狀態寄存器來對 N 個狀態進行編碼，常被用於機器學習中的資料前處理，特別是無序的類別資料。 像是性別資料 Male 與 Female，雖然可以用數值編碼將之編成 0 與 1 之類的數值。"
 tags: [Machine Learning]
 ---
 

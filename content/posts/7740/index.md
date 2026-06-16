@@ -1,7 +1,7 @@
 ---
 title: "[Library][VB.NET]MyDataBase Library"
 date: "2009-03-28 01:14:21"
-description: "[Library][VB.NET]MyDataBase Library"
+description: "越來越懶，乾脆濫芋充數的把之前寫的爛Code丟上來，這篇所介紹的MyDataBase是當初剛學VB.NET時試著拿MVP董大偉的書裡範例改的，主要是為了方便用來對資料庫做些控制的。"
 tags: [VB.NET]
 ---
 

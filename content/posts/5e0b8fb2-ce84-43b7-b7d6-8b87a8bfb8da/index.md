@@ -1,7 +1,7 @@
 ---
 title: "Python's and_or operation"
 date: "2013-11-06 12:00:00"
-description: "Python's and_or operation"
+description: "在Python中除了Boolean的True以外，非空的值亦視為True，反之則視為False。所謂的空值指的就是0、空字串、空集合、空的Tuple...，所以除了False以外，0、''、()、[]、{}...在Python中也都代表著False。"
 tags: [Python]
 ---
 

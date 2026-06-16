@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Stop remote application"
 date: "2017-01-05 23:51:31"
+description: "如要使用 Web Deploy 停止遠端 Application，可以指定 Web Deploy 使用 sync 操作，source 使用 recycleApp，dest 使用 recycleApp，並帶入要回收的 Application，指定 recylceMode 為 StopAppPool。"
 tags: [Web Deploy]
 ---
 

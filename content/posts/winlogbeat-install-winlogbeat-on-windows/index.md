@@ -1,6 +1,7 @@
 ---
 title: "Winlogbeat - Install Winlogbeat on Windows"
 date: "2017-06-04 23:52:14"
+description: "要在 Windows 下使用 Winlogbeat，可先至官網下載下來解壓縮。 裡面比較會要用到的檔案有 winlogbeat.exe、install-service-winlogbeat.psl、uninstall-service-winlogbeat.psl 與 winlogbeat.yml。"
 tags: [Winlogbeat]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Jaeger - Tracing with gRPC service"
 date: "2020-02-24 08:32:03"
+description: "要使用 Jaeger 追蹤 gRPC service 程式，可先加入 Jaeger 與 OpenTracing.Contrib.Grpc 套件。 修改 Startup.ConfigureServices，加入 Jaeger tracer、註冊 GlobalTracer、設定 gRPC 攔截器。"
 tags: [Jaeger, gRPC]
 ---
 

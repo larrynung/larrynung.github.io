@@ -1,7 +1,7 @@
 ---
 title: "[Other]2010 Tech.Day Memo"
 date: "2010-10-16 03:31:08"
-description: "[Other]2010 Tech.Day Memo"
+description: "2010/09/28~2010/09/30是微軟2010年的Tech.Day大會，今年是第一次參與這樣的盛會，連續上了三天滿滿的課，其實並不會比上班來的輕鬆，卻有著與上班不一樣的心境，感覺十分的充實。"
 tags: [Other]
 ---
 

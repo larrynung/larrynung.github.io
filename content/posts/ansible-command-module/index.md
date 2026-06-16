@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Command module"
 date: "2017-05-25 22:52:02"
+description: "Ansible 的 Command module 可以用來執行命令。 可用的參數如下： | parameter | required | default | choices | comments |…"
 tags: [Ansible]
 ---
 

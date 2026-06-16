@@ -1,6 +1,7 @@
 ---
 title: "Colaboratory - Code snippets"
 date: "2018-11-27 23:07:57"
+description: "Colaboratory 內建提供了一些程式碼片段可供使用，可點開左側選單切至代碼段頁籤使用。 或是透過點選 [插入 | 代碼段...] 主選單選項，甚至是用熱鍵開啟代碼段業僉也可以。"
 tags: [Colaboratory]
 ---
 

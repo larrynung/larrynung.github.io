@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Column class"
 date: "2018-03-24 00:19:08"
+description: "Flutter 的 Column widget 可用來將子元件垂直放置。 其建構子如下： Column({Key key, MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start, MainAxisSize…"
 tags: [Flutter]
 ---
 

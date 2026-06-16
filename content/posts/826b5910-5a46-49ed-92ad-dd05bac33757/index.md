@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource][Visual Studio]使用BatchFormat批次整理程式碼的Format與Using"
 date: "2013-11-06 12:00:00"
-description: "[.NET Resource][Visual Studio]使用BatchFormat批次整理程式碼的Format與Using"
+description: "BatchFormat是Visual Studio的extension，可以輔助開發人員批次整理程式代碼的Format與Using。 使用前需先透過Extension Manager將BatchFormat安裝起來。"
 ---
 
 BatchFormat是Visual Studio的extension，可以輔助開發人員批次整理程式代碼的Format與Using。

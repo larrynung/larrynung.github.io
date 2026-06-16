@@ -1,7 +1,7 @@
 ---
 title: "Travis CI - Build .NET project"
 date: "2014-01-02 23:59:00"
-description: "Travis CI - Build .NET project"
+description: "Travis CI 內建支援 C、C++、Clojure、Erlang、Go、Groovy、Haskell、Java、Python、Ruby 等語言，卻沒有支援 .Net 的，這表示官方並不特別的去做 .Net 語言的支援。"
 tags: [Travis, CI]
 ---
 

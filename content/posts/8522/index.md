@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
 slug: "[CSharp][VB.NET]壓縮.NET程式的記憶體用量"
 date: "2009-05-22 09:37:21"
-description: "[C#][VB.NET]壓縮.NET程式的記憶體用量"
+description: ".NET程式的記憶體用量一直以來都是程式設計師所關注的焦點。因為.NET程式必需載入.NET Framework的關係，記憶體用量動輒就至少10MB以上。 對於觀察敏銳的人來說，相信應該都有注意到某個奇特的現象，那就是當我們把程式視窗縮小至工具列時，記憶體就會驟減。"
 tags: [CSharp,VB.NET]
 ---
 

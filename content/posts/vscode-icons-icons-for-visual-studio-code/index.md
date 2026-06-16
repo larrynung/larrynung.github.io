@@ -1,6 +1,7 @@
 ---
 title: "vscode-icons - Icons for Visual Studio Code"
 date: "2017-08-15 13:29:05"
+description: "vscode-icons 是 Visual Studio Code 的套件，能讓 Visual Studio Code 的 Explorer 對 Icon 的支援更好。"
 tags: [Visual Studio Code]
 ---
 

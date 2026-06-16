@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Install on macOS"
 date: "2018-03-06 23:06:24"
+description: "要在 Mac 中使用 Flutter，首先要先用 Git 將 Flutter 抓取下來。 git clone -b beta https://github.com/flutter/flutter.git 然後設定 Flutter 路徑參考，可以在 Terminal 直接輸入設定。"
 tags: [Flutter]
 ---
 

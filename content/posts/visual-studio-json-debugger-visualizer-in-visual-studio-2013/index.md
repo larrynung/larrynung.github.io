@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio - JSON Debugger Visualizer in Visual Studio 2013"
 date: "2014-02-08 22:08:00"
-description: "Visual Studio - JSON Debugger Visualizer in Visual Studio 2013"
+description: "以往我們在做 JSON 資料的除錯時，若是不加裝外掛， 在 Visual Studio 上只能透過純文字模式下去檢視。不易查閱與驗證，若資料是非 Format 過的，則更是麻煩。"
 tags: [Visual Studio]
 ---
 

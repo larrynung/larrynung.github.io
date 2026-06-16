@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Formatting PL/SQL code"
 date: "2017-08-08 13:37:52"
+description: "要使用 Oracle SQL Developer，可點選 [Tools | Preferences...] 主選單選項。 將開啟的 Preferences 視窗切至 [SQL Formatter | Oracle Formatting] 頁面，選取 Profile 後按下後方的 Edit 按鈕。"
 tags: [Oracle SQL Developer]
 ---
 

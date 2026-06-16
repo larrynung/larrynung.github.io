@@ -1,7 +1,7 @@
 ---
 title: "WinDBG - Check memory leak with dumpheap"
 date: "2016-03-19 22:51:00"
-description: "WinDBG - Check memory leak with dumpheap"
+description: "要檢查程式的 Memory leak，我們可以在程式物件應該被釋放時抓取 Dump 檔案，像是程式運行後隔一陣子，理論上 GC 應該已經將物件回收時抓取，抓取後就可以用 WinDBG 進一步的分析。 分析時將 WinDBG 開啟，點選 [File | Symbol File Path…] 。"
 tags: [WinDBG]
 ---
 

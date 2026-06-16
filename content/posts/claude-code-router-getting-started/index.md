@@ -1,6 +1,7 @@
 ---
 title: 'Claude Code Router - Getting Started'
 date: '2025-08-29T23:02:03+08:00'
+description: "Claude Code Router 入門指南 簡介 Claude Code Router 是一個強大的工具，幫助您管理和路由 Claude API 端點。本指南將帶您了解如何安裝、配置和使用 Claude Code Router。"
 tags: ['Claude Code']
 draft: false
 ---

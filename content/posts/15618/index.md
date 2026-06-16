@@ -1,7 +1,7 @@
 ---
 title: "[Software]StringToByte~把字串轉成Byte()的輔助小工具"
 date: "2010-06-03 11:37:34"
-description: "[Software]StringToByte~把字串轉成Byte()的輔助小工具"
+description: "在市面上有些保護軟體都會附上字串轉Byte陣列的工具，讓開發人員透過這種小工具把程式中像是密碼這類的敏感字串轉換，替換成較不易看懂得Byte陣列，如此用十六進制編輯軟體開啟組件，也可以避開在ASCII區域直接看到敏感的字串。"
 tags: [Software]
 ---
 

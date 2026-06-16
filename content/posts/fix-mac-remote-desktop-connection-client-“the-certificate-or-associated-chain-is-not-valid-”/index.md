@@ -1,6 +1,7 @@
 ---
 title: "Fix Mac Remote Desktop Connection Client “The Certificate or Associated Chain is Not Valid”"
 date: "2017-10-03 23:46:03"
+description: "MAC 電腦升級到 MacOS Sierra 後，使用 Remote Desktop Connection 進行遠端連線時，會出現 The certificate or associated chain is not valid. 這個視窗，怎麼按 Connect 按鈕都會一直出現。"
 ---
 
 MAC 電腦升級到 MacOS Sierra 後，使用 Remote Desktop Connection 進行遠端連線時，會出現 The certificate or associated chain is not valid. 這個視窗，怎麼按 Connect 按鈕都會一直出現。

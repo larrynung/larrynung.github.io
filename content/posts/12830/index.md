@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]MFC CArchive的讀取"
 date: "2010-01-05 11:26:43"
-description: "[VB.NET]MFC CArchive的讀取"
+description: "CArchive是MFC的序列化處理類別，除了一般的序列化存檔會用到外，在SendMessage傳送WN_COPYDATA訊息，連帶觸發OnCopyData，其傳遞的資料也是CArchive的格式。"
 tags: [VB.NET]
 ---
 

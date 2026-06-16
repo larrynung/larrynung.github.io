@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Function Types"
 date: "2015-11-18 22:57:00"
-description: "TypeScript - Function Types"
+description: "用 JavaScript 撰寫 Function，要馬是使用 Named function，要馬就是使用 Anonymous function。 因為 JavaScript 不具型態的關係，Function 有時候會被傳入不如預期的資料，回傳不預期的結果。"
 tags: [TypeScript]
 ---
 

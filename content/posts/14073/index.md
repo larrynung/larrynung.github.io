@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - ToolBox Search"
 date: "2010-03-17 12:37:28"
-description: "[Visual Studio]Visual Studio 2010 New Feature - ToolBox Search"
+description: "在以往使用工具箱元件時，相信大家都有找不太到控制項的經驗。在VS2010中貼心的為工具箱提供了搜尋控制項的功能，只要把焦點設到工具箱上，鍵入要搜尋的控制項關鍵字，VS2010下方的狀態列會變更為搜尋的提示，工具箱也會選取到符合的控制項上。"
 tags: [Visual Studio]
 ---
 

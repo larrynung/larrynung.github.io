@@ -1,6 +1,7 @@
 +++
 title = 'Hugo - Add Content'
 date = 2024-04-08T22:54:27+08:00
+description = "Hugo 站台建立完後可以開始為站台加入文章，透過 Hugo 的 new content 命令，帶入文章檔名建立 Hugo 文章。 hugo new content posts/[postfilename].md 開啟建立的 Hugo 文章檔案進行文章的撰寫。"
 tags = ['Hugo']
 +++
 

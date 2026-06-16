@@ -1,6 +1,7 @@
 ---
 title: "Redis - Setup redis cluster"
 date: "2020-02-07 08:27:09"
+description: "這邊紀錄一下如何不透過 create-cluster 腳本一步一步建立 Redis cluster。 首先安裝 Redis，這邊為了方便筆者是直接使用 Docker 去起 Redis 容器。"
 tags: [Redis]
 ---
 

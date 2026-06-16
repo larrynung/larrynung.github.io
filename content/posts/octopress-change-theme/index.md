@@ -1,7 +1,7 @@
 ---
 title: "Octopress - Change theme"
 date: "2013-12-14 22:27:00"
-description: "Octopress - Change theme"
+description: "要更換 Octopress 的 Theme，我們可先找到要替換的 Theme。 這部份可參閱 Opthemes · Octopress Themes ，它有將 Octopress 可用的 Theme 做個整理，並以縮圖方式呈現， Theme 套用起來的樣子一目了然。"
 tags: [Octopress]
 ---
 

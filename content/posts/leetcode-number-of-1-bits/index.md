@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Number of 1 Bits"
 date: "2016-02-24 00:36:00"
-description: "LeetCode - Number of 1 Bits"
+description: "LeetCode 的 Number of 1 Bits 題目如下： Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the…"
 tags: [LeetCode]
 ---
 

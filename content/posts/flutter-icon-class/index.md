@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Icon class"
 date: "2018-04-04 23:24:37"
+description: "Flutter 的 Icon widget 可用來顯示 icon。 其建構子如下： Icon(IconData icon, { Key key, double size, Color color, String semanticLabel, TextDirection textDirection…"
 tags: [Flutter]
 ---
 

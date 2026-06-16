@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 31 - Always use %NOTFOUND instead of NOT %FOUND to check whether a cursor was successful"
 date: "2016-08-07 23:54:50"
+description: "條款三十一，Always use %NOTFOUND instead of NOT %FOUND to check whether a cursor was successful。 不要用 Not %FOUND 去撰寫判斷邏輯。 取而代之的是要用 %NOTFOUND 去撰寫判斷邏輯。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

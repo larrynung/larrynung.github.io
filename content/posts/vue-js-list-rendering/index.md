@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - List Rendering"
 date: "2017-05-18 23:36:33"
+description: "Vue.js 要渲染多個元素，可使用 v-for。 像是要渲染陣列元素，就可以像下面這樣處理。 若有需要索引值，v-for 也有索引值可供使用。 除了陣列元素外，v-for 也支援 range 的方式，可明確指定循環的次數。 也可以用來遍巡物件元素的值。"
 tags: [Vue.js]
 ---
 

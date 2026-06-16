@@ -1,6 +1,7 @@
 ---
 title: "git - Commit template"
 date: "2020-05-29 07:04:25"
+description: "如果 git commit 的 message 想要有一定的規範，可為 git 設定 commit template，設定完後 template 會在 commit 時帶出範本，供編輯修改 commit message。 要設定 git commit template，我們需先建立範本檔。"
 tags: [git]
 ---
 

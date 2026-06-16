@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]用反射取得XML序列化組件內的Serializer，加速Xml序列化使用效能"
 date: "2010-06-23 08:32:03"
-description: "[VB.NET]用反射取得XML序列化組件內的Serializer，加速Xml序列化使用效能"
+description: "記得之前有在使用XML序列化程式產生器工具加速XML序列化這篇有做一些Xml序列化效能上的比較，使用Xml序列化組件內所產生的Serialzer來做序列化動作效能最佳。"
 tags: [VB.NET]
 ---
 

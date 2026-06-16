@@ -1,7 +1,7 @@
 ---
 title: "JQuery UI - Datepicker Widget"
 date: "2015-12-20 17:22:00"
-description: "JQuery UI - Datepicker Widget"
+description: "要使用 JQuery UI 的 Datepicker Widget，首先必須引用 JQuery、JQueryUI。 接著在畫面上放入一個 input element。"
 ---
 
 要使用 JQuery UI 的 Datepicker Widget，首先必須引用 JQuery、JQueryUI。  

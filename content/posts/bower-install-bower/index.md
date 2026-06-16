@@ -1,7 +1,7 @@
 ---
 title: "Bower - Install Bower"
 date: "2016-01-08 05:23:00"
-description: "Bower - Install Bower"
+description: "Bower 依賴於 Node.js 與 Git，安裝 Bower 需透過 Node.js 內的 npm，只要透過下列 npm 命令安裝即可： npm install -g bower 而 Bower 套件的安裝與使用會用到 Git，所以記得也要將之安裝。"
 tags: [Bower]
 ---
 

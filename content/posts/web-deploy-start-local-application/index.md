@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Start local application"
 date: "2017-01-06 13:39:55"
+description: "如要使用 Web Deploy 啟動本地 Application，可以指定 Web Deploy 使用 sync 操作，source 使用 recycleApp，dest 使用 recycleApp，並帶入要啟動的 Application，"
 tags: [Web Deploy]
 ---
 

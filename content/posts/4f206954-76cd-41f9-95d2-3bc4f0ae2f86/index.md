@@ -1,7 +1,7 @@
 ---
 title: "[Performance][C#]ToString V.S Enum.GetName"
 date: "2013-11-06 12:00:00"
-description: "[Performance][C#]ToString V.S Enum.GetName"
+description: "這幾天筆者抽空看了一下程式中有Boxing與UnBoxing的地方，因為想要解決程式中列舉部分處理會有Boxing的問題，而注意到了將列舉值直接ToString與Enum.GetName的不同。"
 tags: [CSharp]
 ---
 

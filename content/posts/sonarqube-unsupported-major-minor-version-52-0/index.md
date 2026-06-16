@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Unsupported major.minor version 52.0"
 date: "2016-09-01 13:59:21"
+description: "SonarQube 如果出現 Unsupported major.minor version 52.0 這樣的錯誤。 代表 JRE 與 JDK 版本對不起來，可以安裝對應的版本，然後用 Java -version 與 Javac -version 確認看看。"
 tags: [SonarQube]
 ---
 

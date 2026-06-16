@@ -1,7 +1,7 @@
 ---
 title: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
 date: "2014-11-03 23:17:00"
-description: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers"
+description: "Microsoft.CodeAnalysis.CSharp.FxCopAnalyzers 是一個 Diagnostic Analyzer 套件，是 FxCop 部分檢查規則的 Analyzer 實作。"
 tags: [Roslyn,  Visual Studio]
 ---
 

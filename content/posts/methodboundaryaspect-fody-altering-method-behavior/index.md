@@ -1,6 +1,7 @@
 ---
 title: "MethodBoundaryAspect.Fody - Altering method behavior"
 date: "2019-08-31 23:01:50"
+description: "MethodBoundaryAspect.Fody 要修改方法的回傳值，可在 OnExit 方法實作時透過 MethodExecutionArgs.ReturnValue 屬性填入新的方法值。 像是如果要撰寫一個可將方法回傳值變大寫的 Attribute 的話，可像下面這樣撰寫。"
 tags: [Fody]
 ---
 

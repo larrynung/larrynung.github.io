@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Repairs the schema history table"
 date: "2019-08-01 21:31:10"
+description: "Flyway 的 Repair 功能可用來修復 Flyway 存放在資料庫內的資料。 像是 Migrate 發生錯誤，可用來清楚錯誤狀態。或是重新套用 Migration，去修復 Migration type/description/checkchecksum。"
 tags: [Flyway]
 ---
 

@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
 slug: "[CSharp][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
 date: "2013-11-06 12:00:00"
-description: "[C#][VB.NET]使用MFT Scanner遍巡USN Journal，快速找出磁碟內的所有檔案"
+description: "相信很多人都有玩過Everything這套搜尋軟體，也對他的快速搜尋印象深刻。其實它之所以快速是因為它很聰明的去掃了NTFS的USN Journal，它的資料量會比我們去遍巡檔案系統還要少的多，所以可以在很短的時間完成檔案的索引，自然運行起來就會很快速。"
 tags: [CSharp]
 ---
 

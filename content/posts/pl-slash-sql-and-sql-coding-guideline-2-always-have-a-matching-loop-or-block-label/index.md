@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 2 - Always have a matching loop or block label"
 date: "2015-09-20 23:51:00"
-description: "PL/SQL & SQL CODING GUIDELINE 2 - Always have a matching loop or block label"
+description: "條款二，如果程式中有迴圈區塊，為其加上 label 讓他的區塊範圍更為清楚。 像是下面這樣的程式： 可以像下面這樣改寫，在 For...Loop 前面加上 Label，然後在 End 後加上 Label Name。 改完程式碼的區塊範圍清楚了許多。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

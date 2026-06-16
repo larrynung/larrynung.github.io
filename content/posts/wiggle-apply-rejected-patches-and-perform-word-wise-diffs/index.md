@@ -1,6 +1,7 @@
 ---
 title: "wiggle - apply rejected patches and perform word-wise diffs"
 date: "2017-10-02 23:45:09"
+description: "使用 Git 套用 patch 若發生衝突，我們可能會用下列命令讓 Git 盡可能的幫我們套用能被套用的變更。 git apply --reject [PatchFile] 套用不了的部分會被放到 rej 檔內。"
 ---
 
 使用 Git 套用 patch 若發生衝突，我們可能會用下列命令讓 Git 盡可能的幫我們套用能被套用的變更。

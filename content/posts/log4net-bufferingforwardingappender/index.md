@@ -1,7 +1,7 @@
 ---
 title: "log4net - BufferingForwardingAppender"
 date: "2016-03-02 05:24:00"
-description: "log4net - BufferingForwardingAppender"
+description: "為了調效 log4net RollingFileAppender 的性能做了個簡單的測試，測試程式如下： 套上 BufferingForwardingAppender。 整個性能反而嚴重下降。 這邊可進一步調整 Fix 參數，像是如果我們將之設為 0，效能就會提升上去。"
 tags: [log4net]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "SQLiteStudio - Create SQLite database"
 date: "2017-10-05 23:43:47"
+description: "要透過 SQLiteStudio 建立 SQLite 資料庫，可點選 [Database | Add a database] 主選單選項，或是按下熱鍵 Ctrl + O。 在開啟的對話框中，點選 File 後面的 Add 按鈕。"
 tags: [SQLiteStudio]
 ---
 

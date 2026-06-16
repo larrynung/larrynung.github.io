@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Subscribing to Receive Stream Updates with .NET API"
 date: "2018-09-17 23:45:05"
+description: "要使用 Event Store .NET API 訂閱並監聽 Stream 的變化，可以使用 PersistentSubscriptionSettings.Create 設定訂閱，"
 tags: [Event Store]
 ---
 

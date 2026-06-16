@@ -1,6 +1,7 @@
 ---
 title: "MethodTimer.Fody - Injects some very basic method timing code"
 date: "2019-08-26 07:21:41"
+description: "MethodTimer.Fody 能透過 Fody 在程式編譯時將用來計算時間的程式放入掛有 TimeAttribute 的方法。 使用時需先引用 MethodTimer.Fody 套件。 然後加入 FodyWeavers.xml 檔，檔案內容如下，指示 Fody 要使用 MethodTimer。"
 tags: [Fody]
 ---
 

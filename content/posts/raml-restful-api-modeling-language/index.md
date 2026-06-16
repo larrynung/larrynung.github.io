@@ -1,7 +1,7 @@
 ---
 title: "RAML - RESTful API Modeling Language"
 date: "2013-11-28 22:24:00"
-description: "RAML - RESTful API Modeling Language"
+description: "RAML (RESTful API Modeling Language) 是ㄧ以YAML為基礎、專門用來描述 RESTful API、且人與機器都看得懂的標記語言。"
 tags: [RAML]
 ---
 

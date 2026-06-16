@@ -1,6 +1,7 @@
 ---
 title: "SikuliX - Download  Setup"
 date: "2016-10-28 13:38:04"
+description: "Sikulix 程式可到這邊下載。 下載下來後將 sikulixsetup-1.1.0.jar 放至欲安裝的位置，點選兩下進行安裝。 選擇要安裝的項目後按下 Setup Now 按鈕。 按下後會顯示要安裝的項目，如果正確無誤則按下 Yes 按鈕繼續即可。"
 tags: [SikuliX]
 ---
 

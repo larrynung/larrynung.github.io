@@ -1,6 +1,7 @@
 ---
 title: "'C# 8.0 - Using declarations'"
 date: "2019-04-08 15:46:12"
+description: "C# 8.0 以前使用 using 釋放物件，會在 using 後用小刮號包住要釋放的物件，然後在下面用大括號指示物件的生命週期範圍。 程式寫起來會像下面這樣: C# 8.0 後支援 Using declarations，可以直接在變數宣告前面加掛 using 關鍵字，一樣可以達到物件釋放的效果。"
 tags: [CSharp 8.0]
 ---
 

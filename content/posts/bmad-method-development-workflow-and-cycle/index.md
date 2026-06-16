@@ -1,6 +1,7 @@
 ---
 title: "BMAD-METHOD - Development Workflow and Cycle"
 date: 2025-09-06T16:36:06+08:00
+description: "在軟體開發的複雜世界中，團隊時常面臨溝通不良、需求變更混亂、以及規劃與執行脫節的挑戰。為了解決這些痛點，一套名為 BMAD-METHOD 的結構化開發方法應運而生。它將整個開發過程標準化，從最初的專案構想到最終的產品交付，旨在提高效率、確保品質並降低溝通成本。"
 tags: ['BMAD-METHOD']
 ---
 

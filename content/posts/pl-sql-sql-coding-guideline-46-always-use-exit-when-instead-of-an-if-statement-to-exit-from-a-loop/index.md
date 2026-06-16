@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 46 - Always use EXIT WHEN instead of an IF statement to exit from a loop"
 date: "2017-06-07 09:52:06"
+description: "條款四十六，總是使用 EXIT WHILE loop 去跳離迴圈，不要使用 IF...EXIT。 像是下面這樣的程式使用 IF 判斷要跳離迴圈的條件是否成立，成立的話使用 EXIT 跳離迴圈。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

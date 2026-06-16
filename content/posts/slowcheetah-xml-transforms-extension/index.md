@@ -1,7 +1,7 @@
 ---
 title: "SlowCheetah - XML Transforms extension"
 date: "2014-09-03 22:22:00"
-description: "SlowCheetah - XML Transforms extension"
+description: "Web.Config Transformation 功能在我們有多個環境需要部署時很方便，但預設只支援 Web.config 的轉換，且發佈時才會做轉換的動作，開發上總是有些不便。"
 tags: [Web.Config Transformation]
 ---
 

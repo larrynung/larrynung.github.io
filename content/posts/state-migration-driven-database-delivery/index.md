@@ -1,6 +1,7 @@
 ---
 title: "State/Migration driven database delivery"
 date: "2019-08-06 07:17:10"
+description: "資料庫在做版本控制可被分為 State-driven 與 Migration-driven 兩種方式。 State-driven State-driven 的做法是在開發時持續的去維護資料庫的快照，資料庫的快照主要用 Create database/table/procedure 這些語法撰寫，"
 ---
 
 資料庫在做版本控制可被分為 State-driven 與 Migration-driven 兩種方式。

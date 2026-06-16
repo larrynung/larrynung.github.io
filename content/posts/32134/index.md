@@ -2,7 +2,7 @@
 title: "[C#]DictService"
 slug: "[CSharp]DictService"
 date: "2011-07-26 01:18:26"
-description: "[C#]DictService"
+description: "DictService是一個免費的Web Service，可用來做單字與單字的定義查詢，允許非商業與商業使用。 有興趣的可先至Definition Lookup網站上使用看看，輸入關鍵字並選取想要查詢的字典，按下[Search]按鈕搜尋的結果就會顯示在下方。"
 tags: [CSharp]
 ---
 

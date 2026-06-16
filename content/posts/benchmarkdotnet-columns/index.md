@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Columns"
 date: "2017-04-13 22:41:21"
+description: "BenchmarkDotNet 允許透過設定去變更 Summary Table 的 Column。 內建可使用的 Column 有： NamespaceColumn MedianColumn MinColumn MaxColumn RankColumn 使用上只要透過 Attribue 掛上…"
 tags: [BenchmarkDotNet]
 ---
 

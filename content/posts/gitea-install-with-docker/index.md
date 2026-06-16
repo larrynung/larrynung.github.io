@@ -1,6 +1,7 @@
 ---
 title: "Gitea - Install with docker"
 date: "2017-09-20 22:39:47"
+description: "透過 Docker 使用 Gitea，可用 docker pull 將 Gitea 容器拉回。 docker pull gitea/gitea:latest 然後建立一個目錄用以存放資料。 使用 docker run 啟動 Gitea 容器，將剛建立的目錄掛載為資料卷。"
 tags: [Gitea, Docker]
 ---
 

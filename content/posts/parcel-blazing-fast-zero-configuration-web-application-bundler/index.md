@@ -1,6 +1,7 @@
 ---
 title: "Parcel - Blazing fast, zero configuration web application bundler"
 date: "2017-12-22 06:46:39"
+description: "Parcel 是一極速零配置的 Web 應用打包工具，不需額外的配置設定就能快速的將 Web 應用程式進行打包。 該工具具有以下幾個特點： Blazing fast bundle times Bundle all your assets Automatic transforms Zero…"
 tags: [Parcel]
 ---
 

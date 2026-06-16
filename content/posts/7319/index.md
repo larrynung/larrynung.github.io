@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]使用AxMediaPlayer撥放多媒體"
 slug: "[CSharp][VB.NET]使用AxMediaPlayer撥放多媒體"
 date: "2009-02-28 03:41:58"
-description: "[C#][VB.NET]使用AxMediaPlayer撥放多媒體"
+description: "加入工具箱 Step1.工具箱=>滑鼠右鍵=>選擇項目 Step2.切換至『COM 元件』頁籤並按下瀏覽鍵。 Step3.找到Windows\\System32下的msdxm.ocx檔後按下開啟鍵。 Step4.會看到多了一個Windows Media Player的Com元件，此時勾選並按下確定鍵。"
 tags: [CSharp,VB.NET]
 ---
 

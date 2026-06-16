@@ -1,6 +1,7 @@
 ---
 title: "Blazor - Component parameters"
 date: "2019-07-12 19:51:47"
+description: "若想讓 Blazor component 在畫面上使用時帶上參數做些設定，可以為 Component 加上 Parameter。 只要在 code 區塊中加入帶有 ParameterAttribute 的 property 即可。"
 tags: [Blazor]
 ---
 

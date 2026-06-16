@@ -1,7 +1,7 @@
 ---
 title: "StackExchange.Redis - Server Command Demo"
 date: "2016-05-23 23:28:00"
-description: "StackExchange.Redis - Server Command Demo"
+description: "要使用 StackeExchange.Redis 取得 Server 的資訊，或是運行 Server 的命令。要先調用 GetServer 方法取得 Server 物件，再透過該 Server 成員屬性或方法去操作即可。"
 tags: [StackExchange.Redis]
 ---
 

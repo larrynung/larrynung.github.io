@@ -2,7 +2,7 @@
 title: "[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
 slug: "[CSharp]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
 date: "2013-11-06 12:00:00"
-description: "[C#]MEF開發系列 - Managed Extensibility Framework(MEF)的概念與簡介"
+description: "Managed Extensibility Framework(MEF)是.NET 4.0與Silverlight 4.5開始內建在BCL中的輕量型可擴充式框架(若是使用.NET 3.5，也可以另行加入組件使用)，可以輔助開發人員建立具有擴充彈性且易於維護的應用程式。"
 tags: [CSharp, MEF]
 ---
 

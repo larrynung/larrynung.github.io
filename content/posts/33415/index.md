@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]Natived C++使用Visual Studio做單元測試"
 date: "2011-08-18 01:19:50"
-description: "[C++][Visual Studio]Natived C++使用Visual Studio做單元測試"
+description: "筆者在前面[C++]使用靜態函式庫(Static Library)開出類別給其他組件使用這篇帶出了如何將C++的類別開出給其他組件使用，這篇將延伸該篇概念，示範如何針對Natived C++去做Visual Studio的單元測試。"
 tags: [Visual Studio,C++]
 ---
 

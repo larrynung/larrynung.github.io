@@ -1,7 +1,7 @@
 ---
 title: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
 date: "2015-10-04 23:22:00"
-description: "Debugging Http or Web Services Calls from ASP.NET with Fiddler"
+description: "要用 Fiddler 去查看 ASP.NET Web Site ，我們可以透過設定 Web.Config 將 Web Site 的 Proxy 指向 http://127.0.0.1:8888: 這樣 Fiddler 就可以記錄到 Web Site 的網路使用情形： Link Debugging…"
 ---
 
 要用 Fiddler 去查看 ASP.NET Web Site ，我們可以透過設定 Web.Config 將 Web Site 的 Proxy 指向 http://127.0.0.1:8888:

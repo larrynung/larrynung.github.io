@@ -1,6 +1,7 @@
 ---
 title: ".NET Core - Uninstall with shell script"
 date: "2019-12-13 07:54:12"
+description: "若非使用 HomeBrew 安裝 .NET Core，沒辦法使用 HomeBrew 命令直接反安裝，需就官方解除安裝的步驟進行反安裝。 不過官方反安裝步驟繁瑣，需自行去多個目錄清除資料，非常不便。所以這邊直接使用 dotnet/cli 提供的腳本來進行反安裝。 先下載腳本。"
 tags: [.NET Core]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 43 - Use 1 as lower boundary and COUNT as upper boundary when looping over a dense array"
 date: "2017-04-21 13:25:51"
+description: "條款四十三，遍巡 dense array 時，建議使用 1 當做 lower boundary，使用 COUNT() 當做 upper boundary。 像是下面這樣的程式，使用了 FIRST() 與 LAST() 做為遍巡走訪的條件，dense array 不為空時可以正常運作，"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

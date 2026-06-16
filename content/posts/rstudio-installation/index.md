@@ -1,6 +1,7 @@
 ---
 title: "RStudio - Installation"
 date: "2017-04-26 00:10:12"
+description: "要安裝 RStudio 可在官網的下載頁面下載安裝程式。 點選安裝程式安裝。 安裝完就可以開始使用 RStudio。 Link RStudio – Open source and enterprise-ready professional software for R"
 tags: [RStudio]
 ---
 

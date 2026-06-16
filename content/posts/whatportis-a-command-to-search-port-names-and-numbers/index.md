@@ -1,6 +1,7 @@
 ---
 title: "Whatportis - A command to search port names and numbers"
 date: "2018-10-19 23:07:06"
+description: "Whatportis 能夠查詢特定服務預設使用的通訊埠，或是特定的通訊埠通常被哪些服務使用。 程式可透過 pip 安裝。 pip install whatportis 要查詢特定服務預設使用的通訊埠，可直接帶入服務名稱查詢。"
 ---
 
 Whatportis 能夠查詢特定服務預設使用的通訊埠，或是特定的通訊埠通常被哪些服務使用。

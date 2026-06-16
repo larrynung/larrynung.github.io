@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - ERROR: JAVA_HOME exists but does not point to a valid Java home folder"
 date: "2018-01-23 00:34:31"
+description: "運行 SonarQubeAnalyze 後如果看到 ERROR: JAVA_HOME exists but does not point to a valid java home folder 這樣的錯誤訊息。"
 tags: [SonarQube]
 ---
 

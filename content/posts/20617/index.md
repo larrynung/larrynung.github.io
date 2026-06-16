@@ -1,7 +1,7 @@
 ---
 title: ".Net 4.0 New Feature - SortedSet"
 date: "2011-01-06 05:28:54"
-description: ".Net 4.0 New Feature - SortedSet"
+description: "SortedSet是.NET 4.0新加入的類別，位於System.Collections.Generic命名空間內，能夠依排序順序維護不重覆的物件集合。為一自我平衡紅黑樹的實作，可隨著項目的插入和刪除維護排序的順序，無法從特定位置訪問特定元素，使用上與現有的HashSet類別有點類似，"
 tags: [CSharp]
 ---
 

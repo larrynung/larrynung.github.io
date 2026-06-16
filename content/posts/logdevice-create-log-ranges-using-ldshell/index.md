@@ -1,6 +1,7 @@
 ---
 title: "LogDevice - Create log ranges using ldshell"
 date: "2018-10-03 00:10:09"
+description: "LogDevce cluster 啟用後，首先需要先建立 Log range。 調用 ldshell 命令使用 -c 參數指定 LogDevice 的設定檔，後面帶著 logs create 指定 LogDevice 建立 log、使用 --from 與 --to 指定 log 的…"
 tags: [LogDevice]
 ---
 

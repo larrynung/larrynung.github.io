@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - String interpolation"
 date: "2015-01-15 07:51:00"
-description: "C# 6.0 - String interpolation"
+description: "以往在做比較簡單的字串串接，我們可能會用 + 運算符號進行串接，或是用 String.Format 帶入 Pattern 與要串接的字串去處理，像是下面這樣： 在 C# 6.0 導入了 String Interpolation，"
 tags: [CSharp, CSharp 6.0]
 ---
 

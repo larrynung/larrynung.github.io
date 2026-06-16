@@ -1,6 +1,7 @@
 ---
 title: "OpenSSL - Encryption with the OpenSSL Command-Line Interface"
 date: "2021-01-01 20:34:52"
+description: "要使用 OpenSSL CLI 進行加密，可先透過命令列帶入參數 -help 查閱一下 OpenSSL enc 的使用方式。 openssl enc -help 常用的參數有 -aes-256-cbc 指定使用 AES 256 CBC 加密、-base64 參數指定經過 Base64 處理、-p…"
 tags: [OpenSSL]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: '探索 ChatGPT Atlas：內建 AI 的智慧瀏覽器'
 date: 2025-10-23T10:14:34+08:00
+description: "前言 ChatGPT Atlas 是 OpenAI 推出的一款內建 ChatGPT 的智慧瀏覽器，旨在徹底改變我們與網路互動的方式。它將強大的 AI 助手與瀏覽器功能完美結合，提供更智慧、個人化的瀏覽體驗。本文將帶您快速了解其功能與應用。"
 tags: ['ChatGPT', 'AI', 'Browser']
 ---
 

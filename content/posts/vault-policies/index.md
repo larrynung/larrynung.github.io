@@ -1,6 +1,7 @@
 ---
 title: "Vault - Policies"
 date: "2020-01-06 07:49:43"
+description: "要設定 Vault 的 Policy，先建立 Policy 設定檔。 vim $policy_file 在設定檔內用 HCL (HashiCorp Configuration Language) 做 Policy 的設定。"
 tags: [Vault]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "'C# 8.0 - Static local functions'"
 date: "2019-04-10 15:07:34"
+description: "C# 8.0 開始支援靜態的 Local functions，只要直接在 Local functions 前面加掛 static 關鍵字即可。 Static Local functions 在使用上跟一般的靜態方法一樣，需要使用的資料需從參數傳入，或是直接使用靜態的變數值，"
 tags: [CSharp 8.0]
 ---
 

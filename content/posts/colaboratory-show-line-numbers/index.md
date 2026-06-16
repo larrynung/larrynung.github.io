@@ -1,6 +1,7 @@
 ---
 title: "Colaboratory - Show line numbers"
 date: "2018-11-26 23:47:14"
+description: "要將 Colaboratory 程式碼區塊的行數開啟，可點選 [工具 | 偏好設定] 主選單選項。 在開啟的偏好設定視窗中勾選顯示行號，然後按下保存按鈕。 程式碼區塊前方就會顯示程式所在的行數。"
 tags: [Colaboratory]
 ---
 

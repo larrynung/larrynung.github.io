@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 14 CTP 3 - PerfTips in the Debugger"
 date: "2014-08-24 00:11:00"
-description: "Visual Studio 14 CTP 3 - PerfTips in the Debugger"
+description: "PerfTips 是 Visual Studio 14 (CTP3 以後釋出)的新功能，能讓開發人員在除錯的同時了解程式的耗時與 CPU 的耗用。 以往我們為了觀測程式的耗時我們需要做程式碼的修改，用 Stopwatch 去監測。"
 tags: [Visual Studio]
 ---
 

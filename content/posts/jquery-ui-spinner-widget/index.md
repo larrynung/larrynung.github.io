@@ -1,7 +1,7 @@
 ---
 title: "JQuery UI - Spinner Widget"
 date: "2015-12-24 05:44:00"
-description: "JQuery UI - Spinner Widget"
+description: "要使用 JQuery UI 的 Spinner Widget，首先必須引用 JQuery、JQueryUI。 接著在畫面上放入一個 input element。 在 Javascript 中用 JQuery 找到該 input element，"
 ---
 
 要使用 JQuery UI 的 Spinner Widget，首先必須引用 JQuery、JQueryUI。

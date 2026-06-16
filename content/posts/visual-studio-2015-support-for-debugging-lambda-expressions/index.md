@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2015 - Support for debugging lambda expressions"
 date: "2015-01-28 23:50:00"
-description: "Visual Studio 2015 - Support for debugging lambda expressions"
+description: "Visual Studio 2015 以前，無論是透過監看視窗還是快速監看視窗，在除錯時都無法針對 Lambda 語法進行偵錯，除錯上很不方便。 在 Visual Studio 2015 以後，這問題獲得了改善，針對 Lambda 語法的除錯進行了支援。"
 tags: [Visual Studio]
 ---
 

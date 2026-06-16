@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 50 - Avoid hard coded upper or lower bound values with FOR loops"
 date: "2017-06-13 23:15:20"
+description: "條款五十，避免 hard-codeed FOR loop 的上下邊界值。 像是下面這段程式 hard-coded 了 FOR loop 的上下邊界值，這樣的撰寫預期上下邊界值是不會被變動的，且後續再看這段程式可能也會不理解為何上下邊界值會帶這樣的值，程式的維護性上會比較差。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

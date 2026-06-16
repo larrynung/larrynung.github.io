@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Integrate with GitLab"
 date: "2018-01-24 23:43:30"
+description: "要將 SonarQube 與 GitLab 整合，讓 GitLab 簽入或是發送 MergeRequest 時可透過 SonqrQube 進行分析，即早發現程式的問題，SonarQube 需先透過 Update Center 安裝 GitLab 套件。"
 tags: [SonarQube]
 ---
 

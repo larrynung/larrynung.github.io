@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 Pro Power Tools"
 date: "2010-06-14 12:21:58"
-description: "[Visual Studio]Visual Studio 2010 Pro Power Tools"
+description: "Visual Studio 2010 Pro Power Tools在2010年6月釋出，該擴充元件提供許多好用的功能，改善許多在Visual Studio 2010令人不便的設計，可加速程式員在Visual Studio 2010中的開發。"
 tags: [Visual Studio]
 ---
 

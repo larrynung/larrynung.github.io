@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: decltype"
 date: "2011-08-30 12:55:08"
-description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: decltype"
+description: "Visual studio 2010為C++的開發人員新增了decltype這個C++0x的功能，能根據所給的運算式決定型別，使用時只要在decltype關鍵字後面用小括號圍住要判斷的運算式，即可推斷出運算式回傳的型態，並加以進一步去做些處理。"
 tags: [Visual Studio,C++]
 ---
 

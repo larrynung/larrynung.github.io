@@ -1,7 +1,7 @@
 ---
 title: "DropBox開發系列 - App Key與App Secret的申請"
 date: "2013-11-06 12:00:00"
-description: "DropBox開發系列 - App Key與App Secret的申請"
+description: "要開發可以存取DropBox的應用程式，跟一般的SNS開發一樣，必須在Dropbox for Developers網站上建立應用程式並取得開發所需的App Key跟App Secret，再將取得的App Key跟App Secret帶到程式中，就可以對DropBox進行我們想要做的操作。"
 ---
 
 要開發可以存取DropBox的應用程式，跟一般的SNS開發一樣，必須在Dropbox for Developers網站上建立應用程式並取得開發所需的App Key跟App Secret，再將取得的App Key跟App Secret帶到程式中，就可以對DropBox進行我們想要做的操作。

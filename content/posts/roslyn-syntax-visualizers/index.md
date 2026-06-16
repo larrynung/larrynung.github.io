@@ -1,7 +1,7 @@
 ---
 title: "Roslyn Syntax Visualizers"
 date: "2014-10-05 23:23:00"
-description: "Roslyn Syntax Visualizers"
+description: "在使用 Roslyn 做開發時，常免不了會要去處理語法的解析，這時我們會需要輔助工具將語法解析轉換為語法樹，以視覺的方式呈現，讓 Roslyn 的開發上更為便利。"
 tags: [Roslyn, Visual Studio]
 ---
 

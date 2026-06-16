@@ -1,7 +1,7 @@
 ---
 title: "Brahma Command Line Parser"
 date: "2010-11-16 12:34:12"
-description: "Brahma Command Line Parser"
+description: "在研究Brahma這個C#開源的Linq To GPU函式庫時，發現在Brahma網站上有釋出用來解析命令列參數的程式碼片段，稍微玩了一下，隨手做個記錄。 程式碼片段可在Code Snippets下載，透過程式碼片段管理員將其匯入至本機的Visual Studio中，"
 tags: [CSharp]
 ---
 

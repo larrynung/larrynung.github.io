@@ -1,6 +1,7 @@
 ---
 title: "GitBook - Browse GitBook from your favorite reading application"
 date: "2017-10-23 22:51:52"
+description: "要在電子書閱讀軟體上閱讀 GitBook 上的電子書，可以透過 GitBook 提供 Open Publication Distribution System (OPDS) 服務。 像是若使用的是靜讀天下，可切至線上書庫。 點選增加新書庫。"
 ---
 
 要在電子書閱讀軟體上閱讀 GitBook 上的電子書，可以透過 GitBook 提供 Open Publication Distribution System (OPDS) 服務。

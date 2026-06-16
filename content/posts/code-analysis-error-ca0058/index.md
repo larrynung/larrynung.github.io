@@ -1,7 +1,7 @@
 ---
 title: "Code Analysis Error CA0058"
 date: "2015-09-18 14:45:00"
-description: "Code Analysis Error CA0058"
+description: "最近抽空把開發中的專案設定了一下 Code Analysis，運行時發生了 CA0058 這個錯誤。 要解決這個問題，在 Visual Studio 2012 以前可以修改 FxCopCmd.exe.config。"
 ---
 
 最近抽空把開發中的專案設定了一下 Code Analysis，運行時發生了 CA0058 這個錯誤。

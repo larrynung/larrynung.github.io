@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL  SQL CODING GUIDELINE 36 - Try to use CASE rather than DECODE"
 date: "2016-08-27 23:34:16"
+description: "條款三十六，嘗試使用 CASE 而不要用 DECODE。 用 DECODE 的可讀性較低，不易閱讀。 改用 CASE 撰寫雖然程式變多，但閱讀起來相對會比較清楚。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

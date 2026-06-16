@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - SSH in windows"
 date: "2014-10-02 23:55:00"
-description: "Vagrant - SSH in windows"
+description: "要在 Windows 下使用 SSH 連進 Vagrant 作些設定，我們有幾種方式可以使用。 一種是透過 SSH 連線軟體連進 Vagrant，像是 PuTTY。 輸入 IP 與 Port 進行連線。"
 tags: [Vagrant]
 ---
 

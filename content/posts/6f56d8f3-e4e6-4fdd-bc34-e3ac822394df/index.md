@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio][C#]Visual Studio Achievements API"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio][C#]Visual Studio Achievements API"
+description: "筆者在[Visual Studio]Introduce Visual Studio Achievements這篇簡單的介紹了一下Visual Studio的成就系統，但對於API的使用並未著墨，這篇將針對API的部分做個介紹，若有自製些小程式需要成就系統的資料，就可以使用它所提供的API來實現。"
 tags: [CSharp]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - Zoom-In & Zoom-Out"
 date: "2010-03-21 12:02:08"
-description: "[Visual Studio]Visual Studio 2010 New Feature - Zoom-In & Zoom-Out"
+description: "在以往編輯程式，或臨時與別人討論程式時，若碰到字太小觀看不易，我們可以透過[Options]設定程式碼的顯示字型大小。 或是透過預設的DecreaseTextEditorFontSize、與IncreaseTextEditorFontSize巨集，來調整編譯器的字型大小。"
 tags: [Visual Studio]
 ---
 

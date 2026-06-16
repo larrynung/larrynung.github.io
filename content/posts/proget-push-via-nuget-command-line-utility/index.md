@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Push via NuGet command line utility"
 date: "2017-09-11 22:12:15"
+description: "要透過 NuGet 命令上傳 NuGet 套件到 ProGet 的 NuGet feed，可在 ProGet 的 NuGet feed 頁面按下 Add Package 按鈕。 點選 Push via NuGet Command Line Utility。"
 tags: [ProGet]
 ---
 

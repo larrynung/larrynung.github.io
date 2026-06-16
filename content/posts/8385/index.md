@@ -1,7 +1,7 @@
 ---
 title: "[WPF]FlowDocument"
 date: "2009-05-12 12:02:38"
-description: "[WPF]FlowDocument"
+description: "命名空間 System.Windows.Documents XMLNS http://schemas.microsoft.com/winfx/xaml/presentation Assemble PresentationFramework (在 PresentationFramework.dll)…"
 tags: [WPF]
 ---
 

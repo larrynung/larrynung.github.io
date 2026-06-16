@@ -1,7 +1,7 @@
 ---
 title: "ReSharper - Heap Allocation Viewer Extension"
 date: "2014-08-12 00:10:00"
-description: "ReSharper - Heap Allocation Viewer Extension"
+description: "Heap Allocation Viewer 是 Reshaper 的擴充套件，能將 Heap 相關的操作 (像是 Local object allocation、Boxing、Delegate creation、Closure creation ) 進行 Highlight。"
 tags: [Visual Studio, ReSharper]
 ---
 

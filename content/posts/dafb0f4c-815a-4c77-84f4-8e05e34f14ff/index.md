@@ -1,7 +1,7 @@
 ---
 title: "Run python with SublimeText"
 date: "2013-11-06 12:00:00"
-description: "Run python with SublimeText"
+description: "要在Sublime Text中執行Python，首先我們要將要運行的程式撰寫好，並將程式存成副檔名為py的檔案。 接著開啟Tools/Build/Build System的子選單，我們應該可以看到SublimeText會自動選取到Python這個選項。"
 tags: [Python]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "SchemaSync - Generate the SQL necessary to migrate the schema of a source database to a target database"
 date: "2019-08-13 07:38:57"
+description: "SchemaSync 使用方式如下: 簡單的說就是帶入來源資料庫位置與目的資料庫位置，SchemaSync 即會連入來源與目的資料庫進行比對，產生對應的腳本檔案。"
 tags: [SchemaSync]
 ---
 

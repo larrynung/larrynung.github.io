@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept]使用BeginXXX/EndXXX與SuspendLayout/ResumeLayout時，考慮加上Try/Finally"
 date: "2010-07-18 12:48:29"
-description: "[.NET Concept]使用BeginXXX/EndXXX與SuspendLayout/ResumeLayout時，考慮加上Try/Finally"
+description: "相信大家都知道當在更新介面時，有的控制項會提供BeginUpdate/EndUpdate，甚至是BeginEdit/EndEdit、BeginInit/EndInit、SuspendLayout/ResumeLayout等暫停更新的方法，可用以加速介面的更新動作。"
 tags: [.NET Concept]
 ---
 

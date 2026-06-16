@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Environment.SpecialFolder"
 date: "2010-11-29 09:58:32"
-description: ".NET 4.0 New Feature - Environment.SpecialFolder"
+description: ".NET 4.0對於Environment.SpecialFolder的成員也做了些擴充，這邊將其擴充的成員列表如下： 成員名稱 說明 AdminTools 檔案系統目錄，用於儲存個別使用者的系統管理工具。"
 tags: [CSharp]
 ---
 

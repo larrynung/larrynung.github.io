@@ -1,6 +1,7 @@
 ---
 title: "SikuliX - Matching  Target offset"
 date: "2016-10-30 21:18:22"
+description: "SikuliX 在撰寫上提供了些彈性，能讓圖片在比對時提供模糊比對，或是要決定圖片被按下的位置。 像是下面這邊筆者稍微修改了前面帶到的範例，這邊用執行視窗整個畫面截圖。"
 tags: [SikuliX]
 ---
 

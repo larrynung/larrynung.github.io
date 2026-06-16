@@ -2,7 +2,7 @@
 title: "[C#]DropBox開發系列 - 使用DropNet遍巡DropBox內存放的檔案"
 slug: "[CSharp]DropBox開發系列 - 使用DropNet遍巡DropBox內存放的檔案"
 date: "2013-11-06 12:00:00"
-description: "[C#]DropBox開發系列 - 使用DropNet遍巡DropBox內存放的檔案"
+description: "認證的開發介紹完了，這邊要介紹一下如何遍巡DropBox內存放的檔案，使用DropNet去實做這個功能也很簡單，只需要透過DropNetClient.GetMetaData這個函式帶入要查閱的路徑就可以了。"
 tags: [CSharp]
 ---
 

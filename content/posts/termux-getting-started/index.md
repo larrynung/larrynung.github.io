@@ -1,6 +1,7 @@
 ---
 title: "Termux - Getting started"
 date: "2018-10-11 17:08:50"
+description: "要使用 Termux，首先需透過 Google Play 商店或是 F-Droid 下載安裝。 安裝後點選 Termux 圖示啟動。 Termux 啟動後會看到如下終端機畫面，終端機畫面上會提供一些參考的資源，以及套件管理的常用操作。 為了使用較新的套件，這邊可先進行更新。"
 tags: [Termux]
 ---
 

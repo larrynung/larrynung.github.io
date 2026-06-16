@@ -1,6 +1,7 @@
 ---
 title: "Virtualization in VMware"
 date: "2013-11-12 23:27:00"
+description: "在VMware下若欲跑些需要虛擬化的程式，可將VMware的Virtualization功能開啟 首先將VMware的Settings對話框開啟，點擊選取Advanced按鈕 將Preferred virtualization engine欄位的值設為Intel VT-x with EPT."
 tags: [VMware]
 ---
 

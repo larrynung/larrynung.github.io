@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Install Yarn via apt"
 date: "2017-06-24 23:15:06"
+description: "要透過 APT 安裝 Yarn，需要先設定 Repository。 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo \"deb https://dl.yarnpkg.com/debian/…"
 tags: [Yarn]
 ---
 

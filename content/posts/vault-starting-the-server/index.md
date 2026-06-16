@@ -1,6 +1,7 @@
 ---
 title: "Vault - Starting the server"
 date: "2019-12-19 07:15:01"
+description: "Vault 安裝後可調用 Vault server 命令起服務試試，這邊可加帶 -dev 參數起 Dev server。 vault server -dev 服務啟用後注意到特別變色的區塊，裡面有 Vault server 的位置與 Root token。"
 tags: [Vault]
 ---
 

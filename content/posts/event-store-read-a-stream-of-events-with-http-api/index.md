@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Read a Stream of Events with HTTP API"
 date: "2018-09-02 23:26:43"
+description: "要透過 HTTP API 去讀取 Stream 下的所有 Event，可以像下面這樣向 Event Store 查詢。 http:///streams/ Accept 可以指定回傳的格式是 JSON。 application/vnd.eventstore.atom+json 或是 XML。"
 tags: [Event Store]
 ---
 

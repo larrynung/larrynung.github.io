@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Change default branch"
 date: "2018-02-27 00:02:29"
+description: "GitLab 在建立 Merge Request 時，Target branch 會幫我們自動帶入預設的 branch，也就是 master branch。 在某些情境這樣的設定並不恰當，也可能會增加操作錯誤的風險。 這時我們可以開啟專案的 General project settings。"
 tags: [GitLab]
 ---
 

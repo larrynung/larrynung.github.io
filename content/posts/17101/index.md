@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]將Visual Studio編寫的.NET程式移轉至Mono平台上運行"
 date: "2010-08-09 11:23:44"
-description: "[.NET Resource]將Visual Studio編寫的.NET程式移轉至Mono平台上運行"
+description: "要將Visual Studio編寫的.NET程式移轉至Mono平台上運行，我們可先用Moma判斷程式是否可以移轉至Mono，這部分可參閱[.Net Resource]Mono Migration Analyzer (MoMA)。"
 tags: [.NET Resource]
 ---
 

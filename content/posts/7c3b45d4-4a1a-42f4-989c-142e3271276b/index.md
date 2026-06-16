@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Enhanced Options Dialog"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview New Feature - Enhanced Options Dialog"
+description: "Visual Studio 2013 Preview在選項對話框這邊也做了一些強化。 在用以前的Visual Studio版本時，雖然可透過Quick Launch找到設定選項，但仍避免不了有時候會在選項對話框找個設定找半天。"
 ---
 
 Visual Studio 2013 Preview在選項對話框這邊也做了一些強化。

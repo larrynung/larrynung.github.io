@@ -1,6 +1,7 @@
 ---
 title: "Firebase - Getting Started with Cloud Functions"
 date: "2018-02-26 13:08:19"
+description: "要使用 Firebase 的 Functions，可先切至 Firebase 下的 Functions 頁面。 點選開始使用。 這邊會提示使用 Firebase Functions 的步驟，首先要有 Firebase 指令列工具。"
 tags: [Firebase]
 ---
 

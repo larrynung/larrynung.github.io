@@ -1,6 +1,7 @@
 ---
 title: "Termux - zsh"
 date: "2018-10-12 15:07:32"
+description: "要設定 Termux zsh，可以下載 termux-ohmyzsh 並運行安裝。 sh -c \"$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)\" 安裝過程會詢問要使用的背景色。 以及字型。"
 tags: [Termux]
 ---
 

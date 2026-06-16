@@ -1,6 +1,7 @@
 ---
 title: "Vim - Setting up Vim in Windows"
 date: "2016-10-31 17:24:11"
+description: "Vim 要在 Windows 使用，可下載 Windows 安裝包下來安裝。 安裝完設定環境變數，在 Path 這邊加上 Vim 的目錄位置。 這樣在 MS-DOS 視窗就可以直接調用 Vim 命令了。"
 tags: [Vim]
 ---
 

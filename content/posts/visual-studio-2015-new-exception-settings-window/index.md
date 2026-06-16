@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2015 - New Exception Settings Window"
 date: "2015-07-11 11:40:00"
-description: "Visual Studio 2015 - New Exception Settings Window"
+description: "在使用 Visual Studio 對 .NET 程式進行除錯時，有時候我們會需要對 Exception Setting 進行些調整，以便快速的找出問題發生的點。 但是以往的 Exception Setting 是以對話框形式呈現，開關設定十分的不便，且不具搜尋過濾的功能，要找到指定的設定很不容易。"
 tags: [Visual Studio]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[IADP]IADP Advertising - 開發前準備"
 date: "2013-11-06 12:00:00"
-description: "[IADP]IADP Advertising - 開發前準備"
+description: "要在Intel AppUp應用程式中加入廣告，我們可在Intel AppUp Developer Program選取[Opportunites]→[Advertising]選單選項。"
 ---
 
 要在Intel AppUp應用程式中加入廣告，我們可在Intel AppUp Developer Program選取[Opportunites]→[Advertising]選單選項。

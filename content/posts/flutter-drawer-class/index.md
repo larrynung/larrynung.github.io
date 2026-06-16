@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Drawer class"
 date: "2018-05-12 22:30:49"
+description: "Flutter 的 Drawer widget 需搭配 Scaffold 使用，可用以設定 Scaffold 左側的選單。 其建構子如下： Drawer({Key key, double elevation: 16.0, Widget child, String semanticLabel })…"
 tags: [Flutter]
 ---
 

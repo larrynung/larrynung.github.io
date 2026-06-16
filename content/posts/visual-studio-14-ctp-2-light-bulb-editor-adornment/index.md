@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 14 CTP 2 - Light Bulb Editor Adornment"
 date: "2014-08-16 00:18:00"
-description: "Visual Studio 14 CTP 2 - Light Bulb Editor Adornment"
+description: "Light Bulb Editor Adornment 是Visual Studio 14 的新功能，能讓開發人員快速識別及修正程式的錯誤。 當程式錯誤時，Visual Studio 會在編輯區前方，或是在錯誤列的下方出現發亮的燈泡，用以提示程式有錯誤發生。"
 tags: [Visual Studio]
 ---
 

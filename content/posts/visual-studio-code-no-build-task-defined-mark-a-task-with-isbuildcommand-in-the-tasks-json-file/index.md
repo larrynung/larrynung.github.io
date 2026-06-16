@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - No build task defined. Mark a task with isBuildCommand in the tasks.json file"
 date: "2017-05-02 22:49:49"
+description: "在使用 Visual Studio Code 建置時如果看到 No build task defined. Mark a task with 'isBuildCommand' in the tasks.json file. 這樣的訊息，可能是因為 tasks.json 沒做設定導致。"
 tags: [Visual Studio Code]
 ---
 

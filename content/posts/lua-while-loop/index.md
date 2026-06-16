@@ -1,6 +1,7 @@
 ---
 title: "Lua - While loop"
 date: "2017-08-08 23:37:25"
+description: "Lua 的 while 寫法如下，while 後面帶上要進入迴圈的條件，然後用 do…end 設定迴圈的區塊，在迴圈的區塊內帶入要運行的動作即可。 像是要簡單的跑迴圈五次，然後印出 1 到 5 的數值，就可以像下面這樣撰寫： Link Programming in Lua : 4.3.2"
 tags: [Lua]
 ---
 

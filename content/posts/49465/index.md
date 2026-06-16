@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]使用VSSpeedster加速Visual Studio建置"
 date: "2011-11-01 09:16:05"
-description: "[Visual Studio]使用VSSpeedster加速Visual Studio建置"
+description: "VSSpeedster是Visual Studio的外掛元件，若開發的電腦具備多核心，安裝後能讓Visual Studio利用多核心去建置專案，減少建置所需的時間。"
 tags: [Visual Studio]
 ---
 

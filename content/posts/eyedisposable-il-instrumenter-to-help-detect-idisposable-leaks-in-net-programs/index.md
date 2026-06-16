@@ -1,7 +1,7 @@
 ---
 title: "EyeDisposable - IL instrumenter to help detect IDisposable leaks in .NET programs"
 date: "2013-12-26 22:34:00"
-description: "EyeDisposable - IL instrumenter to help detect IDisposable leaks in .NET programs"
+description: "EyeDisposable 是ㄧ用來檢測程式是否有正確 Dispose 資源的命令列工具。 程式可至 kizzx2/EyeDisposable · GitHub 這邊下載。因為有用到 Sub Module ，所以用 Git Clone 下來後需要更新 SubModule 。"
 ---
 
 EyeDisposable 是ㄧ用來檢測程式是否有正確 Dispose 資源的命令列工具。

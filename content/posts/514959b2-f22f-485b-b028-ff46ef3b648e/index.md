@@ -1,7 +1,7 @@
 ---
 title: "如何在MAC上設定與切換輸入法"
 date: "2013-11-06 12:00:00"
-description: "如何在MAC上設定與切換輸入法"
+description: "筆者以注音輸入法來做個示範，介紹一下 如何在MAC上設定與切換輸入法。 首先開啟System Preferences對話框，並開啟裡面的Language & Text 。 在Language & Text對話框開啟後，因為筆者要開啟的輸入法是繁體的注音輸入法，所以要檢查一下繁體中文是否在列表裡面。"
 tags: [Mac]
 ---
 

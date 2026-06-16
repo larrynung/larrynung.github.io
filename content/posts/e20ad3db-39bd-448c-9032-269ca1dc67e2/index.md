@@ -1,7 +1,7 @@
 ---
 title: "AppHarbor - .NET Cloud Platform as a Service"
 date: "2013-11-06 12:00:00"
-description: "AppHarbor - .NET Cloud Platform as a Service"
+description: "AppHarbor是一支援.NET的雲端平台服務，它提供了雲端的Repository讓開發人員能將專案放置於雲端，也能直接整合現有的Online Repository Solution (e.x.GitHub)， 進行雲端建置以及單元測試。"
 ---
 
 AppHarbor是一支援.NET的雲端平台服務，它提供了雲端的Repository讓開發人員能將專案放置於雲端，也能直接整合現有的Online Repository Solution (e.x.GitHub)， 進行雲端建置以及單元測試。簡單的說，AppHarbor就是Online Repository + Online CI Server，不過不只那麼單純，它還提供了一些彈性，像是可以支援Add-ons之類的。

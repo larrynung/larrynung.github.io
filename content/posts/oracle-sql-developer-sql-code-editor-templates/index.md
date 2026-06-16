@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - SQL code editor templates"
 date: "2017-08-07 13:20:51"
+description: "Oracle SQL Developer 可透過 [Tools | Preferences...] 主選單選項開啟 Preferences 視窗。 切換至 [Debug | SQL Editor Code Templates]。 已內建一些 Template 可供使用，像是 #time#。"
 tags: [Oracle SQL Developer]
 ---
 

@@ -2,7 +2,7 @@
 title: "[C#][Linq]LINQ To WMI"
 slug: "[CSharp][Linq]LINQ To WMI"
 date: "2011-07-10 10:38:05"
-description: "[C#][Linq]LINQ To WMI"
+description: "Linq To WMI元件可提供我們使用Linq去查詢WMI的功能。 至Linq To WMI將檔案下載下來後，解開後會看到下面三個專案： LinqToWmi.ClassGenerator LinqToWmi.Core LinqToWmi.Tests…"
 tags: [CSharp,Linq]
 ---
 

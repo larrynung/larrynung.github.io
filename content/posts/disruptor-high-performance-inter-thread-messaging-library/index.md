@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - High Performance Inter-Thread Messaging Library"
 date: "2016-03-19 15:32:00"
-description: "Disruptor - High Performance Inter-Thread Messaging Library"
+description: "Disruptor 是 LMAX 提出的高效線程通信套件，能夠以很低的延遲產生很大量的吞吐量，實務上 LMAX 藉此得以在一個線程裡每秒處理6百萬訂單。 高效線程通信套件這個詞彙如果太抽象，我們也可以將之視為高效低延遲的生產者與消費者模式框架，使用這個框架可以很容易的套用生產者與消費者模式，"
 tags: [Disruptor]
 ---
 

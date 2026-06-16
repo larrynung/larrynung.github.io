@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - Round function"
 date: "2015-07-12 22:12:00"
-description: "PL/SQL - Round function"
+description: "Round function 可將帶入的值依指定的位數下去做四捨五入運算並回傳。 使用語法如下： ROUND( number [, decimal_places] ) number 是要做四捨五入的值，decimal_places 是要做四捨五入的位數。"
 tags: [PL/SQL]
 ---
 

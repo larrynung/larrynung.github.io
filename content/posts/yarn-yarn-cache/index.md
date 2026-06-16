@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn cache"
 date: "2017-07-07 00:01:40"
+description: "yarn cache 命令可以針對 yarn 的快取做些相關的控制。 像是調用 yarn cache ls 可查閱現在有備快取的套件。 yarn cache dir 可查閱套件快取的位置。 yarn 快取的套件都會存放在設定的套件快取位置下。"
 tags: [Yarn]
 ---
 

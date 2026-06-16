@@ -1,6 +1,7 @@
 ---
 title: "Event Store - By category projection"
 date: "2018-09-03 23:52:35"
+description: "$by_category 是 Event Store 預設提供的 Projection，可以將 Event 依 Stream ID 去拆分成不同 Category 的 Stream。 使用前需先將 $by_category projection 開啟。"
 tags: [Event Store]
 ---
 

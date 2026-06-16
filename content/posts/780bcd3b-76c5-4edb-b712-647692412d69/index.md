@@ -1,7 +1,7 @@
 ---
 title: "FlickrNet開發系列- FlickrNet基本功能開發(一)"
 date: "2013-11-06 12:00:00"
-description: "FlickrNet開發系列- FlickrNet基本功能開發(一)"
+description: "距上次介紹FlickrNET已經好一段日子了，稍微抽出了點空將這部分補一補。Flickr開發不外乎就是登入、查閱登入的帳號與朋友資訊、瀏覽相簿照片...等等，這邊針對基本的功能開發做些簡介，整理於此篇。"
 tags: [CSharp]
 ---
 

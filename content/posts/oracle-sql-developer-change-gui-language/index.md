@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Change GUI language"
 date: "2017-08-03 23:07:35"
+description: "要變更 Oracle SQL Develop 界面的語言，可先開啟 idein\\ide.boot 檔。 查閱 oracle.translated.locates 設定中可支援的語言有哪些。 再來開啟 sqldeveloperin\\sqldeveloper.conf 檔。"
 tags: [Oracle SQL Developer]
 ---
 

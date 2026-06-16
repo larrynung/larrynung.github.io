@@ -1,7 +1,7 @@
 ---
 title: "P4Merge - Visual Merge and Diff Tools"
 date: "2013-11-06 12:00:00"
-description: "P4Merge - Visual Merge and Diff Tools"
+description: "P4Merge是PERFORCE底下用來比對與合併檔案的工具程式,跟Winmerge的功能與用途類似,但更為方便好用,且對於像筆者這樣的色弱來說,呈現的方式也更為友善 。 P4Merge是免費的軟體,安裝包可至PERFORCE官網下載。"
 tags: [P4Merge]
 ---
 

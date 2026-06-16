@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - System.Runtime.Caching"
 date: "2010-11-26 05:41:17"
-description: ".NET 4.0 New Feature - System.Runtime.Caching"
+description: ".NET 4.0新增了一個System.Runtime.Caching命名空間，該命名空間主要提供了一個可擴充的資料快取框架，提供開發者使用與實作快取的功能。 在以往我們可能得自行將資料Load到記憶體中，在背景去監控是否變動或是過期需要更新，甚至是自行撰寫Cache Pool去做控管，"
 tags: [CSharp]
 ---
 

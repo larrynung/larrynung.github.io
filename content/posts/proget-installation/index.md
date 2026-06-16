@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Installation"
 date: "2017-08-17 23:08:03"
+description: "要安裝 ProGet，可到 ProGet 官網，切換到下載頁面下載安裝程式。 安裝程式下載下來後點擊安裝， 一開始是授權頁面，沒問題的話按下 I Agree 按鈕接受授權繼續。 設定要使用的 ProGet 版本，看是要使用免費版、企業版的 45 天試用、還是要輸入序號使用。"
 tags: [ProGet]
 ---
 

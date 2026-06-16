@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Text widget"
 date: "2018-03-17 00:44:41"
+description: "Flutter 的 Text widget 可以用來做簡易的文字顯示。 其建構子如下： Text(String data, { Key key, TextStyle style, TextAlign textAlign, TextDirection textDirection, bool…"
 tags: [Flutter]
 ---
 

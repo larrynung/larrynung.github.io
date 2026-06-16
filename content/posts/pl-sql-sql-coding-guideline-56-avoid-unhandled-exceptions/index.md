@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL  SQL CODING GUIDELINE 56 - Avoid unhandled exceptions"
 date: "2017-07-04 13:21:50"
+description: "條款五十六，避免未處理的例外。 像是下面這段程式，當沒資料或是資料過多時 Select into 就會丟出例外。 建議是要確保程式不會有未處理的例外，像是上面這樣的程式就要加處理 NO_DATA_FOUND 與 TOO_MANY_ROWS。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

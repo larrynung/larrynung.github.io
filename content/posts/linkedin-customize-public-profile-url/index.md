@@ -1,7 +1,7 @@
 ---
 title: "LinkedIn - Customize public profile url"
 date: "2015-01-13 22:03:00"
-description: "LinkedIn - Customize public profile url"
+description: "LinkedIn 在剛申請完，會配給你一個預設的 Public Profile Url，這個 Public Profile Url 會長得像下面這樣。 http://linkedin.com/pub/johndoe/40/263/205 這樣的 Url 不僅不便於記憶，對於 SEO 來說也不是很好。"
 tags: [LinkedIn]
 ---
 

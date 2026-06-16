@@ -1,7 +1,7 @@
 ---
 title: "Web Deploy - Automatic Backups"
 date: "2015-03-07 12:37:00"
-description: "Web Deploy - Automatic Backups"
+description: "若想讓 Web Deploy 在 Deploy 時自動幫我們進行網站的備份，甚至是控管備份的數量，我們可以將 Web Deploy 的 Automatic Backups 功能啟用。"
 tags: [Web Deploy]
 ---
 

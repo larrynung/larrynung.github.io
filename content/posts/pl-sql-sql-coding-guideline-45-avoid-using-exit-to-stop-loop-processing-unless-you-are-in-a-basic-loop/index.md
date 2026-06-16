@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 45 - Avoid using EXIT to stop loop processing unless you are in a basic loop"
 date: "2017-06-06 12:13:21"
+description: "條款四十五，避免使用 EXIT 去跳離迴圈，除非使用的是 basic loop。 像是下面這樣的程式，使用了 EXIT 去跳離迴圈，但是非 basic loop 都有迴圈的邊界條件可以設定，可以做到一樣的事情，所以這樣的寫法並不是很好。 若使用非 basic loop，建議使用邊界條件來跳離迴圈。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

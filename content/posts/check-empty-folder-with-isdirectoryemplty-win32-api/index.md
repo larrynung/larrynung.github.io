@@ -1,7 +1,7 @@
 ---
 title: "Check empty folder with IsDirectoryEmplty Win32 API"
 date: "2014-01-16 23:08:00"
-description: "Check empty folder with IsDirectoryEmplty Win32 API"
+description: "在判斷目錄是否為空這邊，.NET 4.0 以前，很多人都會很直覺的去使用 Directory.GetFiles 、Directory.GetDirectories 、或 Directory.GetFileSystemEntries 方法，用個數判斷是否為空。"
 tags: [CSharp, Win32 API]
 ---
 

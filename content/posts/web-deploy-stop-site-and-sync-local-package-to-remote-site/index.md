@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Stop site and sync local package to remote site"
 date: "2017-01-18 13:54:39"
+description: "如要使用 Web Deploy 將 Web Deploy Package 佈署到遠端站台，且要在佈署前停止 IIS，在佈署後啟動 IIS (Sop site => Sync local package to remote site => Start site )。"
 tags: [Web Deploy]
 ---
 

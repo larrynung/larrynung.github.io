@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Code Clone Analysis"
 date: "2011-09-18 11:30:22"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Code Clone Analysis"
+description: "Visual Studio 2011 Preview新增了一個很有趣的功能，稱作Code Clone Analysis，能輔助開發人員搜尋方案中、或是針對特定程式碼片段找尋是否有相似的程式碼。可以用來檢查程式中是否有可提出成共用方法的可能。"
 tags: [Visual Studio]
 ---
 

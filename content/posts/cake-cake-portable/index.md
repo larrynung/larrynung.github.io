@@ -1,6 +1,7 @@
 ---
 title: "Cake - Cake.Portable"
 date: "2018-11-04 23:40:56"
+description: "Cake.Portable 是 Cake script runner，可直接透過 chocolatey 安裝。 choco install cake.portable 安裝完可以直接調用 Cake 命令測試看看，像是查閱 Cake 命令的使用方式。"
 tags: [Cake]
 ---
 

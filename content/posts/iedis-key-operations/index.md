@@ -1,6 +1,7 @@
 ---
 title: "Iedis - Key operations"
 date: "2019-03-25 15:26:29"
+description: "透過 Redis Servers Tool Window 加完 Redis 連線後，在連線上連點即可連到對應的 Redis。 連線後可看到 Redis 內含的 Key，左上方的區塊可以做 Key 的過濾，上方的工具列可以做 DataBase 的切換、Key 的新增、TTL 的設定等。"
 tags: [Iedis, Rider]
 ---
 

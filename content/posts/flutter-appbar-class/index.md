@@ -1,6 +1,7 @@
 ---
 title: "Flutter - AppBar class"
 date: "2018-05-09 00:03:55"
+description: "Flutter 的 AppBar widget 需搭配 Scaffold 使用。 其建構子如下： AppBar({Key key, Widget leading, bool automaticallyImplyLeading: true, Widget title, List actions,…"
 tags: [Flutter]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "mmock - Getting started"
 date: "2017-09-14 21:01:47"
+description: "要使用 mmock 除了將 mmock 服務啟用外。 還要在放置 mock 設定在放置設定檔的目錄，mmock 會去放置設定檔的目錄找尋並載入設定。 放置好後透過 mmock 的 http 或是 https 位置訪問 mock 出來的 API 位置即可，"
 tags: [mmock]
 ---
 

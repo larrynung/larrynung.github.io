@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2010 UML 朔模功能初步概述"
 date: "2010-10-01 12:29:42"
-description: "Visual Studio 2010 UML 朔模功能初步概述"
+description: "Visual Studio 2010針對UML的支援上做了一些改進，可支援的UML圖有下列六種： 使用案例圖(Use Class Diagrams) 活動圖(Activity Diagrams) 順序圖(Sequence Diagrams) 元件圖(Component Diagrams)…"
 tags: [UML,Visual Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "'Resumonk - Resume Builder, Cover Letter Templates, CV Maker'"
 date: "2018-05-18 00:03:26"
+description: "Resumonk 能將 LinkedIn Profile 匯入套用模版變成漂亮的個人化履歷。 使用時需先按下首頁上方的 Create your resume 按鈕。 點選 Import from LinkedIn 按鈕。"
 tags: [LinkedIn]
 ---
 

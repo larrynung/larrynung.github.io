@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept][C#][VB.NET].NET兩個表單間的資料互通"
 date: "2009-03-24 12:44:08"
-description: "[.NET Concept][C#][VB.NET].NET兩個表單間的資料互通"
+description: "常會看到有人詢問兩個表單間的資料要如何互通，重覆詢問率之高讓該問題約可列入初學者必問的前幾大問題了，光在程式設計俱樂部大概這類問題我大概就已回答過4~5次了。最近又在批踢踢討論版中看到有人詢問，索性想說乾脆就整理一篇以後直接貼連結好了。"
 tags: [CSharp,VB.NET,.NET Concept]
 ---
 

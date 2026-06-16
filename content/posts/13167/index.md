@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - Navigate To"
 date: "2010-01-20 09:48:26"
-description: "[Visual Studio]Visual Studio 2010 New Feature - Navigate To"
+description: "Visual Studio 2010新增Navigate To搜尋功能，能快速的搜尋資料。 使用上可透過[Edit]→[Navigate To…] 或是熱鍵Ctrl+,來啟用該功能。"
 tags: [Visual Studio]
 ---
 

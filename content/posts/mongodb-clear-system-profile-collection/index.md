@@ -1,6 +1,7 @@
 ---
 title: "MongoDB - Clear system.profile collection"
 date: "2019-09-21 22:24:15"
+description: "在做 MongoDB 的 Profiling 時，有時我們會需要清除 system.profile collection 內的資料。 像是這邊筆者已經有資料在 system.profile collection 內。"
 tags: [MongoDB]
 ---
 

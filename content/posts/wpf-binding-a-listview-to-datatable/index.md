@@ -1,7 +1,7 @@
 ---
 title: "WPF - Binding a ListView to DataTable"
 date: "2014-02-07 10:23:00"
-description: "WPF - Binding a ListView to DataTable"
+description: "要在 WPF 中將 DataTable binding 到 ListView 上，我們主要有幾種做法… 像是把 DataTable 轉型成 IListSource 後，叫用 GetList 方法，"
 tags: [WPF]
 ---
 

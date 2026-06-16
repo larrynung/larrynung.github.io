@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: lambda"
 date: "2011-08-26 12:58:26"
-description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: lambda"
+description: "Visual studio 2010為C++的開發人員新增了lambda這個C++0x的功能，為一沒有名稱的方法，也可將之稱為匿名方法。多使用於方法主題較短、方法較不常觸發或較不適合放為成員方法...等情境。"
 tags: [C++,Visual Studio]
 ---
 

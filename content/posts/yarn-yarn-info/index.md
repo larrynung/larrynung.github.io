@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn info"
 date: "2017-07-09 18:56:33"
+description: "Yarn info 命令可用來查閱套件的資訊。 可以直接用 yarn info 帶上指定的套件名稱查閱指定套件的資訊。 yarn info 若要查閱指定版本的套件資訊，也可以在套件名稱後面用小老鼠加帶套件版本。 yarn info @ 要查閱指定的套件資訊的話，可以再多帶上套件資訊的名稱。"
 tags: [Yarn]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Contains Duplicate II"
 date: "2015-07-11 15:26:00"
-description: "LeetCode - Contains Duplicate II"
+description: "LeetCode 的 Contains Duplicate II 題目如下： Given an array of integers and an integer k, find out whether there there are two distinct indices i and j in…"
 tags: [LeetCode]
 ---
 

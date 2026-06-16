@@ -1,6 +1,7 @@
 ---
 title: "Chai - A BDD / TDD assertion library for node"
 date: "2019-05-07 07:49:06"
+description: "Chai 是 Node.js 的 BDD / TDD 斷言套件。 使用前先從 Registry 下載套件。 Chai 有三種撰寫風格，should、expect、assert，assert 是比較偏向傳統的斷言方式，expect 與 should 則是偏向 BDD style 的斷言方式。"
 tags: [Chai, Node.js]
 ---
 

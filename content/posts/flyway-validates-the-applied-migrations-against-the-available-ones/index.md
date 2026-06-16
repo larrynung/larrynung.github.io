@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Validates the applied migrations against the available ones"
 date: "2019-07-31 22:33:35"
+description: "Flyway 的 Validate 可依據資料庫的 Migrate 資料與本地的 Migration 資訊做些驗證。 如果資料庫的 Migrate 資料與本地的 Migration 比對，Migration 的名字、類型、Checksum 不同，驗證錯誤。"
 tags: [Flyway]
 ---
 

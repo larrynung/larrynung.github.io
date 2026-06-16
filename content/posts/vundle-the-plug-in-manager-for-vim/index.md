@@ -1,6 +1,7 @@
 ---
 title: "Vundle - The plug-in manager for Vim"
 date: "2018-10-22 19:40:20"
+description: "Vundle 是 Vim 的套件管理程式，安裝可直接透過 git 下載。 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 下載後開啟 Vim 設定檔。"
 tags: [Vim]
 ---
 

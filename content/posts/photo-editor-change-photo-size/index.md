@@ -1,6 +1,7 @@
 ---
 title: "Photo Editor - Change photo size"
 date: "2019-04-07 10:45:08"
+description: "要使用 Photo Editor 在 Android 上進行圖片大小的調整。 可先選取要處理的圖片，選取分享。 將圖片分享至 Photo Editor。 然後在 Photo Editor 下方找到變更尺寸按鈕。"
 tags: [Android, Photo Editor]
 ---
 

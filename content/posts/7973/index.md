@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern]Design Pattern學習資源"
 date: "2009-04-11 09:41:22"
-description: "[Design Pattern]Design Pattern學習資源"
+description: "稍微過濾整理了一下Design Pattern的學習資源，下面的資源寫的應該都不會太差。也感謝水瓶大與hatelove大的補充。 網頁 developer.com-A Survey of Common Design Patterns data & object factory-Design…"
 tags: [Design Pattern]
 ---
 

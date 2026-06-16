@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Global exception handling with interceptor in gRPC service"
 date: "2019-11-27 07:26:13"
+description: "要做 gRPC 的全域攔截，可以使用 gRPC interceptor 來做。 建立一個 Interceptor 類別繼承自 gRPC 的 Interceptor，覆寫掉會用到的方法，像是 UnaryServerHandler，"
 tags: [gRPC]
 ---
 

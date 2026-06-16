@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - LAST_DAY function"
 date: "2015-07-15 22:31:00"
-description: "PL/SQL - LAST_DAY function"
+description: "LAST_DAY function 會依帶入的日期回傳對應月份的最後一天。 使用語法如下： LAST_DAY( date ) 其中 date 為要處理的日期，帶入即會回傳對應月份的最後一天。"
 tags: [PL/SQL]
 ---
 

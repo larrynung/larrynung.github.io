@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Enum.TryParse"
 date: "2010-10-20 12:57:39"
-description: ".NET 4.0 New Feature - Enum.TryParse"
+description: ".NET 4.0加入的Enum.TryParse跟Enum.Parse同樣都是用來轉換資料回列舉型別用的方法，相較於Enum.Parse，Enum.TryParse方法少觸發了無法轉換時的例外，因此可以減去省去不必要的例外處理，跟一般其它類別的TryParse一樣，"
 tags: [VB.NET]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]處理MDI子表單清單無法即時更新的問題"
 date: "2010-05-09 11:09:12"
-description: "[VB.NET]處理MDI子表單清單無法即時更新的問題"
+description: "在做MDI程式時，若有使用到MDI子表單清單的功能，需特別留意當子表單標題被更動時，MDI子表單清單不會即時的更新。 而是要將子視窗切換該子表單清單才會更新。 若要修正這個問題，可在WindowsMenu.DropDownOpening事件，呼叫ActivateMdiChild保護方法，"
 tags: [VB.NET]
 ---
 

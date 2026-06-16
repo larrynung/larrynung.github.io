@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET].NET多語系程式(三)"
 date: "2009-04-29 12:05:15"
-description: "[VB.NET].NET多語系程式(三)"
+description: "Abstract Introduction 學習目標 操作步驟 簡易實作範例 Introduction 本篇將介紹.NET多語系程式的寫法 ，下面會利用XML文件來達到多語系的功能。"
 tags: [VB.NET]
 ---
 

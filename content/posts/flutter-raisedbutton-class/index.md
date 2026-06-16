@@ -1,6 +1,7 @@
 ---
 title: "Flutter - RaisedButton class"
 date: "2018-04-07 22:02:55"
+description: "Flutter 的 RaisedButton widget 可以用來做按鈕的呈現。 其建構子如下： RaisedButton({Key key, @required VoidCallback onPressed, ValueChanged onHighlightChanged,…"
 tags: [Flutter]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Iedis - Advanced console"
 date: "2019-03-26 16:05:44"
+description: "在 Redis Servers Tool Window 內的連線設定上按下滑鼠右鍵，點選滑鼠右鍵快顯選單上的 Open Terminal 選單選項，或是透過上方的工具列，抑或者是熱鍵 ⌘ + ⇧ + F10。"
 tags: [Iedis, Rider, Redis]
 ---
 

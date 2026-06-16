@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Install with docker"
 date: "2018-08-27 23:13:22"
+description: "要透過 Docker 使用 Event Store，可以調用下列命令： docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore Docker 會下載 eventstore-node…"
 tags: [Event Store]
 ---
 

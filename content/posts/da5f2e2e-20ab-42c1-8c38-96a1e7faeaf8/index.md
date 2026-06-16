@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's place geometry manager"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's place geometry manager"
+description: "Tkinter在做版面配置有三種方式，place是其中一種。 使用place來做版面配置，我們可以指定元件的絕對位置、絕對大小、相對位置、相對大小... place方法可以接受anchor、bordermode、x、y、relx、rely、width、height、relwidth、relheigh…"
 tags: [Python]
 ---
 

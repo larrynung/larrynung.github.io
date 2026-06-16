@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Sync remote site to local package"
 date: "2016-12-26 23:30:30"
+description: "要用 Web Deploy 將遠端站台打包成 Web Deploy Package，可以指定 Web Deploy 使用 sync 操作，source 使用 appHostConfig provider，帶入要打包的站台名稱，"
 tags: [Web Deploy]
 ---
 

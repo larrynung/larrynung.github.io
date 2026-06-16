@@ -1,7 +1,7 @@
 ---
 title: "FxCop - assembly reference cannot be resolved"
 date: "2013-12-27 23:31:00"
-description: "FxCop - assembly reference cannot be resolved"
+description: "在使用 FxCop 分析組件時，某些組件在用命令列載入時會跳出 cannot be resolve 這樣的錯誤訊息。 改用 FxCop 嘗試載入的話，也會找不到相依的組件而彈出詢問對話框。 這樣的問題是由於某些相依的組件找不到所導致，而這些組件有時候只是在 GAC 內。"
 tags: [FxCop]
 ---
 

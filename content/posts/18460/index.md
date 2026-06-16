@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]使用Enum.Parse將數值或列舉型別常數名稱轉換成列舉型別物件"
 date: "2010-10-19 11:25:07"
-description: "[VB.NET]使用Enum.Parse將數值或列舉型別常數名稱轉換成列舉型別物件"
+description: "在研究列舉型別的新成員時，發現在 Enum.Parse中有些之前未注意到的地方，這邊將之整理一下。 Enum.Parse具有兩個多載方法，兩個多載方法的差異只在於在轉換列舉型別物件時是否會依照大小寫的不同下去處理。"
 tags: [VB.NET]
 ---
 

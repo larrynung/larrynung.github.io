@@ -1,6 +1,7 @@
 ---
 title: "Redis on Windows"
 date: "2017-06-16 23:16:25"
+description: "要在 Windows 使用 Redis，可以到這邊下載 Windows 的 Porting 版本。 點擊安裝檔進行安裝。 勾選同意授權。 設定要安裝的位置，這邊也可以勾選順帶設定環境變數。 設定 Redis 要使用的 Port 號，這邊也可以勾選順帶設定防火牆。 設定記憶體使用上限。"
 tags: [Redis]
 ---
 

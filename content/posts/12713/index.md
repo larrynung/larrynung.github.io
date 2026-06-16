@@ -1,7 +1,7 @@
 ---
 title: "[UML]UML(Unified Modeling Language)"
 date: "2009-12-29 01:15:16"
-description: "[UML]UML(Unified Modeling Language)"
+description: "Introduction UML全名為Unified Modeling Language，中文稱之統一塑模語言。是由物件管理協會(Object Management Group，簡稱OMG)所制定的可視化圖形描述語言，透過固定的幾種圖式來呈現軟體系統的設計概念。"
 tags: [UML]
 ---
 

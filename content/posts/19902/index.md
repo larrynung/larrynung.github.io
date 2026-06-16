@@ -1,7 +1,7 @@
 ---
 title: "Linq To Excel Provider"
 date: "2010-12-04 11:49:31"
-description: "Linq To Excel Provider"
+description: "Linq To Excel Provider跟Linq To Excel開放源始碼函式庫一樣都是用來對Excel做查詢用途，不同的是Linq To Excel Provider使用方式跟Linq To SQL有些接近，2.5版以後更具備更新、插入、與刪除等功能，"
 tags: [CSharp,Linq]
 ---
 

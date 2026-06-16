@@ -2,7 +2,7 @@
 title: "[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
 slug: "[CSharp]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
 date: "2013-11-06 12:00:00"
-description: "[C#]Process.Exited事件觸發的執行緒會受Process.SynchronizingObject屬性設定的影響"
+description: "最近在用Process時才發現自己對於Process類別實在不是很熟，本來以為在主執行緒將Process叫起來後關閉，Process.Exited事件會被導回主執行緒去觸發，後來才發現並不是那麼一回事，這邊以一個簡單的範例來看： 程式啟動時會順帶開啟計算機程式，並秀出主執行緒ID。"
 tags: [CSharp]
 ---
 

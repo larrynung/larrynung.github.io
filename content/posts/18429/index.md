@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Attribute與反射的搭配使用"
 date: "2010-10-18 08:59:31"
-description: "[VB.NET]Attribute與反射的搭配使用"
+description: "有時在撰寫程式為了增加彈性或是便利性，我們可考慮使用Attribute來為類別、方法、欄位、與屬性附加一些資訊。這樣的設計方式在.NET中已經存在許久，這類應用也越來越普及，相信大家就算沒有用過也有看過，像是製作控制項時會用到的Browsable、Description、Category...，"
 tags: [VB.NET]
 ---
 

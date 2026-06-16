@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]VB 10.0 Implied Line Continuation"
 date: "2010-04-10 01:53:41"
-description: "[VB.NET]VB 10.0 Implied Line Continuation"
+description: "VB.NET是line-oriented語言，與C#不同的是，在撰寫VB.NET時，不需使用像是\";\"的終止符號。撰寫的指令幾乎都是一行寫完，若要換行，可使用串接字元「_」，明確告知系統程式碼有斷行。"
 tags: [VB.NET]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Setup Specific GitLab Runner"
 date: "2018-01-21 11:00:18"
+description: "要設定 Specific GitLab Runner，需先至 GitLab 的 CI/CD 設定頁面。 找到 Runner settings。 這邊會顯示 GitLab Runner 註冊時需要的 URL 與 Token。"
 tags: [GitLab]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Studio Styles Web Site"
 date: "2010-06-14 03:24:42"
-description: "[.NET Resource]Studio Styles Web Site"
+description: "記得Dotjum大人曾在[VS.NET]切換成黑色背景(Themes Settings)這篇，提到了一個好用的Visual Studio Programmer Themes Gallery網站，裡面提供了許多Visual Studio Themes可直接套用。"
 tags: [.NET Resource]
 ---
 

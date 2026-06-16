@@ -1,7 +1,7 @@
 ---
 title: "[IADP]Software search issue"
 date: "2013-11-06 12:00:00"
-description: "[IADP]Software search issue"
+description: "當初在撰寫[IADP]Intel AppUp(SM) Center這篇時，稍微試了一下搜尋軟體的功能，以Alex Lee所上傳的ProcessViewerLight下去做了測試，意外的發現我找不到該軟體。"
 ---
 
 當初在撰寫[IADP]Intel AppUp(SM) Center這篇時，稍微試了一下搜尋軟體的功能，以Alex Lee所上傳的ProcessViewerLight下去做了測試，意外的發現我找不到該軟體。

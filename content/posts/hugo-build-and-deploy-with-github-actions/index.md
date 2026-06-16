@@ -1,6 +1,7 @@
 +++
 title = 'Hugo - Build and Deploy With GitHub Actions'
 date = 2024-04-09T22:30:36+08:00
+description = "要使用 GitHub Actions 建置並部署 Hugo 到 GitHub Pages，先要切到 GitHub Pages Repository 下的 Settings/Pages 頁面，在 Build and deployment 的 Source 這邊選用 GitHub Actions。"
 tags = ['Hugo']
 +++
 

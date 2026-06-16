@@ -1,6 +1,7 @@
 ---
 title: "Logstash - Install Logstash via apt"
 date: "2017-05-29 23:40:35"
+description: "安裝 Logstash 前，需先確認已有安裝 Java 8。 可輸入指令查看 Java 版本。 java -version 若版本不對，可先進行 Java 8 的安裝。 apt-get install python-software-properties 加入 PPA。"
 tags: [Logstash]
 ---
 

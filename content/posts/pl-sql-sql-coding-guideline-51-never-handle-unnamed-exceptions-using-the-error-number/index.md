@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 51 - Never handle unnamed exceptions using the error number"
 date: "2017-06-16 00:03:38"
+description: "條款五十一，不要使用 Error Number 去處理 Unnamed Exceptions。 像是下面這樣的程式，直接使用 Error Number -2291 去處理 Unnamed Exception 就不是建議的作法。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

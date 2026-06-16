@@ -1,7 +1,7 @@
 ---
 title: "Windows Azure - Enable MediaWiki File Upload"
 date: "2015-01-11 22:23:00"
-description: "Windows Azure - Enable MediaWiki File Upload"
+description: "使用 Azure 架設 MediaWiki，若要啟動檔案上傳的功能，我們需要在建立 MediaWiki 時，將 Enable MediaWiki File Uplad 以及 Use Windows Azure Storage As File Backend 設定開啟，"
 tags: [Windows Azure, MediaWiki ]
 ---
 

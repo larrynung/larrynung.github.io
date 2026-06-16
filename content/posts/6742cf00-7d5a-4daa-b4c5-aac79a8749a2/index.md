@@ -1,7 +1,7 @@
 ---
 title: "Prepare android development environment with ADT(Android Developer Tools) Bundle for Windows"
 date: "2013-11-06 12:00:00"
-description: "Prepare android development environment with ADT(Android Developer Tools) Bundle for Windows"
+description: "Android開發環境有幾種建立方式，這邊紀錄一下怎樣透過ADT Bundle去建立Andorid的開發環境。 ADT Bundle算是比較簡單的安裝方式，它將開發需要用的工具都幫我們包裝了起來，"
 ---
 
 Android開發環境有幾種建立方式，這邊紀錄一下怎樣透過ADT Bundle去建立Andorid的開發環境。

@@ -1,6 +1,7 @@
 ---
 title: "Puppet - Install puppet server via apt"
 date: "2017-07-19 23:49:47"
+description: "要透過 apt 安裝 Pupper server，需要開啟 package repository。 首先要先依作業系統的版本下載 puppetlabs-release。"
 tags: [Puppet]
 ---
 

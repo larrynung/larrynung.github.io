@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature-Breakpoint Labeling、Searching、Import/Export"
 date: "2010-03-06 09:14:36"
-description: "[Visual Studio]Visual Studio 2010 New Feature-Breakpoint Labeling、Searching、Import/Export"
+description: "這邊記錄一下VS2010在Breakpoint功能的三項改進： Breakpoint Labeling Breakpoint Searching Breakpoint Import/Export 目前支援的版本如下： Breakpoint Labeling…"
 tags: [Visual Studio]
 ---
 

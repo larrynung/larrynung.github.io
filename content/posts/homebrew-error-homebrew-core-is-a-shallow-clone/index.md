@@ -1,6 +1,7 @@
 ---
 title: "'HomeBrew - Error: homebrew-core is a shallow clone.'"
 date: "2021-01-05 00:04:10"
+description: "使用 HomeBrew 如果出現 \"Error: homebrew-core is a shallow clone.\" 錯誤。 可照著命令列的提示帶入。 git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch…"
 tags: [HomeBrew]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "How to customize .NET 4.0's System.Runtime.Caching.ChangeMonitor"
 date: "2013-11-06 12:00:00"
-description: "How to customize .NET 4.0's System.Runtime.Caching.ChangeMonitor"
+description: "筆者很久以前寫過一篇.NET 4.0 New Feature - System.Runtime.Caching，稍稍的簡單介紹了一下.NET 4.0新加入的快取框架。"
 tags: [CSharp]
 ---
 

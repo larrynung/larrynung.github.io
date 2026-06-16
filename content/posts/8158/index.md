@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET].NET多語系程式(一)"
 date: "2009-04-24 12:32:11"
-description: "[VB.NET].NET多語系程式(一)"
+description: "範例說明 本篇將介紹.NET多語系程式的寫法 ，下面會利用最簡單方便且正統的方法也就是資源檔來達到多語系的功能。 學習目標 .NET多語程式撰寫 資源檔的使用與操作 CultureInfo類別的使用 語系的切換 操作步驟 介面上的多語 Step1.將表單的Localizable屬性設為True…"
 tags: [VB.NET]
 ---
 

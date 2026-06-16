@@ -1,6 +1,7 @@
 ---
 title: "LiteDB - Create and open DB"
 date: "2017-12-17 06:54:27"
+description: "LiteDB 使用上跟一般資料庫一樣需要先建立資料庫操作物件，帶入指定的資料庫檔案位置建立出 LiteDatabase 物件實體即可。 LiteDatabase 物件實體建立後，即可針對 LiteDatabase 物件實體進行資料庫的操作，資料庫的連線 LiteDB 會幫我們開啟，不需自行開啟。"
 tags: [LiteDB]
 ---
 

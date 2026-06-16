@@ -1,7 +1,7 @@
 ---
 title: "Mefx - MEF Composition Analysis Tool"
 date: "2014-03-16 23:20:00"
-description: "Mefx - MEF Composition Analysis Tool"
+description: "Mefx 是一用來分析與診斷 MEF 錯誤的命令列工具。當 MEF 在運作上不如預期時，我們可藉由此工具下去做些查驗。 程式主檔可至 Managed Extensibility Framework - Download: MEF Analysis Tool (mefx) for .NET 4.0…"
 tags: [MEF]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "WPF - Refresh / Update WPF controls"
 date: "2014-03-16 22:29:00"
-description: "WPF - Refresh / Update WPF controls"
+description: "相信大家都知道若要釋放些資源去讓畫面得以更新，若不將運算處理切離主執行緒，我們可能會偷懶用 DoEvents 來做。然而， DoEvents 這個方法的功用只是釋放資源，而釋放出的資源為誰所用，這部分我們無法掌控。因此釋放出的資源可能會被拿去做不相干的處理，造成效能嚴重低落。"
 tags: [WPF, CSharp ]
 ---
 

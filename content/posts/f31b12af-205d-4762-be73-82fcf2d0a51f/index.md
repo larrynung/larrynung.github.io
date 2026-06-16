@@ -1,7 +1,7 @@
 ---
 title: "Bitbuck~Free source code hosting"
 date: "2013-11-06 12:00:00"
-description: "Bitbuck~Free source code hosting"
+description: "Bitbuck是一類似GitHub的source code hosting服務，跟GitHub最大的不同是Bitbuck可以建立無限制的私有專案，而在GitHub中是免費使用者只能建立公有專案，要建置私有專案就必須要付費。"
 ---
 
 Bitbuck是一類似[GitHub](https://github.com/)的source code hosting服務，跟[GitHub](https://github.com/)最大的不同是[Bitbuck](https://bitbucket.org/)可以建立無限制的私有專案，而在[GitHub](https://github.com/)中是免費使用者只能建立公有專案，要建置私有專案就必須要付費。[Bitbuck](https://bitbucket.org/)隨然允許建立私有專案，但也是有限制的，每個專案的成員數必需要小於五位，但對於一般個人使用來說應該是相當的夠用。另外就是網路上有人說速度上會比[GitHub稍微慢了一些，但這邊以筆者來說是感覺不太出來，最起碼筆者還能接受。](https://github.com/)

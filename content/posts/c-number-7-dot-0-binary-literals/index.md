@@ -1,7 +1,7 @@
 ---
 title: "C# 7.0 - Binary literals"
 date: "2016-05-16 05:27:00"
-description: "C# 7.0 - Binary literals"
+description: "在程式開發時，有時我們會需要使用二進制的數值，像是在使用標有 FlagsAttribute 的列舉值做權限時就會用到。在 C 7.0# 前我們必需要使用十進制數值表示法，確保他是二進制的數值。"
 tags: [CSharp, CSharp 7.0]
 ---
 

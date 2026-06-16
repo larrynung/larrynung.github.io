@@ -1,6 +1,7 @@
 ---
 title: "Blazor - Build components"
 date: "2019-07-11 00:14:38"
+description: "Blazor component 是 Blazor 的元件，類似控制項，是 Blazor 中可重複使用的最小單位。 Blazor component 以 razor 為副檔名，它跟 ASP.NET MVC 的 Razor page 很像，會用 HTML 與 Razor 語法排版畫面。"
 tags: [Blazor]
 ---
 

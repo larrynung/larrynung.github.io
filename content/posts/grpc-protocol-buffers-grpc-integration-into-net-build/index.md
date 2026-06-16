@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Protocol Buffers/gRPC Integration Into .NET Build"
 date: "2019-04-18 00:56:32"
+description: "Grpc.Tools 在 1.17 後我們可以將 proto 檔的編譯動作直接整到 dotnet build。使用上只要在專案檔中加上 設定即可。 像是筆者這邊準備了一個 GRPC.Message 專案。加入 Grpc/Grpc.Tools/Google.Protobuf NuGet 套件參考。"
 tags: [gRPC]
 ---
 

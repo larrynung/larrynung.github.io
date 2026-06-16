@@ -1,6 +1,7 @@
 ---
 title: "Parcel - CSS asset"
 date: "2018-01-13 22:46:09"
+description: "Parcel 支援 CSS 文件的處理，可在 CSS 中透過 @import 載入另一個 CSS。 也可以透過 url 函式引用圖片、字型。 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面引用了 index.css。"
 tags: [Parcel]
 ---
 

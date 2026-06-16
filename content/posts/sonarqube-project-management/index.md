@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Project management"
 date: "2017-03-23 13:40:28"
+description: "要將程式送到 SonarQube 進行分析，首先必須要在 SonarQube 建立 Project。 可點擊 [Administration | Projects | Management] 選單選項開啟 Project management 頁面。"
 tags: [SonarQube]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Node.Js - Getting started"
 date: "2019-05-06 07:07:22"
+description: "Node.Js 安裝完後，開個 Js 檔來撰寫簡單的 Hello World 程式。 然後調用 node 命令並帶入程式位置。 node ${file} 即可運行程式，顯示程式運行後的結果。 再來看一下稍微複雜點的 Hello World。"
 tags: [Node.Js]
 ---
 

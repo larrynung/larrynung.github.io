@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Publish with MsBuild"
 date: "2016-12-03 17:59:16"
+description: "要使用 MsBuild 建置專案並佈署，可以在 MsBuild 建置時帶上 DeployOnBuild 參數告知 MsBuild 在建置完要做佈署，並帶上 PublishProfile 參數指定要使用的 Publish Profile。"
 tags: [Web Deploy]
 ---
 

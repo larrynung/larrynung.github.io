@@ -1,7 +1,7 @@
 ---
 title: "Web.Config Transformation - Add Config Transform File"
 date: "2014-07-07 23:01:00"
-description: "Web.Config Transformation - Add Config Transform File"
+description: "當我們建立一個 Web 專案，Visual Studio 預設就會幫我們產生好 Debug 與 Release 這兩個轉換檔。但隨著專案的進行，專案中的 Build Configuration 可能會隨之增加。此時我們需要為新建的建置組態建立對應的 Config Transform 檔。"
 tags: [Web.Config Transformation]
 ---
 

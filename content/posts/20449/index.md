@@ -1,7 +1,7 @@
 ---
 title: "MaxToCode"
 date: "2010-12-29 03:13:32"
-description: "MaxToCode"
+description: "MaxToCode為一.NET程式碼核級保護軟體，能為程式加上混淆或加密，保護程式碼不被有心人事惡意破解。取得授權後會拿到一個硬體鎖與金鑰，透過金鑰可到指定位置下載正式版本的MaxToCode，安裝完即可開始使用MaxToCode，需特別注意在使用上要先插入MaxToCode硬體鎖，"
 tags: [.NET Resource]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Apply blog themes"
 date: "2016-06-13 22:26:26"
+description: "Hexo 支援主題的更換，Themes | Hexo 網站上也提供許多不同的主題可供我們選用，看到有興趣的主題可以直接點擊主題的圖片開啟 Demo Site 瀏覽。 若確定選用該主題，可以點選圖片下方主題的名字連結到下載頁面。"
 tags: [Hexo]
 ---
 

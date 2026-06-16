@@ -1,6 +1,7 @@
 ---
 title: "n - Node version management"
 date: "2017-04-23 10:06:14"
+description: "n 是一 Node version management，可以管理 Node.js 的版本。安裝時可先將 npm 的快取清掉。 sudo npm cache clean -f 然後用 npm 安裝 n 即可。"
 tags: [Node.js]
 ---
 

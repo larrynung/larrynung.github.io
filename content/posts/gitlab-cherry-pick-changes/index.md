@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Cherry-pick changes"
 date: "2018-11-29 00:13:38"
+description: "要使用 GitLab 做 Cherry-pick，先要進入要 Cherry-pick 的 commit。 展開右上方的 Options 下拉清單點選 Cherry-pick 選單選項。"
 tags: [GitLab]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept][Security].NET程式保護機制概述"
 date: "2009-09-05 11:54:24"
-description: "[.NET Concept][Security].NET程式保護機制概述"
+description: "相信大家都知道，.NET程式為了跨平台、跨語言，在架構中特別導入了CLR，用來運行中繼碼。程式在透過編譯器編譯過後會被編譯成MSIL，有點類似JAVA的Bytecode，同屬兩階段編譯。因此.NET跟JAVA程式一樣，寫出來的程式很容易從中繼碼被反推回去原程式碼(就是所謂的反組譯)。"
 tags: [.NET Concept,Security]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 8 - Try to use anchored declarations for variables"
 date: "2015-11-19 05:41:00"
-description: "PL/SQL & SQL CODING GUIDELINE 8 - Try to use anchored declarations for variables"
+description: "條款八，使用 anchored declarations。 像是下面這樣的程式： 預期要帶入的是 emp table 的 ename，這在 emp table 的 schema 中是其實是已經定義好的。如果像上面這樣另行宣告可能會不小心設錯，或是 schema 修改時會很麻煩。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

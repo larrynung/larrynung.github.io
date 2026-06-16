@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn upgrade"
 date: "2017-07-10 23:18:45"
+description: "Yarn upgrade 命令可用來更新套件版本。 假設今天使用的是舊版的套件。 就可以使用 Yarn upgrade 帶上套件的名稱進行套件版本的更新。 yarn upgrade 或是在套件名稱後用小老鼠串接套件的版本，指定套件更新到特定的版本。"
 tags: [Yarn]
 ---
 

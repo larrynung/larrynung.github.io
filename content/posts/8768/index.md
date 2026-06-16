@@ -1,7 +1,7 @@
 ---
 title: "[Investment]議價18招攻防戰"
 date: "2009-06-10 12:27:16"
-description: "[Investment]議價18招攻防戰"
+description: "Introduction 以下內容轉載自2009/5/16自由時報週末生活版。 先挖出屋主底價 這階段不可明確說出「價格」，若用周遭價格來比價時，也別明白點出數字，免得被屋主或房仲直接拿來比價，削減了進一步下殺價格的空間。"
 tags: [Investment]
 ---
 

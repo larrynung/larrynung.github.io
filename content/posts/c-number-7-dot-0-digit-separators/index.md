@@ -1,7 +1,7 @@
 ---
 title: "C# 7.0 - Digit separators"
 date: "2016-05-21 00:00:00"
-description: "C# 7.0 - Digit separators"
+description: "以前在開發 C# 時，如果數值過大，在閱讀上會十分不易。 C# 7.0 以後提供了 Digit separators 功能，允許開發人員使用 _ 將數值做些分隔，有效解決了上述問題。"
 tags: [CSharp, CSharp 7.0]
 ---
 

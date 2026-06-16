@@ -1,6 +1,7 @@
 ---
 title: "'C# - ToUnixTimeSeconds extension for DateTime'"
 date: "2019-07-04 15:35:45"
+description: "DateTimeOffset 在 C# 4.6 新增了 ToUnixTimeSeconds 方法，可以取得跟 UnixTime 之間差的秒數。 有些時候我們會需要跟 UnixTime 之間差的秒數，但是不需要 TimeZone 資訊，"
 ---
 
 DateTimeOffset 在 C# 4.6 新增了 ToUnixTimeSeconds 方法，可以取得跟 UnixTime 之間差的秒數。

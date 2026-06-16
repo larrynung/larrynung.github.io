@@ -1,7 +1,7 @@
 ---
 title: "MediaWiki - Create wiki page"
 date: "2014-02-22 21:42:00"
-description: "MediaWiki - Create wiki page"
+description: "MediaWiki 要建立 Wiki Page，大致來說有下列幾種方式: 透過網址列去建立 透過連結 Wiki Page 的方式建立 透過搜尋框搜尋後建立 這邊分別簡單的帶過... 透過網址列去建立 使用這種方式去建立 Wiki Page，需要帶入特定格式的網址至網址列。"
 tags: [MediaWiki ]
 ---
 

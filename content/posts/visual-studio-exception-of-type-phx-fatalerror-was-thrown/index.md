@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio - Exception of type 'Phx.FatalError' was thrown"
 date: "2016-11-24 22:52:32"
+description: "如果 Visual Studio 出現 \"Exception of type 'Phx.FatalError' was thrown\" 這樣的錯誤。 可以重新註冊 dll 來修復這問題，不同版本的 Visual Studio 需要註冊不同的 dll。"
 tags: [Visual Studio]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "DotNetZip"
 date: "2011-01-03 01:48:28"
-description: "DotNetZip"
+description: "DotNetZip為一輕便又易於使用的開放源碼壓縮函式庫，開發人員可透過DotNetZip函式庫來做壓縮資料、讀取壓縮資料、更新壓縮資料、與列出壓縮檔資料內容等功能，能支援壓縮檔密碼保護、Zip64格式、產生自解壓縮檔、與Unicode編碼。"
 tags: [.NET Resource, CSharp]
 ---
 

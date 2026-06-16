@@ -1,6 +1,7 @@
 ---
 title: "Cake - Setting up a new project on Windows"
 date: "2018-10-22 23:48:50"
+description: "要在新的專案中使用 Cake，首先要下載 bootstrapper。 Invoke-WebRequest https://cakebuild.net/download/bootstrapper/windows -OutFile build.ps1 然後建立 cake 腳本檔。"
 tags: [Cake]
 ---
 

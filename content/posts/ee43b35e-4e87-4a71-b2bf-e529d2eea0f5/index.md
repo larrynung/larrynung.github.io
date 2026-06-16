@@ -1,7 +1,7 @@
 ---
 title: "[IADP]Application Rejected Process"
 date: "2013-11-06 12:00:00"
-description: "[IADP]Application Rejected Process"
+description: "上傳軟體過了兩三天，終於等到了Intel AppUp來的回信，信中很明確的帶出了軟體被Rejected，但卻從信件中看不出個所以然。 自然連到了Intel AppUp Application管理頁面，展開應用程式，發現本來再驗證流程的狀態變為了Rejected了，"
 ---
 
 上傳軟體過了兩三天，終於等到了Intel AppUp來的回信，信中很明確的帶出了軟體被Rejected，但卻從信件中看不出個所以然。

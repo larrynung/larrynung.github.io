@@ -1,6 +1,7 @@
 ---
 title: "commitlint - Lint commit messages"
 date: "2020-06-13 22:52:26"
+description: "commitlint 是一檢測 commit message 的工具。 使用上需先全域安裝 commitlint cli。 npm install -g @commitlint/cli 加入 package.json。"
 tags: [git]
 ---
 

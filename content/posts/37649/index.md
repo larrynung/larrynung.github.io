@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - C++ IDE improvements"
 date: "2011-09-25 11:02:04"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - C++ IDE improvements"
+description: "Visual Studio 2011 Preview對C++的開發做了些改進，有些改進的是從VC6開始就存在的問題，像是Intellisense彈不太出來，或是Intellisense不夠聰明，在Visual Studio 2011 Preview都做了改善，為C++開發人員提供了更友善的開發環境。"
 tags: [Visual Studio,C++]
 ---
 

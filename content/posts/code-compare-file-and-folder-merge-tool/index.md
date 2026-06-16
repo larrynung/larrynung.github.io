@@ -1,7 +1,7 @@
 ---
 title: "Code Compare - File and Folder Merge Tool"
 date: "2014-02-21 13:57:00"
-description: "Code Compare - File and Folder Merge Tool"
+description: "Code Compare 是ㄧ用來對檔案、目錄做比對與合併的程式，能輕易整合開發人員的開發環境。 使用前請至 Visual Studio Gallery 下載。 下載後點擊安裝... 安裝這邊會提供一些設定選項，可供使用者決定有哪些環境需要整合。 安裝完成就可以透過被整合的環境下去觸發使用。"
 tags: [Visual Studio]
 ---
 

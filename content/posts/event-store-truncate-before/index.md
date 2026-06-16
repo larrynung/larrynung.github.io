@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Truncate before"
 date: "2018-09-21 23:39:57"
+description: "要使用 Event Store 的 Truncate before 刪除指定 Event 編號以前的 Event，可以設定 StreamMetadata。 透過 StreamMetadata 的 truncateBefore 指定編號多少以前的 Event 要被刪除，"
 tags: [Event Store]
 ---
 

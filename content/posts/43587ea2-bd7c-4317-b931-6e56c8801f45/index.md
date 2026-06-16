@@ -2,7 +2,7 @@
 title: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 slug: "[CSharp]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
 date: "2013-11-06 12:00:00"
-description: "[C#]在.NET程式中要如何指定Windows的ClassName去接收視窗的訊息"
+description: "有使用過.NET程式做視窗訊息的接收的應該都會知道，好像沒有比較直接的方法去設定視窗的ClassName。就算去覆寫Form.CreateParams也不太行，若是指定的ClassName沒有註冊過，運行起來會丟出例外。 若是指定的是有註冊過的ClassName，像是Button之類的。"
 tags: [CSharp]
 ---
 

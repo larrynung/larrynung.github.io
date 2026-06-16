@@ -1,6 +1,7 @@
 +++
 title = 'Hugo - Create a Site'
 date = 2024-04-08T22:20:37+08:00
+description = "Hugo 裝完後，首先需要先建立站台，透過 Hugo 的 new site 命令，帶入站台的名稱。 hugo new site [sitename] 建立完後進入站台目錄。 cd [sitename] 初始化 git。"
 tags = ['Hugo']
 +++
 

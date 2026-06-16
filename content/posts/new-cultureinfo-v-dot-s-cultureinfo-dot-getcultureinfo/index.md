@@ -1,7 +1,7 @@
 ---
 title: "new CultureInfo v.s CultureInfo.GetCultureInfo"
 date: "2016-01-22 05:31:00"
-description: "new CultureInfo v.s CultureInfo.GetCultureInfo"
+description: "要取得 CultureInfo 通常有兩種做法，一個是透過建構子構建 ，一個則是透過 CultureInfo.GetCultureInfo 去取得。 透過建構子建立會產生新的物件，若頻繁的調用會對 GC 造成不必要的負擔。"
 ---
 
 要取得 CultureInfo 通常有兩種做法，一個是透過建構子構建 ，一個則是透過 CultureInfo.GetCultureInfo 去取得。

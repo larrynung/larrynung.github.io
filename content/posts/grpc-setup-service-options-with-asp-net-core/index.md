@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Setup service options with ASP.NET Core"
 date: "2019-05-18 03:04:45"
+description: "在 ASP.NET Core 支援設定的 gRPC service option 有: | Option | Default | Description | |:------:|:-------:|:-----------:| | SendMaxMessageSize | null |…"
 tags: [gRPC]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Diagnosers"
 date: "2017-04-13 23:09:09"
+description: "Diagnoser 可以附加到 benchmark 上，並獲取一些有用的資訊。像是內建的 MemoryDiagnoser 就可以幫我們獲取記憶體資訊。 使用上只要透過 Attribute 的方式加到要 benchmark 的類別即可。像是下面這樣： 或是透過 config 的方式設定也可以。"
 tags: [BenchmarkDotNet]
 ---
 

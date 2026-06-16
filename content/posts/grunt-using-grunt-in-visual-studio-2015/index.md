@@ -1,7 +1,7 @@
 ---
 title: "Grunt - Using Grunt in Visual Studio 2015"
 date: "2016-01-28 01:25:00"
-description: "Grunt - Using Grunt in Visual Studio 2015"
+description: "Visual Studio 2015 開始支援 Grunt，使用時需先為專案加入 NPM Configuration File。 還有 Grunt Configuration File。 接著在 package.json 中加入要使用的 Grunt plugin。"
 tags: [Grunt]
 ---
 

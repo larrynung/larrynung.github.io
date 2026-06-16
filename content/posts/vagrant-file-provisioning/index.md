@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - File Provisioning"
 date: "2015-11-03 00:06:00"
-description: "Vagrant - File Provisioning"
+description: "File Provisioning 可以讓我們自動在 Vagrant 啟動時將檔案傳遞至虛擬機中。 使用上主要是透過 Vagrantfile 將 config.vm.provision 設為 file，並利用支援的參數與方法做些對應的設定。 支援的參數有 source、 destination。"
 tags: [Vagrant]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Consul - KV Data"
 date: "2018-12-17 23:15:19"
+description: "Consul 支援簡易的 Key-Value Store 功能。 可用 consul kv put 將資料存入 Key-Value Store。 consul kv put 用 consul kv get 將資料取出。"
 tags: [Consul]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Software]Notepad's .LOG feature"
 date: "2011-02-01 01:05:45"
-description: "[Software]Notepad's .LOG feature"
+description: "從Dos用到Windows 7，算一算就算從Windows 98開始算，用Notepad起碼也有十幾年了，但今天看了Do you know Notepad’s .LOG feature?這篇才發現，原來Notepad不只是有文字編輯的功能，裡面還有隱藏些進階的功能。"
 tags: [Software]
 ---
 

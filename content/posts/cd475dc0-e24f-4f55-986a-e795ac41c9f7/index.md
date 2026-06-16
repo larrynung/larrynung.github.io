@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio][C#].NET 4.5 New Feature - Caller Information"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio][C#].NET 4.5 New Feature - Caller Information"
+description: "Caller Information是.NET 4.5的新功能，它能在編譯時為我們提供些額外的資訊給副程式，像是被哪個方法叫用、叫用的方法所在的檔案位置、以及程式碼行數，我們可以用這些額外的資訊提供Log更為詳細的資訊，再也不需要用StackTrace來提供這些資訊了，不僅簡單，"
 tags: [CSharp]
 ---
 

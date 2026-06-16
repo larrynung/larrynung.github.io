@@ -1,7 +1,7 @@
 ---
 title: "Octopress - Add Linkedin profile link with Octoflat theme"
 date: "2013-12-21 21:59:00"
-description: "Octopress - Add Linkedin profile link with Octoflat theme"
+description: "Octoflat Theme 預設就有支援 Linkedin Profile 的連結，只要在 _config.yml 設定檔中設定 linkedin_user，將 Linkedin User ID 設上去就可以了。"
 tags: [Octopress]
 ---
 

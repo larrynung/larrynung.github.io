@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Docker Provisioning"
 date: "2015-11-01 23:33:00"
-description: "Vagrant - Docker Provisioning"
+description: "Docker Provisioning 可以自動在 Vagrant 啟動時幫我們進行 Docker 的安裝，容器的下載，與容器的設定。 使用上主要是透過 Vagrantfile 將 config.vm.provision 設為 docker，並利用支援的參數與方法做些對應的設定。"
 tags: [Vagrant]
 ---
 

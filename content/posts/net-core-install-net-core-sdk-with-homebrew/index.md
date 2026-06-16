@@ -1,6 +1,7 @@
 ---
 title: ".NET Core - Install .NET Core SDK with HomeBrew"
 date: "2019-03-17 16:20:36"
+description: "要使用 HomeBrew 安裝 .NET SDK，可以使用 brew cask 安裝 dotnet-sdk 套件。 brew cask install dotnet-sdk 安裝完後可開新的 Terminal 調用命令查詢 .NET Core SDK 版本試試，"
 tags: [.NET Core, Mac, HomeBrew]
 ---
 

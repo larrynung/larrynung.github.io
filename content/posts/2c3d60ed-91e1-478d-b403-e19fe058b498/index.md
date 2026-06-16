@@ -1,7 +1,7 @@
 ---
 title: "Share Your Terminal With No Fuss - ascii.io"
 date: "2013-11-06 12:00:00"
-description: "Share Your Terminal With No Fuss - ascii.io"
+description: "ASCII.IO是一個滿有趣的服務，我們只要在Terminal下呼叫一簡單的命令，就可以錄製並上傳我們在Terminal下的操作，而且錄製的動作可以直接被複製，跟一般的影片錄製有所不同，在做Terminal下的教學特別好用 。 使用上可參閱官方提供的Getting started這份文件。"
 tags: [Mac, HomeBrew]
 ---
 

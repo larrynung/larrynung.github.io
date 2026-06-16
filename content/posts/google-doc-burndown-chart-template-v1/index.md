@@ -1,6 +1,7 @@
 ---
 title: "Google doc burndown chart template v1"
 date: "2017-08-04 22:55:12"
+description: "最近在找 Burndown chart 工具來管理案子進度，找到的網站工具跟 Excel 範本都不太適用，因此參閱 Online Sprint Burndown chart | Logi Helgu 自行改了一版。"
 ---
 
 最近在找 Burndown chart 工具來管理案子進度，找到的網站工具跟 Excel 範本都不太適用，因此參閱 [Online Sprint Burndown chart | Logi Helgu](http://agile.logihelgu.com/online-sprint-burndown-chart/) 自行改了一版。

@@ -1,6 +1,7 @@
 ---
 title: "Firebase - Realtime database rules"
 date: "2018-02-21 23:59:05"
+description: "Firebase 專案建立後，若要使用 Realtime Database 功能可點選左側 DEVELOP 下的 Database。 點選 Realtime Database 下的開始使用按鈕。"
 tags: [Firebase]
 ---
 

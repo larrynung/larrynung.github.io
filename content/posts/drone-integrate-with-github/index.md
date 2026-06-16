@@ -1,6 +1,7 @@
 ---
 title: "Drone - Integrate with GitHub"
 date: "2017-09-07 06:37:49"
+description: "要將 GitHub 與 GitHub 整合，需要先在 GitHub 建立 Application。 切到 GitHub 設定頁面。 切到 [Developer settings | OAuth Apps]。 創建新的 Applcation。"
 tags: [Drone, GitHub]
 ---
 

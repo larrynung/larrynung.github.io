@@ -1,7 +1,7 @@
 ---
 title: "Web cache"
 date: "2014-12-01 23:02:00"
-description: "Web cache"
+description: "Web Cache 是 ASP.NET 內建的 Cache 機制，這邊簡單的隨手紀錄一下。 Cache 物件的可從 HttpContext 取得。 Cache 物件取得後，我們可以透過 Add 或 Insert 將要快取的資料存入。"
 ---
 
 Web Cache 是 ASP.NET 內建的 Cache 機制，這邊簡單的隨手紀錄一下。

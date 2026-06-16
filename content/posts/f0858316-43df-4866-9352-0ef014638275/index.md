@@ -1,7 +1,7 @@
 ---
 title: "[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)"
 date: "2013-11-06 12:00:00"
-description: "[C#][Extension Method]String extension method(IsNull、IsNullOrEmpty、IsNullOrWhiteSpace、IsMatch)"
+description: "最近看Code有些體會，對於String的空值與否的判斷，看多了覺得有點礙眼。有時候字串變數短短的，卻因為使用上必須使用String的靜態方法，像是String.IsNullOrEmpty，讓整個程式看起來變長了不少。"
 tags: [CSharp]
 ---
 

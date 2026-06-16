@@ -2,7 +2,7 @@
 title: "[C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
 slug: "[CSharp]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
 date: "2009-12-16 06:29:55"
-description: "[C#]Effective C# 條款十： 理解GetHashCode()方法的缺陷"
+description: "GetHashCode對於參考類型來說，可以正常運作，但其效率很低。而對於值類型來說，其實現通常是不正確的。 GetHashCode若要重新定義，我們必須要遵循下列原則： 兩個相等的物件必須具有相同的雜湊碼。 對於任何一個物件，不論叫用甚麼方法，其GetHashCode永遠都必須返回相同的值。"
 tags: [CSharp]
 ---
 

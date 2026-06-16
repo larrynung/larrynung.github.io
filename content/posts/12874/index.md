@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]ASCII String與Hex String的互轉"
 date: "2010-01-06 09:26:50"
-description: "[VB.NET]ASCII String與Hex String的互轉"
+description: "ASCII要轉Hex，可透過ToString函式帶入\"X2\"，或是用Hex函式。因此ASCII String轉Hex String可寫成： 而Hex要轉ASCII，可在前面帶入\"&h\"字串，轉成int後再轉為char。"
 tags: [VB.NET]
 ---
 

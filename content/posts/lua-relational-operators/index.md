@@ -1,6 +1,7 @@
 ---
 title: "Lua - Relational Operators"
 date: "2017-08-02 22:34:53"
+description: "Lua 的 Relational operators 有 ==、~=、、=，這些運算符可用來處理兩者間的關係，看是相等、不等、小於、大於、小於等於、還是大於等於，其運算結果都為布林值，不是 true 就是 false。"
 tags: [Lua]
 ---
 

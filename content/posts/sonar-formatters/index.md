@@ -1,6 +1,7 @@
 ---
 title: "sonar - Formatters"
 date: "2017-10-30 23:23:42"
+description: "sonar 的 formatter 可用來設定 sonar 分析結果的格式，目前提供 summery、json、stylish、codeframe 這幾個 formatter，可透過 sonar 設定檔指定使用。"
 tags: [sonar]
 ---
 

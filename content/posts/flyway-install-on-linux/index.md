@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Install on Linux"
 date: "2019-07-29 21:09:09"
+description: "Flyway 要在 Linux 上使用，可到 Flyway 的下載頁面，複製 Linux 上要運行的命令。 運行命令，會進行檔案的下載、解壓縮、建立連結。 wget -qO-…"
 tags: [Flyway]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Writing events with web interface"
 date: "2018-08-22 23:56:32"
+description: "要透過 Web interface 去發送 event，可以將 Web interface 切換至 Stream Browser 頁面。 點擊 Add Event 按鈕。 填入要發送的 Event 資訊。 按下 Add 按鈕發送設定的 Event。"
 tags: [Event Store]
 ---
 

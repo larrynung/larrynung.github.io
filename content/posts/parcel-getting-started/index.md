@@ -1,6 +1,7 @@
 ---
 title: "Parcel - Getting started"
 date: "2017-12-23 07:15:47"
+description: "Parcel 使用前需先安裝套件。 可以透過 yarn。 yarn global add parcel-bundler 或是透過 npm 安裝。 npm install -g parcel-bundler 安裝完準備要進行打包的程式。"
 tags: [Parcel]
 ---
 

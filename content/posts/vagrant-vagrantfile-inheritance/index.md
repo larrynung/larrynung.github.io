@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Vagrantfile inheritance"
 date: "2015-10-21 05:26:00"
-description: "Vagrant - Vagrantfile inheritance"
+description: "Vagrantfile 的設定跟很多軟體一樣是有繼承關係的。 首先他會去看 Vagrant Box 的 Vagrantfile。通常會是在 %HOMEPATH%\\.vagrant.doxs 下，"
 tags: [Vagrant]
 ---
 

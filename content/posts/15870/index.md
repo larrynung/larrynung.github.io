@@ -1,7 +1,7 @@
 ---
 title: "[Software]使用Google Chrome瀏覽器同步書籤"
 date: "2010-06-14 11:15:14"
-description: "[Software]使用Google Chrome瀏覽器同步書籤"
+description: "很多瀏覽器都有同步化書籤的功能，但多半都需要額外安裝外掛程式，Google Chrome瀏覽器內建同步化書籤的功能，讓您在哪裡都能透過Google Chrome瀏覽器直接使用到自己的書籤，使用上十分方便。"
 tags: [Software]
 ---
 

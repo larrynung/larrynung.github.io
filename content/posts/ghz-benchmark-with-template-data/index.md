@@ -1,6 +1,7 @@
 ---
 title: "ghz - Benchmark with template data"
 date: "2019-07-10 07:15:11"
+description: "在用 ghz 做 gRPC 的 Benchmark 時，如果需要打入不同的測試資料，又不想要撰寫程式的話，可使用 ghz 的 Template data。 ghz 提供的 Template data 如下: 裡面有 Worker 編號、Request 編號、Method 名稱、Service…"
 tags: [ghz]
 ---
 

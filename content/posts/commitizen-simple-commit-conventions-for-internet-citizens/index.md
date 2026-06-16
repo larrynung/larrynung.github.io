@@ -1,6 +1,7 @@
 ---
 title: "Commitizen - Simple commit conventions for internet citizens"
 date: "2020-06-11 07:59:27"
+description: "Commitizen 可輔助 git 操作人員使用 commit message 的規範。 使用上先全域安裝 commitizen 命令列工具。 npm install -g commitizen 這邊準備一個 git 版控的專案。 git init 加入 package.json。"
 tags: [git]
 ---
 

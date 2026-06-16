@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Generate Web Deploy package with Visual Studio"
 date: "2016-12-04 23:41:54"
+description: "要使用 Visual Studio 建立 Web Deploy package，首先在方案總管的專案上按下滑鼠右鍵，點選 Publish... 滑鼠右鍵選單選項。 在 Publish Web 視窗中選取 Cuetom Profile。 設定 Profile 的名稱。"
 tags: [Web Deploy]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "RGui - Install package"
 date: "2017-04-20 23:52:15"
+description: "要安裝 R 語言的套件，可透過點選 RGui 的 [Packages|Install package(s)...] 主選單選項。 選取鏡象位置。 選取所要安裝的套件。 指定的套件就會開始進行下載並安裝。"
 tags: [RGui]
 ---
 

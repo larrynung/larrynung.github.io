@@ -1,7 +1,7 @@
 ---
 title: "Run application with Google App Engine Launcher"
 date: "2013-11-06 12:00:00"
-description: "Run application with Google App Engine Launcher"
+description: "在開發Google App Engine's Application時，我們可以先在本地撰寫好程式，並在本地運行測試，當一切測試無誤後再將它上到雲端，這邊簡單的紀錄一下怎樣透過Google App Engine Launcher來運行本地測試。"
 ---
 
 在開發Google App Engine's Application時，我們可以先在本地撰寫好程式，並在本地運行測試，當一切測試無誤後再將它上到雲端，這邊簡單的紀錄一下怎樣透過Google App Engine Launcher來運行本地測試。

@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Microsoft .NET Framework 4 Beta 1"
 date: "2009-06-09 05:15:02"
-description: "[.NET Resource]Microsoft .NET Framework 4 Beta 1"
+description: "Overview The Microsoft .NET Framework 4 provides the following new features and improvements: The .NET Framework 4 works side by side with the…"
 tags: [.NET Resource]
 ---
 

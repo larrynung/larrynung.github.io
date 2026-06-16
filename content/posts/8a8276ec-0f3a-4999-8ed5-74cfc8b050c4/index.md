@@ -1,7 +1,7 @@
 ---
 title: "Tkinter.TK"
 date: "2013-11-06 12:00:00"
-description: "Tkinter.TK"
+description: "前面筆者在Hello, Tkinter這篇簡單的示範了一下最基本的Tkinter程式要如何撰寫。這邊進一步紀錄一下如何透過Tkinter.TK類別去設定與控制我們的程式視窗。 在設定前記得要先將Tkinter package import進來，import進來後宣告，我們才可以進行設定的動作。"
 tags: [Python]
 ---
 

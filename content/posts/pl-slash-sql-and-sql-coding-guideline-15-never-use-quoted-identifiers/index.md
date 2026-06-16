@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 15 - Never use quoted identifiers"
 date: "2015-12-05 18:42:00"
-description: "PL/SQL & SQL CODING GUIDELINE 15 - Never use quoted identifiers"
+description: "條款十五是說在變數宣告時，變數的名稱不要加上雙引號。 像是下面這樣，宣告的變數加上雙引號是合法的。 但不建議這樣宣告，建議還是不要加上雙引號。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

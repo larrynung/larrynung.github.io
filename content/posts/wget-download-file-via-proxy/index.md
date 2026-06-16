@@ -1,6 +1,7 @@
 ---
 title: "wget - Download file via proxy"
 date: "2019-05-14 08:25:17"
+description: "要讓 wget 透過 proxy 抓取檔案，可設定 http_proxy、https_proxy、或是 ftp_proxy。 如果一次性的調用，可直接在終端機手動輸入 Proxy 設定。"
 tags: [wget]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Software]MSBuild Shell Extension"
 date: "2009-05-03 12:52:08"
-description: "[Software]MSBuild Shell Extension"
+description: "又從保哥Blog那邊挖到好東西^^，原來有工具可以幫助我們建置專案卻不用開啟Visual Studio。而且只需安裝MSBuild Shell Extension，在專案檔上按滑鼠右鍵就可以辦到。使用上就像它的網頁上秀的圖一樣簡單。"
 tags: [Software]
 ---
 

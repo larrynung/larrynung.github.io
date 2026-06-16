@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Contracts"
 date: "2015-02-04 23:56:00"
-description: "PostSharp - Contracts"
+description: "以往我們在寫函式的時候，若要作參數的檢查，我們可能會自行去檢查參數是否 Null 或是 Empty，若是 Null 或 Empty 則丟出 ArgumentNullException。"
 tags: [PostSharp]
 ---
 

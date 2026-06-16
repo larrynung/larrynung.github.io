@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 53 - Avoid use of WHEN OTHERS clause in an exception section without any other specific handlers"
 date: "2017-06-18 23:33:16"
+description: "條款五十三，避免單獨使用 WHEN OTHERS 去處理例外。 像是下面這樣的程式，使用 WHEN OTHERS 搭配 IF 條件式與 SQLCODE 去處理例外，就是不建議的作法。 如果明確使用例外的名稱去處理例外，可以免去不必要的 IF 判斷，及 SQLCODE 的使用。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

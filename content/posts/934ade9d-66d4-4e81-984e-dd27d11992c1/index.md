@@ -1,7 +1,7 @@
 ---
 title: "[IADP]Process Manager 1.1 - 過濾與刪除Process的小工具"
 date: "2013-11-06 12:00:00"
-description: "[IADP]Process Manager 1.1 - 過濾與刪除Process的小工具"
+description: "Process Manager是一個用來處理Process的小工具，之所以會撰寫這樣的一個小東西主要是因為在開發時，有時候常會需要檢查特定程式的Process是否有殘留，或是要刪除殘留的Process。像是在開發Office方面的程式時就常常會需要做這樣的重複性動作。"
 ---
 
 Process Manager是一個用來處理Process的小工具，之所以會撰寫這樣的一個小東西主要是因為在開發時，有時候常會需要檢查特定程式的Process是否有殘留，或是要刪除殘留的Process。像是在開發Office方面的程式時就常常會需要做這樣的重複性動作。

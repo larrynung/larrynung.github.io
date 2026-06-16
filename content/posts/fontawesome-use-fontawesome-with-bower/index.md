@@ -1,7 +1,7 @@
 ---
 title: "FontAwesome - Use FontAwesome with bower"
 date: "2016-02-17 05:33:00"
-description: "FontAwesome - Use FontAwesome with bower"
+description: "當我們透過 Bower 來使用 FontAwesome。 下載下來的 FontAwesome CSS 內會用相對路徑指定所要使用的 Font 位置，但這樣在載入 CSS 時會指不到正確的 Font。"
 tags: [FontAwesome]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "mmock - Run mmock with Kitematic"
 date: "2017-09-12 23:52:41"
+description: "要透過 Kitematic 使用 mmock，可在 Kitematic 搜尋 mmock 的容器，點選 CREATE 按鈕將容器拉回啟用。 容器啟用後在 CONTAINER LOGS 這邊會看到 mmock 服務啟用的畫面，上面會帶有 http、https、console 服務的資訊。"
 tags: [mmock]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Debug with Visual Studio Code"
 date: "2017-04-12 13:40:16"
+description: "要用 Visual Studio Code 進行程式碼的除錯，可透過 Visual Studio Code 左側的工具列切換至除錯畫面。 接著在程式碼欲中斷的程式碼位置前方用滑鼠點擊設置中斷點。 再按下 Debug 按鈕即可開始進行程式碼的除錯。"
 tags: [Visual Studio Code]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 44 - Always use a WHILE loop to process a loose array"
 date: "2017-05-03 13:50:12"
+description: "條款四十四，總是使用 WHILE loop 去處理 loose array。 像是下面這樣的程式用 FOR loop 去遍巡處理 loose array，這不是被建議使用的寫法，雖然大部分的狀況下可以正常運行，但是當 loose array 的內容被刪除時，"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

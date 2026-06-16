@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - ADD_MONTHS function"
 date: "2015-07-14 21:47:00"
-description: "PL/SQL - ADD_MONTHS function"
+description: "ADD_MONTHS function 可將帶入的日期月份做加減處理後回傳。 使用語法如下： ADD_MONTHS( date1, number_months ) 其中 data1 為要做處理的日期，number_months 為要加減的月份。"
 tags: [PL/SQL]
 ---
 

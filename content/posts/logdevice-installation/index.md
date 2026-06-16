@@ -1,6 +1,7 @@
 ---
 title: "LogDevice - Installation"
 date: "2018-10-01 23:15:02"
+description: "LogDevice 目前只支援在 Ubuntu 18 LTS \"Bionic Beaver\" 安裝。 且只支援由 Source 建置安裝，所以我們需先下載 LogDevice 的 Source Code。"
 tags: [LogDevice]
 ---
 

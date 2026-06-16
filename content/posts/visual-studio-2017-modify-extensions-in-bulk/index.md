@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2017 - Modify extensions in bulk"
 date: "2017-02-17 13:18:13"
+description: "Visual Studio 2017 以後使用 Extensions and Updates 視窗進行 Extension 的修改。 修改的 Extension 會被加入排程，排程的 Extension 可以在 Extensions and Updates 視窗的右下角看到，"
 tags: [Visual Studio, Visual Studio 2017]
 ---
 

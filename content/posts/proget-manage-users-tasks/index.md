@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Manage users  tasks"
 date: "2017-09-03 07:42:11"
+description: "要管理 ProGet 的使用者，可先用具備管理權限的帳號進行登入。 如果還未設定過帳號，可用預設障密 Admin / Admin 登入。 登入後進到設定頁面。 選取 Manage User & Tasks 切到 Security 頁面。"
 tags: [ProGet]
 ---
 

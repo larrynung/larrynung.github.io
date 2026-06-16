@@ -2,7 +2,7 @@
 title: "[C#]LevelUp.Lazy"
 slug: "[CSharp]LevelUp.Lazy"
 date: "2011-04-04 12:30:18"
-description: "[C#]LevelUp.Lazy"
+description: "在.NET 4.0 New Feature - Generic Lazy class中介紹過.NET 4.0提供的好用的Lazy類別，能輕鬆的讓我們做物件的初始動作，但在.NET 4.0以前想要使用類似的類別呢?好在筆者在.NET 4.0的修練中有大約的知道簡易的實作概念，這邊將其概念加以延伸，"
 tags: [CSharp]
 ---
 

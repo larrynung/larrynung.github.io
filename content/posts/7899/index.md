@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern]Strategy模式"
 date: "2009-04-07 12:50:05"
-description: "[Design Pattern]Strategy模式"
+description: "字面意思 strategy [ˈstrætidʒi] n.戰略，策略 意圖 根據情況的不同，採用不同的演算法則。 使演算法可獨立於使用它的客戶而變化。 定義一系列的演算法，把它們一個個封裝起來，並使它們可相互替換。 口訣 把演算法則整個換掉。 問題 需要依客戶或是數據的不同採用不同的演算法則。"
 tags: [Design Pattern]
 ---
 

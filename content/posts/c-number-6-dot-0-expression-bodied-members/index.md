@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Expression bodied members"
 date: "2014-10-09 23:47:00"
-description: "C# 6.0 - Expression bodied members"
+description: "Expression bodied members 是預計要在 C# 6.0 釋出的新功能，目前已可在 Visual Studio 14 中透過設定將功能開啟進行體驗，只要在方案檔中加上： experimental 當撰寫簡單的成員方法或是屬性時，"
 tags: [CSharp, CSharp 6.0]
 ---
 

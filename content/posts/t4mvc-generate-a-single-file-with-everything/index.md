@@ -1,7 +1,7 @@
 ---
 title: "T4MVC - Generate a single file with everything"
 date: "2014-07-24 22:25:00"
-description: "T4MVC - Generate a single file with everything"
+description: "T4MVC 預設在產生程式碼時會依 Controller 產生不同的檔案，這樣會在專案目錄下產生很多的檔案，然而以自動產出的檔案來說，只要產生無誤，功能都正常，那麼產生的程式是不是照 Controller 分開，說實話一點都不重要。"
 tags: [T4MVC, T4]
 ---
 

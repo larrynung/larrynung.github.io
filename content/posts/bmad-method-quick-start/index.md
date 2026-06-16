@@ -1,6 +1,7 @@
 +++
 title = 'BMAD-METHOD - Quick Start'
 date = '2025-08-17T23:17:37+08:00'
+description = "什麼是 BMAD-METHOD？ BMAD-METHOD（Breakthrough Method for Agile AI Driven Development）是一個創新的 AI 代理框架，專為現代軟體開發設計。它通過智能代理協作來提升開發效率和質量。"
 tags = ['BMAD-METHOD']
 +++
 

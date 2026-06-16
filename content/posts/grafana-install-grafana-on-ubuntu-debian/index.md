@@ -1,6 +1,7 @@
 ---
 title: "Grafana - Install Grafana on Ubuntu  Debian"
 date: "2019-02-26 00:10:05"
+description: "參照 Grafana Download page。 下載 Grafana 套件。 wget https://dl.grafana.com/oss/release/grafana_6.0.0_amd64.deb 安裝 Grafana 套件。"
 tags: [Grafana]
 ---
 

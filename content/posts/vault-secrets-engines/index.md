@@ -1,6 +1,7 @@
 ---
 title: "Vault - Secrets engines"
 date: "2019-12-25 08:01:19"
+description: "Vault 的 Secure engine 可以是 AWS、Database、Github... 等。 資料會進哪個 Secret engine 是看 Path，像是預設開啟 kv 這個 Secret engine 在 secret 這個 Path，"
 tags: [Vault]
 ---
 

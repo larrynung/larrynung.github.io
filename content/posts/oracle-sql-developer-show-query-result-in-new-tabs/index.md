@@ -1,7 +1,7 @@
 ---
 title: "Oracle SQL Developer - Show query result in new tabs"
 date: "2015-11-12 00:06:00"
-description: "Oracle SQL Developer - Show query result in new tabs"
+description: "Oracle SQL Developer 預設 Query 出來的結果會在同一個 Query Result 視窗，若要讓每次 Query 都在個別的視窗，我們可以開啟 Perferences 對話框，"
 tags: [Oracle SQL Developer]
 ---
 

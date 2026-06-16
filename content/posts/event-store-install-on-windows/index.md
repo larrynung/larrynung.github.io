@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Install on Windows"
 date: "2018-08-21 23:31:05"
+description: "要在 Windows 下使用 Event Store，首先需確定環境已安裝： NET Framework 4.0+ Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a…"
 tags: [Event Store]
 ---
 

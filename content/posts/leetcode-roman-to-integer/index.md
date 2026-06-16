@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Roman to Integer"
 date: "2015-09-11 23:16:00"
-description: "LeetCode - Roman to Integer"
+description: "LeetCode 的 Roman to Integer 題目如下： Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999."
 tags: [LeetCode]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Flutter - ListView class"
 date: "2018-04-20 23:27:17"
+description: "Flutter 的 ListView 元件是一具備捲軸的元件且能用來顯示多筆內容的元件。 其建構子如下： ListView({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController…"
 tags: [Flutter]
 ---
 

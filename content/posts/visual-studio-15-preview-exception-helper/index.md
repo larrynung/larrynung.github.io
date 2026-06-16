@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 15 Preview - Exception Helper"
 date: "2016-04-25 22:57:00"
-description: "Visual Studio 15 Preview - Exception Helper"
+description: "Visual Studio 15 Preview 以前，託管的程式會透過 Exception Assistant 提供錯誤資訊。 非託管的程式或是將 Exception Assistant 關閉的話，則是透過 Exception Dialog 提供錯誤資訊。"
 tags: [Visual Studio]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept]throw V.S throw ex"
 date: "2011-01-03 06:58:32"
-description: "[.NET Concept]throw V.S throw ex"
+description: "在例外處理時，有些情況下我們會需要將例外攔截後再次向外擴，在此時我們有兩種可選擇的寫法，一種是很多初學者會採用的透過throw ex來外擴例外，這種寫法須避免使用，因為採用此種寫法會改變的原來的呼叫堆疊，造成除錯上的困難。"
 tags: [CSharp,.NET Concept]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - Installation"
 date: "2017-04-18 07:52:23"
+description: "要進行 ZeroBrane Studio 的安裝，可到 ZeroBrane Studio 的下載頁面下載 ZeroBrane Studio 的主程式。 除了有不同的作業系統版本外，如果是 Windows 的程式，還有安裝包與壓縮包可供選擇，可適需求下載使用。"
 tags: [ZeroBrane Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "DotLiquid - Getting started"
 date: "2019-04-27 15:48:13"
+description: "要在 DotNet 中使用 Liquid 範本，可先加入 DotLiquid 套件參考。 套件參考加入後，開始撰寫程式部分。 程式撰寫起來很簡單，只要解析範本，然後將範本需要的資料帶進去渲染即可。 運行起來就會看到 DotLiquid 將資料帶進範本渲染出來的結果。"
 tags: [DotLiquid]
 ---
 

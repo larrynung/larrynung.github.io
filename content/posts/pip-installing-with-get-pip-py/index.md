@@ -1,6 +1,7 @@
 ---
 title: "pip - Installing with get-pip.py"
 date: "2017-10-11 23:50:15"
+description: "要使用 get-pip.py 安裝 pip，可先至 Installation — pip 9.0.1 documentation 這邊下載 get-pip.py 檔。 然後用 Python 運行 get-pip.py。"
 ---
 
 要使用 get-pip.py 安裝 pip，可先至 [Installation — pip 9.0.1 documentation](https://pip.pypa.io/en/stable/installing/) 這邊下載 [get-pip.py](https://bootstrap.pypa.io/get-pip.py) 檔。

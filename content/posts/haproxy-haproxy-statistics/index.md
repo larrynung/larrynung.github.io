@@ -1,6 +1,7 @@
 ---
 title: "HAProxy - HAProxy Statistics"
 date: "2019-02-19 00:23:32"
+description: "要啟動 HAProxy Statistics，需將 HAProxy 設定檔開啟進行設定。 sudo vim /etc/haproxy/haproxy.cfg 將設定檔加上如下設定： 設定檔的 bind、uri 與 auth 資訊需視需要調動。 接著調用命令啟動 HAProxy。"
 tags: [HAProxy]
 ---
 

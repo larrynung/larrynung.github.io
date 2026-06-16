@@ -1,6 +1,7 @@
 ---
 title: "Logstash - grok filter"
 date: "2017-06-05 22:57:37"
+description: "grok filter 能讓我們使用 Grok 語法簡易的切割 Logstash field。 其可使用的設定如下： | Setting | Type | Required | Default | Description |…"
 tags: [Logstash]
 ---
 

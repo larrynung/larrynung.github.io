@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET MVC - Post array data to MVC controller"
 date: "2014-04-26 12:53:00"
-description: "ASP.NET MVC - Post array data to MVC controller"
+description: "最近在用 JQuery 傳送陣列資料給 MVC Controller，資料無法如預期般的被送過去。查看了一下送過去的資訊，看起來是送的資料格式不符合 Model Binder 預期的格式所導致。"
 tags: [ASP.NET MVC]
 ---
 

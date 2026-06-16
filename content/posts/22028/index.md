@@ -2,7 +2,7 @@
 title: "[C#]RaiseEvent Extension Method (一)"
 slug: "[CSharp]RaiseEvent Extension Method (一)"
 date: "2011-03-23 01:11:00"
-description: "[C#]RaiseEvent Extension Method (一)"
+description: "今天再調整程式中的事件，又注意到C#的事件實在是很囉唆，每次觸發事件前都要判斷一下事件處理常式是否有繫上，有繫上才能做觸發的動作。這樣的檢查動作隨著事件的增多，重複撰寫相同的邏輯會變得非常的頻繁。"
 tags: [CSharp]
 ---
 

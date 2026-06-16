@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Baseline"
 date: "2017-04-18 00:07:59"
+description: "BenchmarkDotNet 如果要指定量測比較的標準，可在 BenchmarkAttribute 設定 Baseline 為 true，指定的量測方法即會被視為量測的標準，後續的量測則會跟該量測標準做比較。"
 tags: [BenchmarkDotNet]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn init"
 date: "2017-06-25 22:39:24"
+description: "yarn init 命令可以用來建立 package.json 檔案。 調用 yarn init，依序填入 package.json 檔需要的資訊。 即可建立 package.json。 如果要直接用預設值建立 package.json，可在調用 yarn init 時帶入 -y 參數。"
 tags: [Yarn]
 ---
 

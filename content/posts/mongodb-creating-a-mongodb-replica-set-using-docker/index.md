@@ -1,6 +1,7 @@
 ---
 title: "MongoDB - Creating a MongoDB replica set using Docker"
 date: "2020-12-30 08:40:58"
+description: "要用 Docker 測試 MongoDB replica set 我們要先建立 Docker network。 docker network ls docker network create mongo-cluster docker network ls 然後起第一個 MongoDB 的…"
 tags: [MongoDB]
 ---
 

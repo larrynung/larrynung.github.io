@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Lambda"
 date: "2015-11-30 23:57:00"
-description: "TypeScript - Lambda"
+description: "TypeScript 支援 Lambda 語法，語法如下： (input parameters) => expression (input parameters) => {statement;} 寫起來就像下面這樣："
 tags: [TypeScript]
 ---
 

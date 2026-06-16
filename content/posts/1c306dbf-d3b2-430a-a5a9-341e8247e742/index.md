@@ -1,7 +1,7 @@
 ---
 title: "Hello, Tkinter"
 date: "2013-11-06 12:00:00"
-description: "Hello, Tkinter"
+description: "Tkinter是Python的GUI套件，骨子裡為Tcl/TK的封裝，因此透過Tkinter撰寫UI，我們可以讓程式在不同的平台上運行。 Tkinter使用前我們可以先將Tkinter package import，並呼叫Tkinter._test方法，驗證一下開發環境。"
 tags: [Python]
 ---
 

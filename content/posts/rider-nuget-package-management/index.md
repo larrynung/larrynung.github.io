@@ -1,6 +1,7 @@
 ---
 title: "Rider - NuGet package management"
 date: "2019-03-07 15:45:56"
+description: "要用 Rider 管理 Nuget 套件，可點選 [Tools | NuGet | Manage NuGet Packages for Solution] 主選單選項。 NuGet Tool Window 會被帶出，在搜尋框中搜尋要安裝的套件。"
 tags: [Rider]
 ---
 

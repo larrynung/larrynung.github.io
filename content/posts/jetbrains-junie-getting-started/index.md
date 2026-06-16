@@ -1,6 +1,7 @@
 ---
 title: 'JetBrains Junie - Getting Started'
 date: '2025-09-02T23:18:39+08:00'
+description: "近年來，AI 助理在 IDE 中的整合已成為大勢所趨。它們從最初的程式碼補全，逐漸演變為更強大的開發夥伴。JetBrains 推出的 Junie 正是這一趨勢下的產物，它以「AI 代理 (Agent)」的模式運作，旨在理解並執行更複雜的開發任務。"
 tags: ['JetBrains', 'Junie']
 ---
 

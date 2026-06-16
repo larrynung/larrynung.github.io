@@ -1,7 +1,7 @@
 ---
 title: ".NET Portability Analyzer Extension"
 date: "2014-12-07 23:59:00"
-description: ".NET Portability Analyzer Extension"
+description: ".NET Portability Analyzer Extension 是微軟出的 Visual Studio 擴充套件，能偵測程式是否具備 Portability，並針對不具 Portability 的地方提供對應的修改建議，讓開發人員在做跨平臺的開發上更加的便利。"
 tags: [Visual Studio]
 ---
 

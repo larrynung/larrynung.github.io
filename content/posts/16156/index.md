@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]為Visual Studio的Tools清單添加自己慣用的輔助工具"
 date: "2010-06-25 10:47:52"
-description: "[Visual Studio]為Visual Studio的Tools清單添加自己慣用的輔助工具"
+description: "發現Tools清單裡面有這個功能已經很久了，一直沒去實際使用，今天稍微設定了一下感覺還蠻方便的，可以把我們慣用的輔助工具都加進來，以後透過Visual Studio的Tools清單就可直接開啟。"
 tags: [Visual Studio]
 ---
 

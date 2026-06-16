@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]MDI子視窗清單的實作"
 date: "2010-05-30 09:57:44"
-description: "[VB.NET]MDI子視窗清單的實作"
+description: "最近在撰寫MDI程式，碰到很多很麻煩的問題，尤其是在MDI子視窗清單功能的部分，個人覺得特別難處理。其中最麻煩的莫過於When close is cancelled on MDI Child Window and it is hidden, MDI parent's window never…"
 tags: [VB.NET]
 ---
 

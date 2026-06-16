@@ -1,6 +1,7 @@
 ---
 title: "DotLiquid - Drops"
 date: "2019-05-02 04:27:44"
+description: "使用 DotLiquid 做範本渲染時，如果需要使用到非基礎型別當作參數，我們可以為其建立對應的 Drop 型別。 該 Drop 型別繼承自 DotLiquid 的 Drop 型別，在建構子將原型別實體帶入，將原型別具有的成員屬性封裝並開出。 渲染時將參數改成自建的 Drop 型別帶入即可。"
 tags: [DotLiquid]
 ---
 

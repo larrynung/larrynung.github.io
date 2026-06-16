@@ -1,6 +1,7 @@
 ---
 title: "Rest - Safe/Idempotent method"
 date: "2018-07-23 19:23:41"
+description: "Rest API 的方法依其性質可以被劃分為 Safe method 或是 Idempotent method。 Safe method 也就是安全的方法，表示該方法不會對資源進行任何的修改，且其結果可以被快取。GET 與 HEAD 屬於這類方法。"
 tags: [Rest]
 ---
 

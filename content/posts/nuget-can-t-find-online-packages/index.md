@@ -1,6 +1,7 @@
 ---
 title: "NuGet - Can't find online packages"
 date: "2017-04-28 13:29:36"
+description: "使用 NuGet 時，若碰到查詢線上的 NuGet 套件一直在 Loding，且透過 'Package Manager Console' 下命令也無法進行套件的安裝的話。 可嘗試將 '%AppData%\\NuGet\\NuGet.config' 刪除。"
 tags: [NuGet]
 ---
 

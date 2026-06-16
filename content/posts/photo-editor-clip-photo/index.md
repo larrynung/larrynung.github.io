@@ -1,6 +1,7 @@
 ---
 title: "Photo Editor - Clip photo"
 date: "2019-04-06 22:53:11"
+description: "要使用 Photo Editor 在 Android 上進行圖片的裁切。 可先選取要處理的圖片，選取分享。 將圖片分享至 Photo Editor。 然後在 Photo Editor 下方找到裁切按鈕。 按下裁切按鈕後框出裁切後要留下來的部份，按下右上方的勾勾按鈕確認裁切。"
 tags: [Android, Photo Editor]
 ---
 

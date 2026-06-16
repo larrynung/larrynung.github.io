@@ -1,6 +1,7 @@
 ---
 title: "MyInedo - Request trial/free license"
 date: "2017-10-17 22:36:05"
+description: "要申請 Inedo 產品的試用或免費帳號，可到 MyInedo 註冊登入。 登入後按下 Request Trial/Free License 按鈕。 選取要申請的 Inedo 產品 License。 按下 Request License 按鈕。 即可取得申請的 License。"
 tags: [ProGet]
 ---
 

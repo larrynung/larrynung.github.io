@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]MSDN Code Search Preview"
 date: "2009-05-02 09:40:53"
-description: "[.NET Resource]MSDN Code Search Preview"
+description: "在保哥Blog看到微軟推出名為新MSDN Code Search Preview的新服務，主要功能是可以搜尋MSDN Library、MSDN Code Gallery以及 CodePlex 中出現的範例程式(Sample Code)。 該服務頁面外觀如下，簡單的搜尋框外加一些搜尋技巧提示。"
 tags: [.NET Resource]
 ---
 

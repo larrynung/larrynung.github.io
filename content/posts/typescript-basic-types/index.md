@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Basic Types"
 date: "2015-11-18 21:32:00"
-description: "TypeScript - Basic Types"
+description: "TypeScript 內可用的型態有 Boolean、Number、String、Array、Any、Void、Enum 這幾種。 其中 Boolean、Number、String、Array、Any、Enum 的宣告方式如下： var variableName: Type;…"
 tags: [TypeScript]
 ---
 

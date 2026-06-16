@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL  SQL CODING GUIDELINE 49 - Avoid use of unreferenced FOR loop indexes"
 date: "2017-06-12 23:20:04"
+description: "條款四十九，避免未使用的 FOR loop 索引。 像是下面這樣的程式使用了 numeric FOR loop，卻未使用 FOR loop 的索引，導致程式碼變得更為複雜沒有效率。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Use WebAuthenticationBroker to do single sign on (SSO) connections"
 date: "2013-11-06 12:00:00"
-description: "Use WebAuthenticationBroker to do single sign on (SSO) connections"
+description: "在串接社群服務時，通常都需要去做OAuth認證，以前這樣的動作都必需要我們開發人員自己去串接處理，像是筆者[C#]OAuth認證開發這篇就使用OAuthBase與內建的瀏覽器元件自己去做OAuth認證。"
 ---
 
 在串接社群服務時，通常都需要去做OAuth認證，以前這樣的動作都必需要我們開發人員自己去串接處理，像是筆者[C#]OAuth認證開發這篇就使用OAuthBase與內建的瀏覽器元件自己去做OAuth認證。而在Windows Store apps中，內建WebAuthenticationBroker能幫我們簡化部分的處理。

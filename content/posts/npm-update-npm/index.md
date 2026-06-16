@@ -1,6 +1,7 @@
 ---
 title: "npm - Update npm"
 date: "2016-06-09 11:13:27"
+description: "npm 的版本如果過舊要更新版本，可以使用 npm install 去安裝更新版本的 npm，就像下面這樣： npm install -g npm"
 tags: [npm]
 ---
 

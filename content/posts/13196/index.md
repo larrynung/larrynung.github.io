@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - Reference Highlight"
 date: "2010-01-21 09:43:12"
-description: "[Visual Studio]Visual Studio 2010 New Feature - Reference Highlight"
+description: "Highlight Reference是Visual Studio 2010新增的貼心小功能，能幫我們快速的找到程式中參考到的地方，並提供快速的巡覽。 使用上只要用滑鼠在想要找參考的類別、方法、屬性…等成員上點選，讓滑鼠焦點移至該處。"
 tags: [Visual Studio]
 ---
 

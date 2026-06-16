@@ -1,7 +1,7 @@
 ---
 title: "Travis CI - Trigger build with service hook test"
 date: "2014-02-23 00:19:00"
-description: "Travis CI - Trigger build with service hook test"
+description: "一般來說， Travis CI 在使用時會主動在程式碼 Push 到 Server 時自動做建置的動作，但難以避免的，有的時候我們還是會需要在特定時機點手動觸發建置。"
 tags: [Travis, CI]
 ---
 

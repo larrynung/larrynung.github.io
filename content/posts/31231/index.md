@@ -2,7 +2,7 @@
 title: "[C#][Linq]BLinq - Linq To Bing"
 slug: "[CSharp][Linq]BLinq - Linq To Bing"
 date: "2011-07-06 11:21:50"
-description: "[C#][Linq]BLinq - Linq To Bing"
+description: "BLinq元件能讓我們使用Linq語法去查詢Bing搜尋引擎上的網頁與圖片。 使用上十分的簡單，先將BLinq的元件下載下來，開啟方案檔編譯，將其編譯後的BLinq組件加入參考，接著建立BingContext物件，建立時需帶入App ID，"
 tags: [Linq, CSharp]
 ---
 

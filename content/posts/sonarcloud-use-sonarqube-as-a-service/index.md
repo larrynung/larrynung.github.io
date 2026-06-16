@@ -1,6 +1,7 @@
 ---
 title: "SonarCloud - Use SonarQube as a Service"
 date: "2018-07-24 21:56:13"
+description: "SonarQube 除了自行架設外，也提供了線上的版本可供使用，開源專案可以免費使用。 透過點擊 SonarQube 網站上的 USE ONLINE 按鈕可直接連結過去。 選擇要使用的登入帳號。"
 tags: [SonarQube]
 ---
 

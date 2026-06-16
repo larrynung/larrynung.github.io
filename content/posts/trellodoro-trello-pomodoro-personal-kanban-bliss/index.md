@@ -1,6 +1,7 @@
 ---
 title: "Trellodoro - Trello + Pomodoro = Personal Kanban Bliss"
 date: "2018-03-01 22:44:38"
+description: "Trellodoro 是一整合 Trello 與蕃茄鐘的工具，使用時需連結 Trello。 授與存取權限。 選取要使用的 Trello board 及要進行的 Task。 調整蕃茄鐘的時間設定，最後點選 Launch Time 按鈕。 蕃茄鐘就會開始倒數。"
 tags: [Trello]
 ---
 

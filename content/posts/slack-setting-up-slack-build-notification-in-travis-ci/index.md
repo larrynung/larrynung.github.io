@@ -1,6 +1,7 @@
 ---
 title: "Slack - Setting up Slack build notification in Travis CI"
 date: "2018-11-13 00:13:09"
+description: "要使用 Slack 接收 Travis CI 的建置通知訊息，可在 Slack 中加入 Travis CI App。 選取 Travis CI 建置通知訊息收到後要顯示在哪個 Channel。 選好後按下 Add Travis CI Integration 按鈕。"
 tags: [Slack, Travis]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "T4 template - CultureNames.tt"
 date: "2016-03-08 05:31:00"
-description: "T4 template - CultureNames.tt"
+description: ".NET 在操作 Culture 時，免不了要帶入 CultureInfo 的 Name，多半是用 Hard code 的形式帶入，像是下面這樣： 這邊筆者做了個 T4 Template，期望能解決這樣的問題。"
 tags: [T4, CSharp]
 ---
 

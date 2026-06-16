@@ -1,6 +1,7 @@
 ---
 title: "Common.Logging - A portable logging abstraction for .NET"
 date: "2016-10-01 23:25:03"
+description: "Common.Logging 是一 Log 元件，提供 Log 的抽象接口介面，以及許多不同的實作，支援 Log4net，Nlog，Microsoft Enterprise Library logging，Microsoft Application Insights，"
 tags: [Common.Logging]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Quick Launch"
 date: "2011-09-18 12:16:00"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Quick Launch"
+description: "這篇想要稍微帶一下的是Visual Studio 2011 Preview 的 Quick Launch 新功能，有點像是將Power Tools內的Quick Access功能給整進Visual Studio，可以讓我們透過關鍵字搜尋，"
 tags: [Visual Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Ansible CLI"
 date: "2017-05-18 13:25:36"
+description: "Ansible 安裝完且 SSH 環境準備好後就可以開始使用 Ansible CLI 去使用 Ansible。 Ansible CLI 的使用方式如下： Usage: ansible [options] Options: -a MODULE_ARGS, --args=MODULE_ARGS…"
 tags: [Ansible]
 ---
 

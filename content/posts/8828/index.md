@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]ErrorProvider"
 date: "2009-06-15 11:12:09"
-description: "[VB.NET]ErrorProvider"
+description: "Introduction ErrorProvider為Visual Studio所內建的控制項，主要功能是用以顯示錯誤訊息，提示錯誤發生。 重要成員 屬性 方法 其中BlinkStyle所用到的ErrorBlinkStyle列舉型別如下： 使用ErrorProvider…"
 tags: [VB.NET]
 ---
 

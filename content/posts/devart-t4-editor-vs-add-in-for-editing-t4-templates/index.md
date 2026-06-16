@@ -1,7 +1,7 @@
 ---
 title: "Devart T4 Editor - VS add-in for editing T4 templates"
 date: "2014-04-15 23:44:00"
-description: "Devart T4 Editor - VS add-in for editing T4 templates"
+description: "Visual Studio 內建的 T4 Template Editor 很陽春，不僅無法 Syntax Highlighting，也無法 Intellisense，在除錯時查看變數也非常不便，更無法靜態程式碼分析及 Format 程式碼，造成開發 T4 Template 的效率大幅降低。"
 tags: [T4, Visual Studio]
 ---
 

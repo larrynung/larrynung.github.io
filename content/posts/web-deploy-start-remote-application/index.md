@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Start remote application"
 date: "2017-01-08 23:00:12"
+description: "如要使用 Web Deploy 去啟動遠端 Application，可以指定 Web Deploy 使用 sync 操作，source 使用 recycleApp，dest 使用 recycleApp，並帶入要回收的 Application，"
 tags: [Web Deploy]
 ---
 

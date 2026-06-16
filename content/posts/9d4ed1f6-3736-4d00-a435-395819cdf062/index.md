@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Create and configure lightweight, reproducible, and portable development environments"
 date: "2013-11-06 12:00:00"
-description: "Vagrant - Create and configure lightweight, reproducible, and portable development environments"
+description: "做程式開發的應該都能體認環境的建立是很重要的，不論是開發環境、建置環境、還是測試環境，多半的開發人員在環境的建立這邊耗費了非常多的時間。可能是做些設定、裝些相依的套件、甚至是一些慣用的外掛。若是安裝較為繁複的話，總是難免會漏掉某些步驟，這時就會需要花費更多的時間反覆測試，將漏掉的設定抓出。"
 ---
 
 做程式開發的應該都能體認環境的建立是很重要的，不論是開發環境、建置環境、還是測試環境，多半的開發人員在環境的建立這邊耗費了非常多的時間。可能是做些設定、裝些相依的套件、甚至是一些慣用的外掛。若是安裝較為繁複的話，總是難免會漏掉某些步驟，這時就會需要花費更多的時間反覆測試，將漏掉的設定抓出。

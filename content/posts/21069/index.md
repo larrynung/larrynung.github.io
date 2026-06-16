@@ -1,7 +1,7 @@
 ---
 title: "[Software]CodeFusion Wizard"
 date: "2011-01-27 12:01:54"
-description: "[Software]CodeFusion Wizard"
+description: "最近看到補丁工具codefusion wizard v3.0這篇，名稱跟界面看起來滿炫的，所以稍微抓下來玩了一下，還算是滿方便的一個工具，可很輕鬆的製作出補丁程式，將自己要更新的檔案透過該程式包裝起來，許多網路流傳的破解或補丁都是用這個軟體製作，這邊隨手記錄一下使用方式。"
 tags: [Software]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Rust - Lints"
 date: "2019-07-01 08:30:00"
+description: "Rust 內建程式碼分析功能，在編譯時會針對程式碼進行分析。 分析出來的問題分為 allow、warn、deny、forbid 這幾個等級。 allow 是被允許的問題，預設是不會顯示的，若有需要可手動將它轉成其它等級。"
 tags: [Rust]
 ---
 

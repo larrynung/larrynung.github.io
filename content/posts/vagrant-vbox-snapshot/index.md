@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - VBox Snapshot"
 date: "2015-10-19 23:45:00"
-description: "Vagrant - VBox Snapshot"
+description: "要透過 Vagrant 去操作 Snapshot，我們可以借助 Vagrant 的 vagrant-vbox-snapshot 套件。 用 vagrant plugin install 帶入套件名稱 vagrant-vbox-snapshot 進行套件的安裝。"
 tags: [Vagrant]
 ---
 

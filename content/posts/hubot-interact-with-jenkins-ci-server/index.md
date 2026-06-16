@@ -1,6 +1,7 @@
 ---
 title: "Hubot - Interact with Jenkins CI server"
 date: "2018-11-11 23:28:26"
+description: "要將 Hubot 整合 Jenkins 服務，可為 Hubot 加裝 hubot-jenkins 套件。 npm i hubot-jenkins 開啟 external-scripts.json，加上 hubot-jenkins 設定，存檔後關閉。"
 tags: [Hubot]
 ---
 

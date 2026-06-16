@@ -1,6 +1,7 @@
 ---
 title: "Rider - Add NuGet source feed"
 date: "2019-05-27 08:44:57"
+description: "要在 Rider 使用自己的 NuGet feed 去抓取 NuGet 套件，可點選 [ Tools | NuGet | Show NuGet Sources ] 主選單選項。"
 tags: [Rider]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "mysqlslap - Load emulation client"
 date: "2019-07-20 09:06:45"
+description: "mysqlslap 是 MariaDB 自帶的壓力測試工具。 使用方式可調閱命令。 mysqlslap --help 簡單的說如果資料庫不在本機，調用命令時可帶入 -h, --host=name 指定資料庫位置。 如果資料庫使用的不是預設埠號，可帶入 -P, --port=# 指定埠號。"
 tags: [MariaDB]
 ---
 

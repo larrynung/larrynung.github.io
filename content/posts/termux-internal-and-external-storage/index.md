@@ -1,6 +1,7 @@
 ---
 title: "Termux - Internal and external storage"
 date: "2018-10-12 08:55:58"
+description: "Termux 裝完後預設只能看到 Termux 空間內的資料，若要讓 Termux 能使用到 Android 的內外部空間，需要自行呼叫命令開啟。 開啟只要呼叫下列命令: termux-setup-storage 開啟時會確認是否授權，點選允許完成授權動作。"
 tags: [Termux]
 ---
 

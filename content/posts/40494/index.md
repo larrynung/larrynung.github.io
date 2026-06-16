@@ -1,7 +1,7 @@
 ---
 title: "[WinRT][C#]Windows.Storage.Pickers.FileOpenPicker"
 date: "2011-10-10 11:01:49"
-description: "[WinRT][C#]Windows.Storage.Pickers.FileOpenPicker"
+description: "WinRT中的FileOpenPicker相當於以往WindowForm所用的OpenFileDialog，是可用來選取檔案的界面。該類別存放在Windows.Storage.Pickers命名空間內，使用上需先將Windows.Storage.Pickers命名空間加入，"
 tags: [CSharp]
 ---
 

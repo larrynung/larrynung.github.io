@@ -1,6 +1,7 @@
 ---
 title: "dotnet-counters - Install with dotnet tool"
 date: "2021-01-20 06:51:32"
+description: "要用 dotnet tool 安裝 dotnet-counters，可調用 d otnet tool install 帶入 --global 參數指定安裝至全域，並在最後帶入 dotnet-counters 指定安裝 dotnet-counters 套件。"
 tags: [dotnet-counters]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "conventional-changelog-cli - Generate a changelog from git metadata"
 date: "2020-06-16 23:27:00"
+description: "conventional-changelog-cli 是一命令列工具，能解析 Git 符合 Angular style 的 Commit log，產生對應的 Change log。 使用前先透過 Npm 安裝套件至全域。"
 tags: [git]
 ---
 

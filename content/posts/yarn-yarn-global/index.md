@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn global"
 date: "2017-07-11 23:56:54"
+description: "Yarn global 命令可用來進行全域套件的管理。 像是可以使用 Yarn global add 將套件安裝到全域。 yarn global add 或是在套件名稱後用小老鼠串接套件的版本，指定安裝指定的套件版本。"
 tags: [Yarn]
 ---
 

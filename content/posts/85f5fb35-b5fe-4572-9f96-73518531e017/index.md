@@ -2,7 +2,7 @@
 title: "[C#]Set Windows 7 Progress Bar's State"
 slug: "[CSharp]Set Windows 7 Progress Bar's State"
 date: "2013-11-06 12:00:00"
-description: "[C#]Set Windows 7 Progress Bar's State"
+description: "要在Win7設定Progressbar的運行狀態，可能是一般運行狀態，可能是暫停狀態，或是錯誤狀態。 我們可以透過SendMessage發送PBM_SETSTATE訊息給ProgressBar，訊息的wParam依需求可帶入PBST_NORMAL、PBST_ERROR、與PBST_PAUSED，"
 tags: [CSharp]
 ---
 

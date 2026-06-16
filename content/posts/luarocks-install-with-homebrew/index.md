@@ -1,6 +1,7 @@
 ---
 title: "LuaRocks - Install with HomeBrew"
 date: "2019-06-12 22:19:41"
+description: "要使用 HomeBrew 安裝 LuaRocks，可輸入下列命令。 brew install luarocks 安裝完可實際調用命令做過確認。 luarocks --version"
 tags: [LuaRocks, HomeBrew]
 ---
 

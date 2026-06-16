@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Copy module"
 date: "2017-05-27 23:39:53"
+description: "Ansible 的 Copy module 可以用來處理檔案的複製。 可用的參數如下： | parameter | required | default | choices | comments |…"
 tags: [Ansible]
 ---
 

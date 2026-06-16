@@ -1,6 +1,7 @@
 ---
 title: "appcmd - Add site binding"
 date: "2019-05-15 07:34:14"
+description: "要使用 appcmd 設定站台的 Binding，可以使用 appcmd set site，使用 /site.name 指定要綁定的站台名稱，用 /+bindings 指定 Binding 的資訊，像是 Protocol、IP、Port、與 Host 名稱。"
 tags: [appcmd]
 ---
 

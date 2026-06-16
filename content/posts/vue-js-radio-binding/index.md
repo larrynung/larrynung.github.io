@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Radio binding"
 date: "2017-05-10 13:43:43"
+description: "Radio 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性，然後在 Radio 元素這邊透過 value 指定被選取的值，並用 v-model 指定所要繫結的屬性，設定完後資料屬性與控制項之間即會連動。 像是下面這樣的程式： 其運行結果如下："
 tags: [Vue.js]
 ---
 

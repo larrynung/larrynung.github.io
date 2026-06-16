@@ -1,7 +1,7 @@
 ---
 title: "VC.NET Natived Property"
 date: "2009-09-16 09:04:35"
-description: "VC.NET Natived Property"
+description: "在VC.NET Natived類別中，若需要撰寫屬性，我們可以透過declspec關鍵字來達到我們的需求。 使用declspec關鍵字來建立屬性跟一般的.NET的語言一樣，都需要get區塊與set區塊。"
 tags: [C++]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - Variable"
 date: "2018-06-02 23:52:14"
+description: "TensorFlow 可以直接調用 Variable 方法並將變數值帶入以建立對應的變數。 變數值也可以是一為陣列。 或是多維陣列。 最重要的是要記得變數在使用時需要做初始才可使用。 最後附上完整的範例程式： 其運行結果如下： Link"
 tags: [TensorFlow]
 ---
 

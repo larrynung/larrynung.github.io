@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Checkbox binding"
 date: "2017-05-09 23:24:53"
+description: "Checkbox 的繫結一樣是在 Vue 建立時連帶設定要用來繫結的屬性，然後在 Checkbox 元素這邊透過 v-model 指定所要繫結的屬性，設定完後資料屬性與控制項之間即會連動。"
 tags: [Vue.js]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - Consumer's WaitStrategy"
 date: "2016-03-20 12:17:00"
-description: "Disruptor - Consumer's WaitStrategy"
+description: "Disruptor 內建幾種等待策略，可用以設定消費者怎樣等待生產者的資料。在實務上，我們可能要針對不同的產品特性下去調整等待的策略。 預設的等待策略為 BlockingWaitStrategy，內部是用 Lock 與條件變數下去實作，用於對低延遲與高產能不是那麼重視的情境。"
 tags: [Disruptor]
 ---
 

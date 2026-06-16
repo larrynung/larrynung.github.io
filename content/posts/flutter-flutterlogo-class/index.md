@@ -1,6 +1,7 @@
 ---
 title: "Flutter - FlutterLogo class"
 date: "2018-04-01 21:50:14"
+description: "Flutter 的 FlutterLogo widget 可用來顯示 Flutter 的 Logo。 其建構子如下： FlutterLogo({Key key, double size, MaterialColor colors, Color textColor: const…"
 tags: [Flutter]
 ---
 

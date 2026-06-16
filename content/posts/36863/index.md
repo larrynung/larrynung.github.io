@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Enhanced multi-monitor support"
 date: "2011-09-20 12:55:33"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Enhanced multi-monitor support"
+description: "多螢幕開發已經試種趨勢，Visual Studio 2010時微軟就已針對多螢幕支援方面做了一些改進，在Visual Studio 2011 Preview New Feature在這部分又做了一些調整。"
 tags: [Visual Studio]
 ---
 

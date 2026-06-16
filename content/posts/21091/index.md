@@ -1,7 +1,7 @@
 ---
 title: "[Software][.NET Resource]ManagedSpy"
 date: "2011-01-27 10:45:18"
-description: "[Software][.NET Resource]ManagedSpy"
+description: "相信很多開發人員都有用過Spy++這套工具，在非.NET程式我們可以透過Spy++去追到視窗的名稱、Handle...等資訊，但在.NET程式Spy++就不能用了，就算能用也不合用。"
 tags: [Software,.NET Resource]
 ---
 

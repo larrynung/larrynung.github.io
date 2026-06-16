@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource].NET Framework cleanup tool"
 date: "2010-03-07 11:38:07"
-description: "[.NET Resource].NET Framework cleanup tool"
+description: ".NET Framework cleanup tool可以幫我們移除.NET Framework，它會移除.NET Framework的檔案、目錄、登錄檔、與其安裝資訊。主要是用在當.NET Framework安裝、卸載、修復或修補發生錯誤時，能讓我們把系統還原到乾淨的狀態。"
 tags: [.NET Resource]
 ---
 

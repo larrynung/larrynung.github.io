@@ -1,6 +1,7 @@
 ---
 title: "Termux - nginx"
 date: "2018-10-15 08:38:15"
+description: "要在 Termux 內使用 nginx，首先要透過套件管理工具安裝 nginx 套件。 nginx install nginx 安裝完輸入命令啟動。 nginx 啟動後服務會在背景運行，可以用查詢看看 process 是否有起來。"
 tags: [Termux, nginx]
 ---
 

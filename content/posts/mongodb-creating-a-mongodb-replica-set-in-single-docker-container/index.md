@@ -1,6 +1,7 @@
 ---
 title: "MongoDB - Creating a MongoDB replica set in single Docker container"
 date: "2021-01-28 07:39:17"
+description: "透過 Docker 去起 MongoDB replica set，多半網路上的做法都是用多個容器去做，這邊筆者考量測試與開發上的便利性，試著用一個容器去起 MongoDB replica set。"
 tags: [MongoDB]
 ---
 

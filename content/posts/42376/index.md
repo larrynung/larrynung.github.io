@@ -1,7 +1,7 @@
 ---
 title: "[C++]C++ Create GUID"
 date: "2011-10-13 01:24:27"
-description: "[C++]C++ Create GUID"
+description: "在C++中若有建立GUID的需求，可先建立GUID的物件實體，透過CoCreateGuid API填寫GUID到GUID的物件實體，再透過UuidToString API將GUID轉為字元陣列，像是下面這樣： 完整的範例如下： 運行起來會像下面這樣： 若建置時Link不過，"
 tags: [C++]
 ---
 

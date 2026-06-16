@@ -1,6 +1,7 @@
 ---
 title: "mmock - Configuration"
 date: "2017-09-17 23:32:15"
+description: "使用 mmock 去 Mock API，會需要放置 mock 的設定。 設定檔可以是 json 格式... { \"request\": { \"method\": \"GET\", \"path\": \"/hello/\" }, \"response\": { \"statusCode\": 200,…"
 tags: [mmock]
 ---
 

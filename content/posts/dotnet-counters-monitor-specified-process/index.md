@@ -1,6 +1,7 @@
 ---
 title: "dotnet-counters - Monitor specified process"
 date: "2021-01-21 09:09:50"
+description: "dotnet-counters 可用來監控 .Net Core 的 Process，像是這邊筆者準備了一份簡單的程式想要觀察其 CPU 與 Memory 這些資源上的變化狀況。 將程式運行起來。 dotnet run 運行起來後可用 dotnet-trace 查詢 Process。"
 tags: [dotnet-counters]
 ---
 

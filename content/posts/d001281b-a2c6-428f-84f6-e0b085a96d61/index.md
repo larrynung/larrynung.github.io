@@ -1,7 +1,7 @@
 ---
 title: "MongoDB服務因發生exception in initAndListen_ 12596 old lock file錯誤導致無法啟動的解決方案"
 date: "2013-11-06 12:00:00"
-description: "MongoDB服務因發生exception in initAndListen_ 12596 old lock file錯誤導致無法啟動的解決方案"
+description: "最近我的虛擬機器在啟動MongoDB Service時都無法正常啟動，每次啟動都會發生1067的錯誤。 查閱MongoDB的Log檔發現裡面有\"exception in initAndListen: 12596 old lock file, terminating\"這樣的一個訊息，直覺就是問題所在。"
 ---
 
 最近我的虛擬機器在啟動MongoDB Service時都無法正常啟動，每次啟動都會發生1067的錯誤。

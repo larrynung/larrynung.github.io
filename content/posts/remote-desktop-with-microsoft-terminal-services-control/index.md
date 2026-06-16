@@ -1,7 +1,7 @@
 ---
 title: "Remote desktop with Microsoft Terminal Services control"
 date: "2013-12-07 09:03:00"
-description: "Remote desktop with Microsoft Terminal Services control"
+description: "要使用.NET來開發具備遠端桌面功能的程式，我們可以使用 Microsoft Terminal Services control 這個 Com 元件來做。 首先將 Microsoft Terminal Servics control 這個 Com 元件加入工具箱，"
 tags: [CSharp]
 ---
 

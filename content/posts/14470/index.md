@@ -1,7 +1,7 @@
 ---
 title: "[Extension Method]使用擴充方法來做二維陣列排序"
 date: "2010-04-08 06:28:41"
-description: "[Extension Method]使用擴充方法來做二維陣列排序"
+description: "整理一下回問題所寫的二維陣列排序擴充方法 使用上呼叫Sort方法，並傳入要排序依據的索引即可。"
 tags: [VB.NET,CSharp]
 ---
 

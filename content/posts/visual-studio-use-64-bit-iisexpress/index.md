@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio - Use 64 Bit IISExpress"
 date: "2014-07-27 23:11:00"
-description: "Visual Studio - Use 64 Bit IISExpress"
+description: "雖然 .Net 程式支援位元適應性，Visual Studio 也允許我們做 64 位元的網站開發，但 Visual Studio 預設啟用的 IISExpress 是 32位元的。"
 tags: [Visual Studio]
 ---
 

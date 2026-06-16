@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 13 - Avoid initializing variables using functions in the declaration section"
 date: "2015-11-26 05:52:00"
-description: "PL/SQL & SQL CODING GUIDELINE 13 - Avoid initializing variables using functions in the declaration section"
+description: "條款十三是說要避免在變數宣告的同時呼叫 function 去初始變數。 因為在變數宣告的地方呼叫 function 去初始變數，function 發生例外時是無法攔截處理的。 因此要像下面這樣將宣告與初始拆開處理。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

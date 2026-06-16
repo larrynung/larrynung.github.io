@@ -1,6 +1,7 @@
 ---
 title: "GitKraken - Clone git repository"
 date: "2017-09-21 22:35:44"
+description: "要使用 GitKraken 將 Repository clone 下來，可點選 GitKraken 左上方的資料夾圖示。 切到 Clone 頁籤，選取 Clone with URL，帶入 Repository url 與要 Clone 到的位置，點選 Clone the repo! 按鈕。"
 tags: [GitKraken]
 ---
 

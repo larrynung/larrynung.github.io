@@ -1,6 +1,7 @@
 ---
 title: "LinkedIn - Withdrawing an Invitation"
 date: "2019-01-01 23:21:50"
+description: "當 LinkedIn 不小心按到邀請按鈕。 可以切到 My Network。 點選 Manage all。 切到 Sent 頁籤。 點選 Withdraw。 就可以將不小心送出的邀請收回。 Link Withdrawing an Invitation | LinkedIn Help"
 tags: [LinkedIn]
 ---
 

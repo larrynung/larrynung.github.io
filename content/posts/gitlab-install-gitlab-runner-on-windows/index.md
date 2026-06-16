@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Install GitLab Runner on Windows"
 date: "2018-01-21 10:32:01"
+description: "要在 Windows 使用 GitLab Runner，可至 Install GitLab Runner on Windows - GitLab Documentation 這邊下載 GitLab Runner。 下載後可視需要變更檔名，像是改為 gitlab-runner。"
 tags: [GitLab]
 ---
 

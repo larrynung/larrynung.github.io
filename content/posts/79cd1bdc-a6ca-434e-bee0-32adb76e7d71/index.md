@@ -1,7 +1,7 @@
 ---
 title: "RyuJIT_ The next-generation JIT compiler for .NET"
 date: "2013-11-06 12:00:00"
-description: "RyuJIT_ The next-generation JIT compiler for .NET"
+description: "RyuJIT是微軟新一代的JIT Compiler。 之所以要開發新的JIT Compiler，是因為舊的x64 JIT Compiler當初在開發之時， 以當時的時空背景來說，64bit的機器尚未普及，且多是用於伺服器上面，雲端應用也尚未盛行，所以伺服器上的網站或服務就是最主要的使用場景。"
 tags: [JIT]
 ---
 

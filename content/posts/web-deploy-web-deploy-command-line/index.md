@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Web Deploy Command Line"
 date: "2016-12-16 00:00:50"
+description: "Web Deploy 支援命令列操作，在 Web Deploy 安裝完後，Web Deploy command line 程式會被放置於 %ProgramFiles%\\IIS\\Microsoft Web Deploy V3\\ 下。"
 tags: [Web Deploy]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Invoke Team Build with Team Foundation Service"
 date: "2013-11-06 12:00:00"
-description: "Invoke Team Build with Team Foundation Service"
+description: "前面介紹了怎樣連結Team Foundation Service，也將我們的專案CheckIn上去了。隨著專案的行進我們總是免不了會有建置組件的需求，不論是手動觸發建置，又或者是每日例行性的建置。"
 ---
 
 前面介紹了怎樣連結Team Foundation Service，也將我們的專案CheckIn上去了。隨著專案的行進我們總是免不了會有建置組件的需求，不論是手動觸發建置，又或者是每日例行性的建置。因此這邊筆者簡單的隨手紀錄一下要如何才能使用Team Foundation Service來建置我們的專案組件。

@@ -1,7 +1,7 @@
 ---
 title: "Web Deploy - Import Package"
 date: "2015-07-10 21:48:00"
-description: "Web Deploy - Import Package"
+description: "要將 Application 或 Server 的匯出檔匯入 IIS，我們可以透過 Web Deploy 的匯入功能來做。先確定 Server 有安裝 Web Deploy，安裝後在 IIS 的 Application 或是 Server 節點上按下滑鼠右鍵，"
 tags: [Web Deploy]
 ---
 

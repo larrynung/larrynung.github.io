@@ -1,6 +1,7 @@
 ---
 title: "LogDevice - Running a local cluster"
 date: "2018-10-01 23:43:02"
+description: "LogDevice 安裝完後，可以啟動 Local cluster 試試。 調用 ld-dev-cluster 命令即可啟動 Local cluster。 ./_build/bin/ld-dev-cluster Local cluster 會建立暫存的目錄、啟動五個節點。"
 tags: [LogDevice]
 ---
 

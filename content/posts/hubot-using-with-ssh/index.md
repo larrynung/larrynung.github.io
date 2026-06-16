@@ -1,6 +1,7 @@
 ---
 title: "Hubot - Using with SSH"
 date: "2018-11-11 00:13:28"
+description: "要將 Hubot 整合 SSH，可以安裝 hubot-sshbot。 npm install --save hubot-sshbot 安裝完後透過 HUBOT_SSH_HOST_KEY 環境變數指定 SSH key。"
 tags: [Hubot]
 ---
 

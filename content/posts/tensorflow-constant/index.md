@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - Constant"
 date: "2018-05-27 23:03:04"
+description: "TensonrFlow 的 constant 方法可用來建置 TensorFlow 的常數，其函式原型如下： tf.constant( value, dtype=None, shape=None, name='Const', verify_shape=False ) 其中 value 表示常數的值，"
 tags: [TensorFlow]
 ---
 

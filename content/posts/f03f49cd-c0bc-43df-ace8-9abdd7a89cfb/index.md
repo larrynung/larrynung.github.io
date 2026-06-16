@@ -2,7 +2,7 @@
 title: "[C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles"
 slug: "[CSharp]使用FindFirstFile、FindNextFile API實做EnumerateFiles"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用FindFirstFile、FindNextFile API實做EnumerateFiles"
+description: ".NET 4.0開始Directory類別新增了EnumerateFiles函式，該函式能提供較有效率的方式找尋檔案，不會等到整個搜尋動作完成才回傳。在.NET 4.0以前我們則可以用FindFirstFile、FindNextFile這幾個API來達到類似的效果。"
 tags: [CSharp]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Enhanced Code Analysis Window"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview New Feature - Enhanced Code Analysis Window"
+description: "以前我們在使用Visual Studio的Code Analysis功能進行程式碼的分析時，分析出來的結果會照著程式檔名進行排序。這樣的呈現方式可能不是使用者所預期的，也不具彈性，假設今天想要針對某一個分析規則進行處理，可能就必需使用過濾功能，或是整個分析結果要掃過一遍。"
 ---
 
 以前我們在使用Visual Studio的Code Analysis功能進行程式碼的分析時，分析出來的結果會照著程式檔名進行排序。這樣的呈現方式可能不是使用者所預期的，也不具彈性，假設今天想要針對某一個分析規則進行處理，可能就必需使用過濾功能，或是整個分析結果要掃過一遍。而在分類上這邊也只有所有結果、警告、錯誤這三種分類，以筆者來說還真的不知道何時要用這些分類(因為程式碼分析出來的應該都是警告，如果錯誤編譯時就會知道)，不像FoxCop那樣清楚，所以如果要針對特定類型的規則(像是效能相關的規則)下去處理也不太容易。
