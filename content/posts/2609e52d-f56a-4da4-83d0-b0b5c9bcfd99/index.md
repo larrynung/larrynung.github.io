@@ -1,5 +1,7 @@
 ---
-title: "[IronPython]IronPython開發環境的安裝與設定"
+title: "[IronPython]Installing and Configuring the IronPython Development Environment"
+slug: "ironpython-installing-and-configuring-the-ironpython-development-environment"
+aliases: ["/posts/2609e52d-f56a-4da4-83d0-b0b5c9bcfd99/"]
 date: "2013-11-06 12:00:00"
 description: "身為以程式開發為樂的程式開發人員，在蛇年玩蛇也是一件很合理的事。但是玩蛇也是要準備好工具的，而筆者的.NET背景又比其他語言濃厚，幾經思量最後還是選擇了IronPython，因為它可以同時使用.NET Framework與Python兩邊的類別庫，不論是用來慢慢熟悉Python語法，"
 tags: [Python]

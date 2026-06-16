@@ -1,5 +1,7 @@
 ---
-title: "如何在Linux環境下設定命令別名"
+title: "How to Set Command Aliases on Linux"
+slug: "how-to-set-command-aliases-on-linux"
+aliases: ["/posts/7cc33cf3-2896-4bfd-bd33-1a255057c8d4/"]
 date: "2013-11-06 12:00:00"
 tags: [Linux]
 description: "Linux系統內建許多的命令列指令，這些指令多半很小，且專注於解決特定的問題，搭配Linux特有的管線命令，命令間能因此而有某種程度的交流，進而完成許多的動作 。"

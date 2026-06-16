@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET].NET多語系程式(二)"
+title: "[VB.NET].NET Multilingual Apps (Part 2)"
+slug: "vbnet-dotnet-multilingual-apps-part-2"
+aliases: ["/posts/8169/"]
 date: "2009-04-24 11:57:31"
 description: "Introduction 本篇將介紹.NET多語系程式的寫法 ，下面會利用資料庫來達到多語系的功能。 學習目標 .NET多語程式撰寫 MyDatabase類別庫基本使用 用資料庫實現多語功能 操作步驟 Step1.首先準備個資料庫，內含所有語系的資料 Step2.切換語系時，"
 tags: [VB.NET]

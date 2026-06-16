@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]列舉型別字串處理的注意事項"
+title: "[VB.NET]Notes on String Handling for Enum Types"
+slug: "vbnet-notes-on-string-handling-for-enum-types"
+aliases: ["/posts/10348/"]
 date: "2009-09-01 09:00:33"
 description: "不知道大家是否有發現，列舉型別在做字串處理時，會因寫法不同而有所差異。 舉個例子來看，假設我們寫了一個SexType的列舉 並做了如下的字串處理： 後面未加ToString()的在編譯後會先被轉型成Int後才轉型為String。"
 tags: [VB.NET]

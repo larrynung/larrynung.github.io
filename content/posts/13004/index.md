@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]把.NET視窗嵌入.NET視窗或控制項"
+title: "[VB.NET]Embed a .NET Window into Another .NET Window or Control"
+slug: "vbnet-embed-a-dotnet-window-into-another-dotnet-window-or-control"
+aliases: ["/posts/13004/"]
 date: "2010-01-13 11:36:59"
 description: "前好一陣子看到同事在做抽換表單時，利用到了把視窗嵌入視窗或控制項的功能。這邊隨手記錄一下。 要把視窗嵌入視窗，在表單的宣告上跟平常並無差異，只是多加了把TopLevel屬性設為False，則此表單即可嵌到另一個表單或控制項中。 TopLevel屬性主要是用來指出是否要將表單顯示為最上層視窗。"
 tags: [VB.NET]

@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機]網樂通硬改，用高效的USB碟替換內建的8G Dom"
+title: "[NetTV Mod]Hardware Mod - Replace the Built-in 8G DOM with a Faster USB Drive"
+slug: "nettv-mod-hardware-mod-replace-the-built-in-8g-dom-with-a-faster-usb-drive"
+aliases: ["/posts/b14e4611-6b8d-4cf9-a3e9-32bc15406b65/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通內建的8G Dom效率不好，因此筆者在用 sh4twbox 軟改完了還是將它稍微硬改了一下，改用較為高效的USB替換。 這邊筆者準備了一條一樣是8G的USB隨身碟，因為筆者沒在抓BT，網樂通暫時也只是用來熟悉Linux用的，所以替換的目的主要還是做個硬改的嚐試，"

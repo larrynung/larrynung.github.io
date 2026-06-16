@@ -1,5 +1,7 @@
 ---
-title: "[Linq]Linq程式逐步執行與偵錯"
+title: "[Linq]Stepping Through and Debugging LINQ Code"
+slug: "linq-stepping-through-and-debugging-linq-code"
+aliases: ["/posts/14659/"]
 date: "2010-04-18 12:18:57"
 description: "若是使用C#要對Linq程式做逐步的執行與偵錯，我們可以直接透過Step (F11)逐步執行。 舉個例子來說，假設今天想要對下列Linq程式做逐步執行。 我們可把中斷點設在迴圈上方，運行後會中斷在中斷點的位置上。"
 tags: [VB.NET, CSharp, Linq]

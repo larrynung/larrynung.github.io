@@ -1,5 +1,7 @@
 ---
-title: "[Extension Method][VB.NET]使用擴充方法過濾出組件內的特定類別"
+title: "[Extension Method][VB.NET]Filter Specific Classes in an Assembly Using an Extension Method"
+slug: "extension-method-vbnet-filter-specific-classes-in-an-assembly-using-an-extension-method"
+aliases: ["/posts/14622/"]
 date: "2010-04-16 12:16:19"
 description: "今天把之前的[C#][VB.NET]取得專案內所有表單名稱這篇程式給修了一下，順便把其概念提出成擴充方法，整理如下： 使用上取得Assembly物件後，呼叫GetTypes，並傳入要過濾的型態等參數，即可取得過濾完的類型。 舉個例子來看，假設還是要取得專案中所有表單的話，程式可以簡化成下面這樣："
 tags: [VB.NET]

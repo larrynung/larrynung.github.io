@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]使用者控制項測試容器(User Control Test Container)"
+title: "[Visual Studio]The User Control Test Container"
+slug: "visual-studio-the-user-control-test-container"
+aliases: ["/posts/cb0d72c5-7eaa-4434-9cf1-b1e74e2a453e/"]
 date: "2013-11-06 12:00:00"
 tags: [Visual Studio]
 description: "Introduction 使用者控制項測試容器(User Control Test Container)是VS2005加入的功能，能為開發者提供簡易的控制項測試方式。開發者藉此功能能在不建立表單、不把控制項拖曳到表單的狀況下，對使用者控制項做初步的測試。"

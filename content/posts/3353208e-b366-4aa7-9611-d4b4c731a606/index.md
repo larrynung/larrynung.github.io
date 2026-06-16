@@ -1,5 +1,7 @@
 ---
-title: "FlickrNet開發系列- 使用FlickrNet上傳照片至Flickr"
+title: "FlickrNet Development Series - Upload Photos to Flickr with FlickrNet"
+slug: "flickrnet-development-series-upload-photos-to-flickr-with-flickrnet"
+aliases: ["/posts/3353208e-b366-4aa7-9611-d4b4c731a606/"]
 date: "2013-11-06 12:00:00"
 tags: [Flickr]
 description: "透過FlickrNet上傳照片至Flickr十分簡單，我們可以透過FlickrNet.UploadPicture與FlickrNet.UploadPictureAsync這兩個方法來達成需求，支援同步與非同步上傳。圖片上傳時也可以透過OnUploadProgress事件取得上傳的進度。"

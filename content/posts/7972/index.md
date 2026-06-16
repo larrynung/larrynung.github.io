@@ -1,5 +1,7 @@
 ---
-title: "[WLW]Windows Live Writter Plugin初體驗"
+title: "[WLW]First Experience with Windows Live Writer Plugins"
+slug: "wlw-first-experience-with-windows-live-writer-plugins"
+aliases: ["/posts/7972/"]
 date: "2009-04-11 01:53:22"
 description: "日前參考了水瓶大的『我的 Live Writer Plugin - 插入可愛貓咪表情符號 (已釋出原始碼專案)』教學文章，學習如何做Windows Live Writter Plugin。本篇做個初略的整理，詳細教學煩請移駕水瓶大的Blog。"
 tags: [WLW]

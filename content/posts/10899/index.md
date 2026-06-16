@@ -1,5 +1,7 @@
 ---
-title: "[VC.NET] 如何修復 quot;C2039: lsquo;GetCurrentDirectoryA()rsquo; : is Not a Member of lsquo;System::IO::Directoryrsquo;quot;問題"
+title: "[VC.NET]How to Fix \"C2039: 'GetCurrentDirectoryA()' : is Not a Member of 'System::IO::Directory'\""
+slug: "vc-dotnet-how-to-fix-c2039-getcurrentdirectorya-is-not-a-member-of-system-io-directory"
+aliases: ["/posts/10899/"]
 date: "2009-10-03 12:57:56"
 description: "[VC.NET] 如何修復 \"C2039: ‘GetCurrentDirectoryA()’ : is Not a Member of ‘System::IO::Directory’\"問題"
 tags: [C++]

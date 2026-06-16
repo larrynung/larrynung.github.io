@@ -1,6 +1,7 @@
 ---
-title: "[C#]如何使用TraceListener實作類似Visual Studio的輸出視窗"
-slug: "[CSharp]如何使用TraceListener實作類似Visual Studio的輸出視窗"
+title: "[C#]Build a Visual Studio-like Output Window Using TraceListener"
+slug: "csharp-build-a-visual-studio-like-output-window-using-tracelistener"
+aliases: ["/posts/csharp如何使用tracelistener實作類似visual-studio的輸出視窗/"]
 date: "2013-11-06 12:00:00"
 description: "前陣子花了點時間在為開發中的產品加強除錯的功能，想要讓開發上發生的問題能直接在產品上就一目而然的看到，而不用另行開啟DebugView或是Log來看。簡單地說想要為產品加上類似是Visual Studio的輸出視窗，或者是DebugView類似的功能，"
 tags: [CSharp]

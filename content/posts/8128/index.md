@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]Isolated Storage 隔離儲存區"
-slug: "[CSharp][VB.NET]Isolated Storage 隔離儲存區"
+title: "[C#][VB.NET]Isolated Storage"
+slug: "csharp-vbnet-isolated-storage"
+aliases: ["/posts/csharpvb.netisolated-storage-隔離儲存區/"]
 date: "2009-04-22 09:03:59"
 description: "Abstract Namespace Assemble 功能 重要類別 隔離類型 儲存位置 使用時機 不該使用時機 取得隔離儲存區 刪除隔離儲存區 建立目錄 尋找目錄 尋找檔案 刪除目錄 刪除檔案 寫入檔案 讀取檔案 Namespace System.IO.IsolatedStorage…"
 tags: [CSharp,VB.NET]

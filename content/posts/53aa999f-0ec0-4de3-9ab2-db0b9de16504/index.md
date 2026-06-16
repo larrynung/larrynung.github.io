@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]使用TabControlEx控制項快速抽換表單介面與實現精靈介面"
+title: "[VB.NET]Swap Form UIs and Build Wizard Interfaces Quickly with the TabControlEx Control"
+slug: "vbnet-swap-form-uis-and-build-wizard-interfaces-quickly-with-the-tabcontrolex-control"
+aliases: ["/posts/53aa999f-0ec0-4de3-9ab2-db0b9de16504/"]
 date: "2013-11-06 12:00:00"
 tags: [VB.NET]
 description: "這篇要介紹的是如何抽換表單介面與實現精靈介面，順便介紹自己試寫的TabControlEx控制項，雖說是TabControl的加強版控制項，但其實也只比傳統的TabControl控制項多一個ShowPageOnly屬性。"

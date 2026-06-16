@@ -1,6 +1,7 @@
 ---
-title: "[C#]Effective C# 條款十八：實現標準Dispose模式"
-slug: "[CSharp]Effective C# 條款十八：實現標準Dispose模式"
+title: "[C#]Effective C# Item 18: Implement the Standard Dispose Pattern"
+slug: "csharp-effective-csharp-item-18-implement-the-standard-dispose-pattern"
+aliases: ["/posts/csharpeffective-c#-條款十八實現標準dispose模式/"]
 date: "2011-03-10 08:22:50"
 description: "IDisposable接口為.Net程式釋放非託管資源的標準解決方案，可為類別提供即時釋放資源的機制。 其內含有Dispose方法，為資源釋放動作的本體，在該方法的實作上需注意到需內含下面幾個重點任務: 1.判斷是否做過釋放動作 因為透過Dispose做資源的釋放後，"
 tags: [CSharp]

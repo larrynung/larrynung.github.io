@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]取得Gif動畫圖檔內含的圖片"
+title: "[VB.NET]Extract Frames from an Animated GIF"
+slug: "vbnet-extract-frames-from-an-animated-gif"
+aliases: ["/posts/13254/"]
 date: "2010-01-24 12:31:09"
 description: "要取得Gif動畫圖檔內含的圖片，必須要了解的有Bitmap.FrameDimensionsList、FrameDimension Class、Bitmap.GetFrameCount、與Bitmap.SelectActiveFrame。"
 tags: [VB.NET]

@@ -1,6 +1,7 @@
 ---
-title: "[C#]Effective C# 條款十一： 優先採用foreach迴圈"
-slug: "[CSharp]Effective C# 條款十一： 優先採用foreach迴圈"
+title: "[C#]Effective C# Item 11: Prefer foreach Loops"
+slug: "csharp-effective-csharp-item-11-prefer-foreach-loops"
+aliases: ["/posts/csharpeffective-c#-條款十一-優先採用foreach迴圈/"]
 date: "2009-10-22 08:41:07"
 description: "C#中的foreach迴圈並不僅僅是do…while或是for迴圈的變形。它會與.NET框架中的集合接口做緊密的結合，在編譯時為我們最佳化程式碼。除此之外foreach使用上也具備較高的相容性。"
 tags: [CSharp]

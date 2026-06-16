@@ -1,5 +1,7 @@
 ---
-title: "[Win8]如何在Desktop mode取得Metro mode下看到的應用程式"
+title: "[Win8]How to Access Metro Mode Apps from Desktop Mode"
+slug: "win8-how-to-access-metro-mode-apps-from-desktop-mode"
+aliases: ["/posts/afc16317-acf8-40ce-aa94-1ab7067dcfe4/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows]
 description: "我們在Win8按下熱鍵Win + Q可已進入搜尋應用程式的畫面，在這個畫面下我們可以看到很多我們安裝的APP。 有些App是可以在Desktop mode下運作的，但卻都要進入到Metro mode去找尋，若您覺得這樣的切換很麻煩，我們可以讓Desktop mode看到這些app。"

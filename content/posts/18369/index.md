@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 quot;(Class) does not existquot; 錯誤"
+title: "[Visual Studio]Fixing the \"(Class) does not exist\" Error When Generating Code from a Class Diagram in Visual Studio 2010"
+slug: "visual-studio-fixing-the-class-does-not-exist-error-when-generating-code-from-a-class-diagram-in-visual-studio-2010"
+aliases: ["/posts/18369/"]
 date: "2010-10-15 12:54:19"
 description: "[Visual Studio]Visual Studio 2010 從類別圖產生程式碼專案出現 \"(Class) does not exist\" 錯誤"
 tags: [Visual Studio]

@@ -1,5 +1,7 @@
 ---
-title: "[Other]DIY魔術發票夾"
+title: "[Other]DIY Magic Receipt Holder"
+slug: "other-diy-magic-receipt-holder"
+aliases: ["/posts/10412/"]
 date: "2009-09-04 09:04:12"
 description: "Introduction 之前在夜市買了一個看似神奇的魔術皮夾，透過皮夾的翻轉就可以把皮夾內部的鈔票整理好。實際用了一陣子後，其實並沒有想像中的好用。除了鈔票的位置要先看好才能翻到想要的位置外，用久了它的線也會鬆脫疲乏。好用的地方只有鈔票會被壓的漂漂亮亮，最後就被我丟到一旁了。"
 tags: [Other]

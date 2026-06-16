@@ -1,6 +1,7 @@
 ---
-title: "[C#]取得滑鼠游標所指到的視窗及其Process Name"
-slug: "[CSharp]取得滑鼠游標所指到的視窗及其Process Name"
+title: "[C#]Get the Window Under the Mouse Cursor and Its Process Name"
+slug: "csharp-get-the-window-under-the-mouse-cursor-and-its-process-name"
+aliases: ["/posts/csharp取得滑鼠游標所指到的視窗及其process-name/"]
 date: "2011-06-19 10:24:43"
 description: "最近在開發的案子常會需要使用到前面介紹的小工具(Process Manager)，但畢竟只是先隨便處理一下，在使用時要增加過濾的Process只能透過滑鼠拖曳左邊的Process到右邊，或是透過手動輸入Process Name的方式去設定，使用上總是十分的不便。"
 tags: [CSharp]

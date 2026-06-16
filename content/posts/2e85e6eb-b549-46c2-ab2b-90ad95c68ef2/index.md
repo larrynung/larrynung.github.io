@@ -1,5 +1,7 @@
 ---
-title: "啟動BusyBox內建的FTP Server"
+title: "Start BusyBox's Built-in FTP Server"
+slug: "start-busybox-s-built-in-ftp-server"
+aliases: ["/posts/2e85e6eb-b549-46c2-ab2b-90ad95c68ef2/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "要啟動BusyBox內建的FTP Server，我們需要先孰悉tcpsvd與ftpd這兩個命令。 tcpsvd可以建立TCP socket，並將它bind在某個ip跟port，或是bind在某個程式上面。"

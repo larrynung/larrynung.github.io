@@ -1,6 +1,7 @@
 ---
 title: "[C#][VB.NET]FullScreen the winform"
-slug: "[CSharp][VB.NET]FullScreen the winform"
+slug: "csharp-vbnet-fullscreen-the-winform"
+aliases: ["/posts/csharpvb.netfullscreen-the-winform/"]
 date: "2010-01-24 12:00:24"
 description: "在.NET程式中，若想要把視窗設為全螢幕，我們可以很簡單的透過FormBorderStyle與WindowState兩個屬性來完成。只要把視窗的FormBorderStyle屬性設為None，並把WindowState屬性設為Maximized，視窗就會變為全螢幕顯示。"
 tags: [VB.NET,CSharp]

@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]用Extension Method取得CustomAttributes"
+title: "[VB.NET]Get CustomAttributes Using an Extension Method"
+slug: "vbnet-get-customattributes-using-an-extension-method"
+aliases: ["/posts/18430/"]
 date: "2010-10-18 09:02:31"
 description: "整理一下自己用來取得CustomAttributes的擴充方法。 EnumExtension TypeExtension ObjectExtension 使用範例"
 tags: [VB.NET]

@@ -1,5 +1,7 @@
 ---
-title: "土豆視頻開發系列-開發前準備"
+title: "Tudou Video Development Series - Getting Started"
+slug: "tudou-video-development-series-getting-started"
+aliases: ["/posts/3aa8a1e9-7a6e-464c-8ccf-5e19a566fd59/"]
 date: "2013-11-06 12:00:00"
 tags: [土豆視頻]
 description: "土豆網為了讓開發人員能夠開發相關的應用程式，開放了API給開發人員叫用，開發人員可從土豆視頻開發平台取得完整的開發資訊。土豆網API是採HTTP API的形式，取得的資料會以json或是xml兩種型態返回。"

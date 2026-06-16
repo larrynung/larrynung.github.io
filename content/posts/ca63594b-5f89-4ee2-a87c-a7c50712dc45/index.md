@@ -1,5 +1,7 @@
 ---
-title: "[C#]如何做出類似Facebook的web preview"
+title: "[C#]How to Build a Facebook-like Web Preview"
+slug: "csharp-how-to-build-a-facebook-like-web-preview"
+aliases: ["/posts/ca63594b-5f89-4ee2-a87c-a7c50712dc45/"]
 date: "2013-11-06 12:00:00"
 description: "因為不是走Web開發的，這塊對於筆者滿陌生的，一直滿好奇Facebook打入網址後會顯示的預覽畫面是怎樣做的。抽空參閱Creating a Facebook Like Website Previewer這篇並試玩了一下，發現沒有想像中的困難，只是很單純的從網頁內容中擷取資訊而已，"
 tags: [CSharp]

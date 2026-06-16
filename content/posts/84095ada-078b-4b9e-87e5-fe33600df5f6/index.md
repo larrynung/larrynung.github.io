@@ -1,5 +1,7 @@
 ---
-title: "安裝stlinux23-sh4-python套件，讓網樂通具備運行Python的能力"
+title: "Install the stlinux23-sh4-python Package to Run Python on the NetTV Box"
+slug: "install-the-stlinux23-sh4-python-package-to-run-python-on-the-nettv-box"
+aliases: ["/posts/84095ada-078b-4b9e-87e5-fe33600df5f6/"]
 date: "2013-11-06 12:00:00"
 description: "網樂通改機成功後，若想要讓網樂通可以支援運行Python的能力，我們可以為網樂通加掛stlinux23-sh4-python套件。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛stlinux23-sh4-python套件。"
 tags: [Python]

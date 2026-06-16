@@ -1,5 +1,7 @@
 ---
-title: "Visual Studio 2010 New Feature - 建議模式(Consume First Mode)"
+title: "Visual Studio 2010 New Feature - Consume First Mode"
+slug: "visual-studio-2010-new-feature-consume-first-mode"
+aliases: ["/posts/20863/"]
 date: "2011-01-17 08:12:22"
 description: "在以往我們使用Visual Studio，當輸入部份關鍵字Intellisense就會自動幫忙找到可能要輸入的Intellisence提示項目，並將最符合的Intellisence提示項目選取，此時若我們按下Tab或是Space，Visual Studio會自動幫我們用選取的字串帶入編輯區。"
 tags: [CSharp,Visual Studio]

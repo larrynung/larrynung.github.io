@@ -1,5 +1,7 @@
 ---
-title: "[Win8]如何啟用Win8檔案歷程紀錄為自己的作業環境加入簡易的版控措施"
+title: "[Win8]Enable Windows 8 File History to Add Simple Versioning to Your Workspace"
+slug: "win8-enable-windows-8-file-history-to-add-simple-versioning-to-your-workspace"
+aliases: ["/posts/b799c52e-ce61-4062-8917-ead1a4c4fecf/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows]
 description: "Windows 8新增檔案歷程紀錄功能，提供了簡易的版控功能，能定時為您的檔案做快照，當使用不當不小心搞壞了檔案內容，或是說檔案不小心丟失了，資源回收桶也被清除的狀況下，Windows 8的檔案歷程紀錄功能能讓使用者將之前的檔案內容取回來使用。"

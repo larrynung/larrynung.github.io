@@ -1,5 +1,7 @@
 ---
-title: "[Win8]如何在Win8中調整開機時自動啟動的程式"
+title: "[Win8]How to Manage Startup Programs in Windows 8"
+slug: "win8-how-to-manage-startup-programs-in-windows-8"
+aliases: ["/posts/da0f669c-8e8e-4b32-a591-37a831e66a49/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows]
 description: "在Win8以前我們想要調整開機時作業系統會自動執行的程式時，我們會在執行對話框中輸入msconfig的命令。 叫出Systen Configuration對話框，並在Startup頁面去做調整，像是把一些不怎麼必要啟動的程式給他停用。"

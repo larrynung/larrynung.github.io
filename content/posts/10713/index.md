@@ -1,5 +1,7 @@
 ---
-title: "[Software]Balsamiq Mockups介面雛型設計工具"
+title: "[Software]Balsamiq Mockups - UI Prototyping Tool"
+slug: "software-balsamiq-mockups-ui-prototyping-tool"
+aliases: ["/posts/10713/"]
 date: "2009-09-19 01:18:41"
 description: "Introduction Balsamiq Mockups是一套可以輔助我們做介面雛型設計的軟體。內建許多控制項元件外觀，透過簡單的拖曳、設定，介面雛型就這樣輕鬆的呈現在您眼前。Balsamiq Mockups工具提供了我們簡單好用的介面雛型設計環境，讓我們能省下許多介面雛型設計的時間。"
 tags: [Software]

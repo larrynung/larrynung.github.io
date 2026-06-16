@@ -1,5 +1,7 @@
 ---
-title: "[Other]quot;無法開啟此封裝quot; 微軟的Bug?!"
+title: "[Other]\"Cannot Open This Package\" - A Microsoft Bug?!"
+slug: "other-cannot-open-this-package-a-microsoft-bug"
+aliases: ["/posts/6119/"]
 date: "2008-11-28 09:31:57"
 description: "[Other]\"無法開啟此封裝\" 微軟的Bug?!"
 tags: [Other]

@@ -1,6 +1,7 @@
 ---
-title: "[C#]Effective C# 條款十六：盡量減少記憶體垃圾"
-slug: "[CSharp]Effective C# 條款十六：盡量減少記憶體垃圾"
+title: "[C#]Effective C# Item 16: Minimize Memory Garbage"
+slug: "csharp-effective-csharp-item-16-minimize-memory-garbage"
+aliases: ["/posts/csharpeffective-c#-條款十六盡量減少記憶體垃圾/"]
 date: "2011-02-11 01:09:26"
 description: ".NET托管程式因為有GC會自動幫我們找到並回收不必要的物件，因此大多數時候我們不需要像C語言一樣很明確的手動釋放資源，也不會因為忘了釋放資源造成資源的洩漏，是很好的記憶體管理機制。雖然在開發上GC的出現可以讓我們開發人員將記憶體管理交由GC去自動處理。"
 tags: [CSharp]

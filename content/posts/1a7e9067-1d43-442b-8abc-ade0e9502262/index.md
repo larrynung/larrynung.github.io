@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用BitmapDecoder快速取用圖檔內含的縮圖"
-slug: "[CSharp]使用BitmapDecoder快速取用圖檔內含的縮圖"
+title: "[C#]Quickly Read the Embedded Thumbnail of an Image with BitmapDecoder"
+slug: "csharp-quickly-read-the-embedded-thumbnail-of-an-image-with-bitmapdecoder"
+aliases: ["/posts/csharp使用bitmapdecoder快速取用圖檔內含的縮圖/"]
 date: "2013-11-06 12:00:00"
 description: "為了記憶體的佔用或是速度上面的考量，有的時候我們會有為圖檔產生縮圖的需求。產生縮圖的方法很多，多半都需要耗費一點時間，所以有時候我們可能會考慮直接取用圖檔本身就內含的縮圖。 這邊一樣是用WPF內的BitmapDecoder來取用圖檔內含的縮圖。"
 tags: [CSharp]

@@ -1,5 +1,7 @@
 ---
-title: "[IADP]IADP Advertising - 開發前準備"
+title: "[IADP]IADP Advertising - Getting Started"
+slug: "iadp-iadp-advertising-getting-started"
+aliases: ["/posts/f6d80f5e-5801-42c8-94ba-3d50e53354e2/"]
 date: "2013-11-06 12:00:00"
 tags: [IADP]
 description: "要在Intel AppUp應用程式中加入廣告，我們可在Intel AppUp Developer Program選取[Opportunites]→[Advertising]選單選項。"

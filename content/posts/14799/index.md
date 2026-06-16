@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]MDI表單在開啟時做語系切換的注意事項"
+title: "[VB.NET]Notes on Switching Language When Opening an MDI Form"
+slug: "vbnet-notes-on-switching-language-when-opening-an-mdi-form"
+aliases: ["/posts/14799/"]
 date: "2010-04-25 12:11:12"
 description: "記得在[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換這篇提過兩種已開啟表單的語系切換方法，一種是透過遞迴搭配ComponentResourceManager，一種是把元件移除後再呼叫InitializeComponent。"
 tags: [VB.NET]

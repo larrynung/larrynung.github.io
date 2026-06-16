@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept][VB.NET]字串 = Nothing V.S 字串 is Nothing"
+title: "[.NET Concept][VB.NET]String = Nothing vs String Is Nothing"
+slug: "dotnet-concept-vbnet-string-nothing-vs-string-is-nothing"
+aliases: ["/posts/7260/"]
 date: "2009-02-22 06:56:04"
 description: "今天回答網友問題時，由於一時筆誤，把本來要寫『字串 is Nothing』的地方錯打成『字串 = Nothing』，造成程式怎麼看就是看不出哪裡邏輯有問題，最後才注意到這邊打錯。 發現後覺得很神奇，因為我一直以為寫成『字串 = Nothing』會編譯錯誤的，沒想到它竟然能過。"
 tags: [.NET Concept,VB.NET]

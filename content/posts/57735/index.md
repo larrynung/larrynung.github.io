@@ -1,5 +1,7 @@
 ---
-title: "[C++]使用ReadDirectoryChangesW API監控檔案系統的改變"
+title: "[C++]Monitor File System Changes with the ReadDirectoryChangesW API"
+slug: "cpp-monitor-file-system-changes-with-the-readdirectorychangesw-api"
+aliases: ["/posts/57735/"]
 date: "2011-11-13 10:53:52"
 description: "在C++中若想要監控檔案系統改變有很多方法，可以用FindFirstChangeNotification取得檔案變更、或是Hook底層的API等方法來實現，這邊使用ReadDirectoryChangesW API來實現，該API使用前必須先加入Kernel32.lib。"
 tags: [C++]

@@ -1,5 +1,7 @@
 ---
-title: "[CoffeeScript]建立Windows上的CoffeeScript開發環境"
+title: "[CoffeeScript]Setting Up a CoffeeScript Development Environment on Windows"
+slug: "coffeescript-setting-up-a-coffeescript-development-environment-on-windows"
+aliases: ["/posts/dae8a8f2-99a2-4198-a927-efc6766075d0/"]
 date: "2013-11-06 12:00:00"
 tags: [CoffeeScript]
 description: "要在Windows上建立CoffeeScript的開發環境，首先須要安裝可在Windows上運行的node.js，可至node.js首頁下載安裝。 安裝後會程式集內會多兩個Icon，這邊直接點擊Node.js command prompt，開啟命令提示字元。"

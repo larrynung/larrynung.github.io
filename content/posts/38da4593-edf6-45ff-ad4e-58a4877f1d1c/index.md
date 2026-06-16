@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機][sh4twbox]安裝並啟動samba，讓網樂通可透過網芳連接"
+title: "[NetTV Mod][sh4twbox]Install and Start samba to Access the NetTV Box via Network Neighborhood"
+slug: "nettv-mod-sh4twbox-install-and-start-samba-to-access-the-nettv-box-via-network-neighborhood"
+aliases: ["/posts/38da4593-edf6-45ff-ad4e-58a4877f1d1c/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通改機成功後，若想要透過網芳連進去，我們可以為網樂通加掛samba server。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛samba server。"

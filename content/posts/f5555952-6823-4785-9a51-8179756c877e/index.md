@@ -1,5 +1,7 @@
 ---
-title: "[Software]TortoiseGit的TGitCache佔用過多的CPU"
+title: "[Software]TortoiseGit's TGitCache Using Too Much CPU"
+slug: "software-tortoisegit-s-tgitcache-using-too-much-cpu"
+aliases: ["/posts/f5555952-6823-4785-9a51-8179756c877e/"]
 date: "2013-11-06 12:00:00"
 tags: [Software]
 description: "今天在測試程式運作時發現整個系統效能有點低落，看了一下工作管理員發現有個TGitCache.exe的處理續在吃我的CPU，吃的量還滿大的，在雙核的情況下還能吃到25%左右。 此時我沒有除了在除錯外並沒有在做什麼特別跟Git有關的操作，因此這問題有必要好好的看一下。"

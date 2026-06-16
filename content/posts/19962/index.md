@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]最大公因數 & 最小公倍數"
-slug: "[CSharp][VB.NET]最大公因數 & 最小公倍數"
+title: "[C#][VB.NET]Greatest Common Divisor & Least Common Multiple"
+slug: "csharp-vbnet-greatest-common-divisor-least-common-multiple"
+aliases: ["/posts/csharpvb.net最大公因數-最小公倍數/"]
 date: "2010-12-07 12:49:24"
 description: "翻閱程式發現以前在處理合併儲存格時，為該功能撰寫了最大公因數與最小公倍數的處理，這邊稍微整理記錄一下。 最大公因數的取法為使用遞迴去實作輾轉相除法，最小公倍數則是利用最大公因數與下面公式來計算： 程式碼 C# VB.NET 完整範例 C# VB.NET 運行結果如下："
 tags: [CSharp,VB.NET]

@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]工具列上的方案組態給你更方便的建置"
+title: "[Visual Studio]The Toolbar Solution Configuration for More Convenient Builds"
+slug: "visual-studio-the-toolbar-solution-configuration-for-more-convenient-builds"
+aliases: ["/posts/6940/"]
 date: "2009-01-25 03:11:42"
 description: "一般來說當要切換建置的類型是Debug或是Release的話，通常我們可通過下列四種方法。 專案=>屬性=>建置 (圖一) 方案總管上按右鍵=>屬性=>建置 (圖一) 連點兩下Properties=>建置 (圖一) 建置=>組態管理員 (圖二) 圖一 屬性頁面設定建置類型 圖二 組態管理員…"
 tags: [Visual Studio]

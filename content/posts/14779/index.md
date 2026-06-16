@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]處理MDI子視窗清單中的殘留分隔線"
+title: "[VB.NET]Fix the Leftover Separator in the MDI Child Window List"
+slug: "vbnet-fix-the-leftover-separator-in-the-mdi-child-window-list"
+aliases: ["/posts/14779/"]
 date: "2010-04-23 10:10:45"
 description: "在撰寫MDI視窗程式時，要讓程式在某個選單選項上，下拉時顯示所有開起的子視窗清單，我們可以在選單控制項上設定MdiWindowListItem屬性，把該屬性指到要顯示子視窗清單的選單選項。 設完後會發現基本上已達到了顯示子視窗清單的需求，只是美中不足的在運作上會有個小瑕疵。讓我們來看一下。"
 tags: [VB.NET]

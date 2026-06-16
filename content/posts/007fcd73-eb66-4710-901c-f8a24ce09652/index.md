@@ -1,5 +1,7 @@
 ---
-title: "如何切換MAC的桌面背景"
+title: "How to Switch the Desktop Background on Mac"
+slug: "how-to-switch-the-desktop-background-on-mac"
+aliases: ["/posts/007fcd73-eb66-4710-901c-f8a24ce09652/"]
 date: "2013-11-06 12:00:00"
 description: "若想要在MAC上切換桌面的背景，我們可在桌面上叫出滑鼠右鍵選單，並按下滑鼠右鍵選單中的\"Change Desktop Background...\"選單選項，叫出Desktop & Screen Saver對話視窗。"
 tags: [Mac]

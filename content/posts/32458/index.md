@@ -1,6 +1,7 @@
 ---
-title: "[C#]取得網卡的IPV6位置"
-slug: "[CSharp]取得網卡的IPV6位置"
+title: "[C#]Get the IPv6 Address of a Network Adapter"
+slug: "csharp-get-the-ipv6-address-of-a-network-adapter"
+aliases: ["/posts/csharp取得網卡的ipv6位置/"]
 date: "2011-08-02 01:18:13"
 description: "最近有個需求是要取得本地端的IPV6位置，若用IPHostEntry去取AddressList，回傳的IP位置內沒有IPV6的位置資訊，因此換個方法改透過System.Net.NetworkInformation.NetworkInterfaceType下去取所有的網卡資訊，"
 tags: [CSharp]

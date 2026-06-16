@@ -1,6 +1,7 @@
 ---
 title: "[C#]Everything SDK"
-slug: "[CSharp]Everything SDK"
+slug: "csharp-everything-sdk"
+aliases: ["/posts/csharpeverything-sdk/"]
 date: "2011-03-14 12:51:09"
 description: "用過Everything也好一陣子了，一直以來都對他的快速搜尋有相當深刻的印象，但也只限於當作搜尋的工具之用，看了保哥介紹好用工具：Everything search engine (檔名搜尋工具)的這篇，發現原來該套軟體也有SDK可以使用，可藉由他的強大搜尋功能用來開發自己的工具，"
 tags: [CSharp]

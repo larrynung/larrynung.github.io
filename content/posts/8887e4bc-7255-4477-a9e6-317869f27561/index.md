@@ -1,6 +1,7 @@
 ---
-title: "[C#]如何取得Process的Owner"
-slug: "[CSharp]如何取得Process的Owner"
+title: "[C#]How to Get the Owner of a Process"
+slug: "csharp-how-to-get-the-owner-of-a-process"
+aliases: ["/posts/csharp如何取得process的owner/"]
 date: "2013-11-06 12:00:00"
 description: "筆者最近在做的專案與自己在玩的東西都需要去取出Process的Owner來做些顯示或是判斷，這邊所謂的Owner就是工作管理員中我們所看到的User Name。 這樣的資訊，我們無法透過BCL內建的System.Diagnostics.Process直接取得。"
 tags: [CSharp]

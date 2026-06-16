@@ -1,5 +1,7 @@
 ---
-title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.Assert  Contract.Assume"
+title: ".NET 4.0 New Feature - Code Contracts (Part 3) Contract.Assert & Contract.Assume"
+slug: "dotnet-4-0-new-feature-code-contracts-part-3-contract-assert-contract-assume"
+aliases: ["/posts/17802/"]
 date: "2010-09-19 12:17:30"
 description: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (三) Contract.Assert & Contract.Assume"
 tags: [CSharp]

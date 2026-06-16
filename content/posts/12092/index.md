@@ -1,5 +1,7 @@
 ---
-title: "[Other]Office 2007 一次搞定包"
+title: "[Other]Office 2007 All-in-One Pack"
+slug: "other-office-2007-all-in-one-pack"
+aliases: ["/posts/12092/"]
 date: "2009-11-21 12:50:16"
 description: "今天看到微軟釋出的好東西「Office 2007 一次搞定包」。 說穿了其實就是ㄧ些Office2007的資源，像是範本、教學、相容性套件、密技等等。這邊微軟通通幫你整理的好好的。 有興趣的可以到官方網站下載檔案，或是填寫申請表取得光碟。 Link Office 2007 一次搞定包"
 tags: [Other]

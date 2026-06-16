@@ -1,5 +1,7 @@
 ---
-title: "[Web]Spoon免費的雲端應用程式"
+title: "[Web]Spoon - Free Cloud Applications"
+slug: "web-spoon-free-cloud-applications"
+aliases: ["/posts/19817/"]
 date: "2010-11-30 09:47:10"
 description: "昨天看到免費資源部落格介紹了Spoon 將應用程式部屬在雲端，隨時隨地想用就用！，實際用了一下還滿好的，它提供了很多應用程式與遊戲在網路上，我們可以直接透過Web點擊開啟運行使用，對於想玩玩看某些軟體，或是不想安裝軟體時，有這樣的服務還滿不錯的。"
 tags: [Web]

@@ -1,5 +1,7 @@
 ---
-title: "使用Extension Method計算漢字筆畫"
+title: "Count Chinese Character Strokes Using an Extension Method"
+slug: "count-chinese-character-strokes-using-an-extension-method"
+aliases: ["/posts/19347/"]
 date: "2010-11-10 09:00:10"
 description: "看到網友Jeff的計算漢字的筆劃這篇有趣的文章，整理了一下裡面所提到的實作概念，其原理主要是把漢字轉為hex，再去判斷屬於哪個區間，並由所屬區間取得對應的筆劃就可以了。這邊將其整理為Char類型的擴充方法，方便後續直接使用。"
 tags: [CSharp,VB.NET]

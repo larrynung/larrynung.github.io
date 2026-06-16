@@ -1,5 +1,7 @@
 ---
-title: '實際應用：ChatGPT Atlas Feedly 整合案例'
+title: "Practical Use Case: Integrating ChatGPT Atlas with Feedly"
+slug: "practical-use-case-integrating-chatgpt-atlas-with-feedly"
+aliases: ["/posts/chatgpt-atlas-feedly-integration/"]
 date: 2025-10-24T00:00:00+08:00
 description: "前言 ChatGPT Atlas 與新聞聚合服務 Feedly 的整合，展現其強大應用潛力。 Feedly 新聞智慧分析 ChatGPT Atlas 可作為您的專屬新聞分析師。"
 tags: ['ChatGPT', 'AI', 'Feedly', 'Integration']

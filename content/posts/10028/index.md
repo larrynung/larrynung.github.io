@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]使用Nothing或Null作數值運算"
-slug: "[CSharp][VB.NET]使用Nothing或Null作數值運算"
+title: "[C#][VB.NET]Numeric Operations with Nothing or Null"
+slug: "csharp-vbnet-numeric-operations-with-nothing-or-null"
+aliases: ["/posts/csharpvb.net使用nothing或null作數值運算/"]
 date: "2009-08-13 09:02:18"
 description: "今天突然發現VB.NET的Nothing可以拿來作運算，因此作了一點小實驗。意外發現VB.NET與C#在相同的程式邏輯下會跑出不一樣的結果。 以VB.NET來說，"
 tags: [VB.NET, CSharp]

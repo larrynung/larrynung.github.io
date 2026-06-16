@@ -1,5 +1,7 @@
 ---
-title: "[Library][VB.NET].NET簡易測試用表單類別"
+title: "[Library][VB.NET]A Simple .NET Test Form Class"
+slug: "library-vbnet-a-simple-dotnet-test-form-class"
+aliases: ["/posts/8411/"]
 date: "2009-05-15 08:58:32"
 description: "Introduction 在撰寫程式時，我們時常會需要撰寫一些測試程式、或是需要顯示一些資料。多半這時我們會設計一些測試用的表單介面來使用。這些介面多半是很簡單的介面，設計上也大同小異，所以我們可以把這些表單介面整理起來方便以後重覆使用。 本篇介紹簡易測試用表單類別的寫法。"
 tags: [VB.NET,Library]

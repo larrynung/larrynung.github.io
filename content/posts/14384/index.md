@@ -1,6 +1,7 @@
 ---
-title: "[C#]用Stopwatch計算累計耗費時間的注意事項"
-slug: "[CSharp]用Stopwatch計算累計耗費時間的注意事項"
+title: "[C#]Notes on Measuring Cumulative Elapsed Time with Stopwatch"
+slug: "csharp-notes-on-measuring-cumulative-elapsed-time-with-stopwatch"
+aliases: ["/posts/csharp用stopwatch計算累計耗費時間的注意事項/"]
 date: "2010-04-03 10:45:13"
 description: "今天跟網友討論程式效能時，注意到在使用Stopwatch的一些注意事項，簡單紀錄一下。 Stopwatch類別重要的成員不外乎StartNew、Start、Stop、Reset、ElapsedTicks、與ElapsedMilliseconds。"
 tags: [CSharp]

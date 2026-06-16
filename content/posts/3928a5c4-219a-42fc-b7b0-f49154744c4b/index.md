@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用ExifLibrary簡易快速的擷取圖片的Exif資訊"
-slug: "[CSharp]使用ExifLibrary簡易快速的擷取圖片的Exif資訊"
+title: "[C#]Quickly Read Image EXIF Data with ExifLibrary"
+slug: "csharp-quickly-read-image-exif-data-with-exiflibrary"
+aliases: ["/posts/csharp使用exiflibrary簡易快速的擷取圖片的exif資訊/"]
 date: "2013-11-06 12:00:00"
 description: "最近在玩讀取圖片的Exif資訊，試了一下.NET內建的方法與別人包好的類別，但都不怎麼好用，最後找到CodeProject的ExifLibrary for .NET這篇，試起來功能算是滿齊全的，用起來也很容易，這邊稍稍記錄一下。"
 tags: [CSharp]

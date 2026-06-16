@@ -1,5 +1,7 @@
 ---
-title: "[Performance][C#]絕對值的取得"
+title: "[Performance][C#]Getting the Absolute Value"
+slug: "performance-csharp-getting-the-absolute-value"
+aliases: ["/posts/12902/"]
 date: "2010-01-07 10:50:16"
 description: "絕對值的取得大概有兩種方法，一種是利用.NET Framework內建的Math.Abs函式；一種則是自行判斷是否為負，若為負則把它變正。稍微比較了一下兩者的速度差異，記錄如下。"
 tags: [CSharp,Performance]

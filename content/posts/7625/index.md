@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]自定義.NET WindowForm表單介面(二)"
-slug: "[CSharp][VB.NET]自定義.NET WindowForm表單介面(二)"
+title: "[C#][VB.NET]Custom .NET WinForm UI (Part 2)"
+slug: "csharp-vbnet-custom-dotnet-winform-ui-part-2"
+aliases: ["/posts/csharpvb.net自定義.net-windowform表單介面二/"]
 date: "2009-03-21 11:19:35"
 description: "之前寫過一篇『自定義.NET WindowForm表單介面』，據網友反應才注意到其做出來的視窗無縮放的效果，因此這篇的重點將Focuse在自定義表單的縮放功能實作。 要實作具縮放功能的WindowForm表單目前得知的方法大概有三種，這邊就讓我們分別來探討。"
 tags: [VB.NET,CSharp]

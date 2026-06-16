@@ -1,5 +1,7 @@
 ---
-title: "[UML]UML學習資源"
+title: "[UML]UML Learning Resources"
+slug: "uml-uml-learning-resources"
+aliases: ["/posts/12602/"]
 date: "2009-12-22 10:46:38"
 description: "收集一下網路上流佈的UML學習資源，記錄一下。 Web 統一塑模語言-維基百科 Unified Modeling Language-Wiki 統一模塑語言(UML) 淺談UML [[UML] UML…"
 tags: [UML]

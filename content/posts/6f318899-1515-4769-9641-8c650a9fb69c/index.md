@@ -1,6 +1,7 @@
 ---
-title: "[C#]Point 與 Pixel 單位的互換"
-slug: "[CSharp]Point 與 Pixel 單位的互換"
+title: "[C#]Converting Between Point and Pixel Units"
+slug: "csharp-converting-between-point-and-pixel-units"
+aliases: ["/posts/csharppoint-與-pixel-單位的互換/"]
 date: "2013-11-06 12:00:00"
 tags: [CSharp]
 description: "最近在跟UI Team合作時碰到一些問題，UI Team畫給我的UI圖中會明確標示元件的位置與要使用的字型，但是UI Team那邊在看的是Pixel，而我這邊看的是Point，當UI Team標明一個元件它裡面要顯示的是字型大小是14 Pixel時，我當下突然不知道該如何下手。"

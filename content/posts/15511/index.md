@@ -1,5 +1,7 @@
 ---
-title: "[.NET Resource]Reflector Pro提供反組譯程式與Visual Studio無接縫的整合"
+title: "[.NET Resource]Reflector Pro - Seamless Decompiler Integration with Visual Studio"
+slug: "dotnet-resource-reflector-pro-seamless-decompiler-integration-with-visual-studio"
+aliases: ["/posts/15511/"]
 date: "2010-05-31 12:44:01"
 description: "最近看到網路上的文章，才知道原來Reflector這套反組譯工具提供了Pro版本，售價195美元。該版提供了Visual Studio用的Add-In，能把組件反組譯後，產生Visual Studio用的PDB檔，讓Visual Studio可直接對無程式碼的組件進行程式碼的除錯。"
 tags: [.NET Resource]

@@ -1,5 +1,7 @@
 ---
-title: "[Other]寫下你對TechNet的建議，即有機會獲得Keroro軍曹4 龍勇士的逆襲電影特映會門票！"
+title: "[Other]Share Your TechNet Feedback for a Chance to Win Tickets to the Keroro 4 Movie Premiere!"
+slug: "other-share-your-technet-feedback-for-a-chance-to-win-tickets-to-the-keroro-4-movie-premiere"
+aliases: ["/posts/9594/"]
 date: "2009-07-20 05:57:29"
 description: "活動網址: TechNet Taiwan官方部落格"
 tags: [Other]

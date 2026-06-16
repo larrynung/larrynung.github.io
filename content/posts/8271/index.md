@@ -1,6 +1,7 @@
 ---
-title: "[C#]HashSet 集合型別"
-slug: "[CSharp]HashSet 集合型別"
+title: "[C#]The HashSet Collection Type"
+slug: "csharp-the-hashset-collection-type"
+aliases: ["/posts/csharphashset-集合型別/"]
 date: "2009-05-02 04:39:12"
 description: "Namespace System.Collections.Generic Assemble System.Core (在 System.Core.dll 中) 需求 .NET Framework 3.5(含)以上 功能 以數學集合 (Set) 模型為基礎，並提供高效能的集合 (Set) 運算，"
 tags: [CSharp]

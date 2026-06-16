@@ -1,5 +1,7 @@
 ---
-title: "[C++]event_source attribute的功用"
+title: "[C++]The Purpose of the event_source Attribute"
+slug: "cpp-the-purpose-of-the-event-source-attribute"
+aliases: ["/posts/63041/"]
 date: "2011-12-22 12:12:28"
 description: "根據event_source attribute在MSDN上的說明~除了能指定是native還是com的event與一些細部設定外。只有如下的描述： The event_source C++ attribute specifies that the class or structure to…"
 tags: [C++]

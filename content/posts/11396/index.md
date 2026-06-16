@@ -1,6 +1,7 @@
 ---
-title: "[C#]阿拉伯數字轉國字"
-slug: "[CSharp]阿拉伯數字轉國字"
+title: "[C#]Convert Arabic Numerals to Chinese Numerals"
+slug: "csharp-convert-arabic-numerals-to-chinese-numerals"
+aliases: ["/posts/csharp阿拉伯數字轉國字/"]
 date: "2009-11-03 06:02:00"
 description: "看到Rico的[C#][WinForm]如何將數字轉為國字又手癢了一下，也試著寫了一段程式，隨手記錄一下。 基本上要作數字轉國字，大致上有兩種方法： 用現成的函式庫，像是Microsoft Visual Studio International Feature Pack。"
 tags: [CSharp]

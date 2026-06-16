@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept][VB.NET]MDI子視窗放大時的注意事項"
+title: "[.NET Concept][VB.NET]Notes on Maximizing MDI Child Windows"
+slug: "dotnet-concept-vbnet-notes-on-maximizing-mdi-child-windows"
+aliases: ["/posts/7867/"]
 date: "2009-04-04 11:51:10"
 description: "開發MDI程式時，若需要一開始就放大子視窗，有些地方需特別留意。 這問題是同事在寫VC++.NET時發現的，本來以為是VC++.NET才會發生。剛試了一下，其它語言像是VB.NET也會有此現象。"
 tags: [.NET Concept,VB.NET]

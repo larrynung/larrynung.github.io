@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]統計英文字串中字母個數"
+title: "[VB.NET]Count Letters in an English String"
+slug: "vbnet-count-letters-in-an-english-string"
+aliases: ["/posts/10582/"]
 date: "2009-09-12 12:58:56"
 description: "今天在論壇中看到一個不算難的問題，是想要能統計出英文單字的個數。由於一開始誤解了其意思，就變成了統計英文字串中字母的個數了。既然都寫了，隨手記錄一下。這問題有很多解法，這邊隨手寫了三個，也希望大家能提供一些不一樣的寫法。"
 tags: [VB.NET]

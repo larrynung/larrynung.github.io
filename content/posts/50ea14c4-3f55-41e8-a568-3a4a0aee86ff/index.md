@@ -1,5 +1,7 @@
 ---
-title: "解決Web安裝專案無法在IIS7下安裝的問題"
+title: "Fixing Web Setup Projects That Won't Install on IIS7"
+slug: "fixing-web-setup-projects-that-won-t-install-on-iis7"
+aliases: ["/posts/50ea14c4-3f55-41e8-a568-3a4a0aee86ff/"]
 date: "2013-11-06 12:00:00"
 tags: [IIS]
 description: "若遇到透過Visual Studio包出的Web安裝程式在XP下運行正常，但卻無法在Vista、Windows Srever 2008、Win7下正常執行，出現下方的錯誤畫面。 此時若在Win7的話，可透過點選[控制台]→[程式集]→[開啟或關閉Windows功能]，開啟Windows功能對話框。"

@@ -1,5 +1,7 @@
 ---
-title: "如何更新在Visual Studio Gallery上所發佈的元件"
+title: "How to Update a Component Published on the Visual Studio Gallery"
+slug: "how-to-update-a-component-published-on-the-visual-studio-gallery"
+aliases: ["/posts/4e864857-5a8f-4282-bb41-4ced4a1f3e06/"]
 date: "2013-11-06 12:00:00"
 tags: [Visual Studio]
 description: "筆者之前在如何上傳Visual Studio Extension至Visual Studio Gallery這篇稍微介紹了一下怎樣發佈元件到Visual Studio Gallery，發佈後元件若是後續有在持續更新，總是會要更新發佈在Visual Studio Gallery的元件。"

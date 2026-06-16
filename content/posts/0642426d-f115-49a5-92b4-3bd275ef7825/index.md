@@ -1,5 +1,7 @@
 ---
-title: "[Web][.NET Resourec]使用compilify.net在網站上撰寫簡易的C#程式"
+title: "[Web][.NET Resource]Write Simple C# Code Online with compilify.net"
+slug: "web-dotnet-resource-write-simple-csharp-code-online-with-compilify-dotnet"
+aliases: ["/posts/0642426d-f115-49a5-92b4-3bd275ef7825/"]
 date: "2013-11-06 12:00:00"
 description: "compilify.net是一個可以線上撰寫C#程式的網站，使用上十分簡單，網站主要分為三個區塊，左邊是用來做些定義的，右邊是要執行的動作，下方是執行後的結果。實際來看一下網站預設的程式，它在左邊定義區塊定義了一個Person類別，內含有Greet成員方法，"
 tags: [CSharp]

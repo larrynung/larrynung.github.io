@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]將集合類別繫結至DataGridView並使其具備新增功能"
+title: "[VB.NET]Bind a Collection to a DataGridView with Add Support"
+slug: "vbnet-bind-a-collection-to-a-datagridview-with-add-support"
+aliases: ["/posts/15130/"]
 date: "2010-05-10 10:55:23"
 description: "若直接把集合類別繫結至DataGridView。 就算DataGridView有設定AllowUserToAddRows，DataGridView也是無法做新增的動作。"
 tags: [VB.NET]

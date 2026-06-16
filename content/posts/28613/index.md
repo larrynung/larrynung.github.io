@@ -1,5 +1,7 @@
 ---
-title: "[IADP]IADP Advertising - 為應用程式添加廣告"
+title: "[IADP]IADP Advertising - Adding Ads to Your Application"
+slug: "iadp-iadp-advertising-adding-ads-to-your-application"
+aliases: ["/posts/28613/"]
 date: "2011-06-15 11:12:01"
 description: "經過上一篇[IADP]IADP Advertising - 開發前的準備的介紹，相信對廣告服務已經有了初步的了解，也已經可以取得開發所需的SiteID與ZoneID。接著就是要將廣告放置到應用程式中了。"
 tags: [CSharp]
