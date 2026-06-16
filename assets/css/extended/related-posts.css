@@ -1,0 +1,23 @@
+.related-posts {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.related-posts-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.related-posts ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.related-posts li {
+    margin: 6px 0;
+}
+
+.related-posts a {
+    box-shadow: 0 1px 0 var(--primary);
+}
