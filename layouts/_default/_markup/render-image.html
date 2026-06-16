@@ -1,5 +1,7 @@
 {{- $u := urls.Parse .Destination -}}
 {{- $src := $u.String -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
 {{- if not $u.IsAbs -}}
   {{- $path := strings.TrimPrefix "./" $u.Path }}
   {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
@@ -10,6 +12,18 @@
     {{- with $u.Fragment -}}
       {{- $src = printf "%s#%s" $src . -}}
     {{- end -}}
+    {{- /* image resources expose intrinsic dimensions */ -}}
+    {{- if and (eq .ResourceType "image") (not $u.RawQuery) -}}
+      {{- $width = string .Width -}}
+      {{- $height = string .Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* CLS: look up intrinsic dimensions for static images from precomputed data */ -}}
+{{- if not $width -}}
+  {{- with index (.Page.Site.Data.imgdims | default dict) $u.Path -}}
+    {{- $width = string (index . 0) -}}
+    {{- $height = string (index . 1) -}}
   {{- end -}}
 {{- end -}}
 {{- /* SEO/a11y: when the markdown alt is empty or just a filename, fall back to the post title */ -}}
@@ -18,7 +32,7 @@
 {{- if $isFilename -}}
   {{- with .Page.Title -}}{{ $alt = . }}{{- end -}}
 {{- end -}}
-{{- $attributes := merge .Attributes (dict "alt" $alt "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy" "decoding" "async") -}}
+{{- $attributes := merge .Attributes (dict "alt" $alt "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy" "decoding" "async" "width" $width "height" $height) -}}
 <img
   {{- range $k, $v := $attributes -}}
     {{- if $v -}}
