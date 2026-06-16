@@ -1,5 +1,7 @@
 ---
-title: "[WCF]認識WCF"
+title: "[WCF]Getting to Know WCF"
+slug: "wcf-getting-to-know-wcf"
+aliases: ["/posts/7957/"]
 date: "2009-04-10 12:37:51"
 description: "需求 .NET Framework 3.0以上 特點 單一的分散式服務架構 合約(Contract)驅動 以組態作業為基礎 通訊技術 WS- protocols Message Queuing (MSMQ) .NET Remoting Socket-based Communication POX…"
 tags: [WCF]

@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]用.NET實作檔案總管"
+title: "[VB.NET]Build a File Explorer with .NET"
+slug: "vbnet-build-a-file-explorer-with-dotnet"
+aliases: ["/posts/9095/"]
 date: "2009-07-03 12:01:31"
 description: "要用.NET實作檔案總管的功能，相信應該都難不倒大家。但我也相信應該很多人都是一次取得所有電腦內的檔案與目錄清單，一次的把清單給塞到介面上。如果你不是習慣這樣寫的人，那恭喜您可以跳過這篇了。如果恰巧你就是這樣寫的，請耐著性子往下看吧。"
 tags: [VB.NET]

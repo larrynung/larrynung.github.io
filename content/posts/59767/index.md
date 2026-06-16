@@ -1,5 +1,7 @@
 ---
-title: "[C++]使用Pageheap偵測記憶體越界錯誤"
+title: "[C++]Detect Memory Overrun Errors with PageHeap"
+slug: "cpp-detect-memory-overrun-errors-with-pageheap"
+aliases: ["/posts/59767/"]
 date: "2011-11-28 01:14:47"
 description: "Pageheap工具能輔助C++開發人員偵測難以察覺的記憶體越界錯誤，工具程式可至這邊下載。 Pageheap可分為兩種偵測模式，一種是一般分頁堆積，一種是完整分頁堆積。"
 tags: [C++]

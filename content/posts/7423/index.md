@@ -1,5 +1,7 @@
 ---
-title: "[Other]有批記憶體很便宜"
+title: "[Other]There's a Batch of Cheap Memory"
+slug: "other-there-s-a-batch-of-cheap-memory"
+aliases: ["/posts/7423/"]
 date: "2009-03-10 08:58:51"
 description: "最近記憶體的價格十分的便宜，便宜到大家都可以買一堆來玩Ram Disk的地步了。這對於3C的消費族群來說無疑是件好事，因為3C產品能存放更多的資訊，享有更多的用途。對於電腦工作者而言也是不錯的，最起碼電腦的速度，開的程式數都可以增加許多，大大的提升電腦的工作效率。"
 tags: [Other]

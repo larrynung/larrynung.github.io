@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept]善用AutoScroll達到用捲軸捲動顯示內容的效果"
+title: "[.NET Concept]Use AutoScroll to Scroll Content with Scrollbars"
+slug: "dotnet-concept-use-autoscroll-to-scroll-content-with-scrollbars"
+aliases: ["/posts/7339/"]
 date: "2009-03-02 06:52:50"
 description: "時常會在討論區碰到有人提問內容過長想要增加捲軸效果這類的問題，通常多半這類的提問者都會陷入如何使用VScrollBar或是HScrollBar的迷思。事實上要達到這效果其實可以不需要使用這兩個控制項，只需善用容器類別的AutoScroll屬性，經過設定屬性的動作，不須撰寫半行程式即可達成。"
 tags: [.NET Concept]

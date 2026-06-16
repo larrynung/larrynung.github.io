@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]比對兩個目錄中不同的檔案"
+title: "[VB.NET]Compare Two Directories for Different Files"
+slug: "vbnet-compare-two-directories-for-different-files"
+aliases: ["/posts/14572/"]
 date: "2010-04-13 11:35:46"
 description: "這陣子回論壇問題時，試著使用交集的方式寫了比對檔案的函式，整理紀錄如下： 使用範例如下： 運行結果"
 tags: [VB.NET]

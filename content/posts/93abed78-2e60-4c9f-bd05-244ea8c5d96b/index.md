@@ -1,5 +1,7 @@
 ---
-title: "網樂通刷sh4twbox自動安裝碟"
+title: "Flashing the NetTV Box with the sh4twbox Auto-Install Disc"
+slug: "flashing-the-nettv-box-with-the-sh4twbox-auto-install-disc"
+aliases: ["/posts/93abed78-2e60-4c9f-bd05-244ea8c5d96b/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通的改機目前已經算很成熟了，網路上有兩三種以上的刷機方式，因為sh4twbox能啟用到250MB的記憶體，記憶體能使用比較多，另外又內建套件管理程式，可用套件多，套件也比較好安裝，所以幾經評估之下筆者最後是選用sh4twbox來做刷機。"

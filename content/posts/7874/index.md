@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept]MDI子視窗放大時的注意事項(二)"
+title: "[.NET Concept]Notes on Maximizing MDI Child Windows (Part 2)"
+slug: "dotnet-concept-notes-on-maximizing-mdi-child-windows-part-2"
+aliases: ["/posts/7874/"]
 date: "2009-04-06 12:05:08"
 description: "不知道大家有沒有碰過當把MDI子表單放大時，Menu選單會變得如下圖一樣怪怪的現象。 會發生如上圖這樣的現象，其實是因為Form.MainMenuStrip屬性沒設定所造成的。"
 tags: [.NET Concept]

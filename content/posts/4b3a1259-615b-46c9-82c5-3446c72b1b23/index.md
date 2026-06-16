@@ -1,5 +1,7 @@
 ---
-title: "為.NET組件設定錯誤的#GUID heap size以避開程式被反組譯"
+title: "Set an Incorrect #GUID Heap Size on a .NET Assembly to Thwart Decompilation"
+slug: "set-an-incorrect-guid-heap-size-on-a-dotnet-assembly-to-thwart-decompilation"
+aliases: ["/posts/4b3a1259-615b-46c9-82c5-3446c72b1b23/"]
 date: "2013-11-06 12:00:00"
 tags: [CSharp, .NET]
 description: ".NET組件的安全性一直是開發人員所關注的問題，若是花錢購買現成的方案可以保護的比較周全些，發生問題也可以要求保護方案的供應商提供更安全的防護。但是多半的情況下是沒有這類的工具的，尤其是自己私下開發的程式更是如此。"

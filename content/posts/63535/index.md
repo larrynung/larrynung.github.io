@@ -1,5 +1,7 @@
 ---
-title: "[C++]使用Visual Leak Detector for Visual C++ 2008/2010輔助偵測程式中記憶體洩漏的問題"
+title: "[C++]Detect Memory Leaks with Visual Leak Detector for Visual C++ 2008/2010"
+slug: "cpp-detect-memory-leaks-with-visual-leak-detector-for-visual-cpp-2008-2010"
+aliases: ["/posts/63535/"]
 date: "2011-12-27 12:52:07"
 description: "Visual Leak Detector for Visual C++ 2008/2010是一免費的開放源碼工具，能輔助開發人員偵測C++程式中記憶體洩漏的問題，使用上也算十分簡單，至Visual Leak Detector for Visual C++ 2008/2010下載主程式後。"
 tags: [C++]

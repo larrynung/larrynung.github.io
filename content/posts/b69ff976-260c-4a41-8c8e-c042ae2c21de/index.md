@@ -1,5 +1,7 @@
 ---
-title: "[IADP]透過Intel AppUp Visual Studio Plug-In建立應用程式並取得應用程式的GUID"
+title: "[IADP]Create an Application and Get Its GUID with the Intel AppUp Visual Studio Plug-In"
+slug: "iadp-create-an-application-and-get-its-guid-with-the-intel-appup-visual-studio-plug-in"
+aliases: ["/posts/b69ff976-260c-4a41-8c8e-c042ae2c21de/"]
 date: "2013-11-06 12:00:00"
 tags: [Visual Studio, IADP]
 description: "建立應用程式並取得應用程式的GUID，在點部落上Alex Lee已有詳細的分享，有興趣的可參閱[IADP] 上傳你的Application...Step by Step。"

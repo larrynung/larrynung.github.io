@@ -1,5 +1,7 @@
 ---
-title: "[IE8白皮書]自動損毀修復(ACR)"
+title: "[IE8 White Paper]Automatic Crash Recovery (ACR)"
+slug: "ie8-white-paper-automatic-crash-recovery-acr"
+aliases: ["/posts/14a5e8c8-b659-4016-9c0c-c8266a4cc72e/"]
 date: "2013-11-06 12:00:00"
 tags: [IE]
 description: "概述 自動損毀修復(ACR) 是IE8的特色之一，該功能可以防止因瀏覽器當機所造成的工作流失與生產力的降低 。 自動損毀修復為IE提供了新的復原機制, 像是分頁修復(tab recovery),可有效降低使用者瀏覽網頁被中斷的機率。 使用者透過瀏覽器可以做很多的工作。"

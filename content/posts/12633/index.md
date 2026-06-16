@@ -1,5 +1,7 @@
 ---
-title: "[Other]襯線體(serif) V.S 無襯線體(sans serif)"
+title: "[Other]Serif vs Sans-Serif Fonts"
+slug: "other-serif-vs-sans-serif-fonts"
+aliases: ["/posts/12633/"]
 date: "2009-12-23 09:59:28"
 description: "字體依襯線的有無，可區分為有襯線體與無襯線體。所謂的襯線，指的是字形筆畫末端的裝飾細節部分。就像Wiki上面的圖所描述的： 襯線體 V.S 無襯線體 Link 襯線體-Wiki 無襯線體-Wiki [[字體]襯線？無襯線？"
 tags: [Other]

@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept]盡量避免在另一個執行緒觸發事件或委派"
+title: "[.NET Concept]Avoid Raising Events or Delegates on Another Thread"
+slug: "dotnet-concept-avoid-raising-events-or-delegates-on-another-thread"
+aliases: ["/posts/22884/"]
 date: "2011-04-16 08:19:54"
 description: "記得在之前工作時跟其它部門的同仁做過一次程式的整合，所提供的組件需要指定一個委派，當組件有資料需要處理時會透過指定的委派告知，整合完後拿去給界面使用，卻意外的被處理界面的同事告知出現了跨執行緒作業無效的問題。"
 tags: [.NET Concept]

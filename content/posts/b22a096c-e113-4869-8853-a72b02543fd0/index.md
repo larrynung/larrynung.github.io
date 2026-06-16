@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]當建置發生\"Object reference not set to an instance of an object in resx resource file\"錯誤時的解決方案"
+title: "[Visual Studio]Fixing the \"Object reference not set to an instance of an object in resx resource file\" Build Error"
+slug: "visual-studio-fixing-the-object-reference-not-set-to-an-instance-of-an-object-in-resx-resource-file-build-error"
+aliases: ["/posts/b22a096c-e113-4869-8853-a72b02543fd0/"]
 date: "2013-11-06 12:00:00"
 tags: [Visual Studio]
 description: "今天在建置專案時專案程式突然過不了建置，出現\"Object reference not set to an instance of an object in resx resource file\"這個奇怪的錯誤訊息。"

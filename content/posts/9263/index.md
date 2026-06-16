@@ -1,6 +1,7 @@
 ---
-title: "[C#]Effective C# 條款二： 運行時常數優於編譯時常數"
-slug: "[CSharp]Effective C# 條款二： 運行時常數優於編譯時常數"
+title: "[C#]Effective C# Item 2: Prefer Runtime Constants to Compile-Time Constants"
+slug: "csharp-effective-csharp-item-2-prefer-runtime-constants-to-compile-time-constants"
+aliases: ["/posts/csharpeffective-c#-條款二-運行時常數優於編譯時常數/"]
 date: "2009-07-09 08:46:16"
 description: ".NET中有兩種不同的常數機制：一種是編譯時(Compile-Time)常數，一種是運行時(Runtime)常數。 編譯時常數 編譯時常數是透過Const關鍵字宣告的變數，像是如下宣告： 編譯時常數故名思義就是編譯時就已被處理的常數，在編譯後會被編譯器替換成該常數值，假設有段程式如下： 在編譯後，"
 tags: [CSharp]

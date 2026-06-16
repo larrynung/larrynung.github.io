@@ -1,5 +1,7 @@
 ---
-title: "[WLW]插入精靈Beta1.0"
+title: "[WLW]Insert Wizard Beta 1.0"
+slug: "wlw-insert-wizard-beta-1-0"
+aliases: ["/posts/8145/"]
 date: "2009-04-23 08:57:47"
 description: "Introduction 繼寫完上篇『[WLW]插入精靈開發隨筆』後，外掛寫作的進展並不是很順(越寫越懶=3=)。但承如『[[WLW]插入精靈開發隨筆』所提到的，該外掛所需的功能雛型其實早已具備，只是還有很多細項要處理。"
 tags: [WLW]

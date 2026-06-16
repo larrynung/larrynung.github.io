@@ -1,5 +1,7 @@
 ---
-title: "[C#]將指定的檔案刪除並送到資源回收桶"
+title: "[C#]Delete a File and Send It to the Recycle Bin"
+slug: "csharp-delete-a-file-and-send-it-to-the-recycle-bin"
+aliases: ["/posts/57e82e56-eb05-425b-9a25-85cd74e73804/"]
 date: "2013-11-06 12:00:00"
 description: "最近在看網路文章發現這個議題，回想了一下以往在做刪除的動作都是直接刪掉，沒有注意到將刪除的檔案送到資源回收桶要怎樣處理，所以這邊花了點時間玩了一下，並隨手做個筆記。"
 tags: [CSharp]

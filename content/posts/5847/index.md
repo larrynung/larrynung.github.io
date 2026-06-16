@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET].NET捷徑(ShortCut)控制"
-slug: "[CSharp][VB.NET].NET捷徑(ShortCut)控制"
+title: "[C#][VB.NET]Working with .NET Shortcuts"
+slug: "csharp-vbnet-working-with-dotnet-shortcuts"
+aliases: ["/posts/csharpvb.net.net捷徑shortcut控制/"]
 date: "2008-11-02 01:53:03"
 description: "Abstract Component ShortCut Type Control Method Text Edit Control Method Windows Script Host Method Control Method Shell.Application Control Method…"
 tags: [CSharp,VB.NET]

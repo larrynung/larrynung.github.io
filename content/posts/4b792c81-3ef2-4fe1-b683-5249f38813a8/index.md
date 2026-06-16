@@ -1,6 +1,7 @@
 ---
 title: "[C#]BigInteger"
-slug: "[CSharp]BigInteger"
+slug: "csharp-biginteger"
+aliases: ["/posts/csharpbiginteger/"]
 date: "2013-11-06 12:00:00"
 tags: [CSharp]
 description: "今天看書才知道原本.NET 3.5中偷藏了一個BinInteger類型，可用來顯示很長的整數。該類型在.NET Framework 3.5 Beta1中就已被加入,但是Release版中該類型被改為Internal類型，導致無法直接使用。"

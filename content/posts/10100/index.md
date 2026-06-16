@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET].NET多語系程式(四) - 已開啟表單的語系切換"
+title: "[VB.NET].NET Multilingual Apps (Part 4) - Switching Language on Already-Open Forms"
+slug: "vbnet-dotnet-multilingual-apps-part-4-switching-language-on-already-open-forms"
+aliases: ["/posts/10100/"]
 date: "2009-08-17 09:05:45"
 description: "記得在.NET多語系程式(一)中，有提到若要切換已開啟的表單時，我們可以參考Designer.vb檔，透過ComponentResourceManager配合遞迴來作切換的動作。"
 tags: [VB.NET]

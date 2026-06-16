@@ -1,5 +1,7 @@
 ---
-title: "使用fsutil file createnew快速產生虛胖檔案"
+title: "Quickly Create Large Dummy Files with fsutil file createnew"
+slug: "quickly-create-large-dummy-files-with-fsutil-file-createnew"
+aliases: ["/posts/da6f6098-267c-4b6f-b19f-52b127dea7f9/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows]
 description: "在撰寫程式時，依照需求有時候開發人員可能會有需要找一些大檔案來考驗一下程式，看在系統中有很大檔案的情況下是否程式能正常運行。像是在做一些可以查閱檔案資訊的程式時，可能會需要一些較大的檔案來測一下是否會讓程式卡太久，或是做壓縮程式時可能會需要評估一下大檔案壓縮的效能、壓縮比等等。"

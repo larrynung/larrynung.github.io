@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010切換VC++專案使用的.NET版本"
+title: "[Visual Studio]Switch the .NET Version Used by a VC++ Project in Visual Studio 2010"
+slug: "visual-studio-switch-the-dotnet-version-used-by-a-v-cpp-project-in-visual-studio-2010"
+aliases: ["/posts/16470/"]
 date: "2010-07-09 12:56:04"
 description: "在VS2010中，開啟VC++專案的屬性頁，選取[通用屬性]→[架構和參考]，我們可以發現在Visual Studio前一版還可以切換的.NET Framework版本，已經變得固定不能透過IDE去切換了。"
 tags: [Visual Studio]

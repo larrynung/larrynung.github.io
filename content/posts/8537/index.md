@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]即時座標交叉線條"
+title: "[VB.NET]Real-Time Coordinate Crosshair Lines"
+slug: "vbnet-real-time-coordinate-crosshair-lines"
+aliases: ["/posts/8537/"]
 date: "2009-05-23 09:36:39"
 description: "在小鋪看到個網友發問個問題，希望能夠在滑鼠座標所在點畫上座標交叉線條。大概效果如下： 這效果其實很容易就可以達到，隨手紀錄一下。 範例程式一 範例程式二 相關連結 藍色小鋪-(VB.NET 2003)請問要如何在表單內畫出即時線條?"
 tags: [VB.NET]

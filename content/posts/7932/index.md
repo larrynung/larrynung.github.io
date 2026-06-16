@@ -1,5 +1,7 @@
 ---
-title: "[WPF]認識WPF"
+title: "[WPF]Getting to Know WPF"
+slug: "wpf-getting-to-know-wpf"
+aliases: ["/posts/7932/"]
 date: "2009-04-09 12:49:52"
 description: "需求 .NetFramework 3.0以上 特點 向量繪圖 不受解析度影響 提供3D使用者介面與動畫 宣告式程式開發架構 能充份發揮顯示卡的速度和功能 架構 建立在Direct 3D之上。 可轉換為Direct 3D物件，透過硬體加以呈現。 可把工作交由GPU執行，穫得硬體加速的好處。"
 tags: [WPF]

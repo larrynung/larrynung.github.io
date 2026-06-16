@@ -1,5 +1,7 @@
 ---
-title: "[Git]使用git tag為commit加入標籤"
+title: "[Git]Tag a Commit with git tag"
+slug: "git-tag-a-commit-with-git-tag"
+aliases: ["/posts/bf64055e-dcdb-4bf4-befa-f41ce0e0f0a2/"]
 date: "2013-11-06 12:00:00"
 description: "最近用CodePlex在控管Process Pro Extension的Source Code，比較有自己可以惡搞的git repositories，稍稍試玩了一下git tag的指令，用來為每次的版本變更打上標籤，後續比較好查閱各版本的變動，這邊隨手紀錄一下git tag指令的用法。"
 tags: [Git]

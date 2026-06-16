@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept][C#][VB.NET]四捨六入五成雙"
+title: "[.NET Concept][C#][VB.NET]Banker's Rounding (Round Half to Even)"
+slug: "dotnet-concept-csharp-vbnet-banker-s-rounding-round-half-to-even"
+aliases: ["/posts/7259/"]
 date: "2009-02-22 10:03:38"
 description: "一般舊的程式語言在當把浮點數轉成整數時，通常會採用『四捨五入』的方式去做轉換的動作。顧名思義，就是當小數位數小於5的話則捨棄小數(四捨)、大於或等於5的話則進位(五入)。而這種年代久遠的處理方式其實存在著一個問題，就是其實它是不公平的，因為它進位的機率高於捨棄(見下圖)，在統計學上會產生偏差。"
 tags: [CSharp,VB.NET,.NET Concept]

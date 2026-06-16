@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]從剪貼簿貼上至TextBox時的注意事項"
+title: "[VB.NET]Notes on Pasting from the Clipboard into a TextBox"
+slug: "vbnet-notes-on-pasting-from-the-clipboard-into-a-textbox"
+aliases: ["/posts/15726/"]
 date: "2010-06-08 10:29:01"
 description: "撰寫從剪貼簿貼上的程式有兩種方式，一種是利用Clipboard.GetText去取得剪貼簿內的文字後，自行處理塞值的動作，像是下面這樣： 另一種則是透過SendKeys.Send模擬鍵盤按下Ctrl+V，像是下面這樣： 這兩種方式都可以達到從剪貼簿貼上的效果，"
 tags: [VB.NET]

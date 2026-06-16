@@ -1,5 +1,7 @@
 ---
-title: "[Library]利用CodeDom序列化Control、表單等複雜物件"
+title: "[Library]Serialize Complex Objects Like Controls and Forms with CodeDom"
+slug: "library-serialize-complex-objects-like-controls-and-forms-with-codedom"
+aliases: ["/posts/9453/"]
 date: "2009-07-13 12:47:54"
 description: "最近很少發文，除了雜事纏身外，主要是在玩序列化與擴充方法。有玩過序列化的人相信都知道對於表單、Control等複雜的物件，我們並無法很直接的把它給序列化成檔案存起來。也很多人在論壇上問過類似的問題。"
 tags: [Library]

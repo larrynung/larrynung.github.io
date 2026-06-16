@@ -1,5 +1,7 @@
 ---
-title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (一) 概念與簡介"
+title: ".NET 4.0 New Feature - Code Contracts (Part 1) Concepts and Introduction"
+slug: "dotnet-4-0-new-feature-code-contracts-part-1-concepts-and-introduction"
+aliases: ["/posts/420f1e7d-3a75-437d-9361-8ecf79231634/"]
 date: "2013-11-06 12:00:00"
 description: "程式碼合約(Code Contracts)是.NET Framework 4.0的新功能，它是微軟對契約式編程(Design by contract)概念所提出的一種解決方案，"
 tags: [CSharp]

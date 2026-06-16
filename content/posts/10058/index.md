@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept].NET 4.0 DLR (Dynamic Language Runtime) 概述"
+title: "[.NET Concept]Overview of .NET 4.0 DLR (Dynamic Language Runtime)"
+slug: "dotnet-concept-overview-of-dotnet-4-0-dlr-dynamic-language-runtime"
+aliases: ["/posts/10058/"]
 date: "2009-08-15 01:26:47"
 description: "為了讓.NET語言支援更為動態的語法，在.NET 4.0的架構中特別導入了DLR (Dynamic Language Runtime)。 之所以會導入DLR到.NET Framework中，"
 tags: [.NET Concept]

@@ -1,5 +1,7 @@
 ---
-title: "[Software]使用GooCalSync同步Google與Notes日曆"
+title: "[Software]Sync Google and Notes Calendars with GooCalSync"
+slug: "software-sync-google-and-notes-calendars-with-goocalsync"
+aliases: ["/posts/17091/"]
 date: "2010-08-09 12:25:24"
 description: "最近剛換了個Android作業系統的新手機，剛好自己又是Google重度使用者，就想說把公司內部用的Notes日曆與Google的日曆同步，如此在手機上就能隨時掌握已排定的工作，也能利用手機本身的通知功能來提醒自己。"
 tags: [Software]

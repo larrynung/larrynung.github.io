@@ -1,5 +1,7 @@
 ---
-title: "[Git]使用git stash暫存有異動的部分"
+title: "[Git]Stash Your Changes with git stash"
+slug: "git-stash-your-changes-with-git-stash"
+aliases: ["/posts/46e89c0f-2e85-4db9-94e6-5d6607901675/"]
 date: "2013-11-06 12:00:00"
 description: "我們在一個Branch開發著新的功能，開發到一半有時候會有中途插進來的事情要處理。像是要趕快修個Bug，或是要先建置一版給外面，抑或是要先做另一個feature之類的。但因為功能開發還沒告一段落，將做到一半的Commit進去也不太對勁，這時我們可以使用git stash將程式碼先暫存起來。"
 tags: [Git]

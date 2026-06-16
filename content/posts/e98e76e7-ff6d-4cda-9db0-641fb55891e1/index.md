@@ -1,6 +1,7 @@
 ---
-title: "[C#]DropBox開發系列 - 使用DropNet進行DropBox的二次登入"
-slug: "[CSharp]DropBox開發系列 - 使用DropNet進行DropBox的二次登入"
+title: "[C#]DropBox Development Series - DropBox Re-Login with DropNet"
+slug: "csharp-dropbox-development-series-dropbox-re-login-with-dropnet"
+aliases: ["/posts/csharpdropbox開發系列-使用dropnet進行dropbox的二次登入/"]
 date: "2013-11-06 12:00:00"
 description: "筆者在[C#]DropBox開發系列 - 使用DropNet進行DropBox的OAuth認證這篇稍稍介紹了一下怎樣用DropNet去登入DropBox帳號，並授權給應用程式存取DropBox。"
 tags: [CSharp]

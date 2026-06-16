@@ -1,5 +1,7 @@
 ---
-title: "[C#][VB.NET]設定.NET透明表單"
+title: "[C#][VB.NET]Creating a Transparent .NET Form"
+slug: "csharp-vbnet-creating-a-transparent-dotnet-form"
+aliases: ["/posts/5931/"]
 date: "2008-11-10 12:49:27"
 description: "Abstract Introduction Form.Opacity屬性設定不透明度 Form.TransparencyKey屬性設定透明的顏色 Form.Opacity VS Form.TransparencyKey Conclusion Introduction 在.NET…"
 tags: [VB.NET, CSharp]

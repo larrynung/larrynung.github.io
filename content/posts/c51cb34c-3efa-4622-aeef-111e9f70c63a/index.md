@@ -1,6 +1,7 @@
 ---
-title: "[C#]DropBox開發系列 - 使用DropNet上傳檔案至DropBox"
-slug: "[CSharp]DropBox開發系列 - 使用DropNet上傳檔案至DropBox"
+title: "[C#]DropBox Development Series - Upload Files to DropBox with DropNet"
+slug: "csharp-dropbox-development-series-upload-files-to-dropbox-with-dropnet"
+aliases: ["/posts/csharpdropbox開發系列-使用dropnet上傳檔案至dropbox/"]
 date: "2013-11-06 12:00:00"
 description: "要使用DropNet上傳檔案至DropBox，我們可以在做完DropBox認證後叫用DropNetClient.Upload函式，帶入檔案要存放的相對路徑、要儲存的檔名、以及要儲存的檔案內容，我們就可以將檔案上傳至DropBox指定的位置。"
 tags: [CSharp]

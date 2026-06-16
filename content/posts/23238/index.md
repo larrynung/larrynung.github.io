@@ -1,6 +1,7 @@
 ---
-title: "[C#]取消WebBrowser開啟新視窗瀏覽"
-slug: "[CSharp]取消WebBrowser開啟新視窗瀏覽"
+title: "[C#]Prevent the WebBrowser Control from Opening New Windows"
+slug: "csharp-prevent-the-webbrowser-control-from-opening-new-windows"
+aliases: ["/posts/csharp取消webbrowser開啟新視窗瀏覽/"]
 date: "2011-04-21 12:51:04"
 description: "在使用WebBrowser瀏覽網頁時，有時會WebBrowser會帶出新的視窗，若這個動作不是我們所預期的，我們可以透過繫結WebBrowser.NewWindow事件去處理，在繫上的事件處理函式中使用e.Cancel = true將開新視窗的動作給取消。"
 tags: [CSharp]

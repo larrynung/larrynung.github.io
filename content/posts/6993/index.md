@@ -1,5 +1,7 @@
 ---
-title: "[WF]循序工作流程範例-Hello Word"
+title: "[WF]Sequential Workflow Example - Hello World"
+slug: "wf-sequential-workflow-example-hello-world"
+aliases: ["/posts/6993/"]
 date: "2009-02-01 01:28:03"
 description: "Abstract Introduction Hello Word Demo Conclusion Download Introduction 本篇藉由示範簡單的Hello Word程式，帶領大家一窺WF神秘的面紗。"
 tags: [WF]

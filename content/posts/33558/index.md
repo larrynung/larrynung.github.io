@@ -1,5 +1,7 @@
 ---
-title: "[C++][Visual Studio]使用Property Manager修改繼承的屬性"
+title: "[C++][Visual Studio]Modify Inherited Properties with the Property Manager"
+slug: "cpp-visual-studio-modify-inherited-properties-with-the-property-manager"
+aliases: ["/posts/33558/"]
 date: "2011-08-19 01:14:40"
 description: "在Visual Studio 2010以前透過Tools\\Options...開啟Options對話框，在Projects and Solutions\\VC++ Directories下面可以設定VC++會用到的目錄，在Visual Studio 2010這個選項已經不能在本來的地方設定了。"
 tags: [Visual Studio,C++]

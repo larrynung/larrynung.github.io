@@ -1,5 +1,7 @@
 ---
-title: "Supalogo-免費的線上Logo圖片產生器"
+title: "Supalogo - Free Online Logo Image Generator"
+slug: "supalogo-free-online-logo-image-generator"
+aliases: ["/posts/16580/"]
 date: "2010-07-15 11:34:59"
 description: "Supalogo是免費的線上Logo圖片產生器，使用上只須在輸入框輸入要產生Logo的字樣。(若要使用中文，須在細部設定設定為Chinese字體) 點選Options展開並設定細部設定值，依序設定字體、字型大小、外圍大小、外圍顏色、填色類型、漸層色一、漸層色二、背景色。"
 tags: [Web]

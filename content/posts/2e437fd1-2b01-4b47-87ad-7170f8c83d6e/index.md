@@ -1,5 +1,7 @@
 ---
-title: "使用滑鼠右鍵快速產生XML序列化組件"
+title: "Quickly Generate an XML Serialization Assembly via the Right-Click Menu"
+slug: "quickly-generate-an-xml-serialization-assembly-via-the-right-click-menu"
+aliases: ["/posts/2e437fd1-2b01-4b47-87ad-7170f8c83d6e/"]
 date: "2013-11-06 12:00:00"
 tags: [XML]
 description: "之前記錄過一篇使用XML序列化程式產生器工具加速XML序列化，裡面有提到使用建置事件來產生XML序列化組件的方法。但若只想更新XML序列化組件，不想要開啟專案重新建置時，這樣的方法就顯得有點麻煩。此時我們可以透過本篇紀錄的方法用滑鼠右建快速產生XML序列化組件。"

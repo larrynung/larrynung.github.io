@@ -1,5 +1,7 @@
 ---
-title: ".NET 4.0 New Feature - 遍尋檔案系統項目與檔案內容的效能強化"
+title: ".NET 4.0 New Feature - Performance Improvements for Enumerating File System Entries and File Contents"
+slug: "dotnet-4-0-new-feature-performance-improvements-for-enumerating-file-system-entries-and-file-contents"
+aliases: ["/posts/20914/"]
 date: "2011-01-20 01:32:48"
 description: ".NET 4.0 BCL 在遍尋檔案系統項目與檔案內容方面新增了一些新的方法，可先回傳集合的迭代器物件，待開始遍尋迭代器時才逐步載入對應的資料，可延遲載入動作的執行，避免處理大量資料時的效能耗費，可改進效能並保有迭代器簡單好用的優點。"
 tags: [CSharp]

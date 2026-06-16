@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用Win32 API為編輯框與下拉方塊加上提示字串"
-slug: "[CSharp]使用Win32 API為編輯框與下拉方塊加上提示字串"
+title: "[C#]Add Cue Banners to TextBoxes and ComboBoxes Using Win32 API"
+slug: "csharp-add-cue-banners-to-textboxes-and-comboboxes-using-win32-api"
+aliases: ["/posts/csharp使用win32-api為編輯框與下拉方塊加上提示字串/"]
 date: "2010-07-08 11:03:48"
 description: "Windows在XP與2003開始對單行編輯框支援顯示提示字串的功能，在Vista與2008以後下拉方塊也開始有了支援，多半這樣的功能被用在搜尋框上。像是Windows Live Mail、Windows 7等的搜尋框就是很好的例子。"
 tags: [CSharp]

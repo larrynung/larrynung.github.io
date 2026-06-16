@@ -1,5 +1,7 @@
 ---
-title: "[Visual Studio]Visual Studio 2010 Beta1 新功能速覽"
+title: "[Visual Studio]A Quick Look at Visual Studio 2010 Beta 1's New Features"
+slug: "visual-studio-a-quick-look-at-visual-studio-2010-beta-1-s-new-features"
+aliases: ["/posts/9582/"]
 date: "2009-07-19 06:58:07"
 description: "Visual Studio 2010 是微軟所開發的新開發工具，主要能讓開發者協同開發、建模，以及調整程式錯誤。Visual Studio 2010除了開發環境上改用WPF翻修、功能上的加強(像是雲端處理、平行處理等技術的支援)，對於開發者開發上也提供了許多貼心的改進。"
 tags: [Visual Studio]

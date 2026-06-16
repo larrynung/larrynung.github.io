@@ -1,5 +1,7 @@
 ---
-title: "[Software][.NET Resource]使用XHEO RESX Translator快速產生多國語系程式的資源檔"
+title: "[Software][.NET Resource]Quickly Generate Multilingual Resource Files with XHEO RESX Translator"
+slug: "software-dotnet-resource-quickly-generate-multilingual-resource-files-with-xheo-resx-translator"
+aliases: ["/posts/2037c9f7-bec4-4342-8370-0cd8ab87e3cd/"]
 date: "2013-11-06 12:00:00"
 tags: [.NET Resource, Software]
 description: "之前筆者介紹過Zeta Resource Editor這個資源檔編輯工具，它能夠透過翻譯產生特定語系的資源檔，但是新的版本它的翻譯服務改成雲端的服務，變得必須要有雲端服務的應用程式ID，整個翻譯功能就變得不好用了，甚至要付費給雲端服務。"

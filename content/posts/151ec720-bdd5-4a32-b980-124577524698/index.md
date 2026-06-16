@@ -1,5 +1,7 @@
 ---
-title: "[Git]使用git clean清除未加入版控的資料"
+title: "[Git]Remove Untracked Files with git clean"
+slug: "git-remove-untracked-files-with-git-clean"
+aliases: ["/posts/151ec720-bdd5-4a32-b980-124577524698/"]
 date: "2013-11-06 12:00:00"
 description: "筆者在使用版本控制軟體時，不知為何常常會有些暫存的資料產生。像是下面這張圖，可以很清楚的看到有些在程式碼有衝突時的暫存檔被留了下來。 這些暫存的資料會存放在產品方案所在的目錄，讓我們在做Commit的動作時變得礙手礙腳，因為要加到版控的檔案會混在裡面，不容易一眼看到真正要加到版控的檔案。"
 tags: [Git]

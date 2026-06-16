@@ -1,5 +1,7 @@
 ---
-title: "[Software]XMind 心智圖編輯軟體"
+title: "[Software]XMind Mind Mapping Software"
+slug: "software-xmind-mind-mapping-software"
+aliases: ["/posts/10080/"]
 date: "2009-08-15 06:15:37"
 description: "Introduction XMind是用來編輯心智圖的軟體，具有免費版與專業版兩種版本。其操作簡易、圖型漂亮、跨平台。 還支援多種圖型架構像是心智圖 二維表格 魚骨圖 邏輯圖 等等。也可以切換風格。像是XMIND極簡風 XMIND經典風 預設 等。"
 tags: [Software]

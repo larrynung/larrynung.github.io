@@ -1,5 +1,7 @@
 ---
-title: "停用Debug.Assert警示對話框與啟用訊息記錄"
+title: "Disable the Debug.Assert Dialog and Enable Message Logging"
+slug: "disable-the-debug-assert-dialog-and-enable-message-logging"
+aliases: ["/posts/b0ca5f42-38a7-4d6a-8ceb-7018575b5f2f/"]
 date: "2013-11-06 12:00:00"
 tags: [CSharp]
 description: "據Disable System.Diagnostics.Debug.Assert dialogs這篇文章所提，有時我們會有需要將System.Diagnostics.Debug.Assert產生的對話框給停止使用，像是讓電腦自動運行整合測試時，"

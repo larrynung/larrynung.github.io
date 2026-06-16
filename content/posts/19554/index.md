@@ -1,5 +1,7 @@
 ---
-title: "使用C#呼叫VB.NET的CallByName函式"
+title: "Call VB.NET's CallByName Function from C#"
+slug: "call-vbnet-s-callbyname-function-from-csharp"
+aliases: ["/posts/19554/"]
 date: "2010-11-19 12:17:23"
 description: "在VB.NET中有時會有要帶入方法名稱去執行對應方法，或是依屬性名稱去取得、設定其屬性值的需求，若不想使用麻煩的反射去處理，我們可以簡單的使用CallByName函式去達到這樣的需求。"
 tags: [CSharp]

@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]突破Disable按鈕的封鎖與限制"
+title: "[VB.NET]Bypassing the Block on a Disabled Button"
+slug: "vbnet-bypassing-the-block-on-a-disabled-button"
+aliases: ["/posts/8584/"]
 date: "2009-05-28 01:28:08"
 description: "Introduction 一般來說，當我們程式中有部份功能欲不讓使用者使用時。通常我們會把按鈕給Disable掉，讓使用者無法執行特定的功能。但這樣做真的就安全嗎？答案是否定的。"
 tags: [VB.NET]

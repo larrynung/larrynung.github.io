@@ -1,5 +1,7 @@
 ---
-title: "[Win8]如何將Win8切換至指定的語系以及對應輸入法的設置"
+title: "[Win8]How to Switch Windows 8 to a Specific Language and Set Up the Matching Input Method"
+slug: "win8-how-to-switch-windows-8-to-a-specific-language-and-set-up-the-matching-input-method"
+aliases: ["/posts/8acf17f2-92e8-4ca1-a7b2-b0ce85174551/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows]
 description: "要將Win8切換至指定的語系，我們可以按下熱鍵Win + I，點選進入控制台設定。 控制台開啟後，點選時鐘、語言和區域下方的新增語言。 您會看到像是下圖的語言設定頁面，裡面會顯示當前在使用的語系，以筆者電腦來說就是中文(台灣)的語系，輸入法部份是用微軟新注音。"

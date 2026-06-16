@@ -1,5 +1,7 @@
 ---
-title: "[Performance][C#]StringBuilder與String.Join串接字串時的效能比較"
+title: "[Performance][C#]Performance Comparison of StringBuilder vs String.Join for Concatenation"
+slug: "performance-csharp-performance-comparison-of-stringbuilder-vs-string-join-for-concatenation"
+aliases: ["/posts/9264/"]
 date: "2009-07-09 08:46:42"
 description: "這陣子在寫程式寫到要用分隔符號串接字串的時候，想到兩種方法：一種是透過StringBuilder去串字串、一種是先把字串塞到字串陣列，再用String.Join去串字串。雖然StringBuilder對於字串的串接效能做了很大的改善，但我直覺上仍認為後者效率比前者來得佳，特此做個實驗。"
 tags: [CSharp,Performance]

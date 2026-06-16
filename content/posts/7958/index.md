@@ -1,5 +1,7 @@
 ---
-title: "[WF]認識WF"
+title: "[WF]Getting to Know WF"
+slug: "wf-getting-to-know-wf"
+aliases: ["/posts/7958/"]
 date: "2009-04-10 12:38:12"
 description: "需求 .NET Framework 3.0以上 特點 支援建置流程相關解決方案的基礎建設 支援開發工作流程相關功能的開發架構 允許長時間執行的應用程式 彈性的程序定義及執行 圖形化的作業程序展現 可擴充的開發模型提供主控及自訂能力 何謂WorkFlow…"
 tags: [WF]

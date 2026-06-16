@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept]例外處理使用時機"
+title: "[.NET Concept]When to Use Exception Handling"
+slug: "dotnet-concept-when-to-use-exception-handling"
+aliases: ["/posts/7854/"]
 date: "2009-04-04 07:01:01"
 description: "看到網友Bill叔寫了一連串的Try Catch的探討，這邊我也大概的整理一下我對例外處理使用時機的認知。 我常會看到很多我覺得不適當的例外處理寫法，大概可列出下面幾種： 例外處理只為了秀出Exception本來包含的訊息，完全不改成自己格式就直接秀出 像下面這種寫法秀出的資訊少到完全看不出問題點，"
 tags: [.NET Concept]

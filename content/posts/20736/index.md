@@ -1,5 +1,7 @@
 ---
-title: "使用反射(Reflection)實現應用程式擴充元件機制"
+title: "Implement an Application Plugin Mechanism Using Reflection"
+slug: "implement-an-application-plugin-mechanism-using-reflection"
+aliases: ["/posts/20736/"]
 date: "2011-01-11 02:42:52"
 description: "身為程式開發人員不能避免的時常會需要因應客戶的需求下去為元件做些客制或擴充，有些應用程式為了讓程式便於處理這部分的需求會為應用程式加上擴充的機制，這樣的擴充機制能讓應用程式很輕鬆的達到大部分的擴充需求，也能將此機制開出讓有此需求的用戶能自行依自己處理擴充的動作。"
 tags: [CSharp]

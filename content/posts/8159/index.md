@@ -1,5 +1,7 @@
 ---
-title: "[Design Pattern]Singleton模式"
+title: "[Design Pattern]Singleton Pattern"
+slug: "design-pattern-singleton-pattern"
+aliases: ["/posts/8159/"]
 date: "2009-04-24 12:41:59"
 description: "字面意思 Singleton [ˈsɪŋgḷtən] n.獨生子，獨身，單件 意圖 保證一個類別只有一個物件實體。 希望所有物件使用該物件相同的物件參考，且無需將物件參考傳遞給他們。 口訣 單一的執行個體 問題 幾個不同的物件需要引用同一物件，且希望確保這類型的物件數不超過一個。"
 tags: [Design Pattern]

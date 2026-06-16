@@ -1,5 +1,7 @@
 ---
-title: "如何在MAC上使用AirDrop做檔案的傳輸"
+title: "How to Transfer Files with AirDrop on Mac"
+slug: "how-to-transfer-files-with-airdrop-on-mac"
+aliases: ["/posts/6e8d25f4-89c8-41b1-bfe8-c3f0fd2f7962/"]
 date: "2013-11-06 12:00:00"
 description: "最近切到MAC玩，才知道MAC上內建一個名為AirDrop的有趣服務。不需要做任何的設定，也不需要透過第三方伺服器，就可以讓使用者透過WiFi直接去做點對點的傳輸，且所有的傳輸都經過加密處理。"
 tags: [Mac]

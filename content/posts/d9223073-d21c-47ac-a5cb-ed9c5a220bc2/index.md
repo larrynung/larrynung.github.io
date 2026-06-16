@@ -1,5 +1,7 @@
 ---
-title: "[Web]使用BrowserStack測試網頁的相容性"
+title: "[Web]Test Web Page Compatibility with BrowserStack"
+slug: "web-test-web-page-compatibility-with-browserstack"
+aliases: ["/posts/d9223073-d21c-47ac-a5cb-ed9c5a220bc2/"]
 date: "2013-11-06 12:00:00"
 tags: [Web]
 description: "筆者前幾天看到Cross Browser Debugging integrated into Visual Studio with BrowserStack這篇文章，因為覺得有趣就試玩了一下。"

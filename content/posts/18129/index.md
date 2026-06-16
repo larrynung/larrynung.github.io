@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
-slug: "[CSharp]使用WM_SYSCOMMAND訊息控制螢幕模式切換"
+title: "[C#]Control Screen Mode Switching with the WM_SYSCOMMAND Message"
+slug: "csharp-control-screen-mode-switching-with-the-wm-syscommand-message"
+aliases: ["/posts/csharp使用wm_syscommand訊息控制螢幕模式切換/"]
 date: "2010-10-05 10:03:15"
 description: "要控制螢幕的開啟、關閉，可透SendMessage發送WM_SYSCOMMAND訊息，wParam參數傳入SC_MONITORPOWER，lParam參數則傳入螢幕的模式。"
 tags: [CSharp]

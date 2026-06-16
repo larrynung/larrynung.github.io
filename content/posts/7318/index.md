@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]取得專案內所有表單名稱"
-slug: "[CSharp][VB.NET]取得專案內所有表單名稱"
+title: "[C#][VB.NET]Get the Names of All Forms in a Project"
+slug: "csharp-vbnet-get-the-names-of-all-forms-in-a-project"
+aliases: ["/posts/csharpvb.net取得專案內所有表單名稱/"]
 date: "2009-02-28 11:04:33"
 description: "前陣子在藍色小鋪衝浪時看到網友的詢問，問題的需求很奇妙，是想要能取得專案內所有的表單名稱。雖然直覺上就覺得.NET Framework內不會有對應的函式可以直接使用，為求保險仍是去試了一下，結果跟想的一樣，找不到能直接使用的函式。最後只好回到用.NET反射機制(Reflection)去達到該需求。"
 tags: [VB.NET,CSharp]

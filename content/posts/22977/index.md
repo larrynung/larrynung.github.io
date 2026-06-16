@@ -1,5 +1,7 @@
 ---
-title: "[.NET Concept]彼此該為全雙工的物件不要讓它們半雙工"
+title: "[.NET Concept]Don't Make Objects Half-Duplex When They Should Be Full-Duplex"
+slug: "dotnet-concept-don-t-make-objects-half-duplex-when-they-should-be-full-duplex"
+aliases: ["/posts/22977/"]
 date: "2011-04-18 09:43:27"
 description: "彼此該為全雙工的物件不要讓它們半雙工，這概念主要是想表達，當今天開發的兩個類別以物件的角度來看，若應該能夠直接知道彼此的存在，且在開發上如此實現有其便利性時，應該讓它們透過成員變數，讓物件間可以很直接的互通。這概念通常在彼此間具有階層概念的情況下特別適用。"
 tags: [.NET Concept]

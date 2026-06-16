@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態"
-slug: "[CSharp][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態"
+title: "[C#][VB.NET]Check Current Power Status with SystemInformation.PowerStatus"
+slug: "csharp-vbnet-check-current-power-status-with-systeminformation-powerstatus"
+aliases: ["/posts/csharpvb.net使用systeminformation.powerstatus查看目前電源使用狀態/"]
 date: "2009-09-29 08:22:26"
 description: "Introduction 這篇簡單記錄一下，如何透過SystemInformation類別的PowerStatus屬性，來查看目前電源的使用狀態。 Namespace System.Windows.Forms Assembly System.Windows.Forms (in…"
 tags: [CSharp]

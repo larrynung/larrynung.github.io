@@ -1,5 +1,7 @@
 ---
-title: "[IE8]新手初體驗"
+title: "[IE8]A Beginner's First Experience"
+slug: "ie8-a-beginner-s-first-experience"
+aliases: ["/posts/94408975-7c79-456d-9289-d4912abb77bf/"]
 date: "2013-11-06 12:00:00"
 tags: [IE]
 description: "程式下載 有需要者可自行上Windows Internet Explorer 8 官方網站下載。 系統需求 電腦/處理器 配備 233MHz 或更快速度處理器的電腦 (建議採用 Pentium 處理器) 記憶體 Windows Vista (32 位元) – 512 MB Windows…"

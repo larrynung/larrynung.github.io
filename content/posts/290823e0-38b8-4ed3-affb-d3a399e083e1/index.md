@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機][sh4twbox]安裝並啟動dropbear，讓網樂通可透過SSH連接"
+title: "[NetTV Mod][sh4twbox]Install and Start dropbear to Connect to the NetTV Box via SSH"
+slug: "nettv-mod-sh4twbox-install-and-start-dropbear-to-connect-to-the-nettv-box-via-ssh"
+aliases: ["/posts/290823e0-38b8-4ed3-affb-d3a399e083e1/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通改機成功後，一開始我們只能透過telnet連進去，這種方式比較不安全，若需要更為安全的連接方式，我們可以為網樂通加掛dropbear server，讓網樂通支援SSH連接。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛dropbear server。"

@@ -1,5 +1,7 @@
 ---
-title: "[.Net Concept]理解並善用String pool"
+title: "[.NET Concept]Understand and Make Good Use of the String Pool"
+slug: "dotnet-concept-understand-and-make-good-use-of-the-string-pool"
+aliases: ["/posts/30763/"]
 date: "2011-06-30 10:42:28"
 description: "寫過.Net或是Java程式的開發人員，或多或少都曾聽過這些程式語言在處理字串時，底層會有個名為String pool的機制，幫我們自動重用已經建立的字串實體，減少記憶體的耗費。 String pool簡單來說就是一個HashTable,其Key值是字串內容，Value是物件實體的位置。"
 tags: [.NET Concept, CSharp]

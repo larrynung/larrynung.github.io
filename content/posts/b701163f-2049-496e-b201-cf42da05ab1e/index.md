@@ -1,5 +1,7 @@
 ---
-title: "[C#]PE檔案格式簡易介紹與PE檔案的檢測"
+title: "[C#]A Brief Introduction to the PE File Format and PE File Inspection"
+slug: "csharp-a-brief-introduction-to-the-pe-file-format-and-pe-file-inspection"
+aliases: ["/posts/b701163f-2049-496e-b201-cf42da05ab1e/"]
 date: "2013-11-06 12:00:00"
 description: "PE檔案是Portable Executable的簡稱，是windows系統中任何可執行模組或者DLL的檔案格式。這邊要介紹一下如何透過程式檢測檔案是否為合法的PE檔，因此必須針對PE檔的格式做些初步的介紹，就讓我們先來看一下PE檔的格式圖吧： 檔案最前端為MS-DOS Header，"
 tags: [CSharp]

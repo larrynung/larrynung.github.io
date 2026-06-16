@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用SHEmptyRecycleBin API清除資源回收桶"
-slug: "[CSharp]使用SHEmptyRecycleBin API清除資源回收桶"
+title: "[C#]Empty the Recycle Bin with the SHEmptyRecycleBin API"
+slug: "csharp-empty-the-recycle-bin-with-the-shemptyrecyclebin-api"
+aliases: ["/posts/csharp使用shemptyrecyclebin-api清除資源回收桶/"]
 date: "2013-11-06 12:00:00"
 description: "玩了一下怎樣刪除檔案並送到資源回收桶，就會想到送到資源回收桶後要怎樣刪除，這邊稍微研究並記錄一下。 要清除資源回收桶，我們可以透過SHEmptyRecycleBin API，下面是它的函式原型。"
 tags: [CSharp]

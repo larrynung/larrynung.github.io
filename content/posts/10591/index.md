@@ -1,5 +1,7 @@
 ---
-title: "[Software]ScreenSnapr能幫你上傳圖片的螢幕抓圖工具"
+title: "[Software]ScreenSnapr - A Screenshot Tool That Uploads Images for You"
+slug: "software-screensnapr-a-screenshot-tool-that-uploads-images-for-you"
+aliases: ["/posts/10591/"]
 date: "2009-09-13 01:40:42"
 description: "Introduction 相信大家有時再回應論壇問題、與朋友討論事情、教正妹解決電腦上的問題，都多多少少會碰到想要附上圖片輔助說明。但卻常因怕麻煩而作罷，最後往往是回歸到最原始的狀態直接用文字描述。 這是因為在以往我們要在網路上附上一張圖片，必需要作繁瑣複雜的動作。"
 tags: [Software]

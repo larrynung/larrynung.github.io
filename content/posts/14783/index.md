@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]密碼框顯示程式探討與其簡易的保護之道"
+title: "[VB.NET]Password Field Reveal Techniques and Simple Protection"
+slug: "vbnet-password-field-reveal-techniques-and-simple-protection"
+aliases: ["/posts/14783/"]
 date: "2010-04-24 12:17:10"
 description: "相信大家都看過甚至用過密碼顯示工具，其原理Rico大[C#][WinForm]擺脫密碼透視小工具這篇已經把概念給帶出來了，主要是要過濾WM_GETTEXT與WM_SETTEXT兩個訊息(WM_SETTEXT過濾的原因不詳，這邊直接沿用)，但除了取得密碼外，也有的工具是可以讓密碼直接顯示的，"
 tags: [VB.NET]

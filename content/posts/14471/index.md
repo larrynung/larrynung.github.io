@@ -1,5 +1,7 @@
 ---
-title: "[Extension Method]使用擴充方法來做物件的深層複製"
+title: "[Extension Method]Deep-Copy an Object Using an Extension Method"
+slug: "extension-method-deep-copy-an-object-using-an-extension-method"
+aliases: ["/posts/14471/"]
 date: "2010-04-08 06:32:17"
 description: "紀錄一下用序列化來做深層複製的擴充方法 使用上直接呼叫Clone即可"
 tags: [VB.NET]

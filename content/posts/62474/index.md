@@ -1,5 +1,7 @@
 ---
-title: "[C++]使用nsiqcppstyle輔助檢查C/C++的Coding Style"
+title: "[C++]Check C/C++ Coding Style with nsiqcppstyle"
+slug: "cpp-check-c-cpp-coding-style-with-nsiqcppstyle"
+aliases: ["/posts/62474/"]
 date: "2011-12-16 11:44:07"
 description: "nsiqcppstyle是韓國人開發的C/C++ Coding Style檢查工具，可檢查程式碼並給予編碼上的建議，使用上十分的簡易，具有許約40幾條檢查的規則，檢查的規則能自動個更新且允許自行擴充。"
 tags: [Software,C++,Visual Studio]

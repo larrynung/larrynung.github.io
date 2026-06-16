@@ -1,5 +1,7 @@
 ---
-title: "FlickrNet開發系列 - FlickrNet開發前準備與登入驗證機制的實現"
+title: "FlickrNet Development Series - Setup and Implementing Login Authentication"
+slug: "flickrnet-development-series-setup-and-implementing-login-authentication"
+aliases: ["/posts/23404/"]
 date: "2011-04-23 11:50:39"
 description: "使用FlickrNet開發Flickr服務程式，需先至Flickr.Net API Library網站下載開發用的組件包。 下載玩開發用組件包後，解壓縮會看到許多組件，從組件的檔名可以很清楚的知道所支援的平台，"
 tags: [CSharp]

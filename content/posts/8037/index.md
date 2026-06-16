@@ -1,5 +1,7 @@
 ---
-title: "[WLW]插入精靈開發隨筆"
+title: "[WLW]Notes on Developing an Insert Wizard"
+slug: "wlw-notes-on-developing-an-insert-wizard"
+aliases: ["/posts/8037/"]
 date: "2009-04-17 08:29:20"
 description: "Introduction 看了水瓶大的WLW (Windows Live Writer)外掛教學後，如獲一甲子功力，雖功力還不夠使用天外飛仙，但也已足夠撰寫WLW Simple類型外掛。不過想了半天，卻想不到我要寫啥外掛。既然想不到要寫啥外掛，索性乾脆寫個更彈性、功能可隨意調整、可很快編寫的外掛。"
 tags: [WLW]

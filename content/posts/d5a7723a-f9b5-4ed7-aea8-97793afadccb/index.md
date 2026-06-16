@@ -1,6 +1,7 @@
 ---
-title: "[C#]如何為程式加上Windows的SendTo功能支援"
-slug: "[CSharp]如何為程式加上Windows的SendTo功能支援"
+title: "[C#]How to Add Windows SendTo Support to Your Program"
+slug: "csharp-how-to-add-windows-sendto-support-to-your-program"
+aliases: ["/posts/csharp如何為程式加上windows的sendto功能支援/"]
 date: "2013-11-06 12:00:00"
 tags: [CSharp]
 description: "相信大家都有看過，當我們在檔案總管上的任一檔案或是目錄上點選滑鼠右鍵，彈出的滑鼠右鍵選單中有個叫做SendTo的功能，可以將檔案送至對應的應用程式處理。要在應用程式中加上SendTo功能的支援，"

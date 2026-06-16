@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機]網樂通運行時自動啟動指定的服務"
+title: "[NetTV Mod]Automatically Start Specified Services When the NetTV Box Boots"
+slug: "nettv-mod-automatically-start-specified-services-when-the-nettv-box-boots"
+aliases: ["/posts/7e6fa04d-1032-406e-9244-bb9e9ac3d257/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通改機後我們會裝許多的服務上去，這些服務若要讓網樂通開機時就自動啟動，我們需要做些額外的設定。 首先我們必須要了解到開機的流程主要是看/etc/init.d/rcS這個檔案。我們可以呼叫命令vi /etc/init.d/rcS將該檔案開啟。"

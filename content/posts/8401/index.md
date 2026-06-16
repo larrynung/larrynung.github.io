@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]Lambda運算式"
+title: "[VB.NET]Lambda Expressions"
+slug: "vbnet-lambda-expressions"
+aliases: ["/posts/8401/"]
 date: "2009-05-14 08:50:13"
 description: "Abstract Introduction 使用方式 特色 呼叫不具回傳值的副程式 Introduction 「Lambda 運算式」(Lambda Expression) 是沒有名稱的函式，會計算並傳回單一值。"
 tags: [VB.NET]

@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機][sh4twbox]安裝並啟動ushare，讓網樂通支援DLNA"
+title: "[NetTV Mod][sh4twbox]Install and Start ushare to Add DLNA Support to the NetTV Box"
+slug: "nettv-mod-sh4twbox-install-and-start-ushare-to-add-dlna-support-to-the-nettv-box"
+aliases: ["/posts/377e4f81-afd9-47dd-b7a7-9de9e04e9d4d/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通改機成功後，若想要讓網樂通支援DLNA，我們可以為網樂通加掛ushare server。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛ushare server。"

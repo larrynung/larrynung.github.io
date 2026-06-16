@@ -1,5 +1,7 @@
 ---
-title: "[Win7]讓MSN縮小回到右下角的系統列"
+title: "[Win7]Make MSN Minimize to the System Tray"
+slug: "win7-make-msn-minimize-to-the-system-tray"
+aliases: ["/posts/a99d90f6-5e41-43e4-b9e2-0baf1bc3f162/"]
 date: "2013-11-06 12:00:00"
 tags: [Windows 7]
 description: "在Win7中使用MSN，相信很多人一開始都很不習慣。因為當按下MSN上方的X時，MSN視窗並不會像以往一樣，縮小到右下角的系統列，而是縮小到工作列上。 其實這問題可透過啟用相容性執行的方式來解決。透過到開始選單中找尋MSN程式圖示，按下滑鼠右鍵，選取內容。"

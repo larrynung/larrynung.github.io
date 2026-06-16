@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]使用mouse_event API 來操控滑鼠動作"
+title: "[VB.NET]Control Mouse Actions with the mouse_event API"
+slug: "vbnet-control-mouse-actions-with-the-mouse-event-api"
+aliases: ["/posts/15365/"]
 date: "2010-05-21 12:07:12"
 description: "函式原型 參數 參數名稱 說明 dwFlags 指示滑鼠動作 dx x座標 (dwFlags有設MOUSEEVENTF_ABSOLUTE時，該座標為絕對座標) dy y座標 (dwFlags有設MOUSEEVENTF_ABSOLUTE時，"
 tags: [VB.NET]

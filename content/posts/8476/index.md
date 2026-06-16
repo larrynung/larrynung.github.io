@@ -1,5 +1,7 @@
 ---
-title: "[Investment]與房仲過招必殺技"
+title: "[Investment]Killer Moves for Dealing with Real Estate Agents"
+slug: "investment-killer-moves-for-dealing-with-real-estate-agents"
+aliases: ["/posts/8476/"]
 date: "2009-05-20 12:00:45"
 description: "Introduction 以下內容轉載自2009/5/16自由時報週末生活版。 誰適合找仲介 首次購屋，對購屋流程不清者。 看屋時間有限，沒時間與屋主交涉，沒時間搜尋眾多物件者。 自認談判技巧不佳者。 對貸款、法律、稅務問題不熟者。"
 tags: [Investment]

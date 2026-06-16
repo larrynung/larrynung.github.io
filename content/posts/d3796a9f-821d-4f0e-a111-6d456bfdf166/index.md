@@ -1,5 +1,7 @@
 ---
-title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (五) 介面合約與抽象方法合約"
+title: ".NET 4.0 New Feature - Code Contracts (Part 5) Interface Contracts and Abstract Method Contracts"
+slug: "dotnet-4-0-new-feature-code-contracts-part-5-interface-contracts-and-abstract-method-contracts"
+aliases: ["/posts/d3796a9f-821d-4f0e-a111-6d456bfdf166/"]
 date: "2013-11-06 12:00:00"
 description: "介面合約主要功用為為實作介面的類別提供統一的驗證合約，當我們為介面定義好了介面合約以後，所有實作該介面的類別都會享有到合約驗證的好處，不需每個類別各自撰寫，可減少撰寫重覆的驗證合約程式、增加程式中合約驗證覆蓋完整度、與加快實現合約式編程。"
 tags: [CSharp]

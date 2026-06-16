@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]使用Make single instance application實現單一程式執行個體時所發生的怪現象"
+title: "[VB.NET]Odd Behavior When Using \"Make Single Instance Application\" for a Single-Instance App"
+slug: "vbnet-odd-behavior-when-using-make-single-instance-application-for-a-single-instance-app"
+aliases: ["/posts/66ac5fb1-13bd-4334-ba12-aaef8dfe80db/"]
 date: "2013-11-06 12:00:00"
 tags: [VB.NET]
 description: "前陣子筆者在回應論壇上程式縮至常駐列，程式重複開啟時視窗無法還原這篇發問，因為這篇發問還滿有趣的，所以稍稍紀錄一下。發問者主要是想要嘗試實現單一程式執行個體，但是卻沒有打算一開始就到位，因此只是很簡單的勾選VB.NET屬性頁中的Make single instance application設定。"

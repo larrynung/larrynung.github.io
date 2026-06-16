@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機]讓網樂通突破限制，使用256MB的記憶體"
+title: "[NetTV Mod]Unlock the NetTV Box to Use 256MB of Memory"
+slug: "nettv-mod-unlock-the-nettv-box-to-use-256mb-of-memory"
+aliases: ["/posts/05459f57-2b28-4c74-b12a-3dd8bc412d95/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "網樂通內建256MB的記憶體，但是預設只用了128MB。要突破這個限制，我們必需下載uboot再次刷機更新。 這邊可至sh4twbox下載uboot。 再下載Win32 disk imager將uboot寫到USB碟。"

@@ -1,6 +1,7 @@
 ---
-title: "[C#]Effective C# 條款三： 運算子is或as優於強制轉型"
-slug: "[CSharp]Effective C# 條款三： 運算子is或as優於強制轉型"
+title: "[C#]Effective C# Item 3: Prefer the is or as Operators to Casts"
+slug: "csharp-effective-csharp-item-3-prefer-the-is-or-as-operators-to-casts"
+aliases: ["/posts/csharpeffective-c#-條款三-運算子is或as優於強制轉型/"]
 date: "2009-09-30 08:17:52"
 description: "對C#而言，在做型別轉換時，撇開一些型別有提供Parse可供轉型外，通常我們有兩種選擇：一種是利用as運算子、一種則是強制轉型。作型別轉換時，應盡量採用as運算子來做轉型的動作，因為它比強制轉型安全，也具有較好的效能。 這邊讓我們直接來看個例子。"
 tags: [CSharp]

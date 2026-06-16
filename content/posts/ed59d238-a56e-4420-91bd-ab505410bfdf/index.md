@@ -1,5 +1,7 @@
 ---
-title: "[網樂通改機][sh4twbox]如何使用shpkg去做套件的安裝與管理"
+title: "[NetTV Mod][sh4twbox]Install and Manage Packages with shpkg"
+slug: "nettv-mod-sh4twbox-install-and-manage-packages-with-shpkg"
+aliases: ["/posts/ed59d238-a56e-4420-91bd-ab505410bfdf/"]
 date: "2013-11-06 12:00:00"
 tags: [網樂通]
 description: "這邊筆者以安裝nano為例做個示範，稍微紀錄一下如何使用shpkg去做套件的安裝與管理，。 首先我們要先連到網樂通，並呼叫命令\"shpkg -Q\"查詢我們已經安裝好的套件有哪些。"

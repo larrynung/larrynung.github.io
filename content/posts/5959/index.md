@@ -1,6 +1,7 @@
 ---
-title: "[C#][VB.NET]自定義.NET WindowForm表單介面"
-slug: "[CSharp][VB.NET]自定義.NET WindowForm表單介面"
+title: "[C#][VB.NET]Custom .NET WinForm UI"
+slug: "csharp-vbnet-custom-dotnet-winform-ui"
+aliases: ["/posts/csharpvb.net自定義.net-windowform表單介面/"]
 date: "2008-11-11 11:09:17"
 description: "Abstract Introduction 自定義WindowForm表單介面 Conclusion Introduction 本篇將由一個簡單的小範例，試範如何實現自定義的WindowForm表單介面。 自定義WindowForm表單介面 Step1.首先，打開一個Window Form專案。"
 tags: [CSharp,VB.NET]

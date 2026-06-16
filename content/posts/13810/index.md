@@ -1,5 +1,7 @@
 ---
-title: "[VB.NET]如何自製使用者控制項測試容器(User Control Test Container)"
+title: "[VB.NET]How to Build a User Control Test Container"
+slug: "vbnet-how-to-build-a-user-control-test-container"
+aliases: ["/posts/13810/"]
 date: "2010-02-27 11:22:26"
 description: "前一篇[Visual Studio]使用者控制項測試容器(User Control Test Container)介紹了User Control Test Container的使用方式。"
 tags: [VB.NET]

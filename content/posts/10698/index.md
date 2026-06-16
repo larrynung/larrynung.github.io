@@ -1,5 +1,7 @@
 ---
-title: "C++/CLI Managed Natived語法對應"
+title: "C++/CLI Managed vs Native Syntax Mapping"
+slug: "cpp-cli-managed-vs-native-syntax-mapping"
+aliases: ["/posts/10698/"]
 date: "2009-09-18 09:00:15"
 description: "Natived Managed Pointer NativedClass obj = new NativedClass(); ManagedClass^ obj = gcnew ManagedClass(); Call By Reference void Method(int& value) {…"
 tags: [C++]

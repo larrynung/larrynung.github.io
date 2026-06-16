@@ -1,6 +1,7 @@
 ---
-title: "[C#]使用Faker.Net輔助建立假的數據資料"
-slug: "[CSharp]使用Faker.Net輔助建立假的數據資料"
+title: "[C#]Generate Fake Data with Faker.Net"
+slug: "csharp-generate-fake-data-with-faker-dotnet"
+aliases: ["/posts/csharp使用faker.net輔助建立假的數據資料/"]
 date: "2013-11-06 12:00:00"
 description: "有時候在做些測試時，我們會期望有一定的資料量來做測試，這時我們可能會用程式來產生大量假的資料，而Faker.Net就是可以輔助我們完成這個需求的工具。 使用前需先加入組件參考，這部分可透過NuGet完成，帶入Faker.net關鍵字下去搜尋，"
 tags: [CSharp]

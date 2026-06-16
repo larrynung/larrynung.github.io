@@ -1,6 +1,7 @@
 ---
 title: "[C#]Export PowerPoint file to photos"
-slug: "[CSharp]Export PowerPoint file to photos"
+slug: "csharp-export-powerpoint-file-to-photos"
+aliases: ["/posts/csharpexport-powerpoint-file-to-photos/"]
 date: "2013-11-06 12:00:00"
 description: "要將PowerPoint檔案中的每張投影片匯出成圖檔，我們可以將PowerPoint的Com元件加入參考。 撰寫如下的程式： 程式碼很簡單，就是建立出PowerPoint應用程式後，讓PowerPoint應用程式將投影片檔案開啟，開啟時設定不顯示視窗，然後遍巡所有的投影片匯出，"
 tags: [CSharp]

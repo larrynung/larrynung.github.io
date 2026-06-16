@@ -1,5 +1,7 @@
 ---
-title: "C++/CLI索引子"
+title: "C++/CLI Indexers"
+slug: "cpp-cli-indexers"
+aliases: ["/posts/10626/"]
 date: "2009-09-15 09:02:41"
 description: "C++/CLI在撰寫索引子時，寫法跟屬性大同小異。不同的是，索引子須使用default關鍵字取代屬性名稱。就像： 完整範例"
 tags: [C++]

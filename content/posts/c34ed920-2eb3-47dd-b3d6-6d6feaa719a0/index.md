@@ -1,5 +1,7 @@
 ---
-title: "土豆視頻開發系列-影片播放"
+title: "Tudou Video Development Series - Video Playback"
+slug: "tudou-video-development-series-video-playback"
+aliases: ["/posts/c34ed920-2eb3-47dd-b3d6-6d6feaa719a0/"]
 date: "2013-11-06 12:00:00"
 tags: [土豆視頻]
 description: "土豆視頻提供的影片播放API其格式如下： http://www.tudou.com/v/【影片對應的CODE】/&【配置參數】/v.swf 影片對應的CODE土豆視頻開發系列-依影集分類查詢這篇所抓到的影片ItemCode，用來指定所要播放的影片，而配置參數則是用來設定撥放器的行為，"
