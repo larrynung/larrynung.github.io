@@ -1,9 +1,9 @@
 baseURL = 'https://larrynung.github.io/'
 theme = 'PaperMod'
 title = 'LevelUp'
-defaultContentLanguage = 'en'
-languageCode = 'en'
-languageName = 'English'
+defaultContentLanguage = 'zh-tw'
+languageCode = 'zh-TW'
+languageName = '中文'
 hasCJKLanguage = true
 copyright = "{year} Larry Nung"
 enableRobotsTXT = true
