@@ -1,6 +1,7 @@
 ---
 title: "Run guestbook sample Google App Engine Launcher built-in"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "Google App Engine Launcher內建有幾個範例，在剛入門時可以跑起來玩玩。 以內建的留言版範例來說，我們可在Google App Engine Launcher開啟後，"
 ---
 

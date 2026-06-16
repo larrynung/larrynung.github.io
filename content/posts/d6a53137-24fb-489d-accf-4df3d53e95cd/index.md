@@ -1,6 +1,7 @@
 ---
 title: "Create your first android app with Android Studio"
 date: "2013-11-06 12:00:00"
+tags: [Android]
 description: "參閱Prepare android development environment with Android Studio這篇準備好開發環境後，讓我們實際的用Android Studio建立一個App看看。 滑鼠點擊Android Studio程式Icon，啟動Android Studio。"
 ---
 

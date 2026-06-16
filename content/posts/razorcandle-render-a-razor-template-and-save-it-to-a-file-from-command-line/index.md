@@ -1,6 +1,7 @@
 ---
 title: "RazorCandle - Render a razor template and save it to a file from command line"
 date: "2015-11-17 05:45:00"
+tags: [ASP.NET]
 description: "RazorCandle 是一命令列程式，能讓我們透過命令列進行 Razor 的轉換。 該程式未有 Release 的版本，所以需要自己下載原始碼下來編譯。 命令列使用的方式如下： RazorCandle.exe source [destination] [/M] [/V] source…"
 ---
 

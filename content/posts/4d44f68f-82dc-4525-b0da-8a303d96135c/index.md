@@ -1,6 +1,7 @@
 ---
 title: "[Software]PerfCompare - A C# micro-benchmarking and performance analysis tool"
 date: "2013-11-06 12:00:00"
+tags: [Software]
 description: "PerfCompare是一個用來測試C#程式效能的輔助小工具，使用上十分容易，但卻有一些限制存在。這邊筆者實際以[[Performance][C#]StringBuilder與String.Join串接字串時的效能比較這篇的範例為例，解釋如何使用這樣的一個工具來作效能的測量比較。"
 ---
 

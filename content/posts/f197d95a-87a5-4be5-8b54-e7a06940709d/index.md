@@ -1,6 +1,7 @@
 ---
 title: "C++_CLI Managed 與 Nativated 型態互轉"
 date: "2013-11-06 12:00:00"
+tags: [C++]
 description: "CString -> System::String^ System::String^ -> CString System::String^ -> int"
 ---
 

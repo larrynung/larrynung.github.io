@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - XAML Editor's end tag auto remove"
 date: "2013-11-06 12:00:00"
+tags: [XAML, Visual Studio 2013, Visual Studio]
 description: "以往在透過Visual Studio的XAML Editor進行XAML Code的編輯時，輸入Tag後Visual Studio會自動帶出對應的End Tag，雖然這樣的功能很貼心，但有的時候我們並不想要End Tag，只是一開始輸入的時候忘了把最後的\"/\"打上，這功能就顯得很綁手綁腳，"
 ---
 

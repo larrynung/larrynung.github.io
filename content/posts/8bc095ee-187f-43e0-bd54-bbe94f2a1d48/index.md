@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Enhanced Scroll Bar"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio 2013, Visual Studio]
 description: "Visual Studio 2013 Preview參考Productivity Power Tools針對捲軸部分做了一些強化，簡單紀錄一下。 首先捲軸上面的滑鼠右鍵快顯選單多了一個捲軸選項，可以很快速的開啟選項對話框並切換到捲軸的設定頁面。"
 ---
 

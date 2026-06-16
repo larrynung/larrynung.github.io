@@ -1,6 +1,7 @@
 ---
 title: "Enable fusion assembly binding logging"
 date: "2017-09-01 23:38:00"
+tags: [Assembly]
 description: "Assembly binding 如果出錯，資訊不足以查出問題的話。 可開啟 Assembly binding logging 功能查閱更為詳細的訊息。 只要在 HKLM\\Software\\Microsoft\\Fusion 加入 EnableLog 的 DWORD Key，其值設為 1，"
 ---
 

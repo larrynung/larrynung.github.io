@@ -1,6 +1,7 @@
 ---
 title: "Get the Public Key of an Assembly"
 date: "2015-02-12 08:02:00"
+tags: [Assembly]
 description: "在做 .NET 程式的開發時，有時候我們會需要查閱組件目前簽署的 Public Key 為何 （可能是為了確定組件是否跟我們預期的是同一個，或是要做些 Config 設定，抑或是反射叫用）。"
 ---
 

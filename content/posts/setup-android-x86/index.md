@@ -1,6 +1,7 @@
 ---
 title: "Setup Android X86"
 date: "2016-08-02 21:05:16"
+tags: [Android]
 description: "使用 Virtual Machine 安裝 Android X86，先要下載 Android X86 的映像檔。 接著增加一個新的虛擬機。 由剛下載的映像檔進行安裝。 安裝前可調整一下虛擬機的設定。 設定虛擬機名稱存檔。"
 ---
 

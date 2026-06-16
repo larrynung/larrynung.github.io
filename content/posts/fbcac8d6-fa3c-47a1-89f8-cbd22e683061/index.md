@@ -1,6 +1,7 @@
 ---
 title: "MetaWeblog Backupper V1.0 alpha"
 date: "2013-11-06 12:00:00"
+tags: [Blog]
 description: "筆者最近抽空寫了一支簡單的備份程式，可以將網誌資料備份下來，因為預期是要能支援所有MetaWeblog API的Blog，所以姑且就稱這隻小程式為MetaWeblog Backupper。"
 ---
 

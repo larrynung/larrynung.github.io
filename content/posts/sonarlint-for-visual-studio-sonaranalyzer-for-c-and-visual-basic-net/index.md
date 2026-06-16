@@ -1,6 +1,7 @@
 ---
 title: "'SonarLint for Visual Studio - SonarAnalyzer for C# and Visual Basic .NET'"
 date: "2016-09-30 23:36:00"
+tags: [Visual Studio]
 description: "SonarLint for Visual Studio 能讓 Visual Studio 與 SonarQube 整合，將 SonarQube 的 Rule 透過 Analyzer 的方式整進 Visual Studio，"
 ---
 

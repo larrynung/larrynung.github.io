@@ -1,6 +1,7 @@
 ---
 title: "How to use LinkedIn's plugins"
 date: "2013-11-06 12:00:00"
+tags: [Web]
 description: "至筆者接觸LinkedIn以來，一直都是將LinkedIn視為跟Twitter一樣適合貼技術方面資訊的管道，所以筆者的技術文章多半都會轉貼到LinkedIn與Twitter上面。"
 ---
 

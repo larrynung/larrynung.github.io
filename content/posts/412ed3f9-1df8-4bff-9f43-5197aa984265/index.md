@@ -1,6 +1,7 @@
 ---
 title: "Create your first android app with eclipse"
 date: "2013-11-06 12:00:00"
+tags: [Android]
 description: "前面筆者在Prepare android development environment with ADT(Android Developer Tools) Bundle for Windows這篇介紹了一下Android開發環境的建立，接著來看要怎樣建立我們的第一支Android App。"
 ---
 

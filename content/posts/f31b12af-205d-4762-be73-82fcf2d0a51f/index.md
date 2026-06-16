@@ -1,6 +1,7 @@
 ---
 title: "Bitbuck~Free source code hosting"
 date: "2013-11-06 12:00:00"
+tags: [Bitbucket]
 description: "Bitbuck是一類似GitHub的source code hosting服務，跟GitHub最大的不同是Bitbuck可以建立無限制的私有專案，而在GitHub中是免費使用者只能建立公有專案，要建置私有專案就必須要付費。"
 ---
 

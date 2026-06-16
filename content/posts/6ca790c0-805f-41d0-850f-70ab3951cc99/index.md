@@ -1,6 +1,7 @@
 ---
 title: "[.NET Resource][Visual Studio]讓開發效能大幅提升的Visual Studio Extension - AutoCode"
 date: "2013-11-06 12:00:00"
+tags: [.NET Resource, Visual Studio]
 description: "AutoCode是一套能讓開發人員開發效能大幅提升的Visual Studio Extension，它內建有100個以上的命令，能夠簡單快速的幫我們產生程式碼，就像官方網站給的動畫範例一樣，熟悉這套Extension後開發就是那麼的方便快速。"
 ---
 

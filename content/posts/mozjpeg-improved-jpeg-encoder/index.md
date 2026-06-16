@@ -1,6 +1,7 @@
 ---
 title: "Mozjpeg - Improved JPEG encoder"
 date: "2014-09-20 16:21:00"
+tags: [Performance]
 description: "Mozjpeg 是 Mozilla 在維持相容性的前提下，為了改善 JPEG 壓縮能力，以減少檔案大小並加速網頁傳輸所開的專案。 目前現階段已發行到了 2.1 版，以數據來說平均約可減少 5% 的檔案大小。"
 ---
 

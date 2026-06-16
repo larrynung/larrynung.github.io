@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Process Pro Extension v1.2"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "前陣子筆者在[Visual Studio]Process Pro Extension v1.0這篇先丟出了一版堪用Process Pro Extension版本，只是達到了最基本的需求，但是效能跟功能面都還是不太夠，離筆者想要的東西也還有點距離。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Turn off the automatic display of server manager at logon"
 date: "2016-07-13 13:42:29"
+tags: [Windows Server, Windows]
 description: "Windows Server 作業系統在登入時，預設會幫我們把 Server Manager 給帶起。但有些情境我們登入多半並不需要 Server Manager，這時等待他開啟完我們還要手動的將之關閉，十分的不便。 如果有這樣的困擾，我們可以調整設定讓他不要自動開啟。"
 ---
 

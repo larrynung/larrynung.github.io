@@ -1,6 +1,7 @@
 ---
 title: "Code Converter Extension v1.1"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "在撰寫程式時，我們常常會需要做程式碼的轉換，這時我們會需要一些線上網站的輔助，像是developerfusion。Code Converter Extension試圖將developerfusion與Visual Studio結合，讓程式開發人員能在Visual Studio內就做好轉換的動作。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "GAE's Users Service"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "開發GAE application時可能會有整合Google帳號的需求，這時我們可以使用Users Service。 首先將google.appengine.api.users import進來。 呼叫users.get_current_user()取得當前的使用者。"
 ---
 

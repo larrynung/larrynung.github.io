@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Process Pro Extension v1.0"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "不知道您是不是有同樣的經驗，有時候開發的專案需要開啟多個Process，除錯時常常視窗就在旁邊卻要從眾多Process中找到並attach上去，除錯結束時常常要從眾多Process中一一確認是否都被關掉了，明明就有地表最強大的開發工具，卻要開啟工作管理員去輔助做些確認，"
 ---
 

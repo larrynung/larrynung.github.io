@@ -1,6 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Path.Combine"
 date: "2013-11-06 12:00:00"
+tags: [.NET]
 description: "在.NET 4.0以前Path.Combine只能將兩個路徑合併，因此有時候我們在處理路徑時，若有多個路徑合併的需求，我們必須像下面這樣重覆叫用Path.Combine方法來達成這樣的功能： 或是自行撰寫個方法去做這樣的合併動作： 在.NET 4.0以後，Path.Combine又多了三個多載函式，"
 ---
 

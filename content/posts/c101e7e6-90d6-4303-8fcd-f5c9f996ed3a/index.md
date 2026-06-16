@@ -1,6 +1,7 @@
 ---
 title: "Prepare go language's windows development environment"
 date: "2013-11-06 12:00:00"
+tags: [Go]
 description: "要設定Go語言的Windows開發環境，我們可以至GO語言官網，點選右側的[Download Go]按鈕。 這邊因為GO語言支援許多的OS，每個OS之間的安裝會有所出入，有的還需要設定些參數，故這邊會介紹一下如何針對不同的OS下去安裝。"
 ---
 

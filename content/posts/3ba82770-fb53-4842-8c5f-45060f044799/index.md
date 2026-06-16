@@ -1,6 +1,7 @@
 ---
 title: "Run Google App Engine's application with dev_appserver.py"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "前面筆者在Run application with Google App Engine Launcher這篇稍微介紹了一下怎樣用Google App Engine Launcher將Application在本地運行起來測試，透過GUI工具去做這樣的動作很方便，"
 ---
 

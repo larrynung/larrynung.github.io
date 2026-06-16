@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview File preview's Issue"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "Visual Studio 2011 Preview自釋出用到現在，感覺上大致都滿穩定的除了幾個地方用起來有點怪怪的，像是File Preview功能就有點小Issue，這邊將之整理一下，方便後續回報給微軟。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "XMind出現_JVM terminated. Exit code 1_異常訊息的修復方法"
 date: "2013-11-06 12:00:00"
+tags: [XMind]
 description: "這一兩天我的Xmind每次開啟就會出現\"JVM terminated. Exit code 1\"的異常訊息，畫面如下方所示： 這樣的錯誤會讓整個程式無法開啟，重灌後仍然是異常的，最後找到網路上的解法才得以修復，"
 ---
 

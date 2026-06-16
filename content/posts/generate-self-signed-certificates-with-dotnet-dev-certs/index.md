@@ -1,6 +1,7 @@
 ---
 title: "Generate self-signed certificates with dotnet dev-certs"
 date: "2021-03-11 07:26:47"
+tags: [.NET]
 description: "dotnet dev-certs 提供 https 命令可供自產 HTTPS 開發憑證。 dotnet dev-certs --help 使用方式如下圖所示。 dotnet dev-certs https --help 最簡單的就是不帶任何參數直接使用 dotnet dev-certs 的…"
 ---
 

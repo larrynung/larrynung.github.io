@@ -1,6 +1,7 @@
 ---
 title: "ProcDump - A powerful command line dump utility"
 date: "2014-01-20 23:11:00"
+tags: [Windows]
 description: "ProcDump 是ㄧ命令列 Dump 工具。能監控 Process 狀態，在滿足特定的條件時自動產生 Dump 文件。 像是我們常常會要在 CPU 飆高時或是應用程式無回應做些分析，若用工作管理員去手動產生 Dump 文件，我們可能會無法準確的抓到要 Dump 的時機。"
 ---
 

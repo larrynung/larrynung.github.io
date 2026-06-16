@@ -1,6 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - SplitContainer implements ISupportInitialize"
 date: "2013-11-06 12:00:00"
+tags: [.NET]
 description: "最近在使用Visual Studio 2010寫些小程式時，在界面上放了個SplitContainer，一開始運作良好，但切換到.NET Framework 4.0以前的Framework後，卻發生如下的錯誤。"
 ---
 

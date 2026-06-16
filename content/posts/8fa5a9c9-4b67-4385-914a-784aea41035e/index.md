@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview Black Screen Issue"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "筆者在使用Visual Studio 2011 Preview時有時會出現黑色畫面，這問題困擾筆者許久，今天終於將重現步驟抓出了，將其整理於這篇。 重現步驟如下： Step1.開啟Visual Studio 2011 Preview Step2.開啟Output Window…"
 ---
 

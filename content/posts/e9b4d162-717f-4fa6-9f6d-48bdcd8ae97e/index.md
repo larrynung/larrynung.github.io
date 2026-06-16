@@ -1,6 +1,7 @@
 ---
 title: "CA1810_ Initialize reference type static fields inline"
 date: "2013-11-06 12:00:00"
+tags: [CSharp, Visual Studio]
 description: "筆者常常會用些工具去輔助找出程式美中不足的地方，像是FxCop分析出來的結果，在效能方面的Rule就是筆者必看的項目。但是筆者一直以來都沒有深究某些規則，像是CA1810: Initialize reference type static fields inline這個效能規則為甚麼要這麼做？"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "[IADP]Intel AppUp(SM) Center軟體購買與退貨流程"
 date: "2013-11-06 12:00:00"
+tags: [IADP]
 description: "前面簡單的介紹過了[IADP]Intel AppUp(SM) Center，這邊再帶一下軟體購買與退貨流程。為了避免使用者當冤大頭，購買道不好用的軟體，Intel AppUp(SM) Center有提供一天的鑑賞期，只要再購買軟體的24小時內，都可以將購買的訂單給取消。"
 ---
 

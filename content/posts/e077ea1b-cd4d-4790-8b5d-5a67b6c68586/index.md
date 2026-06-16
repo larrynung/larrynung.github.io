@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Roaming Settings"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio 2013, Visual Studio]
 description: "Visual Studio 2013 preview開始支援Visual Studio設定的同步，開發人員不需要複雜的步驟就可以用原生的功能在不同電腦使用相同的開發環境設定。"
 ---
 

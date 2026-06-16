@@ -1,6 +1,7 @@
 ---
 title: "如何更新在Visual Studio Gallery上所發佈的元件"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "筆者之前在如何上傳Visual Studio Extension至Visual Studio Gallery這篇稍微介紹了一下怎樣發佈元件到Visual Studio Gallery，發佈後元件若是後續有在持續更新，總是會要更新發佈在Visual Studio Gallery的元件。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "JQuery UI - Progressbar Widget"
 date: "2015-12-23 00:30:00"
+tags: [jQuery]
 description: "要使用 JQuery UI 的 Progressbar Widget，首先必須引用 JQuery、JQueryUI。 接著在畫面上放入一個 div element。"
 ---
 

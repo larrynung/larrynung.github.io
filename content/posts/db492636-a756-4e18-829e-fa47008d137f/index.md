@@ -1,6 +1,7 @@
 ---
 title: "安裝並啟動transmission server，讓網樂通變身BT下載機"
 date: "2013-11-06 12:00:00"
+tags: [網樂通]
 description: "網樂通改機成功後，若想要讓網樂通變身BT下載機，我們可以為網樂通加掛transmission server。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛transmission。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Copy terminal output to clipboard"
 date: "2019-05-12 20:32:37"
+tags: [Linux]
 description: "要將終端機命令的輸出送到剪貼簿，我們可以使用 pbcopy 命令。只要在調用命令時用 pipeline 將命令輸出送給 pbcopy 即可。 ${Command} | pbcopy 調用完可找個記事本貼上試試，應該可以看到調用命令後的輸出內容。"
 ---
 
