@@ -1,0 +1,4 @@
+/* Preserve aspect ratio when intrinsic width/height attributes are set (fixes CLS) */
+img {
+    height: auto;
+}
