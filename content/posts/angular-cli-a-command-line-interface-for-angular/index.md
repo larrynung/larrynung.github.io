@@ -1,6 +1,7 @@
 ---
 title: "Angular CLI - A command line interface for Angular"
 date: "2017-04-23 18:25:08"
+description: "使用 Angular CLI 前，需先確認 Node.js 版本有到 6.9.0 以上，npm 有到 3 以上。 安裝用 npm 將 Angular CLI 安裝到全域。 npm install -g @angular/cli 安裝完可調用 ng 並帶入參數 -v 去查驗版本。"
 tags: [Angular]
 ---
 

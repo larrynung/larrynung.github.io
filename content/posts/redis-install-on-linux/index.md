@@ -1,6 +1,7 @@
 ---
 title: "Redis - Install on Linux"
 date: "2019-12-11 07:39:47"
+description: "要在 Linux 安裝 Redis，可先將 Redis 下載下來。 wget http://download.redis.io/redis-stable.tar.gz 解壓縮下載下來的檔案。 tar xvzf redis-stable.tar.gz 進到解壓縮後產出的目錄。"
 tags: [Redis]
 ---
 

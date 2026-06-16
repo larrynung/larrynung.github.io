@@ -1,7 +1,7 @@
 ---
 title: "[Web]使用BrowserStack測試網頁的相容性"
 date: "2013-11-06 12:00:00"
-description: "[Web]使用BrowserStack測試網頁的相容性"
+description: "筆者前幾天看到Cross Browser Debugging integrated into Visual Studio with BrowserStack這篇文章，因為覺得有趣就試玩了一下。"
 ---
 
 筆者前幾天看到Cross Browser Debugging integrated into Visual Studio with BrowserStack這篇文章，因為覺得有趣就試玩了一下。

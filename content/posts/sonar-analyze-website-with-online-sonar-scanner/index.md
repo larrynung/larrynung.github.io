@@ -1,6 +1,7 @@
 ---
 title: "sonar - Analyze website with online sonar scanner"
 date: "2017-10-27 23:58:08"
+description: "要使用 sonar 網站針對網站進行分析，可切到 online scanner 頁面。 輸入要分析的網站後按下 Enter 或是後方的 RUN SCAN 按鈕進行網站的分析。 sonar 會給一個 PERMALINK，點選該連結進到網站分析頁面。 等待網站分析完成。"
 tags: [sonar]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Use ResourceDictionary to do multi-language in WPF"
 date: "2013-11-06 12:00:00"
-description: "Use ResourceDictionary to do multi-language in WPF"
+description: "這篇稍稍紀錄一下怎樣在WPF中使用ResourceDictionary去做多語系程式。 首先準備好要做多語系的程式，這邊筆者事先隨便開個WPF Window，在上面放個Label元件，裡面打入\"Test\"字樣。"
 tags: [CSharp]
 ---
 

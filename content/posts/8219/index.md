@@ -1,7 +1,7 @@
 ---
 title: "[Control]MarqueeLabel 1.0"
 date: "2009-04-28 12:40:48"
-description: "[Control]MarqueeLabel 1.0"
+description: "Introduction MarqueeLabel要是沒記錯，應該是去年無聊時寫的控制項 。該控制項的功能就如同它的名稱一樣就只是跑馬燈的效果而已。 加入控制項 Step1.工具箱=>滑鼠右鍵=>選擇項目 Step2.選取控制項檔案 完成後就會在工具箱內看到MarqueeLabel控制項 類別成員…"
 tags: [Control]
 ---
 

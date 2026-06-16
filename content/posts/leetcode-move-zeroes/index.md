@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Move Zeroes"
 date: "2016-02-28 21:01:00"
-description: "LeetCode - Move Zeroes"
+description: "LeetCode 的 Move Zeroes 題目如下： Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the…"
 tags: [LeetCode]
 ---
 

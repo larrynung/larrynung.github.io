@@ -1,7 +1,7 @@
 ---
 title: "[C++/CLI]Nativated物件處理Managed物件的事件"
 date: "2010-07-01 01:01:43"
-description: "[C++/CLI]Nativated物件處理Managed物件的事件"
+description: "在C++/CLI中Nativated物件與Managed物件允許混合使用，像是Nativated物件裡面就可以拿Managed物件來直接使用，只要透過gcroot關鍵字來宣告Managed物件就可以了，使用上不會太難。"
 tags: [C++]
 ---
 

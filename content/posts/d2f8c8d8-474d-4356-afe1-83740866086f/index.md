@@ -1,7 +1,7 @@
 ---
 title: "RubyGems"
 date: "2013-11-06 12:00:00"
-description: "RubyGems"
+description: "RubyGems是Ruby上的套件管理工具，透過RubyGems我們可以很容易的呼叫命令去搜尋、安裝、與管理Ruby上的套件。若是安裝Ruby 1.9以後的版本，或是電腦中有安裝RVM的就會內建RubyGems可供使用，不然就要自行另外安裝。"
 tags: [Ruby]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Read a Single Event with .NET API"
 date: "2018-09-17 22:32:13"
+description: "要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內特定的 Event，可以帶入 Stream 的名稱、Event 的編號，調用 Connection.ReadEventAsync 方法。 然後再去讀取需要的 Event 資料即可。"
 tags: [Event Store]
 ---
 

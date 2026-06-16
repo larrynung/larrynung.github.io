@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio][C#]如何客制化BCL內建類別的除錯訊息與監看訊息"
 date: "2011-06-20 01:14:47"
-description: "[Visual Studio][C#]如何客制化BCL內建類別的除錯訊息與監看訊息"
+description: "在[C#]使用DebuggerDisplayAttribute自訂除錯監看訊息與[[C#][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊這兩篇文章中，筆者稍微的帶出了如何去客制化除錯訊息與監看訊息。"
 tags: [Visual Studio]
 ---
 

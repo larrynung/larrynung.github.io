@@ -1,6 +1,7 @@
 ---
 title: "migrate - Getting started"
 date: "2019-08-04 09:27:58"
+description: "migrate 安裝後可調用命令查閱 CLI 使用方式。 migrate -help 使用方式如下: 簡單說 -source 跟 -database 這兩個 Options 與要運行的 Command 是必帶的。"
 tags: [migrate]
 ---
 

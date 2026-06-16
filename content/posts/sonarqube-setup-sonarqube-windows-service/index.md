@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Setup SonarQube windows service"
 date: "2016-09-28 22:34:14"
+description: "要設定 SonarQube Windows 服務，只要運行 InstallNTService.bat 檔即可。 運行完，SonarQube 的 Service 就安裝設定完畢了。"
 tags: [SonarQube]
 ---
 

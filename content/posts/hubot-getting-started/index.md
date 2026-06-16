@@ -1,6 +1,7 @@
 ---
 title: "Hubot - Getting started"
 date: "2018-10-31 08:46:14"
+description: "Hubot 安裝環境內需先有 Node.js，然後透過 Node.js 套件管理工具安裝 Yeoman 與 Hubot 到全域。 npm install -g yo generator-hubot 透過 Yeoman 建立 Hubot 專案。"
 tags: [Hubot]
 ---
 

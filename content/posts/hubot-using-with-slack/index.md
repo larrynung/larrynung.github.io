@@ -1,6 +1,7 @@
 ---
 title: "Hubot - Using with slack"
 date: "2018-11-10 00:14:25"
+description: "要將 Hubot 整合 Slack，首先要先在 Slack 上建立 Hubot App。 在 Slack 上點選加入 Apps。 選取安裝 Hubot App。 點選 Install 按鈕。 為加進 Slack 的 Hubot 取個名字，然後按下 Add Hubot Integration 按鈕。"
 tags: [Hubot]
 ---
 

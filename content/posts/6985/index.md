@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]GC.Collect()造成的怪現象"
 slug: "[CSharp][VB.NET]GC.Collect()造成的怪現象"
 date: "2009-01-30 10:48:06"
-description: "[C#][VB.NET]GC.Collect()造成的怪現象"
+description: "Abstract Introduction Example Conclusion Download Introduction 前一陣子在用同事程式時，總覺得速度有點慢，但卻不知道問題出在哪個同事的Code，因此針對底層同事的程式做了效率上面的測試。"
 tags: [CSharp,VB.NET]
 ---
 

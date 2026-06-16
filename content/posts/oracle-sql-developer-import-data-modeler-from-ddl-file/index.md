@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Import data modeler from DDL file"
 date: "2018-08-06 23:37:45"
+description: "在維護 Data Modeler 時，若已有現成的 DDL File，可以點選 [File | Data Modeler | Import | DDL File] 主選單選項。 將要匯入的 DDL File 加入，按下 OK 按鈕。 選取資料庫類型，按下 OK 按鈕繼續。"
 tags: [Oracle SQL Developer]
 ---
 

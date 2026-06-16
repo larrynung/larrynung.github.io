@@ -1,6 +1,7 @@
 ---
 title: "Zapier - Share new RSS feed items to Facebook"
 date: "2017-04-21 23:21:08"
+description: "要使用 Zapier 去觀察 RSS 的變化自動在 Facebook 貼文，可先找到對應的 Zap。 按下 'Create this Zap' 建立 Zap。 接著要連接 RSS。 帶入 RSS 的位置後按下 'Continue' 按鈕繼續。"
 tags: [Zapier]
 ---
 

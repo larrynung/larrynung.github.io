@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Custom Contract"
 date: "2015-02-06 20:33:00"
-description: "PostSharp - Custom Contract"
+description: "PostSharp 內建的 Contracts 能支援我們做些常見的檢查，若是內建的無法滿足，我們也可以自行擴建 Contract。 擴建時要先確保 PostSharp.Patterns.Model 的引用已加入專案中，若無可透過 NuGet 將套件安裝起來。"
 tags: [PostSharp]
 ---
 

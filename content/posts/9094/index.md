@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]從登錄檔中讀取CPU資訊"
 date: "2009-07-03 12:00:52"
-description: "[VB.NET]從登錄檔中讀取CPU資訊"
+description: "要由登錄檔中讀取CPU資訊。首先，我們必需要了解CPU資訊是存放在登錄檔的何處。讓我們看一下下圖： 由圖中可知，CPU資訊是存放在[HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\CentralProcessor]中，"
 tags: [VB.NET]
 ---
 

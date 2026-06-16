@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Logging with interceptor in gRPC service"
 date: "2019-11-29 08:05:51"
+description: "要紀錄每次 gRPC 的呼叫，可以使用 gRPC interceptor 來做。 建立一個 Interceptor 類別繼承自 gRPC 的 Interceptor，建立個建構子允許注入 Logger，接著覆寫掉會用到的方法，像是 UnaryServerHandler，"
 tags: [gRPC]
 ---
 

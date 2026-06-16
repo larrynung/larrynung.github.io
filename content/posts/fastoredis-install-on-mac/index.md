@@ -1,6 +1,7 @@
 ---
 title: "FastoRedis - Install on MAC"
 date: "2019-03-09 16:16:29"
+description: "FastoRedis 是一跨平台的 Redis GUI 管理工具，可在 FastoRedis 的下載頁面下載該軟體。 下載要安裝的作業系統版本。 筆者這邊下載的是 MAC 的版本，下載後點選下載下來的 dmg 檔，按下 Agree 按鈕同意 License。"
 tags: [FastoRedis, Redis]
 ---
 

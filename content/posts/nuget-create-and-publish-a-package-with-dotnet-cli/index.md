@@ -1,6 +1,7 @@
 ---
 title: "NuGet - Create and publish a package with dotnet CLI"
 date: "2021-02-18 08:17:51"
+description: "要建立 NuGet 套件，需先確認專案檔內有設計 NuGet 套件所需之資訊，像是套件識別碼、版本、作者、公司等。 然後可用 dotnet pack 命令將套件打包。 dotnet pack 或是在專案檔內加設定 GeneratePackageOnBuild，讓專案在建置時自動產生。"
 tags: [NuGet]
 ---
 

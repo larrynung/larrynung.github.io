@@ -2,7 +2,7 @@
 title: "[C#].NET 4.5 New Feature - Regex match with timeout"
 slug: "[CSharp].NET 4.5 New Feature - Regex match with timeout"
 date: "2011-10-25 01:20:13"
-description: "[C#].NET 4.5 New Feature - Regex match with timeout"
+description: ".Net 4.5中Regex多了一個內含Timespan的多載版本，該多載版本方法允許開發人員帶入一個TimeSpan指定Timeout的值，當正規表示式比對運行超過指定的時間即中止比對。"
 tags: [CSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Scaffold class"
 date: "2018-05-02 23:58:07"
+description: "Flutter 的 Scaffold widget 可用來實現基本的 material design layout。 其建構子如下： Scaffold({Key key, PreferredSizeWidget appBar, Widget body, Widget…"
 tags: [Flutter]
 ---
 

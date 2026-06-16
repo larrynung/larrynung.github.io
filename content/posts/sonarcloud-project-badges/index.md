@@ -1,6 +1,7 @@
 ---
 title: "SonarCloud - Project badges"
 date: "2018-07-25 13:47:51"
+description: "要使用 SonarCloud 的 Project badges，可以到 SonarCloud 的 Project 頁面，點選右下角的 Get project badges 按鈕。 選取要使用的 Project badges 與 Metric。"
 tags: [SonarQube]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "BuiltinCmd - Integrate windows cmd terminal into Visual Studio"
 date: "2017-09-22 13:44:06"
+description: "BuiltinCmd 是 Visual Studio 的擴充套件，能整合命令列視窗至 Visual Studio。 透過 Extension Manager 安裝套件。 將 Visual Studio 重啟。"
 tags: [Visual Studio, Visual Studio 2017]
 ---
 

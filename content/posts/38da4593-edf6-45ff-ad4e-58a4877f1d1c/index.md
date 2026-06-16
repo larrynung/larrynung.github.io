@@ -1,7 +1,7 @@
 ---
 title: "[網樂通改機][sh4twbox]安裝並啟動samba，讓網樂通可透過網芳連接"
 date: "2013-11-06 12:00:00"
-description: "[網樂通改機][sh4twbox]安裝並啟動samba，讓網樂通可透過網芳連接"
+description: "網樂通改機成功後，若想要透過網芳連進去，我們可以為網樂通加掛samba server。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛samba server。"
 ---
 
 網樂通改機成功後，若想要透過網芳連進去，我們可以為網樂通加掛samba server。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛samba server。

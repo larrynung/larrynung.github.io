@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Stream.CopyTo"
 date: "2010-11-24 12:55:49"
-description: ".NET 4.0 New Feature - Stream.CopyTo"
+description: ".NET 4.0在Stream類別中新增了CopyTo方法，該方法有兩個多載版本CopyTo(Stream)、與CopyTo(Stream, Int32)。 CopyTo方法主要功能為將當前的資料流內容複製到另一資料流，能讓我們快速的做資料流內容的複製，不需要像以往一樣需先將來源資料流內容讀出，"
 tags: [CSharp]
 ---
 

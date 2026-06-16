@@ -1,6 +1,7 @@
 ---
 title: "bulk-require - require whole directory of trees in bulk"
 date: "2018-07-29 21:46:02"
+description: "在撰寫 Node.js 時需要的模組我們需要載入才可以使用，bulk-require 套件能讓我們快速的載入目錄內的模組，不需要一個一個載入。 使用上需先安裝 bulk-require 套件。 npm install bulk-require 接著載入 bulk-require 模組。"
 tags: [Node.js]
 ---
 

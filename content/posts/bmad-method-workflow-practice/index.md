@@ -1,6 +1,7 @@
 ---
 title: 'BMAD-METHOD - Workflow practice'
 date: 2025-09-07T10:14:34+08:00
+description: "本文將依據 BMAD-METHOD 的標準流程，一步步展示如何透過與 AI Agent 的對話，從零開始建立一個 ToDo List 應用程式。這個過程被分為「規劃」與「執行」兩大階段。"
 tags: ['BMAD-METHOD']
 ---
 

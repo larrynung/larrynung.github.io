@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Contract Inheritance"
 date: "2015-02-08 16:17:00"
-description: "PostSharp - Contract Inheritance"
+description: "PostSharp 的 Contract 跟 Conde Contract 一樣，具備可被繼承的特性。凡是套用在 abstract、virtual、或 interface 方法上的 Contract，其子類別都會繼承到，在開發上十分的好用。"
 tags: [PostSharp]
 ---
 

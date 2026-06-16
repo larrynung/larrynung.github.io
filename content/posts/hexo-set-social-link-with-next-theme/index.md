@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Set social link with NexT theme"
 date: "2016-06-23 22:55:45"
+description: "要設定 NexT 主題的 Social Link，只要開啟 Theme 的設定檔，設定 social link 的位置以及 social icon 即可。"
 tags: [Hexo]
 ---
 

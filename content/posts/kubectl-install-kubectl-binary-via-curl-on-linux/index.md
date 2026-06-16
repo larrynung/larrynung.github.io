@@ -1,6 +1,7 @@
 ---
 title: "kubectl - Install kubectl binary via curl on Linux"
 date: "2017-09-14 22:38:14"
+description: "要在 Linux 安裝 kubectl，可以透過 curl 下載 kubectl。 如果要使用最新的版本的可調用下列命令。 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s…"
 tags: [kubectl]
 ---
 

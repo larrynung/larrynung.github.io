@@ -1,7 +1,7 @@
 ---
 title: "Travis CI - Build Status images"
 date: "2014-01-15 23:57:00"
-description: "Travis CI - Build Status images"
+description: "Travis CI 支援 Build status image，能讓我們將 Repository 建置的狀態嵌至網站上。 使用時只要開啟 Travis CI，將左側這邊切換至 My Repositories。"
 tags: [Travis, CI]
 ---
 

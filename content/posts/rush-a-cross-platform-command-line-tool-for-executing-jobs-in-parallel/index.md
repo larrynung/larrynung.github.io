@@ -1,6 +1,7 @@
 ---
 title: "rush - A cross-platform command-line tool for executing jobs in parallel"
 date: "2017-06-17 11:43:46"
+description: "rush 是一跨平台的命令列工具，能用來並行指定的命令。 自官網上下載下來後解壓縮即可使用。 其使用方式如下： 比較重要的參數有 -D、-k、-T。 在 Windows 上使用只要用 echo 將參數透過 pipline 送進 rush，如有多個參數，rush 可用 -D 帶入分隔符號，"
 ---
 
 rush 是一跨平台的命令列工具，能用來並行指定的命令。

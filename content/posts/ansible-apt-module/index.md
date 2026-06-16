@@ -1,6 +1,7 @@
 ---
 title: "Ansible - APT module"
 date: "2017-05-26 23:30:25"
+description: "Ansible 的 APT module 可以用來管理 APT 套件。 可用的參數如下： | parameter | required | default | choices | comments |…"
 tags: [Ansible]
 ---
 

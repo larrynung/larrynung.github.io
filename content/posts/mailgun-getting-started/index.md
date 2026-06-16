@@ -1,6 +1,7 @@
 ---
 title: "Mailgun - Getting started"
 date: "2018-01-29 00:02:23"
+description: "要使用 Mailgun 發送 Email，先要有 Mailgun 會員帳號。 註冊成為 Mailgun 會員後，會被導到 https://app.mailgun.com/app/account/setup 頁面，"
 tags: [Mailgun]
 ---
 

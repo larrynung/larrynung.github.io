@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Upload NuGet package from disk"
 date: "2017-08-21 23:19:50"
+description: "要從本地上傳 NuGet 套件到 ProGet 的 NuGet feed，可在 ProGet 的 NuGet feed 頁面按下 Add Package 按鈕。 點選 Upload from Disk。 按下 Choose File 按鈕。 選取要上傳的 NuGet 套件。"
 tags: [ProGet]
 ---
 

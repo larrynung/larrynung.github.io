@@ -1,7 +1,7 @@
 ---
 title: "mozjpeg encoder - smaller jpegs for everyone"
 date: "2014-09-21 16:23:00"
-description: "mozjpeg encoder - smaller jpegs for everyone"
+description: "筆者在 Mozjpeg - Improved JPEG encoder - Level Up 這篇稍稍的介紹了一下 Mozilla 的 Mozjpeg 專案及其用法。但需要進行檔案的編譯或是下載，取得檔案後要再下命令才能轉換。對於只是想要做個體驗，或是臨時要做處理的，我們應該不會想這麼做。"
 ---
 
 筆者在 [Mozjpeg - Improved JPEG encoder - Level Up](http://larrynung.github.io/2014/09/20/mozjpeg-improved-jpeg-encoder/) 這篇稍稍的介紹了一下 Mozilla 的 Mozjpeg 專案及其用法。但需要進行檔案的編譯或是下載，取得檔案後要再下命令才能轉換。對於只是想要做個體驗，或是臨時要做處理的，我們應該不會想這麼做。

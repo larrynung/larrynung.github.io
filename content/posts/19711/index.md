@@ -1,7 +1,7 @@
 ---
 title: "PermissionController權限管理類別"
 date: "2010-11-25 12:59:28"
-description: "PermissionController權限管理類別"
+description: "由於權限控管功能很常被用到，因此又重新挖出了水瓶大Enum 的設計與應用 - 簡易權限設計這篇，想辦法整理一個不需更動又能重複使用的類別出來，最後結合泛型與反射做出了權限管理類別的雛型，這邊將該類別暫定為PermissionController。"
 tags: [VB.NET]
 ---
 

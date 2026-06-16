@@ -1,6 +1,7 @@
 ---
 title: "Mochawesome - A Gorgeous HTML/CSS Reporter for Mocha.js"
 date: "2018-07-29 22:59:47"
+description: "Mochawesome 能讓 Mocha 支援產出 HTML 的測試報告。 使用前需安裝 Mochawesome 套件。 npm install --save-dev mochawesome 調用 Mocha 並使用 -reporter 參數指定使用 Mochawesome 產出測試報告。"
 tags: [Node.js]
 ---
 

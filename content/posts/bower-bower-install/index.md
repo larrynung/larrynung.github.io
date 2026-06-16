@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower install"
 date: "2016-01-14 09:57:00"
-description: "Bower - Bower install"
+description: "Bower install 可用來安裝 bower 的 package 以及其依類的套件。 使用方式如下： bower install bower install bower install # bower install 會依據 bower.json 的設定下去安裝 bower 套件。"
 tags: [Bower]
 ---
 

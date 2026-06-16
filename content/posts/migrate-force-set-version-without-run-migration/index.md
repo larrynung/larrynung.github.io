@@ -1,6 +1,7 @@
 ---
 title: "migrate - Force set version without run migration"
 date: "2019-08-19 09:02:59"
+description: "migrate 的 force 命令可不運行 migration 就強制設定版本。 像是筆者這邊有個沒套過 migration 的資料庫。 migrate -source $source -database $database version 筆者強制設定資料庫版本。"
 tags: [migrate]
 ---
 

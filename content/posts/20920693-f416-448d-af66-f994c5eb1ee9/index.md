@@ -1,7 +1,7 @@
 ---
 title: "安裝stlinux23-sh4-microperl套件，讓網樂通具備運行Perl的能力"
 date: "2013-11-06 12:00:00"
-description: "安裝stlinux23-sh4-microperl套件，讓網樂通具備運行Perl的能力"
+description: "網樂通改機成功後，若想要讓網樂通可以支援運行Perl的能力，我們可以為網樂通加掛stlinux23-sh4-microperl套件。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛stlinux23-sh4-microperl套件。"
 ---
 
 網樂通改機成功後，若想要讓網樂通可以支援運行Perl的能力，我們可以為網樂通加掛stlinux23-sh4-microperl套件。這篇稍微紀錄一下要怎樣才能透過sh4twbox為網樂通加掛stlinux23-sh4-microperl套件。

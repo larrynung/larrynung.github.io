@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 - 64-bit Edit and Continue for .NET Framework code"
 date: "2014-06-16 00:12:00"
-description: "Visual Studio 2013 - 64-bit Edit and Continue for .NET Framework code"
+description: "Visual Studio 的 Edit And Continue 功能可以允許開發人員在除錯的同時進行程式的修改，Visual Studio 會自動套用變更的程式碼，不需中斷除錯或是重新編譯，能有效的節省時間，增加除錯與開發上的效率。"
 tags: [Visual Studio]
 ---
 

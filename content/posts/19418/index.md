@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Memory Mapped File"
 date: "2010-11-12 05:50:50"
-description: ".NET 4.0 New Feature - Memory Mapped File"
+description: ".NET Framework 在 4.0 新增了記憶體對應檔案(Memory Mapped File)功能，將以前需透過 API 才能使用的功能包在 .NET Framework 的 System.IO.MemoryMappedFiles 命名空間中，"
 tags: [VB.NET]
 ---
 

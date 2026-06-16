@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET MVC - Remove unnecessary view engine"
 date: "2014-04-08 00:08:00"
-description: "ASP.NET MVC - Remove unnecessary view engine"
+description: "ASP.NET MVC 預設會載入多個 View engine，儘管在專案建立之時我們就已明確的指定了所要使用的 View engine。 以一個最簡單的空專案來看，這邊特地將 Home 的 Index view 給刪掉，接著將之運行，運行後因為找不到 View 所以會顯示錯誤頁面。"
 tags: [ASP.NET MVC]
 ---
 

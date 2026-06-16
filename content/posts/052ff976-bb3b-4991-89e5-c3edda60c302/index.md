@@ -1,7 +1,7 @@
 ---
 title: "Connect to Team Fundation Service"
 date: "2013-11-06 12:00:00"
-description: "Connect to Team Fundation Service"
+description: "之前筆者就一直很想抽空玩一下Team Fundation Server，但總是卡在環境這邊。因為要玩TFS首先就必需要生出一個Server版的Windows才能安裝，而筆者就是沒有多餘的電腦可以安裝Server版本的Windows，工作中又是用SVN或是用Git來做版控，所以遲遲沒能碰觸這塊。"
 ---
 
 之前筆者就一直很想抽空玩一下Team Fundation Server，但總是卡在環境這邊。因為要玩TFS首先就必需要生出一個Server版的Windows才能安裝，而筆者就是沒有多餘的電腦可以安裝Server版本的Windows，工作中又是用SVN或是用Git來做版控，所以遲遲沒能碰觸這塊。

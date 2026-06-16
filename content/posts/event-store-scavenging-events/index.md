@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Scavenging events"
 date: "2018-09-29 23:46:06"
+description: "當刪除 Event 或是 Stream 時， Event Store 不會立即刪除，硬碟空間也並未被回收，若要讓 Event Store 立即做刪除的處理，可以使用 Event Store 的 Scavenge。"
 tags: [Event Store]
 ---
 

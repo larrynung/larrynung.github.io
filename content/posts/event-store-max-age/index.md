@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Max age"
 date: "2018-09-26 22:54:07"
+description: "要設定 Event Store 的 Stream 內 Event 的存活時間，可以設定 Stream 的 Max age。 透過 StreamMetadata 的 maxAge 指定 Stream 內 Event 的存活時間，"
 tags: [Event Store]
 ---
 

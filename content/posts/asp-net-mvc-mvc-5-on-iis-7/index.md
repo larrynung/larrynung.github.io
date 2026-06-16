@@ -1,6 +1,7 @@
 ---
 title: "ASP.NET MVC - MVC 5 on IIS 7"
 date: "2016-07-29 23:39:54"
+description: "在 IIS 7 使用 ASP.NET MVC 5，Routing 功能會無法正常運作，會看到 403 或是 404 頁面。 這邊可以在 Web.Config 的 modules 這邊加上 runAllManagedModulesForAllRequests=\"true\" 設定，"
 tags: [ASP.NET MVC]
 ---
 

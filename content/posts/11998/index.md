@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Detect Design-Time & Run-Time"
 date: "2009-11-16 01:22:12"
-description: "[VB.NET]Detect Design-Time & Run-Time"
+description: "Introduction 在撰寫控制項時，我們常會需要依照不同的階段作不同的處理。像是在設計階段顯示與運行階段不同的畫面、關閉些在設計階段會造成錯誤的處理等等。這邊將對偵測目前所處階段的語法作些整理。"
 tags: [VB.NET]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Upload blog source"
 date: "2016-06-11 22:11:20"
+description: "Hexo 架設完畢後，我們除了要將 blog deploy 上去外，source 的部分也要記得放到版控上面。 首先需進到部落格的目錄，初始 git。 git init 接著設定遠端的 git 位置，這邊如果是用 GitHub，位置的部分就是 GitHub page 的 repository 位置。"
 tags: [Hexo]
 ---
 

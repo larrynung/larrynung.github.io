@@ -1,6 +1,7 @@
 ---
 title: "ASP.NET Core - Building Projects with Yeoman"
 date: "2016-11-15 23:53:54"
+description: "要使用 Yeoman 去建立 ASP.NET Core 專案，首先需安裝 Yeoman 與 bower。 npm install -g yo bower 再來要安裝 ASP.NET generator。"
 tags: [ASP.NET Core]
 ---
 

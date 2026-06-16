@@ -1,6 +1,7 @@
 ---
 title: "SikuliX - Global Settings"
 date: "2016-11-03 12:59:29"
+description: "SikuliX 有提供一些設定值可供設定，像是 ActionLogs、InfoLogs、DebugLogs、MinSimilarity、MoveMouseDelay、DelayAfterDrag、DelayBeforeDrop、SlowMotionDelay、WaitScanRate、Observe…"
 tags: [SikuliX]
 ---
 

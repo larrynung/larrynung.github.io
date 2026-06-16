@@ -1,6 +1,7 @@
 ---
 title: "Slack - Add RSS feeds to Slack"
 date: "2018-11-20 23:46:56"
+description: "要整合 Slack 與 RSS feeds，可在 Slack 中加入 RSS app。 按下 Add RSS Integration 按鈕。 設定要訂閱的 RSS feed 以及要發送到的 Channel。 訂閱的 RSS 資料就會送到 Slack 的指定 Channel 上。"
 tags: [Slack]
 ---
 

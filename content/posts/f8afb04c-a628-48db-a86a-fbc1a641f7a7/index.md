@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's tkMessageBox"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's tkMessageBox"
+description: "要使用Tkinter的MessageBox，首先要先將tkMessageBox package import進來。 tkMessageBox的用法大概像下面這樣，依使用需求呼叫不同的方法，並帶入訊息視窗的標題、內文、以及一些額外的參數就可以了。"
 tags: [Python]
 ---
 

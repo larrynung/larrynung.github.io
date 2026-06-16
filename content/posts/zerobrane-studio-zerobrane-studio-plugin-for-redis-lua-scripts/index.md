@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - ZeroBrane Studio Plugin for Redis Lua Scripts"
 date: "2017-04-19 00:16:51"
+description: "要讓 ZeroBrane Studio 支援 Redis，先要取得 redis.lua。 將其內容存檔。 儲存到 ZeroBrane Studio 的 packages 目錄下。"
 tags: [ZeroBrane Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Cake - Build with MSBuild"
 date: "2018-11-08 00:09:34"
+description: "要使用 Cake 透過 MSBuild 建置方案，可以參閱 Cake 內使用 MSBuild 的方式。 調用上就是帶入方案檔即可，如有需要設定再帶入設定值而已。 所以建置的腳本寫起來會像下面這樣，先帶入方案檔的位置找到對應的方案檔，遍尋方案檔調用 MSBuild，如有需要則加帶設定，"
 tags: [Cake]
 ---
 

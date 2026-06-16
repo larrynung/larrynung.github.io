@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Max count"
 date: "2018-09-25 23:20:40"
+description: "要設定 Event Store 的 Stream 只存放指定個數的 Event，可以設定 Stream 的 Max count。 透過 StreamMetadata 的 MaxCount 指定 Stream 最大存放的 Event 數，"
 tags: [Event Store]
 ---
 

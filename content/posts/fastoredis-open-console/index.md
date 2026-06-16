@@ -1,6 +1,7 @@
 ---
 title: "FastoRedis - Open console"
 date: "2019-03-11 16:03:41"
+description: "要透過 FastoRedis 以 Console 的方式跟 Redis 互動，我們可在 Redis 連線後在左側的樹狀節點上按下滑鼠右鍵，選取滑鼠右鍵快顯選單中的 Open console 選單選項。 輸入要調用的 Redis 命令後按下 Execute 按鈕運行命令。"
 tags: [FastoRedis]
 ---
 

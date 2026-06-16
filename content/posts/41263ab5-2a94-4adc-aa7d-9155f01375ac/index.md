@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]透過Visual Studio 2012的選擇性貼上將XML與JSON直接轉成對應的類別"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio]透過Visual Studio 2012的選擇性貼上將XML與JSON直接轉成對應的類別"
+description: "在開發專案時若碰到要串接服務或是他人的API，常常避免不了都要面對XML或是JSON這兩種Data Format。以.NET的開發者來說XML這邊可以直接用Linq to XML或是XPath處理掉，JSON也可以透過JSON.NET避開產生對應的類別後去解序列化。"
 ---
 
 在開發專案時若碰到要串接服務或是他人的API，常常避免不了都要面對XML或是JSON這兩種Data Format。以.NET的開發者來說XML這邊可以直接用Linq to XML或是XPath處理掉，JSON也可以透過JSON.NET避開產生對應的類別後去解序列化。但是難免總是會有些狀況我們不得不面對這樣的問題，這時若是是JSON的Format很多開發者可能就會使用json2csharp去輔助產生對應的類別。

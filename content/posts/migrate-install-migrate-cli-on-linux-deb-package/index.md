@@ -1,6 +1,7 @@
 ---
 title: "migrate - Install migrate CLI on Linux (*.deb package)"
 date: "2019-08-03 21:08:02"
+description: "要在 Linux 上安裝 migrate，先將 migrate 的金鑰加入。 curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add - 將 migrate 加入套件來源清單。"
 tags: [migrate]
 ---
 

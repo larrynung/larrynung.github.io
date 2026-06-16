@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]101 Async Sample in C# and Visual Basic"
 date: "2011-03-25 01:16:26"
-description: "[.NET Resource]101 Async Sample in C# and Visual Basic"
+description: "101 Async Sample in C# and Visual Basic是用Silverlight技術所架構的非同步程式範例網站。 MSDN上有提到這網站可用來了解C#新的非同步特性，實際用起來感覺是可以比對.NET 5.0跟.NET 4.0在非同步寫法上的差異。"
 tags: [.NET Resource]
 ---
 

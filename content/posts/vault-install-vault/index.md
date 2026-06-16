@@ -1,6 +1,7 @@
 ---
 title: "Vault - Install Vault"
 date: "2019-12-18 22:09:54"
+description: "要安裝 Vault 可到這邊下載對應系統的檔案。 像是筆者用 Android 手機在用 Termux 玩，所以是下載 ARM 版本的檔案。 wget https://releases.hashicorp.com/vault/1.3.0/vault_1.3.0_linux_arm64.zip…"
 tags: [Vault, Termux]
 ---
 

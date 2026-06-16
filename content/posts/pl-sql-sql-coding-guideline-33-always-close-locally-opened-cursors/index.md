@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL  SQL CODING GUIDELINE 33 - Always close locally opened cursors"
 date: "2016-08-13 07:42:55"
+description: "條款三十三，總是關閉開啟的游標。 像是下面這樣將游標開啟後並未揪游標關閉，使用的資源不會自動釋放。 應該要自己將游標在適當的時機點關閉，使用的資源才會被釋放。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

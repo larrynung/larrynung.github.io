@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]擴充方法 (Extension Method)"
 slug: "[CSharp][VB.NET]擴充方法 (Extension Method)"
 date: "2009-07-26 02:10:46"
-description: "[C#][VB.NET]擴充方法 (Extension Method)"
+description: "Introduction 擴充方法(Extension Method)是.NET 3.5所提供的新語法，簡單的來說它的功能就是讓開發人員將自訂的功能加入至已定義的資料型別中。可讓您撰寫可呼叫的方法，就如同是現有型別的執行個體方法一樣。"
 tags: [VB.NET, CSharp]
 ---
 

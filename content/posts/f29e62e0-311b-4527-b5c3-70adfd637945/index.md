@@ -1,7 +1,7 @@
 ---
 title: "How to use LinkedIn's plugins"
 date: "2013-11-06 12:00:00"
-description: "How to use LinkedIn's plugins"
+description: "至筆者接觸LinkedIn以來，一直都是將LinkedIn視為跟Twitter一樣適合貼技術方面資訊的管道，所以筆者的技術文章多半都會轉貼到LinkedIn與Twitter上面。"
 ---
 
 至筆者接觸LinkedIn以來，一直都是將LinkedIn視為跟Twitter一樣適合貼技術方面資訊的管道，所以筆者的技術文章多半都會轉貼到LinkedIn與Twitter上面。且筆者設定了LinkedIn會轉貼至Twitter，Twitter又設定了轉貼至Facebook，所以技術文章只要貼在LinkedIn就會自動串到Twitter與Facebook。但要另外開啟LinkedIn將技術文章的位置貼上總還是有一點點的不方便，所以筆者前陣子抽空查了一下LinkedIn是否有類似Facebook那樣的PlugIn可以使用。

@@ -1,6 +1,7 @@
 ---
 title: "Coze - Create Agent"
 date: 2025-07-28T15:05:37Z
+description: "Coze 是一個創新的 AI 應用開發平台，它讓開發者可以輕鬆建立 AI 代理（Agents）並無縫整合到應用中。在這篇帖子中，我們將專注於如何使用 Coze 平台創建一個 Translator Agent，這是平台提供的眾多功能之一。"
 draft: false
 ---
 

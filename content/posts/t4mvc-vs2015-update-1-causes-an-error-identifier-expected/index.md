@@ -1,7 +1,7 @@
 ---
 title: "T4MVC - VS2015 Update 1 causes an error - Identifier Expected"
 date: "2016-01-23 21:40:00"
-description: "T4MVC - VS2015 Update 1 causes an error - Identifier Expected"
+description: "T4MVC 在 Visual Studio 2015 安裝完 Update 1 後，產生的程式碼會像這樣。 可以看到 ExecuteResult 方法的參數消失了，所以編譯時會報 Identifier Expected 的錯誤。"
 tags: [T4MVC]
 ---
 

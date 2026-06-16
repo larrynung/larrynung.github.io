@@ -1,7 +1,7 @@
 ---
 title: "[.NET Concept].NET Framework 4.0 Poster"
 date: "2009-08-22 05:39:20"
-description: "[.NET Concept].NET Framework 4.0 Poster"
+description: ".NET Framework 4.0 Poster有兩種版本。一種是DeepZoom version，可以使用滑鼠滾輪或是透過按下按鈕去控制可視範圍與縮放。一種是PDF version，可下載下來自行透過PDF Reader瀏覽。"
 tags: [.NET Concept]
 ---
 

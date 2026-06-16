@@ -1,6 +1,7 @@
 ---
 title: "Termux - Setup Jupyter Notebook"
 date: "2018-10-15 23:31:35"
+description: "要在 Termux 安裝 Jupyter Notebook，要先安裝一些依賴的套件。 apt install clang python python-dev fftw libzmq libzmq-dev freetype freetype-dev libpng libpng-dev…"
 tags: [Termux]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - NUMTODSINTERVAL function"
 date: "2015-07-12 13:55:00"
-description: "PL/SQL - NUMTODSINTERVAL function"
+description: "NUMTODSINTERVAL function 會將帶入的值轉成特定單位的 Interval。 使用語法如下： NUMTODSINTERVAL( number, expression ) number 這邊帶入的是要轉換的值，expression 這邊帶入的是要轉換的單位，"
 tags: [PL/SQL]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "LogDevice - Show log tree using ldshell"
 date: "2018-10-10 00:11:29"
+description: "要查看 LogDevice 的 Log tree，可以調用 ldshell 命令使用 -c 參數指定使用 Interactive Mode，帶入 LogDevice 的設定檔，帶入 logs show 指定要查閱 Log tree 即可。"
 tags: [LogDevice]
 ---
 

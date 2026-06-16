@@ -1,7 +1,7 @@
 ---
 title: "[Win8]如何在Desktop mode取得Metro mode下看到的應用程式"
 date: "2013-11-06 12:00:00"
-description: "[Win8]如何在Desktop mode取得Metro mode下看到的應用程式"
+description: "我們在Win8按下熱鍵Win + Q可已進入搜尋應用程式的畫面，在這個畫面下我們可以看到很多我們安裝的APP。 有些App是可以在Desktop mode下運作的，但卻都要進入到Metro mode去找尋，若您覺得這樣的切換很麻煩，我們可以讓Desktop mode看到這些app。"
 ---
 
 我們在Win8按下熱鍵Win + Q可已進入搜尋應用程式的畫面，在這個畫面下我們可以看到很多我們安裝的APP。

@@ -1,6 +1,7 @@
 ---
 title: "Grunt - grunt-contrib-imagemin"
 date: "2016-09-23 22:46:32"
+description: "grunt-contrib-imagemin 套件可以用 Grunt 來將進行檔的壓縮。 使用時先用 npm 安裝 grunt-contrib-imagemin 套件。"
 tags: [Grunt]
 ---
 

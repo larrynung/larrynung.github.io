@@ -1,6 +1,7 @@
 ---
 title: "Consul - Consul cluster"
 date: "2018-12-10 15:59:03"
+description: "要設定 Consul Cluster，我們可以在一台電腦上用 Consul 命令啟用 Server 模式的 Agent。 consul agent -server -bootstrap-expect=1 \\ -data-dir= -node= -bind= \\…"
 tags: [Consul]
 ---
 

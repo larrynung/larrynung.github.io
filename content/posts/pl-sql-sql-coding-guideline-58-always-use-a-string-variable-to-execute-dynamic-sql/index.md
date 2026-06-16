@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 58 - Always use a string variable to execute dynamic SQL"
 date: "2017-07-10 13:36:21"
+description: "條款五十八，總是使用字串變數去執行 Dynamic SQL。 像是下面這段程式直接將要執行的字串帶入執行 Dynamic SQL 就不被建議。 建議的做法是用字串變數儲存要執行的 Dynamic SQL 語法，在將字串變數帶入動態運行。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

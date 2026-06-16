@@ -1,6 +1,7 @@
 ---
 title: "SuperBenchmarker - A load generator command-line tool for testing websites and HTTP APIs"
 date: "2013-10-27 20:25:00"
+description: "SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Framework 4.5開發而成。 可支援Get、Post、Put、Delete這些呼叫方式，叫用時能設定Concurrent user、Request數、Header template...等。"
 ---
 
 SuperBenchmarker 是ㄧ開放源碼的壓力測試命令列工具。用.NET Framework 4.5開發而成。

@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - MONTHS_BETWEEN Function"
 date: "2015-07-16 22:13:00"
-description: "PL/SQL - MONTHS_BETWEEN Function"
+description: "MONTHS_BETWEEN function 可計算兩個日期相差多少月份。 使用語法如下： MONTHS_BETWEEN( date1, date2 ) 帶入的兩個日期，若第一個日期大過第二個日期，則回傳正值的月份差。反之則回傳負值月份差。"
 tags: [PL/SQL]
 ---
 

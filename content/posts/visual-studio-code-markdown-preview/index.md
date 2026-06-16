@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Markdown preview"
 date: "2017-08-16 21:57:08"
+description: "Visual Studio Code 要預覽 Markdown，可以按下熱鍵 Ctrl + Shift + P / Cmd + Shift + P 開啟 command palette，選取 Markdown:Open Preview。"
 tags: [Visual Studio Code]
 ---
 

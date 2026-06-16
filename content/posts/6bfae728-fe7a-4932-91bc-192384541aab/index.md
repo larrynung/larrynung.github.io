@@ -1,7 +1,7 @@
 ---
 title: "使用Visual Studio International Pack做資源檔的簡繁轉換"
 date: "2013-11-06 12:00:00"
-description: "使用Visual Studio International Pack做資源檔的簡繁轉換"
+description: "Visual Studio International Pack 是微軟提供用來建立全球化的應用程式的類別庫。其內含Visual Studio的Add-In，能讓Visual Studio快速的把資源檔作簡繁轉換 。"
 ---
 
 Visual Studio International Pack 是微軟提供用來建立全球化的應用程式的類別庫。其內含Visual Studio的Add-In，能讓Visual Studio快速的把資源檔作簡繁轉換 。

@@ -1,7 +1,7 @@
 ---
 title: "Code Digger - Analyzes possible execution paths through your .NET code"
 date: "2013-12-28 12:59:00"
-description: "Code Digger - Analyzes possible execution paths through your .NET code"
+description: "Code Digger 是精簡版的 Pex，其內部還是使用 Pex 的程式碼分析引擎，能將有意義的參數的抓出，幫助我們更了解程式，並找到可能的淺在問題。目前該擴充套件支援 Visual Studio 2010 以後的版本 (Visual Studio 2012、 Visual Studio…"
 tags: [Visual Studio]
 ---
 

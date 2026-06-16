@@ -1,6 +1,7 @@
 ---
 title: "LuaRocks - The Lua package manager"
 date: "2017-04-23 21:29:25"
+description: "LuaRocks 是 Lua 的套件管理程式，可在官網找到下載頁面。 點選下載所要使用的版本。 安裝包下載下來後，解壓縮即可進行安裝，但是安裝前需先確定是否已裝有 Lua binary，如果 Lua binary 已經備妥，可以運行 'install.bat' 進行 LuaRocks 的安裝。"
 tags: [Lua]
 ---
 

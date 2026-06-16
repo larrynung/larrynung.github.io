@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Generic Lazy class"
 date: "2010-11-07 11:39:14"
-description: ".NET 4.0 New Feature - Generic Lazy class"
+description: ".NET 4.0新增一泛型Lazy類型，可用以延遲物件初始化設定，透過Lazy類型的建構子我們可將要延遲初始化的物件類型與其初始化動作傳入，第一次存取Lazy.Value屬性或是呼叫Lazy.ToString方法時，該類型就會幫我們執行對應的初始化動作，後續再去存取就會直接取得結果，"
 tags: [CSharp]
 ---
 

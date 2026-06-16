@@ -1,7 +1,7 @@
 ---
 title: "[C#]Json.NET - Reducing Serialized JSON Size"
 date: "2013-11-06 12:00:00"
-description: "[C#]Json.NET - Reducing Serialized JSON Size"
+description: "筆者在[C#]Json.NET - A high performance Json library這篇簡單的帶過了一下JSON.NET這個序列化函式庫，基本的操作只要理解那篇大概都不成問題，但最近在使用上JSON.NET又碰到一個問題，就是有時候沒有資料並不是總是不要序列化，"
 tags: [CSharp]
 ---
 

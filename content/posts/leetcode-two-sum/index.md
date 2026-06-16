@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Two Sum"
 date: "2015-07-05 21:56:00"
-description: "LeetCode - Two Sum"
+description: "LeetCode 的 Two Sum 題目如下： Given an array of integers, find two numbers such that they add up to a specific target number."
 ---
 
 LeetCode 的 Two Sum 題目如下：

@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Setup/update/remove plugins with Update Center"
 date: "2017-03-16 13:35:50"
+description: "SonarQube 提供 Update Center 可以讓我們很容易的控管 SonarQube 外掛套件。要使用 Update Center，可點選 [Administrator | System | Update Center]。"
 tags: [SonarQube]
 ---
 

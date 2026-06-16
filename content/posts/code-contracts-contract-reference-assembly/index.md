@@ -1,7 +1,7 @@
 ---
 title: "Code Contracts - Contract Reference Assembly"
 date: "2014-03-23 13:26:00"
-description: "Code Contracts - Contract Reference Assembly"
+description: "在使用 Code Contracts 時，程式會加上很多驗證的程式，可能是前置條件、可能是後置條件、也有可能是些不變性的驗證，因此很多人對於程式效能上都有相當的疑慮。"
 tags: [Code Contracts]
 ---
 

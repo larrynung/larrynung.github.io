@@ -1,6 +1,7 @@
 ---
 title: "Lua - pairs and ipairs"
 date: "2017-08-08 22:33:05"
+description: "Lua 內的 ipairs 可用來遍巡處理陣列，如果遍巡到非陣列元素，或是空值的話，遍巡動作即會中止。 所以像下面這樣的程式就不會將所有元素印出。 若是使用 pairs，則可遍巡所有元素。"
 tags: [Lua]
 ---
 

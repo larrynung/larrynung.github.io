@@ -1,6 +1,7 @@
 ---
 title: "sonar-tsql-plugin - Repository for T-SQL language plugin for Sonar"
 date: "2018-02-03 10:52:56"
+description: "sonar-tsql-plugin 是用來分析 T-SQL 的 SonarQube 套件，支援 14 的微軟內建的 analysis rules.aspx)，以及 120 個 SQL Code Guard analysis rule。"
 tags: [SonarQube]
 ---
 

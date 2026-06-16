@@ -1,6 +1,7 @@
 ---
 title: "Calibre Web - Install on windows"
 date: "2017-10-10 23:43:59"
+description: "要在 Windows 安裝 Calibre Web，可先在 Windows 安裝 Python 與 Pip。 然後將 Calibre Web 下載下來。 git clone https://github.com/janeczku/calibre-web.git 將 KindleGen 放至…"
 tags: [Calibre Web]
 ---
 

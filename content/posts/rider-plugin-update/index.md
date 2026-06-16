@@ -1,6 +1,7 @@
 ---
 title: "Rider - Plugin update"
 date: "2019-05-27 10:59:50"
+description: "要更新 Rider 的套件，可以透過 Rider 的更新自動偵測，當偵測到套件有更新時，Rider 的右下方會看到更新通知框，人框告知哪些套件可供更新，點選更新通知框內的 update 連結。 在 IDE and Plugin Updates 對話框中查閱套件的更新資訊。"
 tags: [Rider]
 ---
 

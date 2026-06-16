@@ -1,6 +1,7 @@
 ---
 title: "Travis CI - Restore package with Yarn"
 date: "2017-07-11 00:51:32"
+description: "要讓 Travis CI 使用 Yarn 去還原套件，最簡單的方式就是將 yarn.lock 一併簽入版控，Travis CI 偵測到 yarn.lock 後就會改使用 Yarn 去做套件的還原。"
 tags: [Travis]
 ---
 

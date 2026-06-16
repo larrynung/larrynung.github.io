@@ -1,6 +1,7 @@
 ---
 title: "Cake - Cake for Visual Studio"
 date: "2018-10-25 00:18:10"
+description: "Cake for Visual Studio 擴充套件可讓 Visual Studio 支援 Cake 的使用，可直接開啟 Extensions and Updates 功能... 搜尋並安裝。"
 tags: [Cake]
 ---
 

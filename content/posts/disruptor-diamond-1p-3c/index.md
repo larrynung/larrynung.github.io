@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - Diamond: 1P – 3C"
 date: "2016-03-18 23:14:00"
-description: "Disruptor - Diamond: 1P – 3C"
+description: "使用 Disruptor 時我們必須決定資料要怎樣在 Consumer 間流動，這有些常用的 Pattern 可供參考，只要熟悉這些 Pattern 那 Consumer 間有多複雜的協作應該都不是問題。"
 tags: [Disruptor]
 ---
 

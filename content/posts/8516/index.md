@@ -1,7 +1,7 @@
 ---
 title: "[Investment]房仲好、壞識人術"
 date: "2009-05-21 05:48:13"
-description: "[Investment]房仲好、壞識人術"
+description: "Introduction 以下內容轉載自2009/5/16自由時報週末生活版。 測試房仲專業度 第一招：對房屋市場的敏銳度 好房仲 => 會客觀且條理分析經濟環境與市場趨勢。 壞房仲 => 只會不斷強調自己手上房子最多、最便宜，企圖遮掩缺乏專業的事實。"
 tags: [Investment]
 ---
 

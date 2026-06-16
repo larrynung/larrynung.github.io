@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 55 - Avoid use of the RAISE_APPLICATION_ERROR built-in procedure with a hard coded 20,nnn error number"
 date: "2017-06-30 13:49:05"
+description: "條款五十五，避免直接使用 RAISE_APPLICATION_ERROR hard code 帶入 error number 與 error message 拋出錯誤。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

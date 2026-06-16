@@ -1,6 +1,7 @@
 ---
 title: "Lua - Logical operators"
 date: "2017-08-01 23:47:20"
+description: "Lua 的邏輯運算會將 false 與 nil 視為 false，其它值視為 true。 所以 and、or 運算寫起來就會像下面這樣。 and、or 運算也可以用作三元運算處理，最前面是條件值，然後用 and 運算接條件成立時要回傳的值，再 or 運算接條件不成立時要回傳的值即可。"
 tags: [Lua]
 ---
 

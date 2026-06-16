@@ -1,6 +1,7 @@
 ---
 title: "BusyBox - mv command"
 date: "2019-03-21 08:30:57"
+description: "mv 命令可以用來做檔案的搬移或更名。 可直接不帶參數調用命令查閱使用方式。 mv 要搬移檔案或是變更檔名，只要在調用命令時指定檔案的來源位置與目的位置。 mv [SourceFile] [TargetFile] 如果目的位置有檔案，預設會被覆蓋過去。"
 tags: [BusyBox]
 ---
 

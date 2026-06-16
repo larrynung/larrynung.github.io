@@ -1,7 +1,7 @@
 ---
 title: "[Software]使用GCALDaemon做Google日曆跟Rainlendar的同步"
 date: "2011-07-05 01:34:37"
-description: "[Software]使用GCALDaemon做Google日曆跟Rainlendar的同步"
+description: "Rainlendar日曆是目前用過的桌面日曆最為上手的一套軟體，付費專業版本具備同步Google日曆的功能，但是免費版本卻無此功能，因此裝了幾次到頭來最後都還是把它給移掉了。"
 tags: [Software]
 ---
 

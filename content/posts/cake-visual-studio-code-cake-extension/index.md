@@ -1,6 +1,7 @@
 ---
 title: "Cake - Visual Studio Code Cake extension"
 date: "2018-11-06 23:00:17"
+description: "要在 Visual Studio Code 使用 Cake，可以為 Visual Studio 加裝 Cake 擴充套件。 安裝完可開啟 Command Palette。 使用 Cake: Install a boostrapper 為專案加入 boostrapper。"
 tags: [Cake]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Web API - Adding Request.IsLocal to ASP.NET Web API"
 date: "2015-02-14 11:03:00"
-description: "Web API - Adding Request.IsLocal to ASP.NET Web API"
+description: "要判斷 Request 是否為本地 Request，在 ASP.NET 那邊因為 Request 是 HttpRequest 型態，內建有 IsLocal 方法，可以直接叫用判斷。"
 tags: [Web API]
 ---
 

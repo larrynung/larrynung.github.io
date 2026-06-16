@@ -1,6 +1,7 @@
 ---
 title: "LiteDB - Query data"
 date: "2017-12-18 23:08:26"
+description: "要取得 LiteDB 內的資料，首先需先將 LiteDB 開啟，取得對應的 Collection，調用 Collecion.FindAll 即可取得 Collection 內所有的資料。"
 tags: [LiteDB]
 ---
 

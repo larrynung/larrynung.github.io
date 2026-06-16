@@ -1,6 +1,7 @@
 ---
 title: "Slack - Integrate GitLab's Slack notifications service"
 date: "2018-11-20 00:41:17"
+description: "要使用 Slack 接收 GitLab CI 的通知訊息，可在 Slack 中加入 Incoming WebHooks App。 選取 GitLab CI 通知訊息收到後要顯示在哪個 Channel。 複製 Webhook URL 後續在 GitLab 設定那邊使用。"
 tags: [Slack]
 ---
 

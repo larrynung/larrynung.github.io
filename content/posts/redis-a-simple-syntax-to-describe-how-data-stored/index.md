@@ -1,6 +1,7 @@
 ---
 title: "Redis - A simple syntax to describe how data stored"
 date: "2019-07-28 22:16:23"
+description: "在使用 redis 時，資料怎樣在 redis 內存放常會需要設計，或是需要拿出來跟團隊溝通討論。用畫圖表述或是列表有點不方便，redis 資料結構豐富也不是很好表示。 這邊筆者嘗試定義簡易的表示方式。"
 tags: [Redis]
 ---
 

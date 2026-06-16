@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Check for updates"
 date: "2017-04-07 07:38:05"
+description: "要更新 Visual Studio Code，可點選 [Code | Check For Updates...] 選單選項。 Visual Studio Code 會開始檢查是否有可用的更新。 然後開始安裝更新。"
 tags: [Visual Studio Code]
 ---
 

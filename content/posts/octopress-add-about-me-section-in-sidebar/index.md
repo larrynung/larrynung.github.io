@@ -1,7 +1,7 @@
 ---
 title: "Octopress - Add About Me section in sidebar"
 date: "2014-06-14 18:21:00"
-description: "Octopress - Add About Me section in sidebar"
+description: "新增 About Me 檔，檔案位置存放在 source/_includes/custom/asides 下。 編輯後存檔退出。 接著開啟 _config.yml 設定檔找到 blog_index_asides 設定，將剛編輯好的 About Me 檔設上。"
 tags: [Octopress]
 ---
 

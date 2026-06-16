@@ -1,6 +1,7 @@
 ---
 title: "Rider - Sync settings"
 date: "2019-05-19 11:57:52"
+description: "要讓 Rider 在不同裝置有一致的設定，可開啟 Rider 的同步設定功能。 點選 Rider 的 [ File | Sync Settings to JetBrains Account... ] 主選單選項。 點選 Enable Settings Sync 按鈕啟動 Rider 設定同步。"
 tags: [Rider]
 ---
 

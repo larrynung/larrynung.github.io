@@ -1,6 +1,7 @@
 ---
 title: "Netling - A load tester client for easy web testing"
 date: "2016-08-12 13:19:37"
+description: "Netling 是一簡易的網站測試工具，目前沒有尚未直接釋出版本，需要自行下載程式碼編譯後運行。 他有支援兩種 Client 版本，一種是 WPF client，一種是 Console client。"
 ---
 
 Netling 是一簡易的網站測試工具，目前沒有尚未直接釋出版本，需要自行下載程式碼編譯後運行。

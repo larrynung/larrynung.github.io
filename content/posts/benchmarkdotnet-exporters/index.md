@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Exporters"
 date: "2017-04-14 13:42:20"
+description: "Exporter 會將 benchmark 的結果輸出成不同的格式。 內建可使用的 Exporter 有： HtmlExporter CsvExporter MarkdownExporter AsciiDocExporter CsvMeasurementsExporter…"
 tags: [BenchmarkDotNet]
 ---
 

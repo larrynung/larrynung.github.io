@@ -1,7 +1,7 @@
 ---
 title: "NuGet - Setting up a private NuGet server"
 date: "2014-02-23 12:11:00"
-description: "NuGet - Setting up a private NuGet server"
+description: "要架設一台私人的 NuGet Server，我們可以先在 Visual Studio 上開啟一個空的網頁專案。 接著透過 NuGet 安裝 NuGet Server 這樣一個 NuGet Server 網站就已經準備完成了，直接將之在 Visual Studio 上運行起來看看，"
 tags: [NuGet]
 ---
 

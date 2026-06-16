@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Power of Three"
 date: "2016-02-18 23:44:00"
-description: "LeetCode - Power of Three"
+description: "LeetCode 的 Power of Three 題目如下： Given an integer, write a function to determine if it is a power of three. 簡單說他要的是要一個功能，給予一個整數，能判別是否為 3 的冪次。"
 tags: [LeetCode]
 ---
 

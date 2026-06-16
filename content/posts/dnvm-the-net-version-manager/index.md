@@ -1,7 +1,7 @@
 ---
 title: "DNVM - The .NET Version Manager"
 date: "2015-11-05 23:22:00"
-description: "DNVM - The .NET Version Manager"
+description: "DNVM 是一命令列工具，允許我們透過命令去管理 .NET CLR/CoreCLR SDK 與運行的環境(DNX)。 可透過命令提示字元進行安裝 @powershell -NoProfile -ExecutionPolicy unrestricted -Command…"
 ---
 
 DNVM 是一命令列工具，允許我們透過命令去管理 .NET CLR/CoreCLR SDK 與運行的環境(DNX)。

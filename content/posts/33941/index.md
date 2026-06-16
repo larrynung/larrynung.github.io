@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: auto"
 date: "2011-08-23 12:39:30"
-description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: auto"
+description: "Visual studio 2010為C++的開發人員新增了auto這個C++0x的功能，讓變數宣告時的型態能由編譯器自動判別，自動依照初始值的型態去決定變數的型態，使得複雜的類型宣告能有更簡單的宣告方式。"
 tags: [C++,Visual Studio]
 ---
 

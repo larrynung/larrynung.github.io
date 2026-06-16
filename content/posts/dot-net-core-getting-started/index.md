@@ -1,7 +1,7 @@
 ---
 title: ".NET Core - Getting started"
 date: "2016-01-16 18:05:00"
-description: ".NET Core - Getting started"
+description: "要使用 .NET Core，首先需至 Getting started with .NET Core 這邊下載對應的安裝檔案。 接著執行下載下來的安裝包進行安裝。 接著開啟命令列，建立一個專案目錄，在專案目錄下輸入命令 dotnet new 建立 .NET Core 的專案，"
 tags: [.NET Core]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Performance][VB.NET]If V.S IIf"
 date: "2009-03-10 09:00:26"
-description: "[Performance][VB.NET]If V.S IIf"
+description: "前陣子去書局翻書，看到一本寫的不錯的VB.NET入門書，很適合初學者學習使用，作者是施威明工作室。稍微翻了一下，雖是簡單的入門書，但書中仍是有些我沒注意到的東西，像是這篇提到的If函式。開始用VB.NET到現在也已經一年多了，一直以為If就只能當陳述式用，看了書上描述才知道原來也有類似IIf的用法。"
 tags: [VB.NET,Performance]
 ---
 

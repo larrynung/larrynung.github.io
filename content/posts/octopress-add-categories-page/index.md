@@ -1,7 +1,7 @@
 ---
 title: "Octopress - Add categories page"
 date: "2014-06-09 23:22:00"
-description: "Octopress - Add categories page"
+description: "要為 Octopress 新增 Categories 頁面，首先需先叫用下列命令產生新的頁面： rake new_page[page] 像是下面這樣： 然後開啟剛所建立的頁面，加入用來產生 Categories 頁面的程式。"
 tags: [Octopress]
 ---
 

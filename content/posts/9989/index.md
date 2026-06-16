@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]VB 10.0 Statement Lambdas"
 date: "2009-08-11 09:00:16"
-description: "[VB.NET]VB 10.0 Statement Lambdas"
+description: "Introduction 在.NET Framework 3.5(含)以前，VB.NET的Lambdas在使用上存在諸多限制。像是只支援Singleline Lambdas，或是必需要有函式回傳值等問題，讓整個Lambdas在使用上十分的不便。但在VB 10.0以後，這些問題都已獲得了改善。"
 tags: [VB.NET]
 ---
 

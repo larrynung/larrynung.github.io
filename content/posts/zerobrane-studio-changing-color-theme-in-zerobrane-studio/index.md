@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - Changing color theme in ZeroBrane Studio"
 date: "2017-04-18 10:30:07"
+description: "ZeroBrane Studio 內建已有不同的 color theme 可供切換使用，有需要可開啟 cfg/tomorrow.lua 查閱可供使用的 color theme。"
 tags: [ZeroBrane Studio]
 ---
 

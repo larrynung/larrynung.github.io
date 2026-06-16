@@ -1,6 +1,7 @@
 ---
 title: "'C# 7.0 - Deconstruction'"
 date: "2017-03-06 11:50:56"
+description: "C# 7.0 新增 Deconstruction，可將 Tuple、結構、類別的成員拆解使用。 以 Tuple 為例，若想要將 Tuple 值拆解使用，可以用小括弧宣告出多個區域變數，並將 Value Tuple 指派過去，Value Tuple 的屬性值就會依序塞入這些區域變數。"
 tags: [CSharp, CSharp 7.0]
 ---
 

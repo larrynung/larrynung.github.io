@@ -1,7 +1,7 @@
 ---
 title: "[C#]Decode Unicode Character"
 date: "2013-11-06 12:00:00"
-description: "[C#]Decode Unicode Character"
+description: "最近偷閒玩些自己的東西，碰到要解析的資料有像是\\u0026這樣的Unicode Character，必須要將之解碼才會變成我們想要的資料。這時候就卡在怎樣做解碼的動作，本來在研究的程式牠是直接將\\u0026用\"&\"取代，這真是髒到我用不下手，所以順手下去研究了一下，"
 tags: [CSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Create feed"
 date: "2017-08-18 23:58:19"
+description: "ProGet 要建立 Feed，可在帳號登入後切至 Feeds 頁面。 點選 Create New Feed 按鈕。 選取要建立的 Feed 類型，看是 npm、NuGet、Bower... 設定要建立的 Feed 的名稱，按下 Create Feed 按鈕。"
 tags: [ProGet]
 ---
 

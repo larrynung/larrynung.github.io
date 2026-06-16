@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]HatchBrush"
 date: "2009-06-17 09:03:57"
-description: "[VB.NET]HatchBrush"
+description: "Introduction HatchBrush為.NET所提供的Brush類別，提供使用者 54 種系統筆刷樣式。 Constructer HatchBrush基本上用法跟一般的Brush一樣，多半我們只需了解建構子即可。"
 tags: [VB.NET]
 ---
 

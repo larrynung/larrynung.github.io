@@ -1,7 +1,7 @@
 ---
 title: "Clr C# Heap Allocation Analyzer"
 date: "2014-11-05 00:00:00"
-description: "Clr C# Heap Allocation Analyzer"
+description: "Clr C# Heap Allocation Analyzer 是 Diagnostic Analyzers 的套件，功能上有點類似 ReSharper - Heap Allocation Viewer Extension，能對 Heap 的操作部分做些 Highlight。"
 tags: [Roslyn, CSharp, Visual Studio]
 ---
 

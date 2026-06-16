@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 15 Preview - Naming style"
 date: "2016-04-18 15:28:00"
-description: "Visual Studio 15 Preview - Naming style"
+description: "Visual Studio 15 Preview 開始支援命名規則的檢查。 使用時可開啟選項視窗，切換到 [Text Editor | C# | Code Style | Naming] 頁面，點選右側頁面的 \"+\" 按鈕，加入新的命名規則。"
 tags: [Visual Studio]
 ---
 

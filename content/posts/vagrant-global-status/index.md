@@ -1,7 +1,7 @@
 ---
 title: "Vagrant - Global Status"
 date: "2015-11-11 00:41:00"
-description: "Vagrant - Global Status"
+description: "Vagrant box 一多，常常會 Vagrant up 後就忘 Vagrant halt，虛擬機就在背後持續運行。 這時我們可以呼叫 global-status 命令查詢當前使用者所有 Vagrant 虛擬機的使用狀況。"
 tags: [Vagrant]
 ---
 

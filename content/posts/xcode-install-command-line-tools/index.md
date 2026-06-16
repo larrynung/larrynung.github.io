@@ -1,7 +1,7 @@
 ---
 title: "Xcode - Install Command Line Tools"
 date: "2015-07-06 23:11:00"
-description: "Xcode - Install Command Line Tools"
+description: "在 MAC 上使用，有時候執行某些篇開發人員的程式時會要求安裝 Xcode 的 Command Line Tool。 要安裝 Xcode 的 Command Line Tool，我們可以先將 Xcode 開啟，點選上方的 [Xcode | Preferences...] 選單選項。"
 ---
 
 在 MAC 上使用，有時候執行某些篇開發人員的程式時會要求安裝 Xcode 的 Command Line Tool。

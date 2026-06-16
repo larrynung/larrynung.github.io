@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Computed properties"
 date: "2017-05-11 23:49:09"
+description: "Vue.js 的計算屬性(Computed properties)可以設定經過運算而來的屬性，有點類似其它程式語言的屬性(Property)，而一般的 Vue.js 屬性則是類似其它程式語言的欄位(Field)。"
 tags: [Vue.js]
 ---
 Vue.js 的計算屬性(Computed properties)可以設定經過運算而來的屬性，有點類似其它程式語言的屬性(Property)，而一般的 Vue.js 屬性則是類似其它程式語言的欄位(Field)。

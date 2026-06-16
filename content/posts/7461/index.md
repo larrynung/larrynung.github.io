@@ -1,7 +1,7 @@
 ---
 title: "[Performance][VB.NET].NET空字串判斷徹底研究"
 date: "2009-03-13 08:49:01"
-description: "[Performance][VB.NET].NET空字串判斷徹底研究"
+description: ".NET下的空字串判斷整體來說大概可分為下列幾種方法： 用 is Nothing 判斷。e.x. If str Is Nothing 用 = Nothing 判斷(類別中只有字串可以用 = Nothing 來判斷)。e.x. If str = Nothing 用 = \"\" 判斷。"
 tags: [Performance,VB.NET]
 ---
 

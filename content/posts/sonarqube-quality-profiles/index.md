@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Quality Profiles"
 date: "2017-03-22 13:13:45"
+description: "SonarQube 的 Quality Profiles 頁面提供我們查詢可供分析的 Profile。 Profile 為分析 Rule 的集合，多半會造著語言或是套件下去區分。"
 tags: [SonarQube]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Manual setup plugins"
 date: "2017-03-16 23:49:23"
+description: "SonarQube 有些套件未放置在 Update Center，無法透過 Update Center 進行安裝，必須自行手動安裝。 這邊以 PL/SQL Cop 的 SonarQube 套件為例做個示範，先將套件下載下來。"
 tags: [SonarQube]
 ---
 

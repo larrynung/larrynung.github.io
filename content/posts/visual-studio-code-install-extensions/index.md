@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Install extensions"
 date: "2017-04-12 08:17:15"
+description: "要安裝 Visual Studio Cdoe 的外掛套件，可按下熱鍵打開 Command Palette (Windows 為 Ctrl+ Shift + P， OS X 為 CMD + SHIFT + P)，搜尋並運行 Extensions:Install Extensions。"
 tags: [Visual Studio Code]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Automatically Implementing INotifyPropertyChanged"
 date: "2015-02-01 21:01:00"
-description: "PostSharp - Automatically Implementing INotifyPropertyChanged"
+description: "要用 PostSharp 自動實作 INotifyPropertyChanged，在安裝完 PostSharp 擴充套件後，我們可以在類別上直接按下右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Implement INotifyPropertyChanged 選單選項。"
 tags: [PostSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "BloomRPC - Install with Homebrew"
 date: "2019-04-18 15:37:21"
+description: "要使用 Homebrew 安裝 BloomRPC，可以調用如下命令： brew cask install bloomrpc 安裝完就可以在應用程式這邊看到 BloomRPC。"
 tags: [BloomRPC, Mac, HomeBrew]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "土豆視頻開發系列-依影集分類查詢"
 date: "2011-03-27 10:53:19"
-description: "土豆視頻開發系列-依影集分類查詢"
+description: "要從土豆往上截取影集資料，我們可先參閱頻道劇集查詢，該API的URL位置會像下面這樣： http://api.tudou.com/v3/gw?method=album.channel.get&appKey=&format=&channel=&pageNo=&pageSize=…"
 tags: [CSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Jenkins - Quality Gates Plugin"
 date: "2017-03-20 12:42:46"
+description: "Jenkins 安裝 SonarQube Plugin 後，雖然能用 Jenkins 分析程式並將分析結果送至 SonarQube，但是不論分析的結果是否有通過 SonarQube Quality Gate， Jenkins 的 job 都是會過。"
 tags: [SonarQube, Jenkins]
 ---
 

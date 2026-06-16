@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]IsNumeric()'s bug?!"
 date: "2009-12-24 09:03:21"
-description: "[VB.NET]IsNumeric()'s bug?!"
+description: "前陣子因為需要用同事的Code，發現同事在判斷是否是數值的部份自己寫了一道函式。詢問了一下為何不用內建的IsNumeric?她回答道：「微軟內建的有Bug」，傳入字串都會判斷錯誤。 但…真的有Bug嗎?好奇之下稍稍看了一下。發現那並不是Bug，原來只是內建的IsNumeric比我們想的還聰明而已。"
 tags: [VB.NET]
 ---
 

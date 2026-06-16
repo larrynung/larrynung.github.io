@@ -1,6 +1,7 @@
 ---
 title: "Docker - Stop/remove all containers"
 date: "2020-03-05 08:37:45"
+description: "Docker 容器開多了沒關，要一次停掉可以用 docker ps 命令查閱所有容器，將容器資訊帶給 docker stop，一次停掉。 docker stop $(docker ps -a -q) docker ps 要一次殺掉可以用 docker ps 命令查閱所有容器，"
 tags: [Docker， Linux]
 ---
 

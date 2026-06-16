@@ -2,7 +2,7 @@
 title: "[C#]使用ControlPaint.DrawBorder調整控制項外框的顏色"
 slug: "[CSharp]使用ControlPaint.DrawBorder調整控制項外框的顏色"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用ControlPaint.DrawBorder調整控制項外框的顏色"
+description: "最近跟UX Team合作體驗到能將設計好的UI完美呈現真是考驗程式人員的能力，UX Team的設計人員考量的細節都跟程式開發人員不同，在某些細節上比程式人員都還講究，就像是控制項的邊框顏色不對都不行。"
 tags: [CSharp]
 ---
 

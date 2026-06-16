@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]JSON C# Class Generator"
 date: "2011-04-22 12:35:04"
-description: "[.NET Resource]JSON C# Class Generator"
+description: "JSON C# Class Generator為一C# JSON類別產生工具，能接受輸入JSON字串，產生其所對應的強型別類別。使用時需先至JSON C# Class Generator下載工具程式，解壓縮後雙擊開啟。左上方可設定命名空間、類別名稱、與輸出目錄等資訊。"
 tags: [CSharp,.NET Resource]
 ---
 

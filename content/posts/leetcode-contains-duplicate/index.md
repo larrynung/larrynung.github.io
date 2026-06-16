@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Contains Duplicate"
 date: "2015-07-05 22:58:00"
-description: "LeetCode - Contains Duplicate"
+description: "LeetCode 的 Contains Duplicate 題目如下： Given an array of integers, find if the array contains any duplicates."
 tags: [LeetCode]
 ---
 

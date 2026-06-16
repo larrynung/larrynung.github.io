@@ -1,7 +1,7 @@
 ---
 title: "[UML]Class diagram"
 date: "2009-05-06 12:38:48"
-description: "[UML]Class diagram"
+description: "Introduction Class Diagram又稱類別圖。 功能 表現物件與物件間的靜態關係 關係 類別之間的連結。 表示相關物件之間的連結意義。 具方向性，可加上箭頭表示。 聚合 表示類別間存在著『整體-部份』的關係。 比組合還弱的關係。 整體消滅時，部份不會跟著消滅。"
 tags: [UML]
 ---
 

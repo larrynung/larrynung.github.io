@@ -1,7 +1,7 @@
 ---
 title: "[WPF]StackPanel"
 date: "2009-05-07 12:42:17"
-description: "[WPF]StackPanel"
+description: "Introduction StackPanel容器可讓容器內的控制項呈現水平或垂直排列。 命名空間 System.Windows.Controls XMLNS http://schemas.microsoft.com/winfx/xaml/presentation Assemble…"
 tags: [WPF]
 ---
 

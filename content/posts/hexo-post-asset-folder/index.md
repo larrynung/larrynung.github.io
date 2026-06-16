@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Post asset folder"
 date: "2016-06-29 23:00:02"
+description: "要使用 Asset folder，我們可以開啟 Hexo 的設定檔，將 post_asset_folder 設定設為 true。 當使用 Hexo 建立一篇文章時。 就會連帶幫我們建一個與文章同名的 Asset folder。 我們可以將文章以外所有的檔案放置在這目錄下，然後使用下列語法將之引用。"
 tags: [Hexo]
 ---
 

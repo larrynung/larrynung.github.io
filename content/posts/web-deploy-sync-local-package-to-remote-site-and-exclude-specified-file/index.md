@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Sync local package to remote site and exclude specified file"
 date: "2017-01-23 13:55:35"
+description: "如要使用 Web Deploy 將 Web Deploy Package 佈署到遠端站台並忽略同步指定的檔案，可以指定 Web Deploy 使用 sync 操作，source 使用 package provider，帶入 Web Deploy Package 的檔案位置，"
 tags: [Web Deploy]
 ---
 

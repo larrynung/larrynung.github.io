@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]為專案加入不同Visual Studio版本的方案檔"
 date: "2010-07-29 10:37:09"
-description: "[Visual Studio]為專案加入不同Visual Studio版本的方案檔"
+description: "為專案加入不同Visual Studio版本的方案檔，讓不同的方案檔對應致相同的專案檔，可以方便用各種版本的Visual Studio 開啟，只要點選愈開啟的版本方案檔，就會直接用對應版本的Visual Studio開啟。"
 tags: [Visual Studio]
 ---
 

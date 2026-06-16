@@ -1,7 +1,7 @@
 ---
 title: "如何上傳Visual Studio Extension至Visual Studio Gallery"
 date: "2013-11-06 12:00:00"
-description: "如何上傳Visual Studio Extension至Visual Studio Gallery"
+description: "有在用Visual Studio開發的都知道在Visual Studio中有好用的Extension Manager，可供開發人員直接在上面搜尋、下載、及安裝想要的擴充套件，而他搜尋的來源主要是來至於Visual Studio Gallery，所以當我們開發了一個擴充套件想要分享出去時，"
 ---
 
 有在用Visual Studio開發的都知道在Visual Studio中有好用的Extension Manager，可供開發人員直接在上面搜尋、下載、及安裝想要的擴充套件，而他搜尋的來源主要是來至於Visual Studio Gallery，所以當我們開發了一個擴充套件想要分享出去時，我們也可以很直接的將它上到[Visual Studio Gallery，就可以很容易地將擴充套件散播出去。](http://visualstudiogallery.msdn.microsoft.com/)

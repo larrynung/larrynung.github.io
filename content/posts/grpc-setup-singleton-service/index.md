@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Setup singleton service"
 date: "2019-05-18 21:11:28"
+description: "ASP.NET Core 的 gRPC service 預設是沒有 Singleton 的，所以如果今天 gRPC client 發送多次訊息給 gRPC server。 gRPC server 會建多次 gRPC service 實體。"
 tags: [gRPC]
 ---
 

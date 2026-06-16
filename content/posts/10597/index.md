@@ -1,7 +1,7 @@
 ---
 title: "[WLW]WebSnapr Plugin"
 date: "2009-09-13 04:46:10"
-description: "[WLW]WebSnapr Plugin"
+description: "Introduction WebSnapr是Windows Live Writer的外掛，其功能為插入網站縮圖與連結。 安裝步驟 下載下來後，把檔案解壓縮放到Windows Live Writer安裝路徑下的Plugs目錄即可。"
 tags: [WLW]
 ---
 

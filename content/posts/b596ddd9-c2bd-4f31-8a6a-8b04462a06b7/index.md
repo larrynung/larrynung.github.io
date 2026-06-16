@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]透過BoxCop偵測程式是否存在Boxing與UnBoxing"
 date: "2013-11-06 12:00:00"
-description: "[.NET Resource]透過BoxCop偵測程式是否存在Boxing與UnBoxing"
+description: "大家都知道在.Net程式中有所謂的 Boxing與UnBoxing，也都知道 Boxing與UnBoxing會讓程式有效能上的損耗，那麼要怎樣才能有效率的抓出程式中的Boxing與UnBoxing呢 ? 以前筆者還沒有比較好的方式，也找不太到現成的FxCop rule。"
 tags: [CSharp]
 ---
 

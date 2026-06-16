@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]SecureString較為安全的加密字串類別"
 date: "2010-04-29 02:10:06"
-description: "[VB.NET]SecureString較為安全的加密字串類別"
+description: "Namespace System.Security Framework 2.0 or Latter SecureString SecureString是.NET 2.0開始提供的加密字串類別，為一較安全的字串處理類別，適合用以保存較為機密或是較為敏感的字串。"
 tags: [VB.NET]
 ---
 

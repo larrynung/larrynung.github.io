@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - DataTips"
 date: "2010-03-15 06:08:11"
-description: "[Visual Studio]Visual Studio 2010 New Feature - DataTips"
+description: "VS2010在DataTips上也做了些改進，像是允許我們把DataTips給釘在相關的程式上、或是匯入匯出DataTips等。 Pin DataTips 要把DataTips給釘在程式相關的程式中，我們可以在除錯運行被中斷的狀態，把滑鼠移到要觀看的變數上面，然後在浮現的DataTips後方，"
 tags: [Visual Studio]
 ---
 

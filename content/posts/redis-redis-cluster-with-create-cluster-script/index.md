@@ -1,6 +1,7 @@
 ---
 title: "Redis - Redis cluster with create-cluster script"
 date: "2019-12-13 08:42:43"
+description: "Redis 安裝完後 utils/create-cluster 目錄下有提供現成的腳本可以用來起 Redis cluster 做些測試。 使用方式可參閱目錄下的 README。 或是直接調用命令參考命令的說明。"
 tags: [Redis]
 ---
 

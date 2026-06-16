@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Length of Last Word"
 date: "2015-09-11 10:02:00"
-description: "LeetCode - Length of Last Word"
+description: "LeetCode 的 Length of Last Word 題目如下： Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of…"
 tags: [LeetCode]
 ---
 

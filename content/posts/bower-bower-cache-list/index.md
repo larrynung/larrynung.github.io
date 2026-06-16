@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower cache list"
 date: "2016-01-15 05:51:00"
-description: "Bower - Bower cache list"
+description: "Bower cache list 可用來查閱 bower 套件 cache 的情況。 Bower 套件在使用時若有需要，Bower 會將套件快取在本地，像是用 bower install 或是 bower info 叫用時就會進行對應的快取。"
 tags: [Bower]
 ---
 

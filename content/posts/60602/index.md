@@ -1,7 +1,7 @@
 ---
 title: "[C++]使用TinyXml讀寫Xml"
 date: "2011-12-04 03:29:27"
-description: "[C++]使用TinyXml讀寫Xml"
+description: "在C++讀寫XML並不像在.NET一般容易，常看到的方法若不是自己解析，就是用MSXml或是TinyXml下去處理，這邊簡單的紀錄一下TinyXml的用法。 自網站下載完TinyXml後解壓縮後，"
 tags: [C++]
 ---
 

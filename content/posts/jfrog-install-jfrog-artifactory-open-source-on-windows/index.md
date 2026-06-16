@@ -1,6 +1,7 @@
 ---
 title: "JFrog - Install JFrog Artifactory open source on Windows"
 date: "2017-09-08 13:36:48"
+description: "要在 Windows 安裝 JFrog Artifactory open source，可先到 JFrog Artifactory open source 的下載頁面。 下載 Windows 用的壓縮檔。 解壓縮下載下來的壓縮檔。"
 tags: [JFrog]
 ---
 

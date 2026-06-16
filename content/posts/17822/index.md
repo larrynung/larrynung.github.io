@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (四) Contract.ForAll & Contract.Exists"
 date: "2010-09-20 05:32:47"
-description: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (四) Contract.ForAll & Contract.Exists"
+description: "為了方便處理集合類型變數的合約驗證，Code Contracts貼心的提供了Contract.ForAll與Contract.Exists兩個輔助用的合約方法，可與前置條件或後置條件搭配使用。"
 tags: [CSharp]
 ---
 

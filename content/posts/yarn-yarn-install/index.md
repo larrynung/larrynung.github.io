@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn install"
 date: "2017-07-02 23:16:26"
+description: "yarn install 命令可用來還原套件。 若是在 package.json 中設定的套件並未在本地被載入，可調用 yarn install 命令將之還原。 yarn install 除了調用 yarn install 還原外，直接調用 yarn 也有相同的效果。"
 tags: [Yarn]
 ---
 

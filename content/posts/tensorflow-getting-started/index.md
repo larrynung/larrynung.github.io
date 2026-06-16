@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - Getting started"
 date: "2018-05-27 00:04:56"
+description: "安裝完 TensorFlow 後，可以試著撰寫個簡單的 Hello World 程式。 首先我們需將 tensorflow 匯入。 設定一個常數其內容為 \"Hello World!\"。"
 tags: [TensorFlow]
 ---
 

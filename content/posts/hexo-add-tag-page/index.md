@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Add tag page"
 date: "2016-06-16 22:39:08"
+description: "要為 Hexo 部落格建立標籤頁面，首先要建立 tag 的頁面。 hexo n page tags 開啟剛產生的標籤頁面，設定 type 為 tags。如果不希望能在標籤頁面上留言的話，這邊也可以順便將 comments 為 false。"
 tags: [Hexo]
 ---
 

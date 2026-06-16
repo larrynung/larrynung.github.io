@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - XAML Editor's Tag refactoring"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview New Feature - XAML Editor's Tag refactoring"
+description: "以往在透過Visual Studio的XAML Editor進行XAML Code的編輯時，若是有需要針對Tag進行修改，我們必須要分別針對Start Tag與End Tag進行同樣的修改動作，像是下面這樣： 在Visual Studio 2013 Preview 後，"
 ---
 
 以往在透過Visual Studio的XAML Editor進行XAML Code的編輯時，若是有需要針對Tag進行修改，我們必須要分別針對Start Tag與End Tag進行同樣的修改動作，像是下面這樣：

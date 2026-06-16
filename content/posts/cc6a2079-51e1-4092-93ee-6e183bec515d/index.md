@@ -1,7 +1,7 @@
 ---
 title: "[C#]使用BitmapDecoder快速讀取圖檔的大小"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用BitmapDecoder快速讀取圖檔的大小"
+description: "一般我們想要讀取圖檔的大小，通常在Windows Form中都是直接載入成Bitmap，再去讀取Bitmap物件的長、寬、或是大小屬性，像是像下面這樣撰寫： 但這樣做會有個問題就是效率會比較差，因為必須將整個圖檔先行載入，圖檔越大就越久，記憶體也吃的兇。"
 tags: [CSharp]
 ---
 

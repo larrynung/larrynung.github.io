@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Connect with .NET API"
 date: "2018-09-11 23:43:10"
+description: "要使用 Event Store .NET API 連接 Event Store，先要安裝 EventStore.Client 套件。 加入 EventStore.ClientAPI 命名空間。"
 tags: [Event Store]
 ---
 

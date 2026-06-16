@@ -1,6 +1,7 @@
 ---
 title: "mmock - Run with mmock command"
 date: "2017-09-13 23:21:01"
+description: "要使用 mmock，可先安裝 go 語言，透過 go get 下載 mmock command。 go get github.com/jmartin82/mmock 下載下來後可簡單的測試一下，順便查閱 mmock 的使用方式。"
 tags: [mmock]
 ---
 

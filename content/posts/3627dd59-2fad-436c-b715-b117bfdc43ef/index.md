@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Concurrent Collection"
 date: "2013-11-06 12:00:00"
-description: ".NET 4.0 New Feature - Concurrent Collection"
+description: ".NET 4.0 BCL 新加入System.Collections.Concurrent命名空間，該命名空間提供許多執行緒安全的集合，像是ConcurrentDictionary 、ConcurrentQueue 、ConcurrentStack 、ConcurrentBag…"
 ---
 
 .NET 4.0 BCL 新加入System.Collections.Concurrent命名空間，該命名空間提供許多執行緒安全的集合，像是ConcurrentDictionary< Key , Value>、ConcurrentQueue<T>、ConcurrentStack<T>、ConcurrentBag<T>、與BlockingCollection<T>。

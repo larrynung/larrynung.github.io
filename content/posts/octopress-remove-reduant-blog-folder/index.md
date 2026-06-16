@@ -1,7 +1,7 @@
 ---
 title: "Octopress - Remove reduant blog folder"
 date: "2013-11-25 21:52:00"
-description: "Octopress - Remove reduant blog folder"
+description: "Octopress blog架設好後，預設的部落格網址格式為 /blog/:year/:month/:day/:title/，會在網址那邊多一層不必要的 blog 目錄，要將這層不必要的目錄拿掉，我們可以開啟 _config.yaml 進行些修改，"
 tags: [Octopress]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]VB 10.0 Auto-Implemented Properties"
 date: "2009-08-11 08:59:53"
-description: "[VB.NET]VB 10.0 Auto-Implemented Properties"
+description: "Introduction Auto-Implemented Properties是VB.NET 10.0的特色之一。讓我們在撰寫屬性時只需短短一行即可，其細部的私有欄位與Get、Set區塊都將由編譯器在編譯時幫我們自動產生。可簡化屬性的撰寫，加速程式撰寫速度。"
 tags: [VB.NET]
 ---
 

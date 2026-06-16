@@ -1,7 +1,7 @@
 ---
 title: "JQuery DataTables - Table plug-in for jQuery"
 date: "2014-05-13 13:20:00"
-description: "JQuery DataTables - Table plug-in for jQuery"
+description: "JQuery DataTables 是 JQuery 的 DataTable 元件，需要使用 jQuery 1.7 以後的版本。 使用時需再 HTML 檔建立 Table，設定 Header 與 Footer，如果是要用 Client side 處理的話，"
 tags: [JQuery]
 ---
 

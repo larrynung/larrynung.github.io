@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Merge MDI ToolStrip"
 date: "2010-10-14 10:14:46"
-description: "[VB.NET]Merge MDI ToolStrip"
+description: "有時候在MDI架構下，我們會有需要將子視窗與父視窗工具列或是選單合併的需求。在選單的合併上，MDI架構提供了很簡易的合併方法，只要調整MergeAction與MergeIndex，在切換子視窗時就會自動幫您合併選單。"
 tags: [VB.NET]
 ---
 

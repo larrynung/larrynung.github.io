@@ -1,6 +1,7 @@
 ---
 title: "Obsidian - Sync notes with 'Google Drive Sync' plugin"
 date: "2025-08-14 00:01:21"
+description: "簡介 Google Drive Sync 是 Obsidian 的官方外掛，可以讓您輕鬆地將筆記庫同步到 Google Drive。透過 Google Drive 的雲端儲存功能，您可以在不同裝置間無縫同步筆記，無論是在電腦、手機或平板上都能隨時存取最新版本。"
 tags: ["Obsidian", "Google Drive Sync", "Google Drive"]
 ---
 

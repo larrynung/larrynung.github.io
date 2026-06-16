@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - String.Join"
 date: "2010-11-22 08:08:33"
-description: ".NET 4.0 New Feature - String.Join"
+description: ".NET Framework 4.0新增了三個String.Join的多載函式Join(String, IEnumerable )、Join (String, IEnumerable )、與[Join(String,…"
 tags: [CSharp]
 ---
 

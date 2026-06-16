@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Analyzing with SonarQube Scanner"
 date: "2017-03-31 23:51:17"
+description: "要使用 SonarQube 進行程式碼分析，並將分析結果送至 SonarQube Server，最簡單的就是使用 SonarQube Scanner。 先至官網將 SonarQube Scanner 下載下來。"
 tags: [SonarQube]
 ---
 

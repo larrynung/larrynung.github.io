@@ -1,7 +1,7 @@
 ---
 title: "C++/CLI Managed Natived語法對應"
 date: "2009-09-18 09:00:15"
-description: "C++/CLI Managed Natived語法對應"
+description: "Natived Managed Pointer NativedClass obj = new NativedClass(); ManagedClass^ obj = gcnew ManagedClass(); Call By Reference void Method(int& value) {…"
 tags: [C++]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower prune"
 date: "2016-01-20 05:34:00"
-description: "Bower - Bower prune"
+description: "Bower prune 可用來移除未被使用的 bower 套件。 如果有 Bower 套件未被 bower.json 檔參照到，當呼叫 bower prune 時就會被移除。"
 tags: [Bower]
 ---
 

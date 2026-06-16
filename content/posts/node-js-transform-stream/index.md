@@ -1,6 +1,7 @@
 ---
 title: "Node.js - Transform stream"
 date: "2018-07-30 23:13:42"
+description: "Transform stream 可以將輸入串流的資料讀入，將讀入的內容轉換，然後輸出到輸出串流。 像是內建的 Gzip transform stream 就能將輸入的資料做 Gzip 壓縮然後輸出。"
 tags: [Node.js]
 ---
 

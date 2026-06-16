@@ -1,7 +1,7 @@
 ---
 title: "Jil - Fast .NET JSON (De)Serializer"
 date: "2015-09-30 00:05:00"
-description: "Jil - Fast .NET JSON (De)Serializer"
+description: "Jil 是 JSON 處理的套件，號稱比 JSON.NET 更快，甚至是當前套件中處理起來第二快的，僅次於 Protobuf。 只要加入 NuGet 參考，Using Jil 命名空間即可開始使用。 要序列化時，可將物件帶入 JSON.Serialize 方法，方法會回傳序列化後的 JSON 字串。"
 tags: [Jil]
 ---
 

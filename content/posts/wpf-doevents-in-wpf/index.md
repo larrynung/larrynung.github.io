@@ -1,7 +1,7 @@
 ---
 title: "WPF - DoEvents in WPF"
 date: "2014-02-05 10:35:00"
-description: "WPF - DoEvents in WPF"
+description: "在做大量的運算處理時，不能避免的有時候會需要做 UI 更新的動作，以給予使用者一些反饋。理想上來說，這時我們應該將處理動作切離主執行緒，在另外一個執行緒去處理，需要反饋時再將更新動作帶回主執行緒。"
 tags: [WPF]
 ---
 

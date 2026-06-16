@@ -2,7 +2,7 @@
 title: "[C#][Linq]Linq to Wikipedia"
 slug: "[CSharp][Linq]Linq to Wikipedia"
 date: "2011-08-11 01:20:08"
-description: "[C#][Linq]Linq to Wikipedia"
+description: "Linq to Wikipedia元件提供開發人員使用Linq去查詢Wiki的功能，具備兩種查詢模式，一種是OpenSearch、一種是Keyword Search。"
 tags: [CSharp,Linq]
 ---
 

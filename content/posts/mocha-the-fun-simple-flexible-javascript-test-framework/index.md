@@ -1,6 +1,7 @@
 ---
 title: "'Mocha - the fun, simple, flexible JavaScript test framework'"
 date: "2019-05-09 08:17:42"
+description: "Mocha 是 Node.js 上的單元測試框架。該單元測試框架能讓我們撰寫測試案例、運行單元測試、及產生測試報告等。 使用前先從 Registry 下載套件。 npm install mocha --save-dev 然後透過 Mocha 提供的…"
 tags: [Node.js, Mocha]
 ---
 

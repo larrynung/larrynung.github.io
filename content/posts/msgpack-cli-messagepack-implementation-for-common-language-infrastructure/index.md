@@ -1,6 +1,7 @@
 ---
 title: "MsgPack.Cli - MessagePack implementation for Common Language Infrastructure"
 date: "2017-06-09 23:17:23"
+description: "MsgPack.Cli 是 MessagePack 在 CLI 下的實作，如果要在 .NET 程式裡面使用 MessagePack，可以直接透過 NuGet 安裝使用。"
 tags: [MessagePack]
 ---
 

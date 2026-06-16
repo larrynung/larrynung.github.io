@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Speed Up Visual Studio"
 date: "2009-01-29 10:23:05"
-description: "[Visual Studio]Speed Up Visual Studio"
+description: "Abstract Introduction Speed Up Visual Studio 關閉動畫 關閉巡覽列 關閉追蹤修訂 關閉追蹤現有項目 關閉AutoToolboxPopulate 關閉啟始頁 關閉歡迎畫面 關閉所有不必要的panels/tabs Conclusion Reference…"
 tags: [Visual Studio]
 ---
 

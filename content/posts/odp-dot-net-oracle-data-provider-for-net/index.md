@@ -1,7 +1,7 @@
 ---
 title: "ODP.NET - Oracle Data Provider for .NET"
 date: "2014-04-06 23:52:00"
-description: "ODP.NET - Oracle Data Provider for .NET"
+description: "要用 C# 存取 Oracle，通常我們會使用 ODP.NET。 ODP.NET 目前有 x86、 x64 與 Managed 三個版本可供使用。 Managed 版本為純 .NET 的解決方案，具備位元適應性， 能兼容於 x86 與 x64 的環境，可不安裝 Oracle client 使用，"
 tags: [ODP.NET, CSharp]
 ---
 

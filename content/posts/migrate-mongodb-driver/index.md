@@ -1,6 +1,7 @@
 ---
 title: "migrate - MongoDB driver"
 date: "2019-09-02 11:24:21"
+description: "migrate 要對 MongoDB 進行資料庫的 Migration，Migration 檔案內要放置要給 MongoDB 用 db.runCommand 運行的命令，附檔名為 json。 migrate 的資料庫這邊要參照下列格式設定。就可以透過 migrate 做資料庫的 Migration。"
 tags: [migrate]
 ---
 

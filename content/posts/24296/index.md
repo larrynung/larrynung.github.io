@@ -2,7 +2,7 @@
 title: "[C#][Visual Studio]Debug With Object ID"
 slug: "[CSharp][Visual Studio]Debug With Object ID"
 date: "2011-05-05 11:27:32"
-description: "[C#][Visual Studio]Debug With Object ID"
+description: "使用Object ID輔助除錯是C#與J#這兩種語言所獨有的除錯方法。Object ID效果類似C/C++語言中的指標，可指到一個唯一的物件實體。Visual Studio IDE允許開發人員為感興趣的物件加入Object ID,開發人員可在任何地方透過Object ID監看所關注的物件資訊，"
 tags: [CSharp,Visual Studio]
 ---
 

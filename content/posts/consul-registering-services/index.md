@@ -1,6 +1,7 @@
 ---
 title: "Consul - Registering services"
 date: "2018-12-11 00:38:22"
+description: "要使用 Consul 註冊服務，先準備一個目錄用來存放 Consul 的設定。 mkdir 在建立的設定檔目錄內放置 Consul 的設定檔，設定檔內會指定服務的名稱、Tag、與服務的 Port。"
 tags: [Consul]
 ---
 

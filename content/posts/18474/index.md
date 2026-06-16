@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - StringBuilder.Clear"
 date: "2010-10-20 09:12:02"
-description: ".NET 4.0 New Feature - StringBuilder.Clear"
+description: "以往在使用StringBuilder時，若要重覆使用現有的StringBuilder物件，必需要將StringBuilder的內容清空，然而在StringBuilder類別中並未附有直覺的方法可供直接叫用，因此我們可能需要透過StringBuilder.Remove方法來清空內容。"
 tags: [VB.NET]
 ---
 

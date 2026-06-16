@@ -1,6 +1,7 @@
 ---
 title: "SchemaSync - Installing the latest development version"
 date: "2019-08-10 12:46:19"
+description: "要安裝 SchemaSync 最新的開發版，先將 SchemaSync 用 git clone 下來。 git clone git://github.com/mmatuson/SchemaSync.git 然後切到 clone 下來的目錄。"
 tags: [SchemaSync]
 ---
 

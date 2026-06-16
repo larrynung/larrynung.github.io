@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Setup favicon"
 date: "2016-06-16 23:43:16"
+description: "要設定 Hexo 部落格的 favicon 只要將 favicon.ico 放置 source 目錄下就可以了。"
 tags: [Hexo]
 ---
 

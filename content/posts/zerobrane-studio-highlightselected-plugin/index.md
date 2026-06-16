@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - HighlightSelected Plugin"
 date: "2017-04-19 13:20:47"
+description: "ZeroBrane Studio 預設在選取變數時並不像某些強大的編輯器一樣會將所有變數出現的地方標記，但透過安裝 HighlightSelected Plugin ZeroBrane Studio 也可以提供這樣的功能。"
 tags: [ZeroBrane Studio]
 ---
 

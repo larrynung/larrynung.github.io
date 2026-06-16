@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 15 Preview - Code style enhancement"
 date: "2016-04-18 22:24:00"
-description: "Visual Studio 15 Preview - Code style enhancement"
+description: "Visual Studio 15 Preview 針對 Code Style 做了些強化。 在 Visual Studio 2015 Update 2 中，Code Style 只有少少的幾個項目可供設定： 在 Visual Studio 15 Preview 中這功能完整了許多，"
 tags: [Visual Studio]
 ---
 

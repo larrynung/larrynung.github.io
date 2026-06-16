@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]PowerCommands"
 date: "2010-06-27 01:21:11"
-description: "[.NET Resource]PowerCommands"
+description: "PowerCommands是Visual Studio輔助外掛，提供許多方便好用的小功能，像是複製參考、貼上參考、開啟Folder、複製類別等等。 在安裝PowerCommands時，可透過Visual Studio 2010內建的Extension Manager搜尋後安裝，"
 tags: [.NET Resource]
 ---
 

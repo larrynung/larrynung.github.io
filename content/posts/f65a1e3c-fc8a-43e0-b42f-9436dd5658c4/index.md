@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]How to generate XML Documentation Files with visual studio C++"
 date: "2013-11-06 12:00:00"
-description: "[C++][Visual Studio]How to generate XML Documentation Files with visual studio C++"
+description: "這幾天又看到有人在論題上發問要如何在叫用所開發C++的函式庫時，能夠顯示自己在編寫所加註的註解。這問題也滿常重複問到的，稍稍的紀錄一下。 其實在Visual Studio中要顯示註解，不論是什麼語言，都要在成員上加註特定的註解格式。格式上也都大同小異，寫起來就跟在C#或是VB.NET中沒什麼兩樣。"
 ---
 
 這幾天又看到有人在論題上發問要如何在叫用所開發C++的函式庫時，能夠顯示自己在編寫所加註的註解。這問題也滿常重複問到的，稍稍的紀錄一下。

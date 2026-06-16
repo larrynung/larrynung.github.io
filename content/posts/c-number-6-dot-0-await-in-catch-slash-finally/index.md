@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Await in catch/finally"
 date: "2015-03-13 07:59:00"
-description: "C# 6.0 - Await in catch/finally"
+description: "C# 6.0 以前 await 無法用在 catch/finally 區塊，C# 6.0 後開始支援。"
 tags: [CSharp, CSharp 6.0]
 ---
 

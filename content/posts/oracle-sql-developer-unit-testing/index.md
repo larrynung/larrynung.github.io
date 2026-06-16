@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Unit testing"
 date: "2017-05-30 23:52:47"
+description: "要用 Oracle SQL Developer 撰寫單元測試，可點選 [View | Unit Test] 主選單選項。 將 Unit Test 視窗開啟。 點選 [Tools| | Unit Test | Select Current Repository...]。 選取 Connection。"
 tags: [Oracle SQL Developer]
 ---
 

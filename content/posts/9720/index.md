@@ -2,7 +2,7 @@
 title: "[C#]C# 4.0 選擇性參數 (Optional Parameters)"
 slug: "[CSharp]C# 4.0 選擇性參數 (Optional Parameters)"
 date: "2009-07-29 09:04:42"
-description: "[C#]C# 4.0 選擇性參數 (Optional Parameters)"
+description: "Introduction 選擇性參數是C# 4.0的特色之一，可減少多載函式的建立，卻可達到相同的效果，加快使用者開發。 Support C# 4.0 or latter 使用方式 選擇性參數在使用上就跟C++一樣，只需用等號為函數的參數加上預設值即可。"
 tags: [CSharp]
 ---
 

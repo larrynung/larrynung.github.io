@@ -1,6 +1,7 @@
 ---
 title: "Flutter - BottomNavigationBar class"
 date: "2018-05-09 23:33:10"
+description: "Flutter 的 BottomNavigationBar widget 需搭配 Scaffold 使用，可用以設定 Scaffold 下方的巡覽列。 其建構子如下： BottomNavigationBar({Key key, @required List items, ValueChanged…"
 tags: [Flutter]
 ---
 

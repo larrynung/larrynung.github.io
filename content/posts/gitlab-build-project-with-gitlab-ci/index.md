@@ -1,6 +1,7 @@
 ---
 title: "GitLab - Build project with GitLab CI"
 date: "2018-01-21 22:15:56"
+description: "GitLab Runner 設定好後，可以開始使用 GitLab CI 來建置我們的專案。 只要在 Repository 中加入 GitLab CI 的設定檔 (.gitlab-ci.yml)，在設定檔中設定要如何建置專案即可。"
 tags: [GitLab]
 ---
 

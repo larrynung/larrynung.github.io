@@ -1,7 +1,7 @@
 ---
 title: "[WPF]DockPanel"
 date: "2009-05-08 12:30:45"
-description: "[WPF]DockPanel"
+description: "Introduction DockPanel容器主要為容器內部的控制項提供停靠的機制。 命名空間 System.Windows.Controls XMLNS http://schemas.microsoft.com/winfx/xaml/presentation Assemble…"
 tags: [WPF]
 ---
 

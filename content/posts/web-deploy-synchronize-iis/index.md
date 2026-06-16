@@ -1,7 +1,7 @@
 ---
 title: "Web Deploy - Synchronize IIS"
 date: "2015-07-10 22:18:00"
-description: "Web Deploy - Synchronize IIS"
+description: "若要做 IIS 之間的同步，我們可以使用 Web Deploy。 它可以做到 Local To Remote。 msdeploy -verb:sync -source:webServer -dest:webServer,computerName=Server2 Remote To Local。"
 tags: [Web Deploy]
 ---
 

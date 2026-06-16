@@ -1,6 +1,7 @@
 ---
 title: "Parcel - JavaScript asset"
 date: "2018-01-09 00:27:17"
+description: "要使用 Parcel 在 JavaScript 中載入 JavaScript 模塊可用 CommonJS 的寫法。 const module = require(modulePath); 或是 ES6 的寫法。"
 tags: [Parcel]
 ---
 

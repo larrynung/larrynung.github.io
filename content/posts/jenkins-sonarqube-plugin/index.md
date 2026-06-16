@@ -1,6 +1,7 @@
 ---
 title: "Jenkins - SonarQube Plugin"
 date: "2017-03-17 00:02:34"
+description: "如果要將 SonarQube 整合 Jenkins，讓 Jenkins 幫我們運行並將分析送到 SonarQube，可以使用 Jenkins 的 SonarQube Plugin。 先將 Jenkins 安裝 SonarQube Plugin。"
 tags: [SonarQube, Jenkins]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "CShell - A simply, yet powerful, C# scripting IDE"
 date: "2015-03-16 23:40:00"
-description: "CShell - A simply, yet powerful, C# scripting IDE"
+description: "Cshell 是一 C# interactive tool，適合用於 C# 語言的學習或是用來做些簡單的小測試。 程式主檔可在 Github Project Page 下載。 下載完解壓點擊運行即可。 程式啟動後預設會幫我們含有兩個檔案，內含一些教學步驟，建議剛接觸的使用者可以先從這邊入手。"
 tags: [CSharp]
 ---
 

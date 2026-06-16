@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Generate sitemap"
 date: "2016-06-16 22:02:19"
+description: "要為 Hexo 部落格放置 Sitemap 檔，可以安裝 hexo-generator-sitemap 套件。 npm install hexo-generator-sitemap --save 開啟 Hexo 設定檔，設定 sitemap 檔案。"
 tags: [Hexo]
 ---
 

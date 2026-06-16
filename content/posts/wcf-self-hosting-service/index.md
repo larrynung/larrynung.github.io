@@ -1,7 +1,7 @@
 ---
 title: "WCF - Self hosting service"
 date: "2014-04-03 23:43:00"
-description: "WCF - Self hosting service"
+description: "要 Self hosting WCF 的服務。首先要先將 System.ServiceModel 加入參考。 接著在程式設計中建立 ServiceHost。建立的同時要指定欲運行的 Service 型態，以及要 Host 的位置。"
 tags: [WCF, CSharp]
 ---
 

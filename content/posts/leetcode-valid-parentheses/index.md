@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Valid Parentheses"
 date: "2015-08-11 23:21:00"
-description: "LeetCode - Valid Parentheses"
+description: "LeetCode 的 Valid Parentheses 題目如下： Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is…"
 tags: [LeetCode]
 ---
 

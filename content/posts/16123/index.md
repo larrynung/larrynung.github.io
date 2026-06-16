@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Visual Studio Color Theme Editor"
 date: "2010-06-24 11:19:50"
-description: "[.NET Resource]Visual Studio Color Theme Editor"
+description: "Visual Studio Color Theme Editor是Visual Studio的配色外掛，能編輯外觀設定檔、匯入/匯出設定檔、套用外觀設定檔。可在Visual Studio Color Theme Editor網站下載點擊安裝，"
 tags: [.NET Resource]
 ---
 

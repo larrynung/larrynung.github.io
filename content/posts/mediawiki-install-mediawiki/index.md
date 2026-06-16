@@ -1,7 +1,7 @@
 ---
 title: "MediaWiki - Install MediaWiki"
 date: "2014-05-27 23:40:00"
-description: "MediaWiki - Install MediaWiki"
+description: "欲安裝 MediaWiki，首先需先準備 Apache 網站伺服器及 MySQL 資料庫，這邊偷懶一點就不個別裝了，直接安裝 Xampp 軟件。 安裝完後將 Xampp Control Panel 開起，啟用 Apache 與 MySQL 服務。"
 tags: [MediaWiki]
 ---
 

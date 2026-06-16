@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 15 Preview - Enabling C# 7 Features"
 date: "2016-04-26 21:57:00"
-description: "Visual Studio 15 Preview - Enabling C# 7 Features"
+description: "Visual Studio 15 Preview 開始支援部分 C# 7.0 的功能，由於尚未完全定案，故並未直接開放，需要做些特別的設定才可將之開啟。 若要啟用需切打開專案的屬性頁，切至建置頁面，在條件式編譯的符號那邊設定 DEMO,DEMO_EXPERIMENTAL 即可。"
 tags: [Visual Studio]
 ---
 

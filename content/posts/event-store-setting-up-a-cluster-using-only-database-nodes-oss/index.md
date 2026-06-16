@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Setting up a Cluster using only Database Nodes (OSS)"
 date: "2018-09-18 23:03:28"
+description: "要啟用 Event Store 的 Cluster 功能，可以開啟 Event Store，設定 IP、Port、與 gossip-seed。 像是下面這邊就在本機起了三個 Event Store 服務，服務的 Log、IP、Post 都錯開，並互設 gossip-seed。"
 tags: [Event Store]
 ---
 

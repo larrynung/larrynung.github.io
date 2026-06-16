@@ -2,7 +2,7 @@
 title: "[C#]Effective C# 條款九： 理解幾個相等判斷之間的關係"
 slug: "[CSharp]Effective C# 條款九： 理解幾個相等判斷之間的關係"
 date: "2009-10-21 08:27:25"
-description: "[C#]Effective C# 條款九： 理解幾個相等判斷之間的關係"
+description: "C#提供了四種不同的函式來判斷兩個物件是否相等： 1.ReferenceEquals靜態方法 2.Equals靜態方法 3.Equals方法 4.運算子== 前兩個靜態方法我們永遠都不應該去重新定義，後兩個則可視需要去重新定義。"
 tags: [CSharp]
 ---
 

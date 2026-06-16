@@ -1,6 +1,7 @@
 ---
 title: "Consul - Run the Consul agent"
 date: "2018-12-07 23:14:32"
+description: "要簡單的將 Consul agent 跑起來玩玩，可以用 development 模式將 Consul agent 跑起來。 consul agent -dev 跑起來後可用 members 指令查閱節點。 consul members 或是用 HTTP API 查閱。"
 tags: [Consul]
 ---
 

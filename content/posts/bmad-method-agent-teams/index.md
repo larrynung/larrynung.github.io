@@ -1,6 +1,7 @@
 ---
 title: 'BMAD-METHOD - Agent teams'
 date: 2025-09-06T13:13:56+08:00
+description: "在 BMAD-METHOD 框架中，一系列專業的 AI Agent 各司其職，共同推動軟體開發流程。他們不僅擁有獨特的能力與風格，更遵循一套核心原則，確保高效且協同的作業。本文將詳細介紹這些關鍵 Agent 的角色、使用時機與核心理念。"
 tags: ['BMAD-METHOD']
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - XAML Editor's Code Snippets"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview New Feature - XAML Editor's Code Snippets"
+description: "Visual Studio 2013 Preview在XAML編輯區開始支援Code Snippets功能，在XAML編輯區中按下滑鼠右鍵，就可以在滑鼠右鍵快顯選單中看到[Insert Snippet...]，以及[Surround With...]這兩個選單選項。"
 ---
 
 Visual Studio 2013 Preview在XAML編輯區開始支援Code Snippets功能，在XAML編輯區中按下滑鼠右鍵，就可以在滑鼠右鍵快顯選單中看到[Insert Snippet...]，以及[Surround With...]這兩個選單選項。

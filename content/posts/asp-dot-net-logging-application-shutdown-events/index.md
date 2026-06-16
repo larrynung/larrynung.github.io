@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET - Logging application shutdown events"
 date: "2015-07-11 21:54:00"
-description: "ASP.NET - Logging application shutdown events"
+description: "做網站服務最害怕的就是服務不能正常運作，有時要追出實際發生的問題需要花費我們很多的時間。這時如果系統能將停止服務的原因正確的記錄下來，可有助於我們將問題快速的釐清。 可惜的是服務停止的原因預設是無法取得的，因為並沒有直接開放給開發人員調用。"
 tags: [ASP.NET]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "C# 7.0 - Local functions"
 date: "2016-05-11 06:21:00"
-description: "C# 7.0 - Local functions"
+description: "有時候我們在開發程式時，會碰到一些情境是需要建立個方法，但這個方法只有某個地方會用到，這時我們多半是用委派去做掉，但帶來的問題就是會有額外的記憶體耗費，而且無法被 inline 處理。 C# 7.0 後，我們可以改用 Local functions 功能去處理。"
 tags: [CSharp, CSharp 7.0]
 ---
 

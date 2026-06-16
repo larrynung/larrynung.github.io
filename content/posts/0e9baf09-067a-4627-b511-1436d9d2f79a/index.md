@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Microsoft .NET Framework Repair Tool"
 date: "2013-11-06 12:00:00"
-description: "[.NET Resource]Microsoft .NET Framework Repair Tool"
+description: "Microsoft在前兩天發佈了Microsoft .NET Framework Repair Tool，針對在.NET Framework的安裝與更新發生問題時提供了簡易的修復功能，若您也有碰到.NET Framework安裝與更新上的問題，"
 ---
 
 Microsoft在前兩天發佈了Microsoft .NET Framework Repair Tool，針對在.NET Framework的安裝與更新發生問題時提供了簡易的修復功能，若您也有碰到.NET Framework安裝與更新上的問題，可至[Microsoft .NET Framework Repair Tool](http://www.microsoft.com/en-us/download/details.aspx?id=30135)官網上取得該工具試試是否可以排解。

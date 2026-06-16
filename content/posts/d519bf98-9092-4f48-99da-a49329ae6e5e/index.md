@@ -2,7 +2,7 @@
 title: "[C#]ListBox如何偵測Item的新增、插入、與刪除"
 slug: "[CSharp]ListBox如何偵測Item的新增、插入、與刪除"
 date: "2013-11-06 12:00:00"
-description: "[C#]ListBox如何偵測Item的新增、插入、與刪除"
+description: "有時候我們使用ListBox元件會想要針對Item的新增、插入、與刪除做些反應，可能像是有個Item插入時我們會想把游標移到最下面之類的。但內建的ListBox並未將這樣的訊息開放出來，所以我們無法直接的去做這樣的處理，必須要自行去接收視窗訊息才行。"
 tags: [CSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Getting started"
 date: "2017-04-13 13:01:01"
+description: "要使用 BenchmarkDotNet 去做 .NET 程式的 benchmark，可先透過 NuGet 安裝 BenchmarkDotNet 套件。 套件安裝好後進行 benchmark 程式的撰寫，撰寫方式只要寫個 benchmark 的方法，方法內去叫用要測的方法，"
 tags: [BenchmarkDotNet]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "MariaDB - Install on Termux"
 date: "2019-06-24 08:51:39"
+description: "在 Termux 安裝 MariaDB，可透過 pkg 或是 apt 安裝。 pkg install MariaDB 安裝完調用 mysql_install_db 命令安裝資料庫。 mysql_install_db 調用 mysqld 命令啟動服務。"
 tags: [MariaDB, Termux]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Software]設定Chrome瀏覽器的暫存目錄到虛擬磁碟機"
 date: "2010-06-08 09:31:59"
-description: "[Software]設定Chrome瀏覽器的暫存目錄到虛擬磁碟機"
+description: "預設Google Chrome瀏覽器的暫存目錄位置為 C:\\Documents and Settings\\[你的帳號]\\Local Settings\\Application Data\\Chromium\\User Data 若想把暫存為置移至別的位置，例如虛擬磁碟機，"
 tags: [Software]
 ---
 

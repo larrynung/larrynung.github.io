@@ -1,6 +1,7 @@
 ---
 title: ".NET Core - Update .NET Core SDK with HomeBrew"
 date: "2019-12-12 08:24:39"
+description: "用 HomeBrew 安裝的 .NET core SDK，可直接用 HomeBrew 進行更新。 像是筆者電腦中的 .NET Core SDK 是 3.0 的版本。"
 tags: [.NET Core, HomeBrew]
 ---
 

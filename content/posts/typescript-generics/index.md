@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Generics"
 date: "2015-12-02 23:56:00"
-description: "TypeScript - Generics"
+description: "TypeScript 支援泛型語法，使用方式如下： 最後附上個簡單的使用範例："
 tags: [TypeScript]
 ---
 

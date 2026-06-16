@@ -1,7 +1,7 @@
 ---
 title: "GAE's Python Datastore API"
 date: "2013-11-06 12:00:00"
-description: "GAE's Python Datastore API"
+description: "GAE提供了一組Datastore API，可以讓我們將資料存在雲端，這邊一樣以Python為例簡單的紀錄一下。 首先將google.appengine.ext.db import進來。 接著必須設定我們要儲存的Model類別。"
 ---
 
 GAE提供了一組Datastore API，可以讓我們將資料存在雲端，這邊一樣以Python為例簡單的紀錄一下。

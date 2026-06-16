@@ -1,6 +1,7 @@
 ---
 title: "protobuf-net - Getting Started"
 date: "2016-08-16 13:32:20"
+description: "使用 protobuf-net，首先要參照 protobuf-net library，接著設定要用來做序列化或解序列化用的類別，設定完後就可以用 protobuf-net 來序列化或解序列化。 protobuf-net library 透過 NuGet 引用即可。"
 tags: [protobuf-net]
 ---
 

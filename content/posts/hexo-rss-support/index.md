@@ -1,6 +1,7 @@
 ---
 title: "Hexo - RSS support"
 date: "2016-06-13 23:14:07"
+description: "要為部落格加入 RSS，我們需先安裝 hexo-generator-feed。 npm install hexo-generator-feed --save 然後開啟 Hexo 的設定檔做些設定，像是 RSS feed 的數量等。"
 tags: [Hexo]
 ---
 

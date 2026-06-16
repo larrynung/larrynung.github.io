@@ -1,7 +1,7 @@
 ---
 title: "[Investment]理財致富的四個存摺"
 date: "2009-01-30 12:06:26"
-description: "[Investment]理財致富的四個存摺"
+description: "Abstract 工作存摺 理財存摺 投資存摺 快樂存摺 Conclusion Reference 工作存摺 是人一生最穩定的現金流來源，也是基本存摺，透過細水長流的工作薪資收入，可以不斷挹注理財和投資帳戶。"
 tags: [Investment]
 ---
 

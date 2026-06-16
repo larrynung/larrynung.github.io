@@ -1,6 +1,7 @@
 ---
 title: "Rider - Markdown support plugin"
 date: "2019-03-09 14:49:20"
+description: "Rider 原生對 Markdown 並未支援，在 Markdown 的編寫上就是類似一般的文字編輯器。 撰寫起來並不是特別方便。如果要讓 Rider 支援 Markdown，可加裝 Markdown support plugin。"
 tags: [Rider]
 ---
 

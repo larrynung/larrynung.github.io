@@ -1,7 +1,7 @@
 ---
 title: "TypeScript - Class"
 date: "2015-12-02 22:45:00"
-description: "TypeScript - Class"
+description: "TypeScript 的類別透過 class 關鍵字宣告，透過 new 關鍵字建立物件實體。 建構子的透過 constructor 關鍵字宣告。 類別屬性的宣告，是透過 get/set 關鍵字定義 get/set 區塊。"
 tags: [TypeScript]
 ---
 

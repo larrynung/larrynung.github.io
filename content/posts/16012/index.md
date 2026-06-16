@@ -1,7 +1,7 @@
 ---
 title: "用Extension Method在執行階段進行控制項的拖曳"
 date: "2010-06-20 10:02:40"
-description: "用Extension Method在執行階段進行控制項的拖曳"
+description: "整理一下拖曳控制項用的Extension Method，簡單紀錄如下： 使用上若要啟動拖曳，透過呼叫EnableRuntimeDrag就好，若要關閉拖曳，則呼叫DisableRuntimeDrag。簡單的範例程式如下： 執行後表單中的控制項就可以直接透過滑鼠拖曳。"
 tags: [VB.NET]
 ---
 

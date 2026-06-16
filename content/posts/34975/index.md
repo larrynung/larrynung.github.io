@@ -1,7 +1,7 @@
 ---
 title: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: rvalue reference"
 date: "2011-09-01 01:24:16"
-description: "[C++][Visual Studio]Visual studio 2010 C++0x new feature: rvalue reference"
+description: "Visual studio 2010為C++的開發人員新增了rvalue reference這個C++0x的功能，主要是用來解決過多臨時變數的問題，讓開發人員可以寫出更有效率的 C++ 程式碼。"
 tags: [Visual Studio,C++]
 ---
 

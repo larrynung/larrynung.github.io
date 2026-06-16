@@ -2,7 +2,7 @@
 title: "[C#]Windows RSS Platform"
 slug: "[CSharp]Windows RSS Platform"
 date: "2011-04-18 10:17:46"
-description: "[C#]Windows RSS Platform"
+description: "Windows RSS Platform提供RSS訂閱清單、訂閱增減等功能，其RSS的訂閱資訊會整合在7.0以上的IE版本內。 開發時需將Microsoft Feeds 2.0 Object Library這個COM物件加入參考。"
 tags: [CSharp]
 ---
 

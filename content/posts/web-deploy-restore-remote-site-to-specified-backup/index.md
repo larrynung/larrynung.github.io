@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Restore remote site to specified backup"
 date: "2017-01-03 13:21:46"
+description: "如要使用 Web Deploy 還原遠端站台至指定備份，可以指定 Web Deploy 使用 sync 操作，source 使用 backupManager，dest 使用 backupManager，並指定要還原的站台以及要用來還原的備份檔，"
 tags: [Web Deploy]
 ---
 

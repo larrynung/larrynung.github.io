@@ -1,6 +1,7 @@
 ---
 title: "Firebase - Listen for value events from realtime database on the web"
 date: "2018-02-25 22:32:23"
+description: "要監聽資料並自 Firebase 將資料讀取出來，需先進行 Firebase 與應用程式的連結，然後透過呼叫 Firebase 的 database 方法取得資料庫物件，調用 ref 方法取得資料物件的參考，最後調用 on 方法，指定監聽 value 事件，並帶入一個委派，在委派內取用數值即可。"
 tags: [Firebase]
 ---
 

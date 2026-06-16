@@ -1,6 +1,7 @@
 ---
 title: "Consul - Web UI"
 date: "2018-12-13 23:38:20"
+description: "要啟動 Consul Web UI 可在調用 Consul 命令時帶入 -ui 參數，如果是用開發人員模式 (帶入-dev 參數)，-ui 參數可忽略不帶。 consul agent -dev -ui 訪問 http:///ui，即可看到 Consul Web UI。"
 tags: [Consul]
 ---
 

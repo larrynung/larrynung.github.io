@@ -1,7 +1,7 @@
 ---
 title: "[C++]使用GetAdaptersAddresses API取得本地IP"
 date: "2013-11-06 12:00:00"
-description: "[C++]使用GetAdaptersAddresses API取得本地IP"
+description: "最近有個需求必須在C++中取得本地的IP，包括IPv6與IPv4兩種的IP，查來查去就只有GetAdaptersAddresses API比較合用，但是使用上卻不是很容易，這篇將之稍做整理。"
 ---
 
 最近有個需求必須在C++中取得本地的IP，包括IPv6與IPv4兩種的IP，查來查去就只有GetAdaptersAddresses API比較合用，但是使用上卻不是很容易，這篇將之稍做整理。

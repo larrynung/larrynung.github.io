@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Install  setup web deploy"
 date: "2016-12-05 23:31:31"
+description: "Web Deploy 程式可至微軟網站下載。 下載完點擊安裝。 安裝類型建議選取 Custom，確認一下要安裝的元件。 這邊的元件有 IIS Manager UI 模組，安裝完會將 Web Deploy 部分功能整合在 IIS Manager。"
 tags: [Web Deploy]
 ---
 

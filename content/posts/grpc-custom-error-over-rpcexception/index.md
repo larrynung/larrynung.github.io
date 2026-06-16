@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Custom error over RpcException"
 date: "2020-01-14 07:57:17"
+description: "在做系統時，免不了可能會要定義自己的狀態碼供判斷系統的問題。在 gRPC 下，我們可能會為 Message 增加 StatusCode 這樣的欄位做傳遞與判讀。 這樣的做法在一般的呼叫方式並無問題，但是在用 Streaming 傳達多個小 Message 時，使用上就會有點奇怪。"
 tags: [gRPC]
 ---
 

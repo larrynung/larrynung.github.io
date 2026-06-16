@@ -1,6 +1,7 @@
 ---
 title: "gollum - Install on Ubuntu"
 date: "2019-07-03 08:34:42"
+description: "要在 Ubuntu 安裝 gollum，可先透過 apt-get 安裝必要套件。 apt-get install ruby ruby-dev make zlib1g-dev libicu-dev build-essential git cmake 然後透過 RubyGems 安裝 gollum…"
 tags: [gollum]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Hello world"
 date: "2018-03-13 00:03:15"
+description: "Flutter 專案建立後可以先撰寫個簡單的 Hello world 程式，lib/main.dart 為 Flutter 程式的主要進入點，將之開啟後撰寫如下程式。 可以看到 Flutter 程式撰寫上主要有幾個要注意的部分，首先需引用 flutter/material.dart 套件。"
 tags: [Flutter]
 ---
 

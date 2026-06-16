@@ -1,6 +1,7 @@
 ---
 title: "Consul - Registering health checks"
 date: "2018-12-15 00:16:48"
+description: "Consul health check 可透過 Consul config 設定，在 Consul config 加入 check definition。 像是可以定義用定時去 ping 服務的方式去檢查服務的健康狀態。"
 tags: [Consul]
 ---
 

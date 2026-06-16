@@ -1,6 +1,7 @@
 ---
 title: "Sameroom - Connect Slack and Skype with Sameroom"
 date: "2018-12-05 23:35:08"
+description: "要將 Slack 與 Skype 串接，可在 Slack 中加入 Sameroom App。 在 Samefoom 這邊選取連接 Skype。 點選 add the Skype BridgeBot。 按下 Add to Contacts 按鈕將 Sameroom 加入 Skype 通訊人。"
 tags: [Sameroom, Slack, Skype]
 ---
 

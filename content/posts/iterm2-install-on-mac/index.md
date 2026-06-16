@@ -1,6 +1,7 @@
 ---
 title: "iTerm2 - Install on Mac"
 date: "2019-03-17 16:52:40"
+description: "要在 Mac 上安裝 iTerm2，可在官網下載 iTerm2 程式。 點選下載下來的程式。 點選 Move to Applications Folder 按鈕將 iTerm2 程式搬到應用程式目錄。 就可以在應用程式這邊看到 iTerm2 。"
 tags: [iTerm2, Mac]
 ---
 

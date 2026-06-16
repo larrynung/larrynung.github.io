@@ -1,6 +1,7 @@
 ---
 title: "dotnet-dump - Analyze .Net Core dump file"
 date: "2019-11-25 08:40:09"
+description: "Dump 出 .Net Core 的 Dump file 後。 可使用 dotnet-dump analyze 帶上 Dump file 的位置進行 Dump 檔的分析。"
 tags: [dotnet-dump]
 ---
 

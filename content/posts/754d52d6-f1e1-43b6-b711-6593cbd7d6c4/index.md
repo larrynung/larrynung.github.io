@@ -2,7 +2,7 @@
 title: "[C#]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
 slug: "[CSharp]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
 date: "2013-11-06 12:00:00"
-description: "[C#]如何解決在Vista以後開啟檔案FileSystemWatcher無法觸發LastAccess的問題"
+description: "筆者在論壇中看到FileSystemWatcher在不同系統上的事件觸發問題這篇發問，覺得十分有趣，同樣的程式在不同的OS有不同的結果。為了確定這個問題，筆者實際撰寫了像下面這樣的測試程式做了點測試。 發現開啟檔案時在筆者的Win8是不會觸發事件的。"
 tags: [CSharp]
 ---
 

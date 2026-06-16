@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Watch"
 date: "2017-05-12 13:52:05"
+description: "Vue.js 的 watch 可以設定監控特定的屬性，當屬性值變動時做對應的處理。 使用上只要在建構 Vue 建立時設定 watch 物件，裡面放置屬性值變化時要做的處理即可。 像是下面這樣的程式，設定了 message 變動時將訊息寫入 console 內。"
 tags: [Vue.js]
 ---
 

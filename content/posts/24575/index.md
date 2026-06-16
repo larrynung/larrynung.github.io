@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource][Visual Studio]Image Debugger Visualizer"
 date: "2011-05-09 01:10:29"
-description: "[.NET Resource][Visual Studio]Image Debugger Visualizer"
+description: "Image Debugger Visualizer是Visual Studio 2010的視覺化除錯工具，可讓除錯人員在除錯時監看圖形變數所指到的圖型，該擴充元件可在擴充元件管理員中取得，搜尋關鍵字Visualizer就可以看到了。"
 tags: [Visual Studio,.NET Resource]
 ---
 

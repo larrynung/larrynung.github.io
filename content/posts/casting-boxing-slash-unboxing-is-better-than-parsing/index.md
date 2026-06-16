@@ -1,7 +1,7 @@
 ---
 title: "Casting (Boxing/Unboxing) is better than parsing"
 date: "2015-08-23 23:45:00"
-description: "Casting (Boxing/Unboxing) is better than parsing"
+description: "以往我們在將 Object 中被裝箱的數值轉成數值時，大概會有兩種作法。 一種是直接將數值拆箱後使用，一種則是將 Object ToString 後再用 Parse 方法將之轉成預期的數值型態。"
 ---
 
 以往我們在將 Object 中被裝箱的數值轉成數值時，大概會有兩種作法。

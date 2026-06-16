@@ -1,7 +1,7 @@
 ---
 title: ".NET - Access Embeded Resource"
 date: "2014-04-14 23:01:00"
-description: ".NET - Access Embeded Resource"
+description: "Embeded Resource 可以將程式需要的檔案內嵌在程式組件內，會增加組件的大小，但是使用者看不到該檔案，也不會因為檔案位置錯誤造成程式出錯。當系統中存在有必要的檔案，且不希望讓使用者能夠輕易動到的話， 使用 Embeded Resource 是不錯的選擇。"
 tags: [CSharp]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "NuGet - Local cache source"
 date: "2013-12-25 22:45:00"
-description: "NuGet - Local cache source"
+description: "在安裝 NuGet 套件時，NuGet 會將使用到的 Package 存放起來以備後續重覆安裝時使用。存放的套件若有需要，可開啟 Visual Studio 的 Options 對話框，切換到 Package Manager 下的 General 頁籤，進行 Package 的清除或是瀏覽。"
 tags: [NuGet]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Vue.js - Conditional Rendering"
 date: "2017-05-13 23:44:27"
+description: "Vue.js 要使用條件渲染，像是想要當條件成立時才渲染，可以使用 v-if、 v-else-if、 v-else。 像是下面這程式，筆者使用輸入框繫結的 name 屬性去決定要顯示的文字，如果有輸入名字，則會對該名字 Hello，反之則顯示 Hello World。"
 tags: [Vue.js]
 ---
 

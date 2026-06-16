@@ -2,7 +2,7 @@
 title: "[C#]偵測系統Power狀態的改變以及是否進入Sleep mode"
 slug: "[CSharp]偵測系統Power狀態的改變以及是否進入Sleep mode"
 date: "2013-11-06 12:00:00"
-description: "[C#]偵測系統Power狀態的改變以及是否進入Sleep mode"
+description: "筆者之前在[C#]使用GetSystemPowerStatus API查看目前電源使用狀態與[[C#][VB.NET]使用SystemInformation.PowerStatus查看目前電源使用狀態](http://www.dotblogs.com.tw/larrynung/archive/200…"
 tags: [CSharp]
 ---
 

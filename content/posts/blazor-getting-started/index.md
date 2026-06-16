@@ -1,6 +1,7 @@
 ---
 title: "Blazor - Getting started"
 date: "2019-07-02 07:09:35"
+description: "要運行 Blazor，可先安裝 .Net Code 3.0 SDK，然後安裝 Blazor 範本。 dotnet new -i Microsoft.AspNetCore.Blazor.Templates::3.0.0-preview6.19307.2 再來透過範本建立 client 程式。"
 tags: [Blazor]
 ---
 

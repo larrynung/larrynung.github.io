@@ -1,6 +1,7 @@
 ---
 title: "Cake - Cleans the specified directories"
 date: "2018-11-08 23:18:51"
+description: "要使用 Cake 清除特定目錄，可以參閱 CleanDirectories 的使用方式。 調用上可以直接帶入目錄的集合，或是目錄的 match pattern。 像是用 match pattern 去清除目錄腳本撰寫起來就會像下面這樣。 Cake 任務運行後。 指定目錄的檔案就會被清除。"
 tags: [Cake]
 ---
 

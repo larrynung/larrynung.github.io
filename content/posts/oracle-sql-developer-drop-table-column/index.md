@@ -1,7 +1,7 @@
 ---
 title: "Oracle SQL Developer - Drop table column"
 date: "2015-07-08 13:42:00"
-description: "Oracle SQL Developer - Drop table column"
+description: "要使用 Oracle SQL Developer 將指定的表單欄位移除，可以將表單開啟，在 Columns 頁面按下滑鼠右鍵，點選 [Column | Drop...] 滑鼠右鍵選單選項。 在彈出的 Drop 對話框中下拉選取所要移除的表單欄位。 選取完後按下 Apply 按鈕套用。"
 tags: [Oracle SQL Developer]
 ---
 

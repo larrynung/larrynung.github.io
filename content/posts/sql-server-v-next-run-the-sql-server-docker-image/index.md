@@ -1,6 +1,7 @@
 ---
 title: "SQL Server v.Next - Run the SQL Server Docker image"
 date: "2016-11-21 13:15:10"
+description: "要使用 Docker 運行 SQL Server v.Next，首先要先確定下列環境需求： Docker Engine: 1.8+ Disk space: Minimum of 4 GB RAM: Minimum of 4 GB Docker 引擎需要在 1.8 以上的版本，"
 tags: [SQL Server v.Next]
 ---
 

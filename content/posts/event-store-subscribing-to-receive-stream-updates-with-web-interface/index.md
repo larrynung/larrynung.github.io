@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Subscribing to Receive Stream Updates with web interface"
 date: "2018-09-06 23:06:07"
+description: "要透過 Web interface 去訂閱事件，可切換至 Persistent Subscriptions 頁面，點選 New Subscription 按鈕。 填寫 Group、 Stream...等資訊建立 Subscription。"
 tags: [Event Store]
 ---
 

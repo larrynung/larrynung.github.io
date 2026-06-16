@@ -1,6 +1,7 @@
 ---
 title: "LiteDB - FileStorage"
 date: "2017-12-19 06:57:42"
+description: "為了控制記憶體的使用量，LiteDB 限制資料的存放量為 1 MB，1 MB 對於一般的資料而言是已經足夠了，但是對於二進制檔案來說就不怎麼足夠，所以 LiteDB 提供 FileStorage 用以存放二進制檔案。"
 tags: [LiteDB]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[IADP]Intel AppUp software uninstall process"
 date: "2013-11-06 12:00:00"
-description: "[IADP]Intel AppUp software uninstall process"
+description: "透過在Intel AppUp Center Client下載的軟體，跟一般的Windows應用程式一樣，可透過控至台內的新增移除程式內看到。 但目前的Intel AppUp Center Client仍有些許的BUG，故若透過新增移除程式將軟體移除，"
 ---
 
 透過在Intel AppUp Center Client下載的軟體，跟一般的Windows應用程式一樣，可透過控至台內的新增移除程式內看到。

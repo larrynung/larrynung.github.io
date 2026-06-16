@@ -1,6 +1,7 @@
 ---
 title: "redis-lua - A Lua client library for the redis key value storage system"
 date: "2017-04-23 23:39:55"
+description: "redis-lua 是 Lua 的 Redis client 套件，能讓 Lua 具備存取 Redis 的能力。 因為相依於 LuaSocket 套件，所以必須先用 LuaRocks 安裝 LuaSocket 套件。"
 tags: [Lua]
 ---
 

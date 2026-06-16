@@ -1,7 +1,7 @@
 ---
 title: "RVM (Ruby Version Manager)"
 date: "2013-11-06 12:00:00"
-description: "RVM (Ruby Version Manager)"
+description: "RVM (Ruby Version Manager)是Ruby的版控系統，開發人員可透過RVM輕易的安裝不同版本的Ruby至系統上，也可以去切換當前所要使用的Ruby版本。因為Ruby的改版很快，架構變動的幅度又很大，以往開發人員會需要想辦法生出不同的環境來做測試。"
 tags: [Ruby]
 ---
 

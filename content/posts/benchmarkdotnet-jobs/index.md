@@ -1,6 +1,7 @@
 ---
 title: "BenchmarkDotNet - Jobs"
 date: "2017-04-13 22:30:12"
+description: "BenchmarkDotNet 的 Job 是用來描述 benchmark 是怎樣運行的。 內建的 Job 有： DryJob ClrJob CoreJob MonoJob LegacyJitX86Job LegacyJitX64 RyuJitX64Job SimpleJob LongRunJob…"
 tags: [BenchmarkDotNet]
 ---
 

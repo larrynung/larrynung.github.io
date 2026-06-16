@@ -1,7 +1,7 @@
 ---
 title: "Convert winform to wpf window with Win2WPF"
 date: "2013-11-06 12:00:00"
-description: "Convert winform to wpf window with Win2WPF"
+description: "Win2WPF是一有趣的線上服務，能將我們現有的WinForm轉換成WPF Window。目前僅只支援C#的WinForm，在轉換上也有些限制，可能不是能很完整的完全轉換過去，像是非系統的控制項Win2WPF就沒有辦法做對應的替換，但起碼Win2WPF能讓我們有機會不需要重頭下去刻一遍一樣的版面。"
 ---
 
 Win2WPF是一有趣的線上服務，能將我們現有的WinForm轉換成WPF Window。目前僅只支援C#的WinForm，在轉換上也有些限制，可能不是能很完整的完全轉換過去，像是非系統的控制項[Win2WPF](http://www.win2wpf.com/)就沒有辦法做對應的替換，但起碼[Win2WPF](http://www.win2wpf.com/)能讓我們有機會不需要重頭下去刻一遍一樣的版面。

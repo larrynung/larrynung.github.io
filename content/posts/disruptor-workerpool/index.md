@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - WorkerPool"
 date: "2016-03-30 23:45:00"
-description: "Disruptor - WorkerPool"
+description: "Disruptor 的 EventHandler，Consumer 間會相互合作，會依序消費收到所有的資料。但有的場景我們可能會需要多個 Consumer 分攤處理收到的資料，這時可以採用 WorkerHandler。"
 tags: [Disruptor]
 ---
 

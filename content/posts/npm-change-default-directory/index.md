@@ -1,6 +1,7 @@
 ---
 title: "npm - Change default directory"
 date: "2017-10-29 23:47:37"
+description: "要設定 npm 的預設目錄，只要透過 npm config 命令設定 prefix 為指定的位置即可。 npm config set prefix [Path] Link 03 - Fixing npm permissions | npm Documentation"
 tags: [npm]
 ---
 

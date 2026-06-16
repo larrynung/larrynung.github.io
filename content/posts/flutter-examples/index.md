@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Examples"
 date: "2018-03-06 23:50:50"
+description: "Flutter 安裝目錄下的 examples 目錄附有一些 Flutter 的範例程式，學習時可先從這邊下手。 可先調用命令將範例運行起來操作看看，再對照看程式是怎麼撰寫的。"
 tags: [Flutter]
 ---
 

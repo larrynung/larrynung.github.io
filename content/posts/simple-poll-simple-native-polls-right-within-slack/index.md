@@ -1,6 +1,7 @@
 ---
 title: "'Simple Poll - Simple, native polls right within Slack'"
 date: "2018-11-22 23:34:45"
+description: "要在 Slack 使用投票功能，可在 Slack 中加入 Simple Pool App。 App 加入時會需要授權，若可以接受 App 要求授予的權限的話，按下 Authorize 按鈕。"
 tags: [Slack]
 ---
 

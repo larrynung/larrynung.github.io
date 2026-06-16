@@ -1,6 +1,7 @@
 ---
 title: "WinDBG - Check gcroot"
 date: "2016-07-22 13:27:37"
+description: "如果檢查出該被回收的物件並為如預期的被回收，這邊可以看一下物件的 gcroot，看看物件是為何被佔住而不能釋放。 像是這邊如果用 !dumpheap –stat 查看發現 7ff5e8859b0 MT 位置的物件有問題，這邊可以調用命令 !dumpheap -mt 7ff5e8859b0，"
 tags: [WinDBG]
 ---
 

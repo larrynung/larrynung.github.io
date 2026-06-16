@@ -1,7 +1,7 @@
 ---
 title: "FX.Configuration - Read mixed configuration"
 date: "2016-05-21 14:53:00"
-description: "FX.Configuration - Read mixed configuration"
+description: "要用 FX.Configuration 同時讀取 Application 與 JSON Configuration，需先引用 FX.Configuration 套件。 接著在 Application Configuration 中設定資料。 以及在 JSON Configuration 中設定資料。"
 tags: [FX.Configuration]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "SQLCop - Auditing Database for Best Practices"
 date: "2014-02-23 21:37:00"
-description: "SQLCop - Auditing Database for Best Practices"
+description: "SQLCop 是專門為 SQL Server 量身打造的分析工具。能針對現有的 SQL Server 進行分析，會從資料庫的 Stored Procedure、 Schema、Table View、 Index 等不同面向下去分析，看看是否有改善的空間。"
 ---
 
 SQLCop 是專門為 SQL Server 量身打造的分析工具。能針對現有的 SQL Server 進行分析，會從資料庫的 Stored Procedure、 Schema、Table View、 Index 等不同面向下去分析，看看是否有改善的空間。

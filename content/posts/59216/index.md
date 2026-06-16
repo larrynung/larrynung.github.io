@@ -2,7 +2,7 @@
 title: "[C#]Enable UAC Shield icons and run as administrator"
 slug: "[CSharp]Enable UAC Shield icons and run as administrator"
 date: "2011-11-23 01:20:05"
-description: "[C#]Enable UAC Shield icons and run as administrator"
+description: "在Win7中常會看到某些程式中會有個按鈕，按鈕上會有個盾牌的圖示，按下後能提升存取權限。這邊紀錄一下這樣的功能要怎樣實現。 首先是盾牌的圖示，實作時不是自己去換按鈕的圖片，而是要對Button發送BCM_SETSHIELD(0x0000160C)的Message，"
 tags: [CSharp]
 ---
 

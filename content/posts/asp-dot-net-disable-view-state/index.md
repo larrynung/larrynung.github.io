@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET - Disable View State"
 date: "2014-09-23 07:28:00"
-description: "ASP.NET - Disable View State"
+description: "禁用 View State 有幾種方式。若要將所有頁面都禁用，我們可以在 Web.Config 內的 system.web 加入 pages 的 element，並將其 enableViewState attribute 設為 false。"
 tags: [ASP.NET]
 ---
 

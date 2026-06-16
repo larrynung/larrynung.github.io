@@ -1,6 +1,7 @@
 ---
 title: "Event Store - By event type projection"
 date: "2018-09-04 23:18:49"
+description: "$by_event_type 是 Event Store 預設提供的 Projection，可以將 Event 依 Event Type 拆分成到對應的 Stream。 使用前需先將 $by_event_type projection 開啟。"
 tags: [Event Store]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "npm - Update npm with powershell"
 date: "2016-11-13 22:28:21"
+description: "npm 的版本如果過舊要更新版本，除了用 npm install 去安裝更新版本的 npm，也可以用 powershell 去進行更新. 先用 npm 安裝 npm-windows-upgrade。"
 tags: [npm]
 ---
 

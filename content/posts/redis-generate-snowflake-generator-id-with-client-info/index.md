@@ -1,6 +1,7 @@
 ---
 title: "Redis - Generate Snowflake generator id with client info"
 date: "2019-10-07 07:36:15"
+description: "在做分散式系統時，有些情境下免不了要給節點維一的識別號，像是在用 Snowflake 分散式 Id 演算法時會需要給予 10 bit 長的 Generator id，用以避免 Id 碰撞。 識別號有的會直接取 IP 某段，或是 Process no，這樣並不能確保值的唯一。"
 tags: [Redis, Snowflake]
 ---
 

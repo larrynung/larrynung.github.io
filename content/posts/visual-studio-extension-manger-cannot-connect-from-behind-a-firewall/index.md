@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio - Extension Manger Cannot Connect From Behind a Firewall"
 date: "2014-04-04 01:02:00"
-description: "Visual Studio - Extension Manger Cannot Connect From Behind a Firewall"
+description: "筆者工作環境的電腦，Visual Studio 內的 Extension Manager 無法正常的運作，查了一下才知道這是因為防火牆擋住了 100-Continue 的訊息發送所導致。"
 tags: [Visual Studio]
 ---
 

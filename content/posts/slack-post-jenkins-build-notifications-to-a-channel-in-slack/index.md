@@ -1,6 +1,7 @@
 ---
 title: "Slack - Post Jenkins build notifications to a channel in Slack"
 date: "2018-11-14 00:06:00"
+description: "要使用 Slack 接收 Jenkins CI 的建置通知訊息，可在 Slack 中加入 Jenkins CI App。 選取 Jenkins CI 建置通知訊息收到後要顯示在哪個 Channel，然後按下 Add Travis CI Integration 按鈕。"
 tags: [Slack, Jenkins]
 ---
 

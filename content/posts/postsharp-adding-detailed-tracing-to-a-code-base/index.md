@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Adding Detailed Tracing to a Code Base"
 date: "2015-02-02 00:01:00"
-description: "PostSharp - Adding Detailed Tracing to a Code Base"
+description: "要使用 PostSharp 為程式加入些簡易的 Log 資訊，在安裝完 PostSharp 擴充套件後，我們可以在類別上直接按下右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Add logging... 選單選項。"
 tags: [PostSharp]
 ---
 

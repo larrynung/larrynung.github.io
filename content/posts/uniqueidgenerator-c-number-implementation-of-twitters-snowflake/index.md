@@ -1,7 +1,7 @@
 ---
 title: "UniqueIdGenerator - C# implementation of Twitter's Snowflake"
 date: "2016-04-07 05:43:00"
-description: "UniqueIdGenerator - C# implementation of Twitter's Snowflake"
+description: "UniqueIdGenerator 是 Twitter Snowflake ID 的 C# 實作。 產生的 ID 預設有 64 bit，就一個 long 的大小，由 41 bit 為 Timestamp，10 bit 為 Generator id，13 bit 的 Sequence 所組成。"
 ---
 
 UniqueIdGenerator 是 Twitter Snowflake ID 的 C# 實作。

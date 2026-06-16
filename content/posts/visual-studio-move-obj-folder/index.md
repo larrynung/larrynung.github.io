@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio - Move obj folder"
 date: "2016-07-12 00:06:15"
+description: "Visual Studio 的專案在建置 .NET 專案時會自動建立 Obj 目錄放置中繼檔案，該目錄位置並無直接的設定方式。 如果想要調整該目錄位置，可設定 Project 檔案，在欲生效的 PropertyGroup 中加入 BaseIntermediateOutputPath 元素去指定位置。"
 tags: [Visual Studio]
 ---
 

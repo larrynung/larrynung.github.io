@@ -1,6 +1,7 @@
 ---
 title: "Vim - Display line numbers"
 date: "2018-10-20 23:56:45"
+description: "Vim 預設 Line number 是關閉的。 如有需要將開啟 Vim 的設定檔。 vi ~/.vimrc 在設定檔內加上設定開啟 Line number。 set number 再次進入 Vim 就會看到 Line number 已被開啟。"
 tags: [Vim]
 ---
 

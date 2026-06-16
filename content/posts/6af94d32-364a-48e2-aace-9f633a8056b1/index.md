@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Process Pro Extension v1.0"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio]Process Pro Extension v1.0"
+description: "不知道您是不是有同樣的經驗，有時候開發的專案需要開啟多個Process，除錯時常常視窗就在旁邊卻要從眾多Process中找到並attach上去，除錯結束時常常要從眾多Process中一一確認是否都被關掉了，明明就有地表最強大的開發工具，卻要開啟工作管理員去輔助做些確認，"
 ---
 
 不知道您是不是有同樣的經驗，有時候開發的專案需要開啟多個Process，除錯時常常視窗就在旁邊卻要從眾多Process中找到並attach上去，除錯結束時常常要從眾多Process中一一確認是否都被關掉了，明明就有地表最強大的開發工具，卻要開啟工作管理員去輔助做些確認，而且也無法一眼望出這些Process到底吃了多少的資源。筆者常常在開發上常碰到類似這樣的困擾，因此順手將以前寫的小工具Process Manager做些強化並整合至Visual Studio，順便練練怎樣撰寫Visual Studio Extension。這邊姑且就將它叫做[Process Pro Extension](http://visualstudiogallery.msdn.microsoft.com/4e58c006-8aac-4b63-b858-f8467ccb444e)，有興趣的可以至[Visual Studio Gallery下載並安裝。](http://visualstudiogallery.msdn.microsoft.com/4e58c006-8aac-4b63-b858-f8467ccb444e)

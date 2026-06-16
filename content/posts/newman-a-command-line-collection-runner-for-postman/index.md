@@ -1,6 +1,7 @@
 ---
 title: "Newman - A command-line collection runner for Postman"
 date: "2017-04-29 21:18:32"
+description: "Newman 是一用來運行 Postman collection 的命令列工具，當要在不開啟 Postman 的狀態下運行 Postman collection 時會需要使用。 安裝只要透過 npm 將 Newman 做全域安裝即可。"
 tags: [Postman]
 ---
 

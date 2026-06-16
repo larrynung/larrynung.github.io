@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio][.NET Resource]使用ConnectionString Manager extension擴充元件管理方案中用到的連線字串"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio][.NET Resource]使用ConnectionString Manager extension擴充元件管理方案中用到的連線字串"
+description: "ConnectionString Manager extension是一套用來管理連線字串的Visual Studio擴充套件，他能夠讓開發人員用一個統一的管理介面控管整個方案中有用到的連線字串，透過這個統一的管理介面我們能很容易的新增、編輯、與刪除連線字串，"
 ---
 
 ConnectionString Manager extension是一套用來管理連線字串的Visual Studio擴充套件，他能夠讓開發人員用一個統一的管理介面控管整個方案中有用到的連線字串，透過這個統一的管理介面我們能很容易的新增、編輯、與刪除連線字串，也可以很快速的查驗連線字串是否還能夠正確的連到資料庫。

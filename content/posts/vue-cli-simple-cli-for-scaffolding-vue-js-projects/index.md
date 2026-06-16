@@ -1,6 +1,7 @@
 ---
 title: "vue-cli - Simple CLI for scaffolding Vue.js projects"
 date: "2017-05-01 17:08:44"
+description: "vue-cli 是 vue 官方提供的 cli 工具，能用來建立 vue 的專案。 vue-cli 需要在 Node.js 4.x+、npm 3+ 以上，並要在有 git 的環境下使用。 可直接透過 npm 安裝到全域使用。"
 ---
 
 vue-cli 是 vue 官方提供的 cli 工具，能用來建立 vue 的專案。

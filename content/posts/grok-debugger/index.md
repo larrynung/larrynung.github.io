@@ -1,6 +1,7 @@
 ---
 title: "Grok Debugger"
 date: "2017-06-21 13:17:08"
+description: "要測試 Grok pattern，可以借助一些線上工具，像是 Grok Debugger。 使用上只要在 Input 部份帶入要被 Grok 處理的資料，Pattern 部份帶入要用來處理資料的 Grok pattern 即可。"
 tags: [Grok]
 ---
 

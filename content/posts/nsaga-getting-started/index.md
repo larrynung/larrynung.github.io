@@ -1,6 +1,7 @@
 ---
 title: "NSaga - Getting started"
 date: "2019-04-12 14:22:45"
+description: "使用 NSaga 來做 Saga pattern，需先透過 NuGet 安裝 NSaga 套件。 PM> Install-Package NSaga 接著要定義 Transaction 中的每一個動作，也就是 NSaga 中的 Message。"
 tags: [Saga, NSaga]
 ---
 

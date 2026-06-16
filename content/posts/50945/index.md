@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]使用Editbin命令讓Visual Studio突破2GB Memory使用限制"
 date: "2011-11-03 01:09:29"
-description: "[Visual Studio]使用Editbin命令讓Visual Studio突破2GB Memory使用限制"
+description: "目前我們所使用的Visual Studio都是32位元版本，被限制只能使用到2GB的記憶體。若要突破這樣的限制，我們可以使用Editbin指令將devenv.exe做些強制性的修改，"
 tags: [Visual Studio]
 ---
 

@@ -2,7 +2,7 @@
 title: "[C#]使用Windows API Code Pack存取媒體櫃內存放的資料"
 slug: "[CSharp]使用Windows API Code Pack存取媒體櫃內存放的資料"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用Windows API Code Pack存取媒體櫃內存放的資料"
+description: "要用程式存取媒體櫃內存放的資料，我們大概可以有兩種方法，一種是自行解析，一種則是使用包好的函式庫(像是Windows API Code Pack)去作控制。之所以能夠自行解析是因為媒體櫃的資訊是存放在附檔名為.library-ms的XML檔案中。"
 tags: [CSharp]
 ---
 

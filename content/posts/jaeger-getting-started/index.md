@@ -1,6 +1,7 @@
 ---
 title: "Jaeger - Getting started"
 date: "2020-02-19 07:37:46"
+description: "要使用 Jaeger，最簡便的做法是直接使用 Docker 去起 jaegertracing/all-in-one 容器。 docker run -d --name jaeger \\ -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 \\ -p 5775:5775/udp \\…"
 tags: [Jaeger]
 ---
 

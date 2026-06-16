@@ -1,6 +1,7 @@
 ---
 title: "Vault - GitHub auth method"
 date: "2020-01-02 08:28:32"
+description: "要使用 GitHub 做 Vault 的認證，可用 vault auth enable 帶入 github 啟動 GitHub auth method。 vault auth enable [-path=$path] github 查驗一下是否正常啟用。"
 tags: [Vault]
 ---
 

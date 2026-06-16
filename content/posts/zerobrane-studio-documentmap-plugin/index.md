@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - DocumentMap Plugin"
 date: "2017-04-19 23:56:31"
+description: "要在 ZeroBrane Studio 使用 DocumentMap 功能，首先要先將 DocumentMap Plugin 下載至 ZeroBrane Studio 的 packages 目錄下。"
 tags: [ZeroBrane Studio]
 ---
 

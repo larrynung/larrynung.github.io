@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]使用MSBuild的平行建置功能加速Visual Studio的建置"
 date: "2011-11-02 01:04:58"
-description: "[Visual Studio]使用MSBuild的平行建置功能加速Visual Studio的建置"
+description: "筆者在[Visual Studio]使用VSSpeedster加速Visual Studio建置這篇介紹到可以使用VSSpeedster外掛啟用平行建置，加速Visual Studio的建置，文中有帶出該外掛元件背後是透過MSBuild來達到平行建置的效果。"
 tags: [Visual Studio]
 ---
 

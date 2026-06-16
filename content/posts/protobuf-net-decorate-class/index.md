@@ -1,6 +1,7 @@
 ---
 title: "protobuf-net - Decorate class"
 date: "2016-08-18 12:39:58"
+description: "protobuf-net 要設定類別怎樣被序列化與解序列化有三種方式‧ 像是使用 protobuf-net 提供的 Attribute，類別上用 ProtoContractAttribute、Property 上用 ProtoMemberAttribute‧ 如果有繼層的類別可以透過…"
 tags: [protobuf-net]
 ---
 

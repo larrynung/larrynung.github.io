@@ -1,7 +1,7 @@
 ---
 title: "Web.config Transformation Tester"
 date: "2014-08-31 14:54:00"
-description: "Web.config Transformation Tester"
+description: "Web.config Transformation Tester 是可用來測試 Web.Config Transformation 的線上服務，若要學習 Web.Config Transformation 或是要驗證轉換這是個不錯的服務。"
 tags: [Web.Config Transformation]
 ---
 

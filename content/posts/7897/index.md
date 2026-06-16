@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern]Facade模式"
 date: "2009-04-07 12:48:12"
-description: "[Design Pattern]Facade模式"
+description: "字面意思 facade [fəˈsɑ:d] n.建築物的正面，外表 意圖 為子系統提供一個統一的高層接口，使子系統更容易使用。 希望簡化原有系統的使用方式。 需要定義自己的接口。 為了簡化接口。 口訣 單一窗口。 問題 只需使用某個複雜系統的部份功能，或者，需要以一種特殊的方式與系統交互。"
 tags: [Design Pattern]
 ---
 

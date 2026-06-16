@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Valid Anagram"
 date: "2015-08-15 21:44:00"
-description: "LeetCode - Valid Anagram"
+description: "LeetCode 的 Valid Anagram 題目如下： Given two strings s and t, write a function to determine if t is an anagram of s."
 tags: [LeetCode]
 ---
 

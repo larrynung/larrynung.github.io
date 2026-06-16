@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Unable to start ASP.NET Core gRPC app on macOS"
 date: "2019-12-01 12:36:18"
+description: "使用 ASP.NET Core 3.0 範本建立 gPRC 程式， 在 MAC 的環境下直接運行起來會發生 HTTP/2 over TLS is not supported on macOS due to mis sing ALPN support 錯誤。"
 tags: [gRPC]
 ---
 

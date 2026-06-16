@@ -1,6 +1,7 @@
 ---
 title: "Flutter - FloatingActionButton class"
 date: "2018-04-08 23:32:03"
+description: "Flutter 的 FloatingActionButton widget 可以用來做按鈕的呈現，一般會搭配 Scaffold一起使用。 其建構子如下： FloatingActionButton({Key key, Widget child, String tooltip, Color…"
 tags: [Flutter]
 ---
 

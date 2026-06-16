@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - BigInteger"
 date: "2010-10-27 09:49:40"
-description: ".NET 4.0 New Feature - BigInteger"
+description: "先前在[C#]BigInteger這篇介紹過在3.5的Framework中，內藏有BigInteger型別可以使用，但在3.5中由於並未開出，所以得透過反射的方式把藏在內部的型別拿來使用，而在.NET 4.0推出後，我們不需兜一大圈就可以直接使用這樣的型別。"
 tags: [VB.NET]
 ---
 

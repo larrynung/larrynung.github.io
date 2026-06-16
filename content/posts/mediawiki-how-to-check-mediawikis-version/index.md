@@ -1,7 +1,7 @@
 ---
 title: "MediaWiki - How to check MediaWiki's version"
 date: "2014-12-27 23:47:00"
-description: "MediaWiki - How to check MediaWiki's version"
+description: "有些時候我們會需要知道已安裝的 MediaWiki 版本，像是要安裝 MediaWiki 的套件前我們就會需要明確的知道是否能在其上正常運作。 要查閱安裝的 MediaWiki 版本，我們有三種方式。 一種是進到 Wiki 的 Version 頁面查閱(搜尋框輸入Special:Version)。"
 tags: [MediaWiki]
 ---
 

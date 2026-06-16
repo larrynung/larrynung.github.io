@@ -2,7 +2,7 @@
 title: "[C#][CodePlex]LevelUp Serializer"
 slug: "[CSharp][CodePlex]LevelUp Serializer"
 date: "2013-11-06 12:00:00"
-description: "[C#][CodePlex]LevelUp Serializer"
+description: "因為網路上的函式庫都不太合手，想整理個自己用的序列化函式庫已經有兩三年了，不是想做多大的函式庫，但卻也遲遲沒有毅力將這完成。直到這幾天才將寫到一半的函式庫打開來繼續撰寫、調整、測試，終於擠出了第一版本，目前已經可在CodePlex的LevelUp Serializer頁面中看到。"
 tags: [CSharp]
 ---
 

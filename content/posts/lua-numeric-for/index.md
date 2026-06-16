@@ -1,6 +1,7 @@
 ---
 title: "Lua - Numeric for"
 date: "2017-08-06 23:20:34"
+description: "Lua numeric for 的語法如下，for 後面設定迴圈內要使用的變數，變數後面用等號帶上數值的起點、終點、遞增/減值 設定值間用逗號隔開，然後用 do...end 設定迴圈的區塊，在迴圈的區塊內帶入要運行的動作即可。"
 tags: [Lua]
 ---
 

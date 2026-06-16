@@ -2,7 +2,7 @@
 title: "[C#][Extension Method]Get directory size"
 slug: "[CSharp][Extension Method]Get directory size"
 date: "2013-11-06 12:00:00"
-description: "[C#][Extension Method]Get directory size"
+description: "使用.NET程式要取得指定目錄的大小，沒辦法像取得檔案大小一樣的簡單，沒有現成的屬性可以取用，必須要遶點路去達到這樣的功能。像是MSDN中的Directory 類別這篇，裡面範例有一道叫做DirSize的Function就是在做這件事情。"
 tags: [CSharp]
 ---
 

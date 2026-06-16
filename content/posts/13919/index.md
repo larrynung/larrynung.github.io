@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource].NET Framework Setup Verification Tool"
 date: "2010-03-07 10:39:33"
-description: "[.NET Resource].NET Framework Setup Verification Tool"
+description: ".NET Framework Setup Verification Tool是一套驗證軟體，會驗證.NET Framework的安裝檔案、目錄、登錄檔，也會使用簡單的小程式來測試.NET Framework是否可以被運行。"
 tags: [.NET Resource]
 ---
 

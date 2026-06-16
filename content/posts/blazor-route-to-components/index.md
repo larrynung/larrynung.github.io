@@ -1,6 +1,7 @@
 ---
 title: "Blazor - Route to components"
 date: "2019-07-15 19:29:20"
+description: "Blazor component 在未加掛 @page directive 時只能像 HTML element 一樣嵌入頁面使用。 如果要能直接當成頁面透過 Routing 訪問，可在 Blazor component 最前面加掛 @page directive，"
 tags: [Blazor]
 ---
 

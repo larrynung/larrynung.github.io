@@ -1,7 +1,7 @@
 ---
 title: ".NET - A Simple Finite State Machine Solution"
 date: "2014-05-15 13:20:00"
-description: ".NET - A Simple Finite State Machine Solution"
+description: "想要用實現有限狀態機的功能，看了一下網路上的解決方案以及 State Pattern，覺得都不怎麼適用，因此利用 Tuple 與 Dictionary 去實作了一個簡易又可重複使用的 State Machine： 使用時只要宣告狀態的列舉以及用來觸發狀態轉換的命令列舉，"
 tags: [.NET, CSharp]
 ---
 

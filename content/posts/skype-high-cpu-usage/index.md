@@ -1,7 +1,7 @@
 ---
 title: "Skype - High CPU usage"
 date: "2014-01-08 23:29:00"
-description: "Skype - High CPU usage"
+description: "最近在筆者工作的電腦上，一直以來都運作良好的 Skype 突然開始狂吃 CPU 。查閱了一下資料，這段時間發現很多人也都碰到這個問題，不過同樣的現象卻未在同事的電腦上出現，感覺是要滿足特定的條件才會發生。 像這邊筆者的電腦就吃了 25% 左右，筆者的電腦是四核心，相當於一整顆 CPU 被吃掉了。"
 tags: [Skype]
 ---
 

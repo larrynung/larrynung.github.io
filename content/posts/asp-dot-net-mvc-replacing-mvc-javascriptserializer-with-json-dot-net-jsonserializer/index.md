@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET JsonSerializer"
 date: "2015-01-13 21:11:00"
-description: "ASP.NET MVC - Replacing MVC JavascriptSerializer with JSON.NET JsonSerializer"
+description: "使用 ASP.NET MVC 或是 Web API 做 JSON 格式的回傳，只要將 Model 帶入去建構 JsonResult 物件回傳即可，像是下面這樣： 這樣的寫法預設會採用 JavaSriptSerializer 去做 JSON 的序列化，有著效能不佳的問題，"
 tags: [ASP.NET MVC]
 ---
 

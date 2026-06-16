@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Sync local package to remote site"
 date: "2016-12-26 22:24:43"
+description: "如要使用 Web Deploy 將 Web Deploy Package 佈署到遠端站台，可以指定 Web Deploy 使用 sync 操作，source 使用 package provider，帶入 Web Deploy Package 的檔案位置，"
 tags: [Web Deploy]
 ---
 

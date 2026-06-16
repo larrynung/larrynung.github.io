@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Getting Started with ProGet for Linux"
 date: "2017-09-08 23:26:07"
+description: "要在 Linux 架設 ProGet，目前只有 Docker 的 Solution。 建立 Docker 容器的網路連結。 docker network create proget 建立 Postgres 資料庫容器供 ProGet 使用。"
 tags: [ProGet]
 ---
 

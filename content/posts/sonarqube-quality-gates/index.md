@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Quality Gates"
 date: "2017-03-22 23:41:33"
+description: "Quality Gate 是產品要上到正式環境所要滿足的條件，可在 SonarQube 的 Quality Gates 頁面管理，可以點選 Create 按鈕新增，或是點選 Quality Gate 的名稱進一步的管理。"
 tags: [SonarQube]
 ---
 

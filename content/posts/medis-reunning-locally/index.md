@@ -1,6 +1,7 @@
 ---
 title: "Medis - Reunning locally"
 date: "2019-12-02 07:44:24"
+description: "要在本地運行 Medis，先要將 Medis 下載下來。 git clone https://github.com/luin/medis 進入 Media 目錄。 cd medis 安裝需要的 npm 套件。 npm install 建置。"
 tags: [Medis]
 ---
 

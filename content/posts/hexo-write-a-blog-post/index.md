@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Write a blog post"
 date: "2016-06-12 22:16:06"
+description: "使用 Hexo 撰寫 blog 文章，可以先用 hexo new 建立一個 post。 hexo new hexo n 這個指令會幫我們建立一個 post 的 md 檔，開啟該檔用 markdown 撰寫 blog 文章。 撰寫完後存檔，用 hexo server 將 Hexo 服務跑起來。"
 tags: [Hexo]
 ---
 

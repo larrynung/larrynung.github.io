@@ -1,6 +1,7 @@
 ---
 title: "tmux - Getting started"
 date: "2019-03-27 07:26:06"
+description: "tmux 在 Ubuntu 可透過 apt-get 安裝。 apt-get install tmux 安裝完可查閱版本確認安裝是否正常。 tmux -V 使用方式可帶入 --help 參數查詢。 tmux --help 若要較詳細的使用說明，可使用 man 查閱。"
 tags: [tmux]
 ---
 

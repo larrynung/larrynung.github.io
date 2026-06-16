@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Environment.FailFast"
 date: "2010-11-29 09:37:09"
-description: ".NET 4.0 New Feature - Environment.FailFast"
+description: ".NET 4.0中新增FailFast(String, Exception)多載方法，該多載方法主要是在應用程式損壞無法修復且執行try...catch...finally將會損壞程式資源下使用 ，"
 tags: [CSharp]
 ---
 

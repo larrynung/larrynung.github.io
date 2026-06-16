@@ -1,7 +1,7 @@
 ---
 title: "[Performance][C#]List V.S SortedList"
 date: "2009-03-27 11:51:26"
-description: "[Performance][C#]List V.S SortedList"
+description: "之前有看到網路文章介紹SortedList類別，該類別使用方式類似HashTable，也是由Key跟Value所組成的字典類別，而與其它字典類別最大的差異就在於SortedList類別會自動排序。"
 tags: [Performance,CSharp]
 ---
 

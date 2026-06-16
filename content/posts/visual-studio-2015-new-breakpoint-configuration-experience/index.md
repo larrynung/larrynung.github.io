@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2015 - New Breakpoint Configuration Experience"
 date: "2015-02-05 08:32:00"
-description: "Visual Studio 2015 - New Breakpoint Configuration Experience"
+description: "Visual Studio 2015 在除錯功能上做了一些改進，其中一項就是 New Breakpoint Configuration Experience。 以往在設定中斷點時，中斷點的設定視窗是彈跳出來的，設定時要參考程式碼不易，且各個設定雖然可以合併使用但卻是分開的設定視窗。"
 tags: [Visual Studio]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Source code control with subversion"
 date: "2017-08-01 13:14:31"
+description: "Oracle SQL Developer 要使用 Subversion 進行程式碼的版本控制，首先要建立連線。 可以透過 [Team | Subversion | Create Connection...] 選單選項進行連線的建立。"
 tags: [Oracle SQL Developer]
 ---
 

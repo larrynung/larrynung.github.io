@@ -1,7 +1,7 @@
 ---
 title: "Push to different remote repository by git"
 date: "2013-11-06 12:00:00"
-description: "Push to different remote repository by git"
+description: "筆者這一兩年接觸了很多不同的Source Hosting Solution，像是GitHub、CodePlex、與Bitbuck。在要開放Source Code時，因為技術背景的關係筆者總是會優先傾向使用CodePlex去做Source Hosting，雖然CodePlex已經很好用了，"
 tags: [Git]
 ---
 

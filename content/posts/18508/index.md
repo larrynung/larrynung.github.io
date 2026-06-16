@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Zeta Resource Editor 好用的資源檔編輯工具"
 date: "2010-10-21 11:21:42"
-description: "[.NET Resource]Zeta Resource Editor 好用的資源檔編輯工具"
+description: "在製作.NET多語系應用程式時，常常會發生可能改一改後有個語系的資源檔忘了修改，或是多語系資源不知道該怎麼翻譯，這時我們就必須要資源檔編輯工具來輔助我們實作多語系應用程式，Zeta Resource Editor就是這樣的一個輔助工具，具備多個語系資源同時編輯、翻譯等功能。"
 tags: [.NET Resource]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - placeholder"
 date: "2018-06-04 23:52:52"
+description: "TensonrFlow 的 placeholder 方法可用來指定後續運行才會帶入的值，其函式原型如下： tf.placeholder( dtype, shape=None, name=None ) 其中 dtype 是值的型態，shape 是常數的維度。"
 tags: [TensorFlow]
 ---
 

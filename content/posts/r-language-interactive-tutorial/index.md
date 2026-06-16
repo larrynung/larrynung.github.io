@@ -1,6 +1,7 @@
 ---
 title: "R 語言翻轉教室 - 全中文 R 語言互動式教材"
 date: "2017-04-29 08:58:20"
+description: "R 語言翻轉教室是一全中文互動式教材，教材的內容主要是來自 An Introduction to R。 可開啟 RGui 或是 RStudio，在 Console 視窗輸入命令開始進行安裝。"
 tags: [R]
 ---
 

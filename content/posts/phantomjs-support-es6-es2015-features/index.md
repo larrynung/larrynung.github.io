@@ -1,6 +1,7 @@
 ---
 title: "PhantomJS - Support ES6/ES2015 Features"
 date: "2018-11-30 23:47:56"
+description: "PhantomJS 目前版本為 2.1 版，是不支援 ES6/ES2015 的，所以在某些情境下使用 PhantomJS 會被受限，像是網站使用到 let 之類的語法就會無法使用 PhantomJS。"
 tags: [PhantomJS]
 ---
 

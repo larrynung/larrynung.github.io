@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]Change MDI Parent BackColor"
 date: "2010-01-23 12:27:55"
-description: "[VB.NET]Change MDI Parent BackColor"
+description: "最近在調整MDI背景顏色時，發現MDI的背景顏色不能直接設定。直接設定的話會像下圖一樣，會看不到預期的結果。 其實這是因為WinForm在設定了IsMdiContainer屬性後，WinForm上面會自動添加一個MdiClient控制項在上面。這個控制項是MDI子表單的容器，能放置MDI子表單。"
 tags: [VB.NET]
 ---
 

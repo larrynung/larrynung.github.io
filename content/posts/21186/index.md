@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Object Spy"
 date: "2011-02-01 06:37:05"
-description: "[.NET Resource]Object Spy"
+description: "Object Spy可在.NET Object Spy and InvokeRemote下載，該軟體可監看應用程式目前有哪些物件，與監看物件中的屬性，甚至可以變更物件的屬性與運行輸入的運算式去監看有興趣的資料，下載後解將壓縮檔解開可看到如下四個檔案，ObjectSpy是用以監看物件屬性用的，"
 tags: [.NET Resource]
 ---
 

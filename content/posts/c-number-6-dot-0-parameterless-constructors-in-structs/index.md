@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Parameterless constructors in structs"
 date: "2015-01-21 00:17:00"
-description: "C# 6.0 - Parameterless constructors in structs"
+description: "在 C# 6.0 以前，Struct 會自帶 Parameterless Constructors，且不允許我們自行實作，像是下面這樣的程式碼： 運行在 C# 6.0 以前，編譯器就會告知錯誤： 如果想要在 Parameterless Constructors 自行加些處理，"
 tags: [CSharp, CSharp 6.0]
 ---
 

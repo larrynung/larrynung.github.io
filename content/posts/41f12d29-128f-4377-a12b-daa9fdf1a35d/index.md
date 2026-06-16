@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's grid geometry manage"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's grid geometry manage"
+description: "Tkinter在做版面配置有三種方式，grid是其中一種。 使用grid來做版面配置，我們可以指定元件的要放在哪一行、哪一列、占用幾行、占用幾列...等。 grid方法可以接受column、columnspan、row 、rowspan…"
 tags: [Python]
 ---
 

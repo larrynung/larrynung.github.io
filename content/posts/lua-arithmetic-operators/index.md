@@ -1,6 +1,7 @@
 ---
 title: "Lua - Arithmetic operators"
 date: "2017-08-02 23:39:33"
+description: "Lua 的 Arithmetic operators 有 +、-、、/、%、>=，這些運算符可用來做數值的運算。 | Operator | Description | |:-------------:|:-------------:| | + | 用來將前後數值相加 | | - |…"
 tags: [Lua]
 ---
 

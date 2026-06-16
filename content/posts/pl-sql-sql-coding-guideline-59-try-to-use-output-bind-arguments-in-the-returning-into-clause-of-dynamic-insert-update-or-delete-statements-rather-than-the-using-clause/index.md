@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 59 - Try to use output bind arguments in the RETURNING INTO clause of dynamic INSERT, UPDATE or DELETE statements"
 date: "2017-11-21 13:28:09"
+description: "條款五十九，嘗試使用 RETURNING INTO，而非使用 Using OUT 綁定輸出參數。 像是下面這段程式使用了 Using OUT 語法去綁定輸出參數就不被建議。 建議的做法是用 RETURNING INTO 語法去綁定輸出參數。"
 tags: [PL/SQL & SQL CODING GUIDELINE]
 ---
 

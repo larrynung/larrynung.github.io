@@ -1,7 +1,7 @@
 ---
 title: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
 date: "2013-11-06 12:00:00"
-description: "[C#]DropBox開發系列 - 使用DropNet取得DropBox帳戶的資訊"
+description: "要使用DropNet取得DropBox帳戶的資訊，我們可以在做完DropBox認證後叫用DropNetClient.AccountInfo函式，該函式會回傳DropNet.Models.AccountInfo物件，"
 tags: [CSharp]
 ---
 

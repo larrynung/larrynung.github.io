@@ -2,7 +2,7 @@
 title: "[C#]仿照Chrome的Multi-process Architecture"
 slug: "[CSharp]仿照Chrome的Multi-process Architecture"
 date: "2013-11-06 12:00:00"
-description: "[C#]仿照Chrome的Multi-process Architecture"
+description: "筆者在上一篇[C#]如何在程式中內嵌其它應用程式稍稍整理了一下怎樣嵌入外部程式到UI上，這邊要接著嘗試仿照Chrome的Multi-process Architecture做一個簡易的瀏覽器。"
 tags: [CSharp]
 ---
 

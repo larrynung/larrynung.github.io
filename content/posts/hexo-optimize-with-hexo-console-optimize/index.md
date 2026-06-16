@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Optimize with hexo-console-optimize"
 date: "2017-08-09 12:37:04"
+description: "hexo-console-optimize 是 Hexo 的套件，可讓 Hexo 對 HTML、CSS、JS、Image 進行壓縮優化。 可透過 npm 進行安裝。"
 tags: [Hexo]
 ---
 

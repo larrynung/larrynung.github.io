@@ -1,6 +1,7 @@
 ---
 title: "MethodBoundaryAspect.Fody - Altering asynchronous method behavior"
 date: "2019-09-01 23:52:57"
+description: "MethodBoundaryAspect.Fody 要修改非同步方法的回傳值，可在 OnExit 方法實作時將 MethodExecutionArgs.ReturnValue 屬性值轉回 Task，用 ContinueWith 串接處理，"
 tags: [Fody]
 ---
 

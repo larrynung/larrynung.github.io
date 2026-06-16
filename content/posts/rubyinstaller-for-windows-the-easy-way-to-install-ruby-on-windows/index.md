@@ -1,6 +1,7 @@
 ---
 title: "RubyInstaller for Windows - The easy way to install Ruby on Windows"
 date: "2017-08-11 12:59:54"
+description: "要在 Windows 內使用 Ruby，可下載 RubyInstaller for Windows。 下載完後點擊安裝。 安裝完即可使用 Ruby。 Link RubyInstaller for Windows"
 tags: [Ruby]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Git - Reset local branch to remote state"
 date: "2019-05-15 08:57:48"
+description: "若在本地操作 Git 錯誤，想將本地分支還原到跟遠端分支一樣狀態的話。 可以將遠端分支 fetch 下來。 git fetch ${RemoteName} ${BranchName} 然後強制將本地分支還原至遠端分支的狀態。"
 tags: [Git]
 ---
 

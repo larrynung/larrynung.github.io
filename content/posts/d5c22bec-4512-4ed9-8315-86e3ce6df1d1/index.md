@@ -1,7 +1,7 @@
 ---
 title: "[IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式"
 date: "2013-11-06 12:00:00"
-description: "[IADP]使用AppUp (TM) encapsulator beta封裝您的Web程式"
+description: "跟Android一樣，為了讓開發人員便於將現有的Web程式放到軟體市集，Intel提供了AppUp (TM) encapsulator beta這個線上工具，開發人員可藉由AppUp (TM) encapsulator…"
 ---
 
 跟Android一樣，為了讓開發人員便於將現有的Web程式放到軟體市集，Intel提供了AppUp (TM) encapsulator beta這個線上工具，開發人員可藉由[AppUp (TM) encapsulator beta將現有的網站、Flash、或是JavaScript所寫成的程式封裝成類似原生的應用程式。](http://appdeveloper.intel.com/en-us/encapsulator-beta)

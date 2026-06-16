@@ -1,6 +1,7 @@
 ---
 title: "Jenkins - Categorized Jobs View Plugin"
 date: "2018-03-01 22:54:13"
+description: "Jenkins 的 Categorized Jobs View 套件可用來分類整理 Jenkins job，允許指定多個不同的分類 Rule，View 內的 Job 會依照指定的 Rule 進行分類。"
 tags: [Jenkins]
 ---
 

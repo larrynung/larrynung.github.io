@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Complex"
 date: "2010-11-01 07:55:42"
-description: ".NET 4.0 New Feature - Complex"
+description: ".NET 4.0新增了Complex類別，位於System.Numerics.dll組件內的System.Numerics中，可用來描述與處理複數資料，具備數值比對、算術運算、其它數值運算 、與三角運算等複數資料運算的能力。"
 tags: [VB.NET]
 ---
 

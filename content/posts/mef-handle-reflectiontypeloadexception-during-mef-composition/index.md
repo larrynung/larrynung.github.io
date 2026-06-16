@@ -1,7 +1,7 @@
 ---
 title: "MEF - Handle ReflectionTypeLoadException during MEF composition"
 date: "2014-02-17 11:08:00"
-description: "MEF - Handle ReflectionTypeLoadException during MEF composition"
+description: "使用 MEF 去 Compose 指定目錄下的所有 Part，我們可能會像下面這樣透過 DirectoryCatalog 去提供 Export Parts，讓 CompositionContainer 去做 Compose。 多半上面這段程式能夠運行良好。"
 tags: [MEF]
 ---
 

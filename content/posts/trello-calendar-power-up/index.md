@@ -1,7 +1,7 @@
 ---
 title: "Trello - Calendar power-up"
 date: "2015-02-15 23:08:00"
-description: "Trello - Calendar power-up"
+description: "要啟動 Trello Calendar 功能，我們可以開啟 Trello 的右側 Menu，點選 Power-Ups 選項。 Power-Ups 這邊有三個進階的功能可供開啟，這邊我們只要開啟 Calendar 功能，因此點選 Calendar 就好。"
 tags: [Trello]
 ---
 

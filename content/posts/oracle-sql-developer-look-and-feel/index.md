@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Look and Feel"
 date: "2017-07-30 00:09:36"
+description: "Oracle SQL Developer 可以支援 Look 與 Feel 的調整，所謂的 Look 指的是 Widgets 畫面的外觀，Feel 指的是 Widgets 的行為。"
 tags: [Oracle SQL Developer]
 ---
 

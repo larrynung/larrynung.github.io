@@ -2,7 +2,7 @@
 title: "[C#]DropBox開發系列 - 使用DropNet進行DropBox的OAuth認證"
 slug: "[CSharp]DropBox開發系列 - 使用DropNet進行DropBox的OAuth認證"
 date: "2013-11-06 12:00:00"
-description: "[C#]DropBox開發系列 - 使用DropNet進行DropBox的OAuth認證"
+description: "筆者在DropBox開發系列 - App Key與App Secret的申請這篇介紹了DropBox開發前所要做的準備動作，這篇開始要進入實際撰寫程式的部分，介紹如何使用DropNet進行DropBox的OAuth認證。"
 tags: [CSharp]
 ---
 

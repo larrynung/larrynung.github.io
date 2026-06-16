@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - String.IsNullOrWhiteSpace"
 date: "2010-11-22 12:49:32"
-description: ".NET 4.0 New Feature - String.IsNullOrWhiteSpace"
+description: ".NET 4.0在String類別中新增了IsNullOrWhiteSpace方法，該方法可幫助我們判別指定的字串是否為null、空白、或由空白字元所組成的字串。"
 tags: [CSharp]
 ---
 

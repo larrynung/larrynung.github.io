@@ -1,7 +1,7 @@
 ---
 title: "Recursive ContainerFromItem"
 date: "2013-11-06 12:00:00"
-description: "Recursive ContainerFromItem"
+description: "在使用WPF的TreeView時，透過ItemContainerGenerator.ContainerFromItem找尋特定的TreeViewItem，只能找到第一層的節點。第二層以後的節點必須要透過遞迴下去找尋，像是下面這樣： 為方便後續使用，這邊筆者稍微整理了一些擴充方法，有需要的自行取用："
 tags: [CSharp]
 ---
 

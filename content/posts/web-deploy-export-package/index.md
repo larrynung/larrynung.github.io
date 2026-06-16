@@ -1,7 +1,7 @@
 ---
 title: "Web Deploy - Export package"
 date: "2015-07-08 23:13:00"
-description: "Web Deploy - Export package"
+description: "要將 IIS 網站 Application 或 Server 匯出，我們可以透過 Web Deploy 的匯出功能來做。先確定 Server 有安裝 Web Deploy，安裝後在 IIS 的 Application 或是 Server 節點上按下滑鼠右鍵，"
 tags: [Web Deploy]
 ---
 

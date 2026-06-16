@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - String.Concat"
 date: "2010-11-23 12:26:01"
-description: ".NET 4.0 New Feature - String.Concat"
+description: ".NET Framework 4.0新增了兩個String.Concat的多載函式Concat (IEnumerable )、與Concat(IEnumerable )。"
 tags: [CSharp]
 ---
 

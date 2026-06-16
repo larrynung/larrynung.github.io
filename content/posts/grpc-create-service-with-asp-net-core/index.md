@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Create service with ASP.NET Core"
 date: "2019-04-19 16:18:04"
+description: "在 .NET Core 3.0 後，我們可透過 gRPC Service 範本建立方案或是專案，如果是用方案範本，除了 gRPC 的 Server 專案外，還會有 Client 的專案。 像是筆者這邊直接透過範本建立一個 gRPC 方案。"
 tags: [gRPC]
 ---
 

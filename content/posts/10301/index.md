@@ -1,7 +1,7 @@
 ---
 title: "[Library][C#]USkin 視窗換膚函式庫"
 date: "2009-08-28 10:19:24"
-description: "[Library][C#]USkin 視窗換膚函式庫"
+description: "Introduction USkin是一個可以讓應用程式換膚用的函式庫。可讓應用程式套用不同的主題，讓介面有別於其它視窗。 Feature 支援 Microsoft Window's Theme 檔 支援通用控制項 支援新控制項 (像是 ToolStrip/MenuStrip) 支援…"
 tags: [Library, CSharp]
 ---
 

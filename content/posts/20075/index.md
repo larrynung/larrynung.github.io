@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Environment.Is64BitProcess & Environment.Is64BitOperatingSystem"
 date: "2010-12-12 11:33:51"
-description: ".NET 4.0 New Feature - Environment.Is64BitProcess & Environment.Is64BitOperatingSystem"
+description: ".NET 4.0在Environment類別新增Is64BitOperatingSystem與Is64BitProcess屬性，其功用分別為判斷當前作業系統是否為64位元版本，與判斷當前處理序是否為64位元。"
 tags: [CSharp]
 ---
 

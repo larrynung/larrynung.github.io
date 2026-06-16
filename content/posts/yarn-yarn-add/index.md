@@ -1,6 +1,7 @@
 ---
 title: "Yarn - Yarn add"
 date: "2017-06-27 23:40:27"
+description: "yarn add 命令可以用來載入要使用的套件。 調用 yarn add，帶入套件名稱，即可將指定的套件載入。 yarn add 若要指定版本，可在套件名稱後面加上套件的版本號。 yarn add @ 套件載入的同時會寫入 package.json 的 dependencies。"
 tags: [Yarn]
 ---
 

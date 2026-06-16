@@ -1,6 +1,7 @@
 ---
 title: "Change color in batch file"
 date: "2013-11-12 23:55:00"
+description: "要在批次檔中設定顯示的顏色,我們可以像下面這樣撰寫批次檔 筆者在這邊宣告了兩個Method可以直接叫用,一個是AppendColorText,一個是AppendColorTextLine,差異只在於是否要做換行的動作 需要叫用時可像下面這樣呼叫 call :AppendColorText…"
 tags: [Batch]
 ---
 

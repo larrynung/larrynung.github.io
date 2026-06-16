@@ -1,7 +1,7 @@
 ---
 title: "Online Json format and validate tool"
 date: "2013-11-06 12:00:00"
-description: "Online Json format and validate tool"
+description: "這陣子在撰寫社群服務的程式，解析了很多社群服務API所吐回的格式，多半這些服務吐回的資訊都是Xml的，或是可選用Xml與Json，我都盡可能的選用慣用的Xml以避開處理Json。"
 ---
 
 這陣子在撰寫社群服務的程式，解析了很多社群服務API所吐回的格式，多半這些服務吐回的資訊都是Xml的，或是可選用Xml與Json，我都盡可能的選用慣用的Xml以避開處理Json。

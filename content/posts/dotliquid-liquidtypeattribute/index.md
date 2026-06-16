@@ -1,6 +1,7 @@
 ---
 title: "DotLiquid - LiquidTypeAttribute"
 date: "2019-04-30 15:35:09"
+description: "使用 DotLiquid 做範本渲染時，如果需要使用到自訂型別當作參數，自訂型別可加掛 LiquidTypeAttribute 指定範本會使用到的屬性。 加掛 Attribute 後範本就可以使用自訂型別來渲染。"
 tags: [DotLiquid]
 ---
 

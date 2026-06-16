@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具"
 date: "2009-06-20 01:16:22"
-description: "[.NET Resource]Microsoft Visual Studio Learning Pack 2.0~.NET新手的學習工具"
+description: "Introduction Microsoft Visual Studio Learning Pack 2.0是Microsoft為了讓學生學習程式概念與寫法所推出的Visual Studio工具外掛，這邊將對此做些簡單的介紹。"
 tags: [.NET Resource]
 ---
 

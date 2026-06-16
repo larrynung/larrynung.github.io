@@ -1,7 +1,7 @@
 ---
 title: "[Performance]Set Form's Position"
 date: "2009-12-30 10:56:13"
-description: "[Performance]Set Form's Position"
+description: "今天看網路文章時，注意到指定表單位置的方法。一般來說我們碰到這個問題，可以直接建立一個Point，並指派給Form.Location。或是直接指派Form.Top與Form.Left兩個表單屬性。很無聊的我又測了一下兩者的效能差異。"
 tags: [Performance]
 ---
 

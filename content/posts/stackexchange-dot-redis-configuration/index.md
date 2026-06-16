@@ -1,7 +1,7 @@
 ---
 title: "StackExchange.Redis - Configuration"
 date: "2016-05-23 07:41:00"
-description: "StackExchange.Redis - Configuration"
+description: "欲連線至 Redis，需先設定 Configutaion，在 StackExchange.Redis 提供兩種設定方式，一種是用 ConfigurationOptions 物件直接宣告設定： 一種是透過字串的方式設定： 如果不清楚有哪些可供設定，可參閱下表："
 tags: [StackExchange.Redis]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "MediaWiki - Auto-number headings"
 date: "2014-09-02 23:35:00"
-description: "MediaWiki - Auto-number headings"
+description: "MediaWiki 在使用標頭時，預設是不會有自動編號的，這樣的呈現方式在瀏覽時我們會不易知道是哪個章節。當然你也可以自己在撰寫標頭時附上編號，但總是比較麻煩點，如果沒有太特殊的需求，我們是可以直接將 MediaWiki 的標頭自動編號功能給開啟。"
 tags: [MediaWiki]
 ---
 

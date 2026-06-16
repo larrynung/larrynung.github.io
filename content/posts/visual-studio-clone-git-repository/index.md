@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio - Clone git repository"
 date: "2016-07-24 22:22:18"
+description: "使用 Visual Studio clone git repository，先將 Team Explorer 視窗開啟。 在 本機 Git 儲存機制 這邊點選 複製 按鈕。 再來要設定欲 clone 的 git repository 位置，以及 clone 下來存放的位置。"
 tags: [Visual Studio, Git]
 ---
 

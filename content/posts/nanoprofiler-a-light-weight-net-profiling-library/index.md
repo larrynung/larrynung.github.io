@@ -1,6 +1,7 @@
 ---
 title: "NanoProfiler - a light weight .NET profiling library"
 date: "2016-10-05 22:36:27"
+description: "NanoProfiler 有許多的套件。 如果是 Web 專案，安裝 NanoProfiler.Web 即可 (會連帶安裝 NanoProfiler)。 套件安裝完後要設定 CircularBuffer，可透過程式設定... 也可以透過設定檔設定..."
 tags: [NanoProfiler]
 ---
 

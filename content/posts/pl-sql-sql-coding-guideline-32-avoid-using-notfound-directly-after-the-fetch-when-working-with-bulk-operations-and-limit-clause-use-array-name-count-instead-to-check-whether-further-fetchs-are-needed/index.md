@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 32 - Avoid using %NOTFOUND directly after the FETCH when working with BULK operations and LIMIT clause"
 date: "2016-08-13 00:00:11"
+description: "條款三十二，當使用 BULK 與 LIMIT 操作時，避免直接在後面用 %NOTFOUND 判斷是否有資料處理，應改用 COUNT() 判斷。 像是下面這樣的撰寫方式，迴圈內每次會處理 5 筆資料，假設今天總資料量為 14，那第三次處理時因為剩餘的筆數 4 小於 LIMIT 設定的筆數 5，"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

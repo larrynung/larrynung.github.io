@@ -1,7 +1,7 @@
 ---
 title: "[Software]XML Marker"
 date: "2009-12-08 07:08:01"
-description: "[Software]XML Marker"
+description: "前陣子在編寫XML時，詢問了一下GOOGLE大神是否有好用的編輯軟體，意外的發現了XML Marker這套免費的XML編輯軟體。這套軟體在介面上與一般的編輯軟體有些出入，剛使用時十分的不便，後來上手後還頗為好用，在此順手記錄一下。"
 tags: [Software]
 ---
 

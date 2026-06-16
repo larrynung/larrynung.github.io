@@ -1,6 +1,7 @@
 ---
 title: "Swagger Editor - Setup with http-server module"
 date: "2017-09-20 23:56:44"
+description: "要使用 http-server 自行架設 Swagger Editor，可透過 npm 進行 http-server 的安裝， npm install -g http-server 然後至 Swagger Editor 的 GitHub 上下載 Swagger Editor 的壓縮包。 解開壓縮包。"
 tags: [Swagger]
 ---
 

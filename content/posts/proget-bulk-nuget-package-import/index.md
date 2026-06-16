@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Bulk nuget package import"
 date: "2017-08-22 23:01:34"
+description: "要將大量的 NuGet 套件匯入到 ProGet 的 NuGet feed，可在 ProGet 的 NuGet feed 頁面按下 Add Package 按鈕。 點選 Bulk Package Import/File Copy。"
 tags: [ProGet]
 ---
 

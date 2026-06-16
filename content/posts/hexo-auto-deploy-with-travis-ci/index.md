@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Auto deploy with Travis CI"
 date: "2016-08-12 07:37:24"
+description: "要使用 Travis CI 自動幫我們發佈 Hexo 部落格，先參閱筆者 Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community | Level Up 這篇，"
 tags: [Hexo, Travis]
 ---
 

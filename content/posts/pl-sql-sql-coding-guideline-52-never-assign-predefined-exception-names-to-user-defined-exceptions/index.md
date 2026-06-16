@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 52 - Never assign predefined exception names to user defined exceptions"
 date: "2017-06-17 21:00:16"
+description: "條款五十二，不要使用自定義錯誤去重新定義 Oracle 預先定義的錯誤。 像是下面這樣的程式，使用自定義錯誤重新定義了 no_data_found 錯誤，就是不建議的作法。 比較好的作法應該是反思是否需要重新定義 Oracle 預先定義的錯誤、是否應該定義的是不同的錯誤。"
 tags: [PL/SQL and SQL Coding Guidelines]
 ---
 

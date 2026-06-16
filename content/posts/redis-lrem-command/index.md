@@ -1,6 +1,7 @@
 ---
 title: "Redis - LREM command"
 date: "2017-08-23 21:46:22"
+description: "LREM 命令可以用來移除 Redis List 中指定的元素值。 其語法如下： LREM key count value LREM 後面帶入 List 的 Key、要刪除的元素個數、要刪除的元素值，回傳值為被移除的元素數量。"
 tags: [Redis]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Backward compatibility"
 date: "2011-09-17 02:58:29"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Backward compatibility"
+description: "相信很多開發人員所處的工作環境多半對於新技術都會先觀望，如果案子用不到新的語法特性，就算已有更新的IDE釋出，多半會趨於保守沿用舊的開發工具，也不會想去了解有何新增加的功能，會不會增加開發的速度。"
 tags: [Visual Studio]
 ---
 

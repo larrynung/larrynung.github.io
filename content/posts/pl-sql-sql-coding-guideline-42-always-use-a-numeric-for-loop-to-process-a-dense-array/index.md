@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL SQL Coding Guideline 42 - Always use a numeric FOR loop to process a dense array"
 date: "2017-03-07 13:42:25"
+description: "條款四十二，總是使用 NUMERIC FOR loop 去處理 dense array。 像是下面這樣的程式： 可以像下面這樣改寫，程式碼的維護性會比較好。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

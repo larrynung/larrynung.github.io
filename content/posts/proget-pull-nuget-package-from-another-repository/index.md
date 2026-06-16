@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Pull NuGet package from another repository"
 date: "2017-08-22 13:43:49"
+description: "要拉外部 repository 的 NuGet 套件到 ProGet 的 NuGet feed，可在 ProGet 的 NuGet feed 頁面按下 Add Package 按鈕。 點選 Pull From Another Repository。"
 tags: [ProGet]
 ---
 

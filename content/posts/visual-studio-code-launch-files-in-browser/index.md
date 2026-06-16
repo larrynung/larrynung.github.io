@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio Code - Launch files in browser"
 date: "2017-05-01 23:11:36"
+description: "要設定 Visual Studio Code 用瀏覽器開啟運行檔案，可開啟 Command palette (MAC 下使用 'CMD + Shift + P'，"
 tags: [Visual Studio Code]
 ---
 

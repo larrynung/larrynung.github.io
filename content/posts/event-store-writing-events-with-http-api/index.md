@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Writing events with HTTP API"
 date: "2018-08-29 23:19:10"
+description: "要透過 HTTP API 去發送 event，可以朝以下位置發送 Post。 http:///streams/ MediaType 可以是 JSON。 application/vnd.eventstore.events+json 也可以是 XML。"
 tags: [Event Store]
 ---
 

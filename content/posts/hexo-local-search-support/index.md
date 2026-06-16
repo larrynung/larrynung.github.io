@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Local search support"
 date: "2016-06-14 22:41:33"
+description: "要為 Hexo 架設的部落格加上搜尋，但卻不想依賴外部服務，可以為 Hexo 部落格加裝 hexo-generator-search 套件。 npm install hexo-generator-search --save 套件安裝完需開啟 Hexo 的設定檔，加上 search 的設定。"
 tags: [Hexo]
 ---
 

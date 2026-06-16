@@ -1,6 +1,7 @@
 ---
 title: "Drone - Setup Drone on Linux"
 date: "2017-09-07 00:13:50"
+description: "要安裝 Drone，首先需要安裝 Docker。 接著下載 Drone 的 deb 檔。 wget downloads.drone.io/master/drone.deb 透過 dpkg 安裝 Drone。"
 tags: [Drone]
 ---
 

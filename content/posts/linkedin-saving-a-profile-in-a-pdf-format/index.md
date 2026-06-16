@@ -1,6 +1,7 @@
 ---
 title: "LinkedIn - Saving a Profile in a PDF Format"
 date: "2018-05-14 23:52:44"
+description: "要將 LinkedIn profile 匯出成 PDF 檔，可以點選 LinkedIn 右上角的帳號圖示，點選 View profile 按鈕切換至 LinkedIn profile。 點選 More... 按鈕。 再點選 Save to PDF。"
 tags: [LinkedIn]
 ---
 

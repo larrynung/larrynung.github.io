@@ -1,7 +1,7 @@
 ---
 title: "[Software]Microsoft Script Explorer for Windows PowerShell"
 date: "2013-11-06 12:00:00"
-description: "[Software]Microsoft Script Explorer for Windows PowerShell"
+description: "微軟最近釋出Microsoft Script Explorer for Windows PowerShell，目前只釋出到Beta版。這工具對於想學PowerShell或是有需要找相關範例來修改的人來說是一大福音，"
 ---
 
 微軟最近釋出Microsoft Script Explorer for Windows PowerShell，目前只釋出到Beta版。這工具對於想學PowerShell或是有需要找相關範例來修改的人來說是一大福音，它提供了一個簡易的界面允許使用者去使用TechNet Script Center、PoshCode、 Network file systems、Bing Search、與本地的PowerShell資源。

@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Web Deploy Rules"
 date: "2016-12-13 23:23:28"
+description: "Web Deploy 提供許多不同的 Rule，像是： AboFilter AnonymousUser ApplicationExistsRule AppPoolIdentity AppRootNormalize BlockHarmfulDeleteOperations…"
 tags: [Web Deploy]
 ---
 

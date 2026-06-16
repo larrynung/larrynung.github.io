@@ -1,6 +1,7 @@
 ---
 title: "Lua for Windows - A 'batteries included environment' for the Lua scripting language on Windows"
 date: "2017-04-23 20:55:20"
+description: "在 Winwodw 下要使用 Lua binary，可下載 Lua for Windows。 下載後點擊安裝即可。 Link rjpcomputing/luaforwindows: Lua for Windows is a 'batteries included environment' for…"
 tags: [Lua]
 ---
 

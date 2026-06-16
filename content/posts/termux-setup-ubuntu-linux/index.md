@@ -1,6 +1,7 @@
 ---
 title: "Termux - Setup Ubuntu Linux"
 date: "2018-10-14 21:37:10"
+description: "要在 Termux 安裝 Ubuntu Linux，首先要下載安裝用的 script。 curl https://raw.githubusercontent.com/Neo-Oli/termux-ubuntu/master/ubuntu.sh --output ubuntu.sh…"
 tags: [Termux]
 ---
 

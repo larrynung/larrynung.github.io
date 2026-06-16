@@ -1,7 +1,7 @@
 ---
 title: "FX.Configuration - Read JSON configuration"
 date: "2016-05-21 08:06:00"
-description: "FX.Configuration - Read JSON configuration"
+description: "要用 FX.Configuration 讀取 JSON Configuration，需先引用 FX.Configuration 套件。 接著在 JSON Configuration 中設定資料。"
 tags: [FX.Configuration]
 ---
 

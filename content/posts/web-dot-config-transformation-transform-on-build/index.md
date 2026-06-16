@@ -1,7 +1,7 @@
 ---
 title: "Web.Config Transformation - Transform on build"
 date: "2014-07-07 23:19:00"
-description: "Web.Config Transformation - Transform on build"
+description: "Web.Config Transformation 功能在我們有多個環境需要部署時很方便，但預設只會在發佈時做對應的轉換，因此當我們需要針對特定環境下去排解問題時，就不能很直接的切換 Profile 去做偵錯的動作。 若要在建置時也做 Web.Config 的轉換，讓除錯時更為方便。"
 tags: [Web.Config Transformation]
 ---
 

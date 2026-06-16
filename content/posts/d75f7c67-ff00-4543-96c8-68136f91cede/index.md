@@ -1,7 +1,7 @@
 ---
 title: "VC.NET Natived Event"
 date: "2013-11-06 12:00:00"
-description: "VC.NET Natived Event"
+description: "事件宣告 事件繫結 hook(&事件來源類別::EventName,事件來源物件指標,&處理事件的類別::HandleMethod); 移除繫結 unhook(&事件來源類別::EventName,事件來源物件指標,&處理事件的類別::HandleMethod); 事件觸發 範例 注意事項…"
 ---
 
 ## 事件宣告

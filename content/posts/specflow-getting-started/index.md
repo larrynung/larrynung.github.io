@@ -1,7 +1,7 @@
 ---
 title: "SpecFlow - Getting Started"
 date: "2015-09-13 16:14:00"
-description: "SpecFlow - Getting Started"
+description: "Specflow 使用前 Visual Studio 需先透過 Extension Manager 搜尋並安裝 SpecFlow Extension。 然後建立一個測試專案，並透過 NuGet 為其加入 SpecFlow Package。"
 ---
 
 Specflow 使用前 Visual Studio 需先透過 Extension Manager 搜尋並安裝 SpecFlow Extension。  

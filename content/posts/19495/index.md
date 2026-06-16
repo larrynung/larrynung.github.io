@@ -1,7 +1,7 @@
 ---
 title: "Linq to GPU (Brahma)"
 date: "2010-11-16 08:51:46"
-description: "Linq to GPU (Brahma)"
+description: "Brahma為一C#開源庫，可用以撰寫高階Linq語法，將處理分散給GPU平行運算，實現Linq to GPU的功能。其主要類別有ComputationProvider、DataParallelArray、CompiledQuery 。"
 tags: [CSharp,Linq]
 ---
 

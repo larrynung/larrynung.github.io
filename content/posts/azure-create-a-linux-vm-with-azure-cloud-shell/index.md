@@ -1,6 +1,7 @@
 ---
 title: "Azure - Create a Linux VM with Azure Cloud Shell"
 date: "2019-01-16 23:26:44"
+description: "要使用 Azure Cloud Shell 建立 Linux VM，可以使用 az vm create 命令，用 --name 指定 VM 的名稱、--resource-group 指定資源群組 (Resource groups)、--image 指定 VM 的映像 (e.x."
 tags: [Azure]
 ---
 

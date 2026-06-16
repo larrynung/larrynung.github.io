@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Using static members"
 date: "2014-07-21 23:05:00"
-description: "C# 6.0 - Using static members"
+description: "Using static members 是預計要在 C# 6.0 釋出的新功能，目前已可在 Visual Studio 14 中透過設定將功能開啟進行體驗，只要在方案檔中加上： experimental 或是透過 .Net Fiddle 也可以，Compiler 那邊選取 Roslyn 就可以了。"
 tags: [CSharp, CSharp 6.0]
 ---
 

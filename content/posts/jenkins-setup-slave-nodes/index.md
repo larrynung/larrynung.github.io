@@ -1,6 +1,7 @@
 ---
 title: "Jenkins - Setup slave nodes"
 date: "2018-11-29 23:53:44"
+description: "要設定 Jenkins 的 Slave 節點，先將 Jenkins 切到設定全域安全性。 設定 JNLP agent 要走的 TCP port。 存檔離開。 然後進到管理節點。 點選新增節點。 設定節點名稱後按下 OK 按鈕。"
 tags: [Jenkins]
 ---
 

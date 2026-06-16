@@ -1,6 +1,7 @@
 ---
 title: "Calibre Web - Run Calibre Web with Kitematic"
 date: "2017-10-02 23:15:43"
+description: "要使用 Kitematic 運行 Calibre Web，可在 Kitematic 搜尋 Calibre Web 的容器，點選 CREATE 按鈕將容器拉回啟用。 容器啟用後開啟瀏覽器訪問對應的位置，即可看到 Calibre Web 運行起來的畫面。"
 tags: [Calibre Web]
 ---
 

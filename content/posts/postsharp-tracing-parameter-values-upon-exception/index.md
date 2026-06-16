@@ -1,7 +1,7 @@
 ---
 title: "PostSharp - Tracing Parameter Values Upon Exception"
 date: "2015-02-04 00:06:00"
-description: "PostSharp - Tracing Parameter Values Upon Exception"
+description: "要使用 PostSharp 為程式加入 Exception 的 Log 處理，在安裝完 PostSharp 擴充套件後，我們可以在類別上直接按下右鍵，在彈出的滑鼠右鍵快顯選單中，選取 Add logging... 選單選項。"
 tags: [PostSharp]
 ---
 

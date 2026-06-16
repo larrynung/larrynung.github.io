@@ -2,7 +2,7 @@
 title: "[C#]使用Microsoft Translator Soap API實作翻譯功能"
 slug: "[CSharp]使用Microsoft Translator Soap API實作翻譯功能"
 date: "2013-11-06 12:00:00"
-description: "[C#]使用Microsoft Translator Soap API實作翻譯功能"
+description: "要使用Microsoft Translator Soap API實作翻譯功能，首先我們必須要有Bing的開發者ID，可至Bing Developer網站申請。可點選『註冊以使用 Bing 搜尋 API 並建立 AppID』或是透過『建立您的 AppID』開始進行申請。"
 tags: [CSharp]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "vscode-hexo - VSCode extension to manage hexo commands"
 date: "2017-08-13 16:31:10"
+description: "vscode-hexo 是 VSCode 的擴充套件，能讓我們在 VSCode 內簡易的調用 Hexo 命令。 按下熱鍵 Ctrl-Shift-P / Cmd-Shift-P 開啟 command palette，輸入 Extensions:Install Extensions，"
 tags: [Hexo, Visual Studio Code]
 ---
 

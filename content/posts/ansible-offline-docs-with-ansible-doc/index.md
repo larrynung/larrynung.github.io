@@ -1,6 +1,7 @@
 ---
 title: "Ansible - Offline docs with ansible-doc"
 date: "2017-05-24 13:27:16"
+description: "Ansible 有許多模組，每麼模組有不同的用途、不同的參數、不同的使用方式，要查閱模組的使用方式除了透過網路查詢外，也可以用 ansible-doc 離線查詢。"
 tags: [Ansible]
 ---
 

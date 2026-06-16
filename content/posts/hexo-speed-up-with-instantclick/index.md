@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Speed up with InstantClick"
 date: "2017-08-03 13:07:08"
+description: "要用 InstantClick 加速 Hexo 部落格，可先下載 InstantClick 放至 source\\js 下。 然後開啟 _config.yml 設定檔，加入 skip_render 設定，將 js 檔排除 render。"
 tags: [InstantClick, Hexo]
 ---
 

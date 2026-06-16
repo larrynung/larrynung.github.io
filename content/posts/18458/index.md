@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - Enum.HasFlag"
 date: "2010-10-19 09:43:02"
-description: ".NET 4.0 New Feature - Enum.HasFlag"
+description: "在.NET 4.0以前，若有要判斷Flag屬性修飾過的列舉是否含有特定Flag時，我們會將列舉值與Flag去做And運算，判斷做完運算後的值是否等同Flag，像是下面這樣： 在.NET 4.0後我們有另一個更輕鬆的選擇就是Enum.HasFlag，使用上直接帶入要判斷的Flag即可。"
 tags: [VB.NET]
 ---
 

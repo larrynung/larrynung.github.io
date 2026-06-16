@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]使用TabControlEx控制項快速抽換表單介面與實現精靈介面"
 date: "2013-11-06 12:00:00"
-description: "[VB.NET]使用TabControlEx控制項快速抽換表單介面與實現精靈介面"
+description: "這篇要介紹的是如何抽換表單介面與實現精靈介面，順便介紹自己試寫的TabControlEx控制項，雖說是TabControl的加強版控制項，但其實也只比傳統的TabControl控制項多一個ShowPageOnly屬性。"
 ---
 
 這篇要介紹的是如何抽換表單介面與實現精靈介面，順便介紹自己試寫的TabControlEx控制項，雖說是TabControl的加強版控制項，但其實也只比傳統的TabControl控制項多一個ShowPageOnly屬性。

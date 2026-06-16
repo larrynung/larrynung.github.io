@@ -1,7 +1,7 @@
 ---
 title: "Oracle SQL Developer - PL/SQL Syntax Colors"
 date: "2015-11-12 00:36:00"
-description: "Oracle SQL Developer - PL/SQL Syntax Colors"
+description: "Oracle SQL Developer 預設的的 Syntax Color 若不習慣，我們可以開啟 Perferences 對話框，在 [Code Editor | PL/SQL Syntax Colors] 下做些修改，將之調成我們習慣的樣式。 不太會調整的也可以直接換用 Scheme。"
 tags: [Oracle SQL Developer]
 ---
 

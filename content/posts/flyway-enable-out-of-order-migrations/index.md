@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Enable out of order migrations"
 date: "2019-08-03 15:37:45"
+description: "在使用 Flyway 時，預設 Migration 是會被限制只允許照順序套用的。 像是筆者這邊套上 V2 與 V3 的 Migration 後再準備 V1 的 Migration。 因為已經套到了 V3，所以較低版本的 V1 會無法套用，顯示為 Ignore 狀態。"
 tags: [Flyway]
 ---
 

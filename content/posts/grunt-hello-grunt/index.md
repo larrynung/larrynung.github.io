@@ -1,6 +1,7 @@
 ---
 title: "Grunt - Hello Grunt"
 date: "2016-09-22 23:47:57"
+description: "接著實際來用用看 Grunt，首先 gruntfile 先用 require 載入 grunt，然後用 registerTask 註冊一個任務，這邊帶入任務名為 default，並將任務的動作用 function 指定，這邊這個任務就只是簡單的顯示 hello world 訊息而已。"
 tags: [Grunt]
 ---
 

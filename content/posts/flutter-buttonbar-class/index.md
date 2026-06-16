@@ -1,6 +1,7 @@
 ---
 title: "Flutter - ButtonBar class"
 date: "2018-04-10 23:27:02"
+description: "Flutter 的 ButtonBar widget 可以用來做按鈕的水平排列。 其建構子如下： ButtonBar({Key key, MainAxisAlignment alignment: MainAxisAlignment.end, MainAxisSize mainAxisSize:…"
 tags: [Flutter]
 ---
 

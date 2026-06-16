@@ -1,7 +1,7 @@
 ---
 title: "Jil - Ignore & Custom Element Name"
 date: "2015-10-02 00:11:00"
-description: "Jil - Ignore & Custom Element Name"
+description: "使用 Jil 處理 JSON 時，如果要在序列化時忽略處理某特定屬性，可在其屬性加上 IgnoreDataMemberAttribute，像是下面這樣： 或是帶上 JilDirectiveAttribute，指定 Ignore： 如果要客製輸出的 Element 名稱，"
 tags: [Jil]
 ---
 

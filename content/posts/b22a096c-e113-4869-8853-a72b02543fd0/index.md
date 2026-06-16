@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]當建置發生\"Object reference not set to an instance of an object in resx resource file\"錯誤時的解決方案"
 date: "2013-11-06 12:00:00"
-description: "[Visual Studio]當建置發生\"Object reference not set to an instance of an object in resx resource file\"錯誤時的解決方案"
+description: "今天在建置專案時專案程式突然過不了建置，出現\"Object reference not set to an instance of an object in resx resource file\"這個奇怪的錯誤訊息。"
 ---
 
 今天在建置專案時專案程式突然過不了建置，出現"Object reference not set to an instance of an object in resx resource file"這個奇怪的錯誤訊息。當下我對這狀況十分不解，Object reference not set的錯誤訊息看起來就像是NullReference這類的錯誤，但是為什麼是指向resource檔呢？而這邊我也沒有對資源檔做過什麼特別的動作，只是開過這個資源檔確認了一下程式的icon是否設對而已。

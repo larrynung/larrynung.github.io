@@ -1,6 +1,7 @@
 ---
 title: "Oracle - v$version table"
 date: "2017-12-19 21:47:54"
+description: "v$version 資料表主要存放著 Oracle 核心元件的版本資訊，要查閱版本資訊的話可直接查閱該表。 SELECT FROM v$version; Link V$VERSION Oracle / PLSQL: Retrieve Oracle version information"
 tags: [Oracle]
 ---
 

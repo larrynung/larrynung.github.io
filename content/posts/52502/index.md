@@ -1,7 +1,7 @@
 ---
 title: "[C++]Simple nativated timer class"
 date: "2011-11-05 11:26:53"
-description: "[C++]Simple nativated timer class"
+description: "從.NET跨足到C++筆者還是不太習慣C++的寫作方式，比較習慣於用.NET的寫法來寫C++程式，既然C++也開始具備屬性跟事件，C++也能寫的跟.NET程式很像。這邊筆者試寫了一個簡單的C++ Nativated Timer，希望使用上會比較接近.NET的寫作習慣，這邊將之稍做整理。"
 tags: [C++]
 ---
 

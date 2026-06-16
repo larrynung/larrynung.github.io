@@ -1,6 +1,7 @@
 ---
 title: "Add JSDoc Comments - Adds simple JSDoc comments for the parameters of a selected function signature"
 date: "2018-08-07 23:37:16"
+description: "使用 Visual Studio Code 撰寫 JavaScript，如果要加上 jsdoc comment，可以考慮為 Visual Studio Code 加裝 Add jsdoc comments 套件。"
 tags: [Visual Studio Code]
 ---
 

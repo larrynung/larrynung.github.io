@@ -1,7 +1,7 @@
 ---
 title: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
 date: "2014-01-01 23:34:00"
-description: "Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community"
+description: "Travis CI 是免費的 CI 服務，支援 C、C++、Clojure、Erlang、Go、Groovy、Haskell、Java、Python、Ruby等語言。能用來建置 GitHub 上的 Repository， 為 GitHub 加上 CI 的能力，不需另行為此架設 CI Server。"
 tags: [Travis, CI]
 ---
 

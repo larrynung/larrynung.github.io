@@ -1,7 +1,7 @@
 ---
 title: "[Performance][C#]同時判斷多個字串是否為數值型態"
 date: "2009-12-20 08:08:45"
-description: "[Performance][C#]同時判斷多個字串是否為數值型態"
+description: "一般來說，在C#中若我們想要判斷字串是否為數值形式。多半我們會利用TryParse、正規表示式這兩種方式來做處理。相關的文章在網路上已經很多了，像是TryParse的方法就可以參閱HOW TO：判斷字串是否表示數值 (C# 程式設計手冊)這篇MSDN文章。"
 tags: [CSharp,Performance]
 ---
 

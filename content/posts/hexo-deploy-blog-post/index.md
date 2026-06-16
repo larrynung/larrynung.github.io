@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Deploy blog post"
 date: "2016-06-12 23:36:32"
+description: "要發佈文章至遠端 repository，第一次使用之前，需要先安裝 Hexo 的 Deployer 套件。Hexo 支援多種 Deployer，這邊可視需要安裝。 像是筆者用的是 GitHub page 去 host 部落格，因此安裝的是 hexo-deployer-git。"
 tags: [Hexo]
 ---
 

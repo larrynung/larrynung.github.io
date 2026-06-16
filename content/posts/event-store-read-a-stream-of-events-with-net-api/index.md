@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Read a Stream of Events with .NET API"
 date: "2018-09-16 23:56:40"
+description: "要使用 Event Store .NET API 讀取 Event Store 特定 Stream 內的 Event，可以帶入 Stream 的名稱、起始的 Event 編號、以及預計要讀取的 Event 數，"
 tags: [Event Store]
 ---
 

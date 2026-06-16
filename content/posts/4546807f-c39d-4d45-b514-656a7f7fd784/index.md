@@ -1,7 +1,7 @@
 ---
 title: "GAE's webapp_webapp2 framework"
 date: "2013-11-06 12:00:00"
-description: "GAE's webapp_webapp2 framework"
+description: "在開發GAE程式時，我們可以像下面這樣撰寫： app.yaml這邊的設定要注意到的是threadsafe要為no，而script這邊要設定運行python檔名。 參閱筆者Run application with Google App Engine Launcher這篇將其運行起來，"
 ---
 
 在開發GAE程式時，我們可以像下面這樣撰寫：

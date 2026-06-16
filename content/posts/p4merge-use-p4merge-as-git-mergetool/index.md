@@ -1,6 +1,7 @@
 ---
 title: "P4Merge - Use P4Merge as git mergetool"
 date: "2017-09-19 23:23:01"
+description: "要將 P4Merge 與 Git 整合，使用 P4Merge 去做 Merge，可以加入 Merge tool 設定。 git config --global merge.tool p4merge 設定 P4Merge 檔案的位置。"
 tags: [P4Merge, Git]
 ---
 

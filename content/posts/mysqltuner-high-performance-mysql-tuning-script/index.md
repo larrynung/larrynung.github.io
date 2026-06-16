@@ -1,6 +1,7 @@
 ---
 title: "MySQLTuner - High performance MySQL tuning script"
 date: "2019-07-13 20:25:32"
+description: "MySQLTuner 是用 Perl 撰寫的腳本，可用來分析 MySQL 或是 MariaDB 的設定，給予效能上的建議。 將 MySQLTuner 下載下來。 wget https://github.com/major/MySQLTuner-perl/tarball/master 解壓縮。"
 tags: [MySQL]
 ---
 

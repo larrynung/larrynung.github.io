@@ -1,7 +1,7 @@
 ---
 title: "NuGet - Reinstalling Packages"
 date: "2014-01-01 23:11:00"
-description: "NuGet - Reinstalling Packages"
+description: "NuGet 在2.7版後開始支援重新安裝套件的功能，當碰到專案中的 NuGet 套件參考路徑錯誤，或是當專案的 .Net Framework 版本用的與 NuGet 套件用的不符時特別適用。"
 tags: [NuGet]
 ---
 

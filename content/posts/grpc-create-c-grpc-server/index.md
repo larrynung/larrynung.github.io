@@ -1,6 +1,7 @@
 ---
 title: "'gRPC - Create C# gRPC server'"
 date: "2019-04-18 05:39:37"
+description: "要建立 gRPC 的 Server，須先將 GRPC.Tools、GRPC.Core、Google.Protobuf 這三個 NuGet 套件加入參考。 然後設定從 Proto 檔產生需要的程式部分。 編譯後可在 obj 下看到產出的檔案。 接著開始實作 Service。"
 tags: [gRPC, CSharp]
 ---
 

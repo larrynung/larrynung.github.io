@@ -1,7 +1,7 @@
 ---
 title: "[WPF]WrapPanel"
 date: "2009-05-08 12:32:01"
-description: "[WPF]WrapPanel"
+description: "Introduction WrapPanel容器跟StackPanel一樣可由上而下或由左而右排列容器內的控制項。不同的是，當超過容器邊緣WrapPanel會自動換行或換列。"
 tags: [WPF]
 ---
 

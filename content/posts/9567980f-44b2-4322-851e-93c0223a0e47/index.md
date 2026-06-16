@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's pack geometry manager"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's pack geometry manager"
+description: "Tkinter在做版面配置有三種方式，pack是其中一種。 使用pack來做版面配置，可以設定元件的內邊界、外邊界、是否塞滿、以及要停駐在哪邊。如果不做任何的停駐設定，預設元件是由上往下堆放。以其他程式語言來說，pack這種版面配置方式有點像是Dock與Stack兩種版面配置容器的結合。"
 tags: [Python]
 ---
 

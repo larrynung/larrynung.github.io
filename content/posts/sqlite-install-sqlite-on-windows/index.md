@@ -1,6 +1,7 @@
 ---
 title: "SQLite - Install SQLite on Windows"
 date: "2017-10-12 22:21:29"
+description: "要在 Windwos 下使用 SQLite，可至 SQLite Home Page 的下載頁面。 下載 Windows 的 binary。 將下載的壓縮包解壓縮。 會看到幾個執行檔，我們主要要用的是 sqlite3.exe 這個執行檔。 可以用 -help 查閱使用方式。"
 ---
 
 要在 Windwos 下使用 SQLite，可至 [SQLite Home Page](https://www.sqlite.org/) 的下載頁面。

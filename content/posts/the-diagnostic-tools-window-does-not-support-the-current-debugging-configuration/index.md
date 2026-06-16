@@ -1,6 +1,7 @@
 ---
 title: "The Diagnostic Tools window does not support the current debugging configuration"
 date: "2016-08-07 22:40:03"
+description: "Diagnostic Tools 視窗若出現 The Diagnostic Tools window does not support the current debugging configuration 這樣的訊息。"
 ---
 
 Diagnostic Tools 視窗若出現 `The Diagnostic Tools window does not support the current debugging configuration` 這樣的訊息。

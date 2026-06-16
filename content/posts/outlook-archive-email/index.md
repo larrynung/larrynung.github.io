@@ -1,7 +1,7 @@
 ---
 title: "Outlook - Archive Email"
 date: "2014-04-27 12:43:00"
-description: "Outlook - Archive Email"
+description: "要 Archive Outlook Mail Box，可透過 Outlook 的 Auto Archive 的功能。 開啟 Tools 主選單，點選 'Option...' 主選單選項。 在 Options 對話視窗中將頁面切至 Other，點擊 'AutoArchive...' 按鈕。"
 tags: [Outlook]
 ---
 

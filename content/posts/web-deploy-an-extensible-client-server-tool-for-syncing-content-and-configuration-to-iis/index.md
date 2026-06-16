@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - An extensible client server tool for syncing content and configuration to IIS"
 date: "2016-12-06 23:43:08"
+description: "Web Deploy 是一 client-server 架構的工具程式，能用來同步 IIS 內容與設定，簡化網頁應用程式或是網站的佈署。 具有以下幾個特點： 與 IIS Manager、Visual Studio 無縫整合，"
 tags: [Web Deploy]
 ---
 

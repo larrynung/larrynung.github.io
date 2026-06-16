@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Migrates the schema to the latest version"
 date: "2019-07-29 23:27:32"
+description: "Flyway 把所有的資料庫變更都稱為 Migration，套用資料庫變更的動作即為 Migrate。 Migration 分為 Versioned、 Undo、 Repeatable 三種。 Versioned Migration 是一般的 Migration，帶有版號，且只能運行一次。"
 tags: [Flyway]
 ---
 

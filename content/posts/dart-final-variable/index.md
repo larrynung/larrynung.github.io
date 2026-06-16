@@ -1,6 +1,7 @@
 ---
 title: "Dart - final variable"
 date: "2019-06-22 15:48:25"
+description: "Dart 的 final 關鍵字可用來指定運行時常數，指定其運行時值不允許變更。 使用時只要在變數宣告前面加上 final 關鍵字即可。 像是下面這樣的程式: 運行起來就會發生錯誤，因為透過 final 宣告的是常數，沒有 Setter 可以改變它的值。"
 tags: [Dart]
 ---
 

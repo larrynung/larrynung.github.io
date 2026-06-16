@@ -1,6 +1,7 @@
 ---
 title: "Oracle SQL Developer - Snippets"
 date: "2016-10-07 13:20:52"
+description: "要使用 Oracle SQL Developer 的 Snippets 功能，我們可以點選 [ View | Snippets ] 主選單選項。 將 Snippets 視窗帶出後，可以看到 Oracle SQL Developer 已經內建了許多的 Category。"
 tags: [Oracle SQL Developer]
 ---
 

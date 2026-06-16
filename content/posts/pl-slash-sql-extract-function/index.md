@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - EXTRACT Function"
 date: "2015-07-16 22:57:00"
-description: "PL/SQL - EXTRACT Function"
+description: "EXTRACT function 可擷取日期或時間中指定部分的資料。 使用語法如下： EXTRACT ( { YEAR | MONTH | DAY | HOUR | MINUTE | SECOND } | { TIMEZONE_HOUR | TIMEZONE_MINUTE } | {…"
 tags: [PL/SQL]
 ---
 

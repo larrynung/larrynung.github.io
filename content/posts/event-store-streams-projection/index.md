@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Streams projection"
 date: "2018-09-06 00:01:37"
+description: "$streams 是 Event Store 預設提供的 Projection，可以將 Event Link 到一個集中的 Stream。 使用前需先將 $streams projection 開啟。 開啟後切到 Stream Browser 頁面，點選 Add Event 按鈕發送 Event。"
 tags: [Event Store]
 ---
 

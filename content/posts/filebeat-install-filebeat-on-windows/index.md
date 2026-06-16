@@ -1,6 +1,7 @@
 ---
 title: "Filebeat - Install Filebeat on Windows"
 date: "2017-04-26 23:10:11"
+description: "要在 Windows 下使用 Filebeat，可先至官網下載下來解壓縮。 裡面比較會要用到的檔案有 filebeat.exe、install-service-filebeat.psl、uninstall-service-filebeat.psl 與 filebeat.yml。"
 tags: [Filebeat]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - Setup MySQL database"
 date: "2017-02-15 23:05:24"
+description: "要讓 SonarQube 使用 MySQL 資料庫，需先在伺服器中安裝 MySQL 資料庫。 接著要設定 MySQL 資料庫，可先將下列 SQL 語法存放至副檔名為 SQL 的檔案 (這邊筆者選用 create_database.sql)。"
 tags: [SonarQube]
 ---
 

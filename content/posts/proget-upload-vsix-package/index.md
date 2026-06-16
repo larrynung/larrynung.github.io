@@ -1,6 +1,7 @@
 ---
 title: "ProGet - Upload VSIX Package"
 date: "2017-10-15 22:35:50"
+description: "要從本地上傳 VSIX 套件到 ProGet 的 VSIX feed，可在 ProGet 的 VSIX feed 頁面按下 Add Package 按鈕。 點選 Upload Package。 按下 Choose File 按鈕。 選取要上傳的 VSIX 套件。 按下 Upload 按鈕。"
 tags: [ProGet]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Flyway - Prints the details and status information about all the migrations"
 date: "2019-07-30 21:06:26"
+description: "要透過 Flyway 查閱 Migration 的資訊或是運行狀態，可透過 Flyway 的 info 命令。 flyway info Flyway info 會將資料庫內的 Migration 資訊與本地的 Migration 整理後呈現。"
 tags: [Flyway]
 ---
 

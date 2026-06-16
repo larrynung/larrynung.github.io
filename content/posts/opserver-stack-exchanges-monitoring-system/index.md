@@ -1,7 +1,7 @@
 ---
 title: "Opserver - Stack Exchange's Monitoring System"
 date: "2016-04-11 23:24:00"
-description: "Opserver - Stack Exchange's Monitoring System"
+description: "Opserver 是 Stack Exchange 開發的監控系統，能夠針對以下系統進行監控： Servers/Switches & anything supported by Bosun, Orion, or direct WMI monitoring SQL Clusters & Single…"
 tags: [Opserver]
 ---
 

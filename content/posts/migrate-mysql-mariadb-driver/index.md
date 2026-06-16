@@ -1,6 +1,7 @@
 ---
 title: "migrate - MySQL/MariaDB driver"
 date: "2019-09-02 08:45:50"
+description: "migrate 要對 MySQL/MariaDB 進行資料庫的 Migration，migrate 的資料庫這邊要參照下列格式設定。 mysql://user:password@tcp(host:port)/dbname?query Migration 檔案用 SQL 語法下去撰寫。"
 tags: [migrate]
 ---
 

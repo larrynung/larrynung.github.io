@@ -1,6 +1,7 @@
 ---
 title: "dotnet-dump - Installation"
 date: "2019-11-25 08:05:40"
+description: "要安裝 dotnet-dump 可使用 dotnet tool install --global 將 dotnet-dump 安裝到全域。 dotnet tool install --global dotnet-dump 安裝完設定路徑。"
 tags: [dotnet-dump]
 ---
 

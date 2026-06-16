@@ -1,6 +1,7 @@
 ---
 title: "Grunt - Gruntfile"
 date: "2016-09-07 13:53:57"
+description: "Gruntfile 的設定可以直接從下面例子來看。 設定大概會分幾個部份，會有 Task 與 Target 的設定，有 npm 套件的載入，以及 Task 的註冊。 以這例子來說，這邊設定了 jshint task，這個 task 會用 jshint 分析指定的 javascript 的程式。"
 tags: [Grunt]
 ---
 

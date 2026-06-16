@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET - Config session timeout"
 date: "2014-03-21 23:49:00"
-description: "ASP.NET - Config session timeout"
+description: "ASP.Net Website 若未做任何的設定，預設的 Timeout 時間為 20 分鐘。有時我們需要對此做些調整，可能是設定短ㄧ點的值方便做些測試，或是系統本身就是需要設定不一樣的 Timeout 值。"
 ---
 
 ASP.Net Website 若未做任何的設定，預設的 Timeout 時間為 20 分鐘。有時我們需要對此做些調整，可能是設定短ㄧ點的值方便做些測試，或是系統本身就是需要設定不一樣的 Timeout 值。

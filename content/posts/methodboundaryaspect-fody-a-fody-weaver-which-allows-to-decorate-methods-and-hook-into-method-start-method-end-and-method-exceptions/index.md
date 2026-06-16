@@ -1,6 +1,7 @@
 ---
 title: "MethodBoundaryAspect.Fody - A Fody weaver which allows to decorate methods and hook into method start, method end and method exceptions"
 date: "2019-08-29 14:19:53"
+description: "MethodBoundaryAspect.Fody 能透過 Fody 在程式編譯時將進出方法與方法丟出錯誤時的處理掛入系統中。 使用時需先引用 MethodBoundaryAspect.Fody 套件。"
 tags: [Fody]
 ---
 

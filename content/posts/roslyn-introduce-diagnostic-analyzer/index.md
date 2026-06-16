@@ -1,7 +1,7 @@
 ---
 title: "Roslyn - Introduce diagnostic analyzer"
 date: "2014-11-12 22:55:00"
-description: "Roslyn - Introduce diagnostic analyzer"
+description: "Diagnostic Analyzer 功能是用來診斷分析程式碼的，開發人員可自行撰寫 Diagnostic Analyzer 去擴充 Roslyn 的編譯器，實作自己的程式碼診斷邏輯。 他有兩種不同的使用方式，一種是包裝成 VSIX 檔，需要安裝使用。"
 tags: [Roslyn]
 ---
 

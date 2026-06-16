@@ -1,7 +1,7 @@
 ---
 title: "log4net - RollingFileAppender's CountDirection Property"
 date: "2016-02-20 19:00:00"
-description: "log4net - RollingFileAppender's CountDirection Property"
+description: "log4net 在使用 RollingFileAppender 去做 Log 的紀錄時，我們需要注意 CountDirection 的設定。設定值大於 0，表示以遞增的方式 Rolling。反之，表示以遞減的方式 Rolling。"
 tags: [log4net]
 ---
 

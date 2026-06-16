@@ -1,7 +1,7 @@
 ---
 title: "Code Converter Extension v1.1"
 date: "2013-11-06 12:00:00"
-description: "Code Converter Extension v1.1"
+description: "在撰寫程式時，我們常常會需要做程式碼的轉換，這時我們會需要一些線上網站的輔助，像是developerfusion。Code Converter Extension試圖將developerfusion與Visual Studio結合，讓程式開發人員能在Visual Studio內就做好轉換的動作。"
 ---
 
 在撰寫程式時，我們常常會需要做程式碼的轉換，這時我們會需要一些線上網站的輔助，像是developerfusion。[Code Converter Extension](http://visualstudiogallery.msdn.microsoft.com/1821d46c-6c35-492b-98cc-d867c43bdebf)試圖將[developerfusion](http://www.developerfusion.com/tools/convert/csharp-to-vb/Code)與Visual Studio結合，讓程式開發人員能在Visual Studio內就做好轉換的動作。

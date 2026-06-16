@@ -1,6 +1,7 @@
 ---
 title: "Termux - Package management"
 date: "2018-10-09 19:44:34"
+description: "Termux 除了可以使用 apt & apt-get 來做套件管理外，也提供 pkg 來做套件管理。 使用方式可直接帶入 help 命令查閱。 pkg help 像是可用 search 命令搜尋是否有指定套件可供安裝。 pkg search 找到指定套件後可用 show 命令進一步查看套件資訊。"
 tags: [Termux]
 ---
 

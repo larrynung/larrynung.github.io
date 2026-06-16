@@ -1,6 +1,7 @@
 ---
 title: "Logstash - Getting started"
 date: "2017-06-03 00:05:46"
+description: "Logstash 安裝好後，可以用 Logstash 的 -e 參數帶入 Logstash 設定快速的體驗一下。 logstash -e 像是下面這樣帶入簡單的設定，將標準輸入串流輸入的資料導到標準輸出串流。"
 tags: [Logstash]
 ---
 

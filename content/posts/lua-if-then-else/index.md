@@ -1,6 +1,7 @@
 ---
 title: "Lua - If then else"
 date: "2017-08-11 23:23:44"
+description: "Lua 的 if 寫法如下，if 後接進入的條件，then ... end 區塊內帶入要運行的動作即可。 如果有多個分支條件，可以用 elseif 區塊帶上另外的分支條件，或是用 else 區塊指定所有分支條件條件都不滿足時要運行的動作。"
 tags: [Lua]
 ---
 

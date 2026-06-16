@@ -1,6 +1,7 @@
 ---
 title: "Event Store - Appending to a stream in a single write with .NET API"
 date: "2018-09-12 23:45:47"
+description: "要使用 Event Store .NET API 發送 Event 給 Event Store，可以先進行 Event Store 的連線。 連線後設定 EventData。"
 tags: [Event Store]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "WCF - Test WCF service with  WCF Test Client"
 date: "2014-03-16 22:47:00"
-description: "WCF - Test WCF service with  WCF Test Client"
+description: "WCF Test Client 是ㄧ用來測試 WCF 的工具。使用時只要透過上方的功能選單。 或是透過左側節點的滑鼠右鍵功能選單去觸發 'Add Service...' 功能。"
 tags: [WCF]
 ---
 

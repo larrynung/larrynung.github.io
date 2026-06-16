@@ -1,6 +1,7 @@
 ---
 title: "LiteDB - A .NET NoSQL Document Store in a single data file"
 date: "2017-12-15 23:19:17"
+description: "LiteDB 是一用 C# 寫的 .NET NoSQL 免費開源資料庫。 具備有以下特點： Lightweight Fast Thread safe Process safe Portable UWP and Xamarin iOS/Android ACID transaction…"
 tags: [LiteDB]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "sql-cli - Cross platform command line interface for SQL Server"
 date: "2016-11-22 23:33:22"
+description: "sql-cli 是一命令列的 SQL Server 工具。 透過 npm 安裝到全域即可使用。 npm install -g sql-cli 使用方式如下： Usage: mssql [options] Options: -h, --help output usage information…"
 tags: [sql-cli]
 ---
 

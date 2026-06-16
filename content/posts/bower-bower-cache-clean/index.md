@@ -1,7 +1,7 @@
 ---
 title: "Bower - Bower cache clean"
 date: "2016-01-18 05:24:00"
-description: "Bower - Bower cache clean"
+description: "Bower cache clean 可用來清除 Bower 套件的快取。 只要叫用命令 bower cache clean 即可。"
 tags: [Bower]
 ---
 

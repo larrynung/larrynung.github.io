@@ -1,7 +1,7 @@
 ---
 title: "[WinRT][C#]Windows.Storage.Pickers.FolderPicker"
 date: "2011-10-10 09:15:15"
-description: "[WinRT][C#]Windows.Storage.Pickers.FolderPicker"
+description: "WinRT中的FolderPicker類似於WindowForm中的FolderBrowserDialog，可用來做選取目錄之用。使用上跟FileOpenPicker非常類似，一樣是建立實體後，設定一些屬性像是瀏覽的起始位置、或是用縮圖模式還是清單模式顯示之類的，"
 tags: [CSharp]
 ---
 

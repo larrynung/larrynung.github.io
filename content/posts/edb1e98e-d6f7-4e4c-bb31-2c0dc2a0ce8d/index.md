@@ -1,7 +1,7 @@
 ---
 title: "Tkinter's tkColorChooser"
 date: "2013-11-06 12:00:00"
-description: "Tkinter's tkColorChooser"
+description: "使用Tkinter中的tkColorChooser，可以為叫出顏色選取對話框。 使用時需先將tkColorChooser package import進來。 Import完後就可以開始實際的撰寫程式，在此之前讓我們先來看一下tkColorChooser的函式原型： 因為預設選取的顏色較為常用，"
 tags: [Python]
 ---
 

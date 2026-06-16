@@ -1,7 +1,7 @@
 ---
 title: "C# 6.0 - Nameof expressions"
 date: "2014-08-25 23:40:00"
-description: "C# 6.0 - Nameof expressions"
+description: "Nameof expressions 是預計要在 C# 6.0 釋出的新功能，目前已可在 Visual Studio 14 CTP3 中透過設定將功能開啟進行體驗，只要在方案檔中加上： experimental Nameof expressions 能讓開發人員輕易的在程式中取得變數或是類別名稱。"
 tags: [CSharp, CSharp 6.0]
 ---
 

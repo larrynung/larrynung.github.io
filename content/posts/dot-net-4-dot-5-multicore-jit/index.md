@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.5 - Multicore JIT"
 date: "2014-03-26 23:33:00"
-description: ".NET 4.5 - Multicore JIT"
+description: "以往我們的程式要增快啟動速度時，我們會使用 ngen 去產生原生映像檔，讓程式運行時改運行預先編譯過的原生映像檔，以減少 JIT 編譯的耗費。 然而 ngen 這種改善方案只適用於某些情境下，像是有安裝包的部署。並不是所有的情境都可以套用 ngen 這種改善方案。"
 tags: [CSharp, JIT]
 ---
 

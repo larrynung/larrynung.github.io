@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 14 CTP 2 - Save and Apply Custom IDE Layouts"
 date: "2014-08-07 23:31:00"
-description: "Visual Studio 14 CTP 2 - Save and Apply Custom IDE Layouts"
+description: "Save and Apply Custom IDE Layouts 是 Visual Studio 14 所釋出的新功能，能讓開發人員儲存並套用 IDE 的版面配置。藉此開發人員可依不同的開發情境或是需求下去設置適合的版面配置。"
 tags: [Visual Studio]
 ---
 

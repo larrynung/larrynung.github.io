@@ -1,6 +1,7 @@
 ---
 title: "tmux - Pane operation"
 date: "2019-03-29 22:01:27"
+description: "tmux 的 Pane 可用來將一個 Terminal 視窗切成多個區塊。 使用前先進入 tmux 的 session。 tmux 要進行水平切割可按熱鍵 Ctrl + b，再按下 %。 要進行垂直切割可按熱鍵 Ctrl + b，再按下 \"。"
 tags: [tmux]
 ---
 

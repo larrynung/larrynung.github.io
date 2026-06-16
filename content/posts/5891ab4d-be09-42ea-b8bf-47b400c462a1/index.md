@@ -2,7 +2,7 @@
 title: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)"
 slug: "[CSharp][JavaScript]WinForm與WebPage的JavaScript互通(一)"
 date: "2013-11-06 12:00:00"
-description: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)"
+description: "有時候我們在開發時會將網頁嵌入WinForm程式之中，把網頁跟WinForm程式做個整合，最常見的就是登入或註冊時將動作導給網頁來做。也有某些程式是把整個WebPage給嵌入，WinForm只是做一個殼，程式的畫面與邏輯完全都是用WebPage的，最多針對一些細節下去調整或做些輔助功能，"
 tags: [CSharp]
 ---
 

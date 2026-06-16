@@ -1,6 +1,7 @@
 ---
 title: "Git - Git status pager"
 date: "2018-01-28 00:03:51"
+description: "使用 Git 做版控的程式如果一次變動過多，使用 Git Status 查閱變動時，我們會看到所有變動會一次全部都顯示出來，無法有效的查閱程式的變動。 這時我們可以調用 Git Config 命令將 Git Status 的分頁功能開啟。"
 tags: [Git]
 ---
 

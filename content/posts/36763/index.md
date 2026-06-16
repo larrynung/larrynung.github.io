@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - File preview"
 date: "2011-09-19 10:07:05"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - File preview"
+description: "在Visual Studio 2011 Preview以前，相信大家都有這樣的經驗，有時候在開發時為了看一下想找的程式碼片段是否在特定程式檔裡面，或是透過搜尋功能查詢感興趣的程式碼片段，只要透過滑鼠點選稍微瀏覽一下，Visual Studio中就會開啟大量的程式分頁，"
 tags: [Visual Studio]
 ---
 

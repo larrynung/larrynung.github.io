@@ -1,6 +1,7 @@
 ---
 title: "Parcel - TypeScript transform"
 date: "2018-01-17 23:08:06"
+description: "Parcel 支援 TypeScript 的轉換。 像是下面這邊筆者創建了個簡單的範例，建立了個 index.html，裡面引用了 index.ts。 index.ts 內引用 message.ts，並將 message.ts 傳回的訊息輸出到主控台。 message.ts 則是將要顯示的訊息輸出。"
 tags: [Parcel]
 ---
 

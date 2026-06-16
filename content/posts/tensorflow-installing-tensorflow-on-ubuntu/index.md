@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow - Installing TensorFlow on Ubuntu"
 date: "2018-05-23 00:23:11"
+description: "要在 Ubuntu 下安裝 TensorFlow，可先用 apt-get 更新一下。 sudo apt-get update 更新完後使用 apt-get 安裝 python 與 pip。"
 tags: [TensorFlow]
 ---
 

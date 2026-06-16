@@ -1,7 +1,7 @@
 ---
 title: "Github's Pull Requests"
 date: "2013-11-06 12:00:00"
-description: "Github's Pull Requests"
+description: "前陣子在同事的推廣下試玩了一下Github的Pull Requests功能，覺得還滿不錯的，稍微將之紀錄一下。 Pull Requests的功能對筆者而言就如同它字面所呈現的意思一樣，開發人員可以透過Github發出Pull Requests要求請求他人將程式拉下來看，"
 tags: [GitHub]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "FastoRedis - Connect to redis"
 date: "2019-03-11 14:22:58"
+description: "要透過 FastoRedis 連線到 Redis，可點選 [File | Connect...] 主選單選項。 在 Connections 視窗中點選 + 按鈕。 在 Select connection... 視窗中確認 Database 為 Redis 後按下 OK 按鈕。"
 tags: [FastoRedis]
 ---
 

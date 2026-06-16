@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
 date: "2015-11-26 01:12:00"
-description: "PL/SQL & SQL CODING GUIDELINE 12 - Avoid comparisons with null value"
+description: "條款十二是在說當判斷變數是否為 null 時，不要像下面這樣使用 = 去判斷。 因為 null 不等於任何東西，即使是 null 也不等於 null。 正確的方式應該是用 is 或 is not 去做判斷。"
 tags: [PL/SQL, PL/SQL and SQL Coding Guidelines]
 ---
 

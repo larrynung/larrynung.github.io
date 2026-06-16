@@ -1,6 +1,7 @@
 ---
 title: "gRPC - Services logging"
 date: "2019-11-30 09:17:53"
+description: "gRPC Service 內建的 log 可透過 appsettings.json 控制 log 層級。 預設為 Information 層級。 所以 gRPC service 運行起來會看到 Info 或是 Warn 層級的 Log 輸出。"
 tags: [gRPC]
 ---
 

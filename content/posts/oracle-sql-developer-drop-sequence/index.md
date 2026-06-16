@@ -1,7 +1,7 @@
 ---
 title: "Oracle SQL Developer - Drop sequence"
 date: "2015-07-08 18:13:00"
-description: "Oracle SQL Developer - Drop sequence"
+description: "要使用 Oracle SQL Developer 將指定的 Sequence 移除，可以找到指定的 Sequence，在其上按下滑鼠右鍵，點選 [Drop…] 滑鼠右鍵選單選項。 在彈出的 Drop 對話框中會顯示所要移除的 Sequence，確定無誤後按下 Apply 按鈕套用。"
 tags: [Oracle SQL Developer]
 ---
 

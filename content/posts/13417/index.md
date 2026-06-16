@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy"
 date: "2010-01-31 11:26:59"
-description: "[Visual Studio]Visual Studio 2010 New Feature - Call Hierarchy"
+description: "Introduction Call Hierarchy是Visual Studio 2010的新功能之一，能讓開發人員快速的找到類別成員被參考使用到的地方、其所使用到的其它類別成員、覆寫的地方、與實作的地方。"
 tags: [Visual Studio]
 ---
 

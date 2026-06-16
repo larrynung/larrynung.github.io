@@ -1,7 +1,7 @@
 ---
 title: "PL/SQL - ABS function"
 date: "2015-07-12 18:51:00"
-description: "PL/SQL - ABS function"
+description: "ABS function 會將帶入的值取絕對值傳出。 使用語法如下： ABS( number ) number 為要轉換的數值，如果帶入的是負值，會將其變為正值傳出，就像下面這樣： Link Oracle/PLSQL: ABS Function"
 tags: [PL/SQL]
 ---
 

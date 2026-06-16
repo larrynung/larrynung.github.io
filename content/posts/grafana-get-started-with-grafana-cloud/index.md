@@ -1,6 +1,7 @@
 ---
 title: "Grafana - Get started with Grafana Cloud"
 date: "2019-02-27 00:13:08"
+description: "要使用 Grafana Cloud，可在 Grafana 首頁按下 Get Grafana 按鈕。 點選 Get yout free Instance now 按鈕。 填入電子郵件後按下 Sign up Free 按鈕。"
 tags: [Grafana]
 ---
 

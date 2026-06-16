@@ -1,7 +1,7 @@
 ---
 title: "[WPF]WPF初體驗"
 date: "2009-04-09 12:39:43"
-description: "[WPF]WPF初體驗"
+description: "建立專案 檔案=>新增專案=>依需求選取WPF專案範本。 專案架構 建立完WPF專案後，以WPF應用程式為例，我們可以在方案總管視窗看到方案中已有Application.Xaml、Window1.Xaml、與其Code Behind檔共四個檔案。"
 tags: [WPF]
 ---
 

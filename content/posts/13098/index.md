@@ -1,7 +1,7 @@
 ---
 title: "[VS 2010]Generate From Usage"
 date: "2010-01-18 11:57:57"
-description: "[VS 2010]Generate From Usage"
+description: "Introduction Generate From Usage是VS2010的新功能，其能讓使用者先使用類別與成員，事後再去定義它。這種特性對於TDD的開發方式特別有幫助、因為我們可以在撰寫單元測試的同時，利用Generate From Usage功能產生對應的程式框架。"
 tags: [Visual Studio]
 ---
 

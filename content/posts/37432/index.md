@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Visual Studio 2011 Preview New Feature - Find and Replace control improvements"
 date: "2011-09-23 01:28:52"
-description: "[Visual Studio]Visual Studio 2011 Preview New Feature - Find and Replace control improvements"
+description: "Visual Studio 2011 Preview在搜尋與取代功能上也做了些小小的改進，也是自Productivity Power Tools修改過來的功能。在Visual Studio 2011 Preview中按下『Ctrl + F』搜尋或是按下『CTRL + H』取代，"
 tags: [Visual Studio]
 ---
 

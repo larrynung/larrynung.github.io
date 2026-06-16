@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Getting started with VS Code"
 date: "2018-03-10 00:13:07"
+description: "要在 VS Code 運行 Flutter，需先安裝 Dart Code 套件。 安裝完後重啟 VS Code。 使用 Command Palette 調用 Flutter: New Project。 輸入 Flutter 專案名稱（專案的名稱必須要全小寫）後按下 Enter 建繼續。"
 tags: [Flutter]
 ---
 

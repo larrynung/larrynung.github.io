@@ -1,6 +1,7 @@
 ---
 title: "Grunt - How to use"
 date: "2016-09-06 13:46:04"
+description: "使用 Grunt 前需先確定環境是否已經安裝了 Node.js 與 grunt-cli。 npm install grunt-cli -g 環境安裝無誤就可以開始使用 Grunt，使用上大致分為下列幾個步驟： 以 Windows 的操作為例，首先需要有專案目錄。"
 tags: [Grunt]
 ---
 

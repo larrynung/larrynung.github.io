@@ -1,7 +1,7 @@
 ---
 title: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約"
 date: "2010-08-31 10:44:14"
-description: ".NET 4.0 New Feature - 程式碼合約(Code Contracts) (二) 三大合約"
+description: "程式碼合約內定義許多方便的合約，供開發人員能對開發的程式做些驗證，其中最重要用的也最多的莫過於下面三個合約： 前置條件(Preconditions) 後置條件(Postconditions) 物件非變異(Object Invariants) 前置條件(Preconditions)…"
 tags: [CSharp]
 ---
 

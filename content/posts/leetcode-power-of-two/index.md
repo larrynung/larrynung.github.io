@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Power of Two"
 date: "2015-08-23 23:01:00"
-description: "LeetCode - Power of Two"
+description: "LeetCode 的 Power of Two 題目如下： Given an integer, write a function to determine if it is a power of two. 簡單說他要的是要一個功能，給予一個整數，能判別他是否是 2 的冪次。"
 tags: [LeetCode]
 ---
 

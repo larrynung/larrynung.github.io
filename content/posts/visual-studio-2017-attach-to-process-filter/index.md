@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2017 - Attach to Process Filter"
 date: "2017-02-08 13:34:43"
+description: "在 Visual Studio 2017 以前要在 Attach to Process 對話框中找到要附加的處理序，需要在一堆處理序中挑選。 Visual Studio 2017 針對 Attach to Process 對話框做了強化，新增過濾的功能，便於使用者快速挑選要附加的處理序。"
 tags: [Visual Studio, Visual Studio 2017]
 ---
 

@@ -2,7 +2,7 @@
 title: "[C#][VB.NET]XML序列化私有欄位"
 slug: "[CSharp][VB.NET]XML序列化私有欄位"
 date: "2008-11-29 10:17:07"
-description: "[C#][VB.NET]XML序列化私有欄位"
+description: "假設今天有個Person的類別如下。除了名字、年齡、性別外，內含_friends清單用以提供IsFriend與AddFriend函式所須用到的朋友清單資料。 VB.NET C# 在.NET程式裡，若將該類別直接做XML序列化，"
 tags: [VB.NET,CSharp]
 ---
 

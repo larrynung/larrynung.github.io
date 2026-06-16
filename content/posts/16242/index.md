@@ -1,7 +1,7 @@
 ---
 title: "[VB.NET]MDI Thumbnail Preview"
 date: "2010-06-28 10:10:25"
-description: "[VB.NET]MDI Thumbnail Preview"
+description: "最近試著把MDI視窗加上Thumbnail Preview功能，找來找去找不到相關的技術文件，只好硬幹處理，這邊簡單記錄一下簡陋的作法。 要為MDI視窗加上Thumbnail Preview功能，必須知道如何透過複寫ProcessCmdKey把Ctrl+Tab切換MDI子視窗的動作給過濾掉，"
 tags: [VB.NET]
 ---
 

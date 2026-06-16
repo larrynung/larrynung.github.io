@@ -1,7 +1,7 @@
 ---
 title: "StackExchange.Redis - Pub/Sub Demo"
 date: "2016-05-24 07:51:00"
-description: "StackExchange.Redis - Pub/Sub Demo"
+description: "使用 StackExchange.Redis 開發 Redis 的 Pub/Sub 程式，需先調用 GetSubscriber 方法取得 Subscriber 物件，再透過該 Subscriber 物件去設定事件訂閱以及發佈訂閱即可。"
 tags: [StackExchange.Redis]
 ---
 

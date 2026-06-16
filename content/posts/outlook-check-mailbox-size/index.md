@@ -1,7 +1,7 @@
 ---
 title: "Outlook - Check mailbox size"
 date: "2015-07-11 16:00:00"
-description: "Outlook - Check mailbox size"
+description: "要檢查 Outlook 用量大小，我們可以在 Mailbox 上按下滑鼠右鍵，在彈出的滑鼠右鍵快顯選單中選取 Properties 選單選項。 在 Properties 對話框中的 General 頁面找到 Folder Size... 按鈕並點選。"
 tags: [Outlook]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[.Net Resource]Mono Migration Analyzer (MoMA)"
 date: "2010-08-03 11:44:53"
-description: "[.Net Resource]Mono Migration Analyzer (MoMA)"
+description: "Mono Migration Analyzer (MoMA)工具主要功能為偵測.NET應用程式是否可以被移轉到Mono上面，可幫助我們找到應用程式中有用到的平台叫用或是Mono尚未支援的部分。 如何使用 Step1.歡迎畫面，按下[Next]繼續。"
 tags: [.NET Resource]
 ---
 

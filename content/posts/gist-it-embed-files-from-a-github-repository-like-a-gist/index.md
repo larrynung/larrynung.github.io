@@ -1,7 +1,7 @@
 ---
 title: "gist-it - Embed files from a github repository like a gist"
 date: "2013-12-09 23:35:00"
-description: "gist-it - Embed files from a github repository like a gist"
+description: "筆者在寫部落格時，有時候會將範例程式碼整理放至 GitHub 上。而文章中又會針對程式做細部的拆解與解說，以往筆者會將程式碼片段複製在部落格的文章內，或是貼至 gist 然後將之內嵌。"
 tags: [GitHub]
 ---
 

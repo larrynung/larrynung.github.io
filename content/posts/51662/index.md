@@ -1,7 +1,7 @@
 ---
 title: "[Visual Studio]Unswap Memory外掛元件"
 date: "2011-11-04 01:16:30"
-description: "[Visual Studio]Unswap Memory外掛元件"
+description: "Unswap Memory外掛元件相關的資料實在很少，在Unswap Memory網站上有稍微的提到它的功能： Plugin forcibly loads the Visual Studio 2010 instance into the physical memory from a paging…"
 tags: [Visual Studio]
 ---
 

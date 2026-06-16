@@ -1,6 +1,7 @@
 ---
 title: "Web Deploy - Web Deploy Providers"
 date: "2016-12-07 23:19:42"
+description: "Web Deploy Provider 主要是用來決定來源端或是目的端的資料要怎麼處理。 可以用的 Providers 有： Web Deploy appHostConfig Provider Web Deploy appHostSchema Provider Web Deploy…"
 tags: [Web Deploy]
 ---
 

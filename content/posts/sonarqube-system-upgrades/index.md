@@ -1,6 +1,7 @@
 ---
 title: "SonarQube - System upgrades"
 date: "2017-03-27 13:14:25"
+description: "要進行 SonarQube 的系統升級，目前 Update Center 只支援查閱更新以及告知升級的步驟，尚未支援自動升級，需要自行手動升級。 可以先下載新版的 SonarQube 程式。 將舊的 SonarQube 服務停止。 停止後將舊的服務移除。"
 tags: [SonarQube]
 ---
 

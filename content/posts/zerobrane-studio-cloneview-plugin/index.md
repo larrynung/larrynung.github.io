@@ -1,6 +1,7 @@
 ---
 title: "ZeroBrane Studio - CloneView Plugin"
 date: "2017-04-20 09:45:16"
+description: "要在 ZeroBrane Studio 使用 CloneView 功能，首先要先將 CloneView Plugin 下載至 ZeroBrane Studio 的 packages 目錄下。"
 tags: [ZeroBrane Studio]
 ---
 

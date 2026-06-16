@@ -1,6 +1,7 @@
 ---
 title: "Blazor - Dependency injection"
 date: "2019-07-16 19:12:34"
+description: "Blazor component 若需要使用 Service，可透過 DI 注入。 像是 Blazor 範本內就有一個 Service。 這個 Service 會在 Startup.ConfigureServices 這邊加入，指定為 Singleton 的 Service。"
 tags: [Blazor]
 ---
 

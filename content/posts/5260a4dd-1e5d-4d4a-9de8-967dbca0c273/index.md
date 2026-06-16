@@ -1,7 +1,7 @@
 ---
 title: "PC 對話 - 如何在 Windows 7 中輕鬆快速的啟動 Word 或 Excel"
 date: "2013-11-06 12:00:00"
-description: "PC 對話 - 如何在 Windows 7 中輕鬆快速的啟動 Word 或 Excel"
+description: "這是第一次嘗試翻譯的PC Talk，原始文章在PC 對話 - 如何在 Windows 7 中輕鬆快速的啟動 Word 或 Excel。 本篇文章在說明如何建立捷徑與使用工作列上的新功能來輕鬆快速的啟動 Word 與 Excel。"
 ---
 
 這是第一次嘗試翻譯的PC Talk，原始文章在PC 對話 - 如何在 Windows 7 中輕鬆快速的啟動 Word 或 Excel。

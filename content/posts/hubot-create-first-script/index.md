@@ -1,6 +1,7 @@
 ---
 title: "Hubot - Create first script"
 date: "2018-11-02 23:58:49"
+description: "Hubot scripting 支援 Coffee script 與 Javascript，script 放置於 scripts 目錄下， 內含範本 example.coffee 可以參閱。"
 tags: [Hubot]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL  SQL CODING GUIDELINE 39 - Never use GOTO statements in your code"
 date: "2017-03-03 13:53:38"
+description: "條款三十九，從不使用 GOTO 語句。 像是下面這樣的程式。 可考慮使用 exit 搭配 label 從迴圈內跳離。 或是思考是否有其它的寫法，像是上面的程式是用來檢查密碼的，用正規表示式去判斷即可，不需要使用巢狀迴圈。"
 tags: [PL/SQL]
 ---
 

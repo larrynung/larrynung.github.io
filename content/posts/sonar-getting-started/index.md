@@ -1,6 +1,7 @@
 ---
 title: "sonar - Getting started"
 date: "2017-10-29 16:11:28"
+description: "要使用 sonar CLI，需先要有 Node.js v8.x 以上的版本。 再透過 npm 安裝 sonar 到全域。 npm install -g --engine-strict @sonarwhal/sonar 安裝完可查詢 sonar 版本確認安裝的狀態。"
 tags: [sonar]
 ---
 

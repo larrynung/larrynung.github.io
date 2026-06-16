@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Plus One"
 date: "2015-08-12 23:30:00"
-description: "LeetCode - Plus One"
+description: "LeetCode 的 Plus One 題目如下： Given a non-negative number represented as an array of digits, plus one to the number."
 tags: [LeetCode]
 ---
 

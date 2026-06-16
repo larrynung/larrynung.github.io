@@ -1,6 +1,7 @@
 ---
 title: "'Termux - Termux:API'"
 date: "2018-10-13 08:19:38"
+description: "要讓 Termux 可以獲取手機資訊或是跟手機進行互動，可以安裝 Termux:API application。 然後在 Termux 安裝 termux-api。"
 tags: [Termux]
 ---
 

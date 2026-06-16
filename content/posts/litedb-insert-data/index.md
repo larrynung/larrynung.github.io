@@ -1,6 +1,7 @@
 ---
 title: "LiteDB - Insert data"
 date: "2017-12-17 22:53:59"
+description: "要將資料塞入 LiteDB，需先準備一個用來存放資料的 Model，該 Model 跟一般的 Model 沒什麼太大的不同，不需要特別加掛 Attribute，只需要為 Model 加上一個 ID 的數值屬性，讓 LiteDB 用以識別資料。"
 tags: [LiteDB]
 ---
 

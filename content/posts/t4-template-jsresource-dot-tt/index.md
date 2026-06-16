@@ -1,7 +1,7 @@
 ---
 title: "T4 Template - JsResource.tt"
 date: "2016-03-21 00:57:00"
-description: "T4 Template - JsResource.tt"
+description: "在撰寫 ASP.NET 時，.NET 程式部分可用 Resource 去做多語的部分，JavaScript 這邊雖然也有 L10N 的解決方案，但是若走不同的解決方案，難以避免有些詞彙會重複定義。 這邊筆者嘗試使用 T4 來解決這樣的問題。 像是這邊筆者準備了不同的資源檔。"
 tags: [T4, CSharp]
 ---
 

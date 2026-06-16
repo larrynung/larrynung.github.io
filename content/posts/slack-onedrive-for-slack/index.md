@@ -1,6 +1,7 @@
 ---
 title: "Slack - OneDrive for Slack"
 date: "2018-11-20 22:39:21"
+description: "要整合 Slack 與 OneDrive，可在 Slack 中加入 Microsoft OneDrive App。 按下 Authentcate your OneDrive account 按鈕進行 OneDrive 的授權。"
 tags: [Slack, OneDrive]
 ---
 

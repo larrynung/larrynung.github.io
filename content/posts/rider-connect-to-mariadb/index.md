@@ -1,6 +1,7 @@
 ---
 title: "Rider - Connect to MariaDB"
 date: "2019-06-01 12:26:26"
+description: "要透過 Rider 連線 MariaDB 做些操作，可以點選 [ View | Tool Windows | Database ] 主選單選項，開啟 Database 視窗。 然後點選 Database 視窗工具列上的新增按鈕，新增 MariaDB 的 Data Source。"
 tags: [Rider, MariaDB]
 ---
 

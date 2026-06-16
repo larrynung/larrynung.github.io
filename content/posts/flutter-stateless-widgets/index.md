@@ -1,6 +1,7 @@
 ---
 title: "Flutter - Stateless Widgets"
 date: "2018-04-09 23:01:29"
+description: "Flutter 的 Stateless widget 指的是無狀態的 widget。 使用時會建立一個繼承自 StatelessWidget 的子類別，然後複寫處理 build 方法，在該方法描述要怎樣建立該 widget。"
 tags: [Flutter]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Consul - Install on Ubuntu"
 date: "2018-12-06 00:33:58"
+description: "要在 Ubuntu 安裝 Consul，要先在 Download Consul - Consul by HashiCorp 這邊找到 Consul 檔案位置。 下載 Consul 檔案。 wget 將下載下來的 Consul 檔案進行解壓縮。"
 tags: [Consul, Ubuntu]
 ---
 

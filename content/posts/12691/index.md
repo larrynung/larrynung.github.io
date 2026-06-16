@@ -1,7 +1,7 @@
 ---
 title: "[Software]The Regular"
 date: "2009-12-27 01:24:30"
-description: "[Software]The Regular"
+description: "Introduction The Regular是ㄧ套用來撰寫測試.NET正規表示式的輔助工具。作者是Roy Osherove。該軟體主要提供Match、Replace、Split、Generate Code、Intellisense、Code Snippets、Web Search、Regex…"
 tags: [Software]
 ---
 

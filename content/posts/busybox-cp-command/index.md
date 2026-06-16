@@ -1,6 +1,7 @@
 ---
 title: "BusyBox - cp command"
 date: "2019-03-25 20:30:37"
+description: "cp 命令可用來做檔案的複製。 直接調用命令可查閱使用說明。 cp 要將單檔複製到指定位置，可直接在命令後帶入來源檔案位置與目的檔案位置調用。 cp [SourceFile] [TargetFile] 允許使用多組來源檔案，目的位置也可以使用目錄。"
 tags: [BusyBox]
 ---
 

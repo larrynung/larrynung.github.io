@@ -1,6 +1,7 @@
 ---
 title: "Two-phase commit protocol"
 date: "2019-05-02 07:52:40"
+description: "Two-phase commit protocol 簡稱 2PC，也就是所謂的二階段提交。可用來解決分散式服務架構下各服務之間交易資料一致性問題。 該做法有幾個假設前提： 該分散式系統中，存在一個節點作為協調者(Coordinator)，其他節點作為參與者(Participants)。"
 ---
 
 Two-phase commit protocol 簡稱 2PC，也就是所謂的二階段提交。可用來解決分散式服務架構下各服務之間交易資料一致性問題。

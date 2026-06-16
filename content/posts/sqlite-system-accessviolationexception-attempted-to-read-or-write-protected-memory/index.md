@@ -1,6 +1,7 @@
 ---
 title: "SQLite - System.AccessViolationException: Attempted to read or write protected memory"
 date: "2016-11-04 13:48:08"
+description: "最近在使用 SQLite 讀取資料時，程式運行出現了 System.AccessViolationException: Attempted to read or write protected memory 這樣的訊息。"
 tags: [SQLite]
 ---
 

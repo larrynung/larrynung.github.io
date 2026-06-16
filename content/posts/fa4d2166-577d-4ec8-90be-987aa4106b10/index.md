@@ -1,7 +1,7 @@
 ---
 title: "FlickrNet開發系列- FlickrNet基本功能開發(二)"
 date: "2013-11-06 12:00:00"
-description: "FlickrNet開發系列- FlickrNet基本功能開發(二)"
+description: "前面介紹了FlickrNet基本的開發，細心的可能有注意到我並沒有提到怎樣去顯示圖片。雖然前面的文章例子中有圖片，但用的是縮圖的部份，解析度不適合拿來做播放顯示。這邊針對顯示圖片那邊在做些進一步的補充。 在Flickr中除了我們前面用到的縮圖外，還有各式各樣尺寸的圖片可供我們使用。"
 tags: [CSharp]
 ---
 

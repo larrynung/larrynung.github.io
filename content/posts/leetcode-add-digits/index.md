@@ -1,7 +1,7 @@
 ---
 title: "LeetCode - Add Digits"
 date: "2016-02-10 09:04:00"
-description: "LeetCode - Add Digits"
+description: "LeetCode 的 Add Digits 題目如下： Given a non-negative integer num, repeatedly add all its digits until the result has only one digit."
 tags: [LeetCode]
 ---
 

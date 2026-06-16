@@ -2,7 +2,7 @@
 title: "[C#]C# 4.0 動態繫結 (Dynamic Lookup)"
 slug: "[CSharp]C# 4.0 動態繫結 (Dynamic Lookup)"
 date: "2009-08-05 09:02:48"
-description: "[C#]C# 4.0 動態繫結 (Dynamic Lookup)"
+description: "Introduction 動態繫結是C# 4.0的特色之一，其功能在現階段與晚期繫結大同小異。有用過VB.NET晚期繫結的，相信都能很快速的上手。主要能讓程式在執行階段才指定型別，並進行動態叫用。"
 tags: [CSharp]
 ---
 

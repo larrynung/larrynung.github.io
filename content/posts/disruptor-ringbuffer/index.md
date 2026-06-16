@@ -1,7 +1,7 @@
 ---
 title: "Disruptor - Ringbuffer"
 date: "2016-03-12 08:06:00"
-description: "Disruptor - Ringbuffer"
+description: "Ringbuffer 是 Disruptor 的核心部分，使用 Disruptor 一定會圍繞著 Ringbuffer，Producer 會往 Ringbuffer 塞資料，Consumer 會從 RingBuffer 消費資料，"
 tags: [Disruptor]
 ---
 

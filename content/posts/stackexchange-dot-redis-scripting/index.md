@@ -1,7 +1,7 @@
 ---
 title: "StackExchange.Redis - Scripting"
 date: "2016-05-24 23:40:00"
-description: "StackExchange.Redis - Scripting"
+description: "使用 StackExchange.Redis 開發 Redis 的 Lua Scripting 程式，只要簡單的透過 Database 物件的 ScriptEvaluateAsync 方法，將 Lua script 及所需的 keys 與 values 帶入即可。"
 tags: [StackExchange.Redis]
 ---
 

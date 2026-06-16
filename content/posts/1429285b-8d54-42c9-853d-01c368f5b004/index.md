@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview Peek Definition's issue"
 date: "2013-11-06 12:00:00"
-description: "Visual Studio 2013 Preview Peek Definition's issue"
+description: "Visual Studio 2013 Preview在使用Peek Definition時，我們可以使用滑鼠右鍵快顯選單或是熱鍵去觸發Peek Definition Window，這兩種觸發方式在Visual Studio 2013 Preview有著不一致的行為。"
 ---
 
 Visual Studio 2013 Preview在使用Peek Definition時，我們可以使用滑鼠右鍵快顯選單或是熱鍵去觸發Peek Definition Window，這兩種觸發方式在Visual Studio 2013 Preview有著不一致的行為。

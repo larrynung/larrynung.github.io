@@ -1,6 +1,7 @@
 ---
 title: "gauth - Host Google authenticator server"
 date: "2021-03-08 07:56:59"
+description: "要起 gauth 服務供二階段認證使用，可將 gauth 程式碼下載下來。 git clone https://github.com/gbraadnl/gauth.git 切換到 gauth 程式碼目錄。 cd gauth 安裝 gauth 所需的 npm 套件。"
 tags: [gauth]
 ---
 

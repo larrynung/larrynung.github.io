@@ -1,6 +1,7 @@
 ---
 title: "Firebase - Set data to realtime database on the web"
 date: "2018-02-25 00:05:34"
+description: "建立完 Firebase 專案且調完資料庫的安全性規則設定，可以開始嘗試進行 Firebase Realtime Database 的寫入動作，因為這邊是用 Web 專案開發，所以點選 \"將 Firebase 加入您的網路應用程式\"。進行應用程式的連結。"
 tags: [Firebase]
 ---
 

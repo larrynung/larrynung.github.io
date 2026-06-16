@@ -1,7 +1,7 @@
 ---
 title: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
 date: "2010-04-26 11:37:16"
-description: "[Extension Method][VB.NET]ErrorProvider.GerErrorMsgs & ErrorProvider.HasError"
+description: "GetErrorMsgs擴充方法可找出介面上所有有用ErrorProvider顯示的錯誤訊息，HasError可以判斷介面上是否有任何用ErrorProvider顯示的錯誤訊息，程式碼如下： 可以用在設定表單關閉時，判斷是否有未填寫正確的資料。"
 tags: [VB.NET]
 ---
 

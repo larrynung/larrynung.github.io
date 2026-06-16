@@ -1,6 +1,7 @@
 ---
 title: "Hexo - Change NexT theme's scheme"
 date: "2016-06-23 23:26:29"
+description: "NexT 支援三種不同的 Scheme，可開啟 Theme 的設定檔設定。 Muse scheme... Mist scheme... Pisces scheme..."
 tags: [Hexo]
 ---
 

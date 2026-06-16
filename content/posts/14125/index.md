@@ -1,7 +1,7 @@
 ---
 title: "[.NET Resource]ExtensionMethod.NET"
 date: "2010-03-19 11:26:07"
-description: "[.NET Resource]ExtensionMethod.NET"
+description: "ExtensionMethod.NET是一個Extension Method的分享平台，使用者可以發佈自己的Extension Method與網友分享，也可以找尋想要的Extension Method，且具備討論、評分等互動的功能。"
 tags: [.NET Resource]
 ---
 

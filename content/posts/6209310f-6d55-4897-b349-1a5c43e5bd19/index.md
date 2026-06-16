@@ -1,7 +1,7 @@
 ---
 title: "Google FeedBurner"
 date: "2013-11-06 12:00:00"
-description: "Google FeedBurner"
+description: "Google FeedBurner這個服務~如同它的字面意思一樣，是一個RSS Feed燒錄的服務，我們可以將自己網誌的RSS Feed透過Google FeedBurner燒錄一份專屬於自己的位置。"
 ---
 
 Google FeedBurner這個服務~如同它的字面意思一樣，是一個RSS Feed燒錄的服務，我們可以將自己網誌的RSS Feed透過[Google FeedBurner燒錄一份專屬於自己的位置。這樣做的好處在於這個燒錄出來的RSS Feed訂閱位置是獨立於網誌的存在，等同是在中間架了一層中介層，所以可以在上面做很多事情。像是可以對訂閱者進行分析、統計、提供電子報、在RSS摘要中插入AdSense、以及同步至Twitter等。最好的是...哪天網誌搬家，發佈者也只要調整一下設定，將燒錄的來源改為新的網誌，對於訂閱者來說可以完全無痛。](https://accounts.google.com/ServiceLogin?service=feedburner)

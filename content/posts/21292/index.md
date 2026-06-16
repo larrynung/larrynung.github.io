@@ -2,7 +2,7 @@
 title: "[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源."
 slug: "[CSharp]Effective C# 條款十五：利用using和try/finally語句來清理資源."
 date: "2011-02-09 03:33:58"
-description: "[C#]Effective C# 條款十五：利用using和try/finally語句來清理資源."
+description: "非拖管資源故名思義該資源是非拖管的，跟一般的托管資源不同的是，這些非拖管資源在建立後必須自行去作釋放的動作，不然會產生資源洩漏。為解決這樣的問題，在.NET BCL提供IDisposable介面，提供.NET程式非拖管資源釋放的標準做法，藉由呼叫該介面的Dispose()方法，"
 tags: [CSharp]
 ---
 
