@@ -1,7 +1,13 @@
 # PaperMod theme parameters
 description = "Larry Nung - Software Engineer, sharing insights about software development, programming, and technology."
-keywords = ["Larry Nung", "Software Engineer", "Blog", "Hugo", "Programming"]
+keywords = ["Larry Nung", "Software Engineer", "Blog", "Hugo", "Programming", "C#", ".NET", "DevOps"]
 author = "Larry Nung"
+
+[schema]
+publisherType = "Person"
+sameAs = [
+  "https://github.com/larrynung"
+]
 
 # theme
 defaultTheme = "auto" # dark, light
@@ -57,7 +63,7 @@ hiddenInSingle = true # hide on single page
 
 # Edit post
 [editPost]
-URL = "https://github.com/larrynung/larrynung.github.io/tree/main/content"
+URL = "https://github.com/larrynung/larrynung.github.io/tree/hugo/content"
 Text = "Suggest Changes" # edit text
 appendFilePath = true # to append file path to Edit link
 
