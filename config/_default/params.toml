@@ -2,6 +2,7 @@
 description = "Larry Nung - Software Engineer, sharing insights about software development, programming, and technology."
 keywords = ["Larry Nung", "Software Engineer", "Blog", "Hugo", "Programming", "C#", ".NET", "DevOps"]
 author = "Larry Nung"
+images = ["images/og-default.png"]
 
 [schema]
 publisherType = "Person"
