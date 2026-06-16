@@ -1,6 +1,7 @@
 ---
 title: "'Nmap - The network mapper, free security scanner'"
 date: "2018-10-29 07:59:07"
+tags: [Network, Nmap]
 description: "nmap 是網路掃描與探測工具。 Ubuntu 下可直接透過 apt-get 安裝。 apt-get install nmap 安裝完可直接輸入命令查閱使用說明。 nmap 最簡單的使用方式就是在命令後面帶入網址。 nmap 或是帶入 IP。 nmap 也可以帶入 IP 的範圍。"
 ---
 

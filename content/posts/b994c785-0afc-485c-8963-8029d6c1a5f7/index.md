@@ -1,6 +1,7 @@
 ---
 title: "Registering Google App Engine's Application"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "要在Google App Engine建立Application，首先要在首頁這邊按下申請連結 第一次使用會看到像下面這樣的歡迎畫面，按下Create Application按鈕繼續。 除了歡迎畫面外，第一次使用還必需先進行帳戶的驗證，輸入手機號碼後按下傳送驗證碼按鈕繼續。"
 ---
 

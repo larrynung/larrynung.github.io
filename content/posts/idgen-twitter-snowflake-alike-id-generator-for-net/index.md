@@ -1,6 +1,7 @@
 ---
 title: "IdGen - Twitter Snowflake-alike ID generator for .Net"
 date: "2016-04-06 21:39:00"
+tags: [CSharp]
 description: "IdGen 是 ID 產生器套件，可用以產生 Twitter Snowflake-alike 的 ID，具備彈性，支援許多不同的建構方式，支援調整 ID 的結構。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "CAP theorem"
 date: "2019-05-30 07:36:11"
+tags: [Distributed Systems]
 description: "CAP定理 (CAP theorem)，又稱作布魯爾定理 (Brewer's theorem)，指出對於一個分散式系統來說，不可能同時滿足 Consistency、Availability、Partition tolerance 三種特性。"
 ---
 

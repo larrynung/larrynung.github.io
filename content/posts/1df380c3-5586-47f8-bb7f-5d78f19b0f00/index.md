@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 RC New Feature - Method return value inspection"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio 2013, Visual Studio]
 description: "Visual Studio 2013 RC新加入了Method return value inspection功能，能讓開發人員很容易的查閱方法運行後傳回的回傳值，讓除錯更加的便利。 像是下面這個例子，方法中帶入的值是其它方法的回傳值。"
 ---
 

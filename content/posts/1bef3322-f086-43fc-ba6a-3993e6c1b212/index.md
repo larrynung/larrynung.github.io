@@ -1,6 +1,7 @@
 ---
 title: "Mobilizer - Mobile Preview Desktop App"
 date: "2013-11-06 12:00:00"
+tags: [Mobile]
 description: "Mobilizer是一套手機瀏覽器模擬器，能模擬IPhone、HTC、Blackberry、Samsung、Nokia這些機子上的瀏覽器瀏覽狀況，有助於行動裝置上的網頁開發。"
 ---
 

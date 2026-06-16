@@ -1,6 +1,7 @@
 ---
 title: "JQuery UI - Dialog Widget"
 date: "2015-12-21 23:22:00"
+tags: [jQuery]
 description: "要使用 JQuery UI 的 Dialog Widget，首先必須引用 JQuery、JQueryUI。 接著在畫面上放入一個 div element。 在 Javascript 中用 JQuery 找到該 div element，"
 ---
 

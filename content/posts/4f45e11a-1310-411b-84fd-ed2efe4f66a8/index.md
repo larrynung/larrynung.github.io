@@ -1,6 +1,7 @@
 ---
 title: "Alias Be Gone - A C# alias to .NET CLR type replacer extension"
 date: "2013-11-06 12:00:00"
+tags: [CSharp]
 description: ".NET開發者應該都知道.NET中的基本型別大致都有其對應的別名，像是string對應到System.String、bool對應到Boolean...等。使用別名我們不須特別引用命名空間就可以直接使用，少了些限制也多了些彈性。"
 ---
 

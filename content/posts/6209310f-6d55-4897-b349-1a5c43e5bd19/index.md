@@ -1,6 +1,7 @@
 ---
 title: "Google FeedBurner"
 date: "2013-11-06 12:00:00"
+tags: [Google]
 description: "Google FeedBurner這個服務~如同它的字面意思一樣，是一個RSS Feed燒錄的服務，我們可以將自己網誌的RSS Feed透過Google FeedBurner燒錄一份專屬於自己的位置。"
 ---
 

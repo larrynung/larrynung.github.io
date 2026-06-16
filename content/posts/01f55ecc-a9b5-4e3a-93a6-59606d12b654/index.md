@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]使用Portable Class library樣板建立能在多個平台上重用的組件"
 date: "2013-11-06 12:00:00"
+tags: [Portable Class Library, Visual Studio]
 description: "近年隨著科技的進步，很多人手邊都有多個裝置，也許是WP7、也許是桌機、筆電、XBox...，這是個美好的時代，行動計算無所不在，生活充滿了更多的便利性。但這樣的時代卻苦了程式開發人員，同樣的程式往往開發人員必須在各個裝置上建置，就像是一個好的App，能讓使用者高度的黏在App上，"
 ---
 

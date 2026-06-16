@@ -1,6 +1,7 @@
 ---
 title: "GAE's Memcache"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "Memcache 是高效能、分散式的記憶體物件快取系統。存放在Memcache內的資料若一段時間不訪問，或是可供快取的空間用完時，快取的內容即會過時。 首先需先將google.appengine.ext.db import進來。"
 ---
 

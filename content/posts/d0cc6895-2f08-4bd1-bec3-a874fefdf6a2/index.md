@@ -1,6 +1,7 @@
 ---
 title: "[Wix]Wix製作安裝包時為特定檔案指定使用NGen產生Native Image"
 date: "2013-11-06 12:00:00"
+tags: [Wix]
 description: "使用Wix製作安裝包時，若想要指定某些特定檔案，為其產生Native Image的話，可以將安裝專案加入WixNetFxExtension.dll組件參考。 並在wxs file內的Wix…"
 ---
 

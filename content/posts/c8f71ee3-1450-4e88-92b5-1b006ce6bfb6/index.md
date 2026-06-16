@@ -1,6 +1,7 @@
 ---
 title: "Create new application with Google App Engine Launcher"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "要開始撰寫Google App Engine Application，我們需先在Google App Engine網站上申請一個應用程式(可參閱筆者Registering Google App Engine's Application這篇)，然後開始在本地進行應用程式的撰寫。"
 ---
 

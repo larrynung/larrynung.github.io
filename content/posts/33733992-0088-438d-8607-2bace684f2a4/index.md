@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Moving Line Up_Downe"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio 2013, Visual Studio]
 description: "以往要複製搬動程式碼位置，通常我們必須選取後按住滑鼠左鍵拖曳至所要放置的位置，或是透過減下貼上。又或者是我們可以加裝Power Tools擴充套件(可參閱筆者[Visual Studio]Visual Studio 2010 Pro Power Tools這篇)，"
 ---
 

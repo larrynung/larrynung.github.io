@@ -1,6 +1,7 @@
 ---
 title: "error LNK1123_ failure during conversion to COFF_ file invalid or corrupt"
 date: "2013-11-06 12:00:00"
+tags: [C++]
 description: "今天在弄CI Server卡了很久，因為有個C++的專案在CI Server上建置會有error LNK1123: failure during conversion to COFF: file invalid or corrupt的錯誤。"
 ---
 

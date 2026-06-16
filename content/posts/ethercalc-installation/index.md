@@ -1,6 +1,7 @@
 ---
 title: "EtherCalc - Installation"
 date: "2017-09-18 23:51:50"
+tags: [EtherCalc]
 description: "ethercalc 可透過 npm install 進行全域安裝。 npm install -g ethercalc 安裝完後調用 ethercalc 啟動服務。 ethercalc 瀏覽器開啟服務網址，即可開始使用 EtherCalc。 Link EtherCalc"
 ---
 

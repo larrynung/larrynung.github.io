@@ -1,6 +1,7 @@
 ---
 title: "Assembly Binding Redirect"
 date: "2015-03-03 07:48:00"
+tags: [Assembly]
 description: "在開發上有時我們會需要將組件版本導向，可能是因為不同專案用到不同版本的相依組件，或是基於某些原因要將某個組件用特定版本替換。這時我們可以透過 Assembly Binding Redirect 來做到這件事。"
 ---
 

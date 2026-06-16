@@ -1,6 +1,7 @@
 ---
 title: "[IADP]Intel AppUp(SM) Center"
 date: "2013-11-06 12:00:00"
+tags: [IADP]
 description: "Intel AppUp(SM) Center是Intel AppUp這個App Store的軟體瀏覽與下載中心，可以瀏覽Intel AppUp內有哪些軟體，軟體的名稱、價格、分類、介紹、與適用的運行環境等。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Microsoft Monitoring Agent"
 date: "2013-11-20 23:48:00"
+tags: [Monitoring]
 description: "Microsoft Monitoring Agent (MMA) 是可獨立運行的 IntelliTrace，可用來收集診斷資料，例如效能標準、事件記錄檔和Trace。"
 ---
 

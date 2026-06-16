@@ -1,6 +1,7 @@
 ---
 title: "Double.Parse、Double.TryParse、IsNumeric 使用注意事項"
 date: "2013-11-06 12:00:00"
+tags: [CSharp]
 description: "筆者今天根據[VB.NET]IsNumeric()'s bug?!這篇網友的回應嘗試使用IsNumeric(\"不是一個數字\")下去測試，回傳的值會是True，執行結果不怎麼如我所預期，且將字串改成\"不是兩個數字\"、\"是一個數字\"...卻還都是False。"
 ---
 

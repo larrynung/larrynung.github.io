@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Find Unused Files v1.3"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "筆者前不久在使用Find Unused Files找尋專案中已不被使用的資源這篇才剛介紹了Find Unused Files這個小工具，馬上作者又對這工具做了進一步的強化，出了v1.3的版本，除了本來獨立運行的小工具外，也增加了Visual Studio用的擴充套件。"
 ---
 

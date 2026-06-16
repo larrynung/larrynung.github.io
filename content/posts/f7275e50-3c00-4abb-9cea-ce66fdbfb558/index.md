@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 RC New Feature - XAML Editor's Go To Definition"
 date: "2013-11-06 12:00:00"
+tags: [XAML, Visual Studio 2013, Visual Studio]
 description: "Visual Studio 2013 RC在XAML編輯區這邊開始支援Go To Definition，Go To Definition不再只有程式碼編輯區可以使用。"
 ---
 

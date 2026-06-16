@@ -1,6 +1,7 @@
 ---
 title: "How to use goagent GAE proxy"
 date: "2013-11-06 12:00:00"
+tags: [Google App Engine]
 description: "goagent是一基於GAE的proxy服務，當網路被封鎖時我們可透過goagent繞道突破。 使用前請先至GoAgent - Google Code下載goagent的主程式。 下載完解壓縮會看到像下面這樣的內容。 goagent是基於GAE的解決方案，所以使用時需做些設定與佈署。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "[CodePlex]如何使用CodePlex website發佈自己的開源專案"
 date: "2013-11-06 12:00:00"
+tags: [CodePlex]
 description: "筆者因為最近在整理了一個序列化的函式庫，對微軟的開源程式碼網站CodePlex稍稍玩了一下，這邊隨手做個紀錄。 要將自己的開源專案程式放在CodePlex上其實很簡單，先將瀏覽器連到CodePlex - Open Source Project Hosting網站，登入自己的帳號，"
 ---
 

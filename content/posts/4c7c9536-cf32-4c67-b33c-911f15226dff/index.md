@@ -1,6 +1,7 @@
 ---
 title: "[HTML]HTML5 New Feature - x-webkit-speech"
 date: "2013-11-06 12:00:00"
+tags: [HTML5]
 description: "HTML5的Input tag新提供x-webkit-speech語法，目前只能在Chrome 11以後的瀏覽器上使用，能讓我們將語音輸入的功能很簡單的帶到我們的網站中。最簡易的運用方式是像下面這樣將x-webkit-speech加在input tag後方就可以了。"
 ---
 

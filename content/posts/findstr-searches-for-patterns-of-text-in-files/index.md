@@ -1,6 +1,7 @@
 ---
 title: "Findstr - Searches for patterns of text in files"
 date: "2013-11-18 21:49:00"
+tags: [Windows]
 description: "Findstr是ㄧ命令列的內文搜尋工具，能同時針對多個檔案搜尋內文，類似Linux上的grep命令。 他的使用方式可以呼叫下列命令查閱 findstr /? 叫用後會看到如下使用說明 在檔案中搜尋字串。"
 ---
 

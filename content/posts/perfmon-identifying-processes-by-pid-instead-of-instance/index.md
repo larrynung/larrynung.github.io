@@ -1,6 +1,7 @@
 ---
 title: "Perfmon - Identifying processes by PID instead of instance"
 date: "2013-12-25 15:52:00"
+tags: [Performance]
 description: "在使用效能監視器時，當程式多開，各自有不同的 Process 時，效能監視器會在 Process 後面加上 #n 為後綴 (n 為流水號)。 這樣在使用效能監視器，我們就很難區別哪個才是我們想要關注的 Process。"
 ---
 

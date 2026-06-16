@@ -1,6 +1,7 @@
 ---
 title: "Remove #region block with Regex"
 date: "2015-10-21 23:22:00"
+tags: [CSharp]
 description: "最近又回頭維護前人的程式，還是很多地方都看不習慣。像是 Region 的濫用讓程式維護起來就很痛苦，程式中很多方法內都存在許多的 Region 區塊，這些區塊都依個人主觀的功能下去劃分，問題發生時不是劃分的人其實很難精準的找到程式在哪個 Region 區塊。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - Inline Navigate To"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio 2013, Visual Studio]
 description: "在Visual Studio在2010加入了Navigate To功能(可參閱筆者[Visual Studio]Visual Studio 2010 New Feature - Navigate To這篇)，在Visual Studio 2013 Preview中微軟又再進一步的強化，"
 ---
 

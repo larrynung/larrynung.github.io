@@ -1,6 +1,7 @@
 ---
 title: "[Software]Taskbar Thumbnails Tuner"
 date: "2013-11-06 12:00:00"
+tags: [Software]
 description: "現在電腦能支援的解析度越來越大，使用高解析度的電腦越來越多，像是Win8就限制snap功能一定要高於一定的解析度才能啟用，但在高解析度下有些系統的行為又不太能滿足我們的需求，像是Taskbar Thumbnails可能就會在高解析度下顯得有點小。"
 ---
 

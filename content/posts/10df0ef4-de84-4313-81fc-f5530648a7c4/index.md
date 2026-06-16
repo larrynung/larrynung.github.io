@@ -1,6 +1,7 @@
 ---
 title: "[Visual Studio]Introduce Visual Studio Achievements"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "Visual Studio Achievements是Visual Studio的成就系統外掛，能外掛在Visual Studio上，有點類似於一般遊戲的成就系統，當達到特定的目標會頒給勳章以資獎勵，可以讓寫程式變得像是玩遊戲一般輕鬆，"
 ---
 

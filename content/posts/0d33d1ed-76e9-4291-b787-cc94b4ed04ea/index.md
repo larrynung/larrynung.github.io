@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2013 Preview New Feature - XAML editor's smart commenting"
 date: "2013-11-06 12:00:00"
+tags: [XAML, Visual Studio 2013, Visual Studio]
 description: "以往在透過Visual Studio的XAML Editor進行XAML Code的編輯時，若要將多行XAML程式碼進行註解，程式碼的註解功能會受其它多行註解影響，像是下面這樣： 我們只能自行手動將這些程式碼分批、分段註解..."
 ---
 

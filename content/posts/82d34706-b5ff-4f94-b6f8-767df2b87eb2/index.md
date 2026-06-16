@@ -1,6 +1,7 @@
 ---
 title: "Install MongoDB on Ubuntu"
 date: "2013-11-06 12:00:00"
+tags: [MongoDB, Linux]
 description: "要在Ubuntu下安裝MongoDB，我們可以呼叫命令\"sudo apt-get install mongodb\"進行MongoDB的安裝。 安裝後呼叫命令\"sudo service mongodb start\"將MongoDB的服務啟動。"
 ---
 

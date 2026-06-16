@@ -1,6 +1,7 @@
 ---
 title: "使用Gister extension將Visual studio內編寫的程式碼片段快速的放置Gist貼文中分享"
 date: "2013-11-06 12:00:00"
+tags: [Visual Studio]
 description: "最近嘗試將一些範例程式放到Gist上再內嵌回Blog中，或是有時候會需要將程式碼貼至Gist分享出去。會碰到一個問題就是在Visual Studio編輯好的程式需要手動的到Github貼到Gist上，總覺得有點麻煩，因此找了一下Visual Studio的擴充套件，"
 ---
 

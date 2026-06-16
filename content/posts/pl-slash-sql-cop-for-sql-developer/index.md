@@ -1,6 +1,7 @@
 ---
 title: "PL/SQL Cop for SQL Developer"
 date: "2015-09-18 23:37:00"
+tags: [PL/SQL]
 description: "PL/SQL Cop for SQL Developer 是 SQL Developer 的外掛元件，能幫靜態分析 PL/SQL 程式碼中哪些地方是寫的不好的。 PL/SQL Cop for SQL Developer 的檢查遵照的是 Trivadis PL/SQL & SQL Coding…"
 ---
 

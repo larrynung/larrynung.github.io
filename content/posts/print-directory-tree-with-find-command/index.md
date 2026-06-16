@@ -1,6 +1,7 @@
 ---
 title: "Print directory tree with find command"
 date: "2019-05-11 08:10:08"
+tags: [Windows, Linux]
 description: "若未裝 tree 命令但想要顯示 Directory tree，可以用 find 命令搭配 sed 命令做到類似的效果。 find . -print | sed -e 's;[^/]/;|;g;s;|; |;g' 運行起來很接近 tree 命令的效果，只是線不像 tree 命令那樣漂亮，"
 ---
 

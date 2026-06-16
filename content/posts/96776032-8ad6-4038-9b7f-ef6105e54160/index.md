@@ -1,6 +1,7 @@
 ---
 title: "Managing AVDs with AVD Manager"
 date: "2013-11-06 12:00:00"
+tags: [Android]
 description: "想要開發APP，不論是Android、IPhone、Window Phone...，模擬器的使用都很重要。 以Android來說，我們必須要先熟悉AVD Manager的操作。可透過上方的ToolBar去啟動AVD Manager(Andorid Virtual Device Manager)。"
 ---
 

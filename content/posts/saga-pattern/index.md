@@ -1,6 +1,7 @@
 ---
 title: "Saga pattern"
 date: "2019-04-24 15:43:32"
+tags: [Distributed Systems]
 description: "Saga pattern 是用來解決分散式服務架構下各服務之間的交易資料一致性問題。 在單體服務的架構下通常會使用同一個資料庫，交易可以直接交給資料庫處理，處理失敗交易資料就會整個還原，不會有交易一致性的問題。"
 ---
 

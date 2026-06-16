@@ -1,6 +1,7 @@
 ---
 title: "Opera Mobile Classic Emulator"
 date: "2013-11-06 12:00:00"
+tags: [Mobile]
 description: "Opera Mobile Emulator 是一套手機瀏覽器模擬器， 能模擬在不同手持裝置上Opera手機版瀏覽器的瀏覽狀況，有助於行動裝置上的網頁開發。 程式可至 Opera Mobile Emulator 官網這邊下載安裝 安裝完後運行，會詢問要使用的語系，這邊視個人需求下去設定。"
 ---
 

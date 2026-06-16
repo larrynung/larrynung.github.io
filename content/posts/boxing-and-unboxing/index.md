@@ -1,6 +1,7 @@
 ---
 title: "Boxing & UnBoxing"
 date: "2015-09-21 23:11:00"
+tags: [CSharp]
 description: "Boxing 是種隱含的處理，當 Value Type 物件塞到 Reference Type 時發生，會幫我們在 Managed Heap 建立一塊空間，並將本來 Value Type 的值賦予其中。 舉個例子來說，像是這邊宣告個 int 變數 i，若我們像下面這樣將它塞到 object。"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "[Web] 使用json2csharp產生對應Json的C#類別"
 date: "2013-11-06 12:00:00"
+tags: [CSharp, Web]
 description: "筆者在之前介紹過[.NET Resource]JSON C# Class Generator，一樣能產生對應的C#類別，但是產出的類別有透過Json.NET做了些包裝處理，雖然使用便利，但卻讓它少了點使用上的彈性，若是不想要將Json.NET加入專案，或是想要進階控制一些屬性是否可以為空之類的，"
 ---
 
