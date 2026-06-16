@@ -1,6 +1,7 @@
 ---
 title: "[C#]簡易的Backoff window實現類別"
-slug: "[CSharp]簡易的Backoff window實現類別"
+slug: "csharp-簡易的backoff-window實現類別"
+aliases: ["/posts/csharp簡易的backoff-window實現類別/"]
 date: "2013-11-06 12:00:00"
 description: "在無線網路的領域中，若是節點間要進行傳輸，會試圖嚐試發送RTS訊號，當接收端收到且允許傳送時，接收端會發送CTS訊號，傳送端就會知道可以進行傳送的動作。但若是傳送端發送了RTS後過段時間沒收到CTS訊號，代表訊號被碰撞掉了，這時會挑選個backoff值，決定要多久後再重試傳輸。"
 tags: [CSharp]

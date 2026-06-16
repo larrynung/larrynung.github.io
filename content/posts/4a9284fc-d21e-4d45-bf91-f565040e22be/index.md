@@ -1,6 +1,7 @@
 ---
 title: "[C#]使用Mutex實現單一程式執行個體的注意事項"
-slug: "[CSharp]使用Mutex實現單一程式執行個體的注意事項"
+slug: "csharp-使用mutex實現單一程式執行個體的注意事項"
+aliases: ["/posts/csharp使用mutex實現單一程式執行個體的注意事項/"]
 date: "2013-11-06 12:00:00"
 description: "相信大家都知道在.NET程式中若要實現單一程式執行個體，一般來說有幾種方法，像是去判斷是否已經有開啟的Process是相同的程式、用Mutex與Semaphore之類的技術來判斷是否程式正在開啟。"
 tags: [CSharp]

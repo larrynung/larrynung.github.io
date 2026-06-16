@@ -1,6 +1,7 @@
 ---
 title: "[C#]取用.picasa.ini內存的現有資訊來做臉部偵測"
-slug: "[CSharp]取用.picasa.ini內存的現有資訊來做臉部偵測"
+slug: "csharp-取用-picasa-ini內存的現有資訊來做臉部偵測"
+aliases: ["/posts/csharp取用.picasa.ini內存的現有資訊來做臉部偵測/"]
 date: "2013-11-06 12:00:00"
 description: "Picasa應該很多人都有聽過、用過Picasa這套看圖軟體，這套看圖軟體功能強大且快速。該軟體裡面有個功能滿好玩的就是它可以對照片做臉部偵測，使用者可以為識別出來的人臉加上標記，後續還會自動偵測可能有該人士存在的圖片，讓整理的動作變得很簡單。"
 tags: [CSharp]

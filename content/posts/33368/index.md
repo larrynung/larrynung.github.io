@@ -1,6 +1,7 @@
 ---
 title: "[C#]RaiseEvent Extension Method (二)"
-slug: "[CSharp]RaiseEvent Extension Method (二)"
+slug: "csharp-raiseevent-extension-method-二"
+aliases: ["/posts/csharpraiseevent-extension-method-二/"]
 date: "2011-08-17 06:52:51"
 description: "前面[C#]RaiseEvent Extension Method (一)這篇介紹了如何用擴充方法來簡化C#事件的觸發動作，最近在做觸發事件時，又看到了一個引起我關注的重點，那就是有時候我們在初始化事件的參數時費了很大的耗費，準備觸發事件時，透過OnXXX去觸發事件，結果發現事件並未被繫上，"
 tags: [CSharp]

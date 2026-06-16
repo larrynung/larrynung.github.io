@@ -1,6 +1,7 @@
 ---
 title: "[C#]C# 4.0 具名參數 (Named Parameters)"
-slug: "[CSharp]C# 4.0 具名參數 (Named Parameters)"
+slug: "csharp-csharp-4-0-具名參數-named-parameters"
+aliases: ["/posts/csharpc#-4.0-具名參數-named-parameters/"]
 date: "2009-07-30 09:05:43"
 description: "Introduction 具名參數是C# 4.0的特色之一，可搭配選擇性參數使用，主要功能是讓使用者可在呼叫函數時指定傳入的值要帶入哪個參數。 Support C# 4.0 or latter 使用方式 當我們想指定傳入的值要帶入的參數時，我們可以透過\":\"關鍵字來使用具名參數。"
 tags: [CSharp]

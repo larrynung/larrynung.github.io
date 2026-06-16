@@ -1,6 +1,7 @@
 ---
 title: "[C#]擷取Picasa資料庫(_.PMP)內現有的資料"
-slug: "[CSharp]擷取Picasa資料庫(_.PMP)內現有的資料"
+slug: "csharp-擷取picasa資料庫-pmp-內現有的資料"
+aliases: ["/posts/csharp擷取picasa資料庫_.pmp內現有的資料/"]
 date: "2013-11-06 12:00:00"
 description: "筆者在[C#]取用.picasa.ini內存的現有資訊來做臉部偵測這篇透過了Picasa的ini檔擷取出了臉部的資訊，但是該ini檔如果不經過Picasa去整理相片就不會產生。"
 tags: [CSharp]

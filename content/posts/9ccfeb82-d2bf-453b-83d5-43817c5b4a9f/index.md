@@ -1,6 +1,7 @@
 ---
 title: "[C#]DateTime 與 ISO8601 格式字串的相互轉換"
-slug: "[CSharp]DateTime 與 ISO8601 格式字串的相互轉換"
+slug: "csharp-datetime-與-iso8601-格式字串的相互轉換"
+aliases: ["/posts/csharpdatetime-與-iso8601-格式字串的相互轉換/"]
 date: "2013-11-06 12:00:00"
 description: "要從DateTime轉換成ISO8601的格式，在.NET中我們有幾種方式，一種是直接帶入ISO8601的Format，像是： 一種是帶入s並在最後面加上\"Z\"： 最後一種是帶入o： 實際程式撰寫會像下面這樣： 運行後可以看到時間正確的轉換為ISO8601的格式：…"
 tags: [CSharp]

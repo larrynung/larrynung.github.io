@@ -1,6 +1,7 @@
 ---
 title: "[C#]設定WebBrowser Control運行的User Agent版本"
-slug: "[CSharp]設定WebBrowser Control運行的User Agent版本"
+slug: "csharp-設定webbrowser-control運行的user-agent版本"
+aliases: ["/posts/csharp設定webbrowser-control運行的user-agent版本/"]
 date: "2013-11-06 12:00:00"
 description: "今天再弄WebBrowser Control元件的測試，發現IE9無法運行我寫的WebSocket程式，因此稍微測試了一下HTML5的支援程度，發現用IE開起來可以跑出138的分數，但在WebBrowser Control中只能跑出41分。"
 tags: [CSharp]

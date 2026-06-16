@@ -1,6 +1,7 @@
 ---
 title: "[C#][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
-slug: "[CSharp][JavaScript]WinForm與WebPage的JavaScript互通(二) - 動態加入並調用JavaScript"
+slug: "csharp-javascript-winform與webpage的javascript互通-二-動態加入並調用javascript"
+aliases: ["/posts/csharpjavascriptwinform與webpage的javascript互通二-動態加入並調用javascript/"]
 date: "2013-11-06 12:00:00"
 description: "筆者在[C#][JavaScript]WinForm與WebPage的JavaScript互通(一)這篇稍微介紹了一下基本的互通，實際在程式的運用上可能不是那樣簡單的互通就可以滿足我們的需求，有時候WinForm必須要動態將JavaScript插入網頁並調用，來做些更為進階的處理。"
 tags: [CSharp]

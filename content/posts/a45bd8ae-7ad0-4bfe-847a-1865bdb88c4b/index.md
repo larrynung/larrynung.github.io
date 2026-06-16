@@ -1,6 +1,7 @@
 ---
 title: "[C#]使用SharpShell實現Shell Icon Overlay功能"
-slug: "[CSharp]使用SharpShell實現Shell Icon Overlay功能"
+slug: "csharp-使用sharpshell實現shell-icon-overlay功能"
+aliases: ["/posts/csharp使用sharpshell實現shell-icon-overlay功能/"]
 date: "2013-11-06 12:00:00"
 description: "有在使用DropBox或是SVN之類的軟體的使用者應該都會注意到，這類型的軟體在透過檔案總管瀏覽時，都會透過icon的變化來明確的告知目前的狀態，既炫又清楚。這樣的功能稱做Shell Icon Overlay，在.NET中我們可以透過SharpShell來輕易的實現這樣的功能。"
 tags: [CSharp]

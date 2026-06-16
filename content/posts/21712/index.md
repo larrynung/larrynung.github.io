@@ -1,6 +1,7 @@
 ---
 title: "[C#]Effective C# 條款十七：盡量減少裝箱與拆箱"
-slug: "[CSharp]Effective C# 條款十七：盡量減少裝箱與拆箱"
+slug: "csharp-effective-csharp-條款十七-盡量減少裝箱與拆箱"
+aliases: ["/posts/csharpeffective-c#-條款十七盡量減少裝箱與拆箱/"]
 date: "2011-03-08 12:06:04"
 description: "裝箱與拆箱是.Net裡很重要的一個概念，可將值類型視為參考類型一般使用，因此我們在程式撰寫時，可以將值類型以System.Object型態包裝，並保存於Managed 堆積中，開發人員不需自行處理這部份的轉換，這樣的動作在.Net程式中會自動發生。"
 tags: [CSharp]

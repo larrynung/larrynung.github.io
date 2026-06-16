@@ -1,6 +1,7 @@
 ---
 title: "[C#]DropBox開發系列 - 使用DropNet下載DropBox內存放的檔案"
-slug: "[CSharp]DropBox開發系列 - 使用DropNet下載DropBox內存放的檔案"
+slug: "csharp-dropbox開發系列-使用dropnet下載dropbox內存放的檔案"
+aliases: ["/posts/csharpdropbox開發系列-使用dropnet下載dropbox內存放的檔案/"]
 date: "2013-11-06 12:00:00"
 description: "要使用DropNet下載DropBox內存放的檔案，我們可以透過DropNetClient.GetFile來做，將我們想要下載的檔案位置帶入該函式，會將指定檔案的內容回傳，因此成式撰寫起來會像下面這樣： 實際運作起來會像下面這樣，假設我嚐試要抓取的是Batch目錄下的Close.bat檔。"
 tags: [CSharp]

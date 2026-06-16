@@ -1,6 +1,7 @@
 ---
 title: "[C#][VB.NET]使用AxWindowsMediaPlayer撥放多媒體"
-slug: "[CSharp][VB.NET]使用AxWindowsMediaPlayer撥放多媒體"
+slug: "csharp-vbnet-使用axwindowsmediaplayer撥放多媒體"
+aliases: ["/posts/csharpvb.net使用axwindowsmediaplayer撥放多媒體/"]
 date: "2009-03-01 02:09:40"
 description: "加入工具箱 Step1.工具箱=>滑鼠右鍵=>選擇項目 Step2.切換至『COM 元件』頁籤=>勾選Windows Media Player=>確定 Step3.會發現工具箱多了個Windows Media Player的控制項 使用AxWindowsMediaPlayer撥放多媒體…"
 tags: [VB.NET,CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#]Effective C# 條款十二：變數初始器優於賦值語句"
-slug: "[CSharp]Effective C# 條款十二：變數初始器優於賦值語句"
+slug: "csharp-effective-csharp-條款十二-變數初始器優於賦值語句"
+aliases: ["/posts/csharpeffective-c#-條款十二變數初始器優於賦值語句/"]
 date: "2010-10-31 08:57:43"
 description: "何謂變數初始器?變數初始器是.NET底層用於初始化變數的一種機制，運行於基底類別建構子建構之前，其初始變數的順序與類別中變數宣告的順序相同，是確保類別中成員變數能正確初始化的最簡單的方法，可用以避免程式中出現未初始化的變數。"
 tags: [CSharp]

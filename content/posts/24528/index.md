@@ -1,6 +1,7 @@
 ---
 title: "[C#][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊"
-slug: "[CSharp][Visual Studio]使用DebuggerTypeProxyAttribute客製除錯資訊"
+slug: "csharp-visual-studio-使用debuggertypeproxyattribute客製除錯資訊"
+aliases: ["/posts/csharpvisual-studio使用debuggertypeproxyattribute客製除錯資訊/"]
 date: "2011-05-08 07:33:11"
 description: "有時候我們在撰寫類別時，因為功能上的需求有時會將類別加入許多的額外資訊，有些資訊可能在某些情況下我們必須要能夠取得並查看，但有些資訊則是在大多數的情況下不是我們所關注的焦點，尤其是在除錯時更是如此的話，會在無形之中增加除錯人員除錯上的困難，"
 tags: [Visual Studio,CSharp]

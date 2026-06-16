@@ -1,6 +1,7 @@
 ---
 title: "[C#][Control]BitsControl概念與簡易實做"
-slug: "[CSharp][Control]BitsControl概念與簡易實做"
+slug: "csharp-control-bitscontrol概念與簡易實做"
+aliases: ["/posts/csharpcontrolbitscontrol概念與簡易實做/"]
 date: "2011-12-11 10:36:08"
 description: "有些人可能還看不出前一篇指撥開關的用途，其實做些變化指撥開關還可以用來做些簡易的硬體設定。像是做個控制項可以載入一個Byte的資料，並允許使用者直接去調整設定，可用在GPIB、I2C之類的通訊界面設定，設定一些位置資訊。"
 tags: [Control,CSharp]

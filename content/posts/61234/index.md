@@ -1,6 +1,7 @@
 ---
 title: "[C#][WPF]DependencyProperty"
-slug: "[CSharp][WPF]DependencyProperty"
+slug: "csharp-wpf-dependencyproperty"
+aliases: ["/posts/csharpwpfdependencyproperty/"]
 date: "2011-12-08 12:45:18"
 description: "前好一陣子有用到WPF的相依屬性，這邊隨手簡單紀錄一下怎樣新增WPF元件的相依屬性。 新增相依屬性時首先必須加入個靜態的攔位，欄位型態為DependencyProperty。"
 tags: [WPF,CSharp]

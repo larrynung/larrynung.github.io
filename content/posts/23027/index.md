@@ -1,6 +1,7 @@
 ---
 title: "[C#]使用反射搭配Extension Method來Reset物件"
-slug: "[CSharp]使用反射搭配Extension Method來Reset物件"
+slug: "csharp-使用反射搭配extension-method來reset物件"
+aliases: ["/posts/csharp使用反射搭配extension-method來reset物件/"]
 date: "2011-04-18 09:52:22"
 description: "看到網友在論壇發問的問題，想起之前在開發時有用過反射與擴充方法去將物件初始，擴充方法如下，可將物件的屬性值初始： 簡易的使用範例： 運行結果如下："
 tags: [CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#]取得檔案對應的MIME Content Type"
-slug: "[CSharp]取得檔案對應的MIME Content Type"
+slug: "csharp-取得檔案對應的mime-content-type"
+aliases: ["/posts/csharp取得檔案對應的mime-content-type/"]
 date: "2011-03-24 01:12:45"
 description: "在寫Youtube的上傳時，在設定上傳的資訊中有一項是Content Type，該屬性是字串型態，且未提供我們列舉直接選取或是自動由檔案名稱判別的功能，在這邊被卡關了許久，最後下才發現這邊的Content Type指的是MIME Content Type。"
 tags: [CSharp]

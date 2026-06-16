@@ -1,6 +1,7 @@
 ---
 title: "[C#][WPF]WPF程式接收視窗訊息"
-slug: "[CSharp][WPF]WPF程式接收視窗訊息"
+slug: "csharp-wpf-wpf程式接收視窗訊息"
+aliases: ["/posts/csharpwpfwpf程式接收視窗訊息/"]
 date: "2011-12-06 01:15:51"
 description: "WinForm程式可以透過覆寫Window.WndProc去接收視窗訊息，而在WPF程式中的處理方法跟WinForm程式有些出入，首先必須要繫上SourceInitialized事件。 在被繫上SourceInitialized事件的事件處理常式中將WndProc函式繫上。"
 tags: [CSharp,WPF]

@@ -1,6 +1,7 @@
 ---
 title: "[C#]使用Reflection檢查指定類別是否含有預設建構子"
-slug: "[CSharp]使用Reflection檢查指定類別是否含有預設建構子"
+slug: "csharp-使用reflection檢查指定類別是否含有預設建構子"
+aliases: ["/posts/csharp使用reflection檢查指定類別是否含有預設建構子/"]
 date: "2013-11-06 12:00:00"
 description: "昨天在抽空調整一下專案程式碼，用Attribute與反射搭配的機制去做一些載入的動作，讓程式擴充時能專注在新加入的類別就好，程式啟動自行會用反射將該載入的載入。但由於目前尚未把現有的程式改的比較一致，每個類別的建構子不盡相同，因為我預期這些類別應該都要有預設的建構子，"
 tags: [CSharp]

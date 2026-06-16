@@ -1,6 +1,7 @@
 ---
 title: "[C#]不同的Random物件給予不同的亂數種子"
-slug: "[CSharp]不同的Random物件給予不同的亂數種子"
+slug: "csharp-不同的random物件給予不同的亂數種子"
+aliases: ["/posts/csharp不同的random物件給予不同的亂數種子/"]
 date: "2010-01-04 10:41:36"
 description: ".NET Framework中，Random類別的建構函式有兩個。一個是不需帶參數的建構函式，使用其建構函式會使用時間相依預設種子值來初始化 Random 類別的新執行個體。其亂數種子是依系統時鐘衍生而來，解析度有限。"
 tags: [CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#][VB.NET]自製桌面小玩意"
-slug: "[CSharp][VB.NET]自製桌面小玩意"
+slug: "csharp-vbnet-自製桌面小玩意"
+aliases: ["/posts/csharpvb.net自製桌面小玩意/"]
 date: "2008-11-15 01:28:44"
 description: "Abstract Introduction 自製桌面小玩意 Conclusion Introduction 本篇將由一個簡單的小範例，試範如何利用.NET自製類似widget的桌面小玩意。 自製桌面小玩意 Step1.首先，打開一個Window Form專案。"
 tags: [VB.NET, CSharp]

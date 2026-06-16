@@ -1,6 +1,7 @@
 ---
 title: "[C#]使用ShowCaret & HideCaret控制元件上的插入符號"
-slug: "[CSharp]使用ShowCaret & HideCaret控制元件上的插入符號"
+slug: "csharp-使用showcaret-hidecaret控制元件上的插入符號"
+aliases: ["/posts/csharp使用showcaret-hidecaret控制元件上的插入符號/"]
 date: "2013-11-06 12:00:00"
 description: "有時候我們會有需要能精確的控制元件是否顯示插入符號，這時可以使用ShowCaret與HideCaret兩個Win32 API來達成這個目的，這兩個API的宣告方式如下： 使用上只要帶入元件的handle就可以了，像是想要控制TextBox的插入符號，"
 tags: [CSharp]

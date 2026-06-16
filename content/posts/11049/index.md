@@ -1,6 +1,7 @@
 ---
 title: "[C#]Effective C# 條款六： 明辨值類型與參考類型的使用場合"
-slug: "[CSharp]Effective C# 條款六： 明辨值類型與參考類型的使用場合"
+slug: "csharp-effective-csharp-條款六-明辨值類型與參考類型的使用場合"
+aliases: ["/posts/csharpeffective-c#-條款六-明辨值類型與參考類型的使用場合/"]
 date: "2009-10-14 09:01:03"
 description: "在C++中，所有類型都被定義為值類型，但可以自行選擇建立他們的參考形式；在JAVA中，所有自定義的類別都為參考類型。而在C#中，我們必須在設計類型的時候決定類型的型態。且必須清楚了解這個決定的後果，因為後期的更改會導致許多程式碼在不經意間出現錯誤。"
 tags: [CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#][VB.NET]Path.GetTempFileName的IOException"
-slug: "[CSharp][VB.NET]Path.GetTempFileName的IOException"
+slug: "csharp-vbnet-path-gettempfilename的ioexception"
+aliases: ["/posts/csharpvb.netpath.gettempfilename的ioexception/"]
 date: "2013-11-06 12:00:00"
 description: "最近在開發程式時，突然發現我的電腦跑起來怪怪的，Visual Studio開啟時會跳出錯誤訊息。 方案中的安裝專案建置起來會出現IOException例外，且某專案在程式中建立PerformanceCounterCategory也會出現IOException，"
 tags: [CSharp]

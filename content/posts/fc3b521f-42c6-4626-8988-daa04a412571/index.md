@@ -1,6 +1,7 @@
 ---
 title: "[C#]透過PerformanceCounter取得特定Process的CPU使用率"
-slug: "[CSharp]透過PerformanceCounter取得特定Process的CPU使用率"
+slug: "csharp-透過performancecounter取得特定process的cpu使用率"
+aliases: ["/posts/csharp透過performancecounter取得特定process的cpu使用率/"]
 date: "2013-11-06 12:00:00"
 description: "想要透過PerformanceCounter取得特定Process的CPU使用率，首先我們要理解這部分的資料在PerformanceCounter是怎樣分布的。這邊我們可以叫出效能監視器後，找到Process分類，可以看到如下畫面，所有的Process都有對應的Instance，"
 tags: [CSharp]

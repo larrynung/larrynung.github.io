@@ -1,6 +1,7 @@
 ---
 title: "[C#]透過API移除表單的控制功能表方塊中的功能表項目"
-slug: "[CSharp]透過API移除表單的控制功能表方塊中的功能表項目"
+slug: "csharp-透過api移除表單的控制功能表方塊中的功能表項目"
+aliases: ["/posts/csharp透過api移除表單的控制功能表方塊中的功能表項目/"]
 date: "2009-10-26 08:30:24"
 description: "Introduction 看到了rico寫的[C#][WinForm]如何關閉表單\"X\"這篇文章，覺得還滿好玩的。又是一個沒玩過的寫法。在處理上也不難，只要透過GetSystemMenu.aspx)與RemoveMenu.aspx)這兩個簡單的API，就可以達到關閉視窗的關閉按鈕的效果了。"
 tags: [CSharp]

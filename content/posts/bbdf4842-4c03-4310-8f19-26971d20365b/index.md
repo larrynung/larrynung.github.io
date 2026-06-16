@@ -1,6 +1,7 @@
 ---
 title: "[C#]Notifyicon.Text 突破 64 字元的限制"
-slug: "[CSharp]Notifyicon.Text 突破 64 字元的限制"
+slug: "csharp-notifyicon-text-突破-64-字元的限制"
+aliases: ["/posts/csharpnotifyicon.text-突破-64-字元的限制/"]
 date: "2013-11-06 12:00:00"
 description: "最近在寫程式時需要將一些資訊顯示在NotifyIcon上，才注意到NotifyIcon.Text有64個字元的限制。 在設定超過64個字元時，系統就會發出例外訊息。 經過一番的調整與精簡，仍是避免不了會超過64個字元。"
 tags: [CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#]IEnumerable型態回傳注意事項"
-slug: "[CSharp]IEnumerable型態回傳注意事項"
+slug: "csharp-ienumerable型態回傳注意事項"
+aliases: ["/posts/csharpienumerable型態回傳注意事項/"]
 date: "2011-03-19 08:44:03"
 description: "自Linq出來以後，個人的程式撰寫習慣又因此有了些許的改變，變得習慣會盡量用IEnumerable型態去傳遞集合的資料，因為透過這樣的型態可以將集合真正的型態隱含在背後，若某天有需求要替換集合類型，動到的部份會比較少，也可以實現像Linq一樣具延遲載入的效果。"
 tags: [CSharp]

@@ -1,6 +1,7 @@
 ---
 title: "[C#]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型"
-slug: "[CSharp]Effective C# 條款七： 將值類型盡可能實現為具有常量性與原子性的類型"
+slug: "csharp-effective-csharp-條款七-將值類型盡可能實現為具有常量性與原子性的類型"
+aliases: ["/posts/csharpeffective-c#-條款七-將值類型盡可能實現為具有常量性與原子性的類型/"]
 date: "2009-10-15 09:00:47"
 description: "Introduction 當程式決定使用值類型來開發時，請優先考慮將值類型實現為具備常量性與原子性的類型。因為具有常量性的類型可讓程式較為容易編寫與維護，也較容易構建更複雜的結構。"
 tags: [CSharp]

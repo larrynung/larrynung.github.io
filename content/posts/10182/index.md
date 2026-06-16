@@ -1,6 +1,7 @@
 ---
 title: "[C#][VB.NET].NET 4.0 Barrier Class"
-slug: "[CSharp][VB.NET].NET 4.0 Barrier Class"
+slug: "csharp-vbnet-dotnet-4-0-barrier-class"
+aliases: ["/posts/csharpvb.net.net-4.0-barrier-class/"]
 date: "2009-08-22 05:32:32"
 description: "Introduction .NET 4.0後在System.Threading命名空間中新加入了Barrier類別，該類別的功能就如同字面意義一樣，可視為是一個關卡或是剪票口。透過Barrier Class我們可以管制執行緒的運作，做到執行緒同步的效果。"
 tags: [VB.NET, CSharp]
