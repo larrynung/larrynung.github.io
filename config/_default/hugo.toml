@@ -30,6 +30,17 @@ summaryLength = 15
     url = "/tags/"
     title = "標籤"
 
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
 [markup]
   [markup.highlight]
     anchorLineNos = false
